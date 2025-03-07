@@ -1,0 +1,67 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "sendOmniScriptData",
+    "OmniProcessId": {
+        "Name": "OmniScript Analytics Information",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/OmniScript/Analytics/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+        },
+        "additionalOutput": {
+        },
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "label": "HTTPAction1",
+        "namedCredential": "",
+        "postActionLogging": "",
+        "preActionLogging": "%endpoint%",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "restMethod": "POST",
+        "restOptions": {
+            "clientCertificateName": "",
+            "headers": {
+                "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHAiOnsiaWRlbnRpZmllciI6IiQyYSQxMCRQcGNEMEp1YTFzMkZxRDhMWHd2UnJPUVhzRjVkUlRQL0hRNmdCdGRma21WRlhqV3l4VHNCdSJ9LCJpYXQiOjE2NzY4ODU1ODh9.s8ZAyjzSOlIp3giRHCz6vp1IQHDjcvlxr09qFp-4kA0"
+            },
+            "isCompressed": false,
+            "params": {
+                "OmniScriptName": "%setOmniData:omniScriptName%",
+                "TSO Org": "%getOrgAndUserInfo:TSO Org%",
+                "action": "%setOmniData:runMode%",
+                "distinct_id": "%getOrgAndUserInfo:userEmail%",
+                "orgId": "%getOrgAndUserInfo:OrgId%",
+                "orgType": "%setOmniData:orgType%"
+            },
+            "sendBody": false,
+            "timeout": 0,
+            "xmlEscapeResponse": false
+        },
+        "restPath": "https://mixpanel-event-logger.herokuapp.com/track",
+        "retryCount": 0,
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": false,
+        "show": null,
+        "type": "Integration",
+        "useFormulas": true
+    },
+    "Type": "Rest Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/OmniScript/Analytics/Procedure/sendOmniScriptData"
+}

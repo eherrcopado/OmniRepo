@@ -1,0 +1,43 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "AssetsFromGroupCartResponse",
+    "OmniProcessId": {
+        "Name": "CPQGetAssetsFromGroupCart",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/CPQ/GetAssetsFromGroupCart/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "Failed": "=IF(ISBLANK(%UniqueAssetIdList:AssetIds%),true,false)",
+            "additionalData": "=%additionalData%",
+            "itemsToProcessList": "=LIST(%AllSelectedAssetIds:AssetIdsList%)",
+            "statusCode": "=IF(ISBLANK(%UniqueAssetIdList:AssetIds%),500,200)",
+            "statusMessage": "=IF(ISBLANK(%UniqueAssetIdList:AssetIds%),'No Asset Ids found.','COMPLETED')"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": false,
+        "sendJSONNode": "additionalData",
+        "sendJSONPath": "SetCartId",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/CPQ/GetAssetsFromGroupCart/Procedure/AssetsFromGroupCartResponse"
+}

@@ -1,0 +1,73 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Mailing zip code",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "MailingZipCode",
+    "OmniProcessId": {
+        "Name": "VPL-MoveIn-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "BillingPreferences",
+        "OmniProcessId": {
+            "Name": "VPL-MoveIn-WithoutCPQ",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/BillingPreferences",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "BillingPreferences",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "accessibleInFutureSteps": false,
+        "conditionType": "Hide if False",
+        "controlWidth": 4,
+        "debounceValue": 0,
+        "disOnTplt": false,
+        "help": false,
+        "helpText": "",
+        "hide": false,
+        "inputWidth": 12,
+        "label": "Mailing Zip Code",
+        "mask": "",
+        "maxLength": 6,
+        "minLength": 5,
+        "pattern": "",
+        "ptrnErrText": "Invalid zip code",
+        "readOnly": false,
+        "repeat": false,
+        "repeatClone": false,
+        "required": false,
+        "show": {
+            "group": {
+                "operator": "OR",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "DifferentAddress",
+                        "field": "MailingAddres"
+                    },
+                    {
+                        "condition": "=",
+                        "data": "DifferentAddress",
+                        "field": "MailingAddresss"
+                    }
+                ]
+            }
+        },
+        "showInputWidth": false
+    },
+    "Type": "Text",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/MailingZipCode"
+}

@@ -1,0 +1,96 @@
+{
+    "AuthorName": "CME_E_U",
+    "ClonedFromOmniUiCardKey": "sfiEnergySelfServiceQuickActionsBox/eu_ief/1/1652680451669",
+    "CurrencyIsoCode": "USD",
+    "DataSourceConfig": {
+        "dataSource": {
+            "contextVariables": [
+                {
+                    "id": 1,
+                    "name": "Parent.AccountId",
+                    "val": "0013y00001gtaaFAAQ"
+                }
+            ],
+            "orderBy": {
+                "isReverse": "",
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "AccountId": "{Parent.AccountId}"
+                },
+                "ipMethod": "sfiEnergySelfService_GetBillDelivery",
+                "jsonMap": "{\"Parent.AccountId\":\"{Parent.AccountId}\"}",
+                "resultVar": "[\"BillDeliveryResponse\"]",
+                "vlocityAsync": false
+            }
+        },
+        "state0element0block_element6block_element0_0": {
+            "contextVariables": [
+                {
+                    "id": 1,
+                    "name": "Parent.AccountId",
+                    "val": "0014x000010stzEAAQ"
+                }
+            ],
+            "orderBy": {
+                "isReverse": "",
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "BillDeliveryMethod": "Paper Billing",
+                    "Id": "{Parent.AccountId}"
+                },
+                "ipMethod": "sfiEnergySelfService_PostBillDeliveryMethod",
+                "jsonMap": "{\"Parent.AccountId\":\"{Parent.AccountId}\"}",
+                "vlocityAsync": false
+            }
+        },
+        "state0element0block_element6block_element1_0": {
+            "contextVariables": [
+                {
+                    "id": 1,
+                    "name": "Parent.AccountId",
+                    "val": "0014x000010stzEAAQ"
+                }
+            ],
+            "orderBy": {
+                "isReverse": "",
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "BillDeliveryMethod": "Electronic Statements Online",
+                    "Id": "{Parent.AccountId}"
+                },
+                "ipMethod": "sfiEnergySelfService_PostBillDeliveryMethod",
+                "jsonMap": "{\"Parent.AccountId\":\"{Parent.AccountId}\"}",
+                "vlocityAsync": false
+            }
+        }
+    },
+    "Description": "04/08: DS: Adding OmniScripts",
+    "IsLocked": false,
+    "IsTrackingEnabled": false,
+    "MayEdit": true,
+    "Name": "sfiEnergySelfServiceQuickLinks",
+    "Namespace": "",
+    "OmniUiCardKey": "sfiEnergySelfServiceQuickLinks/CME_E_U/8.0",
+    "OmniUiCardType": "Child",
+    "OverrideKey": "",
+    "PropertySetConfig": "sfiEnergySelfServiceQuickLinks.json",
+    "SampleDataSourceResponse": "{\"BillDeliveryResponse\":{\"%vlocity_namespace%__BillDeliveryMethod__c\":\"Electronic Statements Online\"}}",
+    "StylingConfiguration": "{\"customStyles\":\":host{\\n--sds-c-card-color-background:#F9FCFF;\\n    --sds-c-card-shadow: none;\\n    --sds-c-card-color-border:transparent;\\n    --slds-c-card-color-border:transparent;\\n    --sds-c-card-radius-border:0;\\n    --lwc-fontSize5: 1.4rem;\\n    --sds-c-card-header-spacing-block-start:1.3rem;\\n    --sds-c-card-header-spacing-inline-start:1.3rem;\\n    --sds-c-card-body-spacing-inline-start:1.3rem;\\n    --sds-c-card-body-spacing-block-end:1.3rem;\\n    --sds-c-input-color-background:#FAFCFE;\\n    --sds-c-input-color-border:rgba(1, 118, 211, 0.2);\\n    --sds-c-input-color-border-focus: #0176D3;\\n    --sds-c-input-radius-border:0.5rem;\\n    --lwc-squareIconMediumBoundary:1.2rem;\\n    --lwc-spacingXSmall:0;\\n}\\n\\n.iconbg{\\n    background: #E4EDFF;\\n    padding: 1.2rem;\\n    border-radius: 0.5rem;\\n    width: auto;\\n    margin: 0.8rem auto;\\n    --lwc-squareIconMediumBoundary:1.8rem;\\n}\\n\\n.eu-quick-links {\\nbackground-color: #FFF;\\n    box-shadow: 0px 8px 16px rgba(1, 118, 211, 0.1);\\n    border-radius: 24px;\\n}\"}",
+    "UniqueName": "sfiEnergySelfServiceQuickLinks_CME_E_U_8",
+    "VersionNumber": 8,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniUiCard",
+    "VlocityRecordSourceKey": "OmniUiCard/sfiEnergySelfServiceQuickLinks"
+}

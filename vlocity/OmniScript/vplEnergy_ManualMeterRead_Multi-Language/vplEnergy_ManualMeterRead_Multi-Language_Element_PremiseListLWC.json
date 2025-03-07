@@ -1,0 +1,57 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Custom LWC displaying premise list.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "PremiseListLWC",
+    "OmniProcessId": {
+        "Name": "VPLEnergyManualMeterRead",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/ManualMeterRead/Multi-Language",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "PremiseListDetail",
+        "OmniProcessId": {
+            "Name": "VPLEnergyManualMeterRead",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/ManualMeterRead/Multi-Language",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/ManualMeterRead/Multi-Language/PremiseListDetail",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "PremiseListDetail",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "bStandalone": false,
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "customAttributes": [
+            {
+                "name": "record-list",
+                "source": "%AccountPremise%"
+            },
+            {
+                "name": "columns",
+                "source": "%PremiseColumns%"
+            },
+            {
+                "name": "max-row-selection",
+                "source": "Single"
+            }
+        ],
+        "disOnTplt": false,
+        "hide": false,
+        "label": "sfiEnergyConsolePremiseList",
+        "lwcName": "%vlocity_namespace%__sfiEnergyOSDataTable",
+        "show": null
+    },
+    "Type": "Custom Lightning Web Component",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/ManualMeterRead/Multi-Language/PremiseListLWC"
+}

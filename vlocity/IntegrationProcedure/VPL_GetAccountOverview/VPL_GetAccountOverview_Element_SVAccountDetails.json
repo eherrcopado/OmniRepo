@@ -1,0 +1,54 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVAccountDetails",
+    "OmniProcessId": {
+        "Name": "VPL/GetAccountOverview",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetAccountOverview/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "OverViewBlock",
+        "OmniProcessId": {
+            "Name": "VPL/GetAccountOverview",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetAccountOverview/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetAccountOverview/Procedure/OverViewBlock",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "OverViewBlock",
+    "ParentElementType": "Conditional Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AccountCreatedDate": "=CONCAT(%DRGetAccountDetails:AccountCreatedDate%,\" - \",\"Present\")",
+            "BillingAccountId": "=IF(%DRGetAccountDetails:BillingAccountId%!=null,%DRGetAccountDetails:BillingAccountId%,%GetBillingAccount:getBillingAccountDetails:BillingId%)",
+            "BillingAccountName": "=IF(%DRGetAccountDetails:BillingAccountName%!=null,%DRGetAccountDetails:BillingAccountName%,%GetBillingAccount:getBillingAccountDetails:BillingAccountName%)",
+            "BusinessAccountId": "=%DRGetAccountDetails:BusinessAccountId%",
+            "ContractExpiringIn90Days": "=IF(%DRGetContract:CountOfContractEndIn90Days%==1,true,false)",
+            "CustomerId": "=%DRGetAccountDetails:CustomerId%",
+            "OpportunityCount": "=%DRGetAccountDetails:OpportunityCount%",
+            "PremisesCount": "=LISTSIZE(%DRGetPremiseDetails:ServiceAccount%)"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetAccountOverview/Procedure/SVAccountDetails"
+}

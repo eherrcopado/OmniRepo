@@ -1,0 +1,44 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Checks whether Date of Birth is less than TODAY",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DOBFormula",
+    "OmniProcessId": {
+        "Name": "VPL-MoveIn-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "NewCustomerDetails",
+        "OmniProcessId": {
+            "Name": "VPL-MoveIn-WithoutCPQ",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/NewCustomerDetails",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "NewCustomerDetails",
+    "ParentElementType": "Block",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dateFormat": "MM-dd-yyyy",
+        "disOnTplt": false,
+        "expression": "DATE(%CustomerDOB%)<TODAY()",
+        "hide": true,
+        "hideGroupSep": false,
+        "inputWidth": 12,
+        "showInputWidth": false
+    },
+    "Type": "Formula",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/DOBFormula"
+}

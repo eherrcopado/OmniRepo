@@ -1,0 +1,62 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetVlocityEnvelopeDetails",
+    "OmniProcessId": {
+        "Name": "sfiArchResusableDocuSignSendEnvelope",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfriArch/ResusableDocuSignSendEnvelope/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "Envelope": {
+                "documents": [
+                    {
+                        "documentId": "1",
+                        "fileExtension": "docx",
+                        "name": "%docTitle%",
+                        "sourceId": "%DetermineDocumentToSend:myDocument%",
+                        "sourceType": "Content"
+                    }
+                ],
+                "emailSettings": {
+                    "emailBody": "Automotive Quote Proposal-Sent Via DocuSign Envelope",
+                    "emailSubject": "Please sign this Automotive Quote Proposal"
+                },
+                "parentId": "%SObjectId%",
+                "recipients": {
+                    "signers": [
+                        {
+                            "email": "%generateDocument:recipientEmail%",
+                            "name": "%generateDocument:recipientName%",
+                            "recipientId": "1",
+                            "recipientLocale": "EN",
+                            "recipientType": "signer",
+                            "routingNumber": "1",
+                            "routingOrder": "1",
+                            "signerRole": "1"
+                        }
+                    ]
+                }
+            }
+        },
+        "executionConditionalFormula": "%isOmniStudio% <> 'true'",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfriArch/ResusableDocuSignSendEnvelope/Procedure/SetVlocityEnvelopeDetails"
+}

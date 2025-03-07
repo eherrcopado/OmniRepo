@@ -1,0 +1,31 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "PremiseAddressList",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleGetUsageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/GetUsageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "LoopBlock1",
+        "loopList": "DRGetPremiseDetails:ServiceAccount",
+        "loopOutput": {
+            "PremiseAddress": "%DRGetPremiseInfo:PremiseAddress%",
+            "PremiseId": "%DRGetPremiseInfo:PremiseId%",
+            "PremiseIdentifier": "%DRGetPremiseInfo:PremiseIdentifier%",
+            "PremisePlan": "%DRGetPremiseInfo:Plan%"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/GetUsageInfo/Procedure/PremiseAddressList"
+}

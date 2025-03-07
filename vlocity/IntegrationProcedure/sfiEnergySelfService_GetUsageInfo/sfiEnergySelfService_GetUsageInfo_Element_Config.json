@@ -1,0 +1,103 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "Config",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfServiceGetUsageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/GetUsageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "chartConfig": {
+                "backgroundColor": "rgb(8, 167, 223)",
+                "backgroundFill": false,
+                "borderColor": "rgb(255, 255, 255)",
+                "borderWidth": "0",
+                "chartType": "bar",
+                "electricityBackgroundColor": "rgb(1, 118, 211)",
+                "gasBackgroundColor": "rgb(1, 195, 179)",
+                "legendAlign": "start",
+                "legendPosition": "bottom",
+                "xAxesGridLinesColor": "rgba(220,220,220, .2)",
+                "xAxesMaxBarThickness": "20",
+                "yAxesGridLinesLineWidth": "2"
+            },
+            "defaultFrequency": "EnergyLastMnth",
+            "defaultTab": "Electricity",
+            "tabConfig": [
+                {
+                    "defaultUnit": "Kwh",
+                    "label": "SfiEnergySelfServiceElectricity",
+                    "unitCurrencyFilter": [
+                        {
+                            "label": "SfiEnergySelfServiceKwh",
+                            "value": "Kwh"
+                        },
+                        {
+                            "label": "SfiEnergySelfServiceKBtu",
+                            "value": "KBtu"
+                        },
+                        {
+                            "label": "SfiEnergySelfServiceEstDollar",
+                            "value": "Dollars"
+                        }
+                    ],
+                    "value": "Electricity"
+                },
+                {
+                    "defaultUnit": "MCM",
+                    "label": "SfiEnergySelfServiceGas",
+                    "unitCurrencyFilter": [
+                        {
+                            "label": "SfiEnergySelfServiceMCM",
+                            "value": "MCM"
+                        },
+                        {
+                            "label": "SfiEnergySelfServiceKBtu",
+                            "value": "KBtu"
+                        },
+                        {
+                            "label": "SfiEnergySelfServiceEstDollar",
+                            "value": "Dollars"
+                        }
+                    ],
+                    "value": "Gas"
+                },
+                {
+                    "defaultUnit": "KBtu",
+                    "label": "SfiEnergySelfServiceElectricityAndGas",
+                    "unitCurrencyFilter": [
+                        {
+                            "label": "SfiEnergySelfServiceKBtu",
+                            "value": "KBtu"
+                        },
+                        {
+                            "label": "SfiEnergySelfServiceEstDollar",
+                            "value": "Dollars"
+                        }
+                    ],
+                    "value": "ElectricityAndGas"
+                }
+            ]
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues3",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/GetUsageInfo/Procedure/Config"
+}

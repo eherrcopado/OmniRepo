@@ -1,0 +1,866 @@
+{
+    "dataSource": {
+        "contextVariables": [
+            {
+                "id": 2,
+                "name": "recordId",
+                "val": "0013y00001g0JBgAAM"
+            }
+        ],
+        "orderBy": {
+            "isReverse": false,
+            "name": ""
+        },
+        "type": "IntegrationProcedures",
+        "value": {
+            "dsDelay": "",
+            "inputMap": {
+                "accountId": "{recordId}"
+            },
+            "ipMethod": "CustomerStory_Marshaller",
+            "jsonMap": "{\"recordId\":\"{recordId}\"}",
+            "resultVar": "",
+            "vlocityAsync": false
+        }
+    },
+    "dynamicCanvasWidth": {
+        "type": "desktop"
+    },
+    "enableLwc": true,
+    "events": [
+        {
+            "actionData": {
+                "card": "{card}",
+                "isTrackingDisabled": true,
+                "stateAction": {
+                    "eventName": "updatedatasource",
+                    "id": "flex-action-1608761832946",
+                    "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"\",\"id\":1}]}",
+                    "type": "cardAction"
+                }
+            },
+            "channelname": "interactionStoryList",
+            "displayLabel": "interactionStoryList:data",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "data",
+            "eventtype": "pubsub",
+            "key": "event-0",
+            "recordIndex": "0"
+        }
+    ],
+    "globalCSS": true,
+    "isFlex": true,
+    "lwc": {
+        "DeveloperName": "cfDemoConsoleStoryFrame_3_sfi",
+        "Id": "0RbDn000004D6U0KAK",
+        "ManageableState": "unmanaged",
+        "MasterLabel": "cfDemoConsoleStoryFrame_3_sfi",
+        "NamespacePrefix": "c"
+    },
+    "states": [
+        {
+            "actions": [
+            ],
+            "childCards": [
+                "demoConsoleStoryCard"
+            ],
+            "components": {
+                "layer-0": {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "class": "slds-col ",
+                                    "element": "outputField",
+                                    "elementLabel": "txtCustomerStoryLabel",
+                                    "key": "element_element_block_0_0_outputField_0_0",
+                                    "name": "Text",
+                                    "parentElementKey": "element_block_0_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "mergeField": "%3Cdiv%3E%3Cspan%20style=%22font-size:%2012pt;%22%3E%3Cspan%20class=%22slds-text-heading_medium%22%3E%7BfilterLabel%7D%3C/span%3E%3C/span%3E%3C/div%3E",
+                                        "record": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "9",
+                                        "isResponsive": true,
+                                        "large": "9",
+                                        "medium": "11",
+                                        "small": "11"
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "",
+                                        "container": {
+                                            "class": ""
+                                        },
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "padding-top:10px; padding-left:18px",
+                                        "margin": [
+                                        ],
+                                        "minHeight": "20px",
+                                        "padding": [
+                                        ],
+                                        "size": {
+                                            "default": "9",
+                                            "isResponsive": true,
+                                            "large": "9",
+                                            "medium": "11",
+                                            "small": "11"
+                                        },
+                                        "sizeClass": "slds-large-size_9-of-12  slds-medium-size_11-of-12  slds-small-size_11-of-12  slds-size_9-of-12 ",
+                                        "style": "          min-height:20px;   padding-top:10px; padding-left:18px",
+                                        "text": {
+                                            "align": "",
+                                            "color": ""
+                                        }
+                                    },
+                                    "type": "text",
+                                    "userUpdatedElementLabel": true
+                                },
+                                {
+                                    "class": "slds-col ",
+                                    "element": "flexMenu",
+                                    "elementLabel": "mnuFilter",
+                                    "key": "element_element_block_0_0_flexMenu_1_0",
+                                    "name": "Menu",
+                                    "parentElementKey": "element_block_0_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "iconName": "utility:filter",
+                                        "iconPosition": "left",
+                                        "iconSize": "x-small",
+                                        "label": "",
+                                        "menuItems": [
+                                            {
+                                                "actionData": {
+                                                    "card": "{card}",
+                                                    "isTrackingDisabled": true,
+                                                    "stateAction": {
+                                                        "Web Page": {
+                                                            "targetName": "/apex"
+                                                        },
+                                                        "actionConditions": null,
+                                                        "displayName": "All",
+                                                        "eventName": "updatedatasource",
+                                                        "id": "flex-action-1608762639558",
+                                                        "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x000006DjcSAAS\",\"id\":2}]}",
+                                                        "openUrlIn": "Current Window",
+                                                        "parent": "menu",
+                                                        "targetType": "Web Page",
+                                                        "type": "cardAction",
+                                                        "vlocityIcon": ""
+                                                    },
+                                                    "stateObj": "{record}"
+                                                },
+                                                "actionList": [
+                                                    {
+                                                        "card": "{card}",
+                                                        "isTrackingDisabled": true,
+                                                        "stateAction": {
+                                                            "Web Page": {
+                                                                "targetName": "/apex"
+                                                            },
+                                                            "actionConditions": null,
+                                                            "displayName": "All",
+                                                            "eventName": "updatedatasource",
+                                                            "id": "flex-action-1608762639558",
+                                                            "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x000006DjcSAAS\",\"id\":2}]}",
+                                                            "openUrlIn": "Current Window",
+                                                            "parent": "menu",
+                                                            "targetType": "Web Page",
+                                                            "type": "cardAction",
+                                                            "vlocityIcon": ""
+                                                        },
+                                                        "stateObj": "{record}"
+                                                    }
+                                                ],
+                                                "iconName": "",
+                                                "iconPosition": "",
+                                                "label": "All",
+                                                "name": "menu-item-0-0",
+                                                "showSpinner": "false"
+                                            },
+                                            {
+                                                "actionData": {
+                                                    "card": "{card}",
+                                                    "isTrackingDisabled": true,
+                                                    "stateAction": {
+                                                        "Web Page": {
+                                                            "targetName": "/apex"
+                                                        },
+                                                        "actionConditions": null,
+                                                        "displayName": "Cases",
+                                                        "eventName": "updatedatasource",
+                                                        "id": "flex-action-1608762715596",
+                                                        "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Cases\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x000006DjcSAAS\",\"id\":2}]}",
+                                                        "openUrlIn": "Current Window",
+                                                        "parent": "menu",
+                                                        "targetType": "Web Page",
+                                                        "type": "cardAction",
+                                                        "vlocityIcon": ""
+                                                    },
+                                                    "stateObj": "{record}"
+                                                },
+                                                "actionList": [
+                                                    {
+                                                        "card": "{card}",
+                                                        "isTrackingDisabled": true,
+                                                        "stateAction": {
+                                                            "Web Page": {
+                                                                "targetName": "/apex"
+                                                            },
+                                                            "actionConditions": null,
+                                                            "displayName": "Cases",
+                                                            "eventName": "updatedatasource",
+                                                            "id": "flex-action-1608762715596",
+                                                            "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Cases\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x000006DjcSAAS\",\"id\":2}]}",
+                                                            "openUrlIn": "Current Window",
+                                                            "parent": "menu",
+                                                            "targetType": "Web Page",
+                                                            "type": "cardAction",
+                                                            "vlocityIcon": ""
+                                                        },
+                                                        "stateObj": "{record}"
+                                                    }
+                                                ],
+                                                "iconName": "",
+                                                "iconPosition": "",
+                                                "label": "Cases",
+                                                "name": "menu-item-1-0",
+                                                "showSpinner": "false"
+                                            },
+                                            {
+                                                "actionData": {
+                                                    "card": "{card}",
+                                                    "isTrackingDisabled": true,
+                                                    "stateAction": {
+                                                        "Web Page": {
+                                                            "targetName": "/apex"
+                                                        },
+                                                        "actionConditions": null,
+                                                        "displayName": "Opportunities",
+                                                        "eventName": "updatedatasource",
+                                                        "id": "flex-action-1608763321487",
+                                                        "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Opportunities\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x000006DjcSAAS\",\"id\":2}]}",
+                                                        "openUrlIn": "Current Window",
+                                                        "parent": "menu",
+                                                        "targetType": "Web Page",
+                                                        "type": "cardAction",
+                                                        "vlocityIcon": ""
+                                                    },
+                                                    "stateObj": "{record}"
+                                                },
+                                                "actionList": [
+                                                    {
+                                                        "card": "{card}",
+                                                        "isTrackingDisabled": true,
+                                                        "stateAction": {
+                                                            "Web Page": {
+                                                                "targetName": "/apex"
+                                                            },
+                                                            "actionConditions": null,
+                                                            "displayName": "Opportunities",
+                                                            "eventName": "updatedatasource",
+                                                            "id": "flex-action-1608763321487",
+                                                            "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Opportunities\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x000006DjcSAAS\",\"id\":2}]}",
+                                                            "openUrlIn": "Current Window",
+                                                            "parent": "menu",
+                                                            "targetType": "Web Page",
+                                                            "type": "cardAction",
+                                                            "vlocityIcon": ""
+                                                        },
+                                                        "stateObj": "{record}"
+                                                    }
+                                                ],
+                                                "iconName": "",
+                                                "iconPosition": "",
+                                                "label": "Opportunities",
+                                                "name": "menu-item-2-0",
+                                                "showSpinner": "false"
+                                            },
+                                            {
+                                                "actionData": {
+                                                    "card": "{card}",
+                                                    "stateAction": {
+                                                        "Web Page": {
+                                                            "targetName": "/apex"
+                                                        },
+                                                        "actionConditions": null,
+                                                        "displayName": "Orders",
+                                                        "eventName": "updatedatasource",
+                                                        "id": "flex-action-1617074155480",
+                                                        "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Orders\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x00000Cei1yAAB\",\"id\":2}]}",
+                                                        "openUrlIn": "Current Window",
+                                                        "parent": "menu",
+                                                        "targetType": "Web Page",
+                                                        "type": "cardAction",
+                                                        "vlocityIcon": ""
+                                                    },
+                                                    "stateObj": "{record}"
+                                                },
+                                                "actionList": [
+                                                    {
+                                                        "card": "{card}",
+                                                        "stateAction": {
+                                                            "Web Page": {
+                                                                "targetName": "/apex"
+                                                            },
+                                                            "actionConditions": null,
+                                                            "displayName": "Orders",
+                                                            "eventName": "updatedatasource",
+                                                            "id": "flex-action-1617074155480",
+                                                            "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Orders\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x00000Cei1yAAB\",\"id\":2}]}",
+                                                            "openUrlIn": "Current Window",
+                                                            "parent": "menu",
+                                                            "targetType": "Web Page",
+                                                            "type": "cardAction",
+                                                            "vlocityIcon": ""
+                                                        },
+                                                        "stateObj": "{record}"
+                                                    }
+                                                ],
+                                                "iconName": "",
+                                                "label": "Orders",
+                                                "name": "menu-item-5-0",
+                                                "showSpinner": "false"
+                                            },
+                                            {
+                                                "actionData": {
+                                                    "card": "{card}",
+                                                    "stateAction": {
+                                                        "Web Page": {
+                                                            "targetName": "/apex"
+                                                        },
+                                                        "actionConditions": null,
+                                                        "displayName": "Work Orders",
+                                                        "eventName": "updatedatasource",
+                                                        "id": "flex-action-1617074165863",
+                                                        "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"WorkOrders\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x00000Cei1yAAB\",\"id\":2}]}",
+                                                        "openUrlIn": "Current Window",
+                                                        "parent": "menu",
+                                                        "targetType": "Web Page",
+                                                        "type": "cardAction",
+                                                        "vlocityIcon": ""
+                                                    },
+                                                    "stateObj": "{record}"
+                                                },
+                                                "actionList": [
+                                                    {
+                                                        "card": "{card}",
+                                                        "stateAction": {
+                                                            "Web Page": {
+                                                                "targetName": "/apex"
+                                                            },
+                                                            "actionConditions": null,
+                                                            "displayName": "Work Orders",
+                                                            "eventName": "updatedatasource",
+                                                            "id": "flex-action-1617074165863",
+                                                            "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"WorkOrders\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x00000Cei1yAAB\",\"id\":2}]}",
+                                                            "openUrlIn": "Current Window",
+                                                            "parent": "menu",
+                                                            "targetType": "Web Page",
+                                                            "type": "cardAction",
+                                                            "vlocityIcon": ""
+                                                        },
+                                                        "stateObj": "{record}"
+                                                    }
+                                                ],
+                                                "iconName": "",
+                                                "label": "Work Orders",
+                                                "name": "menu-item-6-0",
+                                                "showSpinner": "false"
+                                            },
+                                            {
+                                                "actionData": {
+                                                    "card": "{card}",
+                                                    "isTrackingDisabled": true,
+                                                    "stateAction": {
+                                                        "Web Page": {
+                                                            "targetName": "/apex"
+                                                        },
+                                                        "actionConditions": null,
+                                                        "displayName": "Tasks",
+                                                        "eventName": "updatedatasource",
+                                                        "id": "flex-action-1617073822838",
+                                                        "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Tasks\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x000006DjcSAAS\",\"id\":2}]}",
+                                                        "openUrlIn": "Current Window",
+                                                        "parent": "menu",
+                                                        "targetType": "Web Page",
+                                                        "type": "cardAction",
+                                                        "vlocityIcon": ""
+                                                    },
+                                                    "stateObj": "{record}"
+                                                },
+                                                "actionList": [
+                                                    {
+                                                        "card": "{card}",
+                                                        "isTrackingDisabled": true,
+                                                        "stateAction": {
+                                                            "Web Page": {
+                                                                "targetName": "/apex"
+                                                            },
+                                                            "actionConditions": null,
+                                                            "displayName": "Tasks",
+                                                            "eventName": "updatedatasource",
+                                                            "id": "flex-action-1617073822838",
+                                                            "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Tasks\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x000006DjcSAAS\",\"id\":2}]}",
+                                                            "openUrlIn": "Current Window",
+                                                            "parent": "menu",
+                                                            "targetType": "Web Page",
+                                                            "type": "cardAction",
+                                                            "vlocityIcon": ""
+                                                        },
+                                                        "stateObj": "{record}"
+                                                    }
+                                                ],
+                                                "iconName": "",
+                                                "iconPosition": "",
+                                                "label": "Tasks",
+                                                "name": "menu-item-3-0",
+                                                "showSpinner": "false"
+                                            },
+                                            {
+                                                "actionData": {
+                                                    "card": "{card}",
+                                                    "stateAction": {
+                                                        "Web Page": {
+                                                            "targetName": "/apex"
+                                                        },
+                                                        "actionConditions": null,
+                                                        "displayName": "Application",
+                                                        "eventName": "updatedatasource",
+                                                        "id": "flex-action-1622764336726",
+                                                        "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Applications\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x00000Cei1yAAB\",\"id\":2}]}",
+                                                        "openUrlIn": "Current Window",
+                                                        "parent": "menu",
+                                                        "targetType": "Web Page",
+                                                        "type": "cardAction",
+                                                        "vlocityIcon": ""
+                                                    },
+                                                    "stateObj": "{record}"
+                                                },
+                                                "actionList": [
+                                                    {
+                                                        "card": "{card}",
+                                                        "stateAction": {
+                                                            "Web Page": {
+                                                                "targetName": "/apex"
+                                                            },
+                                                            "actionConditions": null,
+                                                            "displayName": "Application",
+                                                            "eventName": "updatedatasource",
+                                                            "id": "flex-action-1622764336726",
+                                                            "message": "{\"type\":\"IntegrationProcedures\",\"value\":{\"ipMethod\":\"CustomerStory_Marshaller\",\"vlocityAsync\":false,\"inputMap\":{\"accountId\":\"{recordId}\",\"inboundFilter\":\"Applications\"}},\"orderBy\":{\"name\":\"\",\"isReverse\":false},\"contextVariables\":[{\"name\":\"recordId\",\"val\":\"0014x00000Cei1yAAB\",\"id\":2}]}",
+                                                            "openUrlIn": "Current Window",
+                                                            "parent": "menu",
+                                                            "targetType": "Web Page",
+                                                            "type": "cardAction",
+                                                            "vlocityIcon": ""
+                                                        },
+                                                        "stateObj": "{record}"
+                                                    }
+                                                ],
+                                                "iconName": "",
+                                                "label": "Application",
+                                                "name": "menu-item-1622764336697-0",
+                                                "showSpinner": "false"
+                                            }
+                                        ],
+                                        "overflow": true,
+                                        "position": "right",
+                                        "record": "{record}",
+                                        "size": "small",
+                                        "type": "action",
+                                        "variant": "neutral"
+                                    },
+                                    "size": {
+                                        "default": "3",
+                                        "isResponsive": true,
+                                        "large": "3",
+                                        "medium": "1",
+                                        "small": "1"
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "slds-text-align_left slds-p-right_x-small ",
+                                        "container": {
+                                            "class": ""
+                                        },
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "padding-top:7px;",
+                                        "margin": [
+                                        ],
+                                        "minHeight": "",
+                                        "padding": [
+                                            {
+                                                "label": "right:x-small",
+                                                "size": "x-small",
+                                                "type": "right"
+                                            }
+                                        ],
+                                        "size": {
+                                            "default": "3",
+                                            "isResponsive": true,
+                                            "large": "3",
+                                            "medium": "1",
+                                            "small": "1"
+                                        },
+                                        "sizeClass": "slds-large-size_3-of-12 slds-medium-size_1-of-12 slds-small-size_1-of-12 slds-size_3-of-12 ",
+                                        "style": "     : #ccc 1px solid; \n         padding-top:7px;",
+                                        "text": {
+                                            "align": "left",
+                                            "color": ""
+                                        }
+                                    },
+                                    "styleObjects": [
+                                        {
+                                            "conditionString": "",
+                                            "conditions": "default",
+                                            "draggable": false,
+                                            "key": 0,
+                                            "label": "Default",
+                                            "name": "Default",
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "slds-text-align_left slds-p-right_x-small ",
+                                                "container": {
+                                                    "class": ""
+                                                },
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "padding-top:7px;",
+                                                "margin": [
+                                                ],
+                                                "minHeight": "",
+                                                "padding": [
+                                                    {
+                                                        "label": "right:x-small",
+                                                        "size": "x-small",
+                                                        "type": "right"
+                                                    }
+                                                ],
+                                                "size": {
+                                                    "default": "3",
+                                                    "isResponsive": true,
+                                                    "large": "3",
+                                                    "medium": "1",
+                                                    "small": "1"
+                                                },
+                                                "sizeClass": "slds-large-size_3-of-12 slds-medium-size_1-of-12 slds-small-size_1-of-12 slds-size_3-of-12 ",
+                                                "style": "     : #ccc 1px solid; \n         padding-top:7px;",
+                                                "text": {
+                                                    "align": "left",
+                                                    "color": ""
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "type": "element",
+                                    "userUpdatedElementLabel": true
+                                }
+                            ],
+                            "class": "slds-col ",
+                            "element": "block",
+                            "elementLabel": "Block-3",
+                            "name": "Block",
+                            "property": {
+                                "card": "{card}",
+                                "collapsedByDefault": false,
+                                "collapsible": false,
+                                "label": "Block",
+                                "record": "{record}"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "background": {
+                                    "color": "#F4F6F9",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "slds-p-around_x-small ",
+                                "container": {
+                                    "class": ""
+                                },
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                    {
+                                        "label": "around:x-small",
+                                        "size": "x-small",
+                                        "type": "around"
+                                    }
+                                ],
+                                "size": {
+                                    "default": "12",
+                                    "isResponsive": false
+                                },
+                                "sizeClass": "slds-size_12-of-12 ",
+                                "style": "background-color:#F4F6F9;             ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "type": "block"
+                        },
+                        {
+                            "class": "slds-col ",
+                            "element": "childCardPreview",
+                            "elementLabel": "FlexCard-4",
+                            "name": "FlexCard",
+                            "property": {
+                                "cardName": "demoConsoleStoryCard",
+                                "cardNode": "{record.InteractionActivities}",
+                                "isChildCardTrackingEnabled": false,
+                                "recordId": "{recordId}",
+                                "selectedState": "Case"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": true,
+                                "large": "12",
+                                "medium": "12",
+                                "small": "12"
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "background": {
+                                    "color": "#ffffff",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "slds-p-left_x-small slds-p-top_x-small slds-p-right_x-small ",
+                                "container": {
+                                    "class": ""
+                                },
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                    {
+                                        "label": "left:x-small",
+                                        "size": "x-small",
+                                        "type": "left"
+                                    },
+                                    {
+                                        "label": "top:x-small",
+                                        "size": "x-small",
+                                        "type": "top"
+                                    },
+                                    {
+                                        "label": "right:x-small",
+                                        "size": "x-small",
+                                        "type": "right"
+                                    }
+                                ],
+                                "size": {
+                                    "default": "12",
+                                    "isResponsive": true,
+                                    "large": "12",
+                                    "medium": "12",
+                                    "small": "12"
+                                },
+                                "sizeClass": "slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-small-size_12-of-12 slds-size_12-of-12 ",
+                                "style": "background-color:#ffffff;             ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "type": "element"
+                        }
+                    ]
+                }
+            },
+            "conditions": {
+                "group": [
+                ],
+                "id": "state-condition-object",
+                "isParent": true
+            },
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "documents": [
+            ],
+            "fields": [
+            ],
+            "isSmartAction": false,
+            "name": "Active",
+            "omniscripts": [
+            ],
+            "smartAction": {
+            },
+            "styleObject": {
+                "background": {
+                    "color": "",
+                    "image": "",
+                    "position": "",
+                    "repeat": "",
+                    "size": ""
+                },
+                "border": {
+                    "color": "",
+                    "radius": "",
+                    "style": "",
+                    "type": [
+                    ],
+                    "width": ""
+                },
+                "class": " slds-m-bottom_x-small ",
+                "container": {
+                    "class": ""
+                },
+                "elementStyleProperties": {
+                },
+                "inlineStyle": "",
+                "margin": [
+                    {
+                        "label": "bottom:x-small",
+                        "size": "x-small",
+                        "type": "bottom"
+                    }
+                ],
+                "padding": [
+                ],
+                "size": {
+                    "default": "12",
+                    "isResponsive": false
+                },
+                "sizeClass": "slds-size_12-of-12 ",
+                "style": "             ",
+                "text": {
+                    "align": "",
+                    "color": ""
+                }
+            }
+        }
+    ],
+    "theme": "slds",
+    "title": "demo_Console_Story_Frame",
+    "xmlJson": [
+        {
+            "@attributes": {
+                "targets": "lightning__AppPage",
+                "xmlns": "http://soap.sforce.com/2006/04/metadata"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                },
+                {
+                    "@attributes": {
+                        "name": "recordId",
+                        "type": "String"
+                    }
+                }
+            ]
+        },
+        {
+            "@attributes": {
+                "targets": "lightning__RecordPage",
+                "xmlns": "http://soap.sforce.com/2006/04/metadata"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                }
+            ]
+        }
+    ],
+    "xmlObject": {
+        "apiVersion": 51,
+        "description": "Backwards compatible wrapper",
+        "isExplicitImport": false,
+        "isExposed": true,
+        "masterLabel": "demoConsoleStoryFrame",
+        "runtimeNamespace": "",
+        "targetConfigs": "CiAgICA8dGFyZ2V0Q29uZmlnIHhtbG5zPSJodHRwOi8vc29hcC5zZm9yY2UuY29tLzIwMDYvMDQvbWV0YWRhdGEiIHRhcmdldHM9ImxpZ2h0bmluZ19fQXBwUGFnZSI+CiAgICAgIDxwcm9wZXJ0eSBuYW1lPSJkZWJ1ZyIgdHlwZT0iQm9vbGVhbiIvPgogICAgICA8cHJvcGVydHkgbmFtZT0icmVjb3JkSWQiIHR5cGU9IlN0cmluZyIvPgogICAgPC90YXJnZXRDb25maWc+CiAgICA8dGFyZ2V0Q29uZmlnIHhtbG5zPSJodHRwOi8vc29hcC5zZm9yY2UuY29tLzIwMDYvMDQvbWV0YWRhdGEiIHRhcmdldHM9ImxpZ2h0bmluZ19fUmVjb3JkUGFnZSI+CiAgICAgIDxwcm9wZXJ0eSBuYW1lPSJkZWJ1ZyIgdHlwZT0iQm9vbGVhbiIvPgogICAgPC90YXJnZXRDb25maWc+CiAg",
+        "targets": {
+            "target": [
+                "lightning__RecordPage",
+                "lightning__AppPage",
+                "lightning__HomePage"
+            ]
+        }
+    }
+}

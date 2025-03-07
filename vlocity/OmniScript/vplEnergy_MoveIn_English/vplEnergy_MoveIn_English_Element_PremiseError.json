@@ -1,0 +1,84 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Msg is displayed if No Premise Records Found",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "PremiseError",
+    "OmniProcessId": {
+        "Name": "VPL-MoveIn-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "SelectPremises",
+        "OmniProcessId": {
+            "Name": "VPL-MoveIn-WithoutCPQ",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/SelectPremises",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "SelectPremises",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "hideLabel": true,
+        "messages": [
+            {
+                "active": false,
+                "type": "Success",
+                "value": true
+            },
+            {
+                "active": true,
+                "text": "No Premise Records Found",
+                "type": "Requirement",
+                "value": false
+            }
+        ],
+        "messages|1:text": "SAP_ISUPremiseError",
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "<>",
+                        "field": "ServiceLocation"
+                    },
+                    {
+                        "condition": "=",
+                        "field": "PremId"
+                    },
+                    {
+                        "condition": "<>",
+                        "data": "No",
+                        "field": "NewAccountNeeded"
+                    }
+                ]
+            }
+        },
+        "validateExpression": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "<>",
+                        "field": "PremId"
+                    }
+                ]
+            }
+        }
+    },
+    "Type": "Validation",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/PremiseError"
+}

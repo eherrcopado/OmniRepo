@@ -1,0 +1,36 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "GetFullStatement",
+    "OmniProcessId": {
+        "Name": "VPL/GetBillingInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetBillingInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "LoopBlock1",
+        "loopList": "DRGetAccountStatementHistory:FullStatement",
+        "loopOutput": {
+            "BillAmount": "%DRGetAccountStatementHistory:FullStatement:BillAmount%",
+            "BillBalance": "%DRGetAccountStatementHistory:FullStatement:BillBalance%",
+            "BillMethod": "%DRGetLineItem:BillMethod%",
+            "LineItem": "%DRGetLineItem:StatementLineItem%",
+            "Name": "%DRGetAccountStatementHistory:FullStatement:Name%",
+            "StatementDate": "%DRGetAccountStatementHistory:FullStatement:StatementDate%",
+            "StatementId": "%DRGetAccountStatementHistory:FullStatement:StatementId%",
+            "StatementURL": "%DRGetAccountStatementHistory:FullStatement:StatementURL%",
+            "Type": "%DRGetLineItem:Type%"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetBillingInfo/Procedure/GetFullStatement"
+}

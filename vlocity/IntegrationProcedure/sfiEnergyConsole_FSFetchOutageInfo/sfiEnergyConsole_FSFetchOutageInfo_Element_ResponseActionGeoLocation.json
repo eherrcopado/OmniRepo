@@ -1,0 +1,44 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "ResponseActionGeoLocation",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "TabName": "%TabName%",
+            "premiseInfo:premisesWithEarlierOutage": "=LIST(%FilterDuplicateEarlierPremisesOutageGeoLoc%)",
+            "premiseInfo:premisesWithOutage": "=LIST(%FilterDuplicatePremisesOutageGeoLoc%)",
+            "premiseInfo:recordCount": "=IF(ISBLANK(FilterDuplicatePremisesOutageGeoLoc),0,LISTSIZE(FilterDuplicatePremisesOutageGeoLoc))",
+            "premiseInfo:recordCountforEarlierOutagePremises": "=IF(ISBLANK(FilterDuplicateEarlierPremisesOutageGeoLoc),0,LISTSIZE(FilterDuplicateEarlierPremisesOutageGeoLoc))",
+            "premiseInfo:sameResolutionTime": "=IF(ISBLANK(CheckForSameResolutionTimeGeoLoc),false,IF(LISTSIZE(CheckForSameResolutionTimeGeoLoc) == 1,true,false))"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "IF(%SVOutageConfigs:requestFilterCriteria% == \"geoLocation\",true,false)",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/ResponseActionGeoLocation"
+}

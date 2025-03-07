@@ -1,0 +1,108 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVGasThisMonthInDaysAC",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "GasBlock",
+        "OmniProcessId": {
+            "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/GasBlock",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "GasBlock",
+    "ParentElementType": "Conditional Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "usageData": [
+                {
+                    "xAxis": "01",
+                    "yAxis": "85"
+                },
+                {
+                    "xAxis": "02",
+                    "yAxis": "78"
+                },
+                {
+                    "xAxis": "03",
+                    "yAxis": "74"
+                },
+                {
+                    "xAxis": "04",
+                    "yAxis": "70"
+                },
+                {
+                    "xAxis": "05",
+                    "yAxis": "163"
+                },
+                {
+                    "xAxis": "06",
+                    "yAxis": "165"
+                },
+                {
+                    "xAxis": "07",
+                    "yAxis": "132"
+                },
+                {
+                    "xAxis": "08",
+                    "yAxis": "73"
+                },
+                {
+                    "xAxis": "09",
+                    "yAxis": "99"
+                },
+                {
+                    "xAxis": "10",
+                    "yAxis": "105"
+                },
+                {
+                    "xAxis": "11",
+                    "yAxis": "89"
+                },
+                {
+                    "xAxis": "12",
+                    "yAxis": "97"
+                },
+                {
+                    "xAxis": "13",
+                    "yAxis": "95"
+                },
+                {
+                    "xAxis": "14",
+                    "yAxis": "60"
+                },
+                {
+                    "xAxis": "15",
+                    "yAxis": "121"
+                }
+            ]
+        },
+        "executionConditionalFormula": "%tabName%=\"Gas\" && %frequency%=\"EnergyThisMnth\" && %dimension%=\"EnergyActualConsumption\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "data",
+        "responseJSONPath": "usageData",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/SVGasThisMonthInDaysAC"
+}

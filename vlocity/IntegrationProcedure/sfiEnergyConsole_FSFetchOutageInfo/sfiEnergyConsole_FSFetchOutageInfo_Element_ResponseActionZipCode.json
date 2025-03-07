@@ -1,0 +1,44 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "ResponseActionZipCode",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "TabName": "%TabName%",
+            "premiseInfo:premisesWithEarlierOutage": "=LIST(%FilterDuplicateEarlierPremisesOutageZipCode%)",
+            "premiseInfo:premisesWithOutage": "=LIST(%FilterDuplicatePremisesOutageZipCode%)",
+            "premiseInfo:recordCount": "=IF(ISBLANK(FilterDuplicatePremisesOutageZipCode),0,LISTSIZE(FilterDuplicatePremisesOutageZipCode))",
+            "premiseInfo:recordCountforEarlierOutagePremises": "=IF(ISBLANK(FilterDuplicateEarlierPremisesOutageZipCode),0,LISTSIZE(FilterDuplicateEarlierPremisesOutageZipCode))",
+            "premiseInfo:sameResolutionTime": "=IF(ISBLANK(CheckForSameResolutionTimeZipCode),false,IF(LISTSIZE(CheckForSameResolutionTimeZipCode) == 1,true,false))"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "IF(%SVOutageConfigs:requestFilterCriteria% == \"zipCode\",true,false)",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/ResponseActionZipCode"
+}

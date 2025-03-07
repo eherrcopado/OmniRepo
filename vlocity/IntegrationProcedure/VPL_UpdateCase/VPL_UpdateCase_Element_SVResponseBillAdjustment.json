@@ -1,0 +1,35 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVResponseBillAdjustment",
+    "OmniProcessId": {
+        "Name": "VPL-UpdateCase",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/UpdateCase/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "ResponseMessageBillAdjustment": {
+                "msg": "Meter status for the given month will be adjusted."
+            }
+        },
+        "executionConditionalFormula": "%CaseDetails:RecordTypeName%==\"Billing Dispute\" && %CaseDetails:CaseStatusBillingDispute%==\"Resolved - Adjustment Requested\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/UpdateCase/Procedure/SVResponseBillAdjustment"
+}

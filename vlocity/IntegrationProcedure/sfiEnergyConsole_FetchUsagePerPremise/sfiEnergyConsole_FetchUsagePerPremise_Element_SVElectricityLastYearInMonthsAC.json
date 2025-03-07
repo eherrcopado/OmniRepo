@@ -1,0 +1,96 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVElectricityLastYearInMonthsAC",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "ElectricityBlock",
+        "OmniProcessId": {
+            "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/ElectricityBlock",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "ElectricityBlock",
+    "ParentElementType": "Conditional Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "usageData": [
+                {
+                    "xAxis": "Jan",
+                    "yAxis": "134"
+                },
+                {
+                    "xAxis": "Feb",
+                    "yAxis": "167"
+                },
+                {
+                    "xAxis": "Mar",
+                    "yAxis": "85"
+                },
+                {
+                    "xAxis": "Apr",
+                    "yAxis": "74"
+                },
+                {
+                    "xAxis": "May",
+                    "yAxis": "98"
+                },
+                {
+                    "xAxis": "Jun",
+                    "yAxis": "105"
+                },
+                {
+                    "xAxis": "Jul",
+                    "yAxis": "99"
+                },
+                {
+                    "xAxis": "Aug",
+                    "yAxis": "97"
+                },
+                {
+                    "xAxis": "Sep",
+                    "yAxis": "73"
+                },
+                {
+                    "xAxis": "Oct",
+                    "yAxis": "87"
+                },
+                {
+                    "xAxis": "Nov",
+                    "yAxis": "112"
+                },
+                {
+                    "xAxis": "Dec",
+                    "yAxis": "89"
+                }
+            ]
+        },
+        "executionConditionalFormula": "%tabName%=\"Electricity\" && %frequency%=\"EnergyLastYr\" && %dimension%=\"EnergyActualConsumption\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "data",
+        "responseJSONPath": "usageData",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/SVElectricityLastYearInMonthsAC"
+}

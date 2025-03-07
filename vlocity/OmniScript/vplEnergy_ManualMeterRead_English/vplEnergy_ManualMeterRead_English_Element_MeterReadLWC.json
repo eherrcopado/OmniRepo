@@ -1,0 +1,56 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "MeterReadLWC",
+    "OmniProcessId": {
+        "Name": "VPLEnergyManualMeterRead",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/ManualMeterRead/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "LastMeterReads",
+        "OmniProcessId": {
+            "Name": "VPLEnergyManualMeterRead",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/ManualMeterRead/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/ManualMeterRead/English/LastMeterReads",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "LastMeterReads",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "bStandalone": false,
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "customAttributes": [
+            {
+                "name": "record-list",
+                "source": "%MeterRead%"
+            },
+            {
+                "name": "columns",
+                "source": "%AssetColumns%"
+            },
+            {
+                "name": "lwc-result-node-name",
+                "source": "%LastMeterReads:MeterReadLWC%"
+            }
+        ],
+        "disOnTplt": false,
+        "hide": false,
+        "label": "Asset List",
+        "lwcName": "%vlocity_namespace%__veeEnergyMeterReadOSDataTable",
+        "show": null
+    },
+    "Type": "Custom Lightning Web Component",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/ManualMeterRead/English/MeterReadLWC"
+}

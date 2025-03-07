@@ -1,0 +1,75 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "RemoveDuplicateZipCodes",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalChainableResponse": {
+        },
+        "additionalInput": {
+        },
+        "additionalOutput": {
+        },
+        "advancedMerge": true,
+        "advancedMergeMap": [
+            {
+                "listKey": "DRTransformOutageRequest:outageReq:zipCodes",
+                "matchingPath": "zipCode",
+                "normalizeKey": "1"
+            },
+            {
+                "listKey": "DRTransformOutageRequest:outageReq:zipCodes",
+                "matchingPath": "zipCode",
+                "normalizeKey": "1"
+            }
+        ],
+        "allowMergeNulls": true,
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "dynamicOutputFields": "",
+        "executionConditionalFormula": "IF(%SVOutageConfigs:requestFilterCriteria% == \"zipCode\",true,false)",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+            "ErrorMessage": "RemoveDuplicateZipCodes : Failed to remove duplicate zip codes"
+        },
+        "filterListFormula": "",
+        "hasPrimary": false,
+        "label": "ListAction2",
+        "mergeFields": [
+            null
+        ],
+        "mergeListsOrder": [
+            "DRTransformOutageRequest:outageReq:zipCodes",
+            "DRTransformOutageRequest:outageReq:zipCodes"
+        ],
+        "primaryListKey": "",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": false,
+        "show": null,
+        "sortBy": [
+        ],
+        "sortInDescendingOrder": false,
+        "updateFieldValue": {
+        },
+        "useFormulas": true
+    },
+    "Type": "List Merge Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/RemoveDuplicateZipCodes"
+}

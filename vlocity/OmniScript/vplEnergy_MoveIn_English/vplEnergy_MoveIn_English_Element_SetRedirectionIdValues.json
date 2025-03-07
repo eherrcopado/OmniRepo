@@ -1,0 +1,61 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Set value for Account name to be displayed in confirmation step",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetRedirectionIdValues",
+    "OmniProcessId": {
+        "Name": "VPL-MoveIn-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "cancelLabel": "Cancel",
+        "cancelMessage": "Are you sure?",
+        "completeLabel": "Complete",
+        "completeMessage": "Are you sure you want to complete the script?",
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AccountIdRedirection": "=IF(%CustomerSelection:NewAccountNeeded% = 'No', %CustomerSelection:ExistingAccount-Block:ExistingAccountId%, IF(%CustomerSelection:AccountType% = 'Business', %BusinessAccountId%, %DRId_Account%))",
+            "ContactIdRedirection": "=IF(%CustomerSelection:NewCustomer% = 'Yes', %DRId_Contact%, %CustomerSelection:GetCustomer-Block:CustomerId%)",
+            "DRId_Contact": "=IF(%CustomerSelection:NewCustomer% = 'No', %CustomerSelection:GetCustomer-Block:CustomerId%, %DRId_Contact%)"
+        },
+        "knowledgeOptions": {
+            "dataCategoryCriteria": "",
+            "keyword": "",
+            "language": "English",
+            "publishStatus": "Online",
+            "remoteTimeout": 30000,
+            "typeFilter": ""
+        },
+        "message": {
+        },
+        "nextLabel": "Next",
+        "nextWidth": 3,
+        "previousLabel": "Previous",
+        "previousWidth": 3,
+        "pubsub": false,
+        "remoteOptions": {
+        },
+        "remoteTimeout": 30000,
+        "saveLabel": "Save for later",
+        "saveMessage": "Are you sure you want to save it for later?",
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "validationRequired": "None",
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/SetRedirectionIdValues"
+}

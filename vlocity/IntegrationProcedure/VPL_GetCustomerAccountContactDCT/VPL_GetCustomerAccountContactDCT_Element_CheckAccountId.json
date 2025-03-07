@@ -1,0 +1,34 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Set AccountId Value",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "CheckAccountId",
+    "OmniProcessId": {
+        "Name": "VPL-GetAccountContactDCT",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetCustomerAccountContactDCT/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "SetAccountId": "=IF(%DRGetUserAccountId:UserAccountId% == NULL, Id, DRGetUserAccountId:UserAccountId)"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetCustomerAccountContactDCT/Procedure/CheckAccountId"
+}

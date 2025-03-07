@@ -1,0 +1,62 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "IF(%SVOutageConfigs:integrationEnabled% && %SVOutageConfigs:integrationType% == \"XML\",true,false)",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRTransformRequestJSONtoXML",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "IntegrationEnabledBlock",
+        "OmniProcessId": {
+            "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/IntegrationEnabledBlock",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "IntegrationEnabledBlock",
+    "ParentElementType": "Conditional Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "geoLocations": "=RemoveDuplicateGeoLocations",
+            "zipCodes": "=RemoveDuplicateZipCodes"
+        },
+        "additionalOutput": {
+        },
+        "bundle": "sfiEnergyConsoleFSOutageRequestJSONtoXML",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "IF(%SVOutageConfigs:integrationEnabled% && %SVOutageConfigs:integrationType% == \"XML\",true,false)",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+            "ErrorMessage": "DRTransformRequestJSONtoXML : Failed to transform request from JSON to XML"
+        },
+        "ignoreCache": false,
+        "label": "DataRaptorTransformAction4",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Transform Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/DRTransformRequestJSONtoXML"
+}

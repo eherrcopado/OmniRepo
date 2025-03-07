@@ -1,0 +1,68 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVElectricityLast5YearsInYearsAC",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfServiceFetchUsagePerPremise",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/FetchUsagePerPremise/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "ElectricityBlock",
+        "OmniProcessId": {
+            "Name": "sfiEnergySelfServiceFetchUsagePerPremise",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/FetchUsagePerPremise/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/FetchUsagePerPremise/Procedure/ElectricityBlock",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "ElectricityBlock",
+    "ParentElementType": "Conditional Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "usageData": [
+                {
+                    "xAxis": "2021",
+                    "yAxis": "1340"
+                },
+                {
+                    "xAxis": "2020",
+                    "yAxis": "1672"
+                },
+                {
+                    "xAxis": "2019",
+                    "yAxis": "1855"
+                },
+                {
+                    "xAxis": "2018",
+                    "yAxis": "1748"
+                },
+                {
+                    "xAxis": "2017",
+                    "yAxis": "1982"
+                }
+            ]
+        },
+        "executionConditionalFormula": "%frequency%=\"EnergyLast5Yrs\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "electricityData",
+        "responseJSONPath": "usageData",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/FetchUsagePerPremise/Procedure/SVElectricityLast5YearsInYearsAC"
+}

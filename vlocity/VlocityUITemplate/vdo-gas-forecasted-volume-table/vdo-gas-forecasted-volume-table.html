@@ -1,0 +1,27 @@
+<div class="panel panel-default" ng-controller='containerTableCanvarController'>
+<!--    <button ng-click="selectAll(true);">Select All</button>
+    <button ng-click="selectAll(false);">Unselect All</button> -->
+    <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+      <thead>
+        <tr>
+       <!--   <th class="slds-cell-shrink">Select</th> -->
+            <th><a href="" ng-click="setOrderBy('PremiseName')">Month</a></th>
+            <th><a href="" ng-click="setOrderBy('ForecastedVolume')">Forecasted Volume (therms)</a></th>
+        </tr>
+      </thead>
+    <tbody class="ins">
+       <tr ng-repeat="p in control.vlcSI[control.itemsKey] | orderBy : orderByField" ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+      <!--    <td class="slds-cell-shrink">
+            <label class="slds-checkbox">
+          <input type="checkbox" ng-model='p.vlcSelected'
+            ng-change='onSelectItem(control, p, $index, this)'/>
+          <span class="slds-checkbox--faux"></span>
+        </label>
+      </td> -->
+      <td>{{p.Month}}</td>
+      <td>{{p.ForecastedVolume | number:2}}</td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p> </p>

@@ -1,0 +1,34 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "setting billing account id",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVBillingAccountDetails",
+    "OmniProcessId": {
+        "Name": "VPL/GetBiilingAccountDetails",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetBiilingAccountDetails/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "BillingAccountId": "=IF(%DRGetBusinessAccountDetails:BillingAccountId%!=null,%DRGetBusinessAccountDetails:BillingAccountId%, IF(%GetRelatedBillingAccount:getBillingAccountDetails:BillingId%!=null,%GetRelatedBillingAccount:getBillingAccountDetails:BillingId%,FetchAccount:AccountId))"
+        },
+        "executionConditionalFormula": "%FetchAccount:AccountRecordType% = 'Business'",
+        "failOnStepError": false,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetBiilingAccountDetails/Procedure/SVBillingAccountDetails"
+}

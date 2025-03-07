@@ -1,0 +1,44 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Update Account",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRUpdateConsumerBusinessAccount",
+    "OmniProcessId": {
+        "Name": "VPL-MoveInPost",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/MoveInPost/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+        },
+        "additionalOutput": {
+        },
+        "bundle": "VPL-UpdateAccountAfterIntegration",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "OR(%CustomerSelection:NewCustomer% == 'Yes', %CustomerSelection:NewAccountNeeded% == 'Yes')",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "label": "DataRaptorPostAction2",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": false,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Post Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/MoveInPost/Procedure/DRUpdateConsumerBusinessAccount"
+}

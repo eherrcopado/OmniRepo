@@ -1,0 +1,115 @@
+[
+    {
+        "CurrencyIsoCode": "USD",
+        "FormulaExpression": "IF(%CustomerSelection:AccountType% = 'Consumer', %DRId_Account%, %BusinessAccountId%)",
+        "FormulaResultPath": "FML_AccountId",
+        "FormulaSequence": 1,
+        "GlobalKey": "1a97f71a-aa43-1457-89b3-04828ad7e724",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "VPL-UpdateEnergyContact",
+        "OmniDataTransformationId": {
+            "Name": "VPLUpdateEnergyContact",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/VPLUpdateEnergyContact",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 0,
+        "OutputFieldName": "Formula",
+        "OutputObjectName": "Formula",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "GlobalKey": "8dff9916-6155-cc19-3697-e8c7c96839ca",
+        "InputFieldName": "VIPCreateBusinessPartner:ERPAccountID__c",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "VPL-UpdateEnergyContact",
+        "OmniDataTransformationId": {
+            "Name": "VPLUpdateEnergyContact",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/VPLUpdateEnergyContact",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 1,
+        "OutputFieldName": "%vlocity_namespace%__ContactNumber__c",
+        "OutputObjectName": "Contact",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "GlobalKey": "6a6eec82-5a1c-051d-be1f-f0c7a4b343be",
+        "InputFieldName": "FML_AccountId",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "VPL-UpdateEnergyContact",
+        "OmniDataTransformationId": {
+            "Name": "VPLUpdateEnergyContact",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/VPLUpdateEnergyContact",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 1,
+        "OutputFieldName": "AccountId",
+        "OutputObjectName": "Contact",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "GlobalKey": "860739ec-02d6-862a-c3e6-2b8e7a310d21",
+        "InputFieldName": "SetRedirectionIdValues:DRId_Contact",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": true,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "VPL-UpdateEnergyContact",
+        "OmniDataTransformationId": {
+            "Name": "VPLUpdateEnergyContact",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/VPLUpdateEnergyContact",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 1,
+        "OutputFieldName": "Id",
+        "OutputObjectName": "Contact",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "FilterOperator": "=",
+        "GlobalKey": "e6df627c-3e15-cbb9-6a48-c085cefc1d73",
+        "IsDisabled": true,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "MigrationValue": "FAKEMAPPING",
+        "Name": "VPL-UpdateEnergyContact",
+        "OmniDataTransformationId": {
+            "Name": "VPLUpdateEnergyContact",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/VPLUpdateEnergyContact",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 1,
+        "OutputFieldName": "Id",
+        "OutputObjectName": "Contact",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    }
+]

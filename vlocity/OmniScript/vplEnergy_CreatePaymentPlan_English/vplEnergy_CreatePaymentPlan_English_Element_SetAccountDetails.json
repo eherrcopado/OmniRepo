@@ -1,0 +1,41 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Set values to account details",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetAccountDetails",
+    "OmniProcessId": {
+        "Name": "VPLEnergyCreatePaymentPlan",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/CreatePaymentPlan/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AccountBalances": "=%AccountRelatedDetails:AccountBalance:CurrentBalance%",
+            "BankAccountDetails": "=IF(COUNT(%AccountRelatedDetails:PaymentMethod:Id%)>0,ARRAY(%AccountRelatedDetails:PaymentMethod%),%AccountRelatedDetails:PaymentMethod%)",
+            "ContextAccountId": "=%ContextId%",
+            "ContextId": "=%BillingAccountId%",
+            "CountPaymentPlan": "=COUNT(%PaymentPlans:PaymentPlanId%)",
+            "FetchAcc": "=IF(%FetchAccountBalanceDetails%<>'', 'yes','no')"
+        },
+        "message": {
+        },
+        "pubsub": false,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/CreatePaymentPlan/English/SetAccountDetails"
+}

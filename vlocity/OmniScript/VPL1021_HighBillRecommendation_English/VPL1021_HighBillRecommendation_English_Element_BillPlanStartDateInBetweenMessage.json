@@ -1,0 +1,66 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "BillPlanStartDateInBetweenMessage",
+    "OmniProcessId": {
+        "Name": "VPL High Bill Recommendation 102-1",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL1021/HighBillRecommendation/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "BillPlanStartDateInBetween",
+        "OmniProcessId": {
+            "Name": "VPL High Bill Recommendation 102-1",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/VPL1021/HighBillRecommendation/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/VPL1021/HighBillRecommendation/English/BillPlanStartDateInBetween",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "BillPlanStartDateInBetween",
+    "ParentElementType": "Block",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "hideLabel": true,
+        "label": "BillPlanStartDateInBetweenMessage",
+        "messages": [
+            {
+                "active": true,
+                "text": "Billing Plan was activated on %options:billPlanStartDate%, changes to the billing plan may have caused a difference in the customer’s typical bill amount.",
+                "type": "Success",
+                "value": true
+            },
+            {
+                "active": false,
+                "text": "N/a",
+                "type": "Requirement",
+                "value": false
+            }
+        ],
+        "show": null,
+        "validateExpression": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "true",
+                        "field": "BillPlanStartDateInBetweenFormula"
+                    }
+                ]
+            }
+        }
+    },
+    "Type": "Validation",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL1021/HighBillRecommendation/English/BillPlanStartDateInBetweenMessage"
+}

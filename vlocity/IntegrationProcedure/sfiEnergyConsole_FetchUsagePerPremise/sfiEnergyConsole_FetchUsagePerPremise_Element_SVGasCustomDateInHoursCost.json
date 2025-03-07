@@ -1,0 +1,120 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVGasCustomDateInHoursCost",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "GasBlock",
+        "OmniProcessId": {
+            "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/GasBlock",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "GasBlock",
+    "ParentElementType": "Conditional Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "usageData": [
+                {
+                    "xAxis": "12:00 am",
+                    "yAxis": "1.5"
+                },
+                {
+                    "xAxis": "01:00 am",
+                    "yAxis": "2.0"
+                },
+                {
+                    "xAxis": "02:00 am",
+                    "yAxis": "0.8"
+                },
+                {
+                    "xAxis": "03:00 am",
+                    "yAxis": "0.8"
+                },
+                {
+                    "xAxis": "04:00 am",
+                    "yAxis": "0.4"
+                },
+                {
+                    "xAxis": "05:00 am",
+                    "yAxis": "0.5"
+                },
+                {
+                    "xAxis": "06:00 am",
+                    "yAxis": "0.5"
+                },
+                {
+                    "xAxis": "07:00 am",
+                    "yAxis": "0.5"
+                },
+                {
+                    "xAxis": "08:00 am",
+                    "yAxis": "1.0"
+                },
+                {
+                    "xAxis": "09:00 am",
+                    "yAxis": "1.2"
+                },
+                {
+                    "xAxis": "10:00 am",
+                    "yAxis": "0.9"
+                },
+                {
+                    "xAxis": "11:00 am",
+                    "yAxis": "0.6"
+                },
+                {
+                    "xAxis": "12:00 am",
+                    "yAxis": "1.0"
+                },
+                {
+                    "xAxis": "01:00 pm",
+                    "yAxis": "0.8"
+                },
+                {
+                    "xAxis": "02:00 pm",
+                    "yAxis": "0.8"
+                },
+                {
+                    "xAxis": "03:00 pm",
+                    "yAxis": "0.7"
+                },
+                {
+                    "xAxis": "04:00 pm",
+                    "yAxis": "0.8"
+                },
+                {
+                    "xAxis": "05:00 pm",
+                    "yAxis": "1.5"
+                }
+            ]
+        },
+        "executionConditionalFormula": "%frequency%=\"EnergyCustomInHrs\" && %dimension%=\"EnergyEstCost\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "data",
+        "responseJSONPath": "usageData",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/SVGasCustomDateInHoursCost"
+}

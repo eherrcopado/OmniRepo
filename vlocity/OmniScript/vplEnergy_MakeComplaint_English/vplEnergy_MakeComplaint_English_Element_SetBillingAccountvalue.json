@@ -1,0 +1,39 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Set Billing Account Id",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "SetBillingAccountvalue",
+    "OmniProcessId": {
+        "Name": "VPLEnergyMakeComplaint",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MakeComplaint/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "BillingAccountId": "=IF(%AccountRecordType% == 'Business',%BillingProfileDetails:BillingAccountProfile:AccountId%,%AccountId%)",
+            "ContactInfo": "=IF(%ContactId%  == NULL, %AccountDetail:ContactId%, %ContactId%)"
+        },
+        "label": "SetBillingAccountvalue",
+        "message": {
+        },
+        "pubsub": false,
+        "show": null,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MakeComplaint/English/SetBillingAccountvalue"
+}

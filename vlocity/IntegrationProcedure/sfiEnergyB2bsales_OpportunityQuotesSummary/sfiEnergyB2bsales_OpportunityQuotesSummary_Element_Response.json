@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "Response",
+    "OmniProcessId": {
+        "Name": "sfiEnergyB2bsalesOpportunityQuotesSummary",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyB2bsales/OpportunityQuotesSummary/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "OpportunityAndQuotes:OpportunityList": "=IF(ISBLANK(%DRGetUserOpportunities%), LIST(DESERIALIZE(\"[]\")) ,LIST(%DRGetUserOpportunities:OpportunityList%))",
+            "OpportunityAndQuotes:QuoteList": "=IF(%DRGetQuotesForOpportunities% == \"{}\", LIST(DESERIALIZE(\"{}\")) ,LIST(%DRGetQuotesForOpportunities:QuoteList%))",
+            "opportunityColumnsData": "%OpportunityColumnsData%",
+            "quotesColumnsData": "%QuotesColumnsData%"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyB2bsales/OpportunityQuotesSummary/Procedure/Response"
+}

@@ -1,0 +1,78 @@
+{
+    "AuthorName": "CME_E_U",
+    "ClonedFromOmniUiCardKey": "sfiEnergySelfServiceOverviewBodyFinal242/CME_E_U/1/1662466531616",
+    "CurrencyIsoCode": "USD",
+    "DataSourceConfig": {
+        "dataSource": {
+            "contextVariables": [
+                {
+                    "id": 2,
+                    "name": "Session.AccountId",
+                    "val": "0013y00001gtaaFAAQ"
+                }
+            ],
+            "orderBy": {
+                "isReverse": "",
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "Id": "{Session.AccountId}"
+                },
+                "ipMethod": "sfiEnergyConsole_FSFetchOutageInfo",
+                "jsonMap": "{\"Session.AccountId\":\"{Session.AccountId}\"}",
+                "resultVar": "",
+                "vlocityAsync": false
+            }
+        },
+        "event-0_0": {
+            "contextVariables": [
+                {
+                    "id": 1,
+                    "name": "Parent.AccountId",
+                    "val": "001B000001Q7ZZAIA3"
+                },
+                {
+                    "id": 3,
+                    "name": "action.activeTab",
+                    "val": "Overview"
+                }
+            ],
+            "orderBy": {
+                "isReverse": "",
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "Id": "{Parent.AccountId}",
+                    "TabName": "{action.activeTab}"
+                },
+                "ipMethod": "sfiEnergyConsole_FSFetchOutageInfo",
+                "jsonMap": "{\"Parent.AccountId\":\"{Parent.AccountId}\",\"action.activeTab\":\"{action.activeTab}\"}",
+                "resultVar": "",
+                "vlocityAsync": false
+            }
+        }
+    },
+    "Description": "This is a container for the body section of the overview page.",
+    "IsLocked": false,
+    "IsTrackingEnabled": false,
+    "MayEdit": true,
+    "Name": "sfiEnergySelfServiceOverviewContainer",
+    "Namespace": "",
+    "OmniUiCardKey": "sfiEnergySelfServiceOverviewContainer/CME_E_U/3/1669752465931",
+    "OmniUiCardType": "Parent",
+    "OverrideKey": "",
+    "PropertySetConfig": "sfiEnergySelfServiceOverviewContainer.json",
+    "SampleDataSourceResponse": "{\"premiseInfo\":{\"recordCountforEarlierOutagePremises\":1,\"premisesWithEarlierOutage\":[{\"isEarlierOutage\":true,\"premiseName\":\"178 7th St. #1040\",\"premiseCountry\":\"United States\",\"estimatedRestoration\":\"19th June 11:30 AM\",\"startTime\":\"15th June 08:30 AM\",\"premiseState\":\"NY\",\"premisePostalCode\":\"10009\",\"premisesId\":\"aBx3y000000woBKCAY\",\"premiseStreet\":\"178 7th St. #1040\",\"premiseCity\":\"Springfield\"}],\"premisesWithOutage\":[{\"premiseName\":\"178 7th St. #1040\",\"premiseCountry\":\"United States\",\"startTime\":\"Yesterday at 08:30 AM\",\"estimatedRestoration\":\"Tomorrow at 11:30 AM\",\"premiseState\":\"NY\",\"isOutage\":true,\"premisePostalCode\":\"10009\",\"premisesId\":\"aBx3y000000woBKCAY\",\"premiseStreet\":\"178 7th St. #1040\",\"premiseCity\":\"Springfield\"}],\"recordCount\":1,\"sameResolutionTime\":true},\"TabName\":\"\"}",
+    "StylingConfiguration": "{\"customStyles\":\":host{\\n    --slds-c-card-color-background:#f9fcff;\\n}\"}",
+    "UniqueName": "sfiEnergySelfServiceOverviewContainer_CME_E_U_3",
+    "VersionNumber": 3,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniUiCard",
+    "VlocityRecordSourceKey": "OmniUiCard/sfiEnergySelfServiceOverviewContainer"
+}

@@ -1,0 +1,48 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "GetUsageInfoResponse",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleGetUsageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/GetUsageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "accountId": "%FetchAccountId:AccountId%",
+            "activeTab": "%Config:defaultTab%",
+            "chartConfig": "%Config:chartConfig%",
+            "config": "%Config%",
+            "dimensionList": "%DimensionList:dimensions%",
+            "filterList": "%FrequencyFilterList:filterList%",
+            "isAccountFetched": true,
+            "numPremises": "=IF(ISBLANK(%PremiseAddressList%),0,LISTSIZE(%PremiseAddressList%)))",
+            "premiseList": "%PremiseAddressList%",
+            "tabConfig": "%Config:tabConfig%"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/GetUsageInfo/Procedure/GetUsageInfoResponse"
+}

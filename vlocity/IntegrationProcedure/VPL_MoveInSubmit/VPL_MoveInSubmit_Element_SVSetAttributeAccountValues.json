@@ -1,0 +1,33 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVSetAttributeAccountValues",
+    "OmniProcessId": {
+        "Name": "VIP-MoveInSubmit",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/MoveInSubmit/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AttributeAccountId": "=IF(%CustomerSelection:AccountType% = 'Business', %BusinessAccountId%, %DRId_Account%)"
+        },
+        "executionConditionalFormula": "%CustomerSelection:NewAccountNeeded% = 'Yes' OR %CustomerSelection:NewCustomer% = 'Yes'",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues5",
+        "responseJSONNode": "AttributeAccountId",
+        "responseJSONPath": "AttributeAccountId",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/MoveInSubmit/Procedure/SVSetAttributeAccountValues"
+}

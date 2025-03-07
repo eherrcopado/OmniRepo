@@ -1,0 +1,52 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "If FurtherActionRequired=Required further actions, this fires and sets the Case information. No adjustment is created Otherwise a payment adjustment and billing dispute case are created.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetBillingDisputeCaseValues",
+    "OmniProcessId": {
+        "Name": "VPL Manage Billing Dispute 13-4 Lightning Ready",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Service/BillingDispute/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "elementValueMap": {
+            "CaseDescription": "Billing Dispute for Line Item: %StatementDetails:LineItem|1:LineItemName% : %StatementDetails:LineItem|1:AssetName%. Dispute Reason: %DisputeReason%",
+            "CaseOrigin": "Web",
+            "CaseStatus": "New",
+            "CaseSubject": "Billing Dispute",
+            "CaseType": "Problem"
+        },
+        "label": "Set Values 1",
+        "message": {
+        },
+        "pubsub": false,
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "Required further actions",
+                        "field": "FurtherActionRequired"
+                    }
+                ]
+            }
+        },
+        "showPersistentComponent": [
+            false
+        ],
+        "ssm": false,
+        "validationRequired": "None",
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Service/BillingDispute/English/SetBillingDisputeCaseValues"
+}

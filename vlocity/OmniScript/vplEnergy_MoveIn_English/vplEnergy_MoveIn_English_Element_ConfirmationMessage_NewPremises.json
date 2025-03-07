@@ -1,0 +1,84 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Confirmation block displayed if the VIP get the statuscode of 200 or success",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "ConfirmationMessage_NewPremises",
+    "OmniProcessId": {
+        "Name": "VPL-MoveIn-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "Confirmation",
+        "OmniProcessId": {
+            "Name": "VPL-MoveIn-WithoutCPQ",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/Confirmation",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "Confirmation",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "cancelLabel": "Cancel",
+        "cancelMessage": "Are you sure?",
+        "completeLabel": "Complete",
+        "completeMessage": "Are you sure you want to complete the script?",
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "disOnTplt": false,
+        "knowledgeOptions": {
+            "dataCategoryCriteria": "",
+            "keyword": "",
+            "language": "English",
+            "publishStatus": "Online",
+            "remoteTimeout": 30000,
+            "typeFilter": ""
+        },
+        "nextLabel": "Next",
+        "nextWidth": 3,
+        "previousLabel": "Previous",
+        "previousWidth": 3,
+        "remoteOptions": {
+        },
+        "remoteTimeout": 30000,
+        "saveLabel": "Save for later",
+        "saveMessage": "Are you sure you want to save it for later?",
+        "show": {
+            "group": {
+                "operator": "OR",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "Yes",
+                        "field": "NewCustomer"
+                    },
+                    {
+                        "condition": "=",
+                        "data": "Yes",
+                        "field": "NewAccountNeeded"
+                    }
+                ]
+            }
+        },
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "text": "<p>Congratulations <strong>%AccountDisplayName%</strong>, you have successfully moved into:</p>\n<p>Premise Number:<strong>&nbsp;&nbsp;%PremiseNumber%</strong></p>\n<p>Street:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>%PremiseStreetAddress%</strong></p>\n<p>City:<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;%PremCity%</strong></p>\n<p>State:<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;%PremState%</strong></p>\n<p>Country:<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;%PremCountry%</strong></p>\n<p>Postal Code:<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; %PremPostalCode%</strong></p>\n<p></p>\n<p></p>\n<p><strong><em>SAP Response:</em></strong></p>\n<div>\n<div><em>Message from SAP:</em><strong><em> %createResidentialAccount_Msg%</em></strong></div>\n<div><em>ERP Business ParnterId:</em><strong><em> %ERPAccountID__c%</em></strong></div>\n<div><em>ERP Contract AccountId:</em><strong><em> %ERP_Contract_ID__c%</em></strong></div>\n<div><em>ERP AgreementIDs:</em><strong><em>&nbsp; %AgreementIdList%&nbsp;</em></strong></div>\n</div>",
+        "validationRequired": true
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/ConfirmationMessage_NewPremises"
+}

@@ -1,0 +1,34 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Loop block to  Loop over the Customer Satisfaction",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "CustomerSatisfactionList",
+    "OmniProcessId": {
+        "Name": "VPL/GetProfileData",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetProfileData/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "LoopBlock1",
+        "loopList": "DRGetCustomerSatisfaction:CustomerSatisfaction",
+        "loopOutput": {
+            "CustomerSatisfactionCost": "%DRTransformCustomerSatisfaction:CustomerSatisfactionCost%",
+            "CustomerSatisfactionCoverage": "%DRTransformCustomerSatisfaction:CustomerSatisfactionCoverage%",
+            "CustomerSatisfactionMaintenance": "%DRTransformCustomerSatisfaction:CustomerSatisfactionMaintenance%",
+            "CustomerSatisfactionReliability": "%DRTransformCustomerSatisfaction:CustomerSatisfactionReliability%",
+            "CustomerSatisfactionService": "%DRTransformCustomerSatisfaction:CustomerSatisfactionService%",
+            "CustomerSatisfactionUsageCharges": "%DRTransformCustomerSatisfaction:CustomerSatisfactionUsageCharges%"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetProfileData/Procedure/CustomerSatisfactionList"
+}

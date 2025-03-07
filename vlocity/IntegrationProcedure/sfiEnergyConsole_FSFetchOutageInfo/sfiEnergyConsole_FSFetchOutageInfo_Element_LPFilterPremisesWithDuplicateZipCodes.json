@@ -1,0 +1,29 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "LPFilterPremisesWithDuplicateZipCodes",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "IF(%SVOutageConfigs:requestFilterCriteria% == \"zipCode\",true,false)",
+        "label": "LoopBlock1",
+        "loopList": "DRFetchServicePremisesInfo:premiseInfo",
+        "loopOutput": {
+            "filteredEarlierPremisesWithOutages": "=%DRFilterPremisesWithOutage:earlierPremisesWithOutages%",
+            "filteredPremises": "=%DRFilterPremisesWithOutage:premises%"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/LPFilterPremisesWithDuplicateZipCodes"
+}

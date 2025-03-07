@@ -1,0 +1,44 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVAccountPreferenceDetails",
+    "OmniProcessId": {
+        "Name": "VPL-GetAccountNotificationPrefDetails",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetAccountNotificationPrefDetails/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AccountId": "=%FetchAccount:AccountId%",
+            "AccountName": "=%DRExtractAccountPreferences:AccountName%",
+            "Bill Notification": "=%DRTransformAccPrefAttr:AccountPref:BillNotifications:AttrValue%",
+            "DNCFrom": "=%DRTransformAccPrefAttr:AccountPref:DNCFrom:AttrValue%",
+            "DNCTo": "=%DRTransformAccPrefAttr:AccountPref:DNCTo:AttrValue%",
+            "DNDTime": "=CONCAT(%DRTransformAccPrefAttr:AccountPref:DNCFrom:AttrValue%,\" - \",%DRTransformAccPrefAttr:AccountPref:DNCTo:AttrValue%)",
+            "NotifPreferenceExists": "=IF((%DRExtractAccountPreferences:TotalAttrAssignCount% > 0) , \"true\",\"false\")",
+            "Offers and Promotions": "=%DRTransformAccPrefAttr:AccountPref:OffersPromotions:AttrValue%",
+            "Outage Notifications": "=%DRTransformAccPrefAttr:AccountPref:OutageNotifications:AttrValue%",
+            "Payment Reminders and Notifications": "=%DRTransformAccPrefAttr:AccountPref:PaymentReminders:AttrValue%",
+            "TotalNotification": "=%DRExtractAccountPreferences:TotalAttrAssignCount%",
+            "Work Order Notifications": "=%DRTransformAccPrefAttr:AccountPref:WorkorderNotifications:AttrValue%"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetAccountNotificationPrefDetails/Procedure/SVAccountPreferenceDetails"
+}

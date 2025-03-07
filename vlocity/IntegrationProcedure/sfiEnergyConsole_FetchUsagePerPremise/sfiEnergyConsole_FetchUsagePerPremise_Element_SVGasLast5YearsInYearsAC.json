@@ -1,0 +1,68 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVGasLast5YearsInYearsAC",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "GasBlock",
+        "OmniProcessId": {
+            "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/GasBlock",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "GasBlock",
+    "ParentElementType": "Conditional Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "usageData": [
+                {
+                    "xAxis": "2021",
+                    "yAxis": "1340"
+                },
+                {
+                    "xAxis": "2020",
+                    "yAxis": "1672"
+                },
+                {
+                    "xAxis": "2019",
+                    "yAxis": "1855"
+                },
+                {
+                    "xAxis": "2018",
+                    "yAxis": "1748"
+                },
+                {
+                    "xAxis": "2017",
+                    "yAxis": "1982"
+                }
+            ]
+        },
+        "executionConditionalFormula": "%tabName%=\"Electricity\" && %frequency%=\"EnergyLast5Yrs\" && %dimension%=\"EnergyActualConsumption\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "data",
+        "responseJSONPath": "usageData",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/SVGasLast5YearsInYearsAC"
+}

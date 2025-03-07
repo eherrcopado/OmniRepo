@@ -1,0 +1,49 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "IPRetrievePremiseInfo",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfServiceGetPlanDetails",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/GetPlanDetails/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "AccountId": "%AccountId%"
+        },
+        "additionalOutput": {
+            "plan": "Green Energy",
+            "planDetails": "[{\"PlanName\": \"Tier1 First 500 kWh at $0.2 per kWh\",\"Tariff\": \"$90.00\"},{\"PlanName\": \"Tier2 First 500 kWh at $0.4 per kWh\",\"Tariff\": \"$120.00\"},{\"PlanName\": \"Tier3 First 500 kWh at $0.6 per kWh\",\"Tariff\": \"$210.00\"},{\"PlanName\": \"Tier4 First 500 kWh at $0.8 per kWh\",\"Tariff\": \"$360.00\"}]"
+        },
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "disableChainable": false,
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "integrationProcedureKey": "sfiEnergySelfService_RetrievePremiseInfo",
+        "label": "IntegrationProcedureAction1",
+        "remoteOptions": {
+        },
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": false,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "Integration Procedure Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/GetPlanDetails/Procedure/IPRetrievePremiseInfo"
+}

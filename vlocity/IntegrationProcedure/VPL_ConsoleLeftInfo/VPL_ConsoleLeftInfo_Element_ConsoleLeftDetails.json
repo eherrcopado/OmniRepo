@@ -1,0 +1,43 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "ConsoleLeftDetails",
+    "OmniProcessId": {
+        "Name": "VPL/ConsoleLeftInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/ConsoleLeftInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "AccountTree": "%GetAccountHierarchy:AccountHierarchy%",
+            "ConsoleLeftCardDetails": "=GetConsoleAccountDetails",
+            "ImageURL": "=IF(%DRFetchGoogleMapsAPIKey:APIKey% != \"\", CONCAT(\"https://maps.googleapis.com/maps/api/staticmap?center=\",IF(%GetConsoleAccountDetails:ShippingAddress% != null,%GetConsoleAccountDetails:ShippingAddress%, \"Vlocity\"),\"&zoom=14&size=600x400&key=\",%DRFetchGoogleMapsAPIKey:APIKey%),null)",
+            "MapAPIKey": "=IF(ISNOTBLANK(%DRFetchGoogleMapsAPIKey:APIKey%) , %DRFetchGoogleMapsAPIKey:APIKey% , null)",
+            "columnsData": "%columnsData%"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction2",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "GetConsoleAccountDetails",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/ConsoleLeftInfo/Procedure/ConsoleLeftDetails"
+}

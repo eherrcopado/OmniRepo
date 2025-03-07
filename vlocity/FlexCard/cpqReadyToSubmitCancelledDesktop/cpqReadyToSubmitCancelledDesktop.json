@@ -1,0 +1,1177 @@
+{
+    "dataSource": {
+        "contextVariables": [
+        ],
+        "orderBy": {
+        },
+        "type": null,
+        "value": {
+        }
+    },
+    "dynamicCanvasWidth": {
+        "type": "desktop"
+    },
+    "enableLwc": true,
+    "events": [
+        {
+            "actionList": [
+                {
+                    "card": "{card}",
+                    "draggable": false,
+                    "isOpen": true,
+                    "key": "1625912987407-7qnrodyuk",
+                    "label": "Action",
+                    "stateAction": {
+                        "eventName": "setValues",
+                        "fieldValues": [
+                            {
+                                "fieldName": "Parent.details",
+                                "fieldValue": "{action.response.records[0].details}"
+                            }
+                        ],
+                        "id": "flex-action-1625912998089",
+                        "type": "cardAction"
+                    }
+                }
+            ],
+            "channelname": "cpq_{recordId}",
+            "displayLabel": "cpq_{recordId}:cpq_cart_updated",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "cpq_cart_updated",
+            "eventtype": "pubsub",
+            "key": "event-0",
+            "recordIndex": "0"
+        }
+    ],
+    "globalCSS": false,
+    "isFlex": true,
+    "lwc": {
+        "DeveloperName": "cfCpqReadyToSubmitCancelledDesktop",
+        "Id": "0RbB0000000f6lhKAA",
+        "ManageableState": "unmanaged",
+        "MasterLabel": "cfCpqReadyToSubmitCancelledDesktop",
+        "NamespacePrefix": "c"
+    },
+    "multilanguageSupport": true,
+    "sessionVars": [
+    ],
+    "states": [
+        {
+            "actions": [
+            ],
+            "childCards": [
+                "cpqDeleteModal"
+            ],
+            "components": {
+                "layer-0": {
+                    "children": [
+                        {
+                            "class": "slds-col ",
+                            "element": "action",
+                            "elementLabel": "Action-4",
+                            "name": "Action",
+                            "property": {
+                                "actionList": [
+                                    {
+                                        "actionIndex": 0,
+                                        "buttonVariant": "neutral",
+                                        "card": "{card}",
+                                        "contextId": "\\{Id}",
+                                        "data-conditions": {
+                                            "group": [
+                                                {
+                                                    "field": "Parent.details.records[0].discountsForSubmission",
+                                                    "id": "state-new-condition-244",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "data-preloadConditionalElement": false,
+                                        "displayAsButton": true,
+                                        "draggable": false,
+                                        "hideActionIcon": true,
+                                        "iconOnly": false,
+                                        "isOpen": true,
+                                        "key": "1644312058988-szsl39p0k",
+                                        "label": "Action",
+                                        "reRenderFlyout": false,
+                                        "record": "{record}",
+                                        "sObjectType": "Order",
+                                        "stateAction": {
+                                            "channelName": "close_modal",
+                                            "displayName": "{Label.CPQRequestPendingApproval}",
+                                            "flyoutLwc": "l-w-c-c-p-q-approve-discount-items-multi-language",
+                                            "flyoutParams": {
+                                                "ContextId": "{Id}"
+                                            },
+                                            "flyoutType": "OmniScripts",
+                                            "hasExtraParams": true,
+                                            "id": "flex-action-1644312062013",
+                                            "layoutType": "lightning",
+                                            "openFlyoutIn": "Modal",
+                                            "openUrlIn": "Current Window",
+                                            "osName": "LWCCPQ/ApproveDiscountItems/Multi-Language",
+                                            "type": "Flyout",
+                                            "vlocityIcon": "icon-v-document1-line"
+                                        },
+                                        "stateObj": "{record}"
+                                    }
+                                ],
+                                "buttonVariant": "neutral",
+                                "card": "{card}",
+                                "contextId": "\\{Id}",
+                                "data-conditions": {
+                                    "group": [
+                                        {
+                                            "field": "Parent.details.records[0].discountsForSubmission",
+                                            "id": "state-new-condition-244",
+                                            "operator": "==",
+                                            "type": "custom",
+                                            "value": "true"
+                                        }
+                                    ],
+                                    "id": "state-condition-object",
+                                    "isParent": true
+                                },
+                                "data-preloadConditionalElement": false,
+                                "displayAsButton": true,
+                                "flyoutChannel": "close_modal",
+                                "flyoutDetails": {
+                                    "openFlyoutIn": "Modal"
+                                },
+                                "hideActionIcon": true,
+                                "iconName": "icon-v-document1-line",
+                                "iconOnly": false,
+                                "label": "{Label.CPQRequestPendingApproval}",
+                                "reRenderFlyout": false,
+                                "record": "{record}",
+                                "sObjectType": "Order",
+                                "showSpinner": "false",
+                                "stateObj": "{record}"
+                            },
+                            "size": {
+                                "default": "2",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "background": {
+                                    "color": "",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "custom-btn",
+                                "container": {
+                                    "class": ""
+                                },
+                                "customClass": "custom-btn",
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                ],
+                                "size": {
+                                    "default": "2",
+                                    "isResponsive": false
+                                },
+                                "sizeClass": "slds-size_2-of-12 ",
+                                "style": "     : #ccc 1px solid; \n         ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "type": "element"
+                        },
+                        {
+                            "class": "slds-col ",
+                            "element": "action",
+                            "elementLabel": "Action-4-clone-0",
+                            "name": "Action",
+                            "property": {
+                                "buttonVariant": "neutral",
+                                "card": "{card}",
+                                "contextId": "\\{Id}",
+                                "data-conditions": {
+                                    "group": [
+                                    ],
+                                    "id": "state-condition-object",
+                                    "isParent": true
+                                },
+                                "displayAsButton": true,
+                                "hideActionIcon": true,
+                                "record": "{record}",
+                                "sObjectType": "Order",
+                                "stateAction": {
+                                    "cardName": "cpqDeleteModal",
+                                    "cardNode": "",
+                                    "displayName": "{Label.CPQDelete}",
+                                    "flyoutLwc": "cpqDeleteModal",
+                                    "flyoutParams": {
+                                        "cartId": "{Id}",
+                                        "objType": "Order"
+                                    },
+                                    "flyoutType": "childCard",
+                                    "hasExtraParams": true,
+                                    "id": "flex-action-1627048364780",
+                                    "openFlyoutIn": "Modal",
+                                    "openUrlIn": "Current Window",
+                                    "type": "Flyout",
+                                    "vlocityIcon": "icon-v-document1-line"
+                                },
+                                "stateObj": "{record}"
+                            },
+                            "size": {
+                                "default": "1",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "background": {
+                                    "color": "",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "custom-btn",
+                                "container": {
+                                    "class": ""
+                                },
+                                "customClass": "custom-btn",
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                ],
+                                "size": {
+                                    "default": "1",
+                                    "isResponsive": false
+                                },
+                                "sizeClass": "slds-size_1-of-12 ",
+                                "style": "     : #ccc 1px solid; \n         ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "type": "element"
+                        },
+                        {
+                            "class": "slds-col ",
+                            "element": "action",
+                            "elementLabel": "Action-5-clone-0",
+                            "name": "Action",
+                            "property": {
+                                "actionList": [
+                                    {
+                                        "actionIndex": 0,
+                                        "buttonVariant": "neutral",
+                                        "card": "{card}",
+                                        "contextId": "\\{Id}",
+                                        "data-conditions": {
+                                            "group": [
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "data-preloadConditionalElement": false,
+                                        "displayAsButton": true,
+                                        "draggable": false,
+                                        "hideActionIcon": true,
+                                        "isOpen": true,
+                                        "key": "1656592835202-ki1uv5gm0",
+                                        "label": "Action",
+                                        "record": "{record}",
+                                        "sObjectType": "Order",
+                                        "stateAction": {
+                                            "cardName": "cpqDiscount",
+                                            "cardNode": "",
+                                            "channelName": "close_modal_apply_discount",
+                                            "displayName": "{Label.CPQApplyDiscount}",
+                                            "flyoutLwc": "cpqDiscount",
+                                            "flyoutParams": {
+                                                "cartId": "{Id}"
+                                            },
+                                            "flyoutType": "childCard",
+                                            "hasExtraParams": true,
+                                            "id": "flex-action-1656592842874",
+                                            "openFlyoutIn": "Modal",
+                                            "openUrlIn": "Current Window",
+                                            "type": "Flyout",
+                                            "vlocityIcon": "icon-v-document1-line"
+                                        },
+                                        "stateObj": "{record}"
+                                    }
+                                ],
+                                "buttonVariant": "neutral",
+                                "card": "{card}",
+                                "contextId": "\\{Id}",
+                                "data-conditions": {
+                                    "group": [
+                                        {
+                                            "field": "Parent.isAsyncProcessesPresent",
+                                            "hasMergeField": false,
+                                            "id": "state-new-condition-90",
+                                            "operator": "==",
+                                            "type": "custom",
+                                            "value": "0"
+                                        },
+                                        {
+                                            "group": [
+                                                {
+                                                    "field": "Parent.isAsyncProcessesPresent",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-103",
+                                                    "operator": ">",
+                                                    "type": "custom",
+                                                    "value": "0"
+                                                },
+                                                {
+                                                    "field": "Parent.isAsyncProcessCompleted",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-127",
+                                                    "logicalOperator": "&&",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                }
+                                            ],
+                                            "id": "state-new-group-104",
+                                            "logicalOperator": "||"
+                                        }
+                                    ],
+                                    "id": "state-condition-object",
+                                    "isParent": true
+                                },
+                                "data-preloadConditionalElement": false,
+                                "disabled": "",
+                                "displayAsButton": true,
+                                "flyoutChannel": "close_modal_apply_discount",
+                                "flyoutDetails": {
+                                    "openFlyoutIn": "Modal"
+                                },
+                                "hideActionIcon": true,
+                                "iconName": "icon-v-document1-line",
+                                "label": "{Label.CPQApplyDiscount}",
+                                "record": "{record}",
+                                "sObjectType": "Order",
+                                "showSpinner": "false",
+                                "stateObj": "{record}"
+                            },
+                            "size": {
+                                "default": "2",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "background": {
+                                    "color": "",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "custom-btn",
+                                "container": {
+                                    "class": ""
+                                },
+                                "customClass": "custom-btn",
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                ],
+                                "size": {
+                                    "default": "2",
+                                    "isResponsive": false
+                                },
+                                "sizeClass": "slds-size_2-of-12 ",
+                                "style": "     : #ccc 1px solid; \n         ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "type": "element"
+                        },
+                        {
+                            "class": "slds-col ",
+                            "element": "flexMenu",
+                            "elementLabel": "Menu-6",
+                            "name": "Menu",
+                            "property": {
+                                "card": "{card}",
+                                "iconName": "utility:down",
+                                "menuItems": [
+                                    {
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "draggable": false,
+                                                "isOpen": true,
+                                                "key": "1693806842709-u8ljf5alk",
+                                                "label": "Action",
+                                                "stateAction": {
+                                                    "Record": {
+                                                        "targetAction": "view",
+                                                        "targetId": "{Id}",
+                                                        "targetName": "Order"
+                                                    },
+                                                    "displayName": "Action",
+                                                    "id": "flex-action-1693834468367",
+                                                    "openUrlIn": "Current Window",
+                                                    "targetType": "Record",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "standard-default"
+                                                }
+                                            }
+                                        ],
+                                        "iconName": "",
+                                        "label": "\\{Label.CPQViewRecord}",
+                                        "name": "menu-item-1693806842697-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionConditions": null,
+                                        "actionData": {
+                                            "card": "{card}",
+                                            "stateAction": {
+                                                "Record": {
+                                                    "targetAction": "clone",
+                                                    "targetId": "{Id}",
+                                                    "targetName": "Order"
+                                                },
+                                                "actionConditions": null,
+                                                "displayName": "{Label.CPQClone}",
+                                                "id": "flex-action-1627049182895",
+                                                "openUrlIn": "New Tab/Window",
+                                                "parent": "menu",
+                                                "targetType": "Record",
+                                                "type": "Custom",
+                                                "vlocityIcon": "icon-v-document1-line"
+                                            },
+                                            "stateObj": "{record}"
+                                        },
+                                        "actionList": [
+                                            {
+                                                "card": "{card}",
+                                                "stateAction": {
+                                                    "Record": {
+                                                        "targetAction": "clone",
+                                                        "targetId": "{Id}",
+                                                        "targetName": "Order"
+                                                    },
+                                                    "actionConditions": null,
+                                                    "displayName": "{Label.CPQClone}",
+                                                    "id": "flex-action-1627049182895",
+                                                    "openUrlIn": "New Tab/Window",
+                                                    "parent": "menu",
+                                                    "targetType": "Record",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "icon-v-document1-line"
+                                                },
+                                                "stateObj": "{record}"
+                                            }
+                                        ],
+                                        "iconName": "icon-v-document1-line",
+                                        "label": "{Label.CPQClone}",
+                                        "name": "menu-item-1615182513622-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "draggable": false,
+                                                "isOpen": true,
+                                                "key": "1693817965255-95kbem2vo",
+                                                "label": "Action",
+                                                "stateAction": {
+                                                    "Web Page": {
+                                                        "targetName": "/apex/%vlocity_namespace%__OrderDocumentPdf?id={Id}"
+                                                    },
+                                                    "displayName": "Action",
+                                                    "id": "flex-action-1693818368230",
+                                                    "openUrlIn": "Current Window",
+                                                    "targetType": "Web Page",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "standard-default"
+                                                }
+                                            }
+                                        ],
+                                        "iconName": "",
+                                        "label": "\\{Label.CPQGenerateDocumentPDF}",
+                                        "name": "menu-item-1693817965240-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "draggable": false,
+                                                "isOpen": true,
+                                                "key": "1693818824618-shidtgkf1",
+                                                "label": "Action",
+                                                "stateAction": {
+                                                    "Web Page": {
+                                                        "targetName": "/apex/%vlocity_namespace%__OrderRelationshipVisualization?id={Id}"
+                                                    },
+                                                    "displayName": "Action",
+                                                    "id": "flex-action-1693818839772",
+                                                    "openUrlIn": "New Tab/Window",
+                                                    "targetType": "Web Page",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "standard-default"
+                                                }
+                                            }
+                                        ],
+                                        "iconName": "",
+                                        "label": "\\{Label.CPQAmendmentHistory}",
+                                        "name": "menu-item-1693818824606-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionConditions": null,
+                                        "actionData": {
+                                            "card": "{card}",
+                                            "stateAction": {
+                                                "Web Page": {
+                                                    "targetName": "/{Id}/p"
+                                                },
+                                                "actionConditions": null,
+                                                "displayName": "{Label.CPQPrintableView}",
+                                                "id": "flex-action-1627049161899",
+                                                "openUrlIn": "New Tab/Window",
+                                                "parent": "menu",
+                                                "targetType": "Web Page",
+                                                "type": "Custom",
+                                                "vlocityIcon": "icon-v-document1-line"
+                                            },
+                                            "stateObj": "{record}"
+                                        },
+                                        "actionList": [
+                                            {
+                                                "card": "{card}",
+                                                "stateAction": {
+                                                    "Web Page": {
+                                                        "targetName": "/{Id}/p"
+                                                    },
+                                                    "actionConditions": null,
+                                                    "displayName": "{Label.CPQPrintableView}",
+                                                    "id": "flex-action-1627049161899",
+                                                    "openUrlIn": "New Tab/Window",
+                                                    "parent": "menu",
+                                                    "targetType": "Web Page",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "icon-v-document1-line"
+                                                },
+                                                "stateObj": "{record}"
+                                            }
+                                        ],
+                                        "iconName": "icon-v-document1-line",
+                                        "label": "\\{Label.CPQPrintableView}",
+                                        "name": "menu-item-1614572486167-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "draggable": false,
+                                                "isOpen": true,
+                                                "key": "1693819373031-4iz3rww2q",
+                                                "label": "Action",
+                                                "stateAction": {
+                                                    "Web Page": {
+                                                        "targetName": "/apex/%vlocity_namespace%__OMNotifications?id={Id}"
+                                                    },
+                                                    "displayName": "Action",
+                                                    "id": "flex-action-1693819386839",
+                                                    "openUrlIn": "New Tab/Window",
+                                                    "targetType": "Web Page",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "standard-default"
+                                                }
+                                            }
+                                        ],
+                                        "iconName": "",
+                                        "label": "\\{Label.CPQStatusNotifications}",
+                                        "name": "menu-item-1693819373021-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "draggable": false,
+                                                "isOpen": true,
+                                                "key": "1693819519285-i38ygjcnf",
+                                                "label": "Action",
+                                                "stateAction": {
+                                                    "Web Page": {
+                                                        "targetName": "/{Id}/e?retURL=/apex/%vlocity_namespace%__HybridCPQ%3Fid%3D{Id}"
+                                                    },
+                                                    "displayName": "Action",
+                                                    "id": "flex-action-1693820044691",
+                                                    "openUrlIn": "Current Window",
+                                                    "targetType": "Web Page",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "standard-default"
+                                                }
+                                            }
+                                        ],
+                                        "iconName": "",
+                                        "label": "\\{Label.CPQEdit}",
+                                        "name": "menu-item-1693819519276-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionConditions": {
+                                            "group": [
+                                                {
+                                                    "field": " Parent.details.records[0].canCheckoutDiscounts",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-17",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                },
+                                                {
+                                                    "field": "Parent.details.records[0].frameAgreementPresent",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-24",
+                                                    "logicalOperator": "&&",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "draggable": false,
+                                                "isOpen": true,
+                                                "key": "1693820286823-rubpfy2l8",
+                                                "label": "Action",
+                                                "stateAction": {
+                                                    "Web Page": {
+                                                        "targetName": "/lightning/page/omnistudio/omniscript?omniscript__id={Id}&omniscript__type=UpdateFrameAgreement&omniscript__ContextId={Id}&omniscript__subType=Order&omniscript__language=English&omniscript__theme=lightning&omniscript__tabIcon=custom:custom18&omniscript__tabLabel=UpdateFrameAgreementOrder"
+                                                    },
+                                                    "displayName": "Action",
+                                                    "id": "flex-action-1693830258085",
+                                                    "openUrlIn": "Current Window",
+                                                    "targetType": "Web Page",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "standard-default"
+                                                }
+                                            }
+                                        ],
+                                        "iconName": "standard:default",
+                                        "label": "\\{Label.CPQUpdateFrameAmendment}",
+                                        "name": "menu-item-1693820286812-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionConditions": {
+                                            "group": [
+                                                {
+                                                    "field": " Parent.details.records[0].canCheckoutDiscounts",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-34",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                },
+                                                {
+                                                    "field": " Parent.details.records[0].frameAgreementPresent",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-41",
+                                                    "logicalOperator": "&&",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "draggable": false,
+                                                "isOpen": true,
+                                                "key": "1693820292181-gn1m0ytvb",
+                                                "label": "Action",
+                                                "stateAction": {
+                                                    "Web Page": {
+                                                        "targetName": "/lightning/page/omnistudio/omniscript?omniscript__id={Id}&omniscript__ContextId={Id}&omniscript__type=CreateFrameAgreement&omniscript__subType=Order&omniscript__language=English&omniscript__theme=lightning&omniscript__tabIcon=custom:custom18&omniscript__tabLabel=CreateFrameAgreementOrder"
+                                                    },
+                                                    "displayName": "Action",
+                                                    "id": "flex-action-1693830711920",
+                                                    "openUrlIn": "Current Window",
+                                                    "targetType": "Web Page",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "standard-default"
+                                                }
+                                            }
+                                        ],
+                                        "iconName": "standard:default",
+                                        "label": "\\{Label.CPQCreateFrameAmendment}",
+                                        "name": "menu-item-1693820292171-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionConditions": {
+                                            "group": [
+                                                {
+                                                    "field": " Parent.details.records[0].canCheckoutDiscounts",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-0",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                },
+                                                {
+                                                    "field": " Parent.details.records[0].frameAgreementPresent",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-7",
+                                                    "logicalOperator": "&&",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "draggable": false,
+                                                "isOpen": true,
+                                                "key": "1693829392184-nr2umt5ib",
+                                                "label": "Action",
+                                                "stateAction": {
+                                                    "Web Page": {
+                                                        "targetName": "/lightning/page/omnistudio/omniscript?omniscript__id={Id}omniscript__type=CreateFrameAgreement&omniscript__ContextId={Id}&omniscript__subType=Order&omniscript__language=English&omniscript__theme=lightning&omniscript__tabIcon=custom:custom18&omniscript__tabLabel=CreateFrameAgreementOrder"
+                                                    },
+                                                    "displayName": "Action",
+                                                    "id": "flex-action-1693830352960",
+                                                    "openUrlIn": "Current Window",
+                                                    "targetType": "Web Page",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "standard-default"
+                                                }
+                                            }
+                                        ],
+                                        "iconName": "standard:default",
+                                        "label": "\\{Label.CPQCreateFrameAgreement}",
+                                        "name": "menu-item-1693829392172-0",
+                                        "showSpinner": "false"
+                                    },
+                                    {
+                                        "actionConditions": {
+                                            "group": [
+                                                {
+                                                    "field": " Parent.details.records[0].canCheckoutDiscounts",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-51",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                },
+                                                {
+                                                    "field": " Parent.details.records[0].frameAgreementPresent",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-58",
+                                                    "logicalOperator": "&&",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "true"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "draggable": false,
+                                                "isOpen": true,
+                                                "key": "1693833407635-x4t834777",
+                                                "label": "Action",
+                                                "stateAction": {
+                                                    "Web Page": {
+                                                        "targetName": "/lightning/page/omnistudio/omniscript?omniscript__id={Id}&omniscript__ContextId={Id}&omniscript__type=UpdateFrameAgreement&omniscript__subType=Order&omniscript__language=English&omniscript__theme=lightning&omniscript__tabIcon=custom:custom18&omniscript__tabLabel=UpdateFrameAgreementOrder"
+                                                    },
+                                                    "displayName": "Action",
+                                                    "id": "flex-action-1693834133746",
+                                                    "openUrlIn": "Current Window",
+                                                    "targetType": "Web Page",
+                                                    "type": "Custom",
+                                                    "vlocityIcon": "standard-default"
+                                                }
+                                            }
+                                        ],
+                                        "iconName": "",
+                                        "label": "\\{Label.CPQUpdateFrameAgreement}",
+                                        "name": "menu-item-1693833407623-0",
+                                        "showSpinner": "false"
+                                    }
+                                ],
+                                "overflow": true,
+                                "position": "right",
+                                "record": "{record}",
+                                "size": "small",
+                                "type": "action",
+                                "variant": "neutral"
+                            },
+                            "size": {
+                                "default": "1",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "background": {
+                                    "color": "",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "custom-btn",
+                                "container": {
+                                    "class": ""
+                                },
+                                "customClass": "custom-btn",
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                ],
+                                "size": {
+                                    "default": "1",
+                                    "isResponsive": false
+                                },
+                                "sizeClass": "slds-size_1-of-12 ",
+                                "style": "     : #ccc 1px solid; \n         ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "type": "element"
+                        }
+                    ]
+                }
+            },
+            "conditions": {
+                "group": [
+                    {
+                        "field": "Parent.details.records[0].ObjectType",
+                        "id": "state-condition-127",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "Order"
+                    },
+                    {
+                        "group": [
+                            {
+                                "field": "Parent.details.records[0].orderStatusValue",
+                                "id": "state-condition-129",
+                                "operator": "==",
+                                "type": "custom",
+                                "value": "Ready To Submit"
+                            },
+                            {
+                                "field": "Parent.details.records[0].orderStatusValue",
+                                "id": "state-condition-130",
+                                "logicalOperator": "||",
+                                "operator": "==",
+                                "type": "custom",
+                                "value": "Cancelled"
+                            }
+                        ],
+                        "id": "state-condition-128",
+                        "logicalOperator": "&&"
+                    }
+                ],
+                "id": "state-condition-object",
+                "isParent": true
+            },
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "documents": [
+            ],
+            "fields": [
+            ],
+            "isSmartAction": false,
+            "name": "Order ReadyToSubmit Cancelled",
+            "omniscripts": [
+            ],
+            "smartAction": {
+            },
+            "styleObject": {
+                "background": {
+                    "color": "#F3F2F2",
+                    "image": "",
+                    "position": "",
+                    "repeat": "",
+                    "size": ""
+                },
+                "border": {
+                    "color": "",
+                    "radius": "",
+                    "style": "",
+                    "type": "",
+                    "width": ""
+                },
+                "class": "slds-card  ",
+                "container": {
+                    "class": "slds-card "
+                },
+                "customClass": "",
+                "elementStyleProperties": {
+                },
+                "inlineStyle": "",
+                "margin": [
+                ],
+                "padding": [
+                ],
+                "size": {
+                    "default": "12",
+                    "isResponsive": false
+                },
+                "sizeClass": "slds-size_12-of-12 ",
+                "style": "background-color:#F3F2F2;     : #ccc 1px solid; \n         ",
+                "text": {
+                    "align": "",
+                    "color": ""
+                }
+            }
+        },
+        {
+            "actions": [
+            ],
+            "blankCardState": false,
+            "childCards": [
+                "cpqReadyToSubmitCancelledDesktopChild"
+            ],
+            "components": {
+                "layer-0": {
+                    "children": [
+                        {
+                            "class": "slds-col ",
+                            "element": "childCardPreview",
+                            "elementLabel": "FlexCard-0",
+                            "name": "FlexCard",
+                            "property": {
+                                "cardName": "cpqReadyToSubmitCancelledDesktopChild",
+                                "cardNode": "{record}",
+                                "isChildCardTrackingEnabled": false,
+                                "parentAttribute": {
+                                    "details": "{Parent.details}"
+                                },
+                                "recordId": "{recordId}",
+                                "selectedState": "Order Complete Activated"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 1,
+                            "styleObject": {
+                                "sizeClass": "slds-size_12-of-12"
+                            },
+                            "type": "element"
+                        }
+                    ]
+                }
+            },
+            "conditions": {
+                "group": [
+                    {
+                        "field": "Parent.details.records[0].ObjectType",
+                        "hasMergeField": false,
+                        "id": "state-new-condition-0",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "Order"
+                    },
+                    {
+                        "field": "Parent.details.records[0].orderStatusValue",
+                        "hasMergeField": false,
+                        "id": "state-new-condition-104",
+                        "logicalOperator": "&&",
+                        "operator": "!=",
+                        "type": "custom",
+                        "value": "ReadyToSubmit"
+                    },
+                    {
+                        "field": "Parent.details.records[0].orderStatusValue",
+                        "hasMergeField": false,
+                        "id": "state-new-condition-141",
+                        "logicalOperator": "&&",
+                        "operator": "!=",
+                        "type": "custom",
+                        "value": "Cancelled"
+                    }
+                ],
+                "id": "state-condition-object",
+                "isParent": true
+            },
+            "documents": [
+            ],
+            "fields": [
+            ],
+            "isSmartAction": false,
+            "name": "Order Complete / Activated / Queued",
+            "omniscripts": [
+            ],
+            "smartAction": {
+            },
+            "styleObject": {
+                "background": {
+                    "color": "",
+                    "image": "",
+                    "position": "",
+                    "repeat": "",
+                    "size": ""
+                },
+                "border": {
+                    "color": "",
+                    "radius": "",
+                    "style": "",
+                    "type": "",
+                    "width": ""
+                },
+                "class": "",
+                "container": {
+                    "class": ""
+                },
+                "elementStyleProperties": {
+                },
+                "inlineStyle": "",
+                "margin": [
+                ],
+                "padding": [
+                ],
+                "size": {
+                    "default": "12",
+                    "isResponsive": false
+                },
+                "sizeClass": "slds-size_12-of-12 ",
+                "style": "      \n         ",
+                "text": {
+                    "align": "",
+                    "color": ""
+                }
+            }
+        }
+    ],
+    "theme": "slds",
+    "title": "cpqReadyToSubmitCancelledDesktop",
+    "xmlJson": [
+        {
+            "@attributes": {
+                "targets": "lightning__AppPage"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                },
+                {
+                    "@attributes": {
+                        "name": "recordId",
+                        "type": "String"
+                    }
+                }
+            ]
+        },
+        {
+            "@attributes": {
+                "targets": "lightning__RecordPage"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                }
+            ]
+        }
+    ],
+    "xmlObject": {
+        "masterLabel": "cpqReadyToSubmitCancelledDesktop",
+        "targetConfigs": "PHRhcmdldENvbmZpZyB0YXJnZXRzPSJsaWdodG5pbmdfX0FwcFBhZ2UiPgogICAgICAgICAgICAgICAgICAgICAgPHByb3BlcnR5IG5hbWU9ImRlYnVnIiB0eXBlPSJCb29sZWFuIi8+CiAgICAgICAgICAgICAgICAgICAgICA8cHJvcGVydHkgbmFtZT0icmVjb3JkSWQiIHR5cGU9IlN0cmluZyIvPgogICAgICAgICAgICAgICAgICA8L3RhcmdldENvbmZpZz4KICAgICAgICAgICAgICAgICAgPHRhcmdldENvbmZpZyB0YXJnZXRzPSJsaWdodG5pbmdfX1JlY29yZFBhZ2UiPgogICAgICAgICAgICAgICAgICAgICAgPHByb3BlcnR5IG5hbWU9ImRlYnVnIiB0eXBlPSJCb29sZWFuIi8+CiAgICAgICAgICAgICAgICAgIDwvdGFyZ2V0Q29uZmlnPg==",
+        "targets": {
+            "target": [
+                "lightning__RecordPage",
+                "lightning__AppPage",
+                "lightning__HomePage"
+            ]
+        }
+    }
+}

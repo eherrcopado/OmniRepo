@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "Response",
+    "OmniProcessId": {
+        "Name": "EnergyUtilitiesProgramsGetAllProducts",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/EnergyUtilitiesPrograms/GetAllProducts/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "AccountBillingAddress": "=%FetchBillingAddress:AccountBillingAddress%",
+            "EVCharger": "=IF(ISNOTBLANK(%TransformProgramProducts:FamilyToProductMap:EVCharger%), LIST(%TransformProgramProducts:FamilyToProductMap:EVCharger%), LIST())",
+            "EVRates": "=IF(ISNOTBLANK(%TransformProgramProducts:FamilyToProductMap:EVRates%), LIST(%TransformProgramProducts:FamilyToProductMap:EVRates%), LIST())",
+            "FinancialAssistance": "=IF(ISNOTBLANK(%MergeNoneWithFinancialAssistance%), LIST(%MergeNoneWithFinancialAssistance%), LIST())"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/EnergyUtilitiesPrograms/GetAllProducts/Procedure/Response"
+}

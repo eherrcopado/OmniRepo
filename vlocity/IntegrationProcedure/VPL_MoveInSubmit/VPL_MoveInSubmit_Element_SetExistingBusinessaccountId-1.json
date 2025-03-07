@@ -1,0 +1,33 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetExistingBusinessaccountId-1",
+    "OmniProcessId": {
+        "Name": "VIP-MoveInSubmit",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/MoveInSubmit/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "BusinessAccountId": "%CustomerSelection:ExistingAccount-Block:ExistingAccountId%"
+        },
+        "executionConditionalFormula": "%CustomerSelection:AccountType% = 'Business' AND (%CustomerSelection:NewCustomer% = 'No' OR %CustomerSelection:NewAccountNeeded% = 'No' ) AND %SelectPremises:NewAccountPremises% = 'Yes'",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues13",
+        "responseJSONNode": "BusinessAccountId",
+        "responseJSONPath": "BusinessAccountId",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/MoveInSubmit/Procedure/SetExistingBusinessaccountId-1"
+}

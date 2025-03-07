@@ -1,0 +1,33 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetDRId_Account-4",
+    "OmniProcessId": {
+        "Name": "VIP-MoveInSubmit",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/MoveInSubmit/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AccountId": "%DRCreatServiceAccount:Account_1:Id%"
+        },
+        "executionConditionalFormula": "%CustomerSelection:AccountType% = 'Business' AND (%CustomerSelection:NewCustomer% = 'Yes' OR %CustomerSelection:NewAccountNeeded% = 'Yes')",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues15",
+        "responseJSONNode": "DRId_Account",
+        "responseJSONPath": "AccountId",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/MoveInSubmit/Procedure/SetDRId_Account-4"
+}

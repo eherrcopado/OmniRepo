@@ -1,0 +1,61 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Table for Selected Services",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "SelectedServicesLWC",
+    "OmniProcessId": {
+        "Name": "VPL-MoveOut-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveOut/Multi-Language",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "PreConfirmMoveOut",
+        "OmniProcessId": {
+            "Name": "VPL-MoveOut-WithoutCPQ",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveOut/Multi-Language",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveOut/Multi-Language/PreConfirmMoveOut",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "PreConfirmMoveOut",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "bStandalone": false,
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "customAttributes": [
+            {
+                "name": "record-list",
+                "source": "%AssetDetail:AssetListLWC%"
+            },
+            {
+                "name": "columns",
+                "source": "%ReadonlyServicePointColumn%"
+            },
+            {
+                "name": "max-row-selection",
+                "source": "null"
+            },
+            {
+                "name": "lwc-node-name",
+                "source": "null"
+            }
+        ],
+        "disOnTplt": false,
+        "hide": false,
+        "label": null,
+        "lwcName": "%vlocity_namespace%__sfiEnergyOSDataTable",
+        "show": null
+    },
+    "Type": "Custom Lightning Web Component",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveOut/Multi-Language/SelectedServicesLWC"
+}

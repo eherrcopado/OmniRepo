@@ -1,0 +1,36 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "ServicePointListAssetLoop",
+    "OmniProcessId": {
+        "Name": "VPL/GetServicePoint",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/ServicePoint/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "LoopBlock3",
+        "loopList": "SVServicePointList:ServiceList",
+        "loopOutput": {
+            "ActivationDate": "%SVServicePointList:ServiceList:ActivationDate%",
+            "ContractedUsage": "%DRGetServicePointAsset:AssetContractedUsage%",
+            "PremiseAddress": "%SVServicePointList:ServiceList:PremiseAddress%",
+            "ProductDescription": "%SVServicePointList:ServiceList:ProductDescription%",
+            "ProductName": "%SVServicePointList:ServiceList:ProductName%",
+            "ServicePointId": "%SVServicePointList:ServiceList:ServicePointId%",
+            "ServicePointNumber": "%SVServicePointList:ServiceList:ServicePointNumber%",
+            "ServicePointStatus": "%SVServicePointList:ServiceList:ServicePointStatus%",
+            "ServiceType": "%SVServicePointList:ServiceList:ServiceType%"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/ServicePoint/Procedure/ServicePointListAssetLoop"
+}

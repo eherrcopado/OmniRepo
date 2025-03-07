@@ -1,0 +1,49 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRUpdateBillingAccount",
+    "OmniProcessId": {
+        "Name": "VPL-UpdateMoveOut",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/UpdateMoveOut/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "BillingAccountId": "=%BilledAccountId%",
+            "BillingCity": "=%FinalBillAddress:City%",
+            "BillingCountry": "=%FinalBillAddress:Country%",
+            "BillingPostalCode": "=%FinalBillAddress:PostalCode%",
+            "BillingState": "=%FinalBillAddress:State%",
+            "BillingStreet": "=%FinalBillAddress:Street%"
+        },
+        "additionalOutput": {
+        },
+        "bundle": "VPL-UpdateMoveOutDetails",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "%BillDeliveryMethod%==\"Paper Billing\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "label": "DataRaptorPostAction1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Post Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/UpdateMoveOut/Procedure/DRUpdateBillingAccount"
+}

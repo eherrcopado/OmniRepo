@@ -1,0 +1,48 @@
+{
+    "AuthorName": "Vlocity",
+    "ClonedFromOmniUiCardKey": "",
+    "CurrencyIsoCode": "USD",
+    "DataSourceConfig": {
+        "dataSource": {
+            "contextVariables": [
+                {
+                    "id": 1,
+                    "name": "recordId",
+                    "val": "8015g000000c6aEAAQ"
+                }
+            ],
+            "orderBy": {
+                "isReverse": false,
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "cartId": "{recordId}"
+                },
+                "ipMethod": "CPQ_GetAppliedDiscounts",
+                "jsonMap": "{\"recordId\":\"{recordId}\"}",
+                "resultVar": "",
+                "vlocityAsync": false
+            }
+        }
+    },
+    "Description": "",
+    "IsLocked": false,
+    "IsTrackingEnabled": false,
+    "MayEdit": true,
+    "Name": "cpqCreateCustomDiscountModal",
+    "Namespace": "",
+    "OmniUiCardKey": "cpqCreateCustomDiscountModal/Vlocity/5/1657610549035",
+    "OmniUiCardType": "Child",
+    "OverrideKey": "",
+    "PropertySetConfig": "cpqCreateCustomDiscountModal.json",
+    "SampleDataSourceResponse": "{\"response\":{\"records\":{\"actions\":{\"createNewDiscount\":{\"client\":{\"params\":{}},\"remote\":{\"params\":{\"fields\":{\"Discount Name\":{\"value\":\"\",\"label\":\"Discount Name\"},\"Active period\":{\"value\":null,\"label\":\"Active Period\"},\"End date\":{\"value\":null,\"label\":\"End Date\"},\"All items in cart\":{\"value\":false,\"label\":\"All items in cart\"},\"Duration unit\":{\"value\":\"Month\",\"label\":\"Duration unit\"},\"Discount\":{\"value\":\"\",\"label\":\"Discount\",\"discounts\":[{\"label\":\"\",\"selectedTimePolicy\":null,\"selectedTimePlan\":null,\"chargeType\":\"Recurring\",\"selectedAdjustmentMethod\":{\"value\":\"%\"},\"actions\":{\"client\":{\"params\":{},\"records\":[]},\"remote\":{\"params\":{\"listkeys\":\"TimePlans,TimePolicies\",\"methodName\":\"getListsOfValues\"}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/listsofvalues?listkeys=TimePlans,TimePolicies\",\"method\":\"GET\",\"params\":{}}},\"value\":null,\"types\":[{\"value\":\"%\",\"detailType\":\"Discount\",\"method\":\"Percent\"},{\"value\":\"$\",\"detailType\":\"Discount\",\"method\":\"Absolute\"}]},{\"label\":\"\",\"chargeType\":\"One-time\",\"selectedAdjustmentMethod\":{\"value\":\"%\"},\"value\":null,\"types\":[{\"value\":\"%\",\"detailType\":\"Discount\",\"method\":\"Percent\"},{\"value\":\"$\",\"detailType\":\"Discount\",\"method\":\"Absolute\"}]}]},\"Product\":{\"label\":\"Product\",\"value\":\"\",\"products\":[{\"Id\":\"\",\"Name\":\"\"}],\"actions\":{\"client\":{\"params\":{\"cartId\":\"8015g000000c6aEAAQ\",\"methodName\":\"getCartsProducts\"},\"records\":[]},\"remote\":{\"params\":{\"cartId\":\"8015g000000c6aEAAQ\",\"methodName\":\"getCartsProducts\"}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/cpq/carts/8015g000000c6aEAAQ/products?cartId=8015g000000c6aEAAQ\",\"method\":\"GET\",\"params\":{}}}},\"Category\":{\"label\":\"Category\",\"value\":\"\",\"categories\":[{\"Id\":\"\",\"Name\":\"\"}],\"actions\":{\"client\":{\"params\":{\"cartId\":\"8015g000000c6aEAAQ\",\"includeAllCatalogs\":true,\"ContextId\":\"8015g000000c6aEAAQ\",\"methodName\":\"getCatalogHierarchy\"},\"records\":[]},\"remote\":{\"params\":{\"cartId\":\"8015g000000c6aEAAQ\",\"includeAllCatalogs\":true,\"ContextId\":\"8015g000000c6aEAAQ\",\"methodName\":\"getCatalogHierarchy\"}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/cpq/catalogs?cartId=8015g000000c6aEAAQ&includeAllCatalogs=true&ContextId=8015g000000c6aEAAQ\",\"method\":\"GET\",\"params\":{}}}},\"Allocation\":{\"label\":\"Discount Type\",\"types\":[{\"name\":\"Account\",\"value\":\"Account\"},{\"name\":\"Order\",\"value\":\"Order\"},{\"name\":\"Contract\",\"value\":\"Contract\"}],\"selectedDiscountType\":{\"name\":\"Account\",\"value\":\"Account\"}}},\"cartId\":\"8015g000000c6aEAAQ\",\"methodName\":\"postCartsDiscounts\"}},\"rest\":{\"link\":null,\"method\":null,\"params\":{}}}},\"totalSize\":0}}}",
+    "StylingConfiguration": "{\"customStyles\":\".cpq-create_discount{\\n    padding: 0;\\n}\\n\\n.cpq-create_discount .header{\\n    font-size: 20px;\\n    line-height: 28px;\\n    text-align: center;\\n    color: #000000;\\n    padding-bottom: 10px;\\n    border-bottom: 1px solid #D9D9D9;\\n}\\n\\n.cpq-create_discount .border-bottom{\\n    border-bottom: 1px solid #D9D9D9;\\n    box-sizing: border-box;\\n    margin: 20px 0px;\\n}\\n\\n.cpq-create_discount .body{\\n    background: #fafaf9;\\n    padding: 12px 22px;\\n    max-height: 580px;\\n    overflow-y: auto;\\n}\\n.cpq-create_discount .body .field-container{\\n    background-color: #FFFFFF;\\n    border: 1px solid #D9D9D9;\\n    border-radius: 5px;\\n    box-sizing: border-box;\\n    padding: 30px 0px;\\n}\\n.cpq-create_discount .body .field-container .field-row{\\n    padding: 0px 20px;\\n}\\n\\n.cpq-create_discount .cpq_footer{\\n    border-top: 1px solid #D9D9D9;\\n    padding: 12px 12px 0 0;\\n}\\n\\n/* css for cpqCreateAmountDetails */\\n.value label.slds-form-element__label{\\n    margin-left: -25px !important;\\n}\\n\"}",
+    "UniqueName": "cpqCreateCustomDiscountModal_Vlocity_3",
+    "VersionNumber": 3,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniUiCard",
+    "VlocityRecordSourceKey": "OmniUiCard/cpqCreateCustomDiscountModal"
+}

@@ -1,0 +1,44 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetAccountValues",
+    "OmniProcessId": {
+        "Name": "TransferofServiceLWC",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Service/TransferOfServiceLWC/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "elementValueMap": {
+            "AccountId": "%ContextId%",
+            "OrderName": "=CONCATENATE(%OldPremise:ParentAccountName%,' - Move')",
+            "OrderStartDate": "%MoveInDate%",
+            "OrderStatus": "Draft",
+            "SA_AccountName": "=CONCATENATE(%OldPremise:ParentAccountName%,'-',%Step_NewHomeDetails:NewPremiseAddress-Block:NewPremiseStreet%,'-SA')",
+            "SA_BillingCity": "%NewPremiseCity%",
+            "SA_BillingCountry": "%NewPremiseCountry%",
+            "SA_BillingPostalCode": "%NewPremisePostalCode%",
+            "SA_BillingState": "%NewPremiseState%",
+            "SA_BillingStreet": "%NewPremiseStreet%"
+        },
+        "label": "SetAccountValues",
+        "message": {
+        },
+        "pubsub": false,
+        "showPersistentComponent": [
+            true,
+            false
+        ],
+        "ssm": false,
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Service/TransferOfServiceLWC/English/SetAccountValues"
+}

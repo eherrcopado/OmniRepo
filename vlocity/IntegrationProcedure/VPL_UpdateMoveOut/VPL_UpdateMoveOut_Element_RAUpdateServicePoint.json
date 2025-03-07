@@ -1,0 +1,65 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "This will update the Status field of the ServicePoint object linked to the Asset",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "RAUpdateServicePoint",
+    "OmniProcessId": {
+        "Name": "VPL-UpdateMoveOut",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/UpdateMoveOut/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "SSPUpdateAssetServicePoint",
+        "OmniProcessId": {
+            "Name": "VPL-UpdateMoveOut",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/UpdateMoveOut/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/UpdateMoveOut/Procedure/SSPUpdateAssetServicePoint",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "SSPUpdateAssetServicePoint",
+    "ParentElementType": "Loop Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalChainableResponse": {
+        },
+        "additionalInput": {
+            "AssetId": "=%AssetDetail:AssetListLWC:AssetId%",
+            "ServicePointStatus": "Vacant"
+        },
+        "additionalOutput": {
+        },
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "ISNOTBLANK(%AssetDetail:AssetListLWC:ServicePointId%)",
+        "failOnStepError": true,
+        "failureConditionalFormula": "%isError% == true",
+        "failureResponse": {
+        },
+        "label": "RemoteAction1",
+        "remoteClass": "VEEAppHandler",
+        "remoteMethod": "updateAssetServicePointStatus",
+        "remoteOptions": {
+        },
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "Remote Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/UpdateMoveOut/Procedure/RAUpdateServicePoint"
+}

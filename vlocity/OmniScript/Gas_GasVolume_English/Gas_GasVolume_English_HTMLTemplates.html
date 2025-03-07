@@ -1,0 +1,165 @@
+<script type="text/ng-template" id="Print.html">
+    <style>
+        .via-slds input[type="checkbox"], .via-slds input[type="radio"] {
+            -webkit-appearance: checkbox;
+        }
+    </style>
+    <div class="panel panel-default">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Select">Select</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Yr">Yr</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Revenue">Investment</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Revenue">Revenue</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="OPEXr">OPEX</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Tax">Tax</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Total">Total</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class='ins'>
+                <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+                    <td>
+                        <input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this, false)' />
+                    </td>
+                    <td data-label="Print">
+                        <div class="slds-truncate">{{p.Year}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Investment | number:0}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Revenue | number:0 }}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Opex | number:0}}</div>
+                    </td>
+                    <td data-label="Download">
+                        <div class="slds-truncate">{{p.Tax | number:0}}</div>
+                    </td>
+                    <td data-label="Download">
+                        <div class="slds-truncate">{{p.Total | number:0}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>
+<script type="text/ng-template" id="AccountList.html">
+    <style>
+        .via-slds input[type="checkbox"], .via-slds input[type="radio"] {
+            -webkit-appearance: checkbox;
+        }
+    </style>
+    <div class="panel panel-default">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Select">Select</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Acct Number">Acct #</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="DueDate">Due Date</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Amount">Amount</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Address</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class='ins'>
+                <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+                    <td>
+                        <input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this, false)' />
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.AccountName}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.AccountNumber}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Balance.BalanceDate | date:'d MMM yy'}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Balance.BalanceValue}}</div>
+                    </td>
+                    <td data-label="Address">
+                        <div class="slds-truncate">{{p.BillingStreet}},{{p.BillingPostalCode}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>
+<script type="text/ng-template" id="AssetList.html">
+    <style>
+        .via-slds input[type="checkbox"], .via-slds input[type="radio"] {
+            -webkit-appearance: checkbox;
+        }
+    </style>
+    <div class="panel panel-default">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Select">Select</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Asset</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Serial Number">Serial #</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Activation Date">Activation Date</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Status">Status</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class='ins'>
+                <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+                    <td>
+                        <input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this, false)' />
+                    </td>
+                    <td data-label="Name">
+                        <div class="slds-truncate">{{p.Assetname}}</div>
+                    </td>
+                    <td data-label="Serial Number">
+                        <div class="slds-truncate">{{p.Serialnumber}}</div>
+                    </td>
+                    <td data-label="Activation Date">
+                        <div class="slds-truncate">{{p.ActivationDate | date:'d MMM yy'}}</div>
+                    </td>
+                    <td data-label="Status">
+                        <div class="slds-truncate">{{p.Status}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>

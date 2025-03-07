@@ -1,0 +1,93 @@
+[
+    {
+        "CurrencyIsoCode": "USD",
+        "FormulaExpression": "IF(%CustomerSelection:AccountType% = 'Business', %BillingAccountId%, %DRId_Account%)",
+        "FormulaResultPath": "FML_AccountId",
+        "FormulaSequence": 1,
+        "GlobalKey": "b1e19196-c35f-3451-3777-c31f241c7da2",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "VPL-TransformCreateContractAccount",
+        "OmniDataTransformationId": {
+            "Name": "VPLTransformCreateContractAccount",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/VPLTransformCreateContractAccount",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 0,
+        "OutputFieldName": "Formula",
+        "OutputObjectName": "Formula",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "GlobalKey": "61b62470-3c09-21a4-49a6-ab32c1c3a59a",
+        "InputFieldName": "FML_AccountId",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "VPL-TransformCreateContractAccount",
+        "OmniDataTransformationId": {
+            "Name": "VPLTransformCreateContractAccount",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/VPLTransformCreateContractAccount",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 1,
+        "OutputFieldName": "AccountId",
+        "OutputObjectName": "json",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "GlobalKey": "6dc36f36-12d4-b65a-2be6-fc8ce421da96",
+        "InputFieldName": "CustomerSelection:MoveInDate",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "VPL-TransformCreateContractAccount",
+        "OmniDataTransformationId": {
+            "Name": "VPLTransformCreateContractAccount",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/VPLTransformCreateContractAccount",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 1,
+        "OutputFieldName": "CloseDate",
+        "OutputObjectName": "json",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "GlobalKey": "b0028c9b-e530-3f61-74a1-bac33b829935",
+        "InputFieldName": "VIPCreateBusinessPartner:ERPAccountID__c",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "VPL-TransformCreateContractAccount",
+        "OmniDataTransformationId": {
+            "Name": "VPLTransformCreateContractAccount",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/VPLTransformCreateContractAccount",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 1,
+        "OutputFieldFormat": "String",
+        "OutputFieldName": "ERP_Account_Id__c",
+        "OutputObjectName": "json",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    }
+]

@@ -1,0 +1,89 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Premise Typeahead",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "Premises",
+    "OmniProcessId": {
+        "Name": "VPLEnergyMakeComplaint",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MakeComplaint/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "CaseDetails",
+        "OmniProcessId": {
+            "Name": "VPLEnergyMakeComplaint",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MakeComplaint/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MakeComplaint/English/CaseDetails",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "CaseDetails",
+    "ParentElementType": "Block",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "accessibleInFutureSteps": true,
+        "callFrequency": 300,
+        "conditionType": "Hide if False",
+        "controlWidth": 6,
+        "dataJsonPath": "ServicePremises|n",
+        "dataProcessorFunction": "",
+        "debounceValue": 0,
+        "disOnTplt": false,
+        "disableDataFilter": true,
+        "editMode": false,
+        "enableGoogleMapsAutocomplete": false,
+        "enableLookup": true,
+        "googleAddressCountry": "all",
+        "googleMapsAPIKey": "",
+        "googleTransformation": {
+            "administrative_area_level_1": "",
+            "administrative_area_level_2": "",
+            "country": "",
+            "locality": "",
+            "postal_code": "",
+            "street": ""
+        },
+        "help": false,
+        "helpText": "",
+        "hideEditButton": true,
+        "hideMap": true,
+        "inputWidth": 12,
+        "label": "Premises",
+        "maxLength": 255,
+        "minLength": 0,
+        "newItemLabel": "",
+        "readOnly": false,
+        "required": false,
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "Business",
+                        "field": "AccountRecordType"
+                    },
+                    {
+                        "condition": "=",
+                        "data": "MakeComplaint",
+                        "field": "OmniscriptType"
+                    }
+                ]
+            }
+        },
+        "showInputWidth": false,
+        "typeAheadKey": "PremisesName",
+        "useDataJson": true
+    },
+    "Type": "Type Ahead Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MakeComplaint/English/Premises"
+}

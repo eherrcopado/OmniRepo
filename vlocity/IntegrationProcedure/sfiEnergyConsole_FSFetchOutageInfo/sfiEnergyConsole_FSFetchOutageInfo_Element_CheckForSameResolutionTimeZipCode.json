@@ -1,0 +1,84 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "CheckForSameResolutionTimeZipCode",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalChainableResponse": {
+        },
+        "additionalInput": {
+        },
+        "additionalOutput": {
+        },
+        "advancedMerge": true,
+        "advancedMergeMap": [
+            {
+                "listKey": "FilterDuplicatePremisesOutageZipCode",
+                "matchingPath": "startTime",
+                "normalizeKey": "1"
+            },
+            {
+                "listKey": "FilterDuplicatePremisesOutageZipCode",
+                "matchingPath": "startTime",
+                "normalizeKey": "1"
+            },
+            {
+                "listKey": "FilterDuplicatePremisesOutageZipCode",
+                "matchingPath": "estimatedRestoration",
+                "normalizeKey": "2"
+            },
+            {
+                "listKey": "FilterDuplicatePremisesOutageZipCode",
+                "matchingPath": "estimatedRestoration",
+                "normalizeKey": "2"
+            }
+        ],
+        "allowMergeNulls": true,
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "dynamicOutputFields": "",
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+            "ErrorMessage": "CheckForSameResolutionTimeZipCode : Failed to check for same resolution time for zip codes"
+        },
+        "filterListFormula": "",
+        "hasPrimary": false,
+        "label": "ListAction5",
+        "mergeFields": [
+        ],
+        "mergeListsOrder": [
+            "FilterDuplicatePremisesOutageZipCode",
+            "FilterDuplicatePremisesOutageZipCode"
+        ],
+        "primaryListKey": "",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": false,
+        "show": null,
+        "sortBy": [
+        ],
+        "sortInDescendingOrder": false,
+        "updateFieldValue": {
+        },
+        "useFormulas": true
+    },
+    "Type": "List Merge Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/CheckForSameResolutionTimeZipCode"
+}

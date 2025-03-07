@@ -1,0 +1,647 @@
+{
+    "dataSource": {
+        "contextVariables": [
+            {
+                "id": 13,
+                "name": "recordId",
+                "val": "0063y000018fmdVAAQ"
+            }
+        ],
+        "orderBy": {
+            "isReverse": false,
+            "name": ""
+        },
+        "type": "DataRaptor",
+        "value": {
+            "bundle": "dcGetOpportunityDetails",
+            "bundleType": "",
+            "dsDelay": "",
+            "inputMap": {
+                "OpportunityId": "{recordId}"
+            },
+            "jsonMap": "{\"recordId\":\"{recordId}\"}",
+            "resultVar": ""
+        }
+    },
+    "enableLwc": true,
+    "isFlex": true,
+    "lwc": {
+        "DeveloperName": "cfOpportunityActionsList",
+        "Id": "0Rb5f000002Rqa2CAC",
+        "ManageableState": "unmanaged",
+        "MasterLabel": "cfOpportunityActionsList",
+        "NamespacePrefix": "c"
+    },
+    "selectableMode": "Multi",
+    "states": [
+        {
+            "actions": [
+            ],
+            "blankCardState": true,
+            "childCards": [
+            ],
+            "components": {
+                "layer-0": {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "class": "slds-col ",
+                                    "element": "outputField",
+                                    "elementLabel": "Block-0-Text-0",
+                                    "key": "element_element_block_0_0_outputField_0_0",
+                                    "name": "Text",
+                                    "parentElementKey": "element_block_0_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "mergeField": "%3Cdiv%3E%3Cspan%20style=%22color:%20#000000;%20font-size:%2012pt;%22%3E%3Cstrong%3E&nbsp;Next%20Steps%3C/strong%3E%3C/span%3E%3C/div%3E",
+                                        "record": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "11",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "#ECEDED",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "#0B87FA",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "",
+                                        "container": {
+                                            "class": ""
+                                        },
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "",
+                                        "margin": [
+                                        ],
+                                        "padding": [
+                                        ],
+                                        "size": {
+                                            "default": "11",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_11-of-12 ",
+                                        "style": "background-color:#ECEDED;      \n         ",
+                                        "text": {
+                                            "align": "",
+                                            "color": ""
+                                        }
+                                    },
+                                    "styleObjects": [
+                                        {
+                                            "conditionString": "",
+                                            "conditions": "default",
+                                            "draggable": false,
+                                            "key": 0,
+                                            "label": "Default",
+                                            "name": "Default",
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "#ECEDED",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "#0B87FA",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "",
+                                                "container": {
+                                                    "class": ""
+                                                },
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "11",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_11-of-12 ",
+                                                "style": "background-color:#ECEDED;      \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "type": "text"
+                                },
+                                {
+                                    "class": "slds-col ",
+                                    "element": "action",
+                                    "elementLabel": "UpdateTechnicalDetails",
+                                    "key": "element_element_block_0_0_action_1_0",
+                                    "name": "Action",
+                                    "parentElementKey": "element_block_0_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "contextId": "\\{recordId}",
+                                        "data-conditions": {
+                                            "group": [
+                                                {
+                                                    "field": "OpportunityStage",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-0",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "Qualification"
+                                                },
+                                                {
+                                                    "field": "OpportunityRecordTypeName",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-5",
+                                                    "logicalOperator": "&&",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "Regulated Electricity"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "record": "{record}",
+                                        "stateAction": {
+                                            "displayName": "Update Technical Details",
+                                            "id": "flex-action-1641319093124",
+                                            "isLwcOS": true,
+                                            "layoutType": "lightning",
+                                            "omniType": {
+                                                "Id": "a1I5f000001hchyEAA",
+                                                "Name": "Sales/RegElectricity/English",
+                                                "isLwcOs": true
+                                            },
+                                            "openUrlIn": "New Tab/Window",
+                                            "tabLabel": "Update Technical Details",
+                                            "type": "OmniScript",
+                                            "vlocityIcon": "utility:forward_up"
+                                        },
+                                        "stateObj": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "11",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "size": {
+                                            "default": "11",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_11-of-12 "
+                                    },
+                                    "type": "element",
+                                    "userUpdatedElementLabel": true
+                                },
+                                {
+                                    "class": "slds-col ",
+                                    "element": "action",
+                                    "elementLabel": "CompleteTasks",
+                                    "key": "element_element_block_0_0_action_2_0",
+                                    "name": "Action",
+                                    "parentElementKey": "element_block_0_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "contextId": "\\{recordId}",
+                                        "data-conditions": {
+                                            "group": [
+                                                {
+                                                    "field": "OpportunityStage",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-7",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "Qualification"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "record": "{record}",
+                                        "stateAction": {
+                                            "displayName": "Complete Tasks",
+                                            "id": "flex-action-1641320830297",
+                                            "isLwcOS": true,
+                                            "layoutType": "lightning",
+                                            "omniType": {
+                                                "Id": "a1I5f000001hdnoEAA",
+                                                "Name": "REGTasksOpportunity/CompleteTasks/English",
+                                                "isLwcOs": true
+                                            },
+                                            "openUrlIn": "New Tab/Window",
+                                            "tabLabel": "Complete Tasks",
+                                            "type": "OmniScript",
+                                            "vlocityIcon": "utility:forward_up"
+                                        },
+                                        "stateObj": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "11",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "size": {
+                                            "default": "11",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_11-of-12 "
+                                    },
+                                    "type": "element",
+                                    "userUpdatedElementLabel": true
+                                },
+                                {
+                                    "class": "slds-col ",
+                                    "element": "action",
+                                    "elementLabel": "Block-0-Action-2-clone-0",
+                                    "key": "element_element_block_0_0_action_3_0",
+                                    "name": "Action",
+                                    "parentElementKey": "element_block_0_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "contextId": "\\{recordId}",
+                                        "data-conditions": {
+                                            "group": [
+                                                {
+                                                    "field": "OpportunityStage",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-7",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "Qualification"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "record": "{record}",
+                                        "stateAction": {
+                                            "Object": {
+                                                "targetAction": "home",
+                                                "targetName": "Event"
+                                            },
+                                            "displayName": "Book a Meeting",
+                                            "id": "flex-action-1641845664217",
+                                            "openUrlIn": "New Tab/Window",
+                                            "targetType": "Object",
+                                            "type": "Custom",
+                                            "vlocityIcon": "utility:forward_up"
+                                        },
+                                        "stateObj": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "11",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "size": {
+                                            "default": "11",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_11-of-12 "
+                                    },
+                                    "type": "element",
+                                    "userUpdatedElementLabel": true
+                                },
+                                {
+                                    "class": "slds-col ",
+                                    "element": "action",
+                                    "elementLabel": "CreateQuote",
+                                    "key": "element_element_block_0_0_action_4_0",
+                                    "name": "Action",
+                                    "parentElementKey": "element_block_0_0",
+                                    "property": {
+                                        "actionList": [
+                                            {
+                                                "actionIndex": 0,
+                                                "card": "{card}",
+                                                "contextId": "\\{recordId}",
+                                                "data-conditions": {
+                                                    "group": [
+                                                        {
+                                                            "field": "OpportunityStage",
+                                                            "hasMergeField": false,
+                                                            "id": "state-new-condition-3",
+                                                            "operator": "==",
+                                                            "type": "custom",
+                                                            "value": "Offer Preparation"
+                                                        },
+                                                        {
+                                                            "field": "OpportunityRecordTypeName",
+                                                            "hasMergeField": false,
+                                                            "id": "state-new-condition-15",
+                                                            "logicalOperator": "&&",
+                                                            "operator": "==",
+                                                            "type": "custom",
+                                                            "value": "Regulated Electricity"
+                                                        }
+                                                    ],
+                                                    "id": "state-condition-object",
+                                                    "isParent": true
+                                                },
+                                                "draggable": true,
+                                                "isOpen": true,
+                                                "key": "1666130719781-g0v4uk2tj",
+                                                "label": "Action",
+                                                "record": "{record}",
+                                                "stateAction": {
+                                                    "displayName": "Create Electricity Quote",
+                                                    "id": "flex-action-1666206821161",
+                                                    "layoutType": "lightning",
+                                                    "omniType": {
+                                                        "Id": "0jNDn000000L3mGMAS",
+                                                        "Name": "Sales/RegulatedElectricityCreateQuote/English"
+                                                    },
+                                                    "openUrlIn": "New Tab/Window",
+                                                    "tabLabel": "Create Quote",
+                                                    "type": "OmniScript",
+                                                    "vForcewithNsPrefix": "%vlocity_namespace%__OmniScriptUniversalPage",
+                                                    "vlocityIcon": "utility:forward_up"
+                                                },
+                                                "stateObj": "{record}"
+                                            }
+                                        ],
+                                        "card": "{card}",
+                                        "contextId": "\\{recordId}",
+                                        "data-conditions": {
+                                            "group": [
+                                                {
+                                                    "field": "OpportunityStage",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-3",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "Offer Preparation"
+                                                },
+                                                {
+                                                    "field": "OpportunityRecordTypeName",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-15",
+                                                    "logicalOperator": "&&",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "Regulated Electricity"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "flyoutDetails": {
+                                        },
+                                        "iconName": "utility:forward_up",
+                                        "label": "Create Electricity Quote",
+                                        "record": "{record}",
+                                        "showSpinner": "false",
+                                        "stateObj": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "11",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "size": {
+                                            "default": "11",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_11-of-12 "
+                                    },
+                                    "type": "element",
+                                    "userUpdatedElementLabel": true
+                                },
+                                {
+                                    "class": "slds-col ",
+                                    "element": "action",
+                                    "elementLabel": "CreateGasQuote",
+                                    "key": "element_element_block_0_0_action_5_0",
+                                    "name": "Action",
+                                    "parentElementKey": "element_block_0_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "contextId": "\\{recordId}",
+                                        "data-conditions": {
+                                            "group": [
+                                                {
+                                                    "field": "OpportunityStage",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-3",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "Offer Preparation"
+                                                },
+                                                {
+                                                    "field": "OpportunityRecordTypeName",
+                                                    "hasMergeField": false,
+                                                    "id": "state-new-condition-15",
+                                                    "logicalOperator": "&&",
+                                                    "operator": "==",
+                                                    "type": "custom",
+                                                    "value": "Regulated"
+                                                }
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "record": "{record}",
+                                        "stateAction": {
+                                            "displayName": "Create Gas Quote",
+                                            "id": "flex-action-1642098963877",
+                                            "isLwcOS": false,
+                                            "layoutType": "lightning",
+                                            "omniType": {
+                                                "Id": "a1I5f000001jCMDEA2",
+                                                "Name": "Sales/RegulatedGasCreateQuote/English",
+                                                "isLwcOs": false
+                                            },
+                                            "openUrlIn": "New Tab/Window",
+                                            "tabLabel": "Create Quote",
+                                            "type": "OmniScript",
+                                            "vForcewithNsPrefix": "%vlocity_namespace%__OmniScriptUniversalPage",
+                                            "vlocityIcon": "utility:forward_up"
+                                        },
+                                        "stateObj": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "11",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "size": {
+                                            "default": "11",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_11-of-12 "
+                                    },
+                                    "type": "element",
+                                    "userUpdatedElementLabel": true
+                                }
+                            ],
+                            "class": "slds-col ",
+                            "element": "block",
+                            "elementLabel": "Block-0",
+                            "name": "Block",
+                            "property": {
+                                "card": "{card}",
+                                "collapsedByDefault": false,
+                                "collapsible": false,
+                                "label": "Block",
+                                "record": "{record}"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "class": "slds-p-around_x-small",
+                                "padding": [
+                                    {
+                                        "size": "x-small",
+                                        "type": "around"
+                                    }
+                                ],
+                                "sizeClass": "slds-size_12-of-12"
+                            },
+                            "type": "block"
+                        }
+                    ]
+                }
+            },
+            "conditions": {
+                "group": [
+                ],
+                "id": "state-condition-object",
+                "isParent": true
+            },
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "documents": [
+            ],
+            "fields": [
+            ],
+            "isSmartAction": false,
+            "name": "Active",
+            "omniscripts": [
+                {
+                    "language": "English",
+                    "subtype": "RegElectricity",
+                    "type": "Sales"
+                },
+                {
+                    "language": "English",
+                    "subtype": "CompleteTasks",
+                    "type": "REGTasksOpportunity"
+                },
+                {
+                    "language": "English",
+                    "subtype": "RegulatedGasCreateQuote",
+                    "type": "Sales"
+                }
+            ],
+            "smartAction": {
+            },
+            "styleObject": {
+                "class": "slds-card slds-p-around_x-small slds-m-bottom_x-small",
+                "container": {
+                    "class": "slds-card"
+                },
+                "margin": [
+                    {
+                        "size": "x-small",
+                        "type": "bottom"
+                    }
+                ],
+                "padding": [
+                    {
+                        "size": "x-small",
+                        "type": "around"
+                    }
+                ],
+                "size": {
+                    "default": "12",
+                    "isResponsive": false
+                },
+                "sizeClass": "slds-size_12-of-12"
+            }
+        }
+    ],
+    "theme": "slds",
+    "title": "OpportunityActionsList",
+    "xmlJson": [
+        {
+            "@attributes": {
+                "targets": "lightning__AppPage",
+                "xmlns": "http://soap.sforce.com/2006/04/metadata"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                },
+                {
+                    "@attributes": {
+                        "name": "recordId",
+                        "type": "String"
+                    }
+                }
+            ]
+        },
+        {
+            "@attributes": {
+                "targets": "lightning__RecordPage",
+                "xmlns": "http://soap.sforce.com/2006/04/metadata"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                }
+            ]
+        }
+    ],
+    "xmlObject": {
+        "apiVersion": 51,
+        "description": "",
+        "isExplicitImport": false,
+        "isExposed": false,
+        "masterLabel": "OpportunityActionsList",
+        "runtimeNamespace": "",
+        "targetConfigs": "CiAgICAgICAgCiAgICAgICAgPHRhcmdldENvbmZpZyB4bWxucz0iaHR0cDovL3NvYXAuc2ZvcmNlLmNvbS8yMDA2LzA0L21ldGFkYXRhIiB0YXJnZXRzPSJsaWdodG5pbmdfX0FwcFBhZ2UiPjxwcm9wZXJ0eSBuYW1lPSJkZWJ1ZyIgdHlwZT0iQm9vbGVhbiIvPjxwcm9wZXJ0eSBuYW1lPSJyZWNvcmRJZCIgdHlwZT0iU3RyaW5nIi8+PC90YXJnZXRDb25maWc+PHRhcmdldENvbmZpZyB4bWxucz0iaHR0cDovL3NvYXAuc2ZvcmNlLmNvbS8yMDA2LzA0L21ldGFkYXRhIiB0YXJnZXRzPSJsaWdodG5pbmdfX1JlY29yZFBhZ2UiPjxwcm9wZXJ0eSBuYW1lPSJkZWJ1ZyIgdHlwZT0iQm9vbGVhbiIvPjwvdGFyZ2V0Q29uZmlnPgogICAgICAgIAogICAgICAgIA==",
+        "targets": {
+            "target": [
+                "lightning__RecordPage",
+                "lightning__AppPage",
+                "lightning__HomePage"
+            ]
+        }
+    }
+}

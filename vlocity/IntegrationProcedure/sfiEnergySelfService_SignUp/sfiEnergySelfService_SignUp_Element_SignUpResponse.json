@@ -1,0 +1,49 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SignUpResponse",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfService",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/SignUp/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "AccountNumber": "%AccountNumber%",
+            "ActualUserName": "%UserName%%UserNameSuffix:value%",
+            "CommunityNickname": "%Config:CommunityNickname%",
+            "Email": "%Email%",
+            "ErrorMessage": "=%AssignPermissionSetGroup:ErrorMessage%",
+            "FirstName": "%FirstName%",
+            "LastName": "%LastName%",
+            "SSN": "%SSN%",
+            "SignUpStatus": "=IF(%AssignPermissionSetGroup:isError% == true, false, true)",
+            "TermsAndConditions": "%TermsAndConditions%",
+            "UserName": "%UserName%"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/SignUp/Procedure/SignUpResponse"
+}

@@ -1,0 +1,44 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRUpdateCase",
+    "OmniProcessId": {
+        "Name": "VPL-UpdateCase",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/UpdateCase/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "CaseStatus": "=IF(%CaseDetails:CaseStatusEnergyComplaint%!=null,%CaseDetails:CaseStatusEnergyComplaint%,IF(%CaseDetails:CaseStatusBillingDispute%!=null,IF(%CaseDetails:CaseStatusBillingDispute%==\"Resolved - No Action\" || %CaseDetails:CaseStatusBillingDispute%==\"Resolved - Meter Read / Rebill\" || %CaseDetails:CaseStatusBillingDispute%==\"Resolved - Adjustment Requested\",\"Closed\",%CaseDetails:CaseStatusBillingDispute%),''),'')"
+        },
+        "additionalOutput": {
+        },
+        "bundle": "VPLUpdateCaseStatus",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "label": "DataRaptorPostAction1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": false,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Post Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/UpdateCase/Procedure/DRUpdateCase"
+}

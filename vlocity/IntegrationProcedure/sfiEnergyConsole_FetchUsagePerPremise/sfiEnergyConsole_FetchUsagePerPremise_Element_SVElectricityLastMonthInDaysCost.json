@@ -1,0 +1,168 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVElectricityLastMonthInDaysCost",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "ElectricityBlock",
+        "OmniProcessId": {
+            "Name": "sfiEnergyConsoleFetchUsagePerPremise",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/ElectricityBlock",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "ElectricityBlock",
+    "ParentElementType": "Conditional Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "usageData": [
+                {
+                    "xAxis": "01",
+                    "yAxis": "7"
+                },
+                {
+                    "xAxis": "02",
+                    "yAxis": "7.5"
+                },
+                {
+                    "xAxis": "03",
+                    "yAxis": "7.8"
+                },
+                {
+                    "xAxis": "04",
+                    "yAxis": "7.4"
+                },
+                {
+                    "xAxis": "05",
+                    "yAxis": "7.4"
+                },
+                {
+                    "xAxis": "06",
+                    "yAxis": "7.8"
+                },
+                {
+                    "xAxis": "07",
+                    "yAxis": "7.5"
+                },
+                {
+                    "xAxis": "08",
+                    "yAxis": "7.3"
+                },
+                {
+                    "xAxis": "09",
+                    "yAxis": "7.3"
+                },
+                {
+                    "xAxis": "10",
+                    "yAxis": "9.8"
+                },
+                {
+                    "xAxis": "11",
+                    "yAxis": "12.1"
+                },
+                {
+                    "xAxis": "12",
+                    "yAxis": "16.4"
+                },
+                {
+                    "xAxis": "13",
+                    "yAxis": "7.3"
+                },
+                {
+                    "xAxis": "14",
+                    "yAxis": "7.5"
+                },
+                {
+                    "xAxis": "15",
+                    "yAxis": "7.8"
+                },
+                {
+                    "xAxis": "16",
+                    "yAxis": "7.4"
+                },
+                {
+                    "xAxis": "17",
+                    "yAxis": "7.4"
+                },
+                {
+                    "xAxis": "18",
+                    "yAxis": "7.8"
+                },
+                {
+                    "xAxis": "19",
+                    "yAxis": "7.5"
+                },
+                {
+                    "xAxis": "20",
+                    "yAxis": "7.3"
+                },
+                {
+                    "xAxis": "21",
+                    "yAxis": "7.3"
+                },
+                {
+                    "xAxis": "22",
+                    "yAxis": "9.8"
+                },
+                {
+                    "xAxis": "23",
+                    "yAxis": "12.1"
+                },
+                {
+                    "xAxis": "24",
+                    "yAxis": "16.4"
+                },
+                {
+                    "xAxis": "25",
+                    "yAxis": "7.3"
+                },
+                {
+                    "xAxis": "26",
+                    "yAxis": "7.5"
+                },
+                {
+                    "xAxis": "27",
+                    "yAxis": "7.8"
+                },
+                {
+                    "xAxis": "28",
+                    "yAxis": "7.4"
+                },
+                {
+                    "xAxis": "29",
+                    "yAxis": "7.4"
+                },
+                {
+                    "xAxis": "30",
+                    "yAxis": "7.8"
+                }
+            ]
+        },
+        "executionConditionalFormula": "%tabName%=\"Electricity\" && %frequency%=\"EnergyLastMnth\" && %dimension%=\"EnergyEstCost\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "data",
+        "responseJSONPath": "usageData",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FetchUsagePerPremise/Procedure/SVElectricityLastMonthInDaysCost"
+}

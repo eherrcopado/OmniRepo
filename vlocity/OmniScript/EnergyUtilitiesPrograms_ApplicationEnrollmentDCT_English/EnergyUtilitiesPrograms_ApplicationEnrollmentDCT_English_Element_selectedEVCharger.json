@@ -1,0 +1,62 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "selectedEVCharger",
+    "OmniProcessId": {
+        "Name": "EnergyUtilitiesProgramsApplicationEnrollment",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "SfiEnergyProgramReviewConfirm",
+        "OmniProcessId": {
+            "Name": "EnergyUtilitiesProgramsApplicationEnrollment",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English/SfiEnergyProgramReviewConfirm",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "SfiEnergyProgramReviewConfirm",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "bStandalone": true,
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "customAttributes": [
+            {
+                "name": "parent-data",
+                "source": "true"
+            },
+            {
+                "name": "records",
+                "source": "%stepShowOffers:showOfferEVCharger:SelectedEVCharger%"
+            }
+        ],
+        "hide": false,
+        "label": "",
+        "lwcName": "cfEnergyUtilitiesProgramsSelectedEVCharger",
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "<>",
+                        "data": "%stepShowOffers:showOfferEVCharger:SelectedEVCharger%",
+                        "field": "null"
+                    }
+                ]
+            }
+        }
+    },
+    "Type": "Custom Lightning Web Component",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English/selectedEVCharger"
+}

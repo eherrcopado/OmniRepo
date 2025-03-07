@@ -1,0 +1,34 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "This Set value will getthe final billing account id to get the further billing related information.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVBillingAccount",
+    "OmniProcessId": {
+        "Name": "VPL/GetBillingInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetBillingInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "BillingId": "=IF(%FetchAccount_ContactId:AccountRecordType%==\"Consumer\",\r\n%FetchAccount_ContactId:AccountId%,IF(AND(%DRGetAccountDetails:RecordTypeName%==\"Business\",%DRGetAccountDetails:BillingAccountId%!=null),\r\n%DRGetAccountDetails:BillingAccountId%,IF(AND(%DRGetAccountDetails:RecordTypeName%==\"Business\",%DRGetAccountDetails:BillingAccountId%==null),\r\n%GetBillingAccount:getBillingAccountDetails:BillingId%,%GetBillingAccount:getBillingAccountDetails:BillingId%),%DRGetAccountDetails:BusinessAccountId%))"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetBillingInfo/Procedure/SVBillingAccount"
+}

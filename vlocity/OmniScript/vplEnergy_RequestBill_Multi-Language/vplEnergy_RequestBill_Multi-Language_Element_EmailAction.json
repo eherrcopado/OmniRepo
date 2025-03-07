@@ -1,0 +1,82 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "EmailAction",
+    "OmniProcessId": {
+        "Name": "VPLEnergyRequestBill",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/RequestBill/Multi-Language",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "OrgWideEmailAddress": "",
+        "attachmentList": "",
+        "contentVersionList": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "docList": "",
+        "emailInformation": {
+            "bccAddressList": [
+            ],
+            "ccAddressList": [
+                "%SetAdditionalEmailRecipient%"
+            ],
+            "emailBody": "Hi %ContactDetails:Name%,\n<br><br>\nHere is a link to the copy of the bill you requested.\n<br>\nPlease use this link\n<a href=\"%StatementsDetails:Statement-Block:StatementImageURL%\">%StatementsDetails:Statement-Block:StatementImageURL%</a>.\n<br><br>\n%AdditonalNote%\n<br><br>\n\nThanks,",
+            "emailSubject": "Copy of bill requested",
+            "setHtmlBody": true,
+            "toAddressList": [
+                "%ContactDetails:Email%"
+            ]
+        },
+        "emailTemplateInformation": {
+            "emailTargetObjectId": "",
+            "emailTemplateName": "",
+            "saveAsActivity": false,
+            "whatId": ""
+        },
+        "enableActionMessage": false,
+        "enableDefaultAbort": false,
+        "errorMessage": {
+            "custom": [
+            ],
+            "default": ""
+        },
+        "failureAbortLabel": "",
+        "failureAbortMessage": "",
+        "failureGoBackLabel": "sfiEnergyConsoleGoBack",
+        "failureNextLabel": "sfiEnergyConsoleContinue",
+        "fileAttachments": "",
+        "inProgressMessage": "sfiEnergyConsoleInProgress",
+        "label": "sfiEnergyConsoleEmailAction",
+        "message": {
+        },
+        "postMessage": "Done",
+        "pubsub": false,
+        "redirectNextLabel": "",
+        "redirectNextWidth": 3,
+        "redirectPageName": "",
+        "redirectPreviousLabel": "",
+        "redirectPreviousWidth": 3,
+        "redirectTemplateUrl": "vlcAcknowledge.html",
+        "remoteTimeout": 30000,
+        "show": null,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "staticDocList": [
+        ],
+        "useTemplate": false,
+        "validationRequired": "Step",
+        "wpm": false
+    },
+    "Type": "Email Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/RequestBill/Multi-Language/EmailAction"
+}

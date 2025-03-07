@@ -1,0 +1,67 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRFilterPremisesWithOutage",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "LPFilterPremisesWithDuplicateZipCodes",
+        "OmniProcessId": {
+            "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/LPFilterPremisesWithDuplicateZipCodes",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "LPFilterPremisesWithDuplicateZipCodes",
+    "ParentElementType": "Loop Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "outages": "%SetValuesOutageResponse:OAResponse:outages%",
+            "premiseCity": "%DRFetchServicePremisesInfo:premiseInfo:premiseCity%",
+            "premiseCountry": "%DRFetchServicePremisesInfo:premiseInfo:premiseCountry%",
+            "premiseName": "%DRFetchServicePremisesInfo:premiseInfo:premiseName%",
+            "premisePostalCode": "%DRFetchServicePremisesInfo:premiseInfo:premisePostalCode%",
+            "premiseState": "%DRFetchServicePremisesInfo:premiseInfo:premiseState%",
+            "premiseStreet": "%DRFetchServicePremisesInfo:premiseInfo:premiseStreet%",
+            "premisesId": "%DRFetchServicePremisesInfo:premiseInfo:premisesId%"
+        },
+        "additionalOutput": {
+        },
+        "bundle": "sfiEnergyConsoleFSFilterPremisesWithOutage",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+            "ErrorMessage": "DRFilterPremisesWithOutage : Failed inside loop block to filter the premises with outage"
+        },
+        "ignoreCache": false,
+        "label": "DataRaptorTransformAction4",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Transform Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/DRFilterPremisesWithOutage"
+}

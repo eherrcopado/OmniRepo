@@ -1,0 +1,51 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "This Dataraptor will get the all the details of current statement.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRGetAccountStatementHistory",
+    "OmniProcessId": {
+        "Name": "VPL/GetBillingInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetBillingInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "BillingHistoryAccountId": "%SVBillingAccount:BillingId%",
+            "StatementLastYear": "%DRGetCurrentAccountStatement:Statement:GeneratedStatementLastYear%",
+            "StatementMonth": "%DRGetCurrentAccountStatement:Statement:GeneratedStatementMonth%",
+            "filterStatementDate": "%DRGetCurrentAccountStatement:Statement:filterStatementDate%"
+        },
+        "additionalOutput": {
+        },
+        "bundle": "VPLGetAccountBillingHistory",
+        "chainOnStep": false,
+        "dataRaptor Input Parameters": [
+        ],
+        "disOnTplt": false,
+        "executionConditionalFormula": "%SVBillingAccount:BillingId%!=null",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "ignoreCache": false,
+        "label": "DataRaptorExtractAction3",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Extract Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetBillingInfo/Procedure/DRGetAccountStatementHistory"
+}

@@ -1,0 +1,54 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "=DATE(YEAR(TODAY()),MONTH(TODAY()),DATE(TODAY())+30)",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetDefaults",
+    "OmniProcessId": {
+        "Name": "CreateGasQuote",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Sales/RegulatedGasCreateQuote/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "CustomerConsent": true,
+            "OpptyCloseDate": "=DATE(YEAR(TODAY()),MONTH(TODAY()),DAYOFMONTH(TODAY())+30)",
+            "OpptyElectricityPrice": "=60",
+            "OpptyName": "=CONCATENATE(%AccountName%,'-','Custom Electricity Deal')",
+            "OpptyTerm": 12
+        },
+        "label": "Set Default Values For Demo",
+        "message": {
+        },
+        "pubsub": false,
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "New",
+                        "field": "NewOrExistingOpptyRadio"
+                    }
+                ]
+            }
+        },
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "validationRequired": "None",
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Sales/RegulatedGasCreateQuote/English/SetDefaults"
+}

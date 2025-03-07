@@ -1,0 +1,33 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "PremiseAddressList",
+    "OmniProcessId": {
+        "Name": "VPL/GetServicePoint",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/ServicePoint/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "LoopBlock2",
+        "loopList": "DRGetPremiseDetails:ServiceAccount",
+        "loopOutput": {
+            "ElectricityServiceCount": "%DRGetPremiseAddress:ElectricityServicePointCount%",
+            "GasServiceCount": "%DRGetPremiseAddress:GasServicePointCount%",
+            "PremiseAddress": "%DRGetPremiseAddress:PremiseAddress%",
+            "ServicePointCount": "%DRGetPremiseAddress:ServicePointCount%",
+            "ServicePointDisconnectedCount": "%DRGetPremiseAddress:ServicePointDisconnectedCount%",
+            "WaterServiceCount": "%DRGetPremiseAddress:WaterServicePointCount%"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/ServicePoint/Procedure/PremiseAddressList"
+}

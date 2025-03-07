@@ -1,0 +1,37 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVDisplayData",
+    "OmniProcessId": {
+        "Name": "VPL-MoveIn-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AccountDisplayName": "=IF(%CustomerSelection:NewCustomer% = 'No', %CustomerSelection:GetCustomer-Block:ContactName%, CONCATENATE(%CustomerSelection:NewCustomerDetails:CustomerFirstName%, ' ', %CustomerSelection:NewCustomerDetails:CustomerLastName%))",
+            "PremisesDisplayName": "=IF(%SelectPremises:ServiceAccountPremises:SrevicePremisesId% = NULL, %SelectPremises:ServiceLocation-Block:PremiseName%, %ServiceAccountPremises:PremisesName%)",
+            "SelectedServiceData": "=%SelectTypeofService:SelectServicePoints%"
+        },
+        "message": {
+        },
+        "pubsub": false,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/SVDisplayData"
+}

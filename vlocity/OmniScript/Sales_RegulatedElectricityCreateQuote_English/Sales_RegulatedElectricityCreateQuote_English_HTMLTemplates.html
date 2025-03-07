@@ -1,0 +1,276 @@
+<style>
+ label {
+    color:#083EAB!important;
+    font-weight: bold !important;
+    font-size:15px!important;
+}
+</style>
+
+<script type="text/ng-template" id="QuoteMeters.html">
+    <style>
+        .via-slds input[type="checkbox"], .via-slds input[type="radio"] {
+            -webkit-appearance: checkbox;
+        }
+    </style>
+    <div class="panel panel-default">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Select">Select</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Premise</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Meter ID</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Total Consumption</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Max Demand</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">UOM</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class='ins'>
+                <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+                    <td>
+                        <input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this, false)' />
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.PremiseName}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.MeterId}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.TotalUsage}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.MaxDemand}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.UOM}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script><script type="text/ng-template" id="PriceComponent.html">
+    <style>
+        .via-slds input[type="checkbox"], .via-slds input[type="radio"] {
+            -webkit-appearance: checkbox;
+        }
+    </style>
+    <div class="panel panel-default">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Select">Select</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Price Component</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Price</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">UOM</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class='ins'>
+                <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+                    <td>
+                        <input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this, false)' />
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Name}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Price}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.UOM}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>
+<script type="text/ng-template" id="SelectedMeters.html">
+    <style>
+        .via-slds input[type="checkbox"], .via-slds input[type="radio"] {
+            -webkit-appearance: checkbox;
+        }
+    </style>
+    <div class="panel panel-default">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Premise</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Meter</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Type</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Total Usage (kWh)</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">On Peak (kWh)</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Mid Peak (kWh)</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Off Peak (kWh)</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">Demand (kW)</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class='ins'>
+                <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Premise}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.MeterName}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.MeterType}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.TotalUsage | number:2}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.OnPeakUsage | number:2}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.MidPeakUsage | number:2}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.OffPeakUsage | number:2}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.MaxDemand | number:2}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>
+<script type="text/ng-template" id="ServicePoint.html">
+    <style>
+        .via-slds input[type="checkbox"], .via-slds input[type="radio"] {
+            -webkit-appearance: checkbox;
+        }
+    </style>
+    <div class="panel panel-default">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Select">Select</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Address</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Address">City</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Meter">Meter</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Amount">Meter Type</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Download">Load Profile</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class='ins'>
+                <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+                    <td>
+                        <input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this, false)' />
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Street}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.City}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Meter.MeterName}}</div>
+                    </td>
+                    <td data-label="Account">
+                        <div class="slds-truncate">{{p.Meter.MeterType}}</div>
+                    </td>
+                    <td data-label="Download">
+                        <div class="slds-truncate">{{p.Meter.MeterLoadProfile}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>
+<script type="text/ng-template" id="AssetList.html">
+    <style>
+        .via-slds input[type="checkbox"], .via-slds input[type="radio"] {
+            -webkit-appearance: checkbox;
+        }
+    </style>
+    <div class="panel panel-default">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Select">Select</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Name">Asset</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Serial Number">Serial #</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Activation Date">Activation Date</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Status">Status</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody class='ins'>
+                <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+                    <td>
+                        <input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this, false)' />
+                    </td>
+                    <td data-label="Name">
+                        <div class="slds-truncate">{{p.Assetname}}</div>
+                    </td>
+                    <td data-label="Serial Number">
+                        <div class="slds-truncate">{{p.Serialnumber}}</div>
+                    </td>
+                    <td data-label="Activation Date">
+                        <div class="slds-truncate">{{p.ActivationDate | date:'d MMM yy'}}</div>
+                    </td>
+                    <td data-label="Status">
+                        <div class="slds-truncate">{{p.Status}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</script>

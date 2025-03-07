@@ -1,0 +1,49 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "ResponseIfUserNameNotAvailable",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfService",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/SignUp/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "AccountNumber": "%AccountNumber%",
+            "ActualUserName": "%UserName%%UserNameSuffix:value%",
+            "Email": "%Email%",
+            "ErrorMessage": "%UserNameCheck:ErrorMessage%",
+            "FirstName": "%FirstName%",
+            "GenericError": "=IF(%UserNameCheck:ErrorMessage% == \"This Username already exists in org. \", false, true)",
+            "LastName": "%LastName%",
+            "SSN": "%SSN%",
+            "TermsAndConditions": "%TermsAndConditions%",
+            "UserName": "%UserName%",
+            "UserNameStatus": "=IF(%UserNameCheck:ErrorMessage% == \"This Username already exists in org. \", false, true)"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "%UserNameCheck:isError% == true",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/SignUp/Procedure/ResponseIfUserNameNotAvailable"
+}

@@ -1,0 +1,48 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Disallows user to continue if no line item is selected",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetLineItemError",
+    "OmniProcessId": {
+        "Name": "VPL Manage Billing Dispute 13-4 Lightning Ready",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Service/BillingDispute/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "elementErrorMap": {
+            "LineItem": "Please select a Line Item"
+        },
+        "label": "Set Errors 1",
+        "message": {
+        },
+        "pubsub": false,
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "<",
+                        "data": "1",
+                        "field": "IsLineItemSelected"
+                    }
+                ]
+            }
+        },
+        "showPersistentComponent": [
+            false
+        ],
+        "ssm": false,
+        "validationRequired": "None",
+        "wpm": false
+    },
+    "Type": "Set Errors",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Service/BillingDispute/English/SetLineItemError"
+}

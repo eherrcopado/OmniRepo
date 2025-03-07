@@ -1,0 +1,60 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "This will update the Status and Disconnected Date fields of the Asset object",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRUpdateAsset",
+    "OmniProcessId": {
+        "Name": "VPL-UpdateMoveOut",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/UpdateMoveOut/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "SSPUpdateAssetServicePoint",
+        "OmniProcessId": {
+            "Name": "VPL-UpdateMoveOut",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/UpdateMoveOut/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/UpdateMoveOut/Procedure/SSPUpdateAssetServicePoint",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "SSPUpdateAssetServicePoint",
+    "ParentElementType": "Loop Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "AssetId": "=%AssetDetail:AssetListLWC:AssetId%",
+            "MoveOutDate": "=%MoveOutInformation:MoveOutDate%"
+        },
+        "additionalOutput": {
+        },
+        "bundle": "VPL-UpdateMoveOutDetails",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "label": "DataRaptorPostAction4",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Post Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/UpdateMoveOut/Procedure/DRUpdateAsset"
+}

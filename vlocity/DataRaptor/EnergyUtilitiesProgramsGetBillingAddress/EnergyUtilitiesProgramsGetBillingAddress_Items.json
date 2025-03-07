@@ -1,0 +1,76 @@
+[
+    {
+        "CurrencyIsoCode": "USD",
+        "FilterGroup": 0,
+        "FilterOperator": "=",
+        "FilterValue": "AccountId",
+        "GlobalKey": "EnergyUtilitiesProgramsGetBillingAddressCustom4856",
+        "InputFieldName": "Id",
+        "InputObjectName": "Account",
+        "InputObjectQuerySequence": 1,
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "EnergyUtilitiesProgramsGetBillingAddress",
+        "OmniDataTransformationId": {
+            "Name": "EnergyUtilitiesProgramsGetBillingAddress",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/EnergyUtilitiesProgramsGetBillingAddress",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 0,
+        "OutputFieldName": "Account",
+        "OutputObjectName": "json",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "FormulaExpression": "(IF(ISBLANK(Account:BillingStreet), '', CONCAT(Account:BillingStreet, \" \"))) +\n(IF(ISBLANK(Account:BillingCity), '', CONCAT(Account:BillingCity, \" \"))) +\n(IF(ISBLANK(Account:BillingState), '', CONCAT(Account:BillingState, \" \"))) +\n(IF(ISBLANK(Account:BillingCountry), '', CONCAT(Account:BillingCountry, \" \"))) +\n(IF(ISBLANK(Account:BillingPostalCode), '', Account:BillingPostalCode)))",
+        "FormulaResultPath": "Account:Address",
+        "FormulaSequence": 1,
+        "GlobalKey": "EnergyUtilitiesProgramsGetBillingAddressCustom3179",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "EnergyUtilitiesProgramsGetBillingAddress",
+        "OmniDataTransformationId": {
+            "Name": "EnergyUtilitiesProgramsGetBillingAddress",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/EnergyUtilitiesProgramsGetBillingAddress",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 0,
+        "OutputFieldName": "Formula",
+        "OutputObjectName": "Formula",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "GlobalKey": "EnergyUtilitiesProgramsGetBillingAddressCustom4590",
+        "InputFieldName": "Account:Address",
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "MayEdit": true,
+        "Name": "EnergyUtilitiesProgramsGetBillingAddress",
+        "OmniDataTransformationId": {
+            "Name": "EnergyUtilitiesProgramsGetBillingAddress",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/EnergyUtilitiesProgramsGetBillingAddress",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 1,
+        "OutputFieldFormat": "String",
+        "OutputFieldName": "AccountBillingAddress:Address",
+        "OutputObjectName": "json",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    }
+]

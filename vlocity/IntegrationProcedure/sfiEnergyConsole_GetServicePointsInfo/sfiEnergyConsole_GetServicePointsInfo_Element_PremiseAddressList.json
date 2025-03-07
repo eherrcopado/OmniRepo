@@ -1,0 +1,35 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "PremiseAddressList",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleGetServicePointsInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/GetServicePointsInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "LoopBlock2",
+        "loopList": "DRGetServiceAccountAndPremiseDetails:ServiceAccount",
+        "loopOutput": {
+            "PremiseAddress": "%DRGetPremiseAndServicePointsInfo:PremiseAddress%",
+            "PremiseId": "%DRGetPremiseAndServicePointsInfo:PremiseId%",
+            "ServiceAccountId": "%DRGetServiceAccountAndPremiseDetails:ServiceAccount:ServiceAccountId%",
+            "ServiceAccountName": "%DRGetServiceAccountAndPremiseDetails:ServiceAccount:ServiceAccountName%",
+            "ServiceAccountNumber": "%DRGetServiceAccountAndPremiseDetails:ServiceAccount:ServiceAccountNumber%",
+            "ServicePointCount": "%DRGetPremiseAndServicePointsInfo:ServicePointCount%",
+            "ServicePointStatus": "%DRGetPremiseAndServicePointsInfo:ServicePointStatus%",
+            "isPremiseSelected": "=False"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/GetServicePointsInfo/Procedure/PremiseAddressList"
+}

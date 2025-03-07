@@ -1,0 +1,122 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVColumns",
+    "OmniProcessId": {
+        "Name": "Move Out",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveOut/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "BillDeliveryMethod": "=%BillingProfileDetails:BillingAccountProfile:BillDeliveryMethod%",
+            "BillingAccountId": "%DRGetAccountDetails:BillingAccountId%",
+            "MeterReadColumn": [
+                {
+                    "fieldName": "PROD_Utility_Type__c",
+                    "label": "Product Name"
+                },
+                {
+                    "fieldName": "Meter_Serial_Number__c",
+                    "label": "Serial Number"
+                },
+                {
+                    "editable": "true",
+                    "fieldName": "MeterReadingDate",
+                    "label": "Read Date",
+                    "type": "text"
+                },
+                {
+                    "editable": "true",
+                    "fieldName": "Reading",
+                    "label": "Reading",
+                    "type": "text"
+                },
+                {
+                    "fieldName": "ExpectedRange",
+                    "label": "Expected Range"
+                }
+            ],
+            "PremiseColumn": [
+                {
+                    "fieldName": "checked",
+                    "label": ""
+                },
+                {
+                    "fieldName": "PremiseAddress",
+                    "label": "Premise Address"
+                }
+            ],
+            "ReadonlyServicePointColumn": [
+                {
+                    "fieldName": "AssetName",
+                    "label": "Service Name"
+                },
+                {
+                    "fieldName": "ProductName",
+                    "label": "Product Name"
+                },
+                {
+                    "fieldName": "ProductCode",
+                    "label": "Product Code"
+                },
+                {
+                    "fieldName": "SerialNumber",
+                    "label": "Serial Number"
+                },
+                {
+                    "fieldName": "Meter",
+                    "label": "Service Meter"
+                }
+            ],
+            "ServicePointColumn": [
+                {
+                    "fieldName": "checked",
+                    "label": ""
+                },
+                {
+                    "fieldName": "AssetName",
+                    "label": "Service Name"
+                },
+                {
+                    "fieldName": "ProductName",
+                    "label": "Product Name"
+                },
+                {
+                    "fieldName": "ProductCode",
+                    "label": "Product Code"
+                },
+                {
+                    "fieldName": "SerialNumber",
+                    "label": "Serial Number"
+                },
+                {
+                    "fieldName": "Meter",
+                    "label": "Service Meter"
+                }
+            ]
+        },
+        "label": null,
+        "message": {
+        },
+        "pubsub": false,
+        "show": null,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveOut/English/SVColumns"
+}

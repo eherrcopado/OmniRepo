@@ -1,0 +1,38 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Set Case case values based on recordtypes",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "SetCaseValues",
+    "OmniProcessId": {
+        "Name": "VPLEnergyMakeComplaint",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MakeComplaint/Multi-Language",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "PremisesIdValue": "=IF(%AccountRecordType% == 'Business',%Case:CaseDetails:Premises-Block:SrevicePremisesId%,%Case:CaseDetails:ConsumerPremises-Block:premisesId%)"
+        },
+        "label": null,
+        "message": {
+        },
+        "pubsub": false,
+        "show": null,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MakeComplaint/Multi-Language/SetCaseValues"
+}

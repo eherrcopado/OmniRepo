@@ -1,0 +1,30 @@
+<div class="panel panel-default div-tpl_logae"  ng-controller='siController_logae' ng-show='showList()' >
+    <div class="panel-heading">
+      <label>Open Hight Priority Cases</label>
+    </div>
+    <table class="table slds-table slds-table--bordered slds-table--cell-buffer" style="table-layout: auto;">
+      <thead>
+        <tr class="nds-text-heading_label tpl_logae">
+            <th>Type&nbsp;&nbsp;</th>
+            <th>Subject&nbsp;&nbsp;</th>
+            <th>Status&nbsp;&nbsp;</th>
+            <th>Reason&nbsp;&nbsp;</th>
+            <th>Priority&nbsp;&nbsp;</th>
+            <th>CreatedDate&nbsp;&nbsp;</th>
+            <th>CaseNumber&nbsp;&nbsp;</th>
+        </tr>
+      </thead>
+    <tbody class="ins">
+       <tr class='nds-border_bottom tpl_logae' ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+      <td>{{p["Type"]}}&nbsp;&nbsp;</td>
+      <td>{{p["Subject"]}}&nbsp;&nbsp;</td>
+      <td>{{p["Status"]}}&nbsp;&nbsp;</td>
+      <td>{{p["Reason"]}}&nbsp;&nbsp;</td>
+      <td>{{p["Priority"]}}&nbsp;&nbsp;</td>
+      <td>{{p["CreatedDate"]}}&nbsp;&nbsp;</td>
+      <td>{{p["CaseNumber"]}}&nbsp;&nbsp;</td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>

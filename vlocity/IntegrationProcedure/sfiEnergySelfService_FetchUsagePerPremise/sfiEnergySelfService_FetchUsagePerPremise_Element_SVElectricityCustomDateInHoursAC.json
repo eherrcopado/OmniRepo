@@ -1,0 +1,120 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVElectricityCustomDateInHoursAC",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfServiceFetchUsagePerPremise",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/FetchUsagePerPremise/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "ElectricityBlock",
+        "OmniProcessId": {
+            "Name": "sfiEnergySelfServiceFetchUsagePerPremise",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/FetchUsagePerPremise/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/FetchUsagePerPremise/Procedure/ElectricityBlock",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "ElectricityBlock",
+    "ParentElementType": "Conditional Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "usageData": [
+                {
+                    "xAxis": "12:00 am",
+                    "yAxis": "15"
+                },
+                {
+                    "xAxis": "01:00 am",
+                    "yAxis": "20"
+                },
+                {
+                    "xAxis": "02:00 am",
+                    "yAxis": "8"
+                },
+                {
+                    "xAxis": "03:00 am",
+                    "yAxis": "8"
+                },
+                {
+                    "xAxis": "04:00 am",
+                    "yAxis": "4"
+                },
+                {
+                    "xAxis": "05:00 am",
+                    "yAxis": "5"
+                },
+                {
+                    "xAxis": "06:00 am",
+                    "yAxis": "5"
+                },
+                {
+                    "xAxis": "07:00 am",
+                    "yAxis": "5"
+                },
+                {
+                    "xAxis": "08:00 am",
+                    "yAxis": "10"
+                },
+                {
+                    "xAxis": "09:00 am",
+                    "yAxis": "12"
+                },
+                {
+                    "xAxis": "10:00 am",
+                    "yAxis": "9"
+                },
+                {
+                    "xAxis": "11:00 am",
+                    "yAxis": "6"
+                },
+                {
+                    "xAxis": "12:00 am",
+                    "yAxis": "10"
+                },
+                {
+                    "xAxis": "01:00 pm",
+                    "yAxis": "8"
+                },
+                {
+                    "xAxis": "02:00 pm",
+                    "yAxis": "8"
+                },
+                {
+                    "xAxis": "03:00 pm",
+                    "yAxis": "7"
+                },
+                {
+                    "xAxis": "04:00 pm",
+                    "yAxis": "8"
+                },
+                {
+                    "xAxis": "05:00 pm",
+                    "yAxis": "15"
+                }
+            ]
+        },
+        "executionConditionalFormula": "%frequency%=\"EnergyCustomInHrs\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "electricityData",
+        "responseJSONPath": "usageData",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/FetchUsagePerPremise/Procedure/SVElectricityCustomDateInHoursAC"
+}

@@ -1,0 +1,248 @@
+{
+    "dataSource": {
+        "contextVariables": [
+        ],
+        "orderBy": {
+            "isReverse": false,
+            "name": ""
+        },
+        "type": "Custom",
+        "value": {
+            "body": "[\n    {\n      \"HasData\": \"true\",\n      \"Name\": \"Skid Steer Datasheet\",\n      \"Id\": \"0683y00000JkJxbAAF\",\n      \"Version\": \"1\",\n      \"Type\": \"PDF\",\n      \"ObjectType\": \"Product\"\n    },\n    {\n      \"HasData\": \"true\",\n      \"Name\": \"Skid Steer Datasheet\",\n      \"Id\": \"0683y00000JkJxbAAF\",\n      \"Version\": \"1\",\n      \"Type\": \"PDF\",\n      \"ObjectType\": \"Quote\"\n    }\n  ]",
+            "dsDelay": "",
+            "resultVar": ""
+        }
+    },
+    "enableLwc": true,
+    "events": [
+        {
+            "actionList": [
+                {
+                    "actionIndex": 0,
+                    "card": "{card}",
+                    "draggable": false,
+                    "isOpen": true,
+                    "key": "1701192265336-v1a429aib",
+                    "label": "Action",
+                    "stateAction": {
+                        "displayName": "Action",
+                        "elementId": "Files",
+                        "extraParams": {
+                            "Name": "{action.result.Name}",
+                            "TemplateType": "{action.result.Type}",
+                            "VersionNumber": "{action.result.Version}",
+                            "pdfContentVersionId": "{action.result.Id}"
+                        },
+                        "hasExtraParams": true,
+                        "id": "flex-action-1701201382186",
+                        "openUrlIn": "Current Window",
+                        "type": "updateOmniScript",
+                        "vlocityIcon": "standard-default"
+                    }
+                }
+            ],
+            "channelname": "demoDatatable",
+            "displayLabel": "selectrow",
+            "element": "action",
+            "eventLabel": "custom event",
+            "eventname": "selectrow",
+            "eventtype": "event",
+            "key": "event-0",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        }
+    ],
+    "isFlex": true,
+    "isRepeatable": false,
+    "lwc": {
+        "DeveloperName": "cfDemoDatatable_1_CardsInsDaily",
+        "Id": "0Rb6g000000EJhKCAW",
+        "MasterLabel": "cfDemoDatatable_1_CardsInsDaily",
+        "NamespacePrefix": "c"
+    },
+    "multilanguageSupport": true,
+    "osSupport": true,
+    "states": [
+        {
+            "actions": [
+            ],
+            "childCards": [
+            ],
+            "components": {
+                "layer-0": {
+                    "children": [
+                        {
+                            "class": "slds-col ",
+                            "element": "dataTable",
+                            "elementLabel": "Datatable-0",
+                            "name": "Datatable",
+                            "property": {
+                                "activeGroups": false,
+                                "cellLevelEdit": false,
+                                "columns": [
+                                    {
+                                        "editable": "false",
+                                        "fieldName": "Name",
+                                        "label": "Name",
+                                        "searchable": "true",
+                                        "sortable": "true",
+                                        "type": "text",
+                                        "userSelectable": "true",
+                                        "visible": "true"
+                                    },
+                                    {
+                                        "editable": "false",
+                                        "fieldName": "Type",
+                                        "label": "File Type",
+                                        "searchable": "true",
+                                        "sortable": true,
+                                        "type": "text",
+                                        "userSelectable": "true",
+                                        "visible": "true"
+                                    },
+                                    {
+                                        "editable": "false",
+                                        "fieldName": "Version",
+                                        "label": "Version",
+                                        "searchable": "false",
+                                        "sortable": true,
+                                        "type": "number",
+                                        "userSelectable": "true",
+                                        "visible": "true"
+                                    },
+                                    {
+                                        "editable": "false",
+                                        "fieldName": "ObjectType",
+                                        "label": "Attachment",
+                                        "searchable": "true",
+                                        "sortable": true,
+                                        "type": "text",
+                                        "userSelectable": "true",
+                                        "visible": "true"
+                                    }
+                                ],
+                                "confirmdeleterow": false,
+                                "draggable": false,
+                                "groupBy": "",
+                                "groupOrder": "asc",
+                                "issearchavailable": true,
+                                "issortavailable": true,
+                                "pagelimit": "4",
+                                "pagesize": "4",
+                                "records": "{records}",
+                                "rowDelete": false,
+                                "rowDeleteDependentColumn": "",
+                                "rowLevelEdit": false,
+                                "sortAcrossGroups": false,
+                                "userSelectableRow": true
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "sizeClass": "slds-size_12-of-12"
+                            },
+                            "type": "element"
+                        }
+                    ]
+                }
+            },
+            "conditions": {
+                "group": [
+                ],
+                "id": "state-condition-object",
+                "isParent": true
+            },
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "documents": [
+            ],
+            "fields": [
+            ],
+            "isSmartAction": false,
+            "name": "Active",
+            "omniscripts": [
+            ],
+            "smartAction": {
+            },
+            "styleObject": {
+                "class": "slds-card slds-p-around_x-small slds-m-bottom_x-small",
+                "container": {
+                    "class": "slds-card"
+                },
+                "margin": [
+                    {
+                        "size": "x-small",
+                        "type": "bottom"
+                    }
+                ],
+                "padding": [
+                    {
+                        "size": "x-small",
+                        "type": "around"
+                    }
+                ],
+                "size": {
+                    "default": "12",
+                    "isResponsive": false
+                },
+                "sizeClass": "slds-size_12-of-12"
+            }
+        }
+    ],
+    "theme": "slds",
+    "title": "demoDatatable",
+    "xmlJson": [
+        {
+            "@attributes": {
+                "targets": "lightning__AppPage"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                },
+                {
+                    "@attributes": {
+                        "name": "recordId",
+                        "type": "String"
+                    }
+                }
+            ]
+        },
+        {
+            "@attributes": {
+                "targets": "lightning__RecordPage"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                }
+            ]
+        }
+    ],
+    "xmlObject": {
+        "apiVersion": 51,
+        "description": "",
+        "isExposed": false,
+        "masterLabel": "demoDatatable",
+        "runtimeNamespace": "",
+        "targetConfigs": "PHRhcmdldENvbmZpZyB0YXJnZXRzPSJsaWdodG5pbmdfX0FwcFBhZ2UiPgogICAgICAgICAgICAgICAgICAgIDxwcm9wZXJ0eSBuYW1lPSJkZWJ1ZyIgdHlwZT0iQm9vbGVhbiIvPgogICAgICAgICAgICAgICAgICAgIDxwcm9wZXJ0eSBuYW1lPSJyZWNvcmRJZCIgdHlwZT0iU3RyaW5nIi8+CiAgICAgICAgICAgICAgICA8L3RhcmdldENvbmZpZz4KICAgICAgICAgICAgICAgIDx0YXJnZXRDb25maWcgdGFyZ2V0cz0ibGlnaHRuaW5nX19SZWNvcmRQYWdlIj4KICAgICAgICAgICAgICAgICAgICA8cHJvcGVydHkgbmFtZT0iZGVidWciIHR5cGU9IkJvb2xlYW4iLz4KICAgICAgICAgICAgICAgIDwvdGFyZ2V0Q29uZmlnPg==",
+        "targets": {
+            "target": [
+                "lightning__RecordPage",
+                "lightning__AppPage",
+                "lightning__HomePage"
+            ]
+        }
+    }
+}

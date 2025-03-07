@@ -1,0 +1,47 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Response Action sends back the desired Account & contact Id",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "OutResponse",
+    "OmniProcessId": {
+        "Name": "VPL-GetAccountContactDCT",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetCustomerAccountContactDCT/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "AccountId": "=IF(%DRGetUserAccountId:UserAccountId% == NULL, Id, DRGetUserAccountId:UserAccountId)",
+            "AccountRecordType": "=%CheckAccountRecordType:AccountRecordType%",
+            "BillDeliveryMethod": "=%CheckAccountRecordType:AccountBillDeliveryMethod%",
+            "ContactFirstName": "=%DRGetUserAccountId:UserFirstName%",
+            "ContactId": "=IF(%DRGetUserAccountId:UserContactId% == NULL, NULL, DRGetUserAccountId:UserContactId)",
+            "ContactLastName": "=%DRGetUserAccountId:UserLastName%",
+            "ContactUserId": "=%DRGetUserAccountId:userId%",
+            "ContextAccountName": "=%CheckAccountRecordType:AccountName%"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetCustomerAccountContactDCT/Procedure/OutResponse"
+}

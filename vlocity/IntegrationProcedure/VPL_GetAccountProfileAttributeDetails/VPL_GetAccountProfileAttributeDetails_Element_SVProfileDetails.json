@@ -1,0 +1,51 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Set Values for the Profile Attribute Values",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVProfileDetails",
+    "OmniProcessId": {
+        "Name": "VPL-GetAccountProfileAttributeDetails",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetAccountProfileAttributeDetails/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AccountId": "=%FetchAccount:AccountId%",
+            "AccountName": "=%DRExtractProfileAttributes:AccountName%",
+            "AnalysisMood": "=%DRTransformAccPrefAttr:AccountPref:AnalysisMood:AttrValue% ",
+            "AnalysisRenewalPotential": "=%DRTransformAccPrefAttr:AccountPref:AnalysisRenewalPotential:AttrValue% ",
+            "AnalysisUpsellPotential": "=%DRTransformAccPrefAttr:AccountPref:AnalysisUpsellPotential:AttrValue% ",
+            "CustomerSatisfactionCost": "=%DRTransformAccPrefAttr:AccountPref:CustomerSatisfactionCost:AttrValue%",
+            "CustomerSatisfactionCoverage": "=%DRTransformAccPrefAttr:AccountPref:CustomerSatisfactionCoverage:AttrValue% ",
+            "CustomerSatisfactionMaintenance": "=%DRTransformAccPrefAttr:AccountPref:CustomerSatisfactionMaintenance:AttrValue% ",
+            "CustomerSatisfactionReliability": "=%DRTransformAccPrefAttr:AccountPref:CustomerSatisfactionReliability:AttrValue% ",
+            "CustomerSatisfactionService": "=%DRTransformAccPrefAttr:AccountPref:CustomerSatisfactionService:AttrValue%",
+            "CustomerSatisfactionUsageCharges": "=%DRTransformAccPrefAttr:AccountPref:CustomerSatisfactionUsageCharges:AttrValue% ",
+            "ProductInterests": "=%DRTransformAccPrefAttr:AccountPref:ProductInterests:AttrValue%",
+            "PurchaseCriteriaCost": "=%DRTransformAccPrefAttr:AccountPref:PurchaseCriteriaCost:AttrValue%",
+            "PurchaseCriteriaFamilyFriendly": "=%DRTransformAccPrefAttr:AccountPref:PurchaseCriteriaFamilyFriendly:AttrValue%",
+            "PurchaseCriteriaInsurance": "=%DRTransformAccPrefAttr:AccountPref:PurchaseCriteriaInsurance:AttrValue%",
+            "PurchaseCriteriaRenewableEnergy": "=%DRTransformAccPrefAttr:AccountPref:PurchaseCriteriaRenewableEnergy:AttrValue%",
+            "PurchaseCriteriaServiceAvailability": "=%DRTransformAccPrefAttr:AccountPref:PurchaseCriteriaServiceAvailability:AttrValue%",
+            "TotalNotification": "=%DRExtractProfileAttributes:TotalAttrAssignCount%"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetAccountProfileAttributeDetails/Procedure/SVProfileDetails"
+}

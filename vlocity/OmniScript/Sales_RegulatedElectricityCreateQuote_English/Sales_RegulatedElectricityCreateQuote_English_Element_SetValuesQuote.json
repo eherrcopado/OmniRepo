@@ -1,0 +1,50 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "=DATE(YEAR(TODAY()),MONTH(TODAY()),DAYOFMONTH(TODAY())+30)",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetValuesQuote",
+    "OmniProcessId": {
+        "Name": "RegulatedElectricityCreateQuote",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Sales/RegulatedElectricityCreateQuote/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AddedPower": "=%Opportunity:TechData:TotalPowerRequired%",
+            "BillTo": "CONCATENATE(%Account:ServiceAccountName%,', ',%Account:ServiceStreet%,', ',%Account:ServiceCity%,', ',%Account:ServiceState%,', ',%Account:PostalCode%)",
+            "BillingMethod": "Dual",
+            "CheckboxMockPricingDone": false,
+            "ExpirationDate": "=DATE(YEAR(TODAY()),MONTH(TODAY()),DAYOFMONTH(TODAY())+1)",
+            "MonthlyConsumption": "=%Opportunity:TechData:EstimatedUsage%",
+            "PODate": "=DATE(YEAR(TODAY()),MONTH(TODAY()),DAYOFMONTH(TODAY())+35)",
+            "PaymentTerms": "Net 15",
+            "PriceType": "New",
+            "Purpose": "Executable",
+            "QuoteName": "Quote 1",
+            "Voltage": "=%Opportunity:TechData:VoltageLevel%",
+            "WeightedAveragePrice": true
+        },
+        "label": null,
+        "message": {
+        },
+        "pubsub": false,
+        "show": null,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "validationRequired": "None",
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Sales/RegulatedElectricityCreateQuote/English/SetValuesQuote"
+}

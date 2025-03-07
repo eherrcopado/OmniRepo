@@ -1,0 +1,54 @@
+{
+    "AuthorName": "Vlocity",
+    "ClonedFromOmniUiCardKey": "",
+    "CurrencyIsoCode": "USD",
+    "DataSourceConfig": {
+        "dataSource": {
+            "contextVariables": [
+                {
+                    "id": 3,
+                    "name": "Parent.cartId",
+                    "val": "8015g000000cAnXAAU"
+                },
+                {
+                    "id": 5,
+                    "name": "includeIneligible",
+                    "val": "true"
+                }
+            ],
+            "orderBy": {
+                "isReverse": false,
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "cartId": "{Parent.cartId}",
+                    "includeIneligible": "true"
+                },
+                "ipMethod": "CPQ_GetDiscount",
+                "jsonMap": "{\"Parent.cartId\":\"{Parent.cartId}\",\"includeIneligible\":\"{includeIneligible}\"}",
+                "resultVar": "[\"response\"][\"records\"]",
+                "vlocityAsync": false
+            }
+        }
+    },
+    "Description": "",
+    "IsLocked": false,
+    "IsTrackingEnabled": false,
+    "MayEdit": true,
+    "Name": "cpqDiscountList",
+    "Namespace": "",
+    "OmniUiCardKey": "cpqDiscountList/Vlocity/5/1657537802439",
+    "OmniUiCardType": "Child",
+    "OverrideKey": "",
+    "PropertySetConfig": "cpqDiscountList.json",
+    "SampleDataSourceResponse": "{\"response\":{\"records\":[{\"category\":\"Qualified\",\"id\":\"a3T5g000000g8KdEAI\",\"code\":\"TD2\",\"description\":\"TD2\",\"name\":\"TestDiscount2\",\"RecordTypeId\":\"0125g000000LuzXAAS\",\"%vlocity_namespace%__DiscountType__c\":\"Order\",\"%vlocity_namespace%__AppliesToAllItems__c\":false,\"%vlocity_namespace%__DurationUnitOfMeasure__c\":\"Month\",\"%vlocity_namespace%__Code__c\":\"TD2\",\"%vlocity_namespace%__Description__c\":\"TD2\",\"Name\":\"TestDiscount2\",\"Id\":\"a3T5g000000g8KdEAI\",\"displaySequence\":0,\"actions\":{\"validatecart\":{\"client\":{\"params\":{}},\"remote\":{\"params\":{\"methodName\":\"runCartValidation\",\"cartId\":\"8015g000000cAnXAAU\"}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/cpq/carts/8015g000000cAnXAAU/validate\",\"method\":\"POST\",\"params\":{}}},\"addtocart\":{\"client\":{\"params\":{}},\"remote\":{\"params\":{\"methodName\":\"postCartsDiscounts\",\"cartId\":\"8015g000000cAnXAAU\",\"discountTemplateIds\":[\"a3T5g000000g8KdEAI\"]}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/cpq/carts/8015g000000cAnXAAU/discounts\",\"method\":\"POST\",\"params\":{\"methodName\":\"postCartsDiscounts\",\"cartId\":\"8015g000000cAnXAAU\",\"discountTemplateIds\":[\"a3T5g000000g8KdEAI\"]}}}}},{\"Discount\":[{\"selectedAdjustmentMethod\":\"%\",\"value\":-10,\"label\":\"-10.00% monthly\",\"chargeType\":\"Recurring\",\"timePolicyId\":\"a3h5g000000XfxcAAC\",\"timePolicyName\":\"Default Purchase Date To End of Plan Duration\"}],\"category\":\"Qualified\",\"id\":\"a3T5g000000g8KYEAY\",\"code\":\"TDR1\",\"description\":\"TestDiscountRecurr1\",\"name\":\"TestDiscountRecurr1\",\"RecordTypeId\":\"0125g000000LuzXAAS\",\"%vlocity_namespace%__DiscountType__c\":\"Order\",\"%vlocity_namespace%__AppliesToAllItems__c\":true,\"%vlocity_namespace%__DurationUnitOfMeasure__c\":\"Month\",\"%vlocity_namespace%__Code__c\":\"TDR1\",\"%vlocity_namespace%__Description__c\":\"TestDiscountRecurr1\",\"Name\":\"TestDiscountRecurr1\",\"Id\":\"a3T5g000000g8KYEAY\",\"displaySequence\":1,\"actions\":{\"validatecart\":{\"client\":{\"params\":{}},\"remote\":{\"params\":{\"methodName\":\"runCartValidation\",\"cartId\":\"8015g000000cAnXAAU\"}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/cpq/carts/8015g000000cAnXAAU/validate\",\"method\":\"POST\",\"params\":{}}},\"addtocart\":{\"client\":{\"params\":{}},\"remote\":{\"params\":{\"methodName\":\"postCartsDiscounts\",\"cartId\":\"8015g000000cAnXAAU\",\"discountTemplateIds\":[\"a3T5g000000g8KYEAY\"]}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/cpq/carts/8015g000000cAnXAAU/discounts\",\"method\":\"POST\",\"params\":{\"methodName\":\"postCartsDiscounts\",\"cartId\":\"8015g000000cAnXAAU\",\"discountTemplateIds\":[\"a3T5g000000g8KYEAY\"]}}}}},{\"Discount\":[{\"selectedAdjustmentMethod\":\"$\",\"value\":-2.99,\"label\":\"$-2.99 one time\",\"chargeType\":\"One-time\"}],\"category\":\"Qualified\",\"id\":\"a3T5g000000g8KiEAI\",\"code\":\"TDR2\",\"description\":\"TestDiscountRecurr2\",\"name\":\"TestDiscountRecurr2\",\"RecordTypeId\":\"0125g000000LuzXAAS\",\"%vlocity_namespace%__DiscountType__c\":\"Order\",\"%vlocity_namespace%__AppliesToAllItems__c\":false,\"%vlocity_namespace%__DurationUnitOfMeasure__c\":\"Month\",\"%vlocity_namespace%__Code__c\":\"TDR2\",\"%vlocity_namespace%__Description__c\":\"TestDiscountRecurr2\",\"Name\":\"TestDiscountRecurr2\",\"Id\":\"a3T5g000000g8KiEAI\",\"displaySequence\":2,\"actions\":{\"validatecart\":{\"client\":{\"params\":{}},\"remote\":{\"params\":{\"methodName\":\"runCartValidation\",\"cartId\":\"8015g000000cAnXAAU\"}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/cpq/carts/8015g000000cAnXAAU/validate\",\"method\":\"POST\",\"params\":{}}},\"addtocart\":{\"client\":{\"params\":{}},\"remote\":{\"params\":{\"methodName\":\"postCartsDiscounts\",\"cartId\":\"8015g000000cAnXAAU\",\"discountTemplateIds\":[\"a3T5g000000g8KiEAI\"]}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/cpq/carts/8015g000000cAnXAAU/discounts\",\"method\":\"POST\",\"params\":{\"methodName\":\"postCartsDiscounts\",\"cartId\":\"8015g000000cAnXAAU\",\"discountTemplateIds\":[\"a3T5g000000g8KiEAI\"]}}}}},{\"Discount\":[{\"selectedAdjustmentMethod\":\"$\",\"value\":-2.99,\"label\":\"$-2.99 one time\",\"chargeType\":\"One-time\"},{\"selectedAdjustmentMethod\":\"$\",\"value\":-10,\"label\":\"$-10.00 monthly\",\"chargeType\":\"Recurring\",\"timePolicyId\":\"a3h5g000000XfxcAAC\",\"timePolicyName\":\"Default Purchase Date To End of Plan Duration\"}],\"failType\":\"Hard Fail\",\"category\":\"Disqualified\",\"id\":\"a3T5g000000gCCMEA2\",\"code\":\"10of\",\"name\":\"10% Off\",\"RecordTypeId\":\"0125g000000LuzXAAS\",\"%vlocity_namespace%__effectivestartdate__c\":\"2021-06-21T18:30:00.000+0000\",\"%vlocity_namespace%__effectiveenddate__c\":\"2026-06-01T18:30:00.000+0000\",\"%vlocity_namespace%__DiscountType__c\":\"Order\",\"%vlocity_namespace%__AppliesToAllItems__c\":true,\"%vlocity_namespace%__DurationUnitOfMeasure__c\":\"Month\",\"%vlocity_namespace%__Code__c\":\"10of\",\"Name\":\"10% Off\",\"Id\":\"a3T5g000000gCCMEA2\",\"displaySequence\":3,\"actions\":{\"getrulemessages\":{\"client\":{\"params\":{}},\"remote\":{\"params\":{\"cartId\":\"8015g000000cAnXAAU\",\"id\":\"a3T5g000000gCCMEA2\",\"include\":\"qualifications\",\"ruleType\":\"Qualification\",\"ruleEvaluationInput\":null,\"methodName\":\"getRuleMessages\"}},\"rest\":{\"link\":\"/services/apexrest/%vlocity_namespace%/v2/cpq/carts/8015g000000cAnXAAU/promotions/a3T5g000000gCCMEA2?cartId=8015g000000cAnXAAU&id=a3T5g000000gCCMEA2&include=qualifications&ruleType=Qualification\",\"method\":\"GET\",\"params\":{}}}}}],\"totalSize\":4}}",
+    "StylingConfiguration": "{\"customStyles\":\".cpq-discounts-list_container{\\n    border-bottom: 1px solid #DDDBDA !important;\\n    border-radius: 0px;\\n    padding: 13px 18px 13px 40px;\\n}\\n.cpq-discounts_fields label{\\n    font-size: 10px;\\n    text-transform: capitalize;\\n    color: rgba(0, 0, 0, 0.6);\\n}\\n.cpq-discounts_fields.uppercase label{\\n    text-transform: uppercase;\\n}\\n.cpq-discounts_fields .field-value{\\n    font-size: 16px;\\n    color: #000000;\\n}\\nbutton.vlocity-btn.slds-button.slds-button_brand{\\n    border-radius: 6px !important;\\n}\\n.cpq_discount_applies_all{\\n    font-size: 10px;\\n    color: rgba(0, 0, 0, 0.6);\\n}\\n.cpq__discount-error-icon{\\n    width: fit-content;\\n}\\n.cpq__discount-error-message{\\n    color: #8C4B02;\\n    padding-left: 10px;\\n    text-align: left;\\n}\\n@media only screen and (max-width: 48em) {\\n    .cpq-discounts_fields .field-value{\\n        font-size: 12px;\\n    }\\n    .cpq-discounts_fields label{\\n        font-size: 9px;\\n    }\\n}\\n@media only screen and (max-width: 480px) {\\n  .cpq-discounts-list_container{\\n      padding: 0px;\\n  }\\n}\"}",
+    "UniqueName": "cpqDiscountList_Vlocity_4",
+    "VersionNumber": 4,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniUiCard",
+    "VlocityRecordSourceKey": "OmniUiCard/cpqDiscountList"
+}

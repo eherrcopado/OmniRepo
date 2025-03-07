@@ -1,0 +1,111 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "NewPaymentMethod",
+    "OmniProcessId": {
+        "Name": "Pay Bill LWC",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Service/PayBillLWC/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "PaymentDetailsStep",
+        "OmniProcessId": {
+            "Name": "Pay Bill LWC",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/Service/PayBillLWC/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/Service/PayBillLWC/English/PaymentDetailsStep",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "PaymentDetailsStep",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "accessibleInFutureSteps": false,
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "controllingField": {
+            "element": "",
+            "source": "",
+            "type": ""
+        },
+        "disOnTplt": false,
+        "enableCaption": true,
+        "help": false,
+        "helpText": "",
+        "hide": false,
+        "horizontalMode": "image",
+        "imageCountInRow": 3,
+        "label": "",
+        "optionHeight": 175,
+        "optionSource": {
+            "source": "%vlocity_namespace%__PaymentMethod__c.%vlocity_namespace%__MethodType__c",
+            "type": "image"
+        },
+        "optionWidth": 50,
+        "options": [
+            {
+                "developerName": "CACBAICGAe394a5f8973e4eacb5df30622de9e250",
+                "imgId": "/servlet/servlet.FileDownload?file=0153y0000045ohtAAA&docName=CACBAICGAe394a5f8973e4eacb5df30622de9e250",
+                "name": "Credit Card",
+                "value": "Credit Card"
+            },
+            {
+                "developerName": "CACBAICEA52bfbd2cbfbb49b4af74c04efb769bf0",
+                "imgId": "/servlet/servlet.FileDownload?file=0153y0000045ohuAAA&docName=CACBAICEA52bfbd2cbfbb49b4af74c04efb769bf0",
+                "name": "Bank",
+                "value": "Bank Account"
+            },
+            {
+                "developerName": "CACBAICEA27dc54d259be44e89366f0459c797027",
+                "imgId": "/servlet/servlet.FileDownload?file=0153y0000045oiAAAQ&docName=CACBAICEA27dc54d259be44e89366f0459c797027",
+                "name": "PayPal",
+                "value": "PayPal"
+            },
+            {
+                "developerName": "CACBAICEA4dc484231ab645b192df585666bfaf09",
+                "imgId": "/servlet/servlet.FileDownload?file=0153y0000045oiCAAQ&docName=CACBAICEA4dc484231ab645b192df585666bfaf09",
+                "name": "Apple Pay",
+                "value": "Apple Pay"
+            },
+            {
+                "developerName": "CACBAICEA1422190f20de4569a17ccb52fb998580",
+                "imgId": "/servlet/servlet.FileDownload?file=0153y0000045oiBAAQ&docName=CACBAICEA1422190f20de4569a17ccb52fb998580",
+                "name": "Google Pay",
+                "value": "Google Pay"
+            },
+            {
+                "developerName": "CACBAICEAd9d3bd3fc01d4c80bcf5d92c79e8b1ba",
+                "imgId": "/servlet/servlet.FileDownload?file=0153y0000045ogFAAQ&docName=CACBAICEAd9d3bd3fc01d4c80bcf5d92c79e8b1ba",
+                "name": "Amazon Pay",
+                "value": "Amazon Pay"
+            }
+        ],
+        "readOnly": false,
+        "repeat": false,
+        "repeatClone": false,
+        "required": false,
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "true",
+                        "field": "CHX_NewPaymentMethod"
+                    }
+                ]
+            }
+        }
+    },
+    "Type": "Radio",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Service/PayBillLWC/English/NewPaymentMethod"
+}

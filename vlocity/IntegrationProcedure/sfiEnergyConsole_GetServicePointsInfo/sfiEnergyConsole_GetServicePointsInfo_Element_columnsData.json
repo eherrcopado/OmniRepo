@@ -1,0 +1,134 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "columnsData",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleGetServicePointsInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/GetServicePointsInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "columns": [
+                {
+                    "fieldName": "ServiceType",
+                    "label": "sfiEnergyConsoleServicePointType",
+                    "searchable": true,
+                    "sortable": true,
+                    "userSelectable": true
+                },
+                {
+                    "fieldName": "ActivationDate",
+                    "label": "sfiEnergyConsoleServicePointActvnDate",
+                    "searchable": false,
+                    "sortable": false,
+                    "userSelectable": false
+                },
+                {
+                    "fieldName": "PremiseAddress",
+                    "label": "sfiEnergyConsoleServicePointPremise",
+                    "searchable": true,
+                    "sortable": true,
+                    "type": "sObjectRecordNavigation",
+                    "typeAttributes": {
+                        "displayField": {
+                            "fieldName": "PremiseAddress"
+                        },
+                        "navigationKey": {
+                            "fieldName": "PremiseId"
+                        },
+                        "objectName": "%vlocity_namespace%__Premise__c"
+                    },
+                    "userSelectable": true
+                },
+                {
+                    "fieldName": "ServiceAccountNumber",
+                    "label": "sfiEnergyConsoleServiceAccount",
+                    "searchable": true,
+                    "sortable": true,
+                    "type": "sObjectRecordNavigation",
+                    "typeAttributes": {
+                        "displayField": {
+                            "fieldName": "ServiceAccountNumber"
+                        },
+                        "navigationKey": {
+                            "fieldName": "ServiceAccountId"
+                        },
+                        "objectName": "Account"
+                    },
+                    "userSelectable": true
+                },
+                {
+                    "fieldName": "AverageUsage",
+                    "label": "sfiEnergyConsoleAverageUsage",
+                    "searchable": true,
+                    "sortable": true,
+                    "userSelectable": true
+                },
+                {
+                    "fieldName": "ServicePointNumber",
+                    "label": "sfiEnergyConsoleServicePointNumber",
+                    "searchable": true,
+                    "sortable": true,
+                    "type": "sObjectRecordNavigation",
+                    "typeAttributes": {
+                        "displayField": {
+                            "fieldName": "ServicePointNumber"
+                        },
+                        "navigationKey": {
+                            "fieldName": "ServicePointId"
+                        },
+                        "objectName": "%vlocity_namespace%__Service_Point__c"
+                    },
+                    "userSelectable": true
+                },
+                {
+                    "fieldName": "ServicePointStatus",
+                    "label": "sfiEnergyConsoleServicePointStatus",
+                    "searchable": false,
+                    "sortable": false,
+                    "type": "servicePointStatus",
+                    "typeAttributes": {
+                        "status": {
+                            "fieldName": "ServicePointStatus"
+                        }
+                    },
+                    "userSelectable": true
+                },
+                {
+                    "fieldName": "ProductName",
+                    "searchable": false,
+                    "sortable": false,
+                    "type": "serviceReadMore",
+                    "typeAttributes": {
+                        "productDescription": {
+                            "fieldName": "ProductDescription"
+                        },
+                        "productName": {
+                            "fieldName": "ProductName"
+                        }
+                    },
+                    "userSelectable": true
+                }
+            ]
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues2",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/GetServicePointsInfo/Procedure/columnsData"
+}

@@ -1,0 +1,59 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SelectedFinancialAssistanceNone",
+    "OmniProcessId": {
+        "Name": "EnergyUtilitiesProgramsApplicationEnrollment",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "SfiEnergyProgramReviewConfirm",
+        "OmniProcessId": {
+            "Name": "EnergyUtilitiesProgramsApplicationEnrollment",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English/SfiEnergyProgramReviewConfirm",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "SfiEnergyProgramReviewConfirm",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "bStandalone": true,
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "customAttributes": [
+        ],
+        "hide": false,
+        "label": "",
+        "lwcName": "cfEnergyUtilitiesProgramsDisplayNoneFinancialAssistance",
+        "show": {
+            "group": {
+                "operator": "OR",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "%stepShowOffers:showOfferFinancialAssistance:SelectedFinancialAssistance%",
+                        "field": "null"
+                    },
+                    {
+                        "condition": "=",
+                        "data": "%stepShowOffers:showOfferFinancialAssistance:SelectedFinancialAssistance:Name%",
+                        "field": "None"
+                    }
+                ]
+            }
+        }
+    },
+    "Type": "Custom Lightning Web Component",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English/SelectedFinancialAssistanceNone"
+}

@@ -1,0 +1,53 @@
+<div class="panel panel-default" ng-controller='containerChartController'>
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr class="slds-text-title--caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Select">Select</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Name">Statement</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Address">Statement Date</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Address">Amount Due</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Address">Volume Used (therms)</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Address">Average Temp.</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody class='ins'>
+            <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }">
+                <td>
+                    <input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this, false);drawChart(control)' />
+                </td>
+                <td data-label="Account">
+                    <div class="slds-truncate">{{p.Name}}</div>
+                </td>
+                <td data-label="Account">
+                    <div class="slds-truncate">{{p.StatementDate | date}}</div>
+                </td>
+                <td data-label="Account">
+                    <div class="slds-truncate">{{p.TotalBalanceDue}}</div>
+                </td>
+                <td data-label="Account">
+                    <div class="slds-truncate">{{p.Usage}}</div>
+                </td>
+                <td data-label="Account">
+                    <div class="slds-truncate">{{p.AverageTemperature}}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div  max-width="1100px" max-height="400px">
+        <canvas id="theChart">{{myChart}}</canvas>
+    </div>
+</div>
+<script src="/resource/chartjs"></script>
+<script src="https://vdo-energy-169dda9c78b.force.com/digital/resource/chartjs"></script>

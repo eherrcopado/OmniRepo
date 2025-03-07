@@ -1,0 +1,570 @@
+{
+    "dataSource": {
+        "contextVariables": [
+        ],
+        "orderBy": {
+        },
+        "value": {
+        }
+    },
+    "enableLwc": true,
+    "events": [
+        {
+            "actionData": {
+                "card": "{card}",
+                "draggable": true,
+                "isOpen": false,
+                "key": "1624262663924-mkfezf2yb",
+                "label": "Action",
+                "stateAction": {
+                    "eventName": "setValues",
+                    "fieldValues": [
+                        {
+                            "fieldName": "Session.pricelistId",
+                            "fieldValue": "{action.response.records[0].details.records[0].PriceListId__c}"
+                        },
+                        {
+                            "fieldName": "Session.ObjectType",
+                            "fieldValue": "{action.response.records[0].details.records[0].ObjectType}"
+                        },
+                        {
+                            "fieldName": "Session.cartDetails",
+                            "fieldValue": "{action.response.records[0].details}"
+                        }
+                    ],
+                    "id": "flex-action-1622026494886",
+                    "type": "cardAction"
+                }
+            },
+            "actionList": [
+                {
+                    "actionIndex": 0,
+                    "card": "{card}",
+                    "draggable": false,
+                    "isOpen": true,
+                    "key": "1633063808888-77i4u0xzh",
+                    "label": "Action",
+                    "stateAction": {
+                        "eventName": "setValues",
+                        "fieldValues": [
+                            {
+                                "fieldName": "Session.pricelistId",
+                                "fieldValue": "{action.response.records[0].details.records[0].PriceListId__c}"
+                            },
+                            {
+                                "fieldName": "Session.ObjectType",
+                                "fieldValue": "{action.response.records[0].details.records[0].ObjectType}"
+                            },
+                            {
+                                "fieldName": "Session.cartDetails",
+                                "fieldValue": "{action.response.records[0].details}"
+                            },
+                            {
+                                "fieldName": "Session.isMultisiteFlow",
+                                "fieldValue": "{action.isMultisiteFlow}"
+                            },
+                            {
+                                "fieldName": "Session.cartId",
+                                "fieldValue": "{action.response.records[0].details.records[0].Id}"
+                            },
+                            {
+                                "fieldName": "Session.currencyIcon",
+                                "fieldValue": "{action.currencyIcon}"
+                            }
+                        ],
+                        "id": "flex-action-1644224876772",
+                        "type": "cardAction"
+                    }
+                }
+            ],
+            "channelname": "cpq_{recordId}",
+            "displayLabel": "cpq_{recordId}:cpq_cart_updated",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "cpq_cart_updated",
+            "eventtype": "pubsub",
+            "key": "event-0",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        },
+        {
+            "actionList": [
+                {
+                    "card": "{card}",
+                    "draggable": true,
+                    "isOpen": false,
+                    "key": "1633063808888-7ugxgmg51",
+                    "label": "Action",
+                    "stateAction": {
+                        "eventName": "cpq_{recordId}",
+                        "extraParams": {
+                            "cartType": "{action.carttype}",
+                            "enteredQuantity": "{action.value}",
+                            "getInputMethod": "prepareUpdateCartItemInput",
+                            "handleResponseMethod": "processUpdateCartItemResponse",
+                            "hierarchyPath": "{action.hierarchypath}",
+                            "input": "{}",
+                            "ipMethod": "CPQ_UpdateCartItem",
+                            "itemId": "{action.itemid}",
+                            "methodName": "updateCartItem",
+                            "responseEventName": "cpq_updateCartItem_responseEvent",
+                            "updateType": "quantity"
+                        },
+                        "hasExtraParams": true,
+                        "id": "flex-action-1626014528129",
+                        "message": "cpq_ui_event",
+                        "subType": "PubSub",
+                        "type": "Event"
+                    }
+                }
+            ],
+            "channelname": "cpqQuantityField_{recordId}",
+            "displayLabel": "cpqQuantityField_{recordId}:baseinputvaluechange",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "baseinputvaluechange",
+            "eventtype": "pubsub",
+            "key": "event-1",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        },
+        {
+            "actionList": [
+                {
+                    "actionIndex": 0,
+                    "card": "{card}",
+                    "draggable": false,
+                    "isOpen": true,
+                    "key": "1633063808888-1veg4ons6",
+                    "label": "Action",
+                    "stateAction": {
+                        "actionConditions": {
+                            "group": [
+                                {
+                                    "field": "{action.event.type}",
+                                    "hasMergeField": true,
+                                    "id": "state-new-condition-11",
+                                    "operator": "==",
+                                    "type": "custom",
+                                    "value": "change"
+                                }
+                            ],
+                            "id": "state-condition-object",
+                            "isParent": true
+                        },
+                        "eventName": "cpq_{recordId}",
+                        "extraParams": {
+                            "attributeCategoryId": "{action.attributecategoryid}",
+                            "attributeCheckboxValue": "{action.checked}",
+                            "attributeId": "{action.attributeid}",
+                            "attributeValue": "{action.value}",
+                            "cartType": "{action.carttype}",
+                            "getInputMethod": "prepareUpdateCartItemInput",
+                            "handleResponseMethod": "processUpdateCartItemResponse",
+                            "hierarchyPath": "{action.hierarchypath}",
+                            "input": "{}",
+                            "ipMethod": "CPQ_UpdateCartItem",
+                            "itemId": "{action.itemid}",
+                            "methodName": "updateCartItem",
+                            "responseEventName": "cpq_updateCartItem_responseEvent",
+                            "updateType": "attribute"
+                        },
+                        "hasExtraParams": true,
+                        "id": "flex-action-1677566409381",
+                        "message": "cpq_ui_event",
+                        "subType": "PubSub",
+                        "type": "Event"
+                    }
+                }
+            ],
+            "channelname": "cpqProductAttributes_{recordId}",
+            "displayLabel": "cpqProductAttributes_{recordId}:baseinputvaluechange",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "baseinputvaluechange",
+            "eventtype": "pubsub",
+            "key": "event-2",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        },
+        {
+            "actionList": [
+                {
+                    "card": "{card}",
+                    "draggable": true,
+                    "isOpen": false,
+                    "key": "1633063808888-mai6deosk",
+                    "label": "Action",
+                    "stateAction": {
+                        "eventName": "cpq_{recordId}",
+                        "extraParams": {
+                            "cartType": "{action.cartType}",
+                            "getInputMethod": "prepareDeleteItemFromCartInput",
+                            "handleResponseMethod": "processDeleteItemFromCartResponse",
+                            "hierarchyPath": "{action.hierarchyPath}",
+                            "ipMethod": "CPQ_DeleteItemFromCart",
+                            "itemId": "{action.itemId}",
+                            "methodName": "deleteItemFromCart",
+                            "minQuantity": "{action.minQuantity}",
+                            "parentObject": "{action.parentObject}"
+                        },
+                        "hasExtraParams": true,
+                        "id": "flex-action-1626014508344",
+                        "message": "cpq_ui_event",
+                        "subType": "PubSub",
+                        "type": "Event"
+                    }
+                }
+            ],
+            "channelname": "cpq_{recordId}",
+            "displayLabel": "cpq_{recordId}:cpq_delete_item",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "cpq_delete_item",
+            "eventtype": "pubsub",
+            "key": "event-3",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        },
+        {
+            "actionList": [
+                {
+                    "actionIndex": 0,
+                    "card": "{card}",
+                    "draggable": false,
+                    "isOpen": true,
+                    "key": "1657019365214-palan2bzo",
+                    "label": "Action",
+                    "stateAction": {
+                        "channelName": "close_configurator_modal",
+                        "displayName": "Action",
+                        "flyoutContainerClass": "cpq__configurator-cart_footer",
+                        "flyoutLwc": "c-p-q-cart-configurator-multi-language",
+                        "flyoutParams": {
+                            "ContextId": "{recordId}"
+                        },
+                        "flyoutType": "OmniScripts",
+                        "hasExtraParams": true,
+                        "id": "flex-action-1698661906954",
+                        "layoutType": "lightning",
+                        "openFlyoutIn": "Modal",
+                        "openUrlIn": "Current Window",
+                        "osName": "CPQ/cartConfigurator/Multi-Language",
+                        "type": "Flyout",
+                        "vlocityIcon": "standard-default"
+                    }
+                }
+            ],
+            "channelname": "cpq_{recordId}",
+            "displayLabel": "cpq_{recordId}:cpq_addtocart_response",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "cpq_addtocart_response",
+            "eventtype": "pubsub",
+            "key": "event-4",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        },
+        {
+            "actionList": [
+                {
+                    "actionIndex": 0,
+                    "card": "{card}",
+                    "draggable": false,
+                    "isOpen": true,
+                    "key": "1658151894644-t3myeeai0",
+                    "label": "Get Async Job status",
+                    "stateAction": {
+                        "Web Page": {
+                            "targetName": "/apex"
+                        },
+                        "displayName": "Action",
+                        "eventName": "setValues",
+                        "fieldValues": [
+                            {
+                                "fieldName": "Session.isAsyncProcessCompleted",
+                                "fieldValue": "{action.response.isAsyncProcessCompleted}"
+                            },
+                            {
+                                "fieldName": "Session.isAsyncProcessesPresent",
+                                "fieldValue": "{action.response.isAsyncProcessesPresent}"
+                            }
+                        ],
+                        "id": "flex-action-1658161386460",
+                        "openUrlIn": "Current Window",
+                        "targetType": "Web Page",
+                        "type": "cardAction",
+                        "vlocityIcon": "standard-default"
+                    }
+                }
+            ],
+            "channelname": "cpq_{recordId}",
+            "displayLabel": "cpq_{recordId}:cpq_update_bulk_async_job_status",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "cpq_update_bulk_async_job_status",
+            "eventtype": "pubsub",
+            "key": "event-5",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        }
+    ],
+    "globalCSS": false,
+    "isFlex": true,
+    "lwc": {
+        "DeveloperName": "cfCpqGlobalHeaderContainer_5_Vlocity",
+        "Id": "0Rb8Z000000EnraSAC",
+        "ManageableState": "unmanaged",
+        "MasterLabel": "cfCpqGlobalHeaderContainer_5_Vlocity",
+        "NamespacePrefix": "%vlocity_namespace%"
+    },
+    "multilanguageSupport": true,
+    "selectableMode": "Multi",
+    "sessionVars": [
+        {
+            "name": "cartId",
+            "val": ""
+        },
+        {
+            "name": "pricelistId",
+            "val": "null"
+        },
+        {
+            "name": "ObjectType",
+            "val": "Order"
+        },
+        {
+            "name": "cartDetails",
+            "val": "null"
+        },
+        {
+            "name": "isMultisiteFlow",
+            "val": "null"
+        },
+        {
+            "name": "isAsyncProcessesPresent",
+            "val": "null"
+        },
+        {
+            "name": "isAsyncProcessCompleted",
+            "val": "null"
+        },
+        {
+            "name": "currencyIcon",
+            "val": "null"
+        }
+    ],
+    "states": [
+        {
+            "actions": [
+            ],
+            "childCards": [
+                "cpqGlobalHeader"
+            ],
+            "components": {
+                "layer-0": {
+                    "children": [
+                        {
+                            "class": "slds-col ",
+                            "element": "childCardPreview",
+                            "elementLabel": "FlexCard-0",
+                            "name": "FlexCard",
+                            "property": {
+                                "cardName": "cpqGlobalHeader",
+                                "cardNode": "",
+                                "data-conditions": {
+                                    "group": [
+                                    ],
+                                    "id": "state-condition-object",
+                                    "isParent": true
+                                },
+                                "data-preloadConditionalElement": false,
+                                "isChildCardTrackingEnabled": false,
+                                "parentAttribute": {
+                                    "ObjectType": "{objectApiName}",
+                                    "cartId": "{Session.cartId}",
+                                    "currencyIcon": "{Session.currencyIcon}",
+                                    "details": "{Session.cartDetails}",
+                                    "isAsyncProcessCompleted": "{Session.isAsyncProcessCompleted}",
+                                    "isAsyncProcessesPresent": "{Session.isAsyncProcessesPresent}",
+                                    "isMultisiteFlow": "{Session.isMultisiteFlow}",
+                                    "pricelistId": "{Session.pricelistId}"
+                                },
+                                "recordId": "{recordId}",
+                                "selectedState": "Order"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "sizeClass": "slds-size_12-of-12"
+                            },
+                            "type": "element"
+                        }
+                    ]
+                }
+            },
+            "conditions": {
+                "group": [
+                    {
+                        "field": "Session.pricelistId",
+                        "hasMergeField": false,
+                        "id": "state-new-condition-4",
+                        "operator": "!=",
+                        "type": "custom",
+                        "value": "null"
+                    },
+                    {
+                        "field": "Parent.IsHideHeaderAttribute",
+                        "hasMergeField": false,
+                        "id": "state-new-condition-0",
+                        "logicalOperator": "&&",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "false"
+                    }
+                ],
+                "id": "state-condition-object",
+                "isParent": true
+            },
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "documents": [
+            ],
+            "fields": [
+            ],
+            "isSmartAction": false,
+            "name": "Active",
+            "omniscripts": [
+            ],
+            "smartAction": {
+            },
+            "styleObject": {
+                "background": {
+                    "color": "",
+                    "image": "",
+                    "position": "",
+                    "repeat": "",
+                    "size": ""
+                },
+                "border": {
+                    "color": "",
+                    "radius": "",
+                    "style": "",
+                    "type": "",
+                    "width": ""
+                },
+                "class": "slds-card ",
+                "container": {
+                    "class": "slds-card"
+                },
+                "elementStyleProperties": {
+                },
+                "inlineStyle": "",
+                "margin": [
+                ],
+                "padding": [
+                ],
+                "size": {
+                    "default": "12",
+                    "isResponsive": false
+                },
+                "sizeClass": "slds-size_12-of-12 ",
+                "style": "     : #ccc 1px solid; \n         ",
+                "text": {
+                    "align": "",
+                    "color": ""
+                }
+            }
+        }
+    ],
+    "theme": "slds",
+    "title": "cpqGlobalHeaderContainer",
+    "xmlJson": [
+        {
+            "@attributes": {
+                "targets": "lightningCommunity__Default"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "recordId",
+                        "type": "String"
+                    }
+                },
+                {
+                    "@attributes": {
+                        "name": "objectApiName",
+                        "type": "String"
+                    }
+                }
+            ]
+        },
+        {
+            "@attributes": {
+                "targets": "lightning__AppPage"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                },
+                {
+                    "@attributes": {
+                        "name": "recordId",
+                        "type": "String"
+                    }
+                }
+            ]
+        },
+        {
+            "@attributes": {
+                "targets": "lightning__RecordPage"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "debug",
+                        "type": "Boolean"
+                    }
+                }
+            ],
+            "supportedFormFactors": {
+                "supportedFormFactor": [
+                    {
+                        "@attributes": {
+                            "type": "Large"
+                        }
+                    },
+                    {
+                        "@attributes": {
+                            "type": "Small"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "xmlObject": {
+        "apiVersion": 48,
+        "isExplicitImport": false,
+        "isExposed": true,
+        "masterLabel": "cpqGlobalHeaderContainer",
+        "targetConfigs": "PHRhcmdldENvbmZpZyB0YXJnZXRzPSJsaWdodG5pbmdDb21tdW5pdHlfX0RlZmF1bHQiPgogICAgICA8cHJvcGVydHkgbmFtZT0icmVjb3JkSWQiIHR5cGU9IlN0cmluZyIvPgogICAgPC90YXJnZXRDb25maWc+CiAgICA8dGFyZ2V0Q29uZmlnIHRhcmdldHM9ImxpZ2h0bmluZ19fQXBwUGFnZSI+CiAgICAgIDxwcm9wZXJ0eSBuYW1lPSJkZWJ1ZyIgdHlwZT0iQm9vbGVhbiIvPgogICAgICA8cHJvcGVydHkgbmFtZT0icmVjb3JkSWQiIHR5cGU9IlN0cmluZyIvPgogICAgPC90YXJnZXRDb25maWc+CiAgICA8dGFyZ2V0Q29uZmlnIHRhcmdldHM9ImxpZ2h0bmluZ19fUmVjb3JkUGFnZSI+CiAgICAgIDxwcm9wZXJ0eSBuYW1lPSJkZWJ1ZyIgdHlwZT0iQm9vbGVhbiIvPgogICAgICA8c3VwcG9ydGVkRm9ybUZhY3RvcnM+CiAgICAgICAgPHN1cHBvcnRlZEZvcm1GYWN0b3IgdHlwZT0iTGFyZ2UiLz4KICAgICAgICA8c3VwcG9ydGVkRm9ybUZhY3RvciB0eXBlPSJTbWFsbCIvPgogICAgICA8L3N1cHBvcnRlZEZvcm1GYWN0b3JzPgogICAgPC90YXJnZXRDb25maWc+",
+        "targets": {
+            "target": [
+                "lightning__AppPage",
+                "lightning__HomePage",
+                "lightning__RecordPage",
+                "lightningCommunity__Page",
+                "lightningCommunity__Default"
+            ]
+        }
+    }
+}

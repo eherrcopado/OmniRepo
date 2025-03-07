@@ -1,0 +1,194 @@
+<style>
+.vlocity .panel.panel-default {
+  border: 0;
+}
+
+.vlocity .panel>.panel-heading {
+  background-color: #FFF;
+}
+
+.vlocity .table tr.vlc-selectableitem-selected {
+  background: rgba(5,166,223,0.1) !important;
+}
+
+.vlocity .table>thead>tr>th{
+  background-color: #FFFFFF;
+  color: rgba(0,0,0,0.9);
+}
+</style>
+
+<script type="text/ng-template" id="inslist_InvoiceMulti.html">     
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <label>Invoices List</label>                   
+            </div>                                          
+            <table class="table">
+               <thead>
+                    <tr>
+                        <th/>
+                        <th>Name</th>
+                        <th>Start Period</th>       
+                        <th>End Period</th>
+                        <th>Original Amount</th>
+                        <th>Due Date</th>
+                        <th>Paid Amount</th>
+                        <th>Amount Due</th>     
+                        <th>Invoice Status</th> 
+                        <th>Reason</th> 
+                    </tr>
+                </thead>
+                <tbody class='ins'>
+                    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+                        <td><input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)' checked/></td>
+                        <td><a href="https://na31.salesforce.com/{{p.InvoiceID}}" target="_black">{{p['Invoice Number']}}</a></td>
+                        <td>{{p['Invoice Start Period']}}</td>
+                        <td>{{p['Invoice End Period']}}</td>
+                        <td>{{p['Invoice Original Amount']}} $</td>    
+                         <td>{{p['Invoice Due Date']}} $</td>                                      
+                        <td>{{p['Invoice Paid Amount']}} $</td> 
+                         <td>{{p['Invoice Amount Due']}} $</td>        
+                        <td>{{p['Invoice Status']}}</td>
+                        <td>{{p['Invoice Reason']}}</td>                    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</script>
+
+<!--script type="text/ng-template" id="inslist.html">     
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <label>Assets List</label>                   
+            </div>                                          
+            <table class="table">
+               <thead>
+                    <tr>
+			<th/>
+                        <th>Name</th>
+                        <th>Status</th>       
+                        <th>Suspended Reason</th>                                                 
+                    </tr>
+                </thead>
+                <tbody class='ins'>
+                    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+						<td><input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)' checked/></td>
+                        <td>{{p['Asset Name']}}</td>
+                        <td>{{p['Asset Status']}}</td>
+                        <td>{{p['Asset Suspension Reason']}}</td> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</script-->
+
+<script type="text/ng-template" id="inslist.html">     
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <label>Asset List</label>                   
+            </div>                                          
+            <table class="table">
+               <thead>
+                    <tr>
+                        <th width="20px"/>
+                        <th>Msisdn</th>
+                        <!--<th>(Product) Family</th>-->
+                        <th>Status</th>                                                 
+                        <th>Install Dates</th>                                                 
+                    </tr>
+                </thead>
+                <tbody class='ins'>
+                    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+                        <td><input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)' checked/></td>
+                        <td>{{p.msisdn}}</td>
+                        <!--<td>{{p.product_fam}}</td>-->
+                        <td>{{p.status}}</td> 
+                        <td>{{p.installdate}}</td> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</script>
+<script type="text/ng-template" id="billinglist.html">     
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <label>Billing List</label>                   
+            </div>                                          
+            <table class="table">
+               <thead>
+                    <tr>
+			<th/>
+                        <th>Billing Name</th>
+                        <th>Bill Frequency</th>     
+                    </tr>
+                </thead>
+                <tbody class='ins'>
+                    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+						<td><input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)' checked/></td>
+                        <td>{{p['BillingName']}}</td>
+                        <td>BillingName{{p.BillingName}}</td>
+                    </tr>
+		     <tr>
+			<td/>
+                        <td>Billing Name</td>
+                        <td>Bill Frequency</td>       
+                    </tr>
+                </tbody>
+            </table>
+		</BR>
+    </div>
+</script>
+
+<script type="text/ng-template" id="inslist_InvoiceLineItemMulti.html">     
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<label>Invoice Items List</label>                   
+		</div>                                          
+		<table class="table">
+		   <thead>
+				<tr>
+					<th/>
+					<th>Name</th>						
+					<th>Amount</th>
+					<th>Start Date</th>
+					<th>End Date</th>
+				</tr>
+			</thead>
+			<tbody class='ins'>
+				<tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+					<td><input type='checkbox' ng-model='p.vlcSelected' ng-change='onSelectItem(control, p, $index, this)' checked/></td>
+					<td>{{p['ServiceName']}}</td>                     
+					<td>{{p['Amount']}} $</td>
+					<td>{{p['ServiceStartDate']}}</td>
+					<td>{{p['ServiceEndDate']}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</script>
+
+<script type="text/ng-template" id="trafficDetails.html">     
+        <div class="panel panel-default">
+            <table class="table">
+               <thead>
+                    <tr>
+                        <th>Traffic Type</th>
+                        <th>Destination</th>
+                        <th>Date</th>
+                        <th>Duration</th>     
+                        <th>UOM</th> 
+                        <th>Charge</th>
+                    </tr>
+                </thead>
+                <tbody class='ins'>
+                    <tr ng-repeat='p in control.vlcSI[control.itemsKey]' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+                        <td>{{p['Type']}}</td>
+                        <td>{{p['Destination']}}</td>
+                        <td>{{p['Time'] | date:'yyyy-MM-dd '}}</td>
+                        <td>{{p['Duration']}}</td>
+                        <td>{{p['UOM']}}</td>
+                        <td>{{p['Charge']}}</td> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</script>

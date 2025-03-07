@@ -1,0 +1,112 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "GetPaymentColumns",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfService/GetPaymentRecords",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/GetPaymentRecords/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "columns": [
+                {
+                    "cellAttributes": {
+                        "alignment": "left"
+                    },
+                    "fieldName": "BillingPeriod",
+                    "fixedWidth": 185,
+                    "hideDefaultActions": true,
+                    "label": "SfiEnergySelfServiceBillingPeriod",
+                    "sortable": false,
+                    "type": "text"
+                },
+                {
+                    "cellAttributes": {
+                        "alignment": "left"
+                    },
+                    "fieldName": "TotalUsage",
+                    "fixedWidth": 185,
+                    "hideDefaultActions": true,
+                    "label": "SfiEnergySelfServiceConsumption",
+                    "sortable": true,
+                    "type": "number"
+                },
+                {
+                    "cellAttributes": {
+                        "alignment": "left"
+                    },
+                    "fieldName": "UoM",
+                    "fixedWidth": 185,
+                    "hideDefaultActions": true,
+                    "label": "SfiEnergySelfServiceUoM",
+                    "sortable": false,
+                    "type": "text"
+                },
+                {
+                    "cellAttributes": {
+                        "alignment": "left"
+                    },
+                    "fieldName": "Amount",
+                    "fixedWidth": 185,
+                    "hideDefaultActions": true,
+                    "label": "SfiEnergySelfServiceAmount",
+                    "sortable": true,
+                    "type": "currency"
+                },
+                {
+                    "cellAttributes": {
+                        "alignment": "left"
+                    },
+                    "fieldName": "DueDate",
+                    "fixedWidth": 185,
+                    "hideDefaultActions": true,
+                    "label": "SfiEnergySelfServiceDueDate",
+                    "sortable": true,
+                    "type": "date",
+                    "typeAttributes": {
+                        "day": "2-digit",
+                        "month": "short",
+                        "year": "numeric"
+                    }
+                },
+                {
+                    "cellAttributes": {
+                        "alignment": "left"
+                    },
+                    "fieldName": "Bill",
+                    "fixedWidth": 190,
+                    "label": "SfiEnergySelfServiceBill",
+                    "type": "button",
+                    "typeAttributes": {
+                        "disabled": false,
+                        "iconPosition": "right",
+                        "label": "SfiEnergySelfServiceViewBill",
+                        "name": "statementUrl",
+                        "title": "SfiEnergySelfServiceBillURL",
+                        "value": "ViewBill",
+                        "variant": "base"
+                    }
+                }
+            ]
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/GetPaymentRecords/Procedure/GetPaymentColumns"
+}

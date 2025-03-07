@@ -1,0 +1,30 @@
+<div class="nds-canvas div-tpl_oz4r5"  ng-controller='siController_oz4r5'>
+   <!-- <p><button ng-click="doSelectAll(control, this)">Select All</button>&nbsp;&nbsp;
+    <button ng-click="doDeselectAll(control, this)">Deselect All</button></p>-->
+    <p>&nbsp;</p>
+    <table class="nds-table__custom" style="table-layout: auto;">
+      <thead>
+        <tr class="nds-text-heading_label tpl_oz4r5">
+            <th><a href="" ng-click="setOrderBy('Name')">Name&nbsp;&nbsp;</a></th>
+            <th><a href="" ng-click="setOrderBy('QuoteRECTotal')">Monthly Total&nbsp;&nbsp;</a></th>
+            <th><a href="" ng-click="setOrderBy('TotalAmount')">Total Amount&nbsp;&nbsp;</a></th>
+            <th><a href="" ng-click="setOrderBy('Term')">Term&nbsp;&nbsp;</a></th>
+            <th><a href="" ng-click="setOrderBy('QuoteMargin')">Quote Margin&nbsp;&nbsp;</a></th>
+            <th><a href="" ng-click="setOrderBy('ExpDate')">Exp. Date&nbsp;&nbsp;</a></th>
+                   
+        </tr>
+      </thead>
+    <tbody class="ins">
+       <tr class='nds-border_bottom tpl_oz4r5' ng-repeat='p in control.vlcSI[control.itemsKey] | orderBy : orderByField' ng-class="{ 'vlc-selectableitem-selected' : p.vlcSelected }" >
+      <td>{{p["Name"]}}&nbsp;&nbsp;</td>
+      <td>{{p["QuoteRECTotal"] | currency:"$":2}}&nbsp;&nbsp;</td>
+      <td>{{p["TotalAmount"] | currency:"$":2}}&nbsp;&nbsp;</td>
+      <td>{{p["Term"]}}&nbsp;&nbsp;</td>
+      <td>{{p["QuoteMargin"]}} %&nbsp;&nbsp;</td>
+      <td>{{p["ExpDate"]}}&nbsp;&nbsp;</td>
+          
+    </tr>
+   </tbody>
+  </table>
+ </div>
+ <p>&nbsp;</p>

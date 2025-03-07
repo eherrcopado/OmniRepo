@@ -1,0 +1,47 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "isCommodityOfferSelected",
+    "OmniProcessId": {
+        "Name": "EnergyUtilitiesProgramsApplicationEnrollment",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollment/Multi-Language",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "stepShowOffers",
+        "OmniProcessId": {
+            "Name": "EnergyUtilitiesProgramsApplicationEnrollment",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollment/Multi-Language",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollment/Multi-Language/stepShowOffers",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "stepShowOffers",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataType": null,
+        "dateFormat": "MM-dd-yyyy",
+        "disOnTplt": false,
+        "expression": "IF((%stepShowOffers:showOfferEVCharger:SelectedEVCharger% == null && %stepShowOffers:showOfferFinancialAssistance:SelectedFinancialAssistance% == null && %stepShowOffers:showOfferEVRate:SelectedEVRates% == null) || (%stepShowOffers:showOfferEVCharger:SelectedEVCharger% == null && %stepShowOffers:showOfferEVRate:SelectedEVRates% == null && %stepShowOffers:showOfferFinancialAssistance:SelectedFinancialAssistance% != null && %stepShowOffers:showOfferFinancialAssistance:SelectedFinancialAssistance:Name% == 'None'), false, true)",
+        "hide": true,
+        "hideGroupSep": false,
+        "inputWidth": 12,
+        "label": null,
+        "mask": null,
+        "show": null,
+        "showInputWidth": false
+    },
+    "Type": "Formula",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollment/Multi-Language/isCommodityOfferSelected"
+}

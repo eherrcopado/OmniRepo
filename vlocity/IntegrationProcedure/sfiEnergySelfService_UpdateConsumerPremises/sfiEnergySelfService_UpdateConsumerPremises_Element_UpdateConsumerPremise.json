@@ -1,0 +1,52 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "This step invokes the updateConsumerPremise method of VEEAppHandler class and updates the account.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "UpdateConsumerPremise",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfServiceUpdateConsumerPremises",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/UpdateConsumerPremises/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalChainableResponse": {
+        },
+        "additionalInput": {
+            "currentPremiseAccountId": "%SSPConsumerPremisesAccountId%",
+            "currentPremiseId": "%SSPConsumerPremisesId%",
+            "newPremiseId": "%SSPNewConsumerPremises%"
+        },
+        "additionalOutput": {
+        },
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "label": "RemoteAction1",
+        "remoteClass": "%vlocity_namespace%.VEEAppHandler",
+        "remoteMethod": "updateConsumerPremise",
+        "remoteOptions": {
+        },
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "Remote Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/UpdateConsumerPremises/Procedure/UpdateConsumerPremise"
+}

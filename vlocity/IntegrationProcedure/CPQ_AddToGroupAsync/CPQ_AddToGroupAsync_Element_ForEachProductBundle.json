@@ -1,0 +1,31 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "ForEachProductBundle",
+    "OmniProcessId": {
+        "Name": "AddToGroupAsync",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/CPQ/AddToGroupAsync/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "LoopBlock1",
+        "loopList": "productBundles",
+        "loopOutput": {
+            "AsyncJobStatusOP": "%RunAsyncJob%",
+            "FlattenAssetIdsOP": "%FlattenAssetIds%",
+            "GetMemberIdsFromAssetIdsOP": "%GetMemberIdsFromAssetIds%",
+            "GroupAssetsByMembersOP": "%GroupAssetsByMembers%"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/CPQ/AddToGroupAsync/Procedure/ForEachProductBundle"
+}

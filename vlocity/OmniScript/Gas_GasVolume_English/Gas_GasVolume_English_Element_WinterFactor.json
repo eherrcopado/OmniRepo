@@ -1,0 +1,127 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "WinterFactor",
+    "OmniProcessId": {
+        "Name": "GasVolumeCalc",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Gas/GasVolume/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "Building",
+        "OmniProcessId": {
+            "Name": "GasVolumeCalc",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/Gas/GasVolume/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/Gas/GasVolume/English/Building",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "Building",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "Type__c": {
+            "label": "Formula",
+            "type": "input"
+        },
+        "allowSaveForLater": true,
+        "autoFocus": false,
+        "autoSaveOnStepNext": false,
+        "cancelRedirectPageName": "OmniScriptCancelled",
+        "cancelRedirectTemplateUrl": "vlcCancelled.html",
+        "cancelSource": "%ContextId%",
+        "cancelType": "SObject",
+        "consoleTabLabel": "New",
+        "controlWidth": 3,
+        "dataType": "Number",
+        "dateFormat": "MM-dd-yyyy",
+        "disOnTplt": false,
+        "elementTypeToHTMLTemplateMapping": {
+        },
+        "enableKnowledge": false,
+        "expression": "((%WinterMonths%)/12)*%AvTempDiffWinter%*0.2/10",
+        "hide": false,
+        "hideGroupSep": false,
+        "inputWidth": 12,
+        "knowledgeArticleTypeQueryFieldsMap": {
+        },
+        "label": "Winter Factor",
+        "mask": "###.00",
+        "message": {
+        },
+        "persistentComponent": [
+            {
+                "id": "vlcCart",
+                "itemsKey": "cartItems",
+                "label": "",
+                "modalConfigurationSetting": {
+                    "modalController": "ModalProductCtrl",
+                    "modalHTMLTemplateId": "vlcProductConfig.html",
+                    "modalSize": "lg"
+                },
+                "postTransformBundle": "",
+                "preTransformBundle": "",
+                "remoteClass": "",
+                "remoteMethod": "",
+                "remoteOptions": {
+                    "postTransformBundle": "",
+                    "preTransformBundle": ""
+                },
+                "remoteTimeout": 30000,
+                "render": false,
+                "responseJSONNode": "",
+                "responseJSONPath": "",
+                "sendJSONNode": "",
+                "sendJSONPath": ""
+            },
+            {
+                "id": "vlcKnowledge",
+                "itemsKey": "knowledgeItems",
+                "label": "",
+                "modalConfigurationSetting": {
+                    "modalController": "",
+                    "modalHTMLTemplateId": "",
+                    "modalSize": "lg"
+                },
+                "postTransformBundle": "",
+                "preTransformBundle": "",
+                "remoteClass": "",
+                "remoteMethod": "",
+                "remoteOptions": {
+                    "postTransformBundle": "",
+                    "preTransformBundle": ""
+                },
+                "remoteTimeout": 30000,
+                "render": false
+            }
+        ],
+        "saveContentEncoded": false,
+        "saveForLaterRedirectPageName": "sflRedirect",
+        "saveForLaterRedirectTemplateUrl": "vlcSaveForLaterAcknowledge.html",
+        "saveObjectId": "%ContextId%",
+        "saveURLPatterns": {
+        },
+        "seedDataJSON": {
+        },
+        "show": null,
+        "showInputWidth": false,
+        "ssm": false,
+        "timeTracking": true,
+        "trackingCustomData": {
+        },
+        "visualforcePagesAvailableInPreview": {
+        },
+        "wpm": false
+    },
+    "Type": "Formula",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Gas/GasVolume/English/WinterFactor"
+}

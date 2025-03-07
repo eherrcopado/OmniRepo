@@ -1,0 +1,2945 @@
+{
+    "dataSource": {
+        "contextVariables": [
+            {
+                "id": 0,
+                "name": "Parent.type",
+                "val": "charge"
+            },
+            {
+                "id": 1,
+                "name": "Parent.cartId",
+                "val": "8014W000001zKCBQA2"
+            },
+            {
+                "id": 2,
+                "name": "Parent.id",
+                "val": "8024W000007zAFZQA2"
+            }
+        ],
+        "orderBy": {
+        },
+        "type": null,
+        "value": {
+        }
+    },
+    "dynamicCanvasWidth": {
+        "type": "desktop"
+    },
+    "enableLwc": true,
+    "events": [
+        {
+            "actionData": {
+                "card": "{card}",
+                "draggable": true,
+                "isOpen": false,
+                "key": "1625032850031-2gqvdc6wc",
+                "label": "Action",
+                "stateAction": {
+                    "eventName": "setValues",
+                    "fieldValues": [
+                        {
+                            "fieldName": "Session.chargeType",
+                            "fieldValue": "{action.chargeType}"
+                        },
+                        {
+                            "fieldName": "Session.fields",
+                            "fieldValue": "{action.fields}"
+                        },
+                        {
+                            "fieldName": "Session.PricingVariableCode",
+                            "fieldValue": "{action.PricingVariableCode}"
+                        },
+                        {
+                            "fieldName": "Session.listkeys",
+                            "fieldValue": "{action.listkeys}"
+                        }
+                    ],
+                    "id": "flex-action-1615206206527",
+                    "type": "cardAction"
+                }
+            },
+            "actionList": [
+                {
+                    "card": "{card}",
+                    "draggable": true,
+                    "isOpen": false,
+                    "key": "1629447196379-2htvkrp0j",
+                    "label": "Action",
+                    "stateAction": {
+                        "eventName": "setValues",
+                        "fieldValues": [
+                            {
+                                "fieldName": "Session.chargeType",
+                                "fieldValue": "{action.chargeType}"
+                            },
+                            {
+                                "fieldName": "Session.fields",
+                                "fieldValue": "{action.fields}"
+                            },
+                            {
+                                "fieldName": "Session.PricingVariableCode",
+                                "fieldValue": "{action.PricingVariableCode}"
+                            },
+                            {
+                                "fieldName": "Session.listkeys",
+                                "fieldValue": "{action.listkeys}"
+                            }
+                        ],
+                        "id": "flex-action-1626006688675",
+                        "type": "cardAction"
+                    }
+                }
+            ],
+            "channelname": "cpq_{recordId}",
+            "displayLabel": "cpq_{recordId}:cpq_chargetype_change",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "cpq_chargetype_change",
+            "eventtype": "pubsub",
+            "key": "event-0",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        },
+        {
+            "actionData": {
+                "card": "{card}",
+                "draggable": true,
+                "isOpen": false,
+                "key": "1625032850031-dplvii3ca",
+                "label": "Action",
+                "stateAction": {
+                    "eventName": "cpq",
+                    "extraParams": {
+                        "getInputMethod": "prepareApplyAdjustmentInput",
+                        "handleResponseMethod": "processApplyAdjustmentResponse",
+                        "input": "{action}",
+                        "ipMethod": "CPQ_ApplyAdjustment",
+                        "methodName": "applyAdjustment",
+                        "responseEventName": "cpq_adjustment_apply"
+                    },
+                    "hasExtraParams": true,
+                    "id": "flex-action-1618202352610",
+                    "message": "cpq_ui_event",
+                    "subType": "PubSub",
+                    "type": "Event"
+                }
+            },
+            "actionList": [
+                {
+                    "actionIndex": 0,
+                    "card": "{card}",
+                    "draggable": false,
+                    "isOpen": true,
+                    "key": "1629447196379-pjdfnx4qc",
+                    "label": "Action",
+                    "stateAction": {
+                        "eventName": "cpq_{recordId}",
+                        "extraParams": {
+                            "cartType": "{Parent.cartType}",
+                            "getInputMethod": "prepareApplyAdjustmentInput",
+                            "handleResponseMethod": "processApplyAdjustmentResponse",
+                            "input": "{action}",
+                            "ipMethod": "CPQ_ApplyAdjustment",
+                            "methodName": "applyAdjustment",
+                            "responseCallbackEventName": "cpq_adjustment_apply"
+                        },
+                        "hasExtraParams": true,
+                        "id": "flex-action-1641566092458",
+                        "message": "cpq_ui_event",
+                        "subType": "PubSub",
+                        "type": "Event"
+                    }
+                }
+            ],
+            "channelname": "cpq_{recordId}",
+            "displayLabel": "cpq_{recordId}:cpq_adjustment_apply_click",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "cpq_adjustment_apply_click",
+            "eventtype": "pubsub",
+            "key": "event-1",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        },
+        {
+            "actionData": {
+                "card": "{card}",
+                "draggable": true,
+                "isOpen": false,
+                "key": "1625032850031-k2yq6de5h",
+                "label": "Action",
+                "stateAction": {
+                    "eventName": "cpq",
+                    "extraParams": {
+                        "actionObjName": "{action.actionObjName}",
+                        "cartType": "{action.cartType}",
+                        "getInputMethod": "prepareDeletePriceAdjustmentInput",
+                        "handleResponseMethod": "processDeletePriceADjustmentResponse",
+                        "input": "{action.input}",
+                        "ipMethod": "CPQ_DeletePriceAdjustment",
+                        "methodName": "{action.methodName}",
+                        "record": "{action.record}",
+                        "responseEventName": "{action.responseEventName}"
+                    },
+                    "hasExtraParams": true,
+                    "id": "flex-action-1618201954962",
+                    "message": "cpq_ui_event",
+                    "subType": "PubSub",
+                    "type": "Event"
+                }
+            },
+            "actionList": [
+                {
+                    "card": "{card}",
+                    "draggable": false,
+                    "isOpen": true,
+                    "key": "1629447196379-jupmqvydq",
+                    "label": "Action",
+                    "stateAction": {
+                        "eventName": "cpq_{recordId}",
+                        "extraParams": {
+                            "actionObjName": "{action.actionObjName}",
+                            "cartType": "{action.cartType}",
+                            "getInputMethod": "prepareDeletePriceAdjustmentInput",
+                            "handleResponseMethod": "processDeletePriceAdjustmentResponse",
+                            "input": "{action.input}",
+                            "ipMethod": "CPQ_DeletePriceAdjustment",
+                            "methodName": "{action.methodName}",
+                            "record": "{action.record}",
+                            "responseCallbackEventName": "{action.responseEventName}"
+                        },
+                        "hasExtraParams": true,
+                        "id": "flex-action-1629447199650",
+                        "message": "cpq_ui_event",
+                        "subType": "PubSub",
+                        "type": "Event"
+                    }
+                }
+            ],
+            "channelname": "cpq_{recordId}",
+            "displayLabel": "cpq_{recordId}:cpq_adjustment_delete_click",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "cpq_adjustment_delete_click",
+            "eventtype": "pubsub",
+            "key": "event-2",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        },
+        {
+            "actionData": {
+                "card": "{card}",
+                "draggable": true,
+                "isOpen": false,
+                "key": "1625032850031-8vswpv8xr",
+                "label": "Action",
+                "stateAction": {
+                    "eventName": "cpq",
+                    "hasExtraParams": false,
+                    "id": "flex-action-1615281673711",
+                    "message": "cpq_adjustment_apply_child",
+                    "subType": "PubSub",
+                    "type": "Event"
+                }
+            },
+            "actionList": [
+                {
+                    "card": "{card}",
+                    "draggable": true,
+                    "isOpen": false,
+                    "key": "1629447196379-h1f4ayux6",
+                    "label": "Action",
+                    "stateAction": {
+                        "eventName": "cpq_{recordId}",
+                        "hasExtraParams": false,
+                        "id": "flex-action-1626006675272",
+                        "message": "cpq_adjustment_apply_child",
+                        "subType": "PubSub",
+                        "type": "Event"
+                    }
+                }
+            ],
+            "channelname": "cpq_{recordId}",
+            "displayLabel": "cpq_{recordId}:cpq_adjustment_apply",
+            "element": "action",
+            "eventLabel": "pubsub",
+            "eventname": "cpq_adjustment_apply",
+            "eventtype": "pubsub",
+            "key": "event-3",
+            "recordIndex": "0",
+            "showSpinner": "false"
+        }
+    ],
+    "globalCSS": false,
+    "isFlex": true,
+    "isRepeatable": false,
+    "lwc": {
+        "DeveloperName": "cfCpqManualPriceAdjustments_2_Vlocity",
+        "Id": "0Rb5e0000013wGkCAI",
+        "ManageableState": "unmanaged",
+        "MasterLabel": "cfCpqManualPriceAdjustments_2_Vlocity",
+        "NamespacePrefix": "%vlocity_namespace%"
+    },
+    "multilanguageSupport": true,
+    "sessionVars": [
+        {
+            "name": "cartId",
+            "val": "{Parent.cartId}"
+        },
+        {
+            "name": "id",
+            "val": "{Parent.id}"
+        },
+        {
+            "name": "type",
+            "val": "{Parent.type}"
+        },
+        {
+            "name": "namespace",
+            "val": "%vlocity_namespace%__"
+        },
+        {
+            "name": "chargeType",
+            "val": "OneTimeCharge__c"
+        },
+        {
+            "name": "PricingVariableCode",
+            "val": "OT_STD_PRC"
+        },
+        {
+            "name": "fields",
+            "val": "%vlocity_namespace%__OneTimeCharge__c"
+        },
+        {
+            "name": "listkeys",
+            "val": "AdjustmentCodes"
+        }
+    ],
+    "states": [
+        {
+            "actions": [
+            ],
+            "childCards": [
+                "cpqManualPriceAdjustmentsWaterfall",
+                "cpqManualPriceAdjustmentsActions"
+            ],
+            "components": {
+                "layer-0": {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "class": "slds-col ",
+                                    "element": "outputField",
+                                    "elementLabel": "Block-0-Text-0",
+                                    "key": "element_element_block_0_0_outputField_0_0",
+                                    "name": "Text",
+                                    "parentElementKey": "element_block_0_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "mergeField": "%3Cdiv%20class=%22slds-text-heading_medium%20slds-text-body_regular%22%3E%3Cspan%20class=%22slds-text-heading_medium%22%20style=%22font-family:%20'Salesforce%20Sans',%20Arial,%20sans-serif;%20font-size:%2018pt;%22%3E%7BParent.lineItemName%7D%20%7BLabel.CPQCartPricing%7D%3C/span%3E%3C/div%3E",
+                                        "record": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "12",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "slds-text-align_center slds-p-around_xxx-small",
+                                        "container": {
+                                            "class": ""
+                                        },
+                                        "customClass": "slds-p-around_xxx-small",
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "",
+                                        "margin": [
+                                        ],
+                                        "padding": [
+                                        ],
+                                        "size": {
+                                            "default": "12",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_12-of-12 ",
+                                        "style": "     : #ccc 1px solid; \n         ",
+                                        "text": {
+                                            "align": "center",
+                                            "color": ""
+                                        }
+                                    },
+                                    "type": "text"
+                                }
+                            ],
+                            "class": "slds-col ",
+                            "element": "block",
+                            "elementLabel": "Block-0",
+                            "name": "Block",
+                            "property": {
+                                "card": "{card}",
+                                "collapsedByDefault": false,
+                                "collapsible": false,
+                                "label": "Block",
+                                "record": "{record}"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "background": {
+                                    "color": "",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "slds-modal__header slds-p-around_small slds-scrollable_none",
+                                "container": {
+                                    "class": ""
+                                },
+                                "customClass": "slds-modal__header slds-p-around_small slds-scrollable_none",
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                ],
+                                "size": {
+                                    "default": "12",
+                                    "isResponsive": false
+                                },
+                                "sizeClass": "slds-size_12-of-12 ",
+                                "style": "     : #ccc 1px solid; \n         ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "type": "block"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "class": "slds-col ",
+                                            "element": "action",
+                                            "elementLabel": "Block-1-Block-0-Action-0",
+                                            "key": "element_element_element_block_1_0_block_0_0_action_0_0",
+                                            "name": "Action",
+                                            "parentElementKey": "element_element_block_1_0_block_0_0",
+                                            "property": {
+                                                "buttonVariant": "brand",
+                                                "card": "{card}",
+                                                "data-conditions": {
+                                                    "group": [
+                                                        {
+                                                            "field": "Session.chargeType",
+                                                            "id": "state-new-condition-4",
+                                                            "operator": "==",
+                                                            "type": "custom",
+                                                            "value": "OneTimeCharge__c"
+                                                        }
+                                                    ],
+                                                    "id": "state-condition-object",
+                                                    "isParent": true
+                                                },
+                                                "displayAsButton": true,
+                                                "hideActionIcon": true,
+                                                "record": "{record}",
+                                                "stateAction": {
+                                                    "displayName": "{Label.OneTime}",
+                                                    "eventName": "setValues",
+                                                    "extraParams": {
+                                                        "PricingVariableCode": "OT_STD_PRC",
+                                                        "chargeType": "OneTimeCharge__c",
+                                                        "fields": "%vlocity_namespace%__OneTimeCharge__c",
+                                                        "listkeys": "AdjustmentCodes"
+                                                    },
+                                                    "hasExtraParams": true,
+                                                    "id": "flex-action-1619618107438",
+                                                    "message": "cpq_chargetype_change",
+                                                    "openUrlIn": "Current Window",
+                                                    "subType": "PubSub",
+                                                    "type": "cardAction",
+                                                    "vlocityIcon": "standard-default"
+                                                },
+                                                "stateObj": "{record}"
+                                            },
+                                            "size": {
+                                                "default": "2",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "slds-m-bottom_small cpq__chargetype-tab-button_active cpq__chargetype-tab-button-leftmost",
+                                                "container": {
+                                                    "class": "slds-m-bottom_small"
+                                                },
+                                                "customClass": "cpq__chargetype-tab-button_active cpq__chargetype-tab-button-leftmost",
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "2",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_2-of-12 ",
+                                                "style": "     : #ccc 1px solid; \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                }
+                                            },
+                                            "styleObjects": [
+                                                {
+                                                    "conditionString": "",
+                                                    "conditions": "default",
+                                                    "draggable": false,
+                                                    "key": 0,
+                                                    "label": "Default",
+                                                    "name": "Default",
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "slds-m-bottom_small cpq__chargetype-tab-button_active cpq__chargetype-tab-button-leftmost",
+                                                        "container": {
+                                                            "class": "slds-m-bottom_small"
+                                                        },
+                                                        "customClass": "cpq__chargetype-tab-button_active cpq__chargetype-tab-button-leftmost",
+                                                        "elementStyleProperties": {
+                                                        },
+                                                        "inlineStyle": "",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "2",
+                                                            "isResponsive": false
+                                                        },
+                                                        "sizeClass": "slds-size_2-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n         ",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": ""
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": "element"
+                                        },
+                                        {
+                                            "class": "slds-col ",
+                                            "element": "action",
+                                            "elementLabel": "Action-1",
+                                            "key": "element_element_element_block_1_0_block_0_0_action_1_0",
+                                            "name": "Action",
+                                            "parentElementKey": "element_element_block_1_0_block_0_0",
+                                            "property": {
+                                                "buttonVariant": "neutral",
+                                                "card": "{card}",
+                                                "data-conditions": {
+                                                    "group": [
+                                                        {
+                                                            "field": "Session.chargeType",
+                                                            "id": "state-new-condition-9",
+                                                            "operator": "!=",
+                                                            "type": "custom",
+                                                            "value": "OneTimeCharge__c"
+                                                        }
+                                                    ],
+                                                    "id": "state-condition-object",
+                                                    "isParent": true
+                                                },
+                                                "displayAsButton": true,
+                                                "hideActionIcon": true,
+                                                "record": "{record}",
+                                                "stateAction": {
+                                                    "displayName": "{Label.OneTime}",
+                                                    "eventName": "cpq_{recordId}",
+                                                    "extraParams": {
+                                                        "PricingVariableCode": "OT_STD_PRC",
+                                                        "chargeType": "OneTimeCharge__c",
+                                                        "fields": "%vlocity_namespace%__OneTimeCharge__c",
+                                                        "listkeys": "AdjustmentCodes"
+                                                    },
+                                                    "hasExtraParams": true,
+                                                    "id": "flex-action-1625929142008",
+                                                    "message": "cpq_chargetype_change",
+                                                    "openUrlIn": "Current Window",
+                                                    "subType": "PubSub",
+                                                    "type": "Event",
+                                                    "vlocityIcon": "standard-default"
+                                                },
+                                                "stateObj": "{record}"
+                                            },
+                                            "size": {
+                                                "default": "2",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "slds-m-bottom_small cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-leftmost",
+                                                "container": {
+                                                    "class": "slds-m-bottom_small"
+                                                },
+                                                "customClass": "cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-leftmost",
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "2",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_2-of-12 ",
+                                                "style": "     : #ccc 1px solid; \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                }
+                                            },
+                                            "styleObjects": [
+                                                {
+                                                    "conditionString": "",
+                                                    "conditions": "default",
+                                                    "draggable": false,
+                                                    "key": 0,
+                                                    "label": "Default",
+                                                    "name": "Default",
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "slds-m-bottom_small cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-leftmost",
+                                                        "container": {
+                                                            "class": "slds-m-bottom_small"
+                                                        },
+                                                        "customClass": "cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-leftmost",
+                                                        "elementStyleProperties": {
+                                                        },
+                                                        "inlineStyle": "",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "2",
+                                                            "isResponsive": false
+                                                        },
+                                                        "sizeClass": "slds-size_2-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n         ",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": ""
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": "element"
+                                        },
+                                        {
+                                            "class": "slds-col ",
+                                            "element": "action",
+                                            "elementLabel": "Action-2",
+                                            "key": "element_element_element_block_1_0_block_0_0_action_2_0",
+                                            "name": "Action",
+                                            "parentElementKey": "element_element_block_1_0_block_0_0",
+                                            "property": {
+                                                "buttonVariant": "brand",
+                                                "card": "{card}",
+                                                "data-conditions": {
+                                                    "group": [
+                                                        {
+                                                            "field": "Session.chargeType",
+                                                            "id": "state-new-condition-14",
+                                                            "operator": "==",
+                                                            "type": "custom",
+                                                            "value": "RecurringCharge__c"
+                                                        }
+                                                    ],
+                                                    "id": "state-condition-object",
+                                                    "isParent": true
+                                                },
+                                                "displayAsButton": true,
+                                                "hideActionIcon": true,
+                                                "record": "{record}",
+                                                "stateAction": {
+                                                    "displayName": "{Label.Recurring}",
+                                                    "eventName": "setValues",
+                                                    "extraParams": {
+                                                        "PricingVariableCode": "REC_MNTH_STD_PRC",
+                                                        "chargeType": "RecurringCharge__c",
+                                                        "fields": "%vlocity_namespace%__RecurringCharge__c",
+                                                        "listkeys": "AdjustmentCodes,TimePlans,TimePolicies"
+                                                    },
+                                                    "hasExtraParams": true,
+                                                    "id": "flex-action-1619618127308",
+                                                    "message": "cpq_chargetype_change",
+                                                    "openUrlIn": "Current Window",
+                                                    "subType": "PubSub",
+                                                    "type": "cardAction",
+                                                    "vlocityIcon": "standard-default"
+                                                },
+                                                "stateObj": "{record}"
+                                            },
+                                            "size": {
+                                                "default": "2",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "slds-m-bottom_small cpq__chargetype-tab-button_active  cpq__chargetype-tab-button-mid",
+                                                "container": {
+                                                    "class": "slds-m-bottom_small"
+                                                },
+                                                "customClass": "cpq__chargetype-tab-button_active  cpq__chargetype-tab-button-mid",
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "2",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_2-of-12 ",
+                                                "style": "     : #ccc 1px solid; \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                }
+                                            },
+                                            "styleObjects": [
+                                                {
+                                                    "conditionString": "",
+                                                    "conditions": "default",
+                                                    "draggable": false,
+                                                    "key": 0,
+                                                    "label": "Default",
+                                                    "name": "Default",
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "slds-m-bottom_small cpq__chargetype-tab-button_active  cpq__chargetype-tab-button-mid",
+                                                        "container": {
+                                                            "class": "slds-m-bottom_small"
+                                                        },
+                                                        "customClass": "cpq__chargetype-tab-button_active  cpq__chargetype-tab-button-mid",
+                                                        "elementStyleProperties": {
+                                                        },
+                                                        "inlineStyle": "",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "2",
+                                                            "isResponsive": false
+                                                        },
+                                                        "sizeClass": "slds-size_2-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n         ",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": ""
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": "element"
+                                        },
+                                        {
+                                            "class": "slds-col ",
+                                            "element": "action",
+                                            "elementLabel": "Block-1-Block-0-Action-2",
+                                            "key": "element_element_element_block_1_0_block_0_0_action_3_0",
+                                            "name": "Action",
+                                            "parentElementKey": "element_element_block_1_0_block_0_0",
+                                            "property": {
+                                                "buttonVariant": "neutral",
+                                                "card": "{card}",
+                                                "data-conditions": {
+                                                    "group": [
+                                                        {
+                                                            "field": "Session.chargeType",
+                                                            "id": "state-new-condition-19",
+                                                            "operator": "!=",
+                                                            "type": "custom",
+                                                            "value": "RecurringCharge__c"
+                                                        }
+                                                    ],
+                                                    "id": "state-condition-object",
+                                                    "isParent": true
+                                                },
+                                                "displayAsButton": true,
+                                                "hideActionIcon": true,
+                                                "record": "{record}",
+                                                "stateAction": {
+                                                    "displayName": "{Label.Recurring}",
+                                                    "eventName": "cpq_{recordId}",
+                                                    "extraParams": {
+                                                        "PricingVariableCode": "REC_MNTH_STD_PRC",
+                                                        "chargeType": "RecurringCharge__c",
+                                                        "fields": "%vlocity_namespace%__RecurringCharge__c",
+                                                        "listkeys": "AdjustmentCodes,TimePlans,TimePolicies"
+                                                    },
+                                                    "hasExtraParams": true,
+                                                    "id": "flex-action-1625929152709",
+                                                    "message": "cpq_chargetype_change",
+                                                    "openUrlIn": "Current Window",
+                                                    "subType": "PubSub",
+                                                    "type": "Event",
+                                                    "vlocityIcon": "standard-default"
+                                                },
+                                                "stateObj": "{record}"
+                                            },
+                                            "size": {
+                                                "default": "2",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "slds-m-bottom_small cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-mid",
+                                                "container": {
+                                                    "class": "slds-m-bottom_small"
+                                                },
+                                                "customClass": "cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-mid",
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "2",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_2-of-12 ",
+                                                "style": "     : #ccc 1px solid; \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                }
+                                            },
+                                            "styleObjects": [
+                                                {
+                                                    "conditionString": "",
+                                                    "conditions": "default",
+                                                    "draggable": false,
+                                                    "key": 0,
+                                                    "label": "Default",
+                                                    "name": "Default",
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "slds-m-bottom_small cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-mid",
+                                                        "container": {
+                                                            "class": "slds-m-bottom_small"
+                                                        },
+                                                        "customClass": "cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-mid",
+                                                        "elementStyleProperties": {
+                                                        },
+                                                        "inlineStyle": "",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "2",
+                                                            "isResponsive": false
+                                                        },
+                                                        "sizeClass": "slds-size_2-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n         ",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": ""
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": "element"
+                                        },
+                                        {
+                                            "class": "slds-col ",
+                                            "element": "action",
+                                            "elementLabel": "Action-3",
+                                            "key": "element_element_element_block_1_0_block_0_0_action_4_0",
+                                            "name": "Action",
+                                            "parentElementKey": "element_element_block_1_0_block_0_0",
+                                            "property": {
+                                                "buttonVariant": "brand",
+                                                "card": "{card}",
+                                                "data-conditions": {
+                                                    "group": [
+                                                        {
+                                                            "field": "Session.chargeType",
+                                                            "id": "state-new-condition-26",
+                                                            "operator": "==",
+                                                            "type": "custom",
+                                                            "value": "UsageUnitPrice__c"
+                                                        }
+                                                    ],
+                                                    "id": "state-condition-object",
+                                                    "isParent": true
+                                                },
+                                                "displayAsButton": true,
+                                                "hideActionIcon": true,
+                                                "record": "{record}",
+                                                "stateAction": {
+                                                    "displayName": "{Label.Usage}",
+                                                    "eventName": "setValues",
+                                                    "extraParams": {
+                                                        "PricingVariableCode": "USAGE_STD_PRC",
+                                                        "chargeType": "UsageUnitPrice__c",
+                                                        "fields": "%vlocity_namespace%__UsageUnitPrice__c",
+                                                        "listkeys": "AdjustmentCodes"
+                                                    },
+                                                    "hasExtraParams": true,
+                                                    "id": "flex-action-1619618143676",
+                                                    "message": "cpq_chargetype_change",
+                                                    "openUrlIn": "Current Window",
+                                                    "subType": "PubSub",
+                                                    "type": "cardAction",
+                                                    "vlocityIcon": "standard-default"
+                                                },
+                                                "stateObj": "{record}"
+                                            },
+                                            "size": {
+                                                "default": "2",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "slds-m-bottom_small cpq__chargetype-tab-button_active cpq__chargetype-tab-button-rightmost",
+                                                "container": {
+                                                    "class": "slds-m-bottom_small"
+                                                },
+                                                "customClass": "cpq__chargetype-tab-button_active cpq__chargetype-tab-button-rightmost",
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "2",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_2-of-12 ",
+                                                "style": "     : #ccc 1px solid; \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                }
+                                            },
+                                            "styleObjects": [
+                                                {
+                                                    "conditionString": "",
+                                                    "conditions": "default",
+                                                    "draggable": false,
+                                                    "key": 0,
+                                                    "label": "Default",
+                                                    "name": "Default",
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "slds-m-bottom_small cpq__chargetype-tab-button_active cpq__chargetype-tab-button-rightmost",
+                                                        "container": {
+                                                            "class": "slds-m-bottom_small"
+                                                        },
+                                                        "customClass": "cpq__chargetype-tab-button_active cpq__chargetype-tab-button-rightmost",
+                                                        "elementStyleProperties": {
+                                                        },
+                                                        "inlineStyle": "",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "2",
+                                                            "isResponsive": false
+                                                        },
+                                                        "sizeClass": "slds-size_2-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n         ",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": ""
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": "element"
+                                        },
+                                        {
+                                            "class": "slds-col ",
+                                            "element": "action",
+                                            "elementLabel": "Block-1-Block-0-Action-3",
+                                            "key": "element_element_element_block_1_0_block_0_0_action_5_0",
+                                            "name": "Action",
+                                            "parentElementKey": "element_element_block_1_0_block_0_0",
+                                            "property": {
+                                                "buttonVariant": "neutral",
+                                                "card": "{card}",
+                                                "data-conditions": {
+                                                    "group": [
+                                                        {
+                                                            "field": "Session.chargeType",
+                                                            "id": "state-new-condition-36",
+                                                            "operator": "!=",
+                                                            "type": "custom",
+                                                            "value": "UsageUnitPrice__c"
+                                                        }
+                                                    ],
+                                                    "id": "state-condition-object",
+                                                    "isParent": true
+                                                },
+                                                "displayAsButton": true,
+                                                "hideActionIcon": true,
+                                                "record": "{record}",
+                                                "stateAction": {
+                                                    "displayName": "{Label.Usage}",
+                                                    "eventName": "cpq_{recordId}",
+                                                    "extraParams": {
+                                                        "PricingVariableCode": "USAGE_STD_PRC",
+                                                        "chargeType": "UsageUnitPrice__c",
+                                                        "fields": "%vlocity_namespace%__UsageUnitPrice__c",
+                                                        "listkeys": "AdjustmentCodes"
+                                                    },
+                                                    "hasExtraParams": true,
+                                                    "id": "flex-action-1625929162488",
+                                                    "message": "cpq_chargetype_change",
+                                                    "openUrlIn": "Current Window",
+                                                    "subType": "PubSub",
+                                                    "type": "Event",
+                                                    "vlocityIcon": "standard-default"
+                                                },
+                                                "stateObj": "{record}"
+                                            },
+                                            "size": {
+                                                "default": "2",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "slds-m-bottom_small cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-rightmost",
+                                                "container": {
+                                                    "class": "slds-m-bottom_small"
+                                                },
+                                                "customClass": "cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-rightmost",
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "2",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_2-of-12 ",
+                                                "style": "     : #ccc 1px solid; \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                }
+                                            },
+                                            "styleObjects": [
+                                                {
+                                                    "conditionString": "",
+                                                    "conditions": "default",
+                                                    "draggable": false,
+                                                    "key": 0,
+                                                    "label": "Default",
+                                                    "name": "Default",
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "slds-m-bottom_small cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-rightmost",
+                                                        "container": {
+                                                            "class": "slds-m-bottom_small"
+                                                        },
+                                                        "customClass": "cpq__chargetype-tab-button_inactive cpq__chargetype-tab-button-rightmost",
+                                                        "elementStyleProperties": {
+                                                        },
+                                                        "inlineStyle": "",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "2",
+                                                            "isResponsive": false
+                                                        },
+                                                        "sizeClass": "slds-size_2-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n         ",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": ""
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "type": "element"
+                                        }
+                                    ],
+                                    "class": "slds-col ",
+                                    "element": "block",
+                                    "elementLabel": "Block-1-Block-0",
+                                    "key": "element_element_block_1_0_block_0_0",
+                                    "name": "Block",
+                                    "parentElementKey": "element_block_1_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "collapsedByDefault": false,
+                                        "collapsible": false,
+                                        "data-conditions": {
+                                            "group": [
+                                            ],
+                                            "id": "state-condition-object",
+                                            "isParent": true
+                                        },
+                                        "label": "Block",
+                                        "record": "{record}"
+                                    },
+                                    "size": {
+                                        "default": 12,
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "slds-p-bottom_small ",
+                                        "container": {
+                                            "class": "slds-p-bottom_small"
+                                        },
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "",
+                                        "margin": [
+                                        ],
+                                        "padding": [
+                                        ],
+                                        "size": {
+                                            "default": 12,
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_12-of-12 ",
+                                        "style": "     : #ccc 1px solid; \n         ",
+                                        "text": {
+                                            "align": "",
+                                            "color": ""
+                                        }
+                                    },
+                                    "type": "block"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "class": "slds-col ",
+                                                    "element": "flexIcon",
+                                                    "elementLabel": "PriceAdjustmentHeaderIcon",
+                                                    "key": "element_element_element_element_block_1_0_block_1_0_block_0_0_flexIcon_0_0",
+                                                    "name": "Icon",
+                                                    "parentElementKey": "element_element_element_block_1_0_block_1_0_block_0_0",
+                                                    "property": {
+                                                        "color": "#0070d2",
+                                                        "extraclass": "slds-icon_container slds-icon__svg--default ",
+                                                        "iconName": "utility:moneybag",
+                                                        "iconType": "Salesforce SVG",
+                                                        "imgsrc": "",
+                                                        "record": "{record}",
+                                                        "size": "small",
+                                                        "variant": "default"
+                                                    },
+                                                    "size": {
+                                                        "default": "1",
+                                                        "isResponsive": false
+                                                    },
+                                                    "stateIndex": 0,
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "",
+                                                        "container": {
+                                                            "class": ""
+                                                        },
+                                                        "elementStyleProperties": {
+                                                            "color": "#0070d2"
+                                                        },
+                                                        "inlineStyle": "width: 30px;",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "1",
+                                                            "isResponsive": false
+                                                        },
+                                                        "sizeClass": "slds-size_1-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n         width: 30px;",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": ""
+                                                        }
+                                                    },
+                                                    "type": "element",
+                                                    "userUpdatedElementLabel": true
+                                                },
+                                                {
+                                                    "class": "slds-col ",
+                                                    "element": "outputField",
+                                                    "elementLabel": "PriceAdjustmentHeaderBlock-Text-1-clone-0",
+                                                    "key": "element_element_element_element_block_1_0_block_1_0_block_0_0_outputField_1_0",
+                                                    "name": "Text",
+                                                    "parentElementKey": "element_element_element_block_1_0_block_1_0_block_0_0",
+                                                    "property": {
+                                                        "card": "{card}",
+                                                        "mergeField": "%3Cdiv%20class=%22slds-text-heading_small%22%3E%3Cstrong%3E%7BLabel.CPQPriceWaterfall%7D%3C/strong%3E%3C/div%3E",
+                                                        "record": "{record}"
+                                                    },
+                                                    "size": {
+                                                        "default": "9",
+                                                        "isResponsive": true,
+                                                        "large": "11",
+                                                        "medium": "11",
+                                                        "small": "9"
+                                                    },
+                                                    "stateIndex": 0,
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "slds-text-color_default slds-p-top_xx-small",
+                                                        "container": {
+                                                            "class": ""
+                                                        },
+                                                        "customClass": "slds-text-color_default slds-p-top_xx-small",
+                                                        "elementStyleProperties": {
+                                                        },
+                                                        "inlineStyle": "",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "9",
+                                                            "isResponsive": true,
+                                                            "large": "11",
+                                                            "medium": "11",
+                                                            "small": "9"
+                                                        },
+                                                        "sizeClass": "slds-large-size_11-of-12 slds-medium-size_11-of-12 slds-small-size_9-of-12 slds-size_9-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n        color:#000000; ",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": "#000000"
+                                                        }
+                                                    },
+                                                    "type": "text",
+                                                    "userUpdatedElementLabel": true
+                                                }
+                                            ],
+                                            "class": "slds-col ",
+                                            "element": "block",
+                                            "elementLabel": "Block-0-clone-0",
+                                            "key": "element_element_element_block_1_0_block_1_0_block_0_0",
+                                            "name": "Block",
+                                            "parentElementKey": "element_element_block_1_0_block_1_0",
+                                            "property": {
+                                                "card": "{card}",
+                                                "collapsedByDefault": false,
+                                                "collapsible": false,
+                                                "label": "Block",
+                                                "record": "{record}"
+                                            },
+                                            "size": {
+                                                "default": "12",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": [
+                                                    ],
+                                                    "width": ""
+                                                },
+                                                "class": "slds-theme_default  slds-border_bottom slds-p-around_small",
+                                                "container": {
+                                                    "class": ""
+                                                },
+                                                "customClass": "slds-border_bottom slds-p-around_small",
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "12",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_12-of-12 ",
+                                                "style": "      \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                },
+                                                "theme": "theme_default"
+                                            },
+                                            "type": "block",
+                                            "userUpdatedElementLabel": true
+                                        },
+                                        {
+                                            "class": "slds-col ",
+                                            "element": "childCardPreview",
+                                            "elementLabel": "Block-1-FlexCard-5",
+                                            "key": "element_element_element_block_1_0_block_1_0_childCardPreview_1_0",
+                                            "name": "FlexCard",
+                                            "parentElementKey": "element_element_block_1_0_block_1_0",
+                                            "property": {
+                                                "cardName": "cpqManualPriceAdjustmentsWaterfall",
+                                                "cardNode": "",
+                                                "isChildCardTrackingEnabled": false,
+                                                "parentAttribute": {
+                                                    "cartId": "{Parent.cartId}",
+                                                    "chargeType": "{Session.chargeType}",
+                                                    "itemId": "{Parent.id}",
+                                                    "type": "{Parent.type}"
+                                                },
+                                                "recordId": "{recordId}",
+                                                "selectedState": "Active"
+                                            },
+                                            "size": {
+                                                "default": "12",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "",
+                                                "container": {
+                                                    "class": ""
+                                                },
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "minHeight": "90px",
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "12",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_12-of-12 ",
+                                                "style": "     : #ccc 1px solid; \n      min-height:90px;   ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                }
+                                            },
+                                            "type": "element"
+                                        }
+                                    ],
+                                    "class": "slds-col ",
+                                    "element": "block",
+                                    "elementLabel": "Block-1-Block-3",
+                                    "key": "element_element_block_1_0_block_1_0",
+                                    "name": "Block",
+                                    "parentElementKey": "element_block_1_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "collapsedByDefault": false,
+                                        "collapsible": false,
+                                        "label": "Block",
+                                        "record": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "12",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "slds-theme_default slds-box slds-p-around_none slds-m-bottom_large",
+                                        "container": {
+                                            "class": ""
+                                        },
+                                        "customClass": "slds-box slds-p-around_none slds-m-bottom_large",
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "",
+                                        "margin": [
+                                        ],
+                                        "padding": [
+                                        ],
+                                        "size": {
+                                            "default": "12",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_12-of-12 ",
+                                        "style": "     : #ccc 1px solid; \n         ",
+                                        "text": {
+                                            "align": "",
+                                            "color": ""
+                                        },
+                                        "theme": "theme_default"
+                                    },
+                                    "type": "block"
+                                },
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "class": "slds-col ",
+                                                    "element": "flexIcon",
+                                                    "elementLabel": "PriceAdjustmentHeaderIcon",
+                                                    "key": "element_element_element_element_block_1_0_block_2_0_block_0_0_flexIcon_0_0",
+                                                    "name": "Icon",
+                                                    "parentElementKey": "element_element_element_block_1_0_block_2_0_block_0_0",
+                                                    "property": {
+                                                        "color": "#0070d2",
+                                                        "extraclass": "slds-icon_container slds-icon__svg--default ",
+                                                        "iconName": "utility:quote",
+                                                        "iconType": "Salesforce SVG",
+                                                        "imgsrc": "",
+                                                        "record": "{record}",
+                                                        "size": "small",
+                                                        "variant": "default"
+                                                    },
+                                                    "size": {
+                                                        "default": "1",
+                                                        "isResponsive": false
+                                                    },
+                                                    "stateIndex": 0,
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "",
+                                                        "container": {
+                                                            "class": ""
+                                                        },
+                                                        "elementStyleProperties": {
+                                                            "color": "#0070d2"
+                                                        },
+                                                        "inlineStyle": "width: 30px;",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "1",
+                                                            "isResponsive": false
+                                                        },
+                                                        "sizeClass": "slds-size_1-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n         width: 30px;",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": ""
+                                                        }
+                                                    },
+                                                    "type": "element",
+                                                    "userUpdatedElementLabel": true
+                                                },
+                                                {
+                                                    "class": "slds-col ",
+                                                    "element": "outputField",
+                                                    "elementLabel": "PriceAdjustmentHeaderBlock-Text-1-clone-0",
+                                                    "key": "element_element_element_element_block_1_0_block_2_0_block_0_0_outputField_1_0",
+                                                    "name": "Text",
+                                                    "parentElementKey": "element_element_element_block_1_0_block_2_0_block_0_0",
+                                                    "property": {
+                                                        "card": "{card}",
+                                                        "mergeField": "%3Cdiv%20class=%22slds-text-heading_small%22%3E%3Cstrong%3E%7BLabel.CPQAdjustPricing%7D%3C/strong%3E%3C/div%3E",
+                                                        "record": "{record}"
+                                                    },
+                                                    "size": {
+                                                        "default": "9",
+                                                        "isResponsive": true,
+                                                        "large": "11",
+                                                        "medium": "11",
+                                                        "small": "9"
+                                                    },
+                                                    "stateIndex": 0,
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "slds-text-color_default slds-p-top_xx-small",
+                                                        "container": {
+                                                            "class": ""
+                                                        },
+                                                        "customClass": "slds-text-color_default slds-p-top_xx-small",
+                                                        "elementStyleProperties": {
+                                                        },
+                                                        "inlineStyle": "",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "9",
+                                                            "isResponsive": true,
+                                                            "large": "11",
+                                                            "medium": "11",
+                                                            "small": "9"
+                                                        },
+                                                        "sizeClass": "slds-large-size_11-of-12 slds-medium-size_11-of-12 slds-small-size_9-of-12 slds-size_9-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n        color:#000000; ",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": "#000000"
+                                                        }
+                                                    },
+                                                    "type": "text",
+                                                    "userUpdatedElementLabel": true
+                                                }
+                                            ],
+                                            "class": "slds-col ",
+                                            "element": "block",
+                                            "elementLabel": "Block-5-Block-0-clone-0",
+                                            "key": "element_element_element_block_1_0_block_2_0_block_0_0",
+                                            "name": "Block",
+                                            "parentElementKey": "element_element_block_1_0_block_2_0",
+                                            "property": {
+                                                "card": "{card}",
+                                                "collapsedByDefault": false,
+                                                "collapsible": false,
+                                                "label": "Block",
+                                                "record": "{record}"
+                                            },
+                                            "size": {
+                                                "default": "12",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": [
+                                                    ],
+                                                    "width": ""
+                                                },
+                                                "class": "slds-theme_default  slds-border_bottom slds-p-around_small",
+                                                "container": {
+                                                    "class": ""
+                                                },
+                                                "customClass": "slds-border_bottom slds-p-around_small",
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "12",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_12-of-12 ",
+                                                "style": "      \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                },
+                                                "theme": "theme_default"
+                                            },
+                                            "type": "block",
+                                            "userUpdatedElementLabel": true
+                                        },
+                                        {
+                                            "class": "slds-col ",
+                                            "element": "childCardPreview",
+                                            "elementLabel": "Block-1-Block-6-FlexCard-1",
+                                            "key": "element_element_element_block_1_0_block_2_0_childCardPreview_1_0",
+                                            "name": "FlexCard",
+                                            "parentElementKey": "element_element_block_1_0_block_2_0",
+                                            "property": {
+                                                "cardName": "cpqManualPriceAdjustmentsActions",
+                                                "cardNode": "",
+                                                "isChildCardTrackingEnabled": false,
+                                                "parentAttribute": {
+                                                    "PricingVariableCode": "{Session.PricingVariableCode}",
+                                                    "cartId": "{Parent.cartId}",
+                                                    "cartType": "{Parent.cartType}",
+                                                    "chargeType": "{Session.chargeType}",
+                                                    "defaultEmptyValue": "",
+                                                    "fields": "{Session.fields}",
+                                                    "id": "{Parent.id}",
+                                                    "listkeys": "{Session.listkeys}"
+                                                },
+                                                "recordId": "{recordId}",
+                                                "selectedState": "One Time Charge"
+                                            },
+                                            "size": {
+                                                "default": "12",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 0,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": "",
+                                                    "width": ""
+                                                },
+                                                "class": "slds-theme_default ",
+                                                "container": {
+                                                    "class": ""
+                                                },
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "maxHeight": "",
+                                                "minHeight": "90px",
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "12",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_12-of-12 ",
+                                                "style": "     : #ccc 1px solid; \n      min-height:90px;   ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                },
+                                                "theme": "theme_default"
+                                            },
+                                            "type": "element"
+                                        }
+                                    ],
+                                    "class": "slds-col ",
+                                    "element": "block",
+                                    "elementLabel": "Block-1-Block-6",
+                                    "key": "element_element_block_1_0_block_2_0",
+                                    "name": "Block",
+                                    "parentElementKey": "element_block_1_0",
+                                    "property": {
+                                        "card": "{card}",
+                                        "collapsedByDefault": false,
+                                        "collapsible": false,
+                                        "label": "Block",
+                                        "record": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "12",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 0,
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "slds-box slds-p-around_none",
+                                        "container": {
+                                            "class": ""
+                                        },
+                                        "customClass": "slds-box slds-p-around_none",
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "",
+                                        "margin": [
+                                        ],
+                                        "padding": [
+                                        ],
+                                        "size": {
+                                            "default": "12",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_12-of-12 ",
+                                        "style": "     : #ccc 1px solid; \n         ",
+                                        "text": {
+                                            "align": "",
+                                            "color": ""
+                                        }
+                                    },
+                                    "type": "block"
+                                }
+                            ],
+                            "class": "slds-col ",
+                            "element": "block",
+                            "elementLabel": "Block-1",
+                            "name": "Block",
+                            "property": {
+                                "card": "{card}",
+                                "collapsedByDefault": false,
+                                "collapsible": false,
+                                "label": "Block",
+                                "record": "{record}"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "background": {
+                                    "color": "#FAFAF9",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "cpq__price-adjustment-body slds-scrollable_y",
+                                "container": {
+                                    "class": "cpq__price-adjustment-body"
+                                },
+                                "customClass": "slds-scrollable_y",
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                ],
+                                "size": {
+                                    "default": "12",
+                                    "isResponsive": false
+                                },
+                                "sizeClass": "slds-size_12-of-12 ",
+                                "style": "background-color:#FAFAF9;     : #ccc 1px solid; \n         ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "styleObjects": [
+                                {
+                                    "conditionString": "",
+                                    "conditions": "default",
+                                    "draggable": false,
+                                    "key": 0,
+                                    "label": "Default",
+                                    "name": "Default",
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "#FAFAF9",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "cpq__price-adjustment-body slds-scrollable_y",
+                                        "container": {
+                                            "class": "cpq__price-adjustment-body"
+                                        },
+                                        "customClass": "slds-scrollable_y",
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "",
+                                        "margin": [
+                                        ],
+                                        "padding": [
+                                        ],
+                                        "size": {
+                                            "default": "12",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_12-of-12 ",
+                                        "style": "background-color:#FAFAF9;     : #ccc 1px solid; \n         ",
+                                        "text": {
+                                            "align": "",
+                                            "color": ""
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "block"
+                        }
+                    ]
+                }
+            },
+            "conditions": {
+                "group": [
+                    {
+                        "field": "Parent.type",
+                        "id": "state-new-condition-10",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "charge"
+                    }
+                ],
+                "id": "state-condition-object",
+                "isParent": true
+            },
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "documents": [
+            ],
+            "fields": [
+            ],
+            "isSmartAction": false,
+            "name": "Charge",
+            "omniscripts": [
+            ],
+            "smartAction": {
+            },
+            "styleObject": {
+                "background": {
+                    "color": "",
+                    "image": "",
+                    "position": "",
+                    "repeat": "",
+                    "size": ""
+                },
+                "border": {
+                    "color": "",
+                    "radius": "",
+                    "style": "",
+                    "type": "",
+                    "width": ""
+                },
+                "class": "slds-theme_shade ",
+                "container": {
+                    "class": ""
+                },
+                "customClass": "",
+                "elementStyleProperties": {
+                },
+                "inlineStyle": "",
+                "margin": [
+                ],
+                "padding": [
+                ],
+                "size": {
+                    "default": "12",
+                    "isResponsive": false
+                },
+                "sizeClass": "slds-size_12-of-12 ",
+                "style": "     : #ccc 1px solid; \n         ",
+                "text": {
+                    "align": "",
+                    "color": ""
+                },
+                "theme": "theme_shade"
+            }
+        },
+        {
+            "actions": [
+            ],
+            "childCards": [
+                "cpqManualPriceAdjustmentsWaterfall"
+            ],
+            "components": {
+                "layer-0": {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "class": "slds-col ",
+                                    "element": "outputField",
+                                    "elementLabel": "Block-0-Text-0",
+                                    "key": "element_element_block_0_1_outputField_0_1",
+                                    "name": "Text",
+                                    "parentElementKey": "element_block_0_1",
+                                    "property": {
+                                        "card": "{card}",
+                                        "mergeField": "%3Cdiv%20class=%22slds-text-heading_medium%20slds-text-body_regular%22%3E%3Cspan%20class=%22slds-text-heading_medium%22%20style=%22font-family:%20'Salesforce%20Sans',%20Arial,%20sans-serif;%20font-size:%2018pt;%22%3E%7BParent.lineItemName%7D%20%7BParent.chargeTypeLabel%7D%20Total&nbsp;%3C/span%3E%3C/div%3E",
+                                        "record": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "12",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 1,
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "slds-text-align_center slds-p-around_xxx-small",
+                                        "container": {
+                                            "class": ""
+                                        },
+                                        "customClass": "slds-p-around_xxx-small",
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "",
+                                        "margin": [
+                                        ],
+                                        "padding": [
+                                        ],
+                                        "size": {
+                                            "default": "12",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_12-of-12 ",
+                                        "style": "     : #ccc 1px solid; \n         ",
+                                        "text": {
+                                            "align": "center",
+                                            "color": ""
+                                        }
+                                    },
+                                    "type": "text"
+                                }
+                            ],
+                            "class": "slds-col ",
+                            "element": "block",
+                            "elementLabel": "Block-0-clone-0",
+                            "name": "Block",
+                            "property": {
+                                "card": "{card}",
+                                "collapsedByDefault": false,
+                                "collapsible": false,
+                                "label": "Block",
+                                "record": "{record}"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 1,
+                            "styleObject": {
+                                "background": {
+                                    "color": "",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "slds-modal__header slds-p-around_small",
+                                "container": {
+                                    "class": ""
+                                },
+                                "customClass": "slds-modal__header slds-p-around_small",
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                ],
+                                "size": {
+                                    "default": "12",
+                                    "isResponsive": false
+                                },
+                                "sizeClass": "slds-size_12-of-12 ",
+                                "style": "     : #ccc 1px solid; \n         ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "type": "block"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "class": "slds-col ",
+                                                    "element": "flexIcon",
+                                                    "elementLabel": "PriceAdjustmentHeaderIcon",
+                                                    "key": "element_element_element_element_block_1_1_block_0_1_block_0_1_flexIcon_0_1",
+                                                    "name": "Icon",
+                                                    "parentElementKey": "element_element_element_block_1_1_block_0_1_block_0_1",
+                                                    "property": {
+                                                        "color": "#0070d2",
+                                                        "extraclass": "slds-icon_container slds-icon__svg--default ",
+                                                        "iconName": "utility:quote",
+                                                        "iconType": "Salesforce SVG",
+                                                        "imgsrc": "",
+                                                        "record": "{record}",
+                                                        "size": "small",
+                                                        "variant": "default"
+                                                    },
+                                                    "size": {
+                                                        "default": "1",
+                                                        "isResponsive": false
+                                                    },
+                                                    "stateIndex": 1,
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "",
+                                                        "container": {
+                                                            "class": ""
+                                                        },
+                                                        "elementStyleProperties": {
+                                                            "color": "#0070d2"
+                                                        },
+                                                        "inlineStyle": "width: 30px;",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "1",
+                                                            "isResponsive": false
+                                                        },
+                                                        "sizeClass": "slds-size_1-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n         width: 30px;",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": ""
+                                                        }
+                                                    },
+                                                    "type": "element",
+                                                    "userUpdatedElementLabel": true
+                                                },
+                                                {
+                                                    "class": "slds-col ",
+                                                    "element": "outputField",
+                                                    "elementLabel": "PriceAdjustmentHeaderBlock-Text-1-clone-0",
+                                                    "key": "element_element_element_element_block_1_1_block_0_1_block_0_1_outputField_1_1",
+                                                    "name": "Text",
+                                                    "parentElementKey": "element_element_element_block_1_1_block_0_1_block_0_1",
+                                                    "property": {
+                                                        "card": "{card}",
+                                                        "mergeField": "%3Cdiv%20class=%22slds-text-heading_small%22%3E%3Cstrong%3E%7BLabel.CPQPriceCalculation%7D%3C/strong%3E%3C/div%3E",
+                                                        "record": "{record}"
+                                                    },
+                                                    "size": {
+                                                        "default": "9",
+                                                        "isResponsive": true,
+                                                        "large": "11",
+                                                        "medium": "11",
+                                                        "small": "9"
+                                                    },
+                                                    "stateIndex": 1,
+                                                    "styleObject": {
+                                                        "background": {
+                                                            "color": "",
+                                                            "image": "",
+                                                            "position": "",
+                                                            "repeat": "",
+                                                            "size": ""
+                                                        },
+                                                        "border": {
+                                                            "color": "",
+                                                            "radius": "",
+                                                            "style": "",
+                                                            "type": "",
+                                                            "width": ""
+                                                        },
+                                                        "class": "slds-text-color_default slds-p-top_xx-small",
+                                                        "container": {
+                                                            "class": ""
+                                                        },
+                                                        "customClass": "slds-text-color_default slds-p-top_xx-small",
+                                                        "elementStyleProperties": {
+                                                        },
+                                                        "inlineStyle": "",
+                                                        "margin": [
+                                                        ],
+                                                        "padding": [
+                                                        ],
+                                                        "size": {
+                                                            "default": "9",
+                                                            "isResponsive": true,
+                                                            "large": "11",
+                                                            "medium": "11",
+                                                            "small": "9"
+                                                        },
+                                                        "sizeClass": "slds-large-size_11-of-12 slds-medium-size_11-of-12 slds-small-size_9-of-12 slds-size_9-of-12 ",
+                                                        "style": "     : #ccc 1px solid; \n        color:#000000; ",
+                                                        "text": {
+                                                            "align": "",
+                                                            "color": "#000000"
+                                                        }
+                                                    },
+                                                    "type": "text",
+                                                    "userUpdatedElementLabel": true
+                                                }
+                                            ],
+                                            "class": "slds-col ",
+                                            "element": "block",
+                                            "elementLabel": "Block-1-Block-6-Block-0-clone-0",
+                                            "key": "element_element_element_block_1_1_block_0_1_block_0_1",
+                                            "name": "Block",
+                                            "parentElementKey": "element_element_block_1_1_block_0_1",
+                                            "property": {
+                                                "card": "{card}",
+                                                "collapsedByDefault": false,
+                                                "collapsible": false,
+                                                "label": "Block",
+                                                "record": "{record}"
+                                            },
+                                            "size": {
+                                                "default": "12",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 1,
+                                            "styleObject": {
+                                                "background": {
+                                                    "color": "",
+                                                    "image": "",
+                                                    "position": "",
+                                                    "repeat": "",
+                                                    "size": ""
+                                                },
+                                                "border": {
+                                                    "color": "",
+                                                    "radius": "",
+                                                    "style": "",
+                                                    "type": [
+                                                    ],
+                                                    "width": ""
+                                                },
+                                                "class": "slds-theme_default  slds-border_bottom slds-p-around_small",
+                                                "container": {
+                                                    "class": ""
+                                                },
+                                                "customClass": "slds-border_bottom slds-p-around_small",
+                                                "elementStyleProperties": {
+                                                },
+                                                "inlineStyle": "",
+                                                "margin": [
+                                                ],
+                                                "padding": [
+                                                ],
+                                                "size": {
+                                                    "default": "12",
+                                                    "isResponsive": false
+                                                },
+                                                "sizeClass": "slds-size_12-of-12 ",
+                                                "style": "      \n         ",
+                                                "text": {
+                                                    "align": "",
+                                                    "color": ""
+                                                },
+                                                "theme": "theme_default"
+                                            },
+                                            "type": "block",
+                                            "userUpdatedElementLabel": true
+                                        },
+                                        {
+                                            "class": "slds-col ",
+                                            "element": "childCardPreview",
+                                            "elementLabel": "Block-1-FlexCard-1",
+                                            "key": "element_element_element_block_1_1_block_0_1_childCardPreview_1_1",
+                                            "name": "FlexCard",
+                                            "parentElementKey": "element_element_block_1_1_block_0_1",
+                                            "property": {
+                                                "cardName": "cpqManualPriceAdjustmentsWaterfall",
+                                                "cardNode": "",
+                                                "isChildCardTrackingEnabled": false,
+                                                "parentAttribute": {
+                                                    "cartId": "{Parent.cartId}",
+                                                    "chargeType": "{Parent.totalType}",
+                                                    "itemId": "{Parent.id}",
+                                                    "type": "{Parent.type}"
+                                                },
+                                                "recordId": "{recordId}",
+                                                "selectedState": "Active"
+                                            },
+                                            "size": {
+                                                "default": "12",
+                                                "isResponsive": false
+                                            },
+                                            "stateIndex": 1,
+                                            "styleObject": {
+                                                "sizeClass": "slds-size_12-of-12"
+                                            },
+                                            "type": "element"
+                                        }
+                                    ],
+                                    "class": "slds-col ",
+                                    "element": "block",
+                                    "elementLabel": "Block-1",
+                                    "key": "element_element_block_1_1_block_0_1",
+                                    "name": "Block",
+                                    "parentElementKey": "element_block_1_1",
+                                    "property": {
+                                        "card": "{card}",
+                                        "collapsedByDefault": false,
+                                        "collapsible": false,
+                                        "label": "Block",
+                                        "record": "{record}"
+                                    },
+                                    "size": {
+                                        "default": "12",
+                                        "isResponsive": false
+                                    },
+                                    "stateIndex": 1,
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "slds-theme_default slds-box slds-p-around_none ",
+                                        "container": {
+                                            "class": "slds-box slds-p-around_none"
+                                        },
+                                        "customClass": "",
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "",
+                                        "margin": [
+                                        ],
+                                        "padding": [
+                                        ],
+                                        "size": {
+                                            "default": "12",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_12-of-12 ",
+                                        "style": "     : #ccc 1px solid; \n         ",
+                                        "text": {
+                                            "align": "",
+                                            "color": ""
+                                        },
+                                        "theme": "theme_default"
+                                    },
+                                    "type": "block"
+                                }
+                            ],
+                            "class": "slds-col ",
+                            "element": "block",
+                            "elementLabel": "Block-0",
+                            "name": "Block",
+                            "property": {
+                                "card": "{card}",
+                                "collapsedByDefault": false,
+                                "collapsible": false,
+                                "label": "Block",
+                                "record": "{record}"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 1,
+                            "styleObject": {
+                                "background": {
+                                    "color": "#FAFAF9",
+                                    "image": "",
+                                    "position": "",
+                                    "repeat": "",
+                                    "size": ""
+                                },
+                                "border": {
+                                    "color": "",
+                                    "radius": "",
+                                    "style": "",
+                                    "type": "",
+                                    "width": ""
+                                },
+                                "class": "cpq__price-adjustment-body slds-p-vertical_x-large slds-scrollable_y",
+                                "container": {
+                                    "class": "cpq__price-adjustment-body"
+                                },
+                                "customClass": "slds-scrollable_y",
+                                "elementStyleProperties": {
+                                },
+                                "inlineStyle": "",
+                                "margin": [
+                                ],
+                                "padding": [
+                                    {
+                                        "label": "vertical:x-large",
+                                        "size": "x-large",
+                                        "type": "vertical"
+                                    }
+                                ],
+                                "size": {
+                                    "default": "12",
+                                    "isResponsive": false
+                                },
+                                "sizeClass": "slds-size_12-of-12 ",
+                                "style": "background-color:#FAFAF9;     : #ccc 1px solid; \n         ",
+                                "text": {
+                                    "align": "",
+                                    "color": ""
+                                }
+                            },
+                            "styleObjects": [
+                                {
+                                    "conditionString": "",
+                                    "conditions": "default",
+                                    "draggable": false,
+                                    "key": 0,
+                                    "label": "Default",
+                                    "name": "Default",
+                                    "styleObject": {
+                                        "background": {
+                                            "color": "#FAFAF9",
+                                            "image": "",
+                                            "position": "",
+                                            "repeat": "",
+                                            "size": ""
+                                        },
+                                        "border": {
+                                            "color": "",
+                                            "radius": "",
+                                            "style": "",
+                                            "type": "",
+                                            "width": ""
+                                        },
+                                        "class": "cpq__price-adjustment-body slds-p-vertical_x-large slds-scrollable_y",
+                                        "container": {
+                                            "class": "cpq__price-adjustment-body"
+                                        },
+                                        "customClass": "slds-scrollable_y",
+                                        "elementStyleProperties": {
+                                        },
+                                        "inlineStyle": "",
+                                        "margin": [
+                                        ],
+                                        "padding": [
+                                            {
+                                                "label": "vertical:x-large",
+                                                "size": "x-large",
+                                                "type": "vertical"
+                                            }
+                                        ],
+                                        "size": {
+                                            "default": "12",
+                                            "isResponsive": false
+                                        },
+                                        "sizeClass": "slds-size_12-of-12 ",
+                                        "style": "background-color:#FAFAF9;     : #ccc 1px solid; \n         ",
+                                        "text": {
+                                            "align": "",
+                                            "color": ""
+                                        }
+                                    }
+                                }
+                            ],
+                            "type": "block"
+                        }
+                    ]
+                }
+            },
+            "conditions": {
+                "group": [
+                    {
+                        "field": "Parent.type",
+                        "id": "state-new-condition-7",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": "total"
+                    }
+                ],
+                "id": "state-condition-object",
+                "isParent": true
+            },
+            "definedActions": {
+                "actions": [
+                ]
+            },
+            "documents": [
+            ],
+            "fields": [
+            ],
+            "isSmartAction": false,
+            "name": "Total",
+            "omniscripts": [
+            ],
+            "smartAction": {
+            },
+            "styleObject": {
+                "background": {
+                    "color": "",
+                    "image": "",
+                    "position": "",
+                    "repeat": "",
+                    "size": ""
+                },
+                "border": {
+                    "color": "",
+                    "radius": "",
+                    "style": "",
+                    "type": "",
+                    "width": ""
+                },
+                "class": "slds-theme_shade ",
+                "container": {
+                    "class": ""
+                },
+                "customClass": "",
+                "elementStyleProperties": {
+                },
+                "inlineStyle": "",
+                "margin": [
+                ],
+                "padding": [
+                ],
+                "size": {
+                    "default": "12",
+                    "isResponsive": false
+                },
+                "sizeClass": "slds-size_12-of-12 ",
+                "style": "     : #ccc 1px solid; \n         ",
+                "text": {
+                    "align": "",
+                    "color": ""
+                },
+                "theme": "theme_shade"
+            }
+        },
+        {
+            "actions": [
+            ],
+            "blankCardState": false,
+            "childCards": [
+            ],
+            "components": {
+                "layer-0": {
+                    "children": [
+                        {
+                            "class": "slds-col ",
+                            "element": "outputField",
+                            "elementLabel": "Text-0",
+                            "name": "Text",
+                            "property": {
+                                "card": "{card}",
+                                "mergeField": "%3Cdiv%20class=%22slds-text-color_error%20slds-text-heading_medium%20slds-text-align_center%22%3E%3Cstrong%3EERROR%20!!%3C/strong%3E%3C/div%3E",
+                                "record": "{record}"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "sizeClass": "slds-size_12-of-12"
+                            },
+                            "type": "text"
+                        },
+                        {
+                            "class": "slds-col ",
+                            "element": "outputField",
+                            "elementLabel": "Text-1",
+                            "name": "Text",
+                            "property": {
+                                "card": "{card}",
+                                "data-conditions": {
+                                    "group": [
+                                        {
+                                            "field": "Parent.cartId",
+                                            "id": "state-new-condition-15",
+                                            "operator": "==",
+                                            "type": "custom",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "id": "state-condition-object",
+                                    "isParent": true
+                                },
+                                "mergeField": "%3Cdiv%20class=%22slds-text-color_error%20slds-text-align_center%22%3EEmpty%20%3Cstrong%3ECart%20Id%3C/strong%3E%20passed%20to%20Flexcard%3C/div%3E",
+                                "record": "{record}"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "sizeClass": "slds-size_12-of-12"
+                            },
+                            "type": "text"
+                        },
+                        {
+                            "class": "slds-col ",
+                            "element": "outputField",
+                            "elementLabel": "Text-1-clone-0",
+                            "name": "Text",
+                            "property": {
+                                "card": "{card}",
+                                "data-conditions": {
+                                    "group": [
+                                        {
+                                            "field": "Parent.id",
+                                            "id": "state-new-condition-20",
+                                            "operator": "==",
+                                            "type": "custom",
+                                            "value": ""
+                                        }
+                                    ],
+                                    "id": "state-condition-object",
+                                    "isParent": true
+                                },
+                                "mergeField": "%3Cdiv%20class=%22slds-text-color_error%20slds-text-align_center%22%3EEmpty%20%3Cstrong%3ELine%20Item%20Id%3C/strong%3E%20passed%20to%20Flexcard%3C/div%3E",
+                                "record": "{record}"
+                            },
+                            "size": {
+                                "default": "12",
+                                "isResponsive": false
+                            },
+                            "stateIndex": 0,
+                            "styleObject": {
+                                "sizeClass": "slds-size_12-of-12"
+                            },
+                            "type": "text"
+                        }
+                    ]
+                }
+            },
+            "conditions": {
+                "group": [
+                    {
+                        "field": "Parent.cartId",
+                        "id": "state-new-condition-0",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": ""
+                    },
+                    {
+                        "field": "Parent.id",
+                        "id": "state-new-condition-5",
+                        "logicalOperator": "||",
+                        "operator": "==",
+                        "type": "custom",
+                        "value": ""
+                    }
+                ],
+                "id": "state-condition-object",
+                "isParent": true
+            },
+            "documents": [
+            ],
+            "fields": [
+            ],
+            "isSmartAction": false,
+            "name": "Error State - Empty Cart Id / Line Item Id",
+            "omniscripts": [
+            ],
+            "smartAction": {
+            },
+            "styleObject": {
+                "class": "slds-card slds-p-around_x-small slds-m-bottom_x-small",
+                "container": {
+                    "class": "slds-card"
+                },
+                "margin": [
+                    {
+                        "size": "x-small",
+                        "type": "bottom"
+                    }
+                ],
+                "padding": [
+                    {
+                        "size": "x-small",
+                        "type": "around"
+                    }
+                ],
+                "size": {
+                    "default": "12",
+                    "isResponsive": false
+                },
+                "sizeClass": "slds-size_12-of-12"
+            }
+        }
+    ],
+    "theme": "slds",
+    "title": "cpqManualPriceAdjustments",
+    "tracking": {
+        "customFields": [
+        ]
+    },
+    "xmlJson": [
+        {
+            "@attributes": {
+                "targets": "lightningCommunity__Default",
+                "xmlns": "http://soap.sforce.com/2006/04/metadata"
+            },
+            "property": [
+                {
+                    "@attributes": {
+                        "name": "recordId",
+                        "type": "String"
+                    }
+                }
+            ]
+        }
+    ],
+    "xmlObject": {
+        "apiVersion": 48,
+        "isExplicitImport": false,
+        "isExposed": true,
+        "masterLabel": "cpqManualPriceAdjustments",
+        "targetConfigs": "CiAgICAgICAgPHRhcmdldENvbmZpZyB4bWxucz0iaHR0cDovL3NvYXAuc2ZvcmNlLmNvbS8yMDA2LzA0L21ldGFkYXRhIiB0YXJnZXRzPSJsaWdodG5pbmdDb21tdW5pdHlfX0RlZmF1bHQiPgogICAgICA8cHJvcGVydHkgbmFtZT0icmVjb3JkSWQiIHR5cGU9IlN0cmluZyIvPgogICAgPC90YXJnZXRDb25maWc+CiAgICAgICAg",
+        "targets": {
+            "target": [
+                "lightning__AppPage",
+                "lightning__HomePage",
+                "lightning__RecordPage",
+                "lightningCommunity__Page",
+                "lightningCommunity__Default"
+            ]
+        }
+    }
+}

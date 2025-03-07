@@ -1,0 +1,35 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "setOmniData",
+    "OmniProcessId": {
+        "Name": "OmniScript Analytics Information",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/OmniScript/Analytics/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "omniScriptName": "=CONCAT(%getOrgAndUserInfo:Type%, \"/\", %getOrgAndUserInfo:SubType%, \"/\", %getOrgAndUserInfo:Language%)",
+            "orgType": "=IF(%orgCheck:isTSO%,'TSO Org', 'Spin Org')",
+            "runMode": "=IF(ISBLANK(%runMode%), 'runTime', %runMode%)"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/OmniScript/Analytics/Procedure/setOmniData"
+}

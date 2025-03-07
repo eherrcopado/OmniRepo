@@ -1,0 +1,54 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetErrorsTermsAndConditions",
+    "OmniProcessId": {
+        "Name": "EnergyUtilitiesProgramsApplicationEnrollment",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementErrorMap": {
+            "SfiEnergyProgramReviewConfirm": "Please check the Terms and Conditions"
+        },
+        "label": null,
+        "message": {
+        },
+        "pubsub": false,
+        "show": {
+            "group": {
+                "operator": "OR",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "%SfiEnergyProgramReviewConfirm:TermsAndConditions:TermsAndConditionsCheckbox:isTermsAndConditionsChecked%",
+                        "field": "null"
+                    },
+                    {
+                        "condition": "=",
+                        "data": "%SfiEnergyProgramReviewConfirm:TermsAndConditions:TermsAndConditionsCheckbox:isTermsAndConditionsChecked%",
+                        "field": "\"false\""
+                    }
+                ]
+            }
+        },
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "validationRequired": "Step",
+        "wpm": false
+    },
+    "Type": "Set Errors",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/EnergyUtilitiesPrograms/ApplicationEnrollmentDCT/English/SetErrorsTermsAndConditions"
+}

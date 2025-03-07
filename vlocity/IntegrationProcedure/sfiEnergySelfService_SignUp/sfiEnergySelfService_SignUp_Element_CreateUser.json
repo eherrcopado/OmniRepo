@@ -1,0 +1,61 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "CreateUser",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfService",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/SignUp/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalChainableResponse": {
+        },
+        "additionalInput": {
+            "AccountId": "%UserNameCheck:existingAccountId%",
+            "Alias": "%Config:Alias%",
+            "CommunityNickname": "%Config:CommunityNickname%",
+            "ContactId": "%UserNameCheck:existingContactId%",
+            "Email": "%Email%",
+            "EmailEncodingKey": "%Config:EmailEncodingKey%",
+            "FirstName": "%FirstName%",
+            "LanguageLocaleKey": "%Config:LanguageLocaleKey%",
+            "LastName": "%LastName%",
+            "LocaleSidKey": "%Config:LocaleSidKey%",
+            "ProfileName": "Energy Self Service Customer Community User",
+            "TimeZoneSidKey": "%Config:TimeZoneSidKey%",
+            "UserName": "%UserName%%UserNameSuffix:value%"
+        },
+        "additionalOutput": {
+        },
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "label": "RemoteAction3",
+        "remoteClass": "%vlocity_namespace%.VEEAppHandler",
+        "remoteMethod": "createCustomerCommunityUser",
+        "remoteOptions": {
+        },
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "Remote Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/SignUp/Procedure/CreateUser"
+}

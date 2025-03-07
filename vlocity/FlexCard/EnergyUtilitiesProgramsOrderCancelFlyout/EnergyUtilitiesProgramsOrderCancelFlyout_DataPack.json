@@ -1,0 +1,62 @@
+{
+    "AuthorName": "Salesforce",
+    "ClonedFromOmniUiCardKey": "EnergyUtilitiesProgramsOrderCancelPopUpTest/Salesforce/1.0",
+    "CurrencyIsoCode": "USD",
+    "DataSourceConfig": {
+        "dataSource": {
+            "contextVariables": [
+            ],
+            "orderBy": {
+                "isReverse": "",
+                "name": ""
+            },
+            "type": "Custom",
+            "value": {
+                "body": "{\n\t\t\t\"AppliedDate\": \"03/13/2023\",\n\t\t\t\"OrderId\": \"IA-0000000004\",\n\t\t\t\"Status\": \"In Review\",\n\t\t\t\"ApprovedBy\": \"02/01/2023\",\n\t\t\t\"Program\": {\n\t\t\t\t\"ProgramId\": \"11WRO000000004c2AA\",\n\t\t\t\t\"Name\": \"Smart Thermostat Rebate\",\n\t\t\t\t\"Images\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"DocumentId\": \"068RO0000004HL1YAM\",\n\t\t\t\t\t\t\"DocumentURL\": \"/sfc/servlet.shepherd/version/download/068RO0000004HL1YAM\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}",
+                "dsDelay": "",
+                "resultVar": ""
+            }
+        },
+        "state0element0block_element9block_element3block_element0_0": {
+            "contextVariables": [
+                {
+                    "id": 4,
+                    "name": "OrderId",
+                    "val": "IA-0000000004"
+                }
+            ],
+            "orderBy": {
+                "isReverse": "",
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "ApplicationId": "{OrderId}",
+                    "Status": "Cancelled"
+                },
+                "ipMethod": "EnergyUtilitiesPrograms_UpdateApplication",
+                "jsonMap": "{\"OrderId\":\"{OrderId}\"}",
+                "vlocityAsync": false
+            }
+        }
+    },
+    "Description": "This card is application cancellation confirmation Flyout.",
+    "IsLocked": false,
+    "IsTrackingEnabled": false,
+    "MayEdit": true,
+    "Name": "EnergyUtilitiesProgramsOrderCancelFlyout",
+    "Namespace": "",
+    "OmniUiCardKey": "EnergyUtilitiesProgramsOrderCancelFlyout/Salesforce/2.0",
+    "OmniUiCardType": "Child",
+    "OverrideKey": "",
+    "PropertySetConfig": "EnergyUtilitiesProgramsOrderCancelFlyout.json",
+    "SampleDataSourceResponse": "{\"AppliedDate\":\"03/13/2023\",\"OrderId\":\"IA-0000000004\",\"Status\":\"In Review\",\"ApprovedBy\":\"02/01/2023\",\"Program\":{\"ProgramId\":\"11WRO000000004c2AA\",\"Name\":\"Smart Thermostat Rebate\",\"Images\":[{\"DocumentId\":\"068RO0000004HL1YAM\",\"DocumentURL\":\"/sfc/servlet.shepherd/version/download/068RO0000004HL1YAM\"}]}}",
+    "StylingConfiguration": "{\"customStyles\":\".listItems ul{\\n    margin-bottom: 0;\\n}\"}",
+    "UniqueName": "EnergyUtilitiesProgramsOrderCancelFlyout_Salesforce_2",
+    "VersionNumber": 2,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniUiCard",
+    "VlocityRecordSourceKey": "OmniUiCard/EnergyUtilitiesProgramsOrderCancelFlyout"
+}

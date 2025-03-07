@@ -1,0 +1,64 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRGetPremiseInfo",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleGetUsageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/GetUsageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "PremiseAddressList",
+        "OmniProcessId": {
+            "Name": "sfiEnergyConsoleGetUsageInfo",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/GetUsageInfo/Procedure",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/GetUsageInfo/Procedure/PremiseAddressList",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "PremiseAddressList",
+    "ParentElementType": "Loop Block",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "PremiseCity": "%DRGetPremiseDetails:ServiceAccount:PremiseCity%",
+            "PremiseId": "%DRGetPremiseDetails:ServiceAccount:PremiseId%",
+            "PremiseIdentifier": "%DRGetPremiseDetails:ServiceAccount:PremiseIdentifier%",
+            "PremisePostalCode": "%DRGetPremiseDetails:ServiceAccount:PremisePostalCode%",
+            "PremiseState": "%DRGetPremiseDetails:ServiceAccount:PremiseState%",
+            "PremiseStreet": "%DRGetPremiseDetails:ServiceAccount:PremiseAddress%"
+        },
+        "additionalOutput": {
+        },
+        "bundle": "sfiEnergyConsoleTransformServicePointsInfo",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "ignoreCache": false,
+        "label": "DataRaptorTransformAction1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Transform Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/GetUsageInfo/Procedure/DRGetPremiseInfo"
+}

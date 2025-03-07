@@ -1,0 +1,58 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetValues3",
+    "OmniProcessId": {
+        "Name": "CreateGasQuote",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Sales/RegulatedGasCreateQuote/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "MainAccountId": "=%Opportunity:AccountId%",
+            "MaxDemand": "=%Result:SelectedMeters:AverageMaxDemand%",
+            "MeterNumber": "=%Result:MeterNumber%",
+            "MeterType": "=%Result:MeterType%",
+            "OpportunityType": "=%Opportunity:AxePrincipale%",
+            "PickedServiceAccountId": "=%Result:ServiceAccountId%",
+            "ServiceAccountName": "=%Result:ServiceAccountName%",
+            "ServiceCity": "=%Result:ServiceAccountShippingCity%",
+            "ServiceStreet": "=%Result:ServiceAccountShippingStreet%",
+            "UOM": "=%Result:UOM%",
+            "Usage": "=%Result:SelectedMeters:SumTotalMeterUsage%"
+        },
+        "label": "SetValues3",
+        "message": {
+        },
+        "pubsub": false,
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "New",
+                        "field": "NewOrExistingOpptyRadio"
+                    }
+                ]
+            }
+        },
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "validationRequired": "None",
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Sales/RegulatedGasCreateQuote/English/SetValues3"
+}

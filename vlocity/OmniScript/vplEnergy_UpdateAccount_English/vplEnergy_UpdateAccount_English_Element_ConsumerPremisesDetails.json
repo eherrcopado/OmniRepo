@@ -1,0 +1,82 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Update Premises block for Consumer Account",
+    "IsActive": false,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "ConsumerPremisesDetails",
+    "OmniProcessId": {
+        "Name": "VPL-EnergyUpdateAccount",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/UpdateAccount/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "UpdateAccount",
+        "OmniProcessId": {
+            "Name": "VPL-EnergyUpdateAccount",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/UpdateAccount/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/UpdateAccount/English/UpdateAccount",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "UpdateAccount",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "accessibleInFutureSteps": false,
+        "allowDelete": false,
+        "allowEdit": true,
+        "allowNew": false,
+        "conditionType": "Hide if False",
+        "controlWidth": 12,
+        "deleteLabel": "",
+        "disOnTplt": false,
+        "editLabel": "Edit",
+        "elementName": "",
+        "hide": false,
+        "label": "Update Premises details",
+        "mode": "Inline",
+        "newLabel": "",
+        "selectCheckBox": "",
+        "selectMode": "Multi",
+        "selectSobject": "Account",
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "Consumer",
+                        "field": "AccountRecordType"
+                    }
+                ]
+            }
+        },
+        "sobjectMapping": [
+            {
+                "duplicateKey": false,
+                "osElement": "PremisesConsumerId",
+                "sObjectField": "Id"
+            },
+            {
+                "duplicateKey": false,
+                "osElement": "NewConsumerPremises",
+                "sObjectField": "%vlocity_namespace%__PremisesId__c"
+            }
+        ],
+        "sumElement": "",
+        "svgIcon": "user",
+        "svgSprite": "utility",
+        "valueSvgMap": [
+        ]
+    },
+    "Type": "Edit Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/UpdateAccount/English/ConsumerPremisesDetails"
+}

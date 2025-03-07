@@ -1,0 +1,51 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Text block to display contact details fetched form the contact typeahead",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "AccountDetails",
+    "OmniProcessId": {
+        "Name": "VPL-MoveIn-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "CustomerSelection",
+        "OmniProcessId": {
+            "Name": "VPL-MoveIn-WithoutCPQ",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveIn/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/CustomerSelection",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "CustomerSelection",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "disOnTplt": false,
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "<>",
+                        "field": "CustomerId"
+                    }
+                ]
+            }
+        },
+        "text": "<h2><strong><img src=\"../servlet/servlet.ImageServer?id=0153y0000045oiFAAQ&amp;&amp;docName=CABJABAHAaf9f06241de2430d9b8353c9978bea82&amp;&amp;oid=00D3y0000027n6h\" alt=\"\" width=\"27\" height=\"25\" /> Customer Information</strong></h2>\n<p><strong>Customer ID:</strong>&nbsp; &nbsp; &nbsp;%CustomerId%<br /><strong>First Name:</strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;%ContactFirstName%<br /><strong>Middle Name:</strong>&nbsp; &nbsp; %ContactMiddleName%<br /><strong>Last Name:&nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp; %ContactLastName%<br /><strong>Birthdate:&nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;%ContactBirthdate%<br /><strong>Phone Number:</strong>&nbsp; %ContactPhone%<br /><strong>Email Address:</strong>&nbsp; &nbsp; &nbsp;%ContactEmail%</p>"
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveIn/English/AccountDetails"
+}

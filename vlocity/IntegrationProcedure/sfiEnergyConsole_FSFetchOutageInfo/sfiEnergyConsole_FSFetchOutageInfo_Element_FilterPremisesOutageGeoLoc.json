@@ -1,0 +1,85 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "FilterPremisesOutageGeoLoc",
+    "OmniProcessId": {
+        "Name": "sfiEnergyConsoleFSFetchOutageInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalChainableResponse": {
+        },
+        "additionalInput": {
+        },
+        "additionalOutput": {
+        },
+        "advancedMerge": true,
+        "advancedMergeMap": [
+            {
+                "listKey": "SetValuesOutageResponse:OAResponse:outages",
+                "matchingPath": "affectedLatitude",
+                "normalizeKey": "1"
+            },
+            {
+                "listKey": "DRFetchServicePremisesInfo:premiseInfo",
+                "matchingPath": "latitude",
+                "normalizeKey": "1"
+            },
+            {
+                "listKey": "SetValuesOutageResponse:OAResponse:outages",
+                "matchingPath": "affectedLongitude",
+                "normalizeKey": "2"
+            },
+            {
+                "listKey": "DRFetchServicePremisesInfo:premiseInfo",
+                "matchingPath": "longitude",
+                "normalizeKey": "2"
+            }
+        ],
+        "allowMergeNulls": false,
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "dynamicOutputFields": "",
+        "executionConditionalFormula": "IF(%SVOutageConfigs:requestFilterCriteria% == \"geoLocation\",true,false)",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+            "ErrorMessage": "FilterPremisesOutageGeoLoc : Failed to filter duplicate premises for geo locations"
+        },
+        "filterListFormula": "=(status == \"OPEN\")",
+        "hasPrimary": true,
+        "label": "ListAction2",
+        "mergeFields": [
+            null
+        ],
+        "mergeListsOrder": [
+            "SetValuesOutageResponse:OAResponse:outages",
+            "DRFetchServicePremisesInfo:premiseInfo"
+        ],
+        "primaryListKey": "DRFetchServicePremisesInfo:premiseInfo",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": false,
+        "show": null,
+        "sortBy": [
+        ],
+        "sortInDescendingOrder": false,
+        "updateFieldValue": {
+        },
+        "useFormulas": true
+    },
+    "Type": "List Merge Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergyConsole/FSFetchOutageInfo/Procedure/FilterPremisesOutageGeoLoc"
+}

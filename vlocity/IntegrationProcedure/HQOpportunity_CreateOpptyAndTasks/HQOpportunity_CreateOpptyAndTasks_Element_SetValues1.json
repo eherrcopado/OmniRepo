@@ -1,0 +1,44 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetValues1",
+    "OmniProcessId": {
+        "Name": "CreateOppty&Tasks",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/HQOpportunity/CreateOpptyAndTasks/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "CampaignId": "=%OpptyType:CampaignTypeAhead-Block:CampaignId%",
+            "CloseDate": "%OpptyType:OpptyCloseDate%",
+            "ContextId": "=%ContextId%",
+            "OpptyName": "%OpptyType:OpptyName%",
+            "RecordTypeId": "=%RecordTypeId%",
+            "RecordTypeName": "=%RecordTypeName%",
+            "SelectedMeters": "=%Result%",
+            "ServiceAccount": "=FILTER(LIST(%PickServiceAccount:ServiceAccounts%), 'IsChecked == \"true\"')",
+            "Site": "=%PickServiceAccount%",
+            "StageNameIP": "=%StageName%"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues1",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/HQOpportunity/CreateOpptyAndTasks/Procedure/SetValues1"
+}

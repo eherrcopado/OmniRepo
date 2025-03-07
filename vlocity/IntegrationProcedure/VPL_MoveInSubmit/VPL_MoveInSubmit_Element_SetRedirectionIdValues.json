@@ -1,0 +1,35 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetRedirectionIdValues",
+    "OmniProcessId": {
+        "Name": "VIP-MoveInSubmit",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/MoveInSubmit/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "AccountIdRedirection": "=IF(%CustomerSelection:NewAccountNeeded% = 'No', %CustomerSelection:ExistingAccount-Block:ExistingAccountId%, IF(%CustomerSelection:AccountType% = 'Business', %BusinessAccountId%, %DRId_Account%))",
+            "ContactIdRedirection": "=IF(%CustomerSelection:NewCustomer% = 'Yes', %DRId_Contact%, %CustomerSelection:GetCustomer-Block:CustomerId%)",
+            "DRId_Contact": "=IF(%CustomerSelection:NewCustomer% = 'No', %CustomerSelection:GetCustomer-Block:CustomerId%, %DRId_Contact%)"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "label": "SetValues6",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "show": null
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/MoveInSubmit/Procedure/SetRedirectionIdValues"
+}

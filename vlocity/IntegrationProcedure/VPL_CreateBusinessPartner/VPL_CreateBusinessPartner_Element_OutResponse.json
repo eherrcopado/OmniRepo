@@ -1,0 +1,41 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "output response to capture the desired output and send back to omniscript.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "OutResponse",
+    "OmniProcessId": {
+        "Name": "VPL-CreateBusineessPartner",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/CreateBusinessPartner/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "ERPAccountID__c": "=IF(ISNOTBLANK(SVJSONResponse:BPResponse:ERP_AccountID), SVJSONResponse:BPResponse:ERP_AccountID, \"6011110\")",
+            "createResidentialAccount_Msg": "==IF(ISNOTBLANK(SVJSONResponse:BPResponse::Message), SVJSONResponse:BPResponse::Message, \"Partner Created in SAP Successfully..!!!\")"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/CreateBusinessPartner/Procedure/OutResponse"
+}

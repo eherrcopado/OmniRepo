@@ -1,0 +1,122 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "SVColumns",
+    "OmniProcessId": {
+        "Name": "VPL-MoveOut-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveOut/Multi-Language",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "BillDeliveryMethod": "=%BillingProfileDetails:BillingAccountProfile:BillDeliveryMethod%",
+            "BillingAccountId": "%DRGetAccountDetails:BillingAccountId%",
+            "MeterReadColumn": [
+                {
+                    "fieldName": "PROD_Utility_Type__c",
+                    "label": "sfiEnergyMeterReadProductName"
+                },
+                {
+                    "fieldName": "Meter_Serial_Number__c",
+                    "label": "sfiEnergyMeterReadSerialNumber"
+                },
+                {
+                    "editable": "true",
+                    "fieldName": "MeterReadingDate",
+                    "label": "sfiEnergyMeterReadReadDate",
+                    "type": "text"
+                },
+                {
+                    "editable": "true",
+                    "fieldName": "Reading",
+                    "label": "sfiEnergyMeterReadReading",
+                    "type": "text"
+                },
+                {
+                    "fieldName": "ExpectedRange",
+                    "label": "sfiEnergyMeterReadExpectedRange"
+                }
+            ],
+            "PremiseColumn": [
+                {
+                    "fieldName": "checked",
+                    "label": ""
+                },
+                {
+                    "fieldName": "PremiseAddress",
+                    "label": "sfiEnergyConsoleMoveOutPremiseAddress"
+                }
+            ],
+            "ReadonlyServicePointColumn": [
+                {
+                    "fieldName": "AssetName",
+                    "label": "sfiEnergyConsoleMoveOutServiceName"
+                },
+                {
+                    "fieldName": "ProductName",
+                    "label": "sfiEnergyConsoleMoveOutProductName"
+                },
+                {
+                    "fieldName": "ProductCode",
+                    "label": "sfiEnergyConsoleMoveOutProductName"
+                },
+                {
+                    "fieldName": "SerialNumber",
+                    "label": "sfiEnergyConsoleMoveOutSerialNumber"
+                },
+                {
+                    "fieldName": "Meter",
+                    "label": "sfiEnergyConsoleMoveOutServiceMeter"
+                }
+            ],
+            "ServicePointColumn": [
+                {
+                    "fieldName": "checked",
+                    "label": ""
+                },
+                {
+                    "fieldName": "AssetName",
+                    "label": "sfiEnergyConsoleMoveOutServiceName"
+                },
+                {
+                    "fieldName": "ProductName",
+                    "label": "sfiEnergyConsoleMoveOutProductName"
+                },
+                {
+                    "fieldName": "ProductCode",
+                    "label": "sfiEnergyConsoleMoveOutProductName"
+                },
+                {
+                    "fieldName": "SerialNumber",
+                    "label": "sfiEnergyConsoleMoveOutSerialNumber"
+                },
+                {
+                    "fieldName": "Meter",
+                    "label": "sfiEnergyConsoleMoveOutServiceMeter"
+                }
+            ]
+        },
+        "label": null,
+        "message": {
+        },
+        "pubsub": false,
+        "show": null,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveOut/Multi-Language/SVColumns"
+}

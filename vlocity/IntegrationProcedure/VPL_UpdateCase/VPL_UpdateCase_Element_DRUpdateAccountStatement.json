@@ -1,0 +1,46 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRUpdateAccountStatement",
+    "OmniProcessId": {
+        "Name": "VPL-UpdateCase",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/UpdateCase/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "AccountStatus": "=IF(%DRGetCaseStatus:TotalCaseCount%==%DRGetCaseStatus:CaseCountClosed%,\"Active\",\"\")",
+            "BillingAccountId": "=%BilledAccountId%",
+            "StatementId": "=%DRGetCaseStatus:RelatedCaseDetails:StatementId%"
+        },
+        "additionalOutput": {
+        },
+        "bundle": "VPLUpdateCaseStatus",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "executionConditionalFormula": "%CaseDetails:RecordTypeName%==\"Billing Dispute\" && %DRGetCaseStatus:CaseDetails:CaseStatusBillingDispute%==\"Closed\"",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "label": "DataRaptorPostAction2",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Post Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/UpdateCase/Procedure/DRUpdateAccountStatement"
+}

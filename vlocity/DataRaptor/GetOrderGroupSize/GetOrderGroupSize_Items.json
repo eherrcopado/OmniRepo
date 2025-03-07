@@ -1,0 +1,82 @@
+[
+    {
+        "CurrencyIsoCode": "USD",
+        "FilterGroup": 0,
+        "FormulaExpression": "IF(Group:%vlocity_namespace%__ExpectedMemberCount__c = 0 || ISBLANK(Group:%vlocity_namespace%__ExpectedMemberCount__c), Group:%vlocity_namespace%__MemberCount__c, Group:%vlocity_namespace%__ExpectedMemberCount__c)",
+        "FormulaResultPath": "count",
+        "FormulaSequence": 1,
+        "GlobalKey": "GetOrderGroupSizeCustoma00Dn000006cF7OIAUItem1",
+        "InputObjectQuerySequence": 0,
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "LinkedObjectSequence": 0,
+        "MayEdit": true,
+        "Name": "GetOrderGroupSize",
+        "OmniDataTransformationId": {
+            "Name": "GetOrderGroupSize",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/GetOrderGroupSize",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 0,
+        "OutputFieldName": "Formula",
+        "OutputObjectName": "Formula",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "FilterGroup": 0,
+        "GlobalKey": "GetOrderGroupSizeCustoma00Dn000006cF7OIAUItem2",
+        "InputFieldName": "count",
+        "InputObjectQuerySequence": 0,
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "LinkedObjectSequence": 0,
+        "MayEdit": true,
+        "Name": "GetOrderGroupSize",
+        "OmniDataTransformationId": {
+            "Name": "GetOrderGroupSize",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/GetOrderGroupSize",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 1,
+        "OutputFieldName": "count",
+        "OutputObjectName": "json",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    },
+    {
+        "CurrencyIsoCode": "USD",
+        "FilterGroup": 0,
+        "FilterOperator": "=",
+        "FilterValue": "GroupId",
+        "GlobalKey": "GetOrderGroupSizeCustoma00Dn000006cF7OIAUItem0",
+        "InputFieldName": "Id",
+        "InputObjectName": "%vlocity_namespace%__OrderGroup__c",
+        "InputObjectQuerySequence": 1,
+        "IsDisabled": false,
+        "IsLocked": false,
+        "IsRequiredForUpsert": false,
+        "IsUpsertKey": false,
+        "LinkedObjectSequence": 0,
+        "MayEdit": true,
+        "Name": "GetOrderGroupSize",
+        "OmniDataTransformationId": {
+            "Name": "GetOrderGroupSize",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniDataTransform/GetOrderGroupSize",
+            "VlocityRecordSObjectType": "OmniDataTransform"
+        },
+        "OutputCreationSequence": 0,
+        "OutputFieldName": "Group",
+        "OutputObjectName": "json",
+        "VlocityDataPackType": "SObject",
+        "VlocityRecordSObjectType": "OmniDataTransformItem"
+    }
+]

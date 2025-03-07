@@ -1,0 +1,41 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "Response",
+    "OmniProcessId": {
+        "Name": "EnergyUtilitiesProgramsGetProgramDetails",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/EnergyUtilitiesPrograms/GetProgramDetails/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "ProgramDetailsSection": "%ProgramDetailsSection:Programs%",
+            "ProgramDetailsSection:ProductFamilyCount": "=IF(ISBLANK(%DRProductFamilyMap:ProductFamilies%), 0, LISTSIZE(%DRProductFamilyMap:ProductFamilies%))",
+            "ProgramDetailsSection:ProductFamilyList": "%DRProductFamilyMap:ProductFamilies%",
+            "Requirements:data": "=IF(ISNOTBLANK(%TransformIntoUniqueProductFamilyList:data%), LIST(%TransformIntoUniqueProductFamilyList:data%), LIST())"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/EnergyUtilitiesPrograms/GetProgramDetails/Procedure/Response"
+}

@@ -1,0 +1,41 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Handle the error thrown by the UpdateConsumerPremise step.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "UpdateConsumerPremiseError",
+    "OmniProcessId": {
+        "Name": "sfiEnergySelfServiceUpdateConsumerPremises",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiEnergySelfService/UpdateConsumerPremises/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "ErrorMessage": "%UpdateConsumerPremise:ErrorMessage%",
+            "isError": "%UpdateConsumerPremise:isError%"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "IF(%UpdateConsumerPremise:isError%, true, ISBLANK(%UpdateConsumerPremise:updatedPremiseName%))",
+        "label": "ResponseAction2",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiEnergySelfService/UpdateConsumerPremises/Procedure/UpdateConsumerPremiseError"
+}

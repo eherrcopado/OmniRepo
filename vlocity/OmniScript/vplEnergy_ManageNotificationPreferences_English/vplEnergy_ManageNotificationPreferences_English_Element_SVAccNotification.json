@@ -1,0 +1,44 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SVAccNotification",
+    "OmniProcessId": {
+        "Name": "vplEnergyManageNotificationPreferences",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/ManageNotificationPreferences/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "BillNotifications": "=%AccountPref:BillNotifications:AttrValue%",
+            "DNCFrom": "=IF(%AccountPref:DNCFrom:AttrValue% = \"\" || %AccountPref%=\"\", \"None\",%AccountPref:DNCFrom:AttrValue% )",
+            "DNCTo": "=IF(%AccountPref:DNCTo:AttrValue% = \"\" || %AccountPref%=\"\", \"None\",%AccountPref:DNCTo:AttrValue% )",
+            "OffersPromotions": "=%AccountPref:OffersPromotions:AttrValue%",
+            "OutageNotifications": "=%AccountPref:OutageNotifications:AttrValue%",
+            "PaymentRemindersNotifications": "=%AccountPref:PaymentReminders:AttrValue%",
+            "TotalAttrAssignCount": "=%AccountNotificationPreference:TotalNotification%",
+            "WorkOrderNotifications": "=%AccountPref:WorkorderNotifications:AttrValue%"
+        },
+        "label": null,
+        "message": {
+        },
+        "pubsub": false,
+        "show": null,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "wpm": false
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/ManageNotificationPreferences/English/SVAccNotification"
+}

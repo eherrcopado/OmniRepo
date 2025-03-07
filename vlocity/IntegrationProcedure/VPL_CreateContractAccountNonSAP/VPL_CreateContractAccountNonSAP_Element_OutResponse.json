@@ -1,0 +1,41 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "output response to capture the desired output and send back to omniscript.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "OutResponse",
+    "OmniProcessId": {
+        "Name": "VPL-CreateContractAccount_NonSAP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/CreateContractAccountNonSAP/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "ERP_Contract_ID__c": "=IF(ISNOTBLANK(SVJSONResponse:CAResponse:ERP_ContractID), SVJSONResponse:CAResponse:ERP_ContractID, \"22000014952\")",
+            "createResidentialAccount_Msg": "=IF(ISNOTBLANK(SVJSONResponse:CAResponse::Message), SVJSONResponse:CAResponse::Message, \"Contract created in SAP successfully..!\")"
+        },
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "ResponseAction1",
+        "responseDefaultData": {
+        },
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "show": null,
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/CreateContractAccountNonSAP/Procedure/OutResponse"
+}

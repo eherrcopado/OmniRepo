@@ -1,0 +1,28 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "This loop will be executed when LaunchedFrom parameter passed from the Omniscript is SSP",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SSPUpdateAssetServicePoint",
+    "OmniProcessId": {
+        "Name": "VPL-UpdateMoveOut",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/UpdateMoveOut/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "%LaunchedFrom% == \"SSP\"",
+        "label": "LoopBlock4",
+        "loopList": "AssetDetail:AssetListLWC",
+        "loopOutput": {
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/UpdateMoveOut/Procedure/SSPUpdateAssetServicePoint"
+}

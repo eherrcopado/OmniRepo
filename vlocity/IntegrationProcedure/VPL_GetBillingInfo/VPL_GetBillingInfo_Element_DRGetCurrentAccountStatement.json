@@ -1,0 +1,50 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "This Dataraptor will get the all the details of current statement.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "DRGetCurrentAccountStatement",
+    "OmniProcessId": {
+        "Name": "VPL/GetBillingInfo",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetBillingInfo/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "additionalInput": {
+            "BillingAccountId": "%SVBillingAccount:BillingId%"
+        },
+        "additionalOutput": {
+            "Statement:BillPeriod": "=IF(AND(%DRGetCurrentAccountStatement:Statement:StartDate%,%DRGetCurrentAccountStatement:Statement:EndDate%),CONCAT('(',%DRGetCurrentAccountStatement:Statement:StartDate%,' ','-',' ',%DRGetCurrentAccountStatement:Statement:EndDate%,')'),null)",
+            "Statement:OverDueMessage": "=IF(%DRGetCurrentAccountStatement:Statement:OverDueBill%==true,\"This customer has overdue bills\",null)"
+        },
+        "bundle": "VPLGetAccountBillingStatement",
+        "chainOnStep": false,
+        "dataRaptor Input Parameters": [
+        ],
+        "disOnTplt": false,
+        "executionConditionalFormula": "%SVBillingAccount:BillingId%!=null",
+        "failOnStepError": true,
+        "failureConditionalFormula": "",
+        "failureResponse": {
+        },
+        "ignoreCache": false,
+        "label": "DataRaptorExtractAction2",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": true,
+        "show": null,
+        "useFormulas": true
+    },
+    "Type": "DataRaptor Extract Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetBillingInfo/Procedure/DRGetCurrentAccountStatement"
+}

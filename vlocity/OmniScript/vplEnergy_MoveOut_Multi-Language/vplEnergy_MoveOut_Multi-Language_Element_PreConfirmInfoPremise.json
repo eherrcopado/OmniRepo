@@ -1,0 +1,53 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "PreConfirmInfoPremise",
+    "OmniProcessId": {
+        "Name": "VPL-MoveOut-WithoutCPQ",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveOut/Multi-Language",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "PreConfirmMoveOut",
+        "OmniProcessId": {
+            "Name": "VPL-MoveOut-WithoutCPQ",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/vplEnergy/MoveOut/Multi-Language",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveOut/Multi-Language/PreConfirmMoveOut",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "PreConfirmMoveOut",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "disOnTplt": false,
+        "label": null,
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "<>",
+                        "data": "Paper Billing",
+                        "field": "BillDeliveryMethod"
+                    }
+                ]
+            }
+        },
+        "text": "<p style=\"text-align: left;\">at</p>\n<p><strong>%PremiseListDetail:PremiseListLWC:PremiseAddress%</strong></p>\n<p style=\"text-align: left;\">as of&nbsp;</p>\n<p><strong>%MoveOutDate%</strong></p>\n<p>The final bill will be sent to :</p>\n<p></p>\n<p><strong>%PremiseListDetail:PremiseListLWC:PremiseAddress%</strong></p>",
+        "textKey": "sfiEnergyConsoleMoveOutConfirmPremiseDetailsMsg"
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/vplEnergy/MoveOut/Multi-Language/PreConfirmInfoPremise"
+}

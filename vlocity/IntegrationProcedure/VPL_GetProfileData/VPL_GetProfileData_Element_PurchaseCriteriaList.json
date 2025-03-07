@@ -1,0 +1,33 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Loop block to  Loop over the Purchase Criteria",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "PurchaseCriteriaList",
+    "OmniProcessId": {
+        "Name": "VPL/GetProfileData",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/GetProfileData/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "LoopBlock1",
+        "loopList": "DRGetPurchaseCriteria:PurchaseCriteria",
+        "loopOutput": {
+            "PurchaseCriteriaCost": "%DRTransformPurchaseCriteria:PurchaseCriteriaCost%",
+            "PurchaseCriteriaFamilyFriendly": "%DRTransformPurchaseCriteria:PurchaseCriteriaFamilyFriendly%",
+            "PurchaseCriteriaInsurance": "%DRTransformPurchaseCriteria:PurchaseCriteriaInsurance%",
+            "PurchaseCriteriaRenewableEnergy": "%DRTransformPurchaseCriteria:PurchaseCriteriaRenewableEnergy%",
+            "PurchaseCriteriaServiceAvailability": "%DRTransformPurchaseCriteria:PurchaseCriteriaServiceAvailability%"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/GetProfileData/Procedure/PurchaseCriteriaList"
+}

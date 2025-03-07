@@ -1,0 +1,64 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "QuoteNavigatetoCPQMultisiteConfigurator",
+    "OmniProcessId": {
+        "Name": "MultiSite Quote Order Flow",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/MultiSite/QuoteOrderFlow/Multi-Language",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "iconName": "",
+        "iconPosition": "left",
+        "iconVariant": "",
+        "label": null,
+        "loginAction": "login",
+        "message": {
+        },
+        "objectAction": "home",
+        "omniscript__language": "Multi-Language",
+        "omniscript__subType": "MultisiteConfigurator",
+        "omniscript__type": "CPQ",
+        "pubsub": false,
+        "recordAction": "view",
+        "replace": false,
+        "show": {
+            "group": {
+                "operator": "AND",
+                "rules": [
+                    {
+                        "condition": "=",
+                        "data": "Quote",
+                        "field": "type"
+                    },
+                    {
+                        "condition": "=",
+                        "data": "yes",
+                        "field": "CreateGroupNowQuote"
+                    }
+                ]
+            }
+        },
+        "ssm": false,
+        "targetFilter": "Recent",
+        "targetId": "%ContextId%",
+        "targetLWC": "c:CPQMultisiteConfiguratorMultiLanguage",
+        "targetLWCLayout": "lightning",
+        "targetLWCParams": "omniscript__cartType=Quote&omniscript__parentId=%OpportunityId%&omniscript__ContextId=%MasterQuoteOrderId%&omniscript__recordType=%QuoteRecordType%&omniscript__selectedTypes=%multiSiteObjectsList%&omniscript__tabLabel=CreateMultiSiteQuote",
+        "targetType": "Vlocity OmniScript",
+        "validationRequired": "none",
+        "variant": "brand",
+        "wpm": false
+    },
+    "Type": "Navigate Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/MultiSite/QuoteOrderFlow/Multi-Language/QuoteNavigatetoCPQMultisiteConfigurator"
+}

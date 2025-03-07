@@ -1,0 +1,78 @@
+{
+    "AuthorName": "CME_E_U",
+    "ClonedFromOmniUiCardKey": "sfiEnergySelfServiceSubBody/CME_E_U/1/1659667023002",
+    "CurrencyIsoCode": "USD",
+    "DataSourceConfig": {
+        "dataSource": {
+            "contextVariables": [
+                {
+                    "id": 1,
+                    "name": "Session.AccountId",
+                    "val": "0018X000032ZW0JQAW"
+                }
+            ],
+            "orderBy": {
+                "isReverse": "",
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "Id": "{Session.AccountId}"
+                },
+                "ipMethod": "sfiEnergyConsole_FSFetchOutageInfo",
+                "jsonMap": "{\"Session.AccountId\":\"{Session.AccountId}\"}",
+                "resultVar": "",
+                "vlocityAsync": false
+            }
+        },
+        "event-0_0": {
+            "contextVariables": [
+                {
+                    "id": 1,
+                    "name": "Parent.AccountId",
+                    "val": "001B000001Q7ZZAIA3"
+                },
+                {
+                    "id": 3,
+                    "name": "action.activeTab",
+                    "val": "Overview"
+                }
+            ],
+            "orderBy": {
+                "isReverse": "",
+                "name": ""
+            },
+            "type": "IntegrationProcedures",
+            "value": {
+                "dsDelay": "",
+                "inputMap": {
+                    "Id": "{Parent.AccountId}",
+                    "TabName": "{action.activeTab}"
+                },
+                "ipMethod": "sfiEnergyConsole_FSFetchOutageInfo",
+                "jsonMap": "{\"Parent.AccountId\":\"{Parent.AccountId}\",\"action.activeTab\":\"{action.activeTab}\"}",
+                "resultVar": "",
+                "vlocityAsync": false
+            }
+        }
+    },
+    "Description": "This serves as a container card for Plan details page - usage and plans",
+    "IsLocked": false,
+    "IsTrackingEnabled": false,
+    "MayEdit": true,
+    "Name": "sfiEnergySelfServicePlanDetailsContainer",
+    "Namespace": "",
+    "OmniUiCardKey": "sfiEnergySelfServicePlanDetailsContainer/CME_E_U/3.0",
+    "OmniUiCardType": "Parent",
+    "OverrideKey": "",
+    "PropertySetConfig": "sfiEnergySelfServicePlanDetailsContainer.json",
+    "SampleDataSourceResponse": "{\"premiseInfo\":{\"premisesWithEarlierOutage\":[\"\"],\"premisesWithOutage\":[\"\"],\"recordCount\":0,\"recordCountforEarlierOutagePremises\":0,\"sameResolutionTime\":false},\"TabName\":\"\"}",
+    "StylingConfiguration": "{\"customStyles\":\":host{\\n    --slds-c-card-color-background:#f9fcff;\\n}\"}",
+    "UniqueName": "sfiEnergySelfServicePlanDetailsContainer_CME_E_U_3",
+    "VersionNumber": 3,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniUiCard",
+    "VlocityRecordSourceKey": "OmniUiCard/sfiEnergySelfServicePlanDetailsContainer"
+}

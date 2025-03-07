@@ -1,0 +1,34 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "OpportunityQuoteList",
+    "OmniProcessId": {
+        "Name": "VPL/GetOpportunityList",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/VPL/OpportunityList/Procedure",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "disOnTplt": false,
+        "executionConditionalFormula": "",
+        "label": "LoopBlock1",
+        "loopList": "DRTransformOpportunityList:OpportunityList",
+        "loopOutput": {
+            "OpportunityAmount": "%DRTransformOpportunityList:OpportunityList:OpportunityAmount%",
+            "OpportunityCloseDate": "%DRTransformOpportunityList:OpportunityList:OpportunityCloseDate%",
+            "OpportunityId": "%DRTransformOpportunityList:OpportunityList:OpportunityId%",
+            "OpportunityName": "%DRTransformOpportunityList:OpportunityList:OpportunityName%",
+            "OpportunityProbability": "%DRTransformOpportunity:ProbabilityPercent%",
+            "OpportunityStatus": "%DRTransformOpportunityList:OpportunityList:OpportunityStatus%",
+            "QuoteList": "%DRGetQuoteList:QuoteList%"
+        },
+        "show": null
+    },
+    "Type": "Loop Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/VPL/OpportunityList/Procedure/OpportunityQuoteList"
+}
