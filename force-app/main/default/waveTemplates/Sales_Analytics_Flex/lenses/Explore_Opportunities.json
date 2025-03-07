@@ -1,0 +1,128 @@
+{
+  "name" : "Explore_Opportunities",
+  "label" : "Explore Opportunities",
+  "description" : "Get actionable insights from your opportunities data, starting with pushed opportunities. Narrow the time period to look at pushed opportunities for a year, quarter, month, and so on. Select a new grouping, such as by team or by opportunity owner. Or filter by a different stage, status, product, or any other way you break down opportunities.",
+  "folder" : {
+    "id" : "${App.Folder.Id}"
+  },
+  "visualizationType" : "pyramid",
+  "dataset" : {
+    "id" : "${App.Datasets.opportunity.Id}"
+  },
+  "state" : {
+    "dataSourceLinks" : [ ],
+    "filters" : [ ],
+    "gridLayouts" : [ ],
+    "layouts" : [ ],
+    "steps" : {
+      "aggregateflex" : {
+        "broadcastFacet" : true,
+        "datasets" : [
+          {
+            "name" : "${App.Datasets['opportunity'].Alias}"
+          }
+        ],
+        "isGlobal" : false,
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "sum",
+                "${Variables.Opportunity_Amount.fieldName}"
+              ],
+              [
+                "sum",
+                "Stage.IsPushed"
+              ]
+            ],
+            "groups" : [
+              "Name"
+            ],
+            "filters" : [
+              [
+                "IsClosed",
+                [
+                  "false"
+                ],
+                "in"
+              ]
+            ],
+            "order" : [
+              [
+                "sum_${Variables.Opportunity_Amount.fieldName}",
+                {
+                  "ascending" : false
+                }
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacet" : true,
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "visualizationType" : "pyramid"
+        }
+      }
+    },
+    "widgets" : {
+      "aggregateflex_chart" : {
+        "parameters" : {
+          "autoFitMode" : "none",
+          "totalValue" : "computeTotal",
+          "showMeasureTitle" : true,
+          "legend" : {
+            "showHeader" : true,
+            "show" : true,
+            "customSize" : "auto",
+            "position" : "right-top",
+            "inside" : false
+          },
+          "visualizationType" : "pyramid",
+          "exploreLink" : true,
+          "title" : {
+            "label" : "Explore Opportunities",
+            "align" : "center",
+            "subtitleLabel" : " Select new measures and add groupings and filters to get actionable insights."
+          },
+          "trellis" : {
+            "flipLabels" : false,
+            "showGridLines" : true,
+            "enable" : false,
+            "type" : "x",
+            "chartsPerLine" : 4
+          },
+          "totalLabel" : "",
+          "showMeasure" : true,
+          "showActionMenu" : true,
+          "measureAxis2" : {
+            "sqrtScale" : false,
+            "title" : "Stage: Pushed",
+            "customDomain" : {
+              "showDomain" : false
+            }
+          },
+          "measureAxis1" : {
+            "sqrtScale" : false,
+            "title" : "${Variables.Opportunity_Amount.fieldName}",
+            "customDomain" : {
+              "showDomain" : false
+            }
+          },
+          "valueType" : "compactNumber",
+          "theme" : "wave",
+          "rightColor" : "#e16032",
+          "step" : "aggregateflex",
+          "leftColor" : "#52b7d8",
+          "compactDecimalDigits" : -1,
+          "dimensionAxis" : {
+            "customSize" : "auto",
+            "showAxis" : true
+          }
+        },
+        "type" : "chart"
+      }
+    }
+  }
+}

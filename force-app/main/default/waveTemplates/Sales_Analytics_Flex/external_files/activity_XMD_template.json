@@ -1,0 +1,107 @@
+{
+  "dataset": {},
+  "dates": [],
+  "derivedDimensions": [
+    {
+      "customActions": [],
+      "field": "Related Opportunity",
+      "linkTemplate": "/{{row.Opportunity.Id}}",
+      "linkTooltip": "Open Opportunity",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "Opportunity.Id",
+      "salesforceActions": []
+    }
+  ],
+  "derivedMeasures": [
+    {
+      "field": "YoY",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "YoY",
+      "showInExplorer": false
+    },
+    {
+      "field": "comp_act",
+      "format": {
+        "customFormat": "[\"#,###\",1]"
+      },
+      "label": "comp_act",
+      "showInExplorer": false
+    },
+    {
+      "field": "percent",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "percent",
+      "showInExplorer": false
+    }
+  ],
+  "dimensions": [
+    {
+      "customActions": [],
+      "field": "Opportunity.${Variables.Bookings.fieldName}",
+      "label": "${Variables.Bookings.fieldLabel}",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Subject",
+      "linkTemplate": "/{{row.Id}}",
+      "linkTooltip": "Open Event",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "Id",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "AssignedTo.UniqueUserName",
+      "linkTemplate": "/{{row.OwnerId}}",
+      "label": "Assigned To",
+      "linkTooltip": "Open User",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "OwnerId",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Account.Name",
+      "label": "Account Name",
+      "linkTemplate": "/{{row.AccountId}}",
+      "linkTooltip": "Open Account",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "Opportunity.AccountId",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.Name",
+      "linkTemplate": "/{{row.Opportunity.AccountId}}",
+      "linkTooltip": "Open Account",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "Opportunity.AccountId",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Name",
+      "linkTemplate": "/{{row.Opportunity.Id}}",
+      "linkTooltip": "Open Opportunity",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "Opportunity.Id",
+      "salesforceActions": []
+    }
+  ],
+  "measures": [],
+  "organizations": [],
+  "showDetailsDefaultFields": []
+}

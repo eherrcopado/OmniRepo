@@ -1,0 +1,1371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{
+    &quot;Id&quot;: &quot;0015i00000jXPF2AAO&quot;
+}</customJavaScript>
+    <description>It will fetch the Outage Information for a particular area(s). [Debarshi: DONOT USE. User Version 7]</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>sfiEnergyConsoleFSFetchOutageInfo</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CheckForSameResolutionTimeGeoLoc</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;FilterDuplicatePremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;startTime&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicatePremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;startTime&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicatePremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;endTime&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicatePremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;endTime&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;geoLocation\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;CheckForSameResolutionTimeGeoLoc : Failed to check for same resolution time for geolocation&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction5&quot;,
+  &quot;mergeFields&quot; : [ ],
+  &quot;mergeListsOrder&quot; : [ &quot;FilterDuplicatePremisesOutageGeoLoc&quot;, &quot;FilterDuplicatePremisesOutageGeoLoc&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>26.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CheckForSameResolutionTimeGeoLocEarlierPremises</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;startTime&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;startTime&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;endTime&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;endTime&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;geoLocation\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;CheckForSameResolutionTimeGeoLoc : Failed to check for same resolution time for geolocation for earlier premises with outages.&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction5&quot;,
+  &quot;mergeFields&quot; : [ ],
+  &quot;mergeListsOrder&quot; : [ &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;, &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>27.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CheckForSameResolutionTimeZipCode</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;FilterDuplicatePremisesOutageZipCode&quot;,
+    &quot;matchingPath&quot; : &quot;startTime&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicatePremisesOutageZipCode&quot;,
+    &quot;matchingPath&quot; : &quot;startTime&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicatePremisesOutageZipCode&quot;,
+    &quot;matchingPath&quot; : &quot;estimatedRestoration&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicatePremisesOutageZipCode&quot;,
+    &quot;matchingPath&quot; : &quot;estimatedRestoration&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;CheckForSameResolutionTimeZipCode : Failed to check for same resolution time for zip codes&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction5&quot;,
+  &quot;mergeFields&quot; : [ ],
+  &quot;mergeListsOrder&quot; : [ &quot;FilterDuplicatePremisesOutageZipCode&quot;, &quot;FilterDuplicatePremisesOutageZipCode&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>24.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CheckForSameResolutionTimeZipCodeEarlierPremise</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;startTime&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;startTime&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;estimatedRestoration&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;estimatedRestoration&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;CheckForSameResolutionTimeZipCode : Failed to check for same resolution time for zip codes for earlier premises with outage&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction5&quot;,
+  &quot;mergeFields&quot; : [ ],
+  &quot;mergeListsOrder&quot; : [ &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot;, &quot;FilterDuplicateEarlierPremisesOutageGeoLoc&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>25.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DRFetchServicePremisesInfo</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;accountId&quot; : &quot;=IF(ISBLANK( %Id% ), %VIPGetAccountFromInteraction:AccountId%, %Id%)&quot;,
+    &quot;recordTypeName&quot; : &quot;=IF(%VIPGetAccountFromInteraction:AccountRecordType% == &apos;Business&apos;,&apos;Service&apos;,&apos;Consumer&apos;)&quot;,
+    &quot;sObjectName&quot; : &quot;Account&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;sfiEnergyFSPremises&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;DRFetchServicePremisesInfo : Failed to fetch premises info&quot;
+  },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>IF(%VIPGetAccountFromInteraction:AccountRecordType% == &apos;Business&apos;,%DRFetchServicePremisesInfo%,%DRFetchConsumerPremisesInfo%)</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DRTransformOutageRequest</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;premiseDetails&quot; : &quot;=%DRFetchServicePremisesInfo%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;sfiEnergyConsoleFSOutageRequestTransform&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;DRTransformOutageRequest : Failed to transform outage request&quot;
+  },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FilterDuplicateEarlierPremisesOutageGeoLoc</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;FilterEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;premisesId&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterEarlierPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;premisesId&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;geoLocation\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;FilterDuplicatePremisesOutageGeoLoc : Failed to filter duplicate earlier premises for geo locations&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;=(status == \&quot;CLOSED\&quot;)&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction2&quot;,
+  &quot;mergeFields&quot; : [ null ],
+  &quot;mergeListsOrder&quot; : [ &quot;FilterEarlierPremisesOutageGeoLoc&quot;, &quot;FilterEarlierPremisesOutageGeoLoc&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>23.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FilterDuplicateEarlierPremisesOutageZipCode</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;LPFilterPremisesWithDuplicateZipCodes:filteredEarlierPremisesWithOutages&quot;,
+    &quot;matchingPath&quot; : &quot;premisesId&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;LPFilterPremisesWithDuplicateZipCodes:filteredEarlierPremisesWithOutages&quot;,
+    &quot;matchingPath&quot; : &quot;premisesId&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;zipCode\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;FilterDuplicateEarlierPremisesOutageZipCode : Failed to filter duplicate earlier premises for zip code&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;=(isEarlierOutage == true)&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction2&quot;,
+  &quot;mergeFields&quot; : [ null ],
+  &quot;mergeListsOrder&quot; : [ &quot;LPFilterPremisesWithDuplicateZipCodes:filteredEarlierPremisesWithOutages&quot;, &quot;LPFilterPremisesWithDuplicateZipCodes:filteredEarlierPremisesWithOutages&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>19.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FilterDuplicatePremisesOutageGeoLoc</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;FilterPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;premisesId&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;FilterPremisesOutageGeoLoc&quot;,
+    &quot;matchingPath&quot; : &quot;premisesId&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;geoLocation\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;FilterDuplicatePremisesOutageGeoLoc : Failed to filter duplicate premises for geo locations&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;=(status == \&quot;OPEN\&quot;)&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction2&quot;,
+  &quot;mergeFields&quot; : [ null ],
+  &quot;mergeListsOrder&quot; : [ &quot;FilterPremisesOutageGeoLoc&quot;, &quot;FilterPremisesOutageGeoLoc&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>22.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FilterDuplicatePremisesOutageZipCode</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;LPFilterPremisesWithDuplicateZipCodes:filteredPremises&quot;,
+    &quot;matchingPath&quot; : &quot;premisesId&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;LPFilterPremisesWithDuplicateZipCodes:filteredPremises&quot;,
+    &quot;matchingPath&quot; : &quot;premisesId&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;zipCode\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;FilterDuplicatePremisesOutageZipCode : Failed to filter duplicate premises for zip code&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;=(isOutage == true)&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction2&quot;,
+  &quot;mergeFields&quot; : [ null ],
+  &quot;mergeListsOrder&quot; : [ &quot;LPFilterPremisesWithDuplicateZipCodes:filteredPremises&quot;, &quot;LPFilterPremisesWithDuplicateZipCodes:filteredPremises&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>18.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FilterEarlierPremisesOutageGeoLoc</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;SetValuesOutageResponse:OAResponse:outages&quot;,
+    &quot;matchingPath&quot; : &quot;affectedLatitude&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;DRFetchServicePremisesInfo:premiseInfo&quot;,
+    &quot;matchingPath&quot; : &quot;latitude&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;SetValuesOutageResponse:OAResponse:outages&quot;,
+    &quot;matchingPath&quot; : &quot;affectedLongitude&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  }, {
+    &quot;listKey&quot; : &quot;DRFetchServicePremisesInfo:premiseInfo&quot;,
+    &quot;matchingPath&quot; : &quot;longitude&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : false,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;geoLocation\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;FilterPremisesOutageGeoLoc : Failed to filter duplicate premises for geo locations&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;=(status == \&quot;CLOSED\&quot;)&quot;,
+  &quot;hasPrimary&quot; : true,
+  &quot;label&quot; : &quot;ListAction2&quot;,
+  &quot;mergeFields&quot; : [ null ],
+  &quot;mergeListsOrder&quot; : [ &quot;SetValuesOutageResponse:OAResponse:outages&quot;, &quot;DRFetchServicePremisesInfo:premiseInfo&quot; ],
+  &quot;primaryListKey&quot; : &quot;DRFetchServicePremisesInfo:premiseInfo&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>21.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FilterPremisesOutageGeoLoc</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;SetValuesOutageResponse:OAResponse:outages&quot;,
+    &quot;matchingPath&quot; : &quot;affectedLatitude&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;DRFetchServicePremisesInfo:premiseInfo&quot;,
+    &quot;matchingPath&quot; : &quot;latitude&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;SetValuesOutageResponse:OAResponse:outages&quot;,
+    &quot;matchingPath&quot; : &quot;affectedLongitude&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  }, {
+    &quot;listKey&quot; : &quot;DRFetchServicePremisesInfo:premiseInfo&quot;,
+    &quot;matchingPath&quot; : &quot;longitude&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : false,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;geoLocation\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;FilterPremisesOutageGeoLoc : Failed to filter duplicate premises for geo locations&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;=(status == \&quot;OPEN\&quot;)&quot;,
+  &quot;hasPrimary&quot; : true,
+  &quot;label&quot; : &quot;ListAction2&quot;,
+  &quot;mergeFields&quot; : [ null ],
+  &quot;mergeListsOrder&quot; : [ &quot;SetValuesOutageResponse:OAResponse:outages&quot;, &quot;DRFetchServicePremisesInfo:premiseInfo&quot; ],
+  &quot;primaryListKey&quot; : &quot;DRFetchServicePremisesInfo:premiseInfo&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>20.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <description>IF(%SVOutageConfigs:integrationEnabled% &amp;&amp; %SVOutageConfigs:integrationType% == &quot;XML&quot;,true,false)</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DRTransformRequestJSONtoXML</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;geoLocations&quot; : &quot;=RemoveDuplicateGeoLocations&quot;,
+    &quot;zipCodes&quot; : &quot;=RemoveDuplicateZipCodes&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;sfiEnergyConsoleFSOutageRequestJSONtoXML&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:integrationEnabled% &amp;&amp; %SVOutageConfigs:integrationType% == \&quot;XML\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;DRTransformRequestJSONtoXML : Failed to transform request from JSON to XML&quot;
+  },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction4&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>8.0</sequenceNumber>
+            <type>DataRaptor Transform Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DRTransformResponseXMLtoJSON</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;&quot; : &quot;&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;sfiEnergyConsoleFSOutageResponseXMLtoJSON&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:integrationEnabled% &amp;&amp; %SVOutageConfigs:integrationType% == \&quot;XML\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;DRTransformResponseXMLtoJSON : Failed to transform the response from XML to JSON&quot;
+  },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction3&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;HAFetchOutageInfoXML&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>12.0</sequenceNumber>
+            <type>DataRaptor Transform Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>HAFetchOutageInfoJSON</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:integrationEnabled% &amp;&amp; %SVOutageConfigs:integrationType% == \&quot;JSON\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;HAFetchOutageInfoJSON : Failed to call the outage api&quot;
+  },
+  &quot;label&quot; : &quot;HTTPAction1&quot;,
+  &quot;namedCredential&quot; : &quot;OutageSystemConnector&quot;,
+  &quot;postActionLogging&quot; : &quot;&quot;,
+  &quot;preActionLogging&quot; : &quot;%endpoint%&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;POST&quot;,
+  &quot;restOptions&quot; : {
+    &quot;clientCertificateName&quot; : &quot;&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;application/json&quot;
+    },
+    &quot;isCompressed&quot; : false,
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : 0,
+    &quot;xmlEscapeResponse&quot; : false
+  },
+  &quot;restPath&quot; : &quot;/outages&quot;,
+  &quot;retryCount&quot; : 0,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;SVOutageJSONRequest:JSONRequestBody&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;type&quot; : &quot;Integration&quot;,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>10.0</sequenceNumber>
+            <type>Rest Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>HAFetchOutageInfoXML</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:integrationEnabled% &amp;&amp; %SVOutageConfigs:integrationType% == \&quot;XML\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;HAFetchOutageInfoXML : Failed to call the outage api&quot;
+  },
+  &quot;label&quot; : &quot;HTTPAction2&quot;,
+  &quot;namedCredential&quot; : &quot;OutageSystemConnector&quot;,
+  &quot;postActionLogging&quot; : &quot;&quot;,
+  &quot;preActionLogging&quot; : &quot;%endpoint%&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;POST&quot;,
+  &quot;restOptions&quot; : {
+    &quot;clientCertificateName&quot; : &quot;&quot;,
+    &quot;headers&quot; : {
+      &quot;Content-Type&quot; : &quot;text/xml&quot;,
+      &quot;SoapAction&quot; : &quot;POST&quot;
+    },
+    &quot;isCompressed&quot; : false,
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : 0,
+    &quot;xmlEscapeResponse&quot; : false
+  },
+  &quot;restPath&quot; : &quot;/outagesxml&quot;,
+  &quot;retryCount&quot; : 0,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;DRTransformRequestJSONtoXML&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;type&quot; : &quot;Integration&quot;,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>11.0</sequenceNumber>
+            <type>Rest Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SVIntegrationResponse</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;OAResponse&quot; : &quot;=IF(%SVOutageConfigs:integrationType% == \&quot;JSON\&quot;,%HAFetchOutageInfoJSON%,%DRTransformResponseXMLtoJSON%)&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;%SVOutageConfigs:integrationEnabled%&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues4&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>13.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SVOutageJSONRequest</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;JSONRequestBody&quot; : &quot;=IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;zipCode\&quot;,LIST(%RemoveDuplicateZipCodes%),LIST(%RemoveDuplicateGeoLocations%))&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:integrationEnabled% &amp;&amp; %SVOutageConfigs:integrationType% == \&quot;JSON\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues5&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>9.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>IntegrationEnabledBlock</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%SVOutageConfigs:integrationEnabled% &quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Conditional Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DRFilterPremisesWithOutage</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;outages&quot; : &quot;%SetValuesOutageResponse:OAResponse:outages%&quot;,
+    &quot;premiseCity&quot; : &quot;%DRFetchServicePremisesInfo:premiseInfo:premiseCity%&quot;,
+    &quot;premiseCountry&quot; : &quot;%DRFetchServicePremisesInfo:premiseInfo:premiseCountry%&quot;,
+    &quot;premiseName&quot; : &quot;%DRFetchServicePremisesInfo:premiseInfo:premiseName%&quot;,
+    &quot;premisePostalCode&quot; : &quot;%DRFetchServicePremisesInfo:premiseInfo:premisePostalCode%&quot;,
+    &quot;premiseState&quot; : &quot;%DRFetchServicePremisesInfo:premiseInfo:premiseState%&quot;,
+    &quot;premiseStreet&quot; : &quot;%DRFetchServicePremisesInfo:premiseInfo:premiseStreet%&quot;,
+    &quot;premisesId&quot; : &quot;%DRFetchServicePremisesInfo:premiseInfo:premisesId%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;sfiEnergyConsoleFSFilterPremisesWithOutage&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;DRFilterPremisesWithOutage : Failed inside loop block to filter the premises with outage&quot;
+  },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction4&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>17.0</sequenceNumber>
+            <type>DataRaptor Transform Action</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>LPFilterPremisesWithDuplicateZipCodes</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;zipCode\&quot;,true,false)&quot;,
+  &quot;label&quot; : &quot;LoopBlock1&quot;,
+  &quot;loopList&quot; : &quot;DRFetchServicePremisesInfo:premiseInfo&quot;,
+  &quot;loopOutput&quot; : {
+    &quot;filteredEarlierPremisesWithOutages&quot; : &quot;=%DRFilterPremisesWithOutage:earlierPremisesWithOutages%&quot;,
+    &quot;filteredPremises&quot; : &quot;=%DRFilterPremisesWithOutage:premises%&quot;
+  },
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>16.0</sequenceNumber>
+        <type>Loop Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>RemoveDuplicateGeoLocations</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;DRTransformOutageRequest:outageReq:geoLocations&quot;,
+    &quot;matchingPath&quot; : &quot;longitude&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;DRTransformOutageRequest:outageReq:geoLocations&quot;,
+    &quot;matchingPath&quot; : &quot;longitude&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;DRTransformOutageRequest:outageReq:geoLocations&quot;,
+    &quot;matchingPath&quot; : &quot;latitude&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  }, {
+    &quot;listKey&quot; : &quot;DRTransformOutageRequest:outageReq:geoLocations&quot;,
+    &quot;matchingPath&quot; : &quot;latitude&quot;,
+    &quot;normalizeKey&quot; : &quot;2&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;geoLocation\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;RemoveDuplicateGeoLocations : Failed to remove duplicate geo locations&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction2&quot;,
+  &quot;mergeFields&quot; : [ null ],
+  &quot;mergeListsOrder&quot; : [ &quot;DRTransformOutageRequest:outageReq:geoLocations&quot;, &quot;DRTransformOutageRequest:outageReq:geoLocations&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>RemoveDuplicateZipCodes</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;advancedMerge&quot; : true,
+  &quot;advancedMergeMap&quot; : [ {
+    &quot;listKey&quot; : &quot;DRTransformOutageRequest:outageReq:zipCodes&quot;,
+    &quot;matchingPath&quot; : &quot;zipCode&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  }, {
+    &quot;listKey&quot; : &quot;DRTransformOutageRequest:outageReq:zipCodes&quot;,
+    &quot;matchingPath&quot; : &quot;zipCode&quot;,
+    &quot;normalizeKey&quot; : &quot;1&quot;
+  } ],
+  &quot;allowMergeNulls&quot; : true,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;dynamicOutputFields&quot; : &quot;&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;zipCode\&quot;,true,false)&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;RemoveDuplicateZipCodes : Failed to remove duplicate zip codes&quot;
+  },
+  &quot;filterListFormula&quot; : &quot;&quot;,
+  &quot;hasPrimary&quot; : false,
+  &quot;label&quot; : &quot;ListAction2&quot;,
+  &quot;mergeFields&quot; : [ null ],
+  &quot;mergeListsOrder&quot; : [ &quot;DRTransformOutageRequest:outageReq:zipCodes&quot;, &quot;DRTransformOutageRequest:outageReq:zipCodes&quot; ],
+  &quot;primaryListKey&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;sortBy&quot; : [ ],
+  &quot;sortInDescendingOrder&quot; : false,
+  &quot;updateFieldValue&quot; : { },
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>List Merge Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ResponseActionGeoLocation</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;geoLocation\&quot;,true,false)&quot;,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalOutput&quot; : {
+    &quot;TabName&quot; : &quot;%TabName%&quot;,
+    &quot;premiseInfo:premisesWithEarlierOutage&quot; : &quot;=LIST(%FilterDuplicateEarlierPremisesOutageGeoLoc%)&quot;,
+    &quot;premiseInfo:premisesWithOutage&quot; : &quot;=LIST(%FilterDuplicatePremisesOutageGeoLoc%)&quot;,
+    &quot;premiseInfo:recordCount&quot; : &quot;=IF(ISBLANK(FilterDuplicatePremisesOutageGeoLoc),0,LISTSIZE(FilterDuplicatePremisesOutageGeoLoc))&quot;,
+    &quot;premiseInfo:recordCountforEarlierOutagePremises&quot; : &quot;=IF(ISBLANK(FilterDuplicateEarlierPremisesOutageGeoLoc),0,LISTSIZE(FilterDuplicateEarlierPremisesOutageGeoLoc))&quot;,
+    &quot;premiseInfo:sameResolutionTime&quot; : &quot;=IF(ISBLANK(CheckForSameResolutionTimeGeoLoc),false,IF(LISTSIZE(CheckForSameResolutionTimeGeoLoc) == 1,true,false))&quot;
+  },
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;vlcResponseHeaders&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>29.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ResponseActionZipCode</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;IF(%SVOutageConfigs:requestFilterCriteria% == \&quot;zipCode\&quot;,true,false)&quot;,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalOutput&quot; : {
+    &quot;TabName&quot; : &quot;%TabName%&quot;,
+    &quot;premiseInfo:premisesWithEarlierOutage&quot; : &quot;=LIST(%FilterDuplicateEarlierPremisesOutageZipCode%)&quot;,
+    &quot;premiseInfo:premisesWithOutage&quot; : &quot;=LIST(%FilterDuplicatePremisesOutageZipCode%)&quot;,
+    &quot;premiseInfo:recordCount&quot; : &quot;=IF(ISBLANK(FilterDuplicatePremisesOutageZipCode),0,LISTSIZE(FilterDuplicatePremisesOutageZipCode))&quot;,
+    &quot;premiseInfo:recordCountforEarlierOutagePremises&quot; : &quot;=IF(ISBLANK(FilterDuplicateEarlierPremisesOutageZipCode),0,LISTSIZE(FilterDuplicateEarlierPremisesOutageZipCode))&quot;,
+    &quot;premiseInfo:sameResolutionTime&quot; : &quot;=IF(ISBLANK(CheckForSameResolutionTimeZipCode),false,IF(LISTSIZE(CheckForSameResolutionTimeZipCode) == 1,true,false))&quot;
+  },
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;vlcResponseHeaders&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>28.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValuesOutageResponse</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;OAResponse&quot; : &quot;=IF(%SVOutageConfigs:integrationEnabled%,%SVIntegrationResponse:OAResponse%,%SVStaticResponse:OAResponse%)&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>15.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SVOutageConfigs</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;integrationEnabled&quot; : false,
+    &quot;integrationType&quot; : &quot;JSON&quot;,
+    &quot;requestFilterCriteria&quot; : &quot;zipCode&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues2&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SVStaticResponse</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;executionConditionalFormula&quot; : &quot;NOT(%SVOutageConfigs:integrationEnabled%)&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;elementValueMap&quot; : {
+    &quot;OAResponse&quot; : {
+      &quot;outages&quot; : [ {
+        &quot;ProblemDetailsText&quot; : &quot;Caused by unexpected circumstances, such as traffic accidents or severe weather. We work to repair these outages quickly.&quot;,
+        &quot;ProblemTitle&quot; : &quot;Repair Outage&quot;,
+        &quot;ProblemURL&quot; : &quot;https://rhl41861.live.dynatrace.com/#problems/problemdetails;pid=-7567972756941671037_1597696877509V2&quot;,
+        &quot;affectedLatitude&quot; : &quot;67.000000000000000&quot;,
+        &quot;affectedLocation&quot; : &quot;Bangalore&quot;,
+        &quot;affectedLongitude&quot; : &quot;123.000000000000000&quot;,
+        &quot;affectedZipCode&quot; : &quot;123456&quot;,
+        &quot;endTime&quot; : &quot;16th June 11:30 AM&quot;,
+        &quot;estimatedRestoration&quot; : &quot;16th June 11:30 AM&quot;,
+        &quot;hasRootCause&quot; : false,
+        &quot;id&quot; : &quot;167341383&quot;,
+        &quot;severityLevel&quot; : &quot;High&quot;,
+        &quot;startTime&quot; : &quot;15th June 08:30 AM&quot;,
+        &quot;status&quot; : &quot;OPEN&quot;
+      }, {
+        &quot;ProblemDetailsText&quot; : &quot;Caused by unexpected circumstances, such as traffic accidents or severe weather. We work to repair these outages quickly.&quot;,
+        &quot;ProblemTitle&quot; : &quot;Repair Outage&quot;,
+        &quot;ProblemURL&quot; : &quot;https://rhl41861.live.dynatrace.com/#problems/problemdetails;pid=-7567972756941671037_1597696877509V2&quot;,
+        &quot;affectedLatitude&quot; : &quot;67.000000000000000&quot;,
+        &quot;affectedLocation&quot; : &quot;N. California&quot;,
+        &quot;affectedLongitude&quot; : &quot;123.000000000000000&quot;,
+        &quot;affectedZipCode&quot; : &quot;CV3 4LF&quot;,
+        &quot;endTime&quot; : &quot;16th June 11:30 AM&quot;,
+        &quot;estimatedRestoration&quot; : &quot;16th June 11:30 AM&quot;,
+        &quot;hasRootCause&quot; : false,
+        &quot;id&quot; : &quot;167341383&quot;,
+        &quot;severityLevel&quot; : &quot;High&quot;,
+        &quot;startTime&quot; : &quot;15th June 08:30 AM&quot;,
+        &quot;status&quot; : &quot;OPEN&quot;
+      }, {
+        &quot;ProblemDetailsText&quot; : &quot;Caused by unexpected circumstances, such as traffic accidents or severe weather. We work to repair these outages quickly.&quot;,
+        &quot;ProblemTitle&quot; : &quot;Repair Outage&quot;,
+        &quot;ProblemURL&quot; : &quot;https://rhl41861.live.dynatrace.com/#problems/problemdetails;pid=-7567972756941671037_1597696877509V2&quot;,
+        &quot;affectedLatitude&quot; : &quot;25.120000000000000&quot;,
+        &quot;affectedLocation&quot; : &quot;S. California&quot;,
+        &quot;affectedLongitude&quot; : &quot;75.345700000000000&quot;,
+        &quot;affectedZipCode&quot; : &quot;123456&quot;,
+        &quot;endTime&quot; : &quot;19th June 11:30 AM&quot;,
+        &quot;estimatedRestoration&quot; : &quot;19th June 11:30 AM&quot;,
+        &quot;hasRootCause&quot; : false,
+        &quot;id&quot; : &quot;167341384&quot;,
+        &quot;severityLevel&quot; : &quot;High&quot;,
+        &quot;startTime&quot; : &quot;15th June 08:30 AM&quot;,
+        &quot;status&quot; : &quot;CLOSED&quot;
+      }, {
+        &quot;ProblemDetailsText&quot; : &quot;Caused by unexpected circumstances, such as traffic accidents or severe weather. We work to repair these outages quickly.&quot;,
+        &quot;ProblemTitle&quot; : &quot;Repair Outage&quot;,
+        &quot;ProblemURL&quot; : &quot;https://rhl41861.live.dynatrace.com/#problems/problemdetails;pid=-7567972756941671037_1597696877509V2&quot;,
+        &quot;affectedLatitude&quot; : &quot;-40.000000000000000&quot;,
+        &quot;affectedLocation&quot; : &quot;Texas&quot;,
+        &quot;affectedLongitude&quot; : &quot;-100.000000000000000&quot;,
+        &quot;affectedZipCode&quot; : &quot;EH15 3HR&quot;,
+        &quot;endTime&quot; : &quot;16th June 11:30 AM&quot;,
+        &quot;estimatedRestoration&quot; : &quot;26th June 11:30 AM&quot;,
+        &quot;hasRootCause&quot; : false,
+        &quot;id&quot; : &quot;167341385&quot;,
+        &quot;severityLevel&quot; : &quot;High&quot;,
+        &quot;startTime&quot; : &quot;15th June 08:30 AM&quot;,
+        &quot;status&quot; : &quot;OPEN&quot;
+      }, {
+        &quot;ProblemDetailsText&quot; : &quot;Caused by unexpected circumstances, such as traffic accidents or severe weather. We work to repair these outages quickly.&quot;,
+        &quot;ProblemTitle&quot; : &quot;Repair Outage&quot;,
+        &quot;ProblemURL&quot; : &quot;https://rhl41861.live.dynatrace.com/#problems/problemdetails;pid=-7567972756941671037_1597696877509V2&quot;,
+        &quot;affectedLatitude&quot; : &quot;-50.000000000000000&quot;,
+        &quot;affectedLocation&quot; : &quot;Texas&quot;,
+        &quot;affectedLongitude&quot; : &quot;99.000000000000000&quot;,
+        &quot;affectedZipCode&quot; : &quot;EH15 5HR&quot;,
+        &quot;endTime&quot; : &quot;26th June 11:30 AM&quot;,
+        &quot;estimatedRestoration&quot; : &quot;26th June 11:30 AM&quot;,
+        &quot;hasRootCause&quot; : false,
+        &quot;id&quot; : &quot;167341385&quot;,
+        &quot;severityLevel&quot; : &quot;High&quot;,
+        &quot;startTime&quot; : &quot;25th June 08:30 AM&quot;,
+        &quot;status&quot; : &quot;OPEN&quot;
+      } ]
+    }
+  },
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>14.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>VIPGetAccountFromInteraction</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;disableChainable&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;ISBLANK( %Id% )&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;VIPGetAccountFromInteraction : Failed to fetch account info&quot;
+  },
+  &quot;integrationProcedureKey&quot; : &quot;VPL_GetCustomerAccountContact&quot;,
+  &quot;label&quot; : &quot;IntegrationProcedureAction1&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessKey>sfiEnergyConsole_FSFetchOutageInfo</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;trackingCustomData&quot; : { },
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;description&quot; : &quot;&quot;,
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;rollbackOnError&quot; : false,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;ttlMinutes&quot; : 5,
+  &quot;mockResponseMap&quot; : { }
+}</propertySetConfig>
+    <subType>FSFetchOutageInfo</subType>
+    <type>sfiEnergyConsole</type>
+    <uniqueName>sfiEnergyConsole_FSFetchOutageInfo_Procedure_8</uniqueName>
+    <versionNumber>8.0</versionNumber>
+    <webComponentKey>02fd6a05-e2c5-66a6-f08b-c4be93a09e24</webComponentKey>
+</OmniIntegrationProcedure>

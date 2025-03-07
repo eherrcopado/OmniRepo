@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>DivideQuantityForOrderItem</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>var:Quantity var:GroupSize /</formulaConverted>
+        <formulaExpression>Quantity / GroupSize</formulaExpression>
+        <formulaResultPath>FinalQuantity</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DivideQuantityForOrderItemCustoma00Dn000006c9srIAAItem0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DivideQuantityForOrderItem</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DivideQuantityForOrderItemCustoma00Dn000006c9srIAAItem2</globalKey>
+        <inputFieldName>FinalQuantity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DivideQuantityForOrderItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Quantity</outputFieldName>
+        <outputObjectName>OrderItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DivideQuantityForOrderItemCustoma00Dn000006c9srIAAItem1</globalKey>
+        <inputFieldName>CartItemId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DivideQuantityForOrderItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>OrderItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;CartItemId&quot; : &quot;&quot;,
+  &quot;GroupSize&quot; : 2,
+  &quot;Quantity&quot; : 5
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DivideQuantityForOrderItem_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

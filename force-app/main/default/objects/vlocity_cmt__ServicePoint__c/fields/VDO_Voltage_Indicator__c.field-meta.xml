@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VDO_Voltage_Indicator__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ((VDO_Voltage__c &lt; 750 &amp;&amp; TEXT(VDO_Voltage_UOM__c) = &apos;V&apos;),&apos;Small&apos;&amp;&apos; &apos; &amp; TEXT(VDO_Voltage__c) &amp; &apos; &apos; &amp; TEXT(VDO_Voltage_UOM__c),
+IF(((VDO_Voltage__c &gt; 750 &amp;&amp; TEXT(VDO_Voltage_UOM__c) = &apos;V&apos;) &amp;&amp; (VDO_Voltage__c &lt; 44 &amp;&amp; TEXT(VDO_Voltage_UOM__c ) = &apos;kV&apos;)),
+&apos;Medium&apos;&amp;&apos; &apos; &amp; TEXT(VDO_Voltage__c) &amp; &apos; &apos; &amp; TEXT(VDO_Voltage_UOM__c), &apos;High&apos;&amp;&apos; &apos; &amp; TEXT(VDO_Voltage__c) &amp; &apos; &apos; &amp; TEXT(VDO_Voltage_UOM__c)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Voltage Indicator</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

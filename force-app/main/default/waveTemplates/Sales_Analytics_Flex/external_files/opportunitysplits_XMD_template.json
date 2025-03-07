@@ -1,0 +1,687 @@
+{
+  "dataset": {},
+  "dates": [],
+  "derivedDimensions": [
+    {
+      "customActions": [],
+      "field": "UniqueUserName",
+      "label": "User Name",
+      "linkTemplate": "/{{row.SplitOwnerId}}",
+      "linkTooltip": "Open User",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "SplitOwnerId",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "customActionsEnabled": true,
+      "field": "Opportunity.Status",
+      "isMultiValue": false,
+      "label": "Status",
+      "linkTemplateEnabled": true,
+      "members": [
+        {
+          "color": "#005FB2",
+          "member": "Won"
+        },
+        {
+          "color": "#A9DCF5",
+          "member": "Open"
+        }
+      ],
+      "recordDisplayFields": [],
+      "salesforceActions": [],
+      "salesforceActionsEnabled": true,
+      "showInExplorer": false
+    },
+    {
+      "customActions": [],
+      "customActionsEnabled": true,
+      "field": "Forecast Group",
+      "isMultiValue": false,
+      "label": "Forecast Group",
+      "linkTemplateEnabled": true,
+      "members": [
+        {
+          "color": "#44A2F5",
+          "member": "Closed Won"
+        },
+        {
+          "color": "#3D4E8C",
+          "member": "Remaining After Forecast"
+        },
+        {
+          "color": "#D857CC",
+          "member": "Forecast"
+        }
+      ],
+      "recordDisplayFields": [],
+      "salesforceActions": [],
+      "salesforceActionsEnabled": true,
+      "showInExplorer": false
+    }
+  ],
+  "derivedMeasures": [
+    {
+      "field": "Opportunity.last_activity",
+      "format": {},
+      "label": "Days Since Last Activity",
+      "showInExplorer": false
+    },
+    {
+      "field": "quota_attainment",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "quota_attainment",
+      "showInExplorer": false
+    },
+    {
+      "field": "YoY",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "YoY",
+      "showInExplorer": false
+    },
+    {
+      "field": "splitamount",
+      "format": {
+        "customFormat": "[\"$#,###\",1]"
+      },
+      "label": "amount",
+      "showInExplorer": false
+    },
+    {
+      "field": "quota_remaining",
+      "format": {
+        "customFormat": "[\"$#,###\",1]"
+      },
+      "label": "quota_remaining",
+      "showInExplorer": false
+    },
+    {
+      "field": "forecast",
+      "format": {
+        "customFormat": "[\"$#,###\",1]"
+      },
+      "label": "forecast",
+      "showInExplorer": false
+    },
+    {
+      "field": "pipe_generated",
+      "format": {
+        "customFormat": "[\"$#,###\",1]"
+      },
+      "label": "pipe_generated",
+      "showInExplorer": false
+    },
+    {
+      "field": "need_to_close",
+      "format": {
+        "customFormat": "[\"$#,###\",1]"
+      },
+      "label": "need_to_close",
+      "showInExplorer": false
+    },
+    {
+      "field": "percent",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "percent",
+      "showInExplorer": false
+    },
+    {
+      "field": "total",
+      "format": {
+        "customFormat": "[\"$#,###\",1]"
+      },
+      "label": "total",
+      "showInExplorer": false
+    },
+    {
+      "field": "QoQ",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "QoQ",
+      "showInExplorer": false
+    },
+    {
+      "field": "measure",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "measure",
+      "showInExplorer": false
+    },
+    {
+      "field": "quota_amount",
+      "format": {
+        "customFormat": "[\"$#,###\",1]"
+      },
+      "label": "quota_amount",
+      "showInExplorer": false
+    },
+    {
+      "field": "pipe_coverage",
+      "format": {
+        "customFormat": "[\"#,##0.0x\",1]"
+      },
+      "label": "pipe_coverage",
+      "showInExplorer": false
+    },
+    {
+      "field": "win_rate",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "win_rate",
+      "showInExplorer": false
+    },
+    {
+      "field": "Opportunity.Days_Open",
+      "format": {
+        "customFormat": "[\"#,###\",1]"
+      },
+      "label": "Days_Open",
+      "showInExplorer": false
+    },
+    {
+      "field": "avg_OpportunityAge",
+      "format": {
+        "customFormat": "[\"#,### days\",1]"
+      },
+      "label": "avg_OpportunityAge",
+      "showInExplorer": false
+    },
+    {
+      "field": "measure_avg",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "measure_avg",
+      "showInExplorer": false
+    },
+    {
+      "field": "Stock",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "Stock",
+      "showInExplorer": false
+    },
+    {
+      "field": "closed_won",
+      "format": {
+        "customFormat": "[\"$#,###\",1]"
+      },
+      "label": "closed_won",
+      "showInExplorer": false
+    },
+    {
+      "field": "open_pipe",
+      "format": {
+        "customFormat": "[\"$#,###\",1]"
+      },
+      "label": "open_pipe",
+      "showInExplorer": false
+    },
+    {
+      "field": "StockAvg",
+      "format": {
+        "customFormat": "[\"#,###%\",100]"
+      },
+      "label": "StockAvg",
+      "showInExplorer": false
+    }
+  ],
+  "dimensions": [
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.${Variables.Customer.fieldName}",
+      "label": "${Variables.Customer.fieldLabel}",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.AccountId",
+      "label": "Account ID",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.Owner.Role.Name",
+      "label": "Account Owner Role",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CloseDate_Year",
+      "label": "CloseDate_Year",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedDate_Second",
+      "label": "CreatedDate_Second",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.ForecastCategory",
+      "label": "Forecast Category",
+      "members": [
+        {
+          "color": "#35D4CC",
+          "member": "Best Case"
+        },
+        {
+          "color": "#AD90F5",
+          "member": "Commit"
+        },
+        {
+          "color": "#44A2F5",
+          "member": "Pipeline"
+        }
+      ],
+      "recordDisplayFields": [],
+      "salesforceActions": [],
+      "showInExplorer": false
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.IsClosed",
+      "label": "Closed",
+      "members": [
+        {
+          "color": "#A9DCF5",
+          "label": "Open",
+          "member": "false"
+        },
+        {
+          "color": "#005FB2",
+          "label": "Closed",
+          "member": "true"
+        }
+      ],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CloseDate",
+      "label": "CloseDate",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedDate_Quarter",
+      "label": "CreatedDate_Quarter",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Name",
+      "label": "Opportunity Name",
+      "linkTemplate": "/{{row.Opportunity.Id}}",
+      "linkTooltip": "Open Opportunity",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "Opportunity.Id",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.${Variables.Customer_L2.fieldName}",
+      "label": "${Variables.Customer_L2.fieldLabel}",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedDate_Day",
+      "label": "CreatedDate_Day",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CloseDate_Week",
+      "label": "CloseDate_Week",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedById",
+      "label": "Created By ID",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "SplitOwnerId",
+      "label": "Split Owner ID",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.OwnerId",
+      "label": "Owner ID",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.IsWon",
+      "label": "Won",
+      "members": [
+        {
+          "color": "#C03757",
+          "label": "No",
+          "member": "false"
+        },
+        {
+          "color": "#0BA976",
+          "label": "Yes",
+          "member": "true"
+        }
+      ],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Owner.Role.Name",
+      "label": "Owner Role",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CloseDate_Second",
+      "label": "CloseDate_Second",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CloseDate_Quarter",
+      "label": "CloseDate_Quarter",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedDate_Week",
+      "label": "CreatedDate_Week",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedDate_Month",
+      "label": "CreatedDate_Month",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.${Variables.Source.fieldName}",
+      "label": "${Variables.Source.fieldLabel}",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Owner.Name",
+      "label": "Opportunity Split Owner",
+      "linkTemplate": "/{{row.SplitOwnerId}}",
+      "linkTooltip": "Open User",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "SplitOwnerId",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Owner.UniqueUserName",
+      "label": "Opportunity Split Owner",
+      "linkTemplate": "/{{row.SplitOwnerId}}",
+      "linkTooltip": "Open User",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "SplitOwnerId",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedDate_Year",
+      "label": "CreatedDate_Year",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CloseDate_Hour",
+      "label": "CloseDate_Hour",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.StageName",
+      "label": "Stage",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.${Variables.Geography_L2.fieldName}",
+      "label": "${Variables.Geography_L2.fieldLabel}",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedDate_Minute",
+      "label": "CreatedDate_Minute",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.Owner.Name",
+      "label": "Account Owner",
+      "linkTemplate": "/{{row.Opportunity.Account.OwnerId}}",
+      "linkTooltip": "Open User",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "Opportunity.Account.OwnerId",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.${Variables.Bookings.fieldName}",
+      "label": "${Variables.Bookings.fieldLabel}",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.${Variables.Source_L2.fieldName}",
+      "label": "${Variables.Source_L2.fieldLabel}",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.${Variables.Geography.fieldName}",
+      "label": "${Variables.Geography.fieldLabel}",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CloseDate_Month",
+      "label": "CloseDate_Month",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedDate_Hour",
+      "label": "CreatedDate_Hour",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CreatedDate",
+      "label": "CreatedDate",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.Name",
+      "label": "Account Name",
+      "linkTemplate": "/{{row.AccountId}}",
+      "linkTooltip": "Open Account",
+      "members": [],
+      "recordDisplayFields": [],
+      "recordIdField": "Opportunity.AccountId",
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Account.OwnerId",
+      "label": "Account Owner ID",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CloseDate_Minute",
+      "label": "CloseDate_Minute",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.Id",
+      "label": "Opportunity ID",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.ForecastCategoryName",
+      "label": "Forecast Category",
+      "members": [
+        {
+          "color": "#35D4CC",
+          "member": "Best Case"
+        },
+        {
+          "color": "#AD90F5",
+          "member": "Commit"
+        },
+        {
+          "color": "#44A2F5",
+          "member": "Pipeline"
+        }
+      ],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    },
+    {
+      "customActions": [],
+      "field": "Opportunity.CloseDate_Day",
+      "label": "CloseDate_Day",
+      "members": [],
+      "recordDisplayFields": [],
+      "salesforceActions": []
+    }
+  ],
+
+  "measures": [
+    {
+      "field": "Opportunity.${Variables.Opportunity_Amount.fieldName}",
+      "format": {
+        "customFormat": "[\"$#,###\",1]",
+        "decimalDigits": 2
+      },
+      "label": "${Variables.Opportunity_Amount.fieldLabel}"
+    },
+    {
+      "field": "SplitAmount",
+      "format": {
+        "customFormat": "[\"$#,###\",1]",
+        "decimalDigits": 2
+      },
+      "label": "Split Amount"
+    },
+    {
+      "field": "Opportunity.Account.AnnualRevenue",
+      "format": {
+        "customFormat": "[\"$#,###\",1]",
+        "decimalDigits": 0
+      }
+    }
+  ],
+  "organizations": [],
+  "showDetailsDefaultFields": [
+    "Opportunity.CloseDate",
+    "Opportunity.Name",
+    "Opportunity.Owner.Name",
+    "Opportunity.${Variables.Opportunity_Amount.fieldName}",
+    "Opportunity.ForecastCategoryName",
+    "Opportunity.StageName",
+    "SplitAmount"
+  ]
+}

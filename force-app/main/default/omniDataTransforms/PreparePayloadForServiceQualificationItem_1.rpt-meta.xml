@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>The DR is used to prepare payload for serviceQualificationItem parameter in TMF api.</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;QuoteMember&quot; : {
+    &quot;vlocity_cmt__City__c&quot; : &quot;Gaithersburg&quot;,
+    &quot;vlocity_cmt__Country__c&quot; : &quot;United States&quot;,
+    &quot;vlocity_cmt__PostalCode__c&quot; : &quot;36525&quot;,
+    &quot;vlocity_cmt__State__c&quot; : &quot;MD&quot;,
+    &quot;vlocity_cmt__StreetAddress__c&quot; : &quot;7769 Nec Street&quot;,
+    &quot;Id&quot; : &quot;a5bRN00000031yGYAQ&quot;
+  },
+  &quot;serviceSpecification&quot; : &quot;&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>PreparePayloadForServiceQualificationItem</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>PreparePayloadForServiceQualificationItemCustom8736</globalKey>
+        <inputFieldName>QuoteMember:vlocity_cmt__City__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PreparePayloadForServiceQualificationItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>serviceQualificationItem:service:place:geographicAddress:city</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>PreparePayloadForServiceQualificationItemCustom9395</globalKey>
+        <inputFieldName>QuoteMember:vlocity_cmt__PostalCode__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PreparePayloadForServiceQualificationItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>serviceQualificationItem:service:place:geographicAddress:postcode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>PreparePayloadForServiceQualificationItemCustom2464</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PreparePayloadForServiceQualificationItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>serviceQualificationItem</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>PreparePayloadForServiceQualificationItemCustom939</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PreparePayloadForServiceQualificationItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>serviceQualificationItem:service:place</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>PreparePayloadForServiceQualificationItemCustom7625</globalKey>
+        <inputFieldName>QuoteMember:vlocity_cmt__StreetAddress__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PreparePayloadForServiceQualificationItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>serviceQualificationItem:service:place:geographicAddress:streetName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>PreparePayloadForServiceQualificationItemCustom9242</globalKey>
+        <inputFieldName>ServiceSpecification</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PreparePayloadForServiceQualificationItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>serviceQualificationItem:service:serviceSpecification:name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>PreparePayloadForServiceQualificationItemCustom6105</globalKey>
+        <inputFieldName>QuoteMember:vlocity_cmt__Country__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PreparePayloadForServiceQualificationItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>serviceQualificationItem:service:place:geographicAddress:country</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>PreparePayloadForServiceQualificationItemCustom2181</globalKey>
+        <inputFieldName>QuoteMember:vlocity_cmt__State__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PreparePayloadForServiceQualificationItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>serviceQualificationItem:service:place:geographicAddress:state</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;QuoteMember&quot; : {
+    &quot;vlocity_cmt__City__c&quot; : &quot;Gaithersburg&quot;,
+    &quot;vlocity_cmt__Country__c&quot; : &quot;United States&quot;,
+    &quot;vlocity_cmt__PostalCode__c&quot; : &quot;36525&quot;,
+    &quot;vlocity_cmt__State__c&quot; : &quot;MD&quot;,
+    &quot;vlocity_cmt__StreetAddress__c&quot; : &quot;7769 Nec Street&quot;,
+    &quot;Id&quot; : &quot;a5bRN00000031yGYAQ&quot;,
+    &quot;Name&quot; : &quot;7769 Nec Street&quot;
+  },
+  &quot;ServiceSpecification&quot; : &quot;test&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>PreparePayloadForServiceQualificationItem_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

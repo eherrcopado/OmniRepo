@@ -1,0 +1,74 @@
+<apex:page sidebar="false" showHeader="false" controller="slackv2.constants">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <apex:slds />
+        <style>
+            .spi-background {
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100vh;
+                padding-top: 3%;
+                overflow-y: scroll;
+            }
+            .spi-content {
+                margin: 0 auto;
+                width: 75%;
+            }
+            .spi-col {
+                display: flex;
+                align-items: center;
+            }
+            .spi-content .slds-grid .slds-col:not(.spi-col) {
+                flex: 1 1 0;
+            }
+            .slds-scope .spi-card_footer.slds-card__footer {
+                padding: 1.25rem 1rem;
+                margin-top: 0.75rem;
+                text-align: left;
+                font-size: 0.8125rem;
+                border-top: 1px solid rgb(221, 219, 218);
+            }
+            .spi-img img {
+                width: 30px;
+            }
+        </style>
+
+        <div class="spi-background" style="{!'background-image: url(' + URLFOR($Resource.slackv2__postInstall, 'spiBackground.svg') + ')'}">
+            <div class="spi-content">
+                <div class="slds-grid slds-gutters_small slds-has-flexi-truncate slds-text-align_left">
+                    <div class="slds-col">
+                        <article class="slds-card">
+                            <div class="slds-card__header">
+                                <div class="slds-m-around_xx-small">
+                                    <apex:image url="{!URLFOR($Resource.slackv2__postInstall, 'setupThumbnail.svg')}"/>
+                                </div>
+                            </div>
+                            <div class="slds-card__footer spi-card_footer">
+                                <h3 class="slds-text-heading_small">Complete Slack Setup Assistant</h3>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="slds-col spi-col slds-no-flex">
+                        <div class="spi-img">
+                            <apex:image url="{!URLFOR($Resource.slackv2__postInstall, 'arrow.svg')}"/>
+                        </div>
+                    </div>
+                    <div class="slds-col">
+                        <article class="slds-card">
+                            <div class="slds-card__header">
+                                <div class="slds-m-around_xx-small">
+                                    <apex:image url="{!URLFOR($Resource.slackv2__postInstall, 'postSetupThumbnail.svg')}"/>
+                                </div>
+                            </div>
+                            <div class="slds-card__footer spi-card_footer">
+                                <h3 class="slds-text-heading_small">Add Slack Lightning Component to Layouts</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="slds-m-top_xx-large slds-m-bottom_large slds-text-align_center">
+                    <a href="/lightning/n/{!namespaceApi}Setup" target="_blank" class="slds-button slds-button_brand">Continue to Setup Assistant</a>
+                </div>
+            </div>
+        </div>
+    </html>
+</apex:page>

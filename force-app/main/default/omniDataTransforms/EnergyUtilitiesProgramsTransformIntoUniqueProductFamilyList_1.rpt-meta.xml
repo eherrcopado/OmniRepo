@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>EnergyUtilitiesProgramsTransformIntoUniqueProductFamilyList</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>EnergyUtilitiesProgramsTransformIntoUniqueProductFamilyList7990681029115068</globalKey>
+        <inputFieldName>data1</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>EnergyUtilitiesProgramsTransformIntoUniqueProductFamilyList</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>data</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;ProductFamilyName&quot; | var:data LIST LISTMERGE</formulaConverted>
+        <formulaExpression>LISTMERGE(&quot;ProductFamilyName&quot;, LIST(data))</formulaExpression>
+        <formulaResultPath>data1</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>EnergyUtilitiesProgramsTransformIntoUniqueProductFamilyList38161277117520154</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>EnergyUtilitiesProgramsTransformIntoUniqueProductFamilyList</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:data LIST &apos;ProductFamilyName/\/\/==/\/\/&quot;Ev/\/\/Rates&quot;/\/\/||/\/\/ProductFamilyName/\/\/==/\/\/&quot;Financial/\/\/Assistance&quot;/\/\/||/\/\/ProductFamilyName/\/\/==/\/\/&quot;EV/\/\/Charger&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(data), &apos;ProductFamilyName == &quot;Ev Rates&quot; || ProductFamilyName == &quot;Financial Assistance&quot; || ProductFamilyName == &quot;EV Charger&quot;&apos;)</formulaExpression>
+        <formulaResultPath>data</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>EnergyUtilitiesProgramsTransformIntoUniqueProductFamilyListCustom6166</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>EnergyUtilitiesProgramsTransformIntoUniqueProductFamilyList</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;data&quot; : [ {
+    &quot;ProductFamilyDesc&quot; : &quot;Should, have EV charger and meter&quot;,
+    &quot;ProductFamilyName&quot; : &quot;Ev rates&quot;
+  }, {
+    &quot;ProductFamilyDesc&quot; : &quot;Should, have EV charger and meter&quot;,
+    &quot;ProductFamilyName&quot; : &quot;None&quot;
+  }, {
+    &quot;ProductFamilyDesc&quot; : &quot;Should, have EV charger and meter&quot;,
+    &quot;ProductFamilyName&quot; : &quot;Ev rates&quot;
+  }, {
+    &quot;ProductFamilyDesc&quot; : &quot;Should, have EV charger and meter&quot;,
+    &quot;ProductFamilyName&quot; : &quot;Ev charger&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>EnergyUtilitiesProgramsTransformIntoUniqueProductFamilyList_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

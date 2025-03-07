@@ -1,0 +1,113 @@
+{
+	"rules": [
+		{
+      		"name": "HandleKnowledgeDataCategoryExtraction",
+      		"condition": "${Variables.isDemoApplication == 'Yes'}",
+      		"actions": [
+                {
+                    "action": "put",
+                    "description": "Extract data from KCSArticle_DataCategorySelection__c custom object.",
+                    "key": "Extract_Demo_KnowledgeDataCategory",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "sfdcDigest",
+                        "parameters": {
+                            "fields": [
+                              {
+                                "name": "DataCategoryGroupName__c"
+                              },
+                              {
+                                "name": "DataCategoryName__c"
+                              },
+                              {
+                                "name": "ParentId__c"
+                              }
+                            ],
+                            "object": "KCSArticle_DataCategorySelection__c"
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Rename custom fields after Extract_Demo_KnowledgeDataCategory",
+                    "key": "Extract_Demo_KnowledgeDataCategory_rename_fields",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "computeExpression",
+                        "parameters": {            
+                            "source": "Extract_Demo_KnowledgeDataCategory",
+                            "mergeWithSource": true,
+                            "computedFields": [
+                                {
+                                    "name":"DataCategoryGroupName",
+                                    "type":"Text",
+                                    "saqlExpression":"DataCategoryGroupName__c"
+                                },
+                                {
+                                    "name":"DataCategoryName",
+                                    "type":"Text",
+                                    "saqlExpression":"DataCategoryName__c"
+                                },
+                                {
+                                    "name":"ParentId",
+                                    "type":"Text",
+                                    "saqlExpression":"ParentId__c"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "key": "Extract_Demo_KnowledgeDataCategory_drop_custom",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "sliceDataset",
+                        "parameters": {
+                            "mode": "drop",
+                            "fields": [
+                                {
+                                  "name": "DataCategoryGroupName__c"
+                                },
+                                {
+                                  "name": "DataCategoryName__c"
+                                },
+                                {
+                                  "name": "ParentId__c"
+                                }
+                            ],
+                            "source": "Extract_Demo_KnowledgeDataCategory_rename_fields"
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Final merge of user and demo data for KnowledgeDataCategory.",
+                    "key": "Extract_KnowledgeDataCategory_merge",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "append",
+                        "parameters": {            
+                            "sources": [
+                                "Extract_Demo_KnowledgeDataCategory_drop_custom",
+                                "Extract_Knowledge_DataCategory"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "set",
+                    "description": "Set the right property of Join_Append_Knowledge__kav_dataCategory parameters based on Demo App or not.",
+                    "path": "$.workflowDefinition.Join_Append_Knowledge__kav_dataCategory.parameters['right']",
+                    "value": "Extract_KnowledgeDataCategory_merge"
+                }
+			],						
+			"appliesTo": [
+                {
+                    "type": "workflow",
+                    "name": "*"
+                }
+      		]
+		}
+	]
+}

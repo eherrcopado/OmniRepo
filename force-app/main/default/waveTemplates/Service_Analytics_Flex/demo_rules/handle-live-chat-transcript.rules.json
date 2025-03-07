@@ -1,0 +1,450 @@
+{
+	"rules": [
+		{
+      		"name": "HandleLiveChatTranscriptExtraction",
+      		"condition": "${Variables.isDemoApplication == 'Yes'}",
+      		"actions": [
+                {
+                    "action": "put",
+                    "description": "Extract data from LiveChatTranscript__c custom object.",
+                    "key": "Extract_Demo_LiveChatTranscript",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "sfdcDigest",
+                        "parameters": {
+                            "object": "LiveChatTranscript__c",
+                            "fields": [
+                                {
+                                    "name": "Abandoned__c"
+                                },
+                                {
+                                    "name": "AverageResponseTimeOperator__c"
+                                },
+                                {
+                                    "name": "MaxResponseTimeOperator__c"
+                                },
+                                {
+                                    "name": "OperatorMessageCount__c"
+                                },
+                                {
+                                    "name": "Body__c"
+                                },
+                                {
+                                    "name": "Browser__c"
+                                },
+                                {
+                                    "name": "BrowserLanguage__c"
+                                },
+                                {
+                                    "name": "CaseId__c"
+                                },
+                                {
+                                    "name": "ChatDuration__c"
+                                },
+                                {
+                                    "name": "CreatedDate__c"
+                                },
+                                {
+                                    "name": "IsDeleted"
+                                },
+                                {
+                                    "name": "EndTime__c"
+                                },
+                                {
+                                    "name": "EndedBy__c"
+                                },
+                                {
+                                    "name": "LastModifiedDate"
+                                },
+                                {
+                                    "name": "LastReferencedDate__c"
+                                },
+                                {
+                                    "name": "LastViewedDate__c"
+                                },
+                                {
+                                    "name": "LiveChatButtonId__c"
+                                },
+                                {
+                                    "name": "Id"
+                                },
+                                {
+                                    "name": "Name"
+                                },
+                                {
+                                    "name": "Location__c"
+                                },
+                                {
+                                    "name": "OwnerId__c"
+                                },
+                                {
+                                    "name": "Platform__c"
+                                },
+                                {
+                                    "name": "ReferrerUri__c"
+                                },
+                                {
+                                    "name": "RequestTime__c"
+                                },
+                                {
+                                    "name": "ScreenResolution__c"
+                                },
+                                {
+                                    "name": "StartTime__c"
+                                },
+                                {
+                                    "name": "Status__c"
+                                },
+                                {
+                                    "name": "SupervisorTranscriptBody__c"
+                                },
+                                {
+                                    "name": "SystemModstamp"
+                                },
+                                {
+                                    "name": "UserAgent__c"
+                                },
+                                {
+                                    "name": "AverageResponseTimeVisitor__c"
+                                },
+                                {
+                                    "name": "IpAddress__c"
+                                },
+                                {
+                                    "name": "MaxResponseTimeVisitor__c"
+                                },
+                                {
+                                    "name": "VisitorMessageCount__c"
+                                },
+                                {
+                                    "name": "WaitTime__c"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Rename custom fields after Extract_Demo_LiveChatTranscript",
+                    "key": "Extract_Demo_LiveChatTranscript_rename_fields",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "computeExpression",
+                        "parameters": {            
+                            "source": "Extract_Demo_LiveChatTranscript",
+                            "mergeWithSource": true,
+                            "computedFields": [
+                                {
+                                    "name": "CreatedDate",
+                                    "type": "Date",
+                                    "label": "CreatedDate",
+                                    "saqlExpression": "toDate(CreatedDate__c, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                },
+                                {
+                                    "name":"Abandoned",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"Abandoned__c"
+                                },
+                                {
+                                    "name":"AverageResponseTimeOperator",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"AverageResponseTimeOperator__c"
+                                },
+                                {
+                                    "name":"MaxResponseTimeOperator",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"MaxResponseTimeOperator__c"
+                                },
+                                {
+                                    "name":"OperatorMessageCount",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"OperatorMessageCount__c"
+                                },
+                                {
+                                    "name":"Body",
+                                    "type":"Text",
+                                    "saqlExpression":"Body__c"
+                                },
+                                {
+                                    "name":"Browser",
+                                    "type":"Text",
+                                    "saqlExpression":"Browser__c"
+                                },
+                                {
+                                    "name":"BrowserLanguage",
+                                    "type":"Text",
+                                    "saqlExpression":"BrowserLanguage__c"
+                                },
+                                {
+                                    "name":"CaseId",
+                                    "type":"Text",
+                                    "saqlExpression":"CaseId__c"
+                                },
+                                {
+                                    "name":"ChatDuration",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"ChatDuration__c"
+                                },
+                                {
+                                    "name":"EndTime",
+                                    "type":"Date",
+                                    "saqlExpression": "toDate(EndTime__c, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                },
+                                {
+                                    "name":"EndedBy",
+                                    "type":"Text",
+                                    "saqlExpression":"EndedBy__c"
+                                },
+                                {
+                                    "name":"LastReferencedDate",
+                                    "type":"Date",
+                                    "saqlExpression": "toDate(LastReferencedDate__c, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                },
+                                {
+                                    "name":"LastViewedDate",
+                                    "type":"Date",
+                                    "saqlExpression": "toDate(LastViewedDate__c, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                },
+                                {
+                                    "name":"LiveChatButtonId",
+                                    "type":"Text",
+                                    "saqlExpression":"LiveChatButtonId__c"
+                                },
+                                {
+                                    "name":"Location",
+                                    "type":"Text",
+                                    "saqlExpression":"Location__c"
+                                },
+                                {
+                                    "name":"OwnerId",
+                                    "type":"Text",
+                                    "saqlExpression":"OwnerId__c"
+                                },
+                                {
+                                    "name":"Platform",
+                                    "type":"Text",
+                                    "saqlExpression":"Platform__c"
+                                },
+                                {
+                                    "name":"ReferrerUri",
+                                    "type":"Text",
+                                    "saqlExpression":"ReferrerUri__c"
+                                },
+                                {
+                                    "name":"RequestTime",
+                                    "type":"Date",
+                                    "saqlExpression": "toDate(RequestTime__c, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                },
+                                {
+                                    "name":"ScreenResolution",
+                                    "type":"Text",
+                                    "saqlExpression":"ScreenResolution__c"
+                                },
+                                {
+                                    "name":"StartTime",
+                                    "type":"Date",
+                                    "saqlExpression": "toDate(StartTime__c, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                },
+                                {
+                                    "name":"Status",
+                                    "type":"Text",
+                                    "saqlExpression":"Status__c"
+                                },
+                                {
+                                    "name":"SupervisorTranscriptBody",
+                                    "type":"Text",
+                                    "saqlExpression":"SupervisorTranscriptBody__c"
+                                },
+                                {
+                                    "name":"UserAgent",
+                                    "type":"Text",
+                                    "saqlExpression":"UserAgent__c"
+                                },
+                                {
+                                    "name":"AverageResponseTimeVisitor",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"AverageResponseTimeVisitor__c"
+                                },
+                                {
+                                    "name":"IpAddress",
+                                    "type":"Text",
+                                    "saqlExpression":"IpAddress__c"
+                                },
+                                {
+                                    "name":"MaxResponseTimeVisitor",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"MaxResponseTimeVisitor__c"
+                                },
+                                {
+                                    "name":"VisitorMessageCount",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"VisitorMessageCount__c"
+                                },
+                                {
+                                    "name":"WaitTime",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"WaitTime__c"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "key": "Extract_Demo_LiveChatTranscript_drop_custom",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "sliceDataset",
+                        "parameters": {
+                            "mode": "drop",
+                            "fields": [
+                                {
+                                    "name": "Abandoned__c"
+                                },
+                                {
+                                    "name": "AverageResponseTimeOperator__c"
+                                },
+                                {
+                                    "name": "MaxResponseTimeOperator__c"
+                                },
+                                {
+                                    "name": "OperatorMessageCount__c"
+                                },
+                                {
+                                    "name": "Body__c"
+                                },
+                                {
+                                    "name": "Browser__c"
+                                },
+                                {
+                                    "name": "BrowserLanguage__c"
+                                },
+                                {
+                                    "name": "CaseId__c"
+                                },
+                                {
+                                    "name": "ChatDuration__c"
+                                },
+                                {
+                                    "name": "CreatedDate__c"
+                                },
+                                {
+                                    "name": "EndTime__c"
+                                },
+                                {
+                                    "name": "EndedBy__c"
+                                },
+                                {
+                                    "name": "LastReferencedDate__c"
+                                },
+                                {
+                                    "name": "LastViewedDate__c"
+                                },
+                                {
+                                    "name": "LiveChatButtonId__c"
+                                },
+                                {
+                                    "name": "Location__c"
+                                },
+                                {
+                                    "name": "OwnerId__c"
+                                },
+                                {
+                                    "name": "Platform__c"
+                                },
+                                {
+                                    "name": "ReferrerUri__c"
+                                },
+                                {
+                                    "name": "RequestTime__c"
+                                },
+                                {
+                                    "name": "ScreenResolution__c"
+                                },
+                                {
+                                    "name": "StartTime__c"
+                                },
+                                {
+                                    "name": "Status__c"
+                                },
+                                {
+                                    "name": "SupervisorTranscriptBody__c"
+                                },
+                                {
+                                    "name": "UserAgent__c"
+                                },
+                                {
+                                    "name": "AverageResponseTimeVisitor__c"
+                                },
+                                {
+                                    "name": "IpAddress__c"
+                                },
+                                {
+                                    "name": "MaxResponseTimeVisitor__c"
+                                },
+                                {
+                                    "name": "VisitorMessageCount__c"
+                                },
+                                {
+                                    "name": "WaitTime__c"
+                                }
+                            ],
+                            "source": "Extract_Demo_LiveChatTranscript_rename_fields"
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Final merge of user and demo data for LiveChatTranscript.",
+                    "key": "Extract_LiveChatTranscript_merge",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "append",
+                        "parameters": {            
+                            "sources": [
+                                "Extract_Demo_LiveChatTranscript_drop_custom",
+                                "Extract_LiveChatTranscript"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "set",
+                    "description": "Set the left property of Join_LCTButton parameters based on Demo App or not.",
+                    "path": "$.workflowDefinition.Join_LCTButton.parameters['left']",
+                    "value": "Extract_LiveChatTranscript_merge"
+                }
+			],						
+			"appliesTo": [
+                {
+                    "type": "workflow",
+                    "name": "*"
+                }
+      		]
+		}
+	]
+}

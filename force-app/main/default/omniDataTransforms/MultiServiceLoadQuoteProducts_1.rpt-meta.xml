@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>This fetch records of quote products and used in multi-service bulk actions.</description>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>MultiServiceLoadQuoteProducts</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>MultiService - Load Quote Products4105817547068267</globalKey>
+        <inputFieldName>QLI:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MultiServiceLoadQuoteProducts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>MultiService - Load Quote Products18954577884852042</globalKey>
+        <inputFieldName>QLI:QuoteId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MultiServiceLoadQuoteProducts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>QuoteId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>objectList:Id</filterValue>
+        <globalKey>MultiService - Load Quote Products3945628169069577</globalKey>
+        <inputFieldName>QuoteId</inputFieldName>
+        <inputObjectName>QuoteLineItem</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MultiServiceLoadQuoteProducts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>QLI</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;objectList&quot; : [ {
+    &quot;Id&quot; : &quot;0Q05g000000gjinCAA&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>MultiServiceLoadQuoteProducts_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

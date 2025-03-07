@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;ManageNotificationPreferences&quot; : {
+    &quot;BillNotifications&quot; : null,
+    &quot;DNCFrom&quot; : null,
+    &quot;DNCTo&quot; : null,
+    &quot;OffersPromotions&quot; : null,
+    &quot;OutageNotifications&quot; : null,
+    &quot;PaymentRemindersNotifications&quot; : null,
+    &quot;WorkOrderNotifications&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRExtractAccountPreferences&quot; : null,
+    &quot;DRTransformAccPrefAttr&quot; : null,
+    &quot;DataRaptorTransformAction2&quot; : null,
+    &quot;ManageNotificationPreferences&quot; : null,
+    &quot;PostAccountAttrAssignment&quot; : null,
+    &quot;SVAccNotification&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformUpdatedAccountPref</name>
+    <nullInputsIncludedInOutput>true</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4745</globalKey>
+        <inputFieldName>AccountPref:BillNotifications:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom2807</globalKey>
+        <inputFieldName>AccountPref:DNCFrom:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4272</globalKey>
+        <inputFieldName>AccountPref:BillNotifications:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4014</globalKey>
+        <inputFieldName>ManageNotificationPreferences:BillNotifications</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:ManageNotificationPreferences:DNCFrom &quot;hh:mm/\/\/a&quot; FORMATDATETIME</formulaConverted>
+        <formulaExpression>FORMATDATETIME(%ManageNotificationPreferences:DNCFrom%,&quot;hh:mm a&quot;)</formulaExpression>
+        <formulaResultPath>dncFromTime</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4694</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom931</globalKey>
+        <inputFieldName>AccountPref:PaymentReminders:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom5209</globalKey>
+        <inputFieldName>DNCFromIsActive</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>UpdatedAccountPref|6:isActive</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4510</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:ManageNotificationPreferences:DNCFrom ISBLANK</formulaConverted>
+        <formulaExpression>ISBLANK(%ManageNotificationPreferences:DNCFrom%)</formulaExpression>
+        <formulaResultPath>DNCFromIsDeleted</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom1953</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom6542</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom8296</globalKey>
+        <inputFieldName>AccountPref:DNCFrom:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom892</globalKey>
+        <inputFieldName>AccountPref:BillNotifications:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom5907</globalKey>
+        <inputFieldName>AccountPref:DNCFrom:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:ManageNotificationPreferences:DNCTo &quot;hh:mm/\/\/a&quot; FORMATDATETIME</formulaConverted>
+        <formulaExpression>FORMATDATETIME(%ManageNotificationPreferences:DNCTo%,&quot;hh:mm a&quot;)</formulaExpression>
+        <formulaResultPath>dncToTime</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4313</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom5718</globalKey>
+        <inputFieldName>AccountPref:DNCTo:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4091</globalKey>
+        <inputFieldName>AccountPref:PaymentReminders:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom9084</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom8814</globalKey>
+        <inputFieldName>AccountPref:PaymentReminders:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom2145</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom6648</globalKey>
+        <inputFieldName>ManageNotificationPreferences:PaymentRemindersNotifications</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4680</globalKey>
+        <inputFieldName>DNCFromIsDeleted</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>UpdatedAccountPref|6:isDeleted</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom7521</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom5390</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom910</globalKey>
+        <inputFieldName>AccountPref:PaymentReminders:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom558</globalKey>
+        <inputFieldName>ManageNotificationPreferences:DNCTo</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom9023</globalKey>
+        <inputFieldName>AccountPref:OutageNotifications:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom7451</globalKey>
+        <inputFieldName>AccountPref:DNCTo:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4601</globalKey>
+        <inputFieldName>ManageNotificationPreferences:OutageNotifications</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom5549</globalKey>
+        <inputFieldName>AccountPref:DNCTo:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom1909</globalKey>
+        <inputFieldName>AccountPref:OutageNotifications:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom6818</globalKey>
+        <inputFieldName>AccountPref:DNCTo:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4546</globalKey>
+        <inputFieldName>dncToTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom5105</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom3023</globalKey>
+        <inputFieldName>DNCToIsDeleted</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>UpdatedAccountPref|7:isDeleted</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom5724</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom405</globalKey>
+        <inputFieldName>DNCToIsActive</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>UpdatedAccountPref|7:isActive</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom1758</globalKey>
+        <inputFieldName>AccountPref:OutageNotifications:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom2420</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4097</globalKey>
+        <inputFieldName>AccountPref:OutageNotifications:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:ManageNotificationPreferences:DNCTo ISBLANK</formulaConverted>
+        <formulaExpression>ISBLANK(%ManageNotificationPreferences:DNCTo%)</formulaExpression>
+        <formulaResultPath>DNCToIsDeleted</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4577</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom2274</globalKey>
+        <inputFieldName>AccountPref:OffersPromotions:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom5985</globalKey>
+        <inputFieldName>ManageNotificationPreferences:OffersPromotions</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom5880</globalKey>
+        <inputFieldName>AccountPref:OffersPromotions:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom2541</globalKey>
+        <inputFieldName>AccountPref:BillNotifications:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ManageNotificationPreferences:DNCFrom ISBLANK &quot;false&quot; &quot;true&quot; IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(%ManageNotificationPreferences:DNCFrom%),&quot;false&quot;,&quot;true&quot;)</formulaExpression>
+        <formulaResultPath>DNCFromIsActive</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom7296</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom3900</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom2583</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4580</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom7344</globalKey>
+        <inputFieldName>AccountPref:OffersPromotions:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom8892</globalKey>
+        <inputFieldName>AccountPref:OffersPromotions:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ManageNotificationPreferences:DNCTo ISBLANK &quot;false&quot; &quot;true&quot; IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(%ManageNotificationPreferences:DNCTo%),&quot;false&quot;,&quot;true&quot;)</formulaExpression>
+        <formulaResultPath>DNCToIsActive</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom4637</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom3363</globalKey>
+        <inputFieldName>AccountPref:WorkorderNotifications:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom2808</globalKey>
+        <inputFieldName>ManageNotificationPreferences:WorkOrderNotifications</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom9478</globalKey>
+        <inputFieldName>AccountPref:WorkorderNotifications:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom1223</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom2707</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom468</globalKey>
+        <inputFieldName>AccountPref:WorkorderNotifications:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom1916</globalKey>
+        <inputFieldName>AccountPref:WorkorderNotifications:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom8534</globalKey>
+        <inputFieldName>dncFromTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom8394</globalKey>
+        <inputFieldName>ManageNotificationPreferences:DNCFrom</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformUpdatedAccountPrefCustom7136</globalKey>
+        <inputFieldName>AccountPref:DNCFrom:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformUpdatedAccountPref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountNotificationPreference&quot; : {
+    &quot;AccountId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+    &quot;AccountName&quot; : &quot;Glasgow Dealer&quot;,
+    &quot;Bill Notification&quot; : &quot;Text&quot;,
+    &quot;DNCFrom&quot; : &quot;01:00 AM&quot;,
+    &quot;DNCTo&quot; : &quot;10:00 AM&quot;,
+    &quot;DNDTime&quot; : &quot;01:00 AM - 10:00 AM&quot;,
+    &quot;NotifPreferenceExists&quot; : &quot;true&quot;,
+    &quot;Offers and Promotions&quot; : &quot;Phone&quot;,
+    &quot;Outage Notifications&quot; : &quot;Do Not Contact&quot;,
+    &quot;Payment Reminders and Notifications&quot; : &quot;Phone&quot;,
+    &quot;TotalNotification&quot; : 7,
+    &quot;Work Order Notifications&quot; : &quot;Do Not Contact&quot;
+  },
+  &quot;AccountPref&quot; : {
+    &quot;BillNotifications&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000003LuAQEA0&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h000001KaGlEAK&quot;,
+      &quot;AttrValue&quot; : &quot;Text&quot;,
+      &quot;Category&quot; : &quot;BILL_NOTIFICATIONS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001MfvkEAC&quot;
+    },
+    &quot;DNCFrom&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000003LuAVEA0&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h000001KaGqEAK&quot;,
+      &quot;AttrValue&quot; : &quot;01:00 AM&quot;,
+      &quot;Category&quot; : &quot;DNC_FROM&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001MfvmEAC&quot;
+    },
+    &quot;DNCTo&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000003LuAWEA0&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h000001KaGrEAK&quot;,
+      &quot;AttrValue&quot; : &quot;10:00 AM&quot;,
+      &quot;Category&quot; : &quot;DNC_TO&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001Mg0HEAS&quot;
+    },
+    &quot;OffersPromotions&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000003LuATEA0&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h000001KaGoEAK&quot;,
+      &quot;AttrValue&quot; : &quot;Phone&quot;,
+      &quot;Category&quot; : &quot;OFFERS_PROMOTIONS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001Mfw5EAC&quot;
+    },
+    &quot;OutageNotifications&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000003LuASEA0&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h000001KaGnEAK&quot;,
+      &quot;AttrValue&quot; : &quot;Do Not Contact&quot;,
+      &quot;Category&quot; : &quot;OUTAGE_NOTIFICATIONS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001Mfw4EAC&quot;
+    },
+    &quot;PaymentReminders&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000003LuAREA0&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h000001KaGmEAK&quot;,
+      &quot;AttrValue&quot; : &quot;Phone&quot;,
+      &quot;Category&quot; : &quot;PAYMENT_REMINDERS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001MfvlEAC&quot;
+    },
+    &quot;WorkorderNotifications&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000003LuAUEA0&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h000001KaGpEAK&quot;,
+      &quot;AttrValue&quot; : &quot;Do Not Contact&quot;,
+      &quot;Category&quot; : &quot;WORKORDER_NOTIFICATIONS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001Mfw6EAC&quot;
+    }
+  },
+  &quot;ContextId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+  &quot;LanguageCode&quot; : &quot;en_US&quot;,
+  &quot;ManageNotificationPreferences&quot; : {
+    &quot;BillNotifications&quot; : &quot;Text&quot;,
+    &quot;DNCFrom&quot; : null,
+    &quot;DNCTo&quot; : &quot;10:00 AM&quot;,
+    &quot;OffersPromotions&quot; : &quot;Phone&quot;,
+    &quot;OutageNotifications&quot; : &quot;Do Not Contact&quot;,
+    &quot;PaymentRemindersNotifications&quot; : &quot;Phone&quot;,
+    &quot;WorkOrderNotifications&quot; : &quot;Do Not Contact&quot;
+  },
+  &quot;TotalAttrAssignCount&quot; : 7,
+  &quot;id&quot; : &quot;a2j3h000000tAKJAA2&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://sebanti-tso-energy--vlocity-cmt.visualforce.com&quot;,
+  &quot;testContextId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+  &quot;timeStamp&quot; : &quot;2020-07-17T06:35:11.324Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -420,
+  &quot;vlcPersistentComponent&quot; : { }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformUpdatedAccountPref_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

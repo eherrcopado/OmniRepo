@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>[ {
+  &quot;actions&quot; : { },
+  &quot;displaySequence&quot; : -1,
+  &quot;fields&quot; : {
+    &quot;label&quot; : &quot;Default Purchase Date To End of Plan Duration&quot;,
+    &quot;valuekey&quot; : &quot;a3h4W0000040D6hQAE&quot;
+  },
+  &quot;messages&quot; : [ ],
+  &quot;nameResult&quot; : { },
+  &quot;uiStates&quot; : { }
+}, {
+  &quot;actions&quot; : { },
+  &quot;displaySequence&quot; : -1,
+  &quot;fields&quot; : {
+    &quot;label&quot; : &quot;Test Time Policy&quot;,
+    &quot;valuekey&quot; : &quot;a3h4W0000040NZLQA2&quot;
+  },
+  &quot;messages&quot; : [ ],
+  &quot;nameResult&quot; : { },
+  &quot;uiStates&quot; : { }
+} ]</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;options&quot; : [ {
+    &quot;label&quot; : &quot;Select&quot;,
+    &quot;value&quot; : &quot;&quot;
+  }, {
+    &quot;label&quot; : &quot;label1&quot;,
+    &quot;value&quot; : &quot;val1&quot;
+  } ]
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CPQGetListsOfValuesDR</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetListsOfValuesDRCustoma0P4W00000u7Ig5UAEItem1</globalKey>
+        <inputFieldName>listvalues:fields:valuekey</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetListsOfValuesDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>options:value</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetListsOfValuesDRCustoma0P4W00000u7Ig5UAEItem2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetListsOfValuesDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>options</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{
+  &quot;value&quot; : &quot;&quot;
+}</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetListsOfValuesDRCustoma0P4W00000u7Ig5UAEItem0</globalKey>
+        <inputFieldName>listvalues:fields:label</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetListsOfValuesDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>options:label</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;displaySequence&quot; : -1,
+  &quot;listkey&quot; : &quot;TimePolicies&quot;,
+  &quot;listvalues&quot; : [ {
+    &quot;actions&quot; : { },
+    &quot;displaySequence&quot; : -1,
+    &quot;fields&quot; : {
+      &quot;label&quot; : &quot;Default Purchase Date To End of Plan Duration&quot;,
+      &quot;valuekey&quot; : &quot;a3h4W0000040D6hQAE&quot;
+    },
+    &quot;messages&quot; : [ ],
+    &quot;nameResult&quot; : { },
+    &quot;uiStates&quot; : { }
+  } ],
+  &quot;messages&quot; : [ ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>CPQGetListsOfValuesDR_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

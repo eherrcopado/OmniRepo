@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>For each line item price, calculates the daily total.</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;Id&quot; : &quot;a1v4P00000HtTi8QAF&quot;,
+  &quot;LineItem&quot; : [ {
+    &quot;AccountId&quot; : &quot;0014P000028K0n1&quot;,
+    &quot;Amount&quot; : 54,
+    &quot;Category&quot; : &quot;Usage&quot;,
+    &quot;CurrencyAmount&quot; : 37.47,
+    &quot;Id&quot; : &quot;a1u4P000007eFpEQAU&quot;,
+    &quot;LineItemName&quot; : &quot;SLI-000077776&quot;,
+    &quot;Name&quot; : &quot;Billing Cycle - 9/1/2018 - G&quot;,
+    &quot;OneTime&quot; : &quot;Y&quot;,
+    &quot;Rich Text&quot; : &quot;&lt;p&gt;&lt;a href=\&quot;https://www.cityutilities.net/wp-content/uploads/pricing-gas-residential.pdf\&quot; target=\&quot;_blank\&quot;&gt;https://www.cityutilities.net/wp-content/uploads/pricing-gas-residential.pdf&lt;/a&gt;&lt;/p&gt;&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2018-09-30&quot;,
+    &quot;ServiceName&quot; : &quot;Gas Service&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2018-09-01&quot;,
+    &quot;StatementDate&quot; : &quot;2018-09-01&quot;,
+    &quot;Subtype&quot; : &quot;Gas Service&quot;,
+    &quot;Text&quot; : &quot;&lt;p&gt;&lt;a href=\&quot;https://www.cityutilities.net/wp-content/uploads/pricing-gas-residential.pdf\&quot; target=\&quot;_blank\&quot;&gt;https://www.cityutilities.net/wp-content/uploads/pricing-gas-residential.pdf&lt;/a&gt;&lt;/p&gt;&quot;,
+    &quot;Type&quot; : &quot;Usage&quot;,
+    &quot;UOM&quot; : &quot;53&quot;,
+    &quot;Usage&quot; : 53
+  }, {
+    &quot;AccountId&quot; : &quot;0014P000028K0n1&quot;,
+    &quot;Amount&quot; : 36,
+    &quot;Category&quot; : &quot;Usage&quot;,
+    &quot;CurrencyAmount&quot; : 35.52,
+    &quot;Id&quot; : &quot;a1u4P000007eQUEQA2&quot;,
+    &quot;LineItemName&quot; : &quot;SLI-000079133&quot;,
+    &quot;Name&quot; : &quot;Billing Cycle - 9/1/2018 - G&quot;,
+    &quot;Rich Text&quot; : &quot;&lt;p&gt;&lt;a href=\&quot;https://www.cityutilities.net/wp-content/uploads/pricing-electric-residential.pdf\&quot; target=\&quot;_blank\&quot;&gt;https://www.cityutilities.net/wp-content/uploads/pricing-electric-residential.pdf&lt;/a&gt;&lt;/p&gt;&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2018-09-30&quot;,
+    &quot;ServiceName&quot; : &quot;Electricity Service&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2018-09-01&quot;,
+    &quot;StatementDate&quot; : &quot;2018-09-01&quot;,
+    &quot;Subtype&quot; : &quot;Electricity Service&quot;,
+    &quot;Text&quot; : &quot;&lt;p&gt;&lt;a href=\&quot;https://www.cityutilities.net/wp-content/uploads/pricing-electric-residential.pdf\&quot; target=\&quot;_blank\&quot;&gt;https://www.cityutilities.net/wp-content/uploads/pricing-electric-residential.pdf&lt;/a&gt;&lt;/p&gt;&quot;,
+    &quot;Type&quot; : &quot;Usage&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;0014P000028K0n1&quot;,
+    &quot;Amount&quot; : 22,
+    &quot;Category&quot; : &quot;Usage&quot;,
+    &quot;CurrencyAmount&quot; : 21.11,
+    &quot;Id&quot; : &quot;a1u4P000007eQUJQA2&quot;,
+    &quot;LineItemName&quot; : &quot;SLI-000079134&quot;,
+    &quot;Name&quot; : &quot;Billing Cycle - 9/1/2018 - G&quot;,
+    &quot;OneTime&quot; : &quot;Y&quot;,
+    &quot;Rich Text&quot; : &quot;&lt;p&gt;&lt;a href=\&quot;https://www.cityutilities.net/wp-content/uploads/pricing-water-residential.pdf\&quot; target=\&quot;_blank\&quot;&gt;https://www.cityutilities.net/wp-content/uploads/pricing-water-residential.pdf&lt;/a&gt;&lt;/p&gt;&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2018-09-30&quot;,
+    &quot;ServiceName&quot; : &quot;Water Service&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2018-09-01&quot;,
+    &quot;StatementDate&quot; : &quot;2018-09-01&quot;,
+    &quot;Subtype&quot; : &quot;Water Service&quot;,
+    &quot;Text&quot; : &quot;&lt;p&gt;&lt;a href=\&quot;https://www.cityutilities.net/wp-content/uploads/pricing-water-residential.pdf\&quot; target=\&quot;_blank\&quot;&gt;https://www.cityutilities.net/wp-content/uploads/pricing-water-residential.pdf&lt;/a&gt;&lt;/p&gt;&quot;,
+    &quot;Type&quot; : &quot;Usage&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;0014P000028K0n1&quot;,
+    &quot;Amount&quot; : 5,
+    &quot;Category&quot; : &quot;Service&quot;,
+    &quot;CurrencyAmount&quot; : 4.99,
+    &quot;Id&quot; : &quot;a1u4P000007eGJRQA2&quot;,
+    &quot;LineItemName&quot; : &quot;SLI-000077777&quot;,
+    &quot;Name&quot; : &quot;Billing Cycle - 9/1/2018 - G&quot;,
+    &quot;OneTime&quot; : &quot;Y&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2018-09-30&quot;,
+    &quot;ServiceName&quot; : &quot;Customer Service Charge&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2018-09-01&quot;,
+    &quot;StatementDate&quot; : &quot;2018-09-01&quot;,
+    &quot;Subtype&quot; : &quot;Gas&quot;,
+    &quot;Type&quot; : &quot;Customer Service Charge&quot;,
+    &quot;UOM&quot; : &quot;5&quot;,
+    &quot;Usage&quot; : 5
+  }, {
+    &quot;AccountId&quot; : &quot;0014P000028K0n1&quot;,
+    &quot;Amount&quot; : 1,
+    &quot;Category&quot; : &quot;Billed&quot;,
+    &quot;CurrencyAmount&quot; : 0.71,
+    &quot;Id&quot; : &quot;a1u4P000007eGJSQA2&quot;,
+    &quot;LineItemName&quot; : &quot;SLI-000077778&quot;,
+    &quot;Name&quot; : &quot;Billing Cycle - 9/1/2018 - G&quot;,
+    &quot;OneTime&quot; : &quot;Y&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2018-09-30&quot;,
+    &quot;ServiceName&quot; : &quot;Base Charge&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2018-09-01&quot;,
+    &quot;StatementDate&quot; : &quot;2018-09-01&quot;,
+    &quot;Subtype&quot; : &quot;Gas&quot;,
+    &quot;Type&quot; : &quot;Peak&quot;,
+    &quot;UOM&quot; : &quot;78&quot;,
+    &quot;Usage&quot; : 78
+  } ]
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>StatementLineItemcalculatedailyprice</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>78ab4221-cfe8-4cdb-878c-83ec098ce19f</globalKey>
+        <inputFieldName>LineItem:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>StatementLineItem calculate daily price</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LineItems:Category</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bcbec35b-0b0a-4a1f-aa2d-9ed40b045fca</globalKey>
+        <inputFieldName>LineItem:CurrencyAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>StatementLineItem calculate daily price</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Currency</outputFieldFormat>
+        <outputFieldName>LineItems:Amount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:LineItem:Category &quot;Usage&quot; = var:LineItem:CurrencyAmount 30 / &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(LineItem:Category = &quot;Usage&quot;,LineItem:CurrencyAmount/30,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>LineItem:CostPerDay</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>46acb8dd-48d9-407b-9e89-a7b1fd79d999</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>StatementLineItem calculate daily price</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>953fb7e7-da8a-4b80-86a7-1135146a2b1c</globalKey>
+        <inputFieldName>LineItem:StatementDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>StatementLineItem calculate daily price</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LineItems:StatementDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>08577093-c960-4b48-b351-c0bfb4aeea5e</globalKey>
+        <inputFieldName>LineItem:ServiceName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>StatementLineItem calculate daily price</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LineItems:ServiceName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e0776451-f08d-4a96-b877-909a92834289</globalKey>
+        <inputFieldName>LineItem:LineItemName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>StatementLineItem calculate daily price</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LineItems:LineItemName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>57f4e5b5-608e-43f4-8516-7cb2ee2aa78c</globalKey>
+        <inputFieldName>LineItem:CostPerDay</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>StatementLineItem calculate daily price</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Currency</outputFieldFormat>
+        <outputFieldName>LineItems:CostPerDay</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>84317c7c-61f3-4dd4-aea0-3de9eaee5317</globalKey>
+        <inputFieldName>LineItem:Text</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>StatementLineItem calculate daily price</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LineItems:URL</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;Id&quot; : &quot;a1v4P00000HtTi8QAF&quot;,
+  &quot;LineItem&quot; : [ {
+    &quot;AccountId&quot; : &quot;0014P000028K0n1&quot;,
+    &quot;Amount&quot; : 54,
+    &quot;Category&quot; : &quot;Usage&quot;,
+    &quot;CurrencyAmount&quot; : 53.89,
+    &quot;Id&quot; : &quot;a1u4P000007eFpEQAU&quot;,
+    &quot;LineItemName&quot; : &quot;SLI-000077776&quot;,
+    &quot;Name&quot; : &quot;Billing Cycle - 9/1/2018 - G&quot;,
+    &quot;OneTime&quot; : &quot;Y&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2018-09-30&quot;,
+    &quot;ServiceName&quot; : &quot;Gas Service&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2018-09-01&quot;,
+    &quot;StatementDate&quot; : &quot;2018-09-01&quot;,
+    &quot;Subtype&quot; : &quot;Gas Service&quot;,
+    &quot;Type&quot; : &quot;Usage&quot;,
+    &quot;UOM&quot; : &quot;53&quot;,
+    &quot;Usage&quot; : 53
+  }, {
+    &quot;AccountId&quot; : &quot;0014P000028K0n1&quot;,
+    &quot;Amount&quot; : 5,
+    &quot;Category&quot; : &quot;Service&quot;,
+    &quot;CurrencyAmount&quot; : 4.99,
+    &quot;Id&quot; : &quot;a1u4P000007eGJRQA2&quot;,
+    &quot;LineItemName&quot; : &quot;SLI-000077777&quot;,
+    &quot;Name&quot; : &quot;Billing Cycle - 9/1/2018 - G&quot;,
+    &quot;OneTime&quot; : &quot;Y&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2018-09-30&quot;,
+    &quot;ServiceName&quot; : &quot;Customer Service Charge&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2018-09-01&quot;,
+    &quot;StatementDate&quot; : &quot;2018-09-01&quot;,
+    &quot;Subtype&quot; : &quot;Gas&quot;,
+    &quot;Type&quot; : &quot;Customer Service Charge&quot;,
+    &quot;UOM&quot; : &quot;5&quot;,
+    &quot;Usage&quot; : 5
+  }, {
+    &quot;AccountId&quot; : &quot;0014P000028K0n1&quot;,
+    &quot;Amount&quot; : 1,
+    &quot;Category&quot; : &quot;Billed&quot;,
+    &quot;CurrencyAmount&quot; : 0.71,
+    &quot;Id&quot; : &quot;a1u4P000007eGJSQA2&quot;,
+    &quot;LineItemName&quot; : &quot;SLI-000077778&quot;,
+    &quot;Name&quot; : &quot;Billing Cycle - 9/1/2018 - G&quot;,
+    &quot;OneTime&quot; : &quot;Y&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2018-09-30&quot;,
+    &quot;ServiceName&quot; : &quot;Base Charge&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2018-09-01&quot;,
+    &quot;StatementDate&quot; : &quot;2018-09-01&quot;,
+    &quot;Subtype&quot; : &quot;Gas&quot;,
+    &quot;Type&quot; : &quot;Peak&quot;,
+    &quot;UOM&quot; : &quot;78&quot;,
+    &quot;Usage&quot; : 78
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>StatementLineItemcalculatedailyprice_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

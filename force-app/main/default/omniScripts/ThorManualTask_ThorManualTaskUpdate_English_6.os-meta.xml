@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This OS used for XOM Manual Task Updates</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>English</language>
+    <name>XOM Thor Manual Task</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Get Order Details</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Cancel&quot;,
+  &quot;failureAbortMessage&quot; : &quot;&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Get Order Details&quot;,
+  &quot;message&quot; : { },
+  &quot;namedCredential&quot; : &quot;&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;responseJSONNode&quot; : &quot;showOrderDetails&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;GET&quot;,
+  &quot;restOptions&quot; : {
+    &quot;URIEncode&quot; : false,
+    &quot;cache&quot; : false,
+    &quot;headers&quot; : { },
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : null,
+    &quot;withCredentials&quot; : true
+  },
+  &quot;restPath&quot; : &quot;%uiServicesUrl%/orderManagement/orderItems/%showtaskdetails:data:orderItemId%/view&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;Web&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false,
+  &quot;xmlPostTransformBundle&quot; : &quot;&quot;,
+  &quot;xmlPreTransformBundle&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Rest Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Get Task Details</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Cancel&quot;,
+  &quot;failureAbortMessage&quot; : &quot;&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Get Task Details&quot;,
+  &quot;message&quot; : {
+    &quot;&quot; : &quot;&quot;
+  },
+  &quot;namedCredential&quot; : &quot;true&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;responseJSONNode&quot; : &quot;showtaskdetails&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;GET&quot;,
+  &quot;restOptions&quot; : {
+    &quot;URIEncode&quot; : false,
+    &quot;cache&quot; : false,
+    &quot;headers&quot; : { },
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : null,
+    &quot;withCredentials&quot; : true
+  },
+  &quot;restPath&quot; : &quot;%uiServicesUrl%/orderManagement/orchestrationItem/view/%taskId%&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;Web&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false,
+  &quot;xmlPostTransformBundle&quot; : &quot;&quot;,
+  &quot;xmlPreTransformBundle&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Rest Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Cancel</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;consoleTabLabel&quot; : &quot;New&quot;,
+  &quot;controlWidth&quot; : 2,
+  &quot;label&quot; : &quot;Cancel&quot;,
+  &quot;message&quot; : { },
+  &quot;redirectPageName&quot; : &quot;mobileDone&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcMobileConfirmation.html&quot;,
+  &quot;show&quot; : null,
+  &quot;source&quot; : &quot;&quot;,
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;Redirect&quot;,
+  &quot;validationRequired&quot; : null,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>7.0</sequenceNumber>
+            <type>Done Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Complete</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;controlWidth&quot; : 2,
+  &quot;dataJSON&quot; : false,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;label&quot; : &quot;Complete&quot;,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;message&quot; : { },
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;namedCredential&quot; : &quot;&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;&quot;,
+  &quot;redirectPreviousWidth&quot; : 0,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;completeTaskDetails&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;GET&quot;,
+  &quot;restOptions&quot; : {
+    &quot;URIEncode&quot; : false,
+    &quot;cache&quot; : false,
+    &quot;headers&quot; : { },
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : null,
+    &quot;withCredentials&quot; : true
+  },
+  &quot;restPath&quot; : &quot;%uiServicesUrl%/taskManagement/tasks/%taskId%/complete&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;DoComplete&quot;,
+        &quot;field&quot; : &quot;CompleteFormula&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true, true ],
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;Web&quot;,
+  &quot;validationRequired&quot; : null,
+  &quot;wpm&quot; : true,
+  &quot;xmlPostTransformBundle&quot; : &quot;&quot;,
+  &quot;xmlPreTransformBundle&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Rest Action</type>
+        </childElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Complete Knowledge Message</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 3,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;Complete Knowledge Message&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;Task is completed&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;Not Completed&quot;,
+    &quot;type&quot; : &quot;Warning&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;&quot;,
+        &quot;field&quot; : &quot;completeTaskDetails:data:created&quot;
+      } ]
+    }
+  },
+  &quot;validateExpression&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>11.0</sequenceNumber>
+            <type>Validation</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CompleteFormula</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;dataType&quot; : &quot;Text&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;expression&quot; : &quot;IF((%showtaskdetails:data:state%==&apos;Pending&apos;||%showtaskdetails:data:state%==&apos;Failed&apos;||%showtaskdetails:data:state%==&apos;Ready&apos;||%showtaskdetails:data:state%==&apos;Fatally Failed&apos;||%showtaskdetails:data:state%==&apos;In Progress&apos;||%showtaskdetails:data:state%==&apos;Draft&apos;||%showtaskdetails:data:state%==&apos;Running&apos;)&amp;&amp;((%showtaskdetails:data:parameters:Assigned To Manual Queue Global Key%!=NULL)||(%showtaskdetails:data:parameters:Manual Queue Global Key%!=NULL)), &apos;DoComplete&apos;,&apos;DonotComplete&apos;)&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Formula 1&quot;,
+  &quot;mask&quot; : null,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;restOptions&quot; : {
+    &quot;URIEncode&quot; : false,
+    &quot;cache&quot; : false,
+    &quot;headers&quot; : { },
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : null,
+    &quot;withCredentials&quot; : false
+  },
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;Apex&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Retry</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;controlWidth&quot; : 2,
+  &quot;dataJSON&quot; : false,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;label&quot; : &quot;Retry&quot;,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;message&quot; : { },
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;namedCredential&quot; : &quot;&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;&quot;,
+  &quot;redirectPreviousWidth&quot; : 0,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;completeTaskDetails&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;GET&quot;,
+  &quot;restOptions&quot; : {
+    &quot;URIEncode&quot; : false,
+    &quot;cache&quot; : false,
+    &quot;headers&quot; : { },
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : null,
+    &quot;withCredentials&quot; : true
+  },
+  &quot;restPath&quot; : &quot;%uiServicesUrl%/taskManagement/tasks/%taskId%/switchToReady&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;DoRetry&quot;,
+        &quot;field&quot; : &quot;RetryFormula&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true, true ],
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;Web&quot;,
+  &quot;validationRequired&quot; : null,
+  &quot;wpm&quot; : true,
+  &quot;xmlPostTransformBundle&quot; : &quot;&quot;,
+  &quot;xmlPreTransformBundle&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Rest Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>RetryFormula</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;dataType&quot; : &quot;Text&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;expression&quot; : &quot;IF((%showtaskdetails:data:parameters:Assigned To Manual Queue Global Key%!=NULL)&amp;&amp;((%showtaskdetails:data:type%==&apos;Callout&apos;)||(%showtaskdetails:data:type%==&apos;PushEvent&apos;))&amp;&amp;((%showtaskdetails:data:state%!=&apos;Ready&apos;)&amp;&amp;(%showtaskdetails:data:state%!=&apos;Pending&apos;)), &apos;DoRetry&apos;,&apos;DonotRetry&apos;)&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Retry Formula&quot;,
+  &quot;mask&quot; : null,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;restOptions&quot; : {
+    &quot;URIEncode&quot; : false,
+    &quot;cache&quot; : false,
+    &quot;headers&quot; : { },
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : null,
+    &quot;withCredentials&quot; : false
+  },
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : true,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;Apex&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Set Value</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;xom-manualqueue-task&quot;,
+  &quot;controlWidth&quot; : 2,
+  &quot;elementValueMap&quot; : {
+    &quot;Task Details&quot; : &quot;%showTaskDetails[data] %&quot;
+  },
+  &quot;label&quot; : &quot;selectData&quot;,
+  &quot;message&quot; : { },
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Task Details</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;xom-manualqueue-task&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;dataJSON&quot; : true,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;label&quot; : null,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Validation Meg</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 5,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;validation Message&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;Please Assign Task to Manual Queue for Complete/Retry&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Warning&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : null,
+        &quot;field&quot; : &quot;showtaskdetails:data:parameters:Assigned To Manual Queue Global Key&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : null,
+        &quot;field&quot; : &quot;showtaskdetails:data:parameters:Manual Queue Global Key&quot;
+      } ]
+    }
+  },
+  &quot;validateExpression&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>10.0</sequenceNumber>
+            <type>Validation</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Manual Queue Task</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;cancelLabel&quot; : &quot;&quot;,
+  &quot;cancelMessage&quot; : &quot;&quot;,
+  &quot;completeLabel&quot; : &quot;&quot;,
+  &quot;completeMessage&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;Done&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : null,
+  &quot;nextLabel&quot; : &quot;&quot;,
+  &quot;nextWidth&quot; : 0,
+  &quot;previousLabel&quot; : &quot;&quot;,
+  &quot;previousWidth&quot; : 0,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;&quot;,
+  &quot;saveMessage&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;allowSaveForLater&quot;:false,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;enableKnowledge&quot;:true,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;},{&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;&quot;,&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false}],&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;seedDataJSON&quot;:{},&quot;ssm&quot;:false,&quot;timeTracking&quot;:true,&quot;trackingCustomData&quot;:{},&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
+    <subType>ThorManualTaskUpdate</subType>
+    <type>ThorManualTask</type>
+    <uniqueName>ThorManualTask_ThorManualTaskUpdate_English_6</uniqueName>
+    <versionNumber>6.0</versionNumber>
+    <webComponentKey>00156730-f5bb-c1cb-26ca-5746a0514623</webComponentKey>
+</OmniScript>

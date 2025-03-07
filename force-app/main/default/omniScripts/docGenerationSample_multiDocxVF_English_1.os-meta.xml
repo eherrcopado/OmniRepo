@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Demonstrates how documents can generated using multiple DOCX or PPTX template. Uses VF page for generation. The generated PDF files can be merged into a single output PDF file</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>English</language>
+    <lastPreviewPage>Lightning Universal Page</lastPreviewPage>
+    <name>Multiple Doc - DOCX (VF)</name>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ObjectId</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;debounceValue&quot; : 0,
+  &quot;defaultValue&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Object Id&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : true,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Text</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TemplateType</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;defaultValue&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Template Types&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Microsoft Word .DOCX Template&quot;,
+    &quot;value&quot; : &quot;Microsoft Word .DOCX Template&quot;
+  }, {
+    &quot;name&quot; : &quot;Microsoft Powerpoint .PPTX Template&quot;,
+    &quot;value&quot; : &quot;Microsoft Powerpoint .PPTX Template&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : true,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>EnterDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : &quot;Enter Object Id&quot;,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>MultiGenerateDocumentWordPPT</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;docgensample-object-document-multi-generation-docx-sample&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;documentType&quot; : &quot;word&quot;,
+  &quot;label&quot; : &quot;Proposal&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;ValidateMessage&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>22.0</sequenceNumber>
+            <type>Input Block</type>
+        </childElements>
+        <childElements>
+            <description>For validation purposes</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ValidateMessage</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : null,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;Required variables not set&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;ValidateVariables&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>21.0</sequenceNumber>
+            <type>Validation</type>
+        </childElements>
+        <childElements>
+            <description>For validation purposes
+
+Required Variables:  templates, contextId, templateType</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ValidateVariables</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : null,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;AND( AND( COUNT(%templates%) &gt; 0, %contextId% != NULL ), %templateType% != NULL), AND( %templateType% != &apos;&apos;, %contextId% != &apos;&apos;)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : null,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>20.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GenerateDocument</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : &quot;Generate Document&quot;,
+  &quot;nextLabel&quot; : &quot;Merge PDF Documents&quot;,
+  &quot;nextWidth&quot; : 5,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 0,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>19.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>GeneratePdfMergeDocument</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;docgensample-object-document-pdf-merge&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Generate Pdf Merge Document&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;OR&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Microsoft Word .DOCX Template&quot;,
+        &quot;field&quot; : &quot;TemplateType&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Microsoft Powerpoint .PPTX Template&quot;,
+        &quot;field&quot; : &quot;TemplateType&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>24.0</sequenceNumber>
+            <type>Input Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GenerateMergeDocument</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;chartLabel&quot; : null,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Generate Merge Document&quot;,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 0,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&gt;=&quot;,
+        &quot;data&quot; : &quot;2&quot;,
+        &quot;field&quot; : &quot;CountTemplateSelected&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;generatePdfDocument&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>23.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>AttachFileFormat</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;defaultValue&quot; : &quot;docx&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Attach File Format&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;docx&quot;,
+    &quot;value&quot; : &quot;Microsoft Word&quot;
+  }, {
+    &quot;name&quot; : &quot;pptx&quot;,
+    &quot;value&quot; : &quot;Microsoft PowerPoint&quot;
+  }, {
+    &quot;name&quot; : &quot;pdf&quot;,
+    &quot;value&quot; : &quot;PDF&quot;
+  }, {
+    &quot;name&quot; : &quot;docx,pdf&quot;,
+    &quot;value&quot; : &quot;Word, PDF&quot;
+  }, {
+    &quot;name&quot; : &quot;pptx,pdf&quot;,
+    &quot;value&quot; : &quot;PowerPoint, PDF&quot;
+  }, {
+    &quot;name&quot; : &quot;none&quot;,
+    &quot;value&quot; : &quot;None&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>12.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DocGenerationMechanism</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;defaultValue&quot; : &quot;VlocityClientSide&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : true,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Doc Generation Mechanism&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;VlocityClientSide&quot;,
+    &quot;value&quot; : &quot;VlocityClientSide&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>14.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DocumentViewer</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;defaultValue&quot; : &quot;VlocityClientSideViewer&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Document Viewer&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;VlocityClientSideViewer&quot;,
+    &quot;value&quot; : &quot;VlocityClientSideViewer&quot;
+  }, {
+    &quot;name&quot; : &quot;None&quot;,
+    &quot;value&quot; : &quot;None&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>13.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DownloadFileFormat</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;defaultValue&quot; : &quot;all&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Download File Format&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;all&quot;,
+    &quot;value&quot; : &quot;All&quot;
+  }, {
+    &quot;name&quot; : &quot;docx&quot;,
+    &quot;value&quot; : &quot;Microsoft Word&quot;
+  }, {
+    &quot;name&quot; : &quot;pptx&quot;,
+    &quot;value&quot; : &quot;Microsoft PowerPoint&quot;
+  }, {
+    &quot;name&quot; : &quot;pdf&quot;,
+    &quot;value&quot; : &quot;PDF&quot;
+  }, {
+    &quot;name&quot; : &quot;none&quot;,
+    &quot;value&quot; : &quot;None&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>11.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>PdfGenerationSource</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;defaultValue&quot; : &quot;VlocityClientSide&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : true,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;PDF Generation Source&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;VlocityClientSide&quot;,
+    &quot;value&quot; : &quot;VlocityClientSide&quot;
+  }, {
+    &quot;name&quot; : &quot;Salesforce&quot;,
+    &quot;value&quot; : &quot;Salesforce&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>15.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <description>Values will be set to default if not set</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GenerationOptions</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;chartLabel&quot; : null,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Generation Options&quot;,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetDocumentTemplates</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;bundle&quot; : &quot;DocGenSampleGetDocumentTemplatesForType&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;TemplateType&quot;,
+    &quot;inputParam&quot; : &quot;templateType&quot;
+  } ],
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Get Document Templates&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <description>For validation purposes only</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CountTemplateSelected</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : null,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;COUNT(%PickTemplate:DocumentTemplate%)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;CountTemplateSelected&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>7.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <description>For Validation purposes only</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CountTemplateSelectedMsg</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;Error Message&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;Please select at least one document template&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&gt;=&quot;,
+        &quot;data&quot; : &quot;1&quot;,
+        &quot;field&quot; : &quot;CountTemplateSelected&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Validation</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DocumentTemplate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;docgensample-object-document-template-list&quot;,
+  &quot;accessibleInFutureSteps&quot; : true,
+  &quot;dataJSON&quot; : true,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;label&quot; : &quot;Templates&quot;,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;selectMode&quot; : &quot;Multi&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>8.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>PickTemplate</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&lt;p&gt;Select one or more document templates&lt;/p&gt;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : &quot;Pick a template&quot;,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SelectedTemplateList</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;docgensample-object-document-selected-template-list&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Rearrange Selected Template List&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;OR&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Microsoft Word .DOCX Template&quot;,
+        &quot;field&quot; : &quot;TemplateType&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Microsoft Powerpoint .PPTX Template&quot;,
+        &quot;field&quot; : &quot;TemplateType&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>18.0</sequenceNumber>
+            <type>Input Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>RearrangeSelectedTemplateList</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;chartLabel&quot; : null,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Arrange templates&quot;,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>17.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Optional settings that can be changed to customize document generation</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Set Generation Options</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;attachFileFormat&quot; : &quot;=%GenerationOptions:AttachFileFormat%&quot;,
+    &quot;docGenerationMechanism&quot; : &quot;=%GenerationOptions:DocGenerationMechanism%&quot;,
+    &quot;documentType&quot; : &quot;=%GenerationOptions:DownloadFileFormat%&quot;,
+    &quot;pdfGenerationSource&quot; : &quot;=%GenerationOptions:PdfGenerationSource%&quot;,
+    &quot;pdfViewer&quot; : &quot;=%GenerationOptions:DocumentViewer%&quot;
+  },
+  &quot;label&quot; : null,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>16.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Required variables before proceeding with GenerateDocument</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Set Values</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;contextId&quot; : &quot;=%EnterDetails:ObjectId%&quot;,
+    &quot;templateType&quot; : &quot;=%TemplateType%&quot;,
+    &quot;templates&quot; : &quot;=%PickTemplate:DocumentTemplate%&quot;
+  },
+  &quot;label&quot; : null,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;allowCancel&quot;:true,&quot;allowSaveForLater&quot;:true,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;bLK&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;consoleTabTitle&quot;:null,&quot;currencyCode&quot;:&quot;&quot;,&quot;customPages&quot;:{&quot;ContractPreview&quot;:&quot;ContractAmendmentPreview?verticalMode=true&quot;},&quot;disableUnloadWarn&quot;:true,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;enableKnowledge&quot;:false,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;hideStepChart&quot;:false,&quot;includeCustomization&quot;:true,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;lkObjName&quot;:null,&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;},{&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;&quot;,&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false}],&quot;pubsub&quot;:false,&quot;rtpSeed&quot;:false,&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;seedDataJSON&quot;:{},&quot;showInputWidth&quot;:false,&quot;ssm&quot;:false,&quot;timeTracking&quot;:true,&quot;trackingCustomData&quot;:{},&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
+    <subType>multiDocxVF</subType>
+    <type>docGenerationSample</type>
+    <uniqueName>docGenerationSample_multiDocxVF_English_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>ab00e907-13d0-19ae-68f9-ccdec00c1cea</webComponentKey>
+</OmniScript>

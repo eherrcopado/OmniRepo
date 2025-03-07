@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__EndState__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The new state of the target object as a result of the rules applied. The value is either the To, Alternate or From state of the State Transition depending on the Transition Success.</description>
+    <externalId>false</externalId>
+    <formula>IF(vlocity_cmt__IsTransitionSuccess__c, vlocity_cmt__StateTransitionId__r.vlocity_cmt__To__r.Name, IF(AND(NOT(ISNULL(vlocity_cmt__StateTransitionId__r.vlocity_cmt__Alternate__c)), NOT(ISBLANK(vlocity_cmt__StateTransitionId__r.vlocity_cmt__Alternate__c))), vlocity_cmt__StateTransitionId__r.vlocity_cmt__Alternate__r.Name, vlocity_cmt__StateTransitionId__r.vlocity_cmt__From__r.Name))</formula>
+    <label>End State</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,29 @@
+<apex:page standardController="Case" extensions="slackv2.constants" sidebar="false">
+    <apex:includeLightning />
+    <apex:slds />
+
+    <div id="lightning" style="display:none;">
+        <div id="spinner">
+            <div role="status" class="slds-spinner slds-spinner_medium">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $Lightning.use('{!JSENCODE(namespace)}:lightningOut', function () {
+            document.getElementById('lightning').style.display = 'block';
+            $Lightning.createComponent('{!JSENCODE(namespace)}:messageViewerWrapper', {
+                isClassic: {!'Theme3' == $User.UIThemeDisplayed},
+                recordId : "{!Case.Id}"
+            }, 'lightning', function (component, status, errorMessage) {
+                document.getElementById('spinner').style.display = 'none';
+                if ('SUCCESS' != status) {
+                    document.getElementById('spinner').innerHTML = 'Failed to load Slack Alerts.';
+                }
+            });
+        });
+    </script>
+</apex:page>

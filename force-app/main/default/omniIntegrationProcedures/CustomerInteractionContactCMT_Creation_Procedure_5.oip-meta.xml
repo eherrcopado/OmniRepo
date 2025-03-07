@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;verificationResult&quot;:{&quot;BirthDate&quot;:null,&quot;MailingPostalCode&quot;:null,&quot;Name&quot;:null,&quot;fields&quot;:{&quot;Name&quot;:true,&quot;MailingPostalCode&quot;:true,&quot;BirthDate&quot;:true}},&quot;verificationFieldList&quot;:[&quot;Name&quot;,&quot;MailingPostalCode&quot;,&quot;BirthDate&quot;],&quot;uniqueRequestName&quot;:&quot;InteractionContact&quot;,&quot;resultValueMap&quot;:{&quot;LastName&quot;:&quot;James&quot;,&quot;FirstName&quot;:&quot;Ashley&quot;,&quot;AccountId&quot;:&quot;00146000003lOONAA2&quot;,&quot;BirthDate&quot;:&quot;6/7/1943&quot;,&quot;MailingPostalCode&quot;:null,&quot;Email&quot;:&quot;ajames@uog.com&quot;,&quot;MailingStreet&quot;:&quot;&quot;,&quot;Name&quot;:&quot;Ashley James&quot;},&quot;resultFieldsLabelTypeMap&quot;:{&quot;BirthDate&quot;:{&quot;label&quot;:&quot;Birthdate&quot;,&quot;datatype&quot;:&quot;date&quot;},&quot;MailingPostalCode&quot;:{&quot;label&quot;:&quot;Mailing Zip/Postal Code&quot;,&quot;datatype&quot;:&quot;text&quot;},&quot;Email&quot;:{&quot;label&quot;:&quot;Email&quot;,&quot;datatype&quot;:null},&quot;MailingStreet&quot;:{&quot;label&quot;:&quot;Mailing Street&quot;,&quot;datatype&quot;:&quot;text&quot;},&quot;Name&quot;:{&quot;label&quot;:&quot;Full Name&quot;,&quot;datatype&quot;:&quot;text&quot;}},&quot;resultFieldList&quot;:[&quot;Name&quot;,&quot;MailingStreet&quot;,&quot;Email&quot;],&quot;request&quot;:{&quot;searchValueMap&quot;:{&quot;FirstName&quot;:&quot;*&quot;,&quot;LastName&quot;:null},&quot;searchType&quot;:&quot;Caller Identification&quot;,&quot;searchObjectName&quot;:&quot;Contact&quot;,&quot;searchObjectLabel&quot;:&quot;Agent&quot;,&quot;searchFieldsLabelTypeMap&quot;:{&quot;FirstName&quot;:{&quot;label&quot;:&quot;First Name&quot;,&quot;datatype&quot;:&quot;text&quot;},&quot;LastName&quot;:{&quot;label&quot;:&quot;Last Name&quot;,&quot;datatype&quot;:&quot;text&quot;}},&quot;searchFieldList&quot;:[&quot;FirstName&quot;,&quot;LastName&quot;],&quot;requestUniqueName&quot;:&quot;InteractionContact&quot;,&quot;referenceObjectName&quot;:null,&quot;recordOffset&quot;:null,&quot;previousSearchResults&quot;:null,&quot;lastRecordId&quot;:null,&quot;isClassBased&quot;:false,&quot;fieldPicklistValues&quot;:{},&quot;displaySequence&quot;:2,&quot;continueSearch&quot;:false,&quot;additionalData&quot;:null},&quot;recordId&quot;:&quot;00346000002HMFyAAO&quot;,&quot;optionalVerificationFieldList&quot;:[],&quot;numOfOptionalVerificationFields&quot;:null,&quot;moreRequests&quot;:null,&quot;interactionObjName&quot;:&quot;CustomerInteractionContactCMT&quot;,&quot;integrationProcName&quot;:&quot;CustomerInteractionContactCMT_Creation&quot;,&quot;drBundleName&quot;:null,&quot;consoleCardLayout&quot;:null,&quot;parentId&quot;:null}</customJavaScript>
+    <description>Create Customer Interaction</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>CreateCustomerInteractionContactCMT</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CreateCMTInteractionTopic</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;CreateContactInteractionTopic&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;DataRaptorPostAction2&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CreateInteraction</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;CreateInteractionContact&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;DataRaptor Post Action 1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ExtractAccountFromContact</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;ExtractAccountFromContact&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;TransformNewInteraction:NewInteraction:ContactId&quot;,
+    &quot;inputParam&quot; : &quot;ContactId&quot;
+  } ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;DataRaptorExtractAction2&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ExtractAssetBasedOnAccount</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;ExtractAssetBasedOnAccount&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;DataRaptorExtractAction2&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;ExtractAccountFromContact&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Response Action</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Response Action 1&quot;,
+  &quot;responseDefaultData&quot; : {
+    &quot;InteractionId&quot; : &quot;%TransformNewInteraction:NewInteraction:Id%&quot;,
+    &quot;InteractionName&quot; : &quot;%TransformNewInteraction:NewInteraction:Name%&quot;
+  },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>TransformNewInteraction</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;TransformNewInteraction&quot;,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;DataRaptor Transform Action 1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;sendOnlyFailureResponse&quot; : false,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessKey>CustomerInteractionContactCMT_Creation</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;seedDataJSON&quot; : { },
+  &quot;timeTracking&quot; : true,
+  &quot;trackingCustomData&quot; : { }
+}</propertySetConfig>
+    <subType>Creation</subType>
+    <type>CustomerInteractionContactCMT</type>
+    <uniqueName>CustomerInteractionContactCMT_Creation_Procedure_5</uniqueName>
+    <versionNumber>5.0</versionNumber>
+    <webComponentKey>f99b6a4f-d180-2d01-b8b4-0d28d36b972c</webComponentKey>
+</OmniIntegrationProcedure>

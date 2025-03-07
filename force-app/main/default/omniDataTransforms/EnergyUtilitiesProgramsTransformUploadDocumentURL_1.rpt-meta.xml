@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>This DR is used to get the uploaded document url</description>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>EnergyUtilitiesProgramsTransformUploadDocumentURL</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>EnergyUtilitiesProgramsTransformUploadDocumentURLCustom646</globalKey>
+        <inputFieldName>UploadDocument</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>EnergyUtilitiesProgramsTransformUploadDocumentURL</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UploadDocument</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>var:DRGetSiteURL:SiteURL &quot;/sfc/servlet.shepherd/version/download/&quot; + var:UploadDocument:File:vId +</formulaConverted>
+        <formulaExpression>DRGetSiteURL:SiteURL + &quot;/sfc/servlet.shepherd/version/download/&quot; + UploadDocument:File:vId</formulaExpression>
+        <formulaResultPath>UploadDocument:File:DocumentURL</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>EnergyUtilitiesProgramsTransformUploadDocumentURLCustom5774</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>EnergyUtilitiesProgramsTransformUploadDocumentURL</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;DRGetSiteURL&quot; : {
+    &quot;SiteURL&quot; : &quot;https://euc-shieldtest.my.site.com/service&quot;
+  },
+  &quot;UploadDocument&quot; : {
+    &quot;File&quot; : [ {
+      &quot;data&quot; : &quot;069RO0000004opkYAA&quot;,
+      &quot;deleteLabel&quot; : &quot;Delete package.xml&quot;,
+      &quot;filename&quot; : &quot;package.xml&quot;,
+      &quot;size&quot; : 203,
+      &quot;vId&quot; : &quot;068RO00000056dnYAA&quot;
+    } ]
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>EnergyUtilitiesProgramsTransformUploadDocumentURL_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

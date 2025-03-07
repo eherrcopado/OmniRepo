@@ -1,0 +1,1093 @@
+{
+    "format": "R3",
+    "label": "Main Recipe",
+    "lastTime": null,
+    "name": "RevInsightsMainRecipe",
+    "publishingTarget": "DATASET",
+    "recipeDefinition": {
+        "nodes": {
+            "EDIT_ATTRIBUTES0": {
+                "action": "schema",
+                "parameters": {
+                    "fields": [
+                        {
+                            "name": "LastModifiedDate_formula",
+                            "newProperties": {
+                                "label": "User.UniqueUserName",
+                                "name": "User.UniqueUserName"
+                            }
+                        }
+                    ]
+                },
+                "sources": [
+                    "FORMULA0"
+                ]
+            },
+            "EDIT_ATTRIBUTES1": {
+                "action": "schema",
+                "parameters": {
+                    "fields": [
+                        {
+                            "name": "User.UniqueUserName_formula",
+                            "newProperties": {
+                                "label": "User.Name",
+                                "name": "User.Name"
+                            }
+                        }
+                    ]
+                },
+                "sources": [
+                    "FORMULA1"
+                ]
+            },
+            "EDIT_ATTRIBUTES15": {
+                "action": "schema",
+                "parameters": {
+                    "fields": [
+                        {
+                            "name": "Owner.Role.RoleNames",
+                            "newProperties": {
+                                "label": "RoleNames",
+                                "name": "User.Role.RoleNames"
+                            }
+                        }
+                    ]
+                },
+                "sources": [
+                    "EDIT_ATTRIBUTES9"
+                ]
+            },
+            "EDIT_ATTRIBUTES16": {
+                "action": "schema",
+                "parameters": {
+                    "fields": [
+                        {
+                            "name": "LastModifiedDate_formula",
+                            "newProperties": {
+                                "label": "Username",
+                                "name": "User.Username"
+                            }
+                        }
+                    ]
+                },
+                "sources": [
+                    "FORMULA6"
+                ]
+            },
+            "EDIT_ATTRIBUTES2": {
+                "action": "schema",
+                "parameters": {
+                    "fields": [
+                        {
+                            "name": "LastModifiedDate_formula",
+                            "newProperties": {
+                                "label": "User.SmallPhotoUrl",
+                                "name": "User.SmallPhotoUrl"
+                            }
+                        }
+                    ]
+                },
+                "sources": [
+                    "FORMULA2"
+                ]
+            },
+            "EDIT_ATTRIBUTES9": {
+                "action": "schema",
+                "parameters": {
+                    "fields": [
+                        {
+                            "name": "LastModifiedDate_formula",
+                            "newProperties": {
+                                "label": "User.Role.Name",
+                                "name": "User.Role.Name"
+                            }
+                        }
+                    ]
+                },
+                "sources": [
+                    "EDIT_ATTRIBUTES2"
+                ]
+            },
+            "FILTER2": {
+                "action": "filter",
+                "parameters": {
+                    "filterExpressions": [
+                        {
+                            "field": "Id",
+                            "operands": [],
+                            "operator": "IS_NOT_NULL",
+                            "type": "TEXT"
+                        }
+                    ]
+                },
+                "sources": [
+                    "JOIN0"
+                ]
+            },
+            "FILTER3": {
+                "action": "filter",
+                "parameters": {
+                    "filterExpressions": [
+                        {
+                            "field": "ForecastingType.DeveloperName",
+                            "operands": ["${Variables.Forecasting_Types}"],
+                            "operator": "EQUAL",
+                            "type": "TEXT"
+                        }
+                    ]
+                },
+                "sources": [
+                    "JOIN14"
+                ]
+            },
+            "FORMULA0": {
+                "action": "formula",
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [
+                        {
+                            "defaultValue": "",
+                            "formulaExpression": "\"Owner.UniqueUserName\"",
+                            "label": "User.UniqueUserName",
+                            "name": "LastModifiedDate_formula",
+                            "precision": 255,
+                            "type": "TEXT"
+                        }
+                    ]
+                },
+                "sources": [
+                    "LOAD_DATASET0"
+                ]
+            },
+            "FORMULA1": {
+                "action": "formula",
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [
+                        {
+                            "defaultValue": "",
+                            "formulaExpression": "\"Owner.Name\"",
+                            "label": "User.Name",
+                            "name": "User.UniqueUserName_formula",
+                            "precision": 255,
+                            "type": "TEXT"
+                        }
+                    ]
+                },
+                "sources": [
+                    "EDIT_ATTRIBUTES0"
+                ]
+            },
+            "FORMULA2": {
+                "action": "formula",
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [
+                        {
+                            "defaultValue": "",
+                            "formulaExpression": "\"Owner.SmallPhotoUrl\"",
+                            "label": "User.SmallPhotoUrl",
+                            "name": "LastModifiedDate_formula",
+                            "precision": 255,
+                            "type": "TEXT"
+                        }
+                    ]
+                },
+                "sources": [
+                    "EDIT_ATTRIBUTES1"
+                ]
+            },
+            "FORMULA6": {
+                "action": "formula",
+                "parameters": {
+                    "expressionType": "SQL",
+                    "fields": [
+                        {
+                            "defaultValue": "",
+                            "formulaExpression": "\"Owner.Username\"",
+                            "label": "Username",
+                            "name": "LastModifiedDate_formula",
+                            "precision": 255,
+                            "type": "TEXT"
+                        }
+                    ]
+                },
+                "sources": [
+                    "EDIT_ATTRIBUTES15"
+                ]
+            },
+            "JOIN0": {
+                "action": "join",
+                "parameters": {
+                    "joinType": "LOOKUP",
+                    "leftKeys": [
+                        "Id"
+                    ],
+                    "rightKeys": [
+                        "WhatId"
+                    ],
+                    "rightQualifier": "Activity"
+                },
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "fields": [
+                            "Activity.Opp.AccountId",
+                            "Activity.Owner.Username",
+                            "Activity.WhoId",
+                            "Activity.Id",
+                            "Activity.Opp.Owner.Name",
+                            "Activity.Opp.Account.Name",
+                            "Activity.WhatId",
+                            "Activity.OwnerId",
+                            "Activity.Opp.Id",
+                            "Activity.CreatedById"
+                        ],
+                        "ignoreMissingFields": true,
+                        "mode": "DROP"
+                    }
+                },
+                "sources": [
+                    "EDIT_ATTRIBUTES16",
+                    "LOAD_DATASET1"
+                ]
+            },
+            "JOIN13": {
+                "action": "join",
+                "parameters": {
+                    "joinType": "LOOKUP",
+                    "leftKeys": [
+                        "QuotaOwnerId"
+                    ],
+                    "rightKeys": [
+                        "Id"
+                    ],
+                    "rightQualifier": "Quota"
+                },
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "fields": [
+                            "Quota.isDuplicate",
+                            "Quota.Roles.Id"
+                        ],
+                        "ignoreMissingFields": true,
+                        "mode": "DROP"
+                    }
+                },
+                "sources": [
+                    "LOAD_DATASET2",
+                    "LOAD_DATASET12"
+                ]
+            },
+            "JOIN14": {
+                "action": "join",
+                "parameters": {
+                    "joinType": "LOOKUP",
+                    "leftKeys": [
+                        "ForecastingTypeId"
+                    ],
+                    "rightKeys": [
+                        "Id"
+                    ],
+                    "rightQualifier": "ForecastingType"
+                },
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "fields": [
+                            "ForecastingType.Id"
+                        ],
+                        "ignoreMissingFields": true,
+                        "mode": "DROP"
+                    }
+                },
+                "sources": [
+                    "LOAD_DATASET6",
+                    "LOAD_DATASET8"
+                ]
+            },
+            "JOIN15": {
+                "action": "join",
+                "parameters": {
+                    "joinType": "LOOKUP",
+                    "leftKeys": [
+                        "PeriodId"
+                    ],
+                    "rightKeys": [
+                        "Id"
+                    ],
+                    "rightQualifier": "Period"
+                },
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "fields": [
+                            "Period.Id",
+                            "Period.FiscalYearSettingsId"
+                        ],
+                        "ignoreMissingFields": true,
+                        "mode": "DROP"
+                    }
+                },
+                "sources": [
+                    "FILTER3",
+                    "LOAD_DATASET7"
+                ]
+            },
+            "JOIN16": {
+                "action": "join",
+                "parameters": {
+                    "joinType": "LOOKUP",
+                    "leftKeys": [
+                        "OwnerId"
+                    ],
+                    "rightKeys": [
+                        "Id"
+                    ],
+                    "rightQualifier": "User"
+                },
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "fields": [
+                            "User.Roles.Id"
+                        ],
+                        "ignoreMissingFields": true,
+                        "mode": "DROP"
+                    }
+                },
+                "sources": [
+                    "JOIN15",
+                    "LOAD_DATASET12"
+                ]
+            },
+            "JOIN18": {
+                "action": "join",
+                "parameters": {
+                    "joinType": "LOOKUP",
+                    "leftKeys": [
+                        "SplitTypeId"
+                    ],
+                    "rightKeys": [
+                        "Id"
+                    ],
+                    "rightQualifier": "SplitType"
+                },
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "fields": [
+                            "SplitType.Id"
+                        ],
+                        "ignoreMissingFields": true,
+                        "mode": "DROP"
+                    }
+                },
+                "sources": [
+                    "LOAD_DATASET10",
+                    "LOAD_DATASET11"
+                ]
+            },
+            "JOIN19": {
+                "action": "join",
+                "parameters": {
+                    "joinType": "LOOKUP",
+                    "leftKeys": [
+                        "SplitOwnerId"
+                    ],
+                    "rightKeys": [
+                        "Id"
+                    ],
+                    "rightQualifier": "User"
+                },
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "fields": [
+                            "User.Id",
+                            "User.ManagerId",
+                            "User.isDuplicate"
+                        ],
+                        "ignoreMissingFields": true,
+                        "mode": "DROP"
+                    }
+                },
+                "sources": [
+                    "JOIN18",
+                    "LOAD_DATASET12"
+                ]
+            },
+            "JOIN20": {
+                "action": "join",
+                "parameters": {
+                    "joinType": "LOOKUP",
+                    "leftKeys": [
+                        "OpportunityId"
+                    ],
+                    "rightKeys": [
+                        "Id"
+                    ],
+                    "rightQualifier": "Opportunity"
+                },
+                "schema": {
+                    "fields": [],
+                    "slice": {
+                        "fields": [
+                            "Opportunity.LastModifiedDate",
+                            "Opportunity.Account.Owner.UniqueUserName",
+                            "Opportunity.Pricebook.CreatedDate",
+                            "Opportunity.HasOpenActivity",
+                            "Opportunity.Account.Owner.Role.Roles",
+                            "Opportunity.Account.ParentId",
+                            "Opportunity.Pricebook.Id",
+                            "Opportunity.Pricebook2Id",
+                            "Opportunity.Id",
+                            "Opportunity.Pricebook.IsActive",
+                            "Opportunity.Pricebook.IsArchived",
+                            "Opportunity.Pricebook.IsDeleted",
+                            "Opportunity.Pricebook.Product2Id",
+                            "Opportunity.Pricebook.LastModifiedDate",
+                            "Opportunity.OwnerId",
+                            "Opportunity.Account.Owner.Username",
+                            "Opportunity.Account.OwnerId",
+                            "Opportunity.Pricebook.Name",
+                            "Opportunity.Pricebook.UseStandardPrice",
+                            "Opportunity.Account.Owner.Name",
+                            "Opportunity.Pricebook.Pricebook2Id",
+                            "Opportunity.Account.Owner.Email",
+                            "Opportunity.Pricebook.ProductCode"
+                        ],
+                        "ignoreMissingFields": true,
+                        "mode": "DROP"
+                    }
+                },
+                "sources": [
+                    "JOIN19",
+                    "EDIT_ATTRIBUTES16"
+                ]
+            },
+            "LOAD_DATASET0": {
+                "action": "load",
+                "parameters": {
+                    "dataset": {
+                        "label": "Opportunity",
+                        "name": "${App.Datasets.Opportunity.FullyQualifiedName}",
+                        "type": "analyticsDataset"
+                    },
+                    "fields": [],
+                    "sampleDetails": {
+                        "sortBy": [],
+                        "type": "TopN"
+                    }
+                },
+                "sources": []
+            },
+            "LOAD_DATASET1": {
+                "action": "load",
+                "parameters": {
+                    "dataset": {
+                        "label": "Activity",
+                        "name": "${App.Datasets.Activity.FullyQualifiedName}",
+                        "type": "analyticsDataset"
+                    },
+                    "fields": [],
+                    "sampleDetails": {
+                        "sortBy": [],
+                        "type": "TopN"
+                    }
+                },
+                "sources": []
+            },
+            "LOAD_DATASET10": {
+                "action": "load",
+                "parameters": {
+                    "dataset": {
+                        "connectionName": "SFDC_LOCAL",
+                        "label": "OpportunitySplit",
+                        "sourceObjectName": "OpportunitySplit",
+                        "type": "connectedDataset"
+                    },
+                    "fields": [
+                        "Id",
+                        "Split",
+                        "CreatedDate",
+                        "LastModifiedDate",
+                        "OpportunityId",
+                        "SplitOwnerId",
+                        "SplitPercentage",
+                        "SplitNote",
+                        "SplitTypeId",
+                        "${Variables.OpportunitySplit_Amount.fieldName}"
+                    ],
+                    "sampleDetails": {
+                        "sortBy": [],
+                        "type": "TopN"
+                    }
+                },
+                "sources": []
+            },
+            "LOAD_DATASET11": {
+                "action": "load",
+                "parameters": {
+                    "dataset": {
+                        "connectionName": "SFDC_LOCAL",
+                        "label": "OpportunitySplitType",
+                        "sourceObjectName": "OpportunitySplitType",
+                        "type": "connectedDataset"
+                    },
+                    "fields": [
+                        "Id",
+                        "DeveloperName",
+                        "MasterLabel"
+                    ],
+                    "sampleDetails": {
+                        "sortBy": [],
+                        "type": "TopN"
+                    }
+                },
+                "sources": []
+            },
+            "LOAD_DATASET12": {
+                "action": "load",
+                "parameters": {
+                    "dataset": {
+                        "label": "UserRole",
+                        "name": "${App.Datasets.userrole_revinsights.FullyQualifiedName}",
+                        "type": "analyticsDataset"
+                    },
+                    "fields": [],
+                    "sampleDetails": {
+                        "sortBy": [],
+                        "type": "TopN"
+                    }
+                },
+                "sources": []
+            },
+            "LOAD_DATASET2": {
+                "action": "load",
+                "parameters": {
+                    "dataset": {
+                        "connectionName": "SFDC_LOCAL",
+                        "label": "ForecastingQuota",
+                        "sourceObjectName": "ForecastingQuota",
+                        "type": "connectedDataset"
+                    },
+                    "fields": [
+                        "Id",
+                        "PeriodId",
+                        "StartDate",
+                        "ProductFamily",
+                        "QuotaAmount",
+                        "QuotaQuantity",
+                        "QuotaOwnerId",
+                        "IsAmount",
+                        "ForecastingTypeId"
+                    ],
+                    "sampleDetails": {
+                        "sortBy": [],
+                        "type": "TopN"
+                    }
+                },
+                "sources": []
+            },
+            "LOAD_DATASET6": {
+                "action": "load",
+                "parameters": {
+                    "dataset": {
+                        "connectionName": "SFDC_LOCAL",
+                        "label": "ForecastingItem",
+                        "sourceObjectName": "ForecastingItem",
+                        "type": "connectedDataset"
+                    },
+                    "fields": [
+                        "Id",
+                        "OwnerId",
+                        "PeriodId",
+                        "ForecastingItemCategory",
+                        "ForecastCategoryName",
+                        "AmountWithoutAdjustments",
+                        "AmountWithoutManagerAdjustment",
+                        "ForecastAmount",
+                        "IsAmount",
+                        "HasAdjustment",
+                        "HasOwnerAdjustment",
+                        "ForecastingTypeId",
+                        "AmountWithoutOwnerAdjustment"
+                    ],
+                    "sampleDetails": {
+                        "sortBy": [],
+                        "type": "TopN"
+                    }
+                },
+                "sources": []
+            },
+            "LOAD_DATASET7": {
+                "action": "load",
+                "parameters": {
+                    "dataset": {
+                        "connectionName": "SFDC_LOCAL",
+                        "label": "Period",
+                        "sourceObjectName": "Period",
+                        "type": "connectedDataset"
+                    },
+                    "fields": [
+                        "Id",
+                        "FiscalYearSettingsId",
+                        "Type",
+                        "StartDate",
+                        "EndDate",
+                        "IsForecastPeriod"
+                    ],
+                    "sampleDetails": {
+                        "sortBy": [],
+                        "type": "TopN"
+                    }
+                },
+                "sources": []
+            },
+            "LOAD_DATASET8": {
+                "action": "load",
+                "parameters": {
+                    "dataset": {
+                        "connectionName": "SFDC_LOCAL",
+                        "label": "ForecastingType",
+                        "sourceObjectName": "ForecastingType",
+                        "type": "connectedDataset"
+                    },
+                    "fields": [
+                        "Id",
+                        "DeveloperName",
+                        "MasterLabel",
+                        "IsActive",
+                        "IsQuantity",
+                        "IsAmount"
+                    ],
+                    "sampleDetails": {
+                        "sortBy": [],
+                        "type": "TopN"
+                    }
+                },
+                "sources": []
+            },
+            "OUTPUT0": {
+                "action": "save",
+                "parameters": {
+                    "dataset": {
+                        "folderName": "${App.Folder.FullyQualifiedName}",
+                        "label": "Opportunity RevInsights",
+                        "name": "${App.Datasets.opportunity_revinsights.Name}",
+                        "rowLevelSecurityFilter": "'Owner.Roles.Roles' == \"$User.UserRoleId\" || 'OwnerId' == \"$User.Id\" || 'Account.OwnerId' == \"$User.Id\"",
+                        "type": "analyticsDataset"
+                    },
+                    "fields": []
+                },
+                "sources": [
+                    "FILTER2"
+                ]
+            },
+            "OUTPUT1": {
+                "action": "save",
+                "parameters": {
+                    "dataset": {
+                        "folderName": "${App.Folder.FullyQualifiedName}",
+                        "label": "Forecasting Quota",
+                        "name": "${App.Datasets.forecastingquota_revinsights.Name}",
+                        "rowLevelSecurityFilter": "'Quota.Roles.Roles' == \"$User.UserRoleId\" || 'Quota.Id' == \"$User.Id\"",
+                        "type": "analyticsDataset"
+                    },
+                    "fields": []
+                },
+                "sources": [
+                    "JOIN13"
+                ]
+            },
+            "OUTPUT3": {
+                "action": "save",
+                "parameters": {
+                    "dataset": {
+                        "folderName": "${App.Folder.FullyQualifiedName}",
+                        "label": "Forecast",
+                        "name": "${App.Datasets.forecast_revinsights.Name}",
+                        "rowLevelSecurityFilter": "'User.Roles.Roles' == \"$User.UserRoleId\" || 'User.Id' == \"$User.Id\"",
+                        "type": "analyticsDataset"
+                    },
+                    "fields": []
+                },
+                "sources": [
+                    "JOIN16"
+                ]
+            },
+            "OUTPUT5": {
+                "action": "save",
+                "parameters": {
+                    "dataset": {
+                        "folderName": "${App.Folder.FullyQualifiedName}",
+                        "label": "Opportunity Splits",
+                        "name": "${App.Datasets.opportunitysplits_revinsights.Name}",
+                        "type": "analyticsDataset"
+                    },
+                    "fields": []
+                },
+                "sources": [
+                    "JOIN20"
+                ]
+            }
+        },
+        "ui": {
+            "connectors": [
+                {
+                    "source": "LOAD_DATASET0",
+                    "target": "TRANSFORM0"
+                },
+                {
+                    "source": "TRANSFORM0",
+                    "target": "JOIN0"
+                },
+                {
+                    "source": "LOAD_DATASET1",
+                    "target": "JOIN0"
+                },
+                {
+                    "source": "FILTER2",
+                    "target": "OUTPUT0"
+                },
+                {
+                    "source": "LOAD_DATASET2",
+                    "target": "JOIN13"
+                },
+                {
+                    "source": "JOIN13",
+                    "target": "OUTPUT1"
+                },
+                {
+                    "source": "LOAD_DATASET6",
+                    "target": "JOIN14"
+                },
+                {
+                    "source": "LOAD_DATASET8",
+                    "target": "JOIN14"
+                },
+                {
+                    "source": "FILTER3",
+                    "target": "JOIN15"
+                },
+                {
+                    "source": "LOAD_DATASET7",
+                    "target": "JOIN15"
+                },
+                {
+                    "source": "JOIN15",
+                    "target": "JOIN16"
+                },
+                {
+                    "source": "JOIN16",
+                    "target": "OUTPUT3"
+                },
+                {
+                    "source": "JOIN0",
+                    "target": "FILTER2"
+                },
+                {
+                    "source": "LOAD_DATASET10",
+                    "target": "JOIN18"
+                },
+                {
+                    "source": "LOAD_DATASET11",
+                    "target": "JOIN18"
+                },
+                {
+                    "source": "JOIN18",
+                    "target": "JOIN19"
+                },
+                {
+                    "source": "JOIN19",
+                    "target": "JOIN20"
+                },
+                {
+                    "source": "TRANSFORM0",
+                    "target": "JOIN20"
+                },
+                {
+                    "source": "JOIN20",
+                    "target": "OUTPUT5"
+                },
+                {
+                    "source": "LOAD_DATASET12",
+                    "target": "JOIN19"
+                },
+                {
+                    "source": "LOAD_DATASET12",
+                    "target": "JOIN16"
+                },
+                {
+                    "source": "LOAD_DATASET12",
+                    "target": "JOIN13"
+                },
+                {
+                    "source": "JOIN14",
+                    "target": "FILTER3"
+                }
+            ],
+            "hiddenColumns": [],
+            "nodes": {
+                "FILTER2": {
+                    "description": "",
+                    "label": "FilterOpps",
+                    "left": 532,
+                    "top": 112,
+                    "type": "FILTER"
+                },
+                "FILTER3": {
+                    "description": "",
+                    "label": "Filter Forecast Types",
+                    "left": 392,
+                    "top": 1092,
+                    "type": "FILTER"
+                },
+                "JOIN0": {
+                    "description": "",
+                    "label": "Join Activity onto Opportunity",
+                    "left": 392,
+                    "top": 112,
+                    "type": "JOIN"
+                },
+                "JOIN13": {
+                    "description": "",
+                    "label": "Join UserRoles onto ForecastingQuota",
+                    "left": 1512,
+                    "top": 531.9,
+                    "type": "JOIN"
+                },
+                "JOIN14": {
+                    "description": "",
+                    "label": "Join ForecastingType onto ForecastingItem",
+                    "left": 252,
+                    "top": 1092,
+                    "type": "JOIN"
+                },
+                "JOIN15": {
+                    "description": "",
+                    "label": "Join Period onto ForecastingItem",
+                    "left": 392,
+                    "top": 1092,
+                    "type": "JOIN"
+                },
+                "JOIN16": {
+                    "description": "",
+                    "label": "Join UserRoles onto ForecastingItem",
+                    "left": 1512.2,
+                    "top": 1091.8,
+                    "type": "JOIN"
+                },
+                "JOIN18": {
+                    "description": "",
+                    "label": "Join OpptySplitType onto OpptySplit",
+                    "left": 253.3,
+                    "top": 1372,
+                    "type": "JOIN"
+                },
+                "JOIN19": {
+                    "description": "",
+                    "label": "Join UserRole onto OpptySplit",
+                    "left": 392.1,
+                    "top": 1372.5,
+                    "type": "JOIN"
+                },
+                "JOIN20": {
+                    "description": "",
+                    "label": "Join Opportunity onto OpportunitySplit",
+                    "left": 532.1,
+                    "top": 1372,
+                    "type": "JOIN"
+                },
+                "LOAD_DATASET0": {
+                    "description": "",
+                    "label": "Opportunity",
+                    "left": 112,
+                    "parameters": {
+                        "sampleSize": 2000
+                    },
+                    "top": 112,
+                    "type": "LOAD_DATASET"
+                },
+                "LOAD_DATASET1": {
+                    "description": "",
+                    "label": "Activity",
+                    "left": 112,
+                    "parameters": {
+                        "sampleSize": 2000
+                    },
+                    "top": 252,
+                    "type": "LOAD_DATASET"
+                },
+                "LOAD_DATASET10": {
+                    "label": "OpportunitySplit",
+                    "left": 112,
+                    "parameters": {
+                        "sampleSize": 2000
+                    },
+                    "top": 1371.5,
+                    "type": "LOAD_DATASET"
+                },
+                "LOAD_DATASET11": {
+                    "label": "OpportunitySplitType",
+                    "left": 112,
+                    "parameters": {
+                        "sampleSize": 2000
+                    },
+                    "top": 1511.5,
+                    "type": "LOAD_DATASET"
+                },
+                "LOAD_DATASET12": {
+                    "label": "UserRole",
+                    "left": 112.30000000000001,
+                    "parameters": {
+                        "sampleSize": 2000
+                    },
+                    "top": 672.1,
+                    "type": "LOAD_DATASET"
+                },
+                "LOAD_DATASET2": {
+                    "label": "ForecastingQuota",
+                    "left": 112.19999999999999,
+                    "parameters": {
+                        "sampleSize": 2000
+                    },
+                    "top": 532.2,
+                    "type": "LOAD_DATASET"
+                },
+                "LOAD_DATASET6": {
+                    "label": "ForecastingItem",
+                    "left": 112,
+                    "parameters": {
+                        "sampleSize": 2000
+                    },
+                    "top": 1092,
+                    "type": "LOAD_DATASET"
+                },
+                "LOAD_DATASET7": {
+                    "label": "Period",
+                    "left": 112.30000000000001,
+                    "parameters": {
+                        "sampleSize": 2000
+                    },
+                    "top": 1231.5,
+                    "type": "LOAD_DATASET"
+                },
+                "LOAD_DATASET8": {
+                    "label": "ForecastingType",
+                    "left": 112.19999999999999,
+                    "parameters": {
+                        "sampleSize": 2000
+                    },
+                    "top": 951.9,
+                    "type": "LOAD_DATASET"
+                },
+                "OUTPUT0": {
+                    "description": "",
+                    "label": "Save Opportunity",
+                    "left": 950.2,
+                    "top": 112.19999999999999,
+                    "type": "OUTPUT"
+                },
+                "OUTPUT1": {
+                    "description": "",
+                    "label": "Save Forecasting Quota",
+                    "left": 1792.1,
+                    "top": 532.1,
+                    "type": "OUTPUT"
+                },
+                "OUTPUT3": {
+                    "description": "",
+                    "label": "Save Forecast",
+                    "left": 1792.2,
+                    "top": 1092.1,
+                    "type": "OUTPUT"
+                },
+                "OUTPUT5": {
+                    "description": "",
+                    "label": "Save Opportunity Splits",
+                    "left": 672,
+                    "top": 1372,
+                    "type": "OUTPUT"
+                },
+                "TRANSFORM0": {
+                    "connectors": [
+                        {
+                            "source": "FORMULA0",
+                            "target": "EDIT_ATTRIBUTES0"
+                        },
+                        {
+                            "source": "EDIT_ATTRIBUTES0",
+                            "target": "FORMULA1"
+                        },
+                        {
+                            "source": "FORMULA1",
+                            "target": "EDIT_ATTRIBUTES1"
+                        },
+                        {
+                            "source": "EDIT_ATTRIBUTES1",
+                            "target": "FORMULA2"
+                        },
+                        {
+                            "source": "FORMULA2",
+                            "target": "EDIT_ATTRIBUTES2"
+                        },
+                        {
+                            "source": "EDIT_ATTRIBUTES9",
+                            "target": "EDIT_ATTRIBUTES15"
+                        },
+                        {
+                            "source": "EDIT_ATTRIBUTES15",
+                            "target": "FORMULA6"
+                        },
+                        {
+                            "source": "FORMULA6",
+                            "target": "EDIT_ATTRIBUTES16"
+                        },
+                        {
+                            "source": "EDIT_ATTRIBUTES2",
+                            "target": "EDIT_ATTRIBUTES9"
+                        }
+                    ],
+                    "graph": {
+                        "EDIT_ATTRIBUTES0": null,
+                        "EDIT_ATTRIBUTES1": null,
+                        "EDIT_ATTRIBUTES15": null,
+                        "EDIT_ATTRIBUTES16": null,
+                        "EDIT_ATTRIBUTES2": null,
+                        "EDIT_ATTRIBUTES9": null,
+                        "FORMULA0": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        },
+                        "FORMULA1": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        },
+                        "FORMULA2": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        },
+                        "FORMULA6": {
+                            "parameters": {
+                                "type": "BASE_FORMULA_UI"
+                            }
+                        }
+                    },
+                    "label": "Transform",
+                    "left": 252,
+                    "top": 112,
+                    "type": "TRANSFORM"
+                }
+            }
+        },
+        "version": "56.0"
+    },
+    "scheduleExpression": null,
+    "scheduleType": null
+}

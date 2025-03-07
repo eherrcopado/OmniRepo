@@ -1,0 +1,10 @@
+<apex:page controller="slackv2.sfdcAuthStep">
+    <script>
+        //this page is deprecated
+        window.opener.postMessage({
+            code: '{!JSINHTMLENCODE($CurrentPage.parameters.code)}',
+            postMessageKey: '{!JSENCODE($CurrentPage.parameters.state)}'
+        }, '{!JSENCODE(origin)}');
+        window.close();
+    </script>
+</apex:page>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRGetAllContacts&quot; : null,
+    &quot;DRTransformAllContacts&quot; : null,
+    &quot;FetchAccount&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformContactForRole</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPLTransformContactForRole9828242469285557</globalKey>
+        <inputFieldName>AllContacts</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformContactForRole</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AllContacts</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;Id&quot; | var:AllContacts LIST | var:AccConRelDetails LIST LISTMERGE</formulaConverted>
+        <formulaExpression>LISTMERGE(&quot;Id&quot;, LIST(AllContacts), LIST(AccConRelDetails))</formulaExpression>
+        <formulaResultPath>AllContacts</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>VPLTransformContactForRole09267646692471265</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformContactForRole</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+  &quot;AccountName&quot; : &quot;Glasgow Dealer&quot;,
+  &quot;AllContact&quot; : [ {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K7uJAAS&quot;,
+    &quot;Email&quot; : &quot;info@salesforce.com&quot;,
+    &quot;FirstName&quot; : &quot;Carole&quot;,
+    &quot;Id&quot; : &quot;0033h000008JC2LAAW&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;White&quot;,
+    &quot;Phone&quot; : &quot;(415) 555-1212&quot;,
+    &quot;Role&quot; : &quot;Finance Contact&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9dVAAS&quot;,
+    &quot;Email&quot; : &quot;tetts@tt.co&quot;,
+    &quot;FirstName&quot; : &quot;Michael&quot;,
+    &quot;Id&quot; : &quot;0033h000009kZilAAE&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;Schumacher&quot;,
+    &quot;Phone&quot; : &quot;9978667&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K7uOAAS&quot;,
+    &quot;Email&quot; : &quot;test@lewi.p&quot;,
+    &quot;FirstName&quot; : &quot;Lewis&quot;,
+    &quot;Id&quot; : &quot;0033h000009kZjPAAU&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;Hamilton&quot;,
+    &quot;Phone&quot; : &quot;78555&quot;,
+    &quot;Role&quot; : &quot;Purchasing Contact&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9dZAAS&quot;,
+    &quot;Email&quot; : &quot;seb@gmail.con&quot;,
+    &quot;FirstName&quot; : &quot;seb&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5mPAAR&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;t1&quot;,
+    &quot;Phone&quot; : &quot;1234567890&quot;,
+    &quot;Role&quot; : &quot;Finance Contact&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9e3AAC&quot;,
+    &quot;Email&quot; : &quot;s@gmail.c&quot;,
+    &quot;FirstName&quot; : &quot;s1&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5mjAAB&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;t1&quot;,
+    &quot;Phone&quot; : &quot;1234&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9e8AAC&quot;,
+    &quot;Email&quot; : &quot;s@gmail.c&quot;,
+    &quot;FirstName&quot; : &quot;s1&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5mtAAB&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;t1&quot;,
+    &quot;Phone&quot; : &quot;1234&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9eDAAS&quot;,
+    &quot;Email&quot; : &quot;s@gmail.c&quot;,
+    &quot;FirstName&quot; : &quot;s1&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5myAAB&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;t1&quot;,
+    &quot;Phone&quot; : &quot;1234&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9eEAAS&quot;,
+    &quot;Email&quot; : &quot;se@g.c&quot;,
+    &quot;FirstName&quot; : &quot;s2&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5mzAAB&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;t2&quot;,
+    &quot;Phone&quot; : &quot;1234&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9eIAAS&quot;,
+    &quot;Email&quot; : &quot;s@gmail.c&quot;,
+    &quot;FirstName&quot; : &quot;s1&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5n8AAB&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;t1&quot;,
+    &quot;Phone&quot; : &quot;1234&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9eJAAS&quot;,
+    &quot;Email&quot; : &quot;se@g.c&quot;,
+    &quot;FirstName&quot; : &quot;s2&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5n9AAB&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;t2&quot;,
+    &quot;Phone&quot; : &quot;1234&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9eNAAS&quot;,
+    &quot;Email&quot; : &quot;s@gmail.c&quot;,
+    &quot;FirstName&quot; : &quot;s1&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5nDAAR&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;t1&quot;,
+    &quot;Phone&quot; : &quot;1234&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9eOAAS&quot;,
+    &quot;Email&quot; : &quot;se@g.c&quot;,
+    &quot;FirstName&quot; : &quot;s2&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5nEAAR&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;t2&quot;,
+    &quot;Phone&quot; : &quot;1234&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9eXAAS&quot;,
+    &quot;FirstName&quot; : &quot;test&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5nIAAR&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;noACR&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9hcAAC&quot;,
+    &quot;FirstName&quot; : &quot;test&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5xBAAR&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;testwith&quot;
+  }, {
+    &quot;AccConRelId&quot; : &quot;07k3h000002K9nIAAS&quot;,
+    &quot;FirstName&quot; : &quot;test&quot;,
+    &quot;Id&quot; : &quot;0033h00000Bg5xCAAR&quot;,
+    &quot;IsPrimary&quot; : &quot;false&quot;,
+    &quot;LastName&quot; : &quot;12345678&quot;
+  } ],
+  &quot;ContactDetails&quot; : {
+    &quot;AllContacts&quot; : [ {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K7uJAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;info@salesforce.com&quot;,
+      &quot;FirstName&quot; : &quot;Carole&quot;,
+      &quot;Id&quot; : &quot;0033h000008JC2LAAW&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;White&quot;,
+      &quot;Phone&quot; : &quot;(415) 555-1212&quot;,
+      &quot;Role&quot; : &quot;Finance Contact&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;999&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;tetts@tt.co&quot;,
+      &quot;FirstName&quot; : &quot;Michael&quot;,
+      &quot;Id&quot; : &quot;0033h000009kZilAAE&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;Schumacher&quot;,
+      &quot;Phone&quot; : &quot;9978667&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K7uOAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;test@lewi.p&quot;,
+      &quot;FirstName&quot; : &quot;Lewis&quot;,
+      &quot;Id&quot; : &quot;0033h000009kZjPAAU&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;Hamilton&quot;,
+      &quot;Phone&quot; : &quot;78555&quot;,
+      &quot;Role&quot; : &quot;Purchasing Contact&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9dZAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;seb@gmail.con&quot;,
+      &quot;FirstName&quot; : &quot;seb&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5mPAAR&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;t1&quot;,
+      &quot;Phone&quot; : &quot;1234567890&quot;,
+      &quot;Role&quot; : &quot;Finance Contact&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9e3AAC&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;s@gmail.c&quot;,
+      &quot;FirstName&quot; : &quot;s1&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5mjAAB&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;t1&quot;,
+      &quot;Phone&quot; : &quot;1234&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9e8AAC&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;s@gmail.c&quot;,
+      &quot;FirstName&quot; : &quot;s1&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5mtAAB&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;t1&quot;,
+      &quot;Phone&quot; : &quot;1234&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9eDAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;s@gmail.c&quot;,
+      &quot;FirstName&quot; : &quot;s1&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5myAAB&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;t1&quot;,
+      &quot;Phone&quot; : &quot;1234&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9eEAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;se@g.c&quot;,
+      &quot;FirstName&quot; : &quot;s2&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5mzAAB&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;t2&quot;,
+      &quot;Phone&quot; : &quot;1234&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9eIAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;s@gmail.c&quot;,
+      &quot;FirstName&quot; : &quot;s1&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5n8AAB&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;t1&quot;,
+      &quot;Phone&quot; : &quot;1234&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9eJAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;se@g.c&quot;,
+      &quot;FirstName&quot; : &quot;s2&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5n9AAB&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;t2&quot;,
+      &quot;Phone&quot; : &quot;1234&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9eNAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;s@gmail.c&quot;,
+      &quot;FirstName&quot; : &quot;s1&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5nDAAR&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;t1&quot;,
+      &quot;Phone&quot; : &quot;1234&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9eOAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : &quot;se@g.c&quot;,
+      &quot;FirstName&quot; : &quot;s2&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5nEAAR&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;t2&quot;,
+      &quot;Phone&quot; : &quot;1234&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9eXAAS&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;FirstName&quot; : &quot;test&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5nIAAR&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;noACR&quot;
+    }, {
+      &quot;AccConRelId&quot; : &quot;07k3h000002K9hcAAC&quot;,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;FirstName&quot; : &quot;test&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5xBAAR&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;testwith&quot;
+    }, {
+      &quot;AccConRelId&quot; : null,
+      &quot;AccId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;Email&quot; : null,
+      &quot;FirstName&quot; : &quot;test&quot;,
+      &quot;Id&quot; : &quot;0033h00000Bg5xCAAR&quot;,
+      &quot;IsPrimary&quot; : false,
+      &quot;LastName&quot; : &quot;12345678&quot;,
+      &quot;Phone&quot; : null,
+      &quot;Role&quot; : &quot;Purchasing Contact&quot;
+    } ]
+  },
+  &quot;ContextId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+  &quot;PrimaryContact&quot; : {
+    &quot;AccConRelId&quot; : &quot;999&quot;,
+    &quot;Email&quot; : &quot;tetts@tt.co&quot;,
+    &quot;FirstName&quot; : &quot;Michael&quot;,
+    &quot;Id&quot; : &quot;0033h000009kZilAAE&quot;,
+    &quot;IsPrimary&quot; : &quot;true&quot;,
+    &quot;LastName&quot; : &quot;Schumacher&quot;,
+    &quot;Phone&quot; : &quot;9978667&quot;
+  },
+  &quot;timeStamp&quot; : &quot;2020-07-28T12:07:25.633Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformContactForRole_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

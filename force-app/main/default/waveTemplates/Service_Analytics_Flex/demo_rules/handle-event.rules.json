@@ -1,0 +1,220 @@
+{
+	"rules": [
+		{
+      		"name": "HandleEventExtraction",
+      		"condition": "${Variables.isDemoApplication == 'Yes'}",
+      		"actions": [
+                {
+                    "action": "add",
+                    "description": "Add CreatedDate__c field in Event extraction.",
+                    "path": "$.workflowDefinition.Extract_Event.parameters.fields",
+                    "index": 4,
+                    "value": {
+                        "name": "CreatedDate__c"
+                    }
+                },
+                {
+                    "action": "add",
+                    "description": "Add External_ID__c field in Event extraction.",
+                    "path": "$.workflowDefinition.Extract_Event.parameters.fields",
+                    "index": 5,
+                    "value": {
+                        "name": "External_ID__c"
+                    }
+                },
+                {
+                    "action": "add",
+                    "description": "Add LastModifiedDate__c field in Event extraction.",
+                    "path": "$.workflowDefinition.Extract_Event.parameters.fields",
+                    "index": 6,
+                    "value": {
+                        "name": "LastModifiedDate__c"
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Filter to get the user's generated data.",
+                    "key": "Extract_Event_get_Users_Data",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "filter",      
+                        "parameters": {            
+                            "filter": "External_ID__c:EQ:''",
+                            "source": "Extract_Event"
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Filter to get the data generated for demo.",
+                    "path": "$.workflowDefinition",
+                    "key": "Extract_Event_get_Demo_Data",
+                    "value": {
+                        "action": "filter",      
+                        "parameters": {            
+                            "filter": "External_ID__c:N:''",
+                            "source": "Extract_Event"
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Rename fields in Extract_Event_get_Demo_Data",
+                    "key": "Extract_Event_get_Demo_Data_rename_fields",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "computeExpression",
+                        "parameters": {            
+                            "source": "Extract_Event_get_Demo_Data",
+                            "mergeWithSource": true,
+                            "computedFields": [
+                                {
+                                    "name": "CreatedDateAux",
+                                    "type": "Date",
+                                    "label": "CreatedDate",
+                                    "saqlExpression": "case when 'CreatedDate__c' != \"\" then toDate('CreatedDate__c_sec_epoch') else toDate('CreatedDate_sec_epoch') end",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                },
+                                {
+                                    "name": "LastModifiedDateAux",
+                                    "type": "Date",
+                                    "label": "LastModifiedDate",
+                                    "saqlExpression": "case when 'LastModifiedDate__c' != \"\" then toDate('LastModifiedDate__c', \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\") else toDate('LastModifiedDate', \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\") end",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Drop CreatedDate and LastModifiedDate fields from Extract_Event_get_Demo_Data_rename_fields.",
+                    "key": "Extract_Event_get_Demo_Data_drop_dates",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "sliceDataset",
+                        "parameters": {            
+                            "source": "Extract_Event_get_Demo_Data_rename_fields",
+                            "mode": "drop",
+                            "fields": [
+                                {
+                                    "name": "CreatedDate"
+                                },
+                                {
+                                    "name": "LastModifiedDate"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Rename fields in Extract_Event_get_Demo_Data_drop_dates",
+                    "key": "Extract_Event_get_Demo_Data_rename_fieldsAux",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "computeExpression",
+                        "parameters": {            
+                            "source": "Extract_Event_get_Demo_Data_drop_dates",
+                            "mergeWithSource": true,
+                            "computedFields": [
+                                {
+                                    "name": "CreatedDate",
+                                    "type": "Date",
+                                    "label": "CreatedDate",
+                                    "saqlExpression": "toDate(CreatedDateAux, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                },
+                                {
+                                    "name": "LastModifiedDate",
+                                    "type": "Date",
+                                    "label": "LastModifiedDate",
+                                    "saqlExpression": "toDate(LastModifiedDateAux, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                    "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Drop CreatedDateAux and LastModifiedDateAux fields from Extract_Event_get_Demo_Data_rename_fieldsAux.",
+                    "key": "Extract_Event_get_Demo_Data_drop_fields",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "sliceDataset",
+                        "parameters": {            
+                            "source": "Extract_Event_get_Demo_Data_rename_fieldsAux",
+                            "mode": "drop",
+                            "fields": [
+                                {
+                                    "name": "CreatedDateAux"
+                                },
+                                {
+                                    "name": "LastModifiedDateAux"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Final merge of user and demo data for Event.",
+                    "key": "Extract_Event_merge",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "append",
+                        "parameters": {            
+                            "sources": [
+                                "Extract_Event_get_Demo_Data_drop_fields",
+                                "Extract_Event_get_Users_Data"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Final cleaning of user and demo data for Event.",
+                    "key": "Extract_Event_cleaned",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "sliceDataset",
+                        "parameters": {            
+                            "source": "Extract_Event_merge",
+                            "mode": "drop",
+                            "fields": [
+                                {
+                                    "name": "CreatedDate__c"
+                                },
+                                {
+                                    "name": "External_ID__c"
+                                },
+                                {
+                                    "name": "LastModifiedDate__c"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "set",
+                    "description": "Set the source property of Compute_Extract_Event parameters based on Demo App or not.",
+                    "path": "$.workflowDefinition.Compute_Extract_Event.parameters['source']",
+                    "value": "Extract_Event_cleaned"
+                },
+                {
+                    "action": "set",
+                    "description": "Set the source property of Add_Fields_To_Event parameters based on Demo App or not.",
+                    "path": "$.workflowDefinition.Add_Fields_To_Event.parameters['source']",
+                    "value": "Extract_Event_cleaned"
+                }
+			],						
+			"appliesTo": [
+                {
+                    "type": "workflow",
+                    "name": "*"
+                }
+      		]
+		}
+	]
+}

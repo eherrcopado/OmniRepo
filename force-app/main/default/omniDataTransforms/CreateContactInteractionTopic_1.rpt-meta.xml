@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;CreateInteraction&quot; : {
+    &quot;vlocity_cmt__CustomerInteraction__c_1&quot; : [ {
+      &quot;vlocity_cmt__AccountId__c&quot; : &quot;001o000000w7A8tAAE&quot;,
+      &quot;Id&quot; : &quot;a3U1J000000Gtr7UAC&quot;,
+      &quot;UpsertSuccess&quot; : true
+    } ],
+    &quot;debugLog&quot; : [ &quot;2017-06-01T17:54:56.171Z: Query - SELECT Id,Name,vlocity_cmt__AssetId__c,vlocity_cmt__PartyAccountId__c FROM vlocity_cmt__AssetPartyRelationship__c WHERE (vlocity_cmt__PartyAccountId__c = &apos;001o000000w7A8tAAE&apos;) LIMIT 50000&quot;, &quot;2017-06-01T17:54:56.176Z: Query Results Found: 3&quot; ],
+    &quot;error&quot; : false,
+    &quot;responseType&quot; : &quot;SObject&quot;
+  },
+  &quot;CreateInteractionStatus&quot; : true,
+  &quot;ExtractAssetBasedOnAccount&quot; : [ {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOOKAA2&quot;,
+    &quot;AssetId&quot; : &quot;02i46000000mmafAAA&quot;,
+    &quot;Name&quot; : &quot;GenWatt Diesel 1000kW&quot;
+  }, {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOOKAA2&quot;,
+    &quot;AssetId&quot; : &quot;02i46000000mmbiAAA&quot;,
+    &quot;Name&quot; : &quot;GenWatt Diesel 10kW&quot;
+  }, {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOOKAA2&quot;,
+    &quot;AssetId&quot; : &quot;02i46000000mmakAAA&quot;,
+    &quot;Name&quot; : &quot;GenWatt Diesel 1000kW&quot;
+  } ],
+  &quot;ExtractAssetBasedOnAccountStatus&quot; : true,
+  &quot;TransformNewInteraction&quot; : {
+    &quot;NewInteraction&quot; : {
+      &quot;AccountId&quot; : &quot;001o000000w7A8tAAE&quot;,
+      &quot;Id&quot; : &quot;a3U1J000000Gtr7UAC&quot;
+    }
+  },
+  &quot;TransformNewInteractionStatus&quot; : true,
+  &quot;options&quot; : {
+    &quot;isDebug&quot; : true
+  },
+  &quot;recordId&quot; : &quot;001o000000w7A8t&quot;,
+  &quot;response&quot; : { }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CreateContactInteractionTopic</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContactInteractionTopicCustoma0L46000000B5WiEAKItem0</globalKey>
+        <inputFieldName>CreateInteraction:vlocity_cmt__CustomerInteraction__c_1:vlocity_cmt__AccountId__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContactInteractionTopic</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AccountId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContactInteractionTopicCustoma0L46000000B5WiEAKItem1</globalKey>
+        <inputFieldName>ExtractAssetBasedOnAccount:AssetAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContactInteractionTopic</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AccountId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContactInteractionTopicCustoma0L46000000B5WiEAKItem3</globalKey>
+        <inputFieldName>ExtractAssetBasedOnAccount:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContactInteractionTopic</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContactInteractionTopicCustoma0L46000000B5WiEAKItem2</globalKey>
+        <inputFieldName>ExtractAssetBasedOnAccount:AssetId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContactInteractionTopic</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AssetId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContactInteractionTopicCustoma0L46000000B5WiEAKItem4</globalKey>
+        <inputFieldName>TransformNewInteraction:NewInteraction:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContactInteractionTopic</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__CustomerInteractionId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{ }</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateContactInteractionTopic_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

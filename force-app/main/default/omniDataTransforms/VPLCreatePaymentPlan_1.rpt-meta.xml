@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Creates Payment Plan</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountBalanceDetails&quot; : {
+    &quot;AccountBalance&quot; : 400,
+    &quot;BalanceAmount&quot; : null,
+    &quot;CountPaymentAdjustments&quot; : 51,
+    &quot;CountPaymentMethod&quot; : 2,
+    &quot;DetectChange&quot; : 12,
+    &quot;DownPayment&quot; : 1.23,
+    &quot;InstallmentAmount&quot; : 33.23,
+    &quot;InsufficentBalanceMsg&quot; : null,
+    &quot;NumberOfInstallments&quot; : 12,
+    &quot;PaymentDate&quot; : &quot;2019-04-13&quot;,
+    &quot;PaymentPlan&quot; : &quot;AccountBalance&quot;,
+    &quot;PaymentPlanReason&quot; : &quot;Unable To Pay&quot;,
+    &quot;ServiceTerms&quot; : &quot;Quarterly&quot;,
+    &quot;StartDate&quot; : &quot;2019-04-11T16:00:00.000Z&quot;
+  },
+  &quot;AccountBalances&quot; : 400,
+  &quot;AccountRelatedDetails&quot; : {
+    &quot;AccountBalance&quot; : {
+      &quot;CurrentBalance&quot; : 400,
+      &quot;Id&quot; : &quot;a00f200000WjOpsAAF&quot;,
+      &quot;Name&quot; : &quot;AB-0109&quot;
+    },
+    &quot;PaymentMethod&quot; : [ {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a0if200000ANj7lAAD&quot;,
+      &quot;Name&quot; : &quot;PM-0001&quot;
+    }, {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a0if200000ANjcxAAD&quot;,
+      &quot;Name&quot; : &quot;PM-0002&quot;
+    } ]
+  },
+  &quot;BankAccountDetails&quot; : &quot;&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;&lt;img src=\&quot;../servlet/servlet.ImageServer?docName=015f2000002AWjGAAW&amp;amp;&amp;amp;id=015f2000002AWjGAAW&amp;amp;&amp;amp;oid=00Df2000000NVjKEAW\&quot; alt=\&quot;\&quot; width=\&quot;28\&quot; height=\&quot;26\&quot; /&gt;&amp;nbsp;Bank Account&amp;nbsp;Details&lt;/strong&gt;&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;Method Type:&lt;/strong&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Bank Account&amp;nbsp;&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;Card Holder Name:&lt;/strong&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;PM-0001&amp;nbsp;&amp;nbsp;&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;Bank Account Type:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/strong&gt;Checking&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;Bank Account Number:&amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/strong&gt;243545657687&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;Routing Transit Number:&amp;nbsp; &amp;nbsp;&lt;/strong&gt;687984535&lt;/p&gt;&quot;,
+  &quot;ContextId&quot; : &quot;001f200001XplgKAAR&quot;,
+  &quot;CreatePayment&quot; : {
+    &quot;Id&quot; : &quot;500O000000FawxYIAR&quot;,
+    &quot;Status&quot; : &quot;closed&quot;,
+    &quot;msg&quot; : &quot;Payment Details updated in SAP Successfully.&quot;
+  },
+  &quot;CreatePaymentInfo&quot; : {
+    &quot;Content-Length&quot; : &quot;119&quot;,
+    &quot;Content-Type&quot; : &quot;application/json; charset=UTF-8&quot;,
+    &quot;Date&quot; : &quot;Fri, 12 Apr 2019 06:20:56 GMT&quot;,
+    &quot;Server&quot; : &quot;Google Frontend&quot;,
+    &quot;X-Cloud-Trace-Context&quot; : &quot;a17870ff72b08caa7f52f6dcf60ad487&quot;,
+    &quot;access-control-allow-origin&quot; : &quot;*&quot;,
+    &quot;status&quot; : &quot;OK&quot;,
+    &quot;statusCode&quot; : 200
+  },
+  &quot;CreatePaymentStatus&quot; : true,
+  &quot;FetchAcc&quot; : &quot;yes&quot;,
+  &quot;PaymentId&quot; : [ &quot;a0if200000ANj7lAAD&quot; ],
+  &quot;PaymentPlans&quot; : [ {
+    &quot;Name&quot; : &quot;PA-0124&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHJDAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0121&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHIyAAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 11
+  }, {
+    &quot;Name&quot; : &quot;PA-0120&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHItAAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0125&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHJIAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0123&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHJ8AAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0122&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHJ3AAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 11
+  }, {
+    &quot;Name&quot; : &quot;PA-0129&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHK6AAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0127&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHJSAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0136&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHTTAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0137&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHTYAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0138&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHTdAAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0126&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHJNAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0130&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHKBAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0160&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEN09AAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Quarterly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0158&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEMCUAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 24
+  }, {
+    &quot;Name&quot; : &quot;PA-0001&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000etVI2AAM&quot;
+  }, {
+    &quot;Name&quot; : &quot;PA-0155&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEKJLAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 11
+  }, {
+    &quot;Name&quot; : &quot;PA-0132&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHKLAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0128&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHK1AAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0131&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHKGAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0139&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHapAAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 13
+  }, {
+    &quot;Name&quot; : &quot;PA-0170&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEjrWAAS&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 10
+  }, {
+    &quot;Name&quot; : &quot;PA-0135&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHM6AAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 13
+  }, {
+    &quot;Name&quot; : &quot;PA-0133&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHLwAAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 11
+  }, {
+    &quot;Name&quot; : &quot;PA-0134&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHM1AAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Quarterly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0141&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHazAAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 2
+  }, {
+    &quot;Name&quot; : &quot;PA-0140&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHauAAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Quarterly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0156&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jELJOAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Quarterly&quot;,
+    &quot;TotalInstallments&quot; : 11
+  }, {
+    &quot;Name&quot; : &quot;PA-0117&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEGNaAAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 11
+  }, {
+    &quot;Name&quot; : &quot;PA-0118&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEGSxAAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 11
+  }, {
+    &quot;Name&quot; : &quot;PA-0116&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEGMyAAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0154&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEJYlAAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 11
+  }, {
+    &quot;Name&quot; : &quot;PA-0164&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jENZcAAO&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 10
+  }, {
+    &quot;Name&quot; : &quot;PA-0163&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jENZSAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 10
+  }, {
+    &quot;Name&quot; : &quot;PA-0171&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEkEVAA0&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 4
+  }, {
+    &quot;Name&quot; : &quot;PA-0157&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jELKRAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 11
+  }, {
+    &quot;Name&quot; : &quot;PA-0119&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHCXAA4&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 5
+  }, {
+    &quot;Name&quot; : &quot;PA-0109&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEDavAAG&quot;
+  }, {
+    &quot;Name&quot; : &quot;PA-0151&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbnAAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 12
+  }, {
+    &quot;Name&quot; : &quot;PA-0152&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbsAAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0146&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbOAAW&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0142&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHb4AAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Quarterly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0143&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHb9AAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0145&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbJAAW&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0147&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbTAAW&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0148&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbYAAW&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 2
+  }, {
+    &quot;Name&quot; : &quot;PA-0149&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbdAAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0150&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbiAAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0153&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbxAAG&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0144&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEHbEAAW&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  }, {
+    &quot;Name&quot; : &quot;PA-0172&quot;,
+    &quot;PaymentAdjustmentId&quot; : &quot;a0hf200000jEkTdAAK&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;TotalInstallments&quot; : 123
+  } ],
+  &quot;PaymentResponseStatus&quot; : true,
+  &quot;SelectPaymentMethods&quot; : {
+    &quot;CreateNewPaymentQuestion&quot; : null,
+    &quot;Payments&quot; : null,
+    &quot;VerifyPaymentMethod&quot; : null
+  },
+  &quot;id&quot; : &quot;a0Zf200000PT1ndEAD&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;options&quot; : {
+    &quot;chainable&quot; : false,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;useContinuation&quot; : false,
+    &quot;useFuture&quot; : false,
+    &quot;vlcClass&quot; : &quot;vlocity_cmt.IntegrationProcedureService&quot;
+  },
+  &quot;response&quot; : { },
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://vlocity-accenture-energy--vlocity-cmt.na53.visual.force.com&quot;,
+  &quot;testContextId&quot; : &quot;001f200001XplgKAAR&quot;,
+  &quot;timeStamp&quot; : &quot;2019-04-12T06:20:32.800Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;CAD&quot;,
+  &quot;userId&quot; : &quot;005f2000008YuNbAAK&quot;,
+  &quot;userName&quot; : &quot;irene.lia.d.arabes@accenture.com.venergy&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -240,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;AccountBalanceDetails&quot; : 13526,
+    &quot;CreatePaymentAdjustment&quot; : 548,
+    &quot;DeactivatePaymentAdjustment&quot; : 913,
+    &quot;FetchAccountBalanceDetails&quot; : 737,
+    &quot;FetchActivePaymentPlans&quot; : 974,
+    &quot;FetchPaymentDetails&quot; : 660,
+    &quot;OmniScriptSessionToken&quot; : &quot;19af18bd-cc50-4d34-82f3-629c8c74eab6&quot;,
+    &quot;SelectPaymentMethods&quot; : 3957,
+    &quot;SetAccountDetails&quot; : 46,
+    &quot;SetPaymentId&quot; : 7,
+    &quot;VIPCreatePaymentPlan&quot; : 1155
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLCreatePaymentPlan</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>912746af-6b7e-443b-1980-26f434ea2619</globalKey>
+        <inputFieldName>AccountBalanceDetails:InstallmentAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__InstallmentAmount__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5b6e11b1-4aeb-44e3-a978-5ee7a0ab4bc6</globalKey>
+        <inputFieldName>AccountBalanceDetails:DownPayment</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__DownPaymentAmount__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>250302f0-372e-0422-e142-73cfa3fc28c6</globalKey>
+        <inputFieldName>BillingAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AccountId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>b8845e0b-27d8-4e10-b9a9-61d6abd74cb0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c1d08f13-029d-a80c-b7f3-d6b29f07eb4e</globalKey>
+        <inputFieldName>PaymentPlanAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PaymentPlanAmount__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1a71c034-05b2-d38f-fd76-911c9b052e47</globalKey>
+        <inputFieldName>PaymentId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PaymentMethodId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8cca8783-a7da-2548-d454-ed9e8cd1cafb</globalKey>
+        <inputFieldName>AccountBalanceDetails:ServiceTerms</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PaymentFrequency__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5176db10-5b3e-1bc0-3835-c46b3d54542b</globalKey>
+        <inputFieldName>AccountBalanceDetails:NumberOfInstallments</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__NumberOfInstallments__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8656744c-b80c-8e8d-a66e-7fbd2683c1a4</globalKey>
+        <inputFieldName>AccountBalanceDetails:PaymentPlanReason</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Reason__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Active</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>150988dc-a92a-e2d9-8404-8c03ad27e4b5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>00a437cb-0e0b-e1a3-7c8d-ec042b456ce1</globalKey>
+        <inputFieldName>AccountBalanceDetails:StartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Date(MM/dd/yyyy)</outputFieldFormat>
+        <outputFieldName>vlocity_cmt__StartDate__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:AccountBalanceDetails:PaymentPlan &apos;AccountBalance&apos; = var:AccountBalanceDetails:AccountBalances var:AccountBalanceDetails:BalanceAmount IF</formulaConverted>
+        <formulaExpression>IF(%AccountBalanceDetails:PaymentPlan%=&apos;AccountBalance&apos;,%AccountBalanceDetails:AccountBalances%,%AccountBalanceDetails:BalanceAmount%)</formulaExpression>
+        <formulaResultPath>PaymentPlanAmount</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>8936003c-ae02-29df-ce22-406c4b40a7ec</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreatePaymentPlan</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AccountBalanceDetails&quot; : {
+    &quot;AccountBalanceMsg&quot; : null,
+    &quot;AccountBalances&quot; : 6535,
+    &quot;BalanceAmount&quot; : null,
+    &quot;CountPaymentMethod&quot; : 3,
+    &quot;DetectChange&quot; : 4,
+    &quot;DownPayment&quot; : 345,
+    &quot;InstallmentAmount&quot; : 1547.5,
+    &quot;InstallmentAmountMessaging&quot; : true,
+    &quot;InsufficentBalanceMsg&quot; : true,
+    &quot;NumberOfInstallments&quot; : 4,
+    &quot;PaymentDate&quot; : &quot;2020-08-28&quot;,
+    &quot;PaymentDateFormula&quot; : false,
+    &quot;PaymentDateMessaging&quot; : true,
+    &quot;PaymentPlan&quot; : &quot;AccountBalance&quot;,
+    &quot;PaymentPlanReason&quot; : &quot;Customer cannot pay&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;StartDate&quot; : &quot;Wed Aug 19 2020 00:00:00 GMT+0530 (India Standard Time)&quot;
+  },
+  &quot;AccountRelatedDetails&quot; : {
+    &quot;AccountBalance&quot; : {
+      &quot;CurrentBalance&quot; : 6535,
+      &quot;DueDate&quot; : &quot;2020-08-31&quot;,
+      &quot;Id&quot; : &quot;a023h000009sh3yAAA&quot;,
+      &quot;Name&quot; : &quot;AB-0001&quot;
+    },
+    &quot;PaymentMethod&quot; : [ {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a3Q3h000000h3rUEAQ&quot;,
+      &quot;Name&quot; : &quot;PM-0002&quot;
+    }, {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a3Q3h000000h3tREAQ&quot;,
+      &quot;Name&quot; : &quot;PM-0005&quot;
+    }, {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a3Q3h000000h3ssEAA&quot;,
+      &quot;Name&quot; : &quot;PM-0003&quot;
+    } ]
+  },
+  &quot;BankAccountDetails&quot; : [ {
+    &quot;Active&quot; : true,
+    &quot;Id&quot; : &quot;a3Q3h000000h3rUEAQ&quot;,
+    &quot;Name&quot; : &quot;PM-0002&quot;
+  }, {
+    &quot;Active&quot; : true,
+    &quot;Id&quot; : &quot;a3Q3h000000h3tREAQ&quot;,
+    &quot;Name&quot; : &quot;PM-0005&quot;
+  }, {
+    &quot;Active&quot; : true,
+    &quot;Id&quot; : &quot;a3Q3h000000h3ssEAA&quot;,
+    &quot;Name&quot; : &quot;PM-0003&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingAccountId&quot; : &quot;0013h00000C1iZWAAZ&quot;,
+  &quot;BillingProfileDetails&quot; : {
+    &quot;BillingAccountProfile&quot; : {
+      &quot;AccountId&quot; : &quot;0013h00000C1iZWAAZ&quot;,
+      &quot;AccountName&quot; : &quot;013-Billing&quot;,
+      &quot;AccountNumber&quot; : &quot;6011101&quot;,
+      &quot;BillCycle&quot; : &quot;1&quot;,
+      &quot;BillDeliveryMethod&quot; : &quot;Electronic Statements Online&quot;,
+      &quot;BillFormat&quot; : &quot;Detail&quot;,
+      &quot;BillFrequency&quot; : &quot;Monthly&quot;,
+      &quot;BillNumberCopies&quot; : 6,
+      &quot;BillingAddressCity&quot; : &quot;bengaluru&quot;,
+      &quot;BillingAddressCountry&quot; : &quot;India&quot;,
+      &quot;BillingAddressPostalCode&quot; : &quot;56001&quot;,
+      &quot;BillingAddressState&quot; : &quot;karnataka&quot;,
+      &quot;BillingAddressStreet&quot; : &quot;Vidhan soudha&quot;,
+      &quot;BillingEmailAddress&quot; : &quot;test@tt.co&quot;
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;TaxExcemptionEndDate&quot; : &quot;08/25/2020&quot;,
+      &quot;TaxExcemptionPercentage&quot; : 10,
+      &quot;TaxExcemptionStartDate&quot; : &quot;07/01/2020&quot;,
+      &quot;TaxExcemptionType&quot; : &quot;Exempt&quot;,
+      &quot;TaxId&quot; : &quot;12-2222223&quot;
+    }
+  },
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;ContextAccountId&quot; : &quot;0013h00000C1b6mAAB&quot;,
+  &quot;ContextId&quot; : &quot;0013h00000C1iZWAAZ&quot;,
+  &quot;CountPaymentPlan&quot; : 1,
+  &quot;FetchAcc&quot; : &quot;yes&quot;,
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;CreatePaymentPlan&quot;,
+  &quot;OverridePaymentPlan&quot; : {
+    &quot;OverwritePaymentPlan&quot; : &quot;Yes&quot;
+  },
+  &quot;PaymentColumns&quot; : null,
+  &quot;PaymentDetails&quot; : null,
+  &quot;PaymentPlans&quot; : {
+    &quot;AccountId&quot; : &quot;0013h00000C1iZWAAZ&quot;,
+    &quot;BalanceAmount&quot; : &quot;&quot;,
+    &quot;DeactivationDate&quot; : &quot;&quot;,
+    &quot;DownPaymentAmount&quot; : &quot;&quot;,
+    &quot;EndDate&quot; : &quot;&quot;,
+    &quot;InstallmentAmount&quot; : 1307,
+    &quot;NumberOfInstallments&quot; : 5,
+    &quot;PaymentFrequency&quot; : &quot;Monthly&quot;,
+    &quot;PaymentPlanId&quot; : &quot;a3R3h000000hkyPEAQ&quot;,
+    &quot;PaymentPlanName&quot; : &quot;a3R3h000000hkyP&quot;,
+    &quot;PaymentPlanReason&quot; : &quot;Amount in dispute&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;StartDate&quot; : &quot;&quot;,
+    &quot;Status&quot; : &quot;Active&quot;
+  },
+  &quot;SelectPaymentMethods&quot; : { },
+  &quot;timeStamp&quot; : &quot;2020-08-19T12:14:57.015Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLCreatePaymentPlan_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

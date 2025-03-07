@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;attributes&quot;:&quot;&quot;,&quot;cartId&quot;:&quot;801D3000000F9ssIAC&quot;,&quot;catalogId&quot;:&quot;&quot;,&quot;offerType&quot;:&quot;-1&quot;,&quot;pagesize&quot;:&quot;5&quot;,&quot;pricelistId&quot;:&quot;&quot;,&quot;qualifiedFilter&quot;:&quot;Qualified&quot;,&quot;query&quot;:&quot;&quot;}</customJavaScript>
+    <description>To fetch the products to a cart based on cart id or fetch products based on catalog Id</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>CPQGetProducts</name>
+    <omniProcessElements>
+        <childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>NoCatalogProducts</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%GetProductsByCatalogApexRemoteIP%&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+                    <sequenceNumber>19.0</sequenceNumber>
+                    <type>Response Action</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EmptyProductCatalogList</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;ISBLANK(%GetProductsByCatalogApexRemoteIP:result:response2:records%)&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock4&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+                <sequenceNumber>18.0</sequenceNumber>
+                <type>Conditional Block</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>FilteredProductCatalog</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%ProductCatalogQualifiedFilter%&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+                    <sequenceNumber>17.0</sequenceNumber>
+                    <type>Response Action</type>
+                </childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>ProductCatalogQualifiedFilter</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;qualifiedFilter&quot; : &quot;%GetProductsInput:qualifiedFilter%&quot;,
+    &quot;response2&quot; : &quot;%GetProductsByCatalogApexRemoteIP:response2%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;ProductQualifiedFilterTransformer&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+                    <sequenceNumber>16.0</sequenceNumber>
+                    <type>DataRaptor Transform Action</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>IfCatalogProductExists</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;ISNOTBLANK(%GetProductsByCatalogApexRemoteIP:response2:result:records%)&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock10&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+                <sequenceNumber>15.0</sequenceNumber>
+                <type>Conditional Block</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CatalogProductCategoryFilter</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%GetProductsInput:qualifiedFilter% != \&quot;\&quot; &quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock3&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>14.0</sequenceNumber>
+            <type>Conditional Block</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>GetProductsByCatalogApexRemoteIP</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;attributes&quot; : &quot;%GetProductsInput:attributes%&quot;,
+    &quot;cartId&quot; : &quot;%GetProductsInput:cartId%&quot;,
+    &quot;category&quot; : &quot;%GetProductsInput:catalogId%&quot;,
+    &quot;fields&quot; : &quot;%GetProductsInput:fields%&quot;,
+    &quot;offsetSize&quot; : &quot;%GetProductsInput:offsetSize%&quot;,
+    &quot;pagesize&quot; : &quot;%GetProductsInput:pagesize%&quot;,
+    &quot;query&quot; : &quot;%GetProductsInput:query%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : true,
+  &quot;disOnTplt&quot; : false,
+  &quot;disableChainable&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;integrationProcedureKey&quot; : &quot;CPQ_GetProductsRemoteCall&quot;,
+  &quot;label&quot; : &quot;IntegrationProcedureAction1&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>13.0</sequenceNumber>
+            <type>Integration Procedure Action</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>ProductCatalogResponse</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%GetProductsByCatalogApexRemoteIP%&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+                <sequenceNumber>21.0</sequenceNumber>
+                <type>Response Action</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ProductCatalog</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%GetProductsInput:qualifiedFilter% == \&quot;\&quot; &quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock9&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>20.0</sequenceNumber>
+            <type>Conditional Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetProductsByCatalogIdRemoteCall</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%GetProductsInput:cartId% != \&quot;\&quot; &amp;&amp; ( %GetProductsInput:catalogId% != \&quot;\&quot; &amp;&amp; %GetProductsInput:catalogId% != \&quot;-1\&quot; &amp;&amp; %GetProductsInput:catalogId% != \&quot;-2\&quot;)&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>12.0</sequenceNumber>
+        <type>Conditional Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>GetProductsRemoteIP</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;attributes&quot; : &quot;%GetProductsInput:attributes%&quot;,
+    &quot;cartId&quot; : &quot;%GetProductsInput:cartId%&quot;,
+    &quot;fields&quot; : &quot;%GetProductsInput:fields%&quot;,
+    &quot;includeIneligible&quot; : &quot;%GetProductsInput:includeIneligible%&quot;,
+    &quot;offsetSize&quot; : &quot;%GetProductsInput:offsetSize%&quot;,
+    &quot;pagesize&quot; : &quot;%GetProductsInput:pagesize%&quot;,
+    &quot;query&quot; : &quot;%GetProductsInput:query%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : true,
+  &quot;disOnTplt&quot; : false,
+  &quot;disableChainable&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;integrationProcedureKey&quot; : &quot;CPQ_GetProductsRemoteCall&quot;,
+  &quot;label&quot; : &quot;IntegrationProcedureAction1&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Integration Procedure Action</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AllProducts</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%GetProductsRemoteIP%&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+                <sequenceNumber>11.0</sequenceNumber>
+                <type>Response Action</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Product</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%GetProductsInput:qualifiedFilter% == \&quot;\&quot; &quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock4&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>10.0</sequenceNumber>
+            <type>Conditional Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>EmptyProductListResponse</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%GetProductsRemoteIP%&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+                    <sequenceNumber>9.0</sequenceNumber>
+                    <type>Response Action</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EmptyProductsList</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;ISNOTBLANK(%GetProductsRemoteIP:response2:result:messages%)&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock11&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+                <sequenceNumber>8.0</sequenceNumber>
+                <type>Conditional Block</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>Products</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%QualifiedProductFilter%&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+                    <sequenceNumber>7.0</sequenceNumber>
+                    <type>Response Action</type>
+                </childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>QualifiedProductFilter</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;qualifiedFilter&quot; : &quot;%GetProductsInput:qualifiedFilter%&quot;,
+    &quot;response2&quot; : &quot;%GetProductsRemoteIP:response2%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;ProductQualifiedFilterTransformer&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+                    <sequenceNumber>6.0</sequenceNumber>
+                    <type>DataRaptor Transform Action</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>IfProductsExists</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;ISNOTBLANK(%GetProductsRemoteIP:response2:result:records%)&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock10&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+                <sequenceNumber>5.0</sequenceNumber>
+                <type>Conditional Block</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ProductCategoryFilter</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%GetProductsInput:qualifiedFilter% != \&quot;\&quot; &quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock3&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Conditional Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetProductsIfCartIdRemoteCall</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%GetProductsInput:cartId% != \&quot;\&quot; &amp;&amp; ( %GetProductsInput:catalogId% == \&quot;\&quot; || %GetProductsInput:catalogId% == \&quot;-1\&quot; || %GetProductsInput:catalogId% == \&quot;-2\&quot;)&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Conditional Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetProductsInput</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;attributes&quot; : &quot;%attributes%&quot;,
+    &quot;cartId&quot; : &quot;%cartId%&quot;,
+    &quot;catalogId&quot; : &quot;%catalogId%&quot;,
+    &quot;fields&quot; : &quot;%fields%&quot;,
+    &quot;includeIneligible&quot; : true,
+    &quot;offsetSize&quot; : &quot;%offsetSize%&quot;,
+    &quot;pagesize&quot; : &quot;%pagesize%&quot;,
+    &quot;qualifiedFilter&quot; : &quot;%qualifiedFilter%&quot;,
+    &quot;query&quot; : &quot;%query%&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessKey>CPQ_GetProducts</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>GetProducts</subType>
+    <type>CPQ</type>
+    <uniqueName>CPQ_GetProducts_Procedure_5</uniqueName>
+    <versionNumber>5.0</versionNumber>
+    <webComponentKey>62a42c6e-ac6b-f293-e283-3d5c5619e79d</webComponentKey>
+</OmniIntegrationProcedure>

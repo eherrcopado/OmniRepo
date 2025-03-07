@@ -1,0 +1,32 @@
+<apex:page showHeader="true" sidebar="true" controller="vlocity_cmt.XOMAdminPageController" extensions="vlocity_cmt.XOMSyncDeltaControllerExtension,vlocity_cmt.XOMDataPurgeController" title="{!$Label.vlocity_cmt__VlocityXOMAdministration}">
+<apex:slds />    
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <head>
+            <base href="/"/>
+            <script type="text/javascript">
+            	const vlocAccessToken = '{!JSENCODE(vlocAccessToken)}';
+                const iframeUrl = '{!JSENCODE(XOMAdminPageIFrameUrl)}';
+                const configLayoutsLWCUrl = '{!JSENCODE(configLayoutsLWCUrl)}';
+                const namespace =  "{!JSENCODE(namespacePrefix)}".slice(0, -2);
+
+                $Lightning.use(namespace+":ltngOutVF", function() {
+                    $Lightning.createComponent(
+                        namespace+":xomAdmin",{ 
+                            container:"Visualforce",
+                            vlocAccessToken: vlocAccessToken,
+                            iframeUrl: iframeUrl,
+                            configLayoutsLWCUrl: configLayoutsLWCUrl
+                        },"lightning",function(cmp) {
+                            console.log('component created');
+                        }
+                    );
+                });
+            </script>
+        </head>
+        
+        <body>
+            <apex:includeLightning />
+            <div id="lightning" />
+        </body>
+    </html>
+</apex:page>

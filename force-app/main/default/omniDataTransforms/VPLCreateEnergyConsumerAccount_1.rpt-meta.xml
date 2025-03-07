@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Create Consumer Account</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AvailableProductList&quot; : null,
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingPreferences&quot; : null,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;Confirmation&quot; : null,
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Consumer&quot;,
+    &quot;BillingDetails&quot; : {
+      &quot;BillCycle&quot; : &quot;2&quot;,
+      &quot;BillDeliveryMethod&quot; : &quot;Paper Billing&quot;,
+      &quot;BillFormat&quot; : &quot;Summary&quot;,
+      &quot;BillFrequency&quot; : &quot;Quarterly&quot;,
+      &quot;BillingCity&quot; : &quot;bengaluru&quot;,
+      &quot;BillingCountry&quot; : &quot;India&quot;,
+      &quot;BillingEmailAddress&quot; : &quot;test@tt.co&quot;,
+      &quot;BillingPostalCode&quot; : &quot;56001&quot;,
+      &quot;BillingState&quot; : &quot;karnataka&quot;,
+      &quot;BillingStreet&quot; : &quot;Vidhan soudha&quot;,
+      &quot;NumberOfBills&quot; : 2
+    },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-08-27T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;CustomerClass&quot; : &quot;SMB&quot;,
+      &quot;CustomerDOB&quot; : &quot;08/06/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;terst&quot;,
+      &quot;CustomerLastName&quot; : &quot;ttt&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;Description&quot; : &quot;asdsad&quot;,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;SSN&quot;,
+      &quot;Industry&quot; : &quot;Agriculture&quot;,
+      &quot;SSN&quot; : &quot;132132222&quot;,
+      &quot;TaxId&quot; : null,
+      &quot;Website&quot; : &quot;www.test.com&quot;
+    },
+    &quot;ParentAccount-Block&quot; : null,
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : &quot;2020-08-31&quot;,
+      &quot;ExemptionPercentage&quot; : 60,
+      &quot;ExemptionStartDate&quot; : &quot;2020-08-28&quot;,
+      &quot;TaxExemption&quot; : &quot;Exempt&quot;,
+      &quot;TaxIds&quot; : &quot;121212&quot;
+    }
+  },
+  &quot;ElectricityProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+    &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;001&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+    &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;003&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+    &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;002&quot;
+  } ],
+  &quot;Error&quot; : { },
+  &quot;GasProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+    &quot;Name&quot; : &quot;Turn Off Order&quot;,
+    &quot;ProductCode&quot; : &quot;004&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+    &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+    &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+  } ],
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;PremiseServicePointsListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  } ],
+  &quot;ProductListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectService&quot; : null,
+  &quot;SelectServicePoints&quot; : null,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServicePointNumber&quot;,
+    &quot;label&quot; : &quot;Service Point Number&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;Status&quot;,
+    &quot;label&quot; : &quot;Status&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SerialNumber&quot;,
+    &quot;label&quot; : &quot;Serial Number&quot;
+  } ],
+  &quot;ServicePointsError&quot; : { },
+  &quot;ServicePointsMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;ServicePremises&quot; : null,
+  &quot;WaterProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+    &quot;Name&quot; : &quot;Water&quot;,
+    &quot;ProductCode&quot; : &quot;water&quot;
+  } ],
+  &quot;timeStamp&quot; : &quot;2020-08-27T05:46:13.107Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DR-GetProducts&quot; : 1207,
+    &quot;DRExtractBussinessAccountRecId&quot; : 911,
+    &quot;OmniScriptSessionToken&quot; : &quot;a722fba1-cbcd-4c1f-a7be-6cd78bf3e0e9&quot;,
+    &quot;SetCustomLWCValues&quot; : 154,
+    &quot;SetDefaultValues&quot; : 72
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLCreateEnergyConsumerAccount</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a29a1730-aa15-3bc1-d07c-8e6cf98f0b90</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:NumberOfBills</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillNumberOfCopies__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>35b61e9b-d046-9df0-79b0-315e7fe80a95</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillFrequency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillFrequency__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ca882436-3f0e-c0c7-507b-2ed4e580a4b6</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillFormat</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillFormat__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6bb97fa6-34fa-2e10-bd76-12daa8b76812</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillDeliveryMethod</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillDeliveryMethod__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b474c0f3-bc46-52c5-9810-ada44906bf0c</globalKey>
+        <inputFieldName>SelectPremises:ServiceLocation-Block:PremId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PremisesId__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6a050b88-f150-110d-54d6-cedc07c65b22</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerClass</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__CustomerClass__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Active</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>04413ae0-21f8-95ed-c46c-17f501da3371</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e6da05f6-292b-a5ef-7865-ca2f94880d8f</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingEmailAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillingEmailAddress__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2adf6d4c-d5d9-337c-b4eb-f6cd89b9a1b3</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:ExemptionPercentage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionPercentage__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CustomerSelection:NewCustomer &apos;No&apos; == var:CustomerSelection:GetCustomer-Block:ContactPhone var:CustomerSelection:NewCustomerDetails:CustomerPhone IF</formulaConverted>
+        <formulaExpression>IF(%CustomerSelection:NewCustomer% == &apos;No&apos;, %CustomerSelection:GetCustomer-Block:ContactPhone%, %CustomerSelection:NewCustomerDetails:CustomerPhone%)</formulaExpression>
+        <formulaResultPath>Phone</formulaResultPath>
+        <formulaSequence>7.0</formulaSequence>
+        <globalKey>da3fbef3-8c9e-9df1-3832-8e802df46507</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e95806a7-16be-af17-1ba7-5082c9244aa8</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:ExemptionEndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionEndDate__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>048d7f58-80d5-7203-fdc1-584d42b3a831</globalKey>
+        <inputFieldName>DRId_Contact</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PrimaryContactId__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1a815fdc-bdde-72ac-5d68-cd06637e350a</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:TaxIds</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxID__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>97a27dfa-0692-590a-486b-79dd55c97a70</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:TaxId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxID__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>580e5806-fac7-263b-8a4e-4d5d3e04bb65</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:TaxExemption</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionType__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>de93d677-8f61-63b0-f7f2-8005f8bfba3e</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:ExemptionStartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionStartDate__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3514b01c-8ef1-9394-b7a7-af25fb781056</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingState</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dd21a435-7aa9-64fc-138e-d45d3d4e8788</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingPostalCode</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0a28ad36-de15-eceb-9a96-ab5da1a6a09b</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCountry</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4631de14-0b7e-8696-8a67-f6034806b4e2</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCity</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingCity var:SelectPremises:ServiceLocation-Block:PremCity IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingCity%, %SelectPremises:ServiceLocation-Block:PremCity%)</formulaExpression>
+        <formulaResultPath>FML_MailingCity</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>02d1eabc-89f5-bf73-197d-594bb87d29f7</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>83f6b95a-bc8e-22e2-8d18-3c6354555409</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingStreet</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7f1e18fd-064d-8728-81d4-bda79d4ba5eb</globalKey>
+        <inputFieldName>AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e7c4412a-6f79-d139-19bd-106266e81054</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:Industry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Industry</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>16f1c17d-0506-e1cd-dbf3-d8fd3f740254</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9d9aa7c3-d213-1945-82b9-c31ff2aa368b</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b2beb905-d8ae-7305-8e83-b62e68d10f3b</globalKey>
+        <inputFieldName>FML_MailingCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingCountry</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>61fc4cbe-4d82-fd22-b66f-bcb9cc3b66b0</globalKey>
+        <inputFieldName>FML_MailingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingCity</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Consumer</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3cca6ca6-6f6a-5664-4222-e4d4d499e0e6</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>DeveloperName</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0871c7d6-2971-61b9-fdc4-177089a7e7f4</globalKey>
+        <inputFieldName>Phone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Phone</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3c832933-684b-581e-8b46-3b67f0466577</globalKey>
+        <inputFieldName>FML_MailingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingStreet</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingCountry var:SelectPremises:ServiceLocation-Block:PremCountry IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingCountry%, %SelectPremises:ServiceLocation-Block:PremCountry%)</formulaExpression>
+        <formulaResultPath>FML_MailingCountry</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>c432241a-661d-7163-4f6d-976fa6d473e5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>211e54d1-4606-786a-e744-7ba0feca3837</globalKey>
+        <inputFieldName>FML_MailingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingState</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1fa2b37f-99e5-e3fa-5d6f-9e0d81898802</globalKey>
+        <inputFieldName>FML_MailingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingPostalCode</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingZipCode var:SelectPremises:ServiceLocation-Block:PremPostalCode IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingZipCode%, %SelectPremises:ServiceLocation-Block:PremPostalCode%)</formulaExpression>
+        <formulaResultPath>FML_MailingPostalCode</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>ee3172d4-a001-1eb5-cf87-f4ef05bb709f</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingStreet var:SelectPremises:ServiceLocation-Block:PremiseStreetAddress IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingStreet%, %SelectPremises:ServiceLocation-Block:PremiseStreetAddress%)</formulaExpression>
+        <formulaResultPath>FML_MailingStreet</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>17c04539-8bb4-0e15-7547-8c6e1d18fc27</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingState var:SelectPremises:ServiceLocation-Block:PremState IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingState%, %SelectPremises:ServiceLocation-Block:PremState%)</formulaExpression>
+        <formulaResultPath>FML_MailingState</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>e81aec22-a16e-3a5b-35ac-f93e71dee8df</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d431c1c2-0ee6-03a9-9e28-203d6eac4c5d</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:Website</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Website</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ead83039-b38a-17ba-7434-39c0c8badfa1</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillCycle</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillCycle__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5c31dcbf-affe-0083-7c54-0e8381347e0e</globalKey>
+        <inputFieldName>BillingPreferences:APaymentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AccountPaymentType__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CustomerSelection:NewCustomer &apos;No&apos; == var:CustomerSelection:GetCustomer-Block:ContactName | var:CustomerSelection:NewCustomerDetails:CustomerFirstName &apos;/\/\/&apos; var:CustomerSelection:NewCustomerDetails:CustomerLastName CONCAT IF</formulaConverted>
+        <formulaExpression>IF(%CustomerSelection:NewCustomer% == &apos;No&apos;, %CustomerSelection:GetCustomer-Block:ContactName%, CONCAT(%CustomerSelection:NewCustomerDetails:CustomerFirstName%,&apos; &apos;, %CustomerSelection:NewCustomerDetails:CustomerLastName%))</formulaExpression>
+        <formulaResultPath>AccountName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>74aa029e-5106-f592-01f7-df781d78b6ed</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyConsumerAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AvailableProductList&quot; : null,
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingPreferences&quot; : null,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;Confirmation&quot; : null,
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Consumer&quot;,
+    &quot;BillingDetails&quot; : {
+      &quot;BillCycle&quot; : &quot;2&quot;,
+      &quot;BillDeliveryMethod&quot; : &quot;Paper Billing&quot;,
+      &quot;BillFormat&quot; : &quot;Summary&quot;,
+      &quot;BillFrequency&quot; : &quot;Quarterly&quot;,
+      &quot;BillingCity&quot; : &quot;bengaluru&quot;,
+      &quot;BillingCountry&quot; : &quot;India&quot;,
+      &quot;BillingEmailAddress&quot; : &quot;test@tt.co&quot;,
+      &quot;BillingPostalCode&quot; : &quot;56001&quot;,
+      &quot;BillingState&quot; : &quot;karnataka&quot;,
+      &quot;BillingStreet&quot; : &quot;Vidhan soudha&quot;,
+      &quot;NumberOfBills&quot; : 2
+    },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-08-27T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;CustomerClass&quot; : &quot;SMB&quot;,
+      &quot;CustomerDOB&quot; : &quot;08/06/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;terst&quot;,
+      &quot;CustomerLastName&quot; : &quot;ttt&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;Description&quot; : &quot;asdsad&quot;,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;SSN&quot;,
+      &quot;Industry&quot; : &quot;Agriculture&quot;,
+      &quot;SSN&quot; : &quot;132132222&quot;,
+      &quot;TaxId&quot; : null,
+      &quot;Website&quot; : &quot;www.test.com&quot;
+    },
+    &quot;ParentAccount-Block&quot; : null,
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : &quot;2020-08-31&quot;,
+      &quot;ExemptionPercentage&quot; : 60,
+      &quot;ExemptionStartDate&quot; : &quot;2020-08-28&quot;,
+      &quot;TaxExemption&quot; : &quot;Exempt&quot;,
+      &quot;TaxIds&quot; : &quot;121212&quot;
+    }
+  },
+  &quot;ElectricityProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+    &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;001&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+    &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;003&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+    &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;002&quot;
+  } ],
+  &quot;Error&quot; : { },
+  &quot;GasProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+    &quot;Name&quot; : &quot;Turn Off Order&quot;,
+    &quot;ProductCode&quot; : &quot;004&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+    &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+    &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+  } ],
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;PremiseServicePointsListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  } ],
+  &quot;ProductListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectService&quot; : null,
+  &quot;SelectServicePoints&quot; : null,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServicePointNumber&quot;,
+    &quot;label&quot; : &quot;Service Point Number&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;Status&quot;,
+    &quot;label&quot; : &quot;Status&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SerialNumber&quot;,
+    &quot;label&quot; : &quot;Serial Number&quot;
+  } ],
+  &quot;ServicePointsError&quot; : { },
+  &quot;ServicePointsMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;ServicePremises&quot; : null,
+  &quot;WaterProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+    &quot;Name&quot; : &quot;Water&quot;,
+    &quot;ProductCode&quot; : &quot;water&quot;
+  } ],
+  &quot;timeStamp&quot; : &quot;2020-08-27T05:46:13.107Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DR-GetProducts&quot; : 1207,
+    &quot;DRExtractBussinessAccountRecId&quot; : 911,
+    &quot;OmniScriptSessionToken&quot; : &quot;a722fba1-cbcd-4c1f-a7be-6cd78bf3e0e9&quot;,
+    &quot;SetCustomLWCValues&quot; : 154,
+    &quot;SetDefaultValues&quot; : 72
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLCreateEnergyConsumerAccount_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{}</customJavaScript>
+    <description>This VIP will return static Expected meter range.</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>VPL-ExpectedMeterRange</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Response</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : {
+    &quot;MeterRead&quot; : &quot;=%SVResponse:ResponseList:MeterRead%&quot;
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SVResponse</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;ResponseList&quot; : {
+      &quot;MeterRead&quot; : [ {
+        &quot;ExpectedHighValue&quot; : &quot;12565&quot;,
+        &quot;ExpectedLowValue&quot; : &quot;11955&quot;,
+        &quot;ExpectedRange&quot; : &quot;11955-12565&quot;,
+        &quot;MeterReadingDate&quot; : &quot;%SVTodayDate:TodayDate%&quot;,
+        &quot;Meter_Serial_Number__c&quot; : &quot;3422323&quot;,
+        &quot;PROD_Utility_Type__c&quot; : &quot;Electricity&quot;,
+        &quot;Reading&quot; : &quot;&quot;
+      }, {
+        &quot;ExpectedHighValue&quot; : &quot;13233&quot;,
+        &quot;ExpectedLowValue&quot; : &quot;12964&quot;,
+        &quot;ExpectedRange&quot; : &quot;12964-13233&quot;,
+        &quot;MeterReadingDate&quot; : &quot;%SVTodayDate:TodayDate%&quot;,
+        &quot;Meter_Serial_Number__c&quot; : &quot;5464564&quot;,
+        &quot;PROD_Utility_Type__c&quot; : &quot;Electricity&quot;,
+        &quot;Reading&quot; : &quot;&quot;
+      } ]
+    }
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SVTodayDate</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;TodayDate&quot; : &quot;=TODAY()&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues2&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessKey>VPL_ExpectedMeterRange</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>ExpectedMeterRange</subType>
+    <type>VPL</type>
+    <uniqueName>VPL_ExpectedMeterRange_Procedure_7</uniqueName>
+    <versionNumber>7.0</versionNumber>
+    <webComponentKey>8ffaa7c0-0cdb-b45e-2dff-96c2cc55589b</webComponentKey>
+</OmniIntegrationProcedure>

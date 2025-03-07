@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This OmniScript is called in Move Process</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Multi-Language</language>
+    <name>MACD Move</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CheckAvailableAssets</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;failureAbortLabel&quot; : null,
+  &quot;failureAbortMessage&quot; : null,
+  &quot;failureNextLabel&quot; : null,
+  &quot;inProgressMessage&quot; : null,
+  &quot;label&quot; : null,
+  &quot;postMessage&quot; : null,
+  &quot;redirectNextLabel&quot; : null,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : null,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;OmniMoveAssetWrapper&quot;,
+  &quot;remoteMethod&quot; : &quot;checkAvailableAssets&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;Elem Name&quot; : &quot;AllAssets&quot;,
+    &quot;JSON Node&quot; : &quot;SelectAsset&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : &quot;None&quot;
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CreateMoveInOrder</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : null,
+  &quot;failureAbortMessage&quot; : null,
+  &quot;failureNextLabel&quot; : null,
+  &quot;inProgressMessage&quot; : null,
+  &quot;label&quot; : &quot;vlocity_cmt__MACDCreateMoveInOrder&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : null,
+  &quot;redirectNextLabel&quot; : null,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : null,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;OmniMoveAssetWrapper&quot;,
+  &quot;remoteMethod&quot; : &quot;createOrder&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>RetrieveAllAssets</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;failureAbortLabel&quot; : null,
+  &quot;failureAbortMessage&quot; : null,
+  &quot;failureNextLabel&quot; : null,
+  &quot;inProgressMessage&quot; : null,
+  &quot;label&quot; : null,
+  &quot;postMessage&quot; : null,
+  &quot;redirectNextLabel&quot; : null,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : null,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;OmniMoveAssetWrapper&quot;,
+  &quot;remoteMethod&quot; : &quot;getAssets&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;JSON Node&quot; : &quot;AllAssets&quot;,
+    &quot;ProvisioningStatusList&quot; : &quot;Active&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : &quot;None&quot;
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Done</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;consoleTabLabel&quot; : null,
+  &quot;controlWidth&quot; : 3,
+  &quot;label&quot; : &quot;vlocity_cmt__MACDDone&quot;,
+  &quot;message&quot; : { },
+  &quot;redirectPageName&quot; : &quot;mobileDone&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcMobileConfirmation.html&quot;,
+  &quot;show&quot; : null,
+  &quot;source&quot; : &quot;/apex/vlocity_cmt__HybridCPQ?id=%OrderId%&quot;,
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;URL&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Done Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Headline 2</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&lt;p&gt;Click &apos;Done\&quot; to Go to Order Detail Page.  &lt;/p&gt;&quot;,
+  &quot;labelKey&quot; : &quot;vlocity_cmt__MACDReviewHeader2&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Headline</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ReviewHeader</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;&lt;p&gt;Please review the Move Order.&lt;/p&gt;&quot;,
+  &quot;labelKey&quot; : &quot;vlocity_cmt__MACDReviewHeader&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Headline</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Selectable Items 2</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;MovedAssetReview.html&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;dataJSON&quot; : false,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;label&quot; : null,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;jsonPath&quot; : &quot;SelectAssets:SelectAsset&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Review</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;cancelLabel&quot; : null,
+  &quot;cancelMessage&quot; : null,
+  &quot;completeLabel&quot; : null,
+  &quot;completeMessage&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;instructionKey&quot; : null,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : &quot;vlocity_cmt__MACDReview&quot;,
+  &quot;nextLabel&quot; : null,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : null,
+  &quot;previousWidth&quot; : 3,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : null,
+  &quot;saveMessage&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Formula 2</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;expression&quot; : &quot;COUNT(%SelectAsset%) &gt; 0&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;label&quot; : null,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Messaging 1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : null,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;vlocity_cmt__ASSETAssetSelected&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;vlocity_cmt__ASSETNoAssetSelected&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;Formula 2&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Validation</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SelectAsset</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;SelectAssetToMove.html&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;dataJSON&quot; : true,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;label&quot; : null,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;OmniMoveAssetWrapper&quot;,
+  &quot;remoteMethod&quot; : &quot;moveAssets&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;Pricebook&quot; : &quot;Standard&quot;,
+    &quot;jsonPath&quot; : &quot;SelectAssets:SelectAsset&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;selectMode&quot; : &quot;Multi&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Set Errors 2</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;elementErrorMap&quot; : {
+    &quot;Formula 2&quot; : false
+  },
+  &quot;label&quot; : null,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;test&quot;,
+        &quot;field&quot; : &quot;SelectAssets&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : &quot;Step&quot;
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Set Errors</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SelectAssets</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;cancelLabel&quot; : null,
+  &quot;cancelMessage&quot; : null,
+  &quot;completeLabel&quot; : null,
+  &quot;completeMessage&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;instructionKey&quot; : null,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : &quot;vlocity_cmt__MACDSelectAssetsToMove&quot;,
+  &quot;nextLabel&quot; : null,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : null,
+  &quot;previousWidth&quot; : 3,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : null,
+  &quot;saveMessage&quot; : null,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : null,
+        &quot;field&quot; : &quot;showAsset&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DateTest</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;%MoveOutDate% &lt;= %MoveInDate%&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : null,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Move Date Error</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : null,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;vlocity_cmt__MACDDateError&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;DateTest&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Validation</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>MoveInDate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 5,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;dateType&quot; : &quot;string&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;vlocity_cmt__MACDMoveInDate&quot;,
+  &quot;modelDateFormat&quot; : &quot;yyyy-MM-dd&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : true,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Date</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>MoveOutDate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 5,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;dateType&quot; : &quot;string&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;vlocity_cmt__MACDMoveOutDate&quot;,
+  &quot;modelDateFormat&quot; : &quot;yyyy-MM-dd&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : true,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Date</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SelectInOutDate</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;cancelLabel&quot; : null,
+  &quot;cancelMessage&quot; : null,
+  &quot;completeLabel&quot; : null,
+  &quot;completeMessage&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;instructionKey&quot; : null,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : &quot;vlocity_cmt__MACDSelectMoveInMoveOutDates&quot;,
+  &quot;nextLabel&quot; : null,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : null,
+  &quot;previousWidth&quot; : 3,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : null,
+  &quot;saveMessage&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Submit</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : null,
+  &quot;failureAbortMessage&quot; : null,
+  &quot;failureNextLabel&quot; : null,
+  &quot;inProgressMessage&quot; : null,
+  &quot;label&quot; : null,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : null,
+  &quot;redirectNextLabel&quot; : null,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : null,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;OmniMoveAssetWrapper&quot;,
+  &quot;remoteMethod&quot; : &quot;moveAssets&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;JSON Node&quot; : &quot;FilteredAsset&quot;,
+    &quot;jsonPath&quot; : &quot;SelectAssets:SelectAsset&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SubmitNewAssets</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : null,
+  &quot;failureAbortMessage&quot; : null,
+  &quot;failureNextLabel&quot; : null,
+  &quot;inProgressMessage&quot; : null,
+  &quot;label&quot; : null,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : null,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : null,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : null,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;OmniMoveAssetWrapper&quot;,
+  &quot;remoteMethod&quot; : &quot;moveNewAssets&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;JSON Node&quot; : &quot;FilteredAsset&quot;,
+    &quot;jsonPath&quot; : &quot;SelectAssets:SelectAsset&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;ssm&quot; : false,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SubstringIds</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : null,
+  &quot;failureAbortMessage&quot; : null,
+  &quot;failureNextLabel&quot; : null,
+  &quot;inProgressMessage&quot; : null,
+  &quot;label&quot; : null,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : null,
+  &quot;redirectNextLabel&quot; : null,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : null,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;OmniMoveAssetWrapper&quot;,
+  &quot;remoteMethod&quot; : &quot;getAccountIds&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ValidateSelectedAsset</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;failureAbortLabel&quot; : null,
+  &quot;failureAbortMessage&quot; : null,
+  &quot;failureNextLabel&quot; : null,
+  &quot;inProgressMessage&quot; : null,
+  &quot;label&quot; : null,
+  &quot;postMessage&quot; : null,
+  &quot;redirectNextLabel&quot; : null,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : null,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;OmniMoveAssetWrapper&quot;,
+  &quot;remoteMethod&quot; : &quot;validateSelectedAsset&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;Elem Name&quot; : &quot;AllAssets&quot;,
+    &quot;JSON Node&quot; : &quot;FilteredAsset&quot;,
+    &quot;jsonPath&quot; : &quot;SelectAssets:SelectAsset&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;allowSaveForLater&quot;:false,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;%moveOutAccountId%&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;consoleTabLabel&quot;:null,&quot;consoleTabTitle&quot;:null,&quot;currencyCode&quot;:&quot;&quot;,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;enableKnowledge&quot;:false,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;hideStepChart&quot;:true,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;OmniCPQServiceWrapper&quot;,&quot;remoteMethod&quot;:&quot;updateCart&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:true,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;},{&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;&quot;,&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false}],&quot;persistentComponent|0:label&quot;:null,&quot;persistentComponent|1:label&quot;:null,&quot;rtpSeed&quot;:false,&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;seedDataJSON&quot;:{},&quot;showInputWidth&quot;:false,&quot;ssm&quot;:false,&quot;timeTracking&quot;:true,&quot;trackingCustomData&quot;:{},&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
+    <subType>Move</subType>
+    <type>MACD</type>
+    <uniqueName>MACD_Move_multiLanguage_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>c22b6cd3-3790-928b-f299-1ad89a467b31</webComponentKey>
+</OmniScript>

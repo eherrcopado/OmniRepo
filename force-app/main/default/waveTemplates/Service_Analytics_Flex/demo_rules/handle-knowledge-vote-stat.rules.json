@@ -1,0 +1,115 @@
+{
+	"rules": [
+		{
+      		"name": "HandleKnowledgeVoteStatExtraction",
+      		"condition": "${Variables.isDemoApplication == 'Yes'}",
+      		"actions": [
+      			{
+      				"action": "put",
+      				"description": "Extract data from KCSArticle_VoteStat__c custom object.",
+      				"key": "Extract_Demo_KnowledgeVoteStat",
+      				"path": "$.workflowDefinition",
+      				"value": {
+                    "action": "sfdcDigest",
+                        "parameters": {
+                            "fields": [
+                                {
+                                    "name": "Channel__c"
+                                },
+                                {
+                                    "name": "ParentId__c"
+                                },
+                                {
+                                    "name": "NormalizedScore__c"
+                                }
+                            ],
+                            "object": "KCSArticle_VoteStat__c"
+                        }   
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Rename custom fields after Extract_Demo_KnowledgeVoteStat",
+                    "key": "Extract_Demo_KnowledgeVoteStat_rename_fields",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "computeExpression",
+                        "parameters": {            
+                            "source": "Extract_Demo_KnowledgeVoteStat",
+                            "mergeWithSource": true,
+                            "computedFields": [
+                                {
+                                    "name":"Channel",
+                                    "type":"Text",
+                                    "saqlExpression":"Channel__c"
+                                },
+                                {
+                                    "name":"ParentId",
+                                    "type":"Text",
+                                    "saqlExpression":"ParentId__c"
+                                },
+                                {
+                                    "name":"NormalizedScore",
+                                    "type":"Numeric",
+                                    "precision": 18,
+                                    "scale": 4,
+                                    "saqlExpression":"NormalizedScore__c"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "key": "Extract_Demo_KnowledgeVoteStat_drop_custom",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "sliceDataset",
+                        "parameters": {
+                            "mode": "drop",
+                            "fields": [
+                                {
+                                    "name": "Channel__c"
+                                },
+                                {
+                                    "name": "ParentId__c"
+                                },
+                                {
+                                    "name": "NormalizedScore__c"
+                                }
+                            ],
+                            "source": "Extract_Demo_KnowledgeVoteStat_rename_fields"
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Final merge of user and demo data for KnowledgeVoteStat.",
+                    "key": "Extract_KnowledgeVoteStat_merge",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "append",
+                        "parameters": {            
+                            "sources": [
+                                "Extract_Demo_KnowledgeVoteStat_drop_custom",
+                                "Extract_Knowledge_VoteStat"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "set",
+                    "description": "Set the left property of Join_Append_Knowledge__ka_kav_dataCategory_ViewStat_VoteStat parameters based on Demo App or not.",
+                    "path": "$.workflowDefinition.Join_Append_Knowledge__ka_kav_dataCategory_ViewStat_VoteStat.parameters['right']",
+                    "value": "Extract_KnowledgeVoteStat_merge"
+                }
+			],						
+			"appliesTo": [
+                {
+                    "type": "workflow",
+                    "name": "*"
+                }
+      		]
+		}
+	]
+}

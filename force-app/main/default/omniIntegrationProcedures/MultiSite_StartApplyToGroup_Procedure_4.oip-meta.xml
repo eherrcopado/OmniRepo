@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;OpportunityId&quot;:&quot;0065g000005lzNAAAY&quot;,&quot;cartType&quot;:&quot;Quote&quot;,&quot;contextId&quot;:&quot;0Q05g0000011E5ZCAU&quot;,&quot;groupCartId&quot;:&quot;0Q05g0000011EvzCAE&quot;,&quot;groupId&quot;:&quot;a3W5g00000118B3EAI&quot;}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>MultiSite Apply to Group</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ApplyToGroupInput</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;ApplyToGroupIPName&quot; : &quot;MultiSite_ApplyToGroup&quot;,
+    &quot;cartType&quot; : &quot;%cartType%&quot;,
+    &quot;contextId&quot; : &quot;%contextId%&quot;,
+    &quot;groupCartId&quot; : &quot;%groupCartId%&quot;,
+    &quot;groupId&quot; : &quot;%groupId%&quot;,
+    &quot;parentId&quot; : &quot;%parentId%&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ApexRemoteCall</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;ApplyToGroupIPName&quot; : &quot;%ApplyToGroupInput:ApplyToGroupIPName%&quot;,
+    &quot;BatchSize&quot; : &quot;25&quot;,
+    &quot;HasFailedGroupMembers&quot; : &quot;%HasFailedGroupMembers%&quot;,
+    &quot;applyToGroupFailed&quot; : &quot;%applyToGroupFailed%&quot;,
+    &quot;cartType&quot; : &quot;%ApplyToGroupInput:cartType%&quot;,
+    &quot;contextId&quot; : &quot;%ApplyToGroupInput:contextId%&quot;,
+    &quot;groupCartId&quot; : &quot;%ApplyToGroupInput:groupCartId%&quot;,
+    &quot;groupId&quot; : &quot;%ApplyToGroupInput:groupId%&quot;,
+    &quot;groupIds&quot; : &quot;%groupIds%&quot;,
+    &quot;hasPostProcess&quot; : &quot;false&quot;,
+    &quot;notifications&quot; : {
+      &quot;appNotification&quot; : {
+        &quot;ApplyToGroupNotificationEnabled&quot; : true,
+        &quot;customNotificationTypeName&quot; : &quot;CMEbatchJob&quot;
+      }
+    },
+    &quot;parentId&quot; : &quot;%ApplyToGroupInput:parentId%&quot;,
+    &quot;processDeltaMembers&quot; : &quot;true&quot;,
+    &quot;retrycount&quot; : &quot;%retrycount%&quot;,
+    &quot;startJobVIPName&quot; : &quot;%startJobVIPName%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction2&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.MultiServiceAppHandler&quot;,
+  &quot;remoteMethod&quot; : &quot;applyToGroup&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;response&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Remote Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>EmptyInputResponse</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;additionalOutput&quot; : {
+    &quot;response&quot; : {
+      &quot;error&quot; : &quot;Bad Request&quot;,
+      &quot;errorCode&quot; : &quot;INVOKE-400&quot;,
+      &quot;message&quot; : &quot;Empty OpportunityId, AccountId, MasterQuote Name or recordType &quot;
+    }
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%ApplyToGroupInput:cartType% == \&quot;\&quot; || %ApplyToGroupInput:contextId% == \&quot;\&quot; || %ApplyToGroupInput:parentId% == \&quot;\&quot;  || %ApplyToGroupInput:groupId% == \&quot;\&quot; \n|| %ApplyToGroupInput:groupCartId% == \&quot;\&quot; &quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Response Action</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>EmptyConditionalCheck</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Conditional Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>RemoteCallResponse</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : {
+    &quot;response&quot; : &quot;%ApexRemoteCall%&quot;
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessKey>MultiSite_StartApplyToGroup</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>StartApplyToGroup</subType>
+    <type>MultiSite</type>
+    <uniqueName>MultiSite_StartApplyToGroup_Procedure_4</uniqueName>
+    <versionNumber>4.0</versionNumber>
+    <webComponentKey>427759b5-b047-1a5b-7515-0c4cc016f565</webComponentKey>
+</OmniIntegrationProcedure>

@@ -1,0 +1,193 @@
+{
+	"constants": [
+            {
+	           "name": "Extract_OpportunityHistory_Outcome",
+	           "value": "${Variables.isDemoApplication == 'Yes' ? 'Extract_OpportunityHistory_merge' : 'Extract_OpportunityHistory'}"
+            }
+	],
+	"rules": [
+		{
+      		"name": "HandleOpportunityHistoryExtraction",
+      		"condition": "${Variables.isDemoApplication == 'Yes'}",
+      		"actions": [
+      			{
+      				"action": "put",
+      				"description": "Extract data from OpportunityHistory__c custom object.",
+      				"key": "Extract_Demo_OpportunityHistory",
+      				"path": "$.workflowDefinition",
+      				"value": {
+      					"action": "sfdcDigest",
+                                    "parameters": {
+                                          "fields": [
+                                                {
+                                                      "name": "Amount__c"
+                                                }, 
+                                                {
+                                                      "name": "CloseDate__c"
+                                                }, 
+                                                {
+                                                      "name": "CreatedById"
+                                                }, 
+                                                {
+                                                      "name": "CreatedDate__c"
+                                                }, 
+                                                {
+                                                      "name": "ForecastCategory__c"
+                                                }, 
+                                                {
+                                                      "name": "Id"
+                                                }, 
+                                                {
+                                                      "name": "IsDeleted"
+                                                }, 
+                                                {
+                                                      "name": "OpportunityId__c"
+                                                }, 
+                                                {
+                                                      "name": "StageName__c"
+                                                }
+                                          ],
+                                          "object": "OpportunityHistory__c"
+                                    },
+                                    "schema": {
+                                          "objects": [
+                                                {
+                                                      "fields": [
+                                                            {
+                                                                  "description": "Opportunity Created Date", 
+                                                                  "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", 
+                                                                  "label": "CreatedDate", 
+                                                                  "name": "CreatedDate__c"
+                                                            }, 
+                                                            {
+                                                                  "description": "Amount", 
+                                                                  "label": "Amount", 
+                                                                  "name": "Amount__c"
+                                                            }
+                                                      ], 
+                                                      "label": "OpportunityHistory"
+                                                }
+                                          ]
+                                    }
+      				}
+      			},
+      			{
+      				"action": "put",
+      				"description": "Rename custom fields after Extract_Demo_OpportunityHistory",
+      				"key": "Extract_Demo_OpportunityHistory_rename_fields",
+      				"path": "$.workflowDefinition",
+      				"value": {
+      					"action": "computeExpression",
+						"parameters": {            
+							"source": "Extract_Demo_OpportunityHistory",
+							"mergeWithSource": true,
+							"computedFields": [
+								{
+									"name": "CreatedDate",
+									"type": "Date",
+									"label": "CreatedDate",
+									"saqlExpression": "toDate(CreatedDate__c, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+									"default":"",
+									"format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+								},
+                                                {
+                                                      "name": "CloseDate",
+                                                      "type": "Date",
+                                                      "label": "CloseDate",
+                                                      "saqlExpression": "toDate(CloseDate__c, \"yyyy-MM-dd\")",
+                                                      "default":"",
+                                                      "format":"yyyy-MM-dd"
+                                                },
+                                                {
+                                                      "name":"ForecastCategory",
+                                                      "type":"Text",
+                                                      "saqlExpression":"ForecastCategory__c",
+                                                      "default": ""
+                                                },
+                                                {
+                                                      "name":"OpportunityId",
+                                                      "type":"Text",
+                                                      "saqlExpression":"OpportunityId__c",
+                                                      "default":""
+                                                },
+                                                {
+                                                      "name":"StageName",
+                                                      "type":"Text",
+                                                      "saqlExpression":"StageName__c",
+                                                      "default":""
+                                                },
+                                                {
+                                                      "name":"Amount",
+                                                      "type":"Numeric",
+                                                      "saqlExpression":"Amount__c",
+                                                      "precision": 18, 
+                                                      "defaultValue": "0",
+                                                      "scale": 2
+                                                }
+							]
+						}
+      				}
+      			},
+                        {
+                              "action": "put",
+                              "key": "Extract_Demo_OpportunityHistory_drop_custom",
+                              "path": "$.workflowDefinition",
+                              "value": {
+                                    "action": "sliceDataset",
+                                    "parameters": {
+                                          "mode": "drop",
+                                          "fields": [
+                                                {
+                                                      "name": "CloseDate__c"
+                                                },
+                                                {
+                                                      "name": "CreatedDate__c"
+                                                },
+                                                {
+                                                      "name": "OpportunityId__c"
+                                                },
+                                                {
+                                                      "name": "StageName__c"
+                                                },
+                                                {
+                                                      "name": "Amount__c"
+                                                },
+                                                {
+                                                      "name": "ForecastCategory__c"
+                                                }
+                                          ],
+                                          "source": "Extract_Demo_OpportunityHistory_rename_fields"
+                                    }
+                              }
+                        },
+      			{
+      				"action": "put",
+      				"description": "Final merge of user and demo data for CaseArticle.",
+      				"key": "Extract_OpportunityHistory_merge",
+      				"path": "$.workflowDefinition",
+      				"value": {
+      					"action": "append",
+						"parameters": {            
+							"sources": [
+								"Extract_Demo_OpportunityHistory_drop_custom",
+								"Extract_OpportunityHistory"
+							]
+						}
+      				}
+      			},
+      			{
+      				"action": "set",
+      				"description": "Set the source property of Add_Unique_Sort_Key_to_OpportunityHistory.parameters based on Demo App or not.",
+      				"path": "$.workflowDefinition.Add_Unique_Sort_Key_to_OpportunityHistory.parameters['source']",
+      				"value": "${Constants.Extract_OpportunityHistory_Outcome}"
+      			}
+			],						
+			"appliesTo": [
+                        {
+                              "type": "workflow",
+                              "name": "*"
+                        }
+      		]
+		}
+	]
+}

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;PricingVariableCode&quot;:&quot;OT_STD_PRC&quot;,&quot;cartId&quot;:&quot;8014W000001yoLzQAI&quot;,&quot;fields&quot;:&quot;vlocity_cmt__OneTimeCharge__c&quot;,&quot;id&quot;:&quot;&quot;,&quot;listkeys&quot;:&quot;TimePlans,TimePolicies,AdjustmentCodes&quot;}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>CPQGetListsOfValuesIP</name>
+    <omniProcessElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>DRTransformAdjustmentCodes</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;CPQGetListsOfValuesDR&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction2&quot;,
+  &quot;responseJSONNode&quot; : &quot;AdjustmentCodes&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%getListsOfValuesResponse:records%&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>4.0</sequenceNumber>
+                <type>DataRaptor Transform Action</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ConditionalBlockAdjustmentCodes</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%getListsOfValuesResponse:records:listkey% == \&quot;AdjustmentCodes\&quot;&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Conditional Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>DRTransformTimePlans</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;CPQGetListsOfValuesDR&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction2&quot;,
+  &quot;responseJSONNode&quot; : &quot;TimePlans&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%getListsOfValuesResponse:records%&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>8.0</sequenceNumber>
+                <type>DataRaptor Transform Action</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ConditionalBlockTimePlans</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%getListsOfValuesResponse:records:listkey% == \&quot;TimePlans\&quot;&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>7.0</sequenceNumber>
+            <type>Conditional Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>DRTransformTimePolicies</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;CPQGetListsOfValuesDR&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction2&quot;,
+  &quot;responseJSONNode&quot; : &quot;TimePolicies&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%getListsOfValuesResponse:records%&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>6.0</sequenceNumber>
+                <type>DataRaptor Transform Action</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ConditionalBlockTimePolicies</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%getListsOfValuesResponse:records:listkey% == \&quot;TimePolicies\&quot;&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Conditional Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>LoopBlock</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;LoopBlock1&quot;,
+  &quot;loopList&quot; : &quot;getListsOfValuesResponse:records&quot;,
+  &quot;loopOutput&quot; : {
+    &quot;key&quot; : &quot;%getListsOfValuesResponse:records:listkey%&quot;
+  },
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Loop Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>RAGetListsOfValues</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;PricingVariableCode&quot; : &quot;%PricingVariableCode%&quot;,
+    &quot;cartId&quot; : &quot;%cartId%&quot;,
+    &quot;fields&quot; : &quot;%fields%&quot;,
+    &quot;id&quot; : &quot;%id%&quot;,
+    &quot;listkeys&quot; : &quot;%listkeys%&quot;
+  },
+  &quot;additionalOutput&quot; : {
+    &quot;options&quot; : &quot;&quot;
+  },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction1&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.CpqAppHandler&quot;,
+  &quot;remoteMethod&quot; : &quot;getListsOfValues&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;getListsOfValuesResponse&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ResponseAction</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : {
+    &quot;options&quot; : &quot;%SetValues%&quot;
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;%getListsOfValuesResponse%&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValues</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;AdjustmentCodes&quot; : &quot;%AdjustmentCodes:options%&quot;,
+    &quot;TimePlans&quot; : &quot;%TimePlans:options%&quot;,
+    &quot;TimePolicies&quot; : &quot;%TimePolicies:options%&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues4&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessKey>CPQ_GetListsOfValues</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>GetListsOfValues</subType>
+    <type>CPQ</type>
+    <uniqueName>CPQ_GetListsOfValues_Procedure_4</uniqueName>
+    <versionNumber>4.0</versionNumber>
+    <webComponentKey>ccade17b-ca11-c136-f5fa-fdb215e09138</webComponentKey>
+</OmniIntegrationProcedure>

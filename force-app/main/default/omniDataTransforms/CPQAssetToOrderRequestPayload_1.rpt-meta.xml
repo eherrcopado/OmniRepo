@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;additionalData&quot; : {
+    &quot;AccountId&quot; : &quot;0015e000003I9Jb&quot;,
+    &quot;OrderId&quot; : null
+  },
+  &quot;asyncProcessId&quot; : &quot;9876543&quot;,
+  &quot;asyncProcessName&quot; : &quot;Bulk CPQ&quot;,
+  &quot;itemsToProcessSubsetList&quot; : [ &quot;02i5e0000005P7u&quot;, &quot;02i5e0000005P7r&quot;, &quot;02i5e0000005TG6&quot;, &quot;02i5e0000005P7y&quot;, &quot;02i5e0000005RZH&quot; ],
+  &quot;referenceId&quot; : &quot;12324&quot;,
+  &quot;stepName&quot; : &quot;Validate&quot;,
+  &quot;stepNumber&quot; : 1
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CPQAssetToOrderRequestPayload</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:itemsToProcessSubsetList &apos;,&apos; JOIN</formulaConverted>
+        <formulaExpression>JOIN(itemsToProcessSubsetList,&apos;,&apos;)</formulaExpression>
+        <formulaResultPath>assetIds</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>CPQ-AssetToOrderRequestPayloadCustom7913</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQAssetToOrderRequestPayload</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-AssetToOrderRequestPayloadCustom5684</globalKey>
+        <inputFieldName>requestedDateTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQAssetToOrderRequestPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>requestDateTime</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-AssetToOrderRequestPayloadCustom3317</globalKey>
+        <inputFieldName>additionalData:accountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQAssetToOrderRequestPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>accountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-AssetToOrderRequestPayloadCustom8042</globalKey>
+        <inputFieldName>assetIds</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQAssetToOrderRequestPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-AssetToOrderRequestPayloadCustom757</globalKey>
+        <inputFieldName>methodName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQAssetToOrderRequestPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>methodName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>&apos;assetToOrder&apos;</formulaConverted>
+        <formulaExpression>&apos;assetToOrder&apos;</formulaExpression>
+        <formulaResultPath>methodName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>CPQ-AssetToOrderRequestPayloadCustom2241</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQAssetToOrderRequestPayload</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | NOW &quot;YYYY-MM-dd/\/\/HH:mm:ss&quot; FORMATDATETIME</formulaConverted>
+        <formulaExpression>FORMATDATETIME(NOW(),&quot;YYYY-MM-dd HH:mm:ss&quot;)</formulaExpression>
+        <formulaResultPath>requestedDateTime</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>CPQ-AssetToOrderRequestPayloadCustom3058</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQAssetToOrderRequestPayload</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-AssetToOrderRequestPayloadCustom8728</globalKey>
+        <inputFieldName>additionalData:orderId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQAssetToOrderRequestPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>orderId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>false</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-AssetToOrderRequestPayloadCustom4271</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQAssetToOrderRequestPayload</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>price</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;0015e000003I9Jb&quot;,
+  &quot;AssetIds&quot; : &quot;02i5e0000005P7u,02i5e0000005P7v&quot;,
+  &quot;OrderId&quot; : null,
+  &quot;additionalData&quot; : {
+    &quot;AccountId&quot; : &quot;0015e000003I9Jb&quot;,
+    &quot;OrderId&quot; : null
+  },
+  &quot;asyncProcessId&quot; : &quot;9876543&quot;,
+  &quot;asyncProcessName&quot; : &quot;Bulk CPQ&quot;,
+  &quot;itemsToProcessSubsetList&quot; : [ &quot;02i5e0000005P7u&quot;, &quot;02i5e0000005P7r&quot;, &quot;02i5e0000005TG6&quot;, &quot;02i5e0000005P7y&quot;, &quot;02i5e0000005RZH&quot; ],
+  &quot;referenceId&quot; : &quot;12324&quot;,
+  &quot;stepName&quot; : &quot;Validate&quot;,
+  &quot;stepNumber&quot; : 1
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>CPQAssetToOrderRequestPayload_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

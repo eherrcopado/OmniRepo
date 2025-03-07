@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;Id&quot;:&quot;0013h00000Bue2WAAR&quot;}</customJavaScript>
+    <description>This Integration Procedure will get the contracts related to a business account.</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>VPL/GetContractList</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>columnsData</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;columns&quot; : [ {
+      &quot;fieldName&quot; : &quot;ContractId&quot;,
+      &quot;label&quot; : &quot;sfiEnergyConsoleContractNumber&quot;,
+      &quot;visible&quot; : false
+    }, {
+      &quot;fieldName&quot; : &quot;ContractNumber&quot;,
+      &quot;label&quot; : &quot;sfiEnergyConsoleContractNumber&quot;,
+      &quot;searchable&quot; : true,
+      &quot;sortable&quot; : true
+    }, {
+      &quot;fieldName&quot; : &quot;AccountName&quot;,
+      &quot;label&quot; : &quot;sfiEnergyConsoleContractAccountName&quot;,
+      &quot;searchable&quot; : true,
+      &quot;sortable&quot; : true
+    }, {
+      &quot;fieldName&quot; : &quot;ContractStartDate&quot;,
+      &quot;label&quot; : &quot;sfiEnergyConsoleContractStartDate&quot;,
+      &quot;searchable&quot; : true,
+      &quot;sortable&quot; : true
+    }, {
+      &quot;fieldName&quot; : &quot;ContractEndDate&quot;,
+      &quot;label&quot; : &quot;sfiEnergyConsoleContractEndDate&quot;,
+      &quot;searchable&quot; : true,
+      &quot;sortable&quot; : true
+    }, {
+      &quot;fieldName&quot; : &quot;ContractStatus&quot;,
+      &quot;label&quot; : &quot;sfiEnergyConsoleContractStatus&quot;,
+      &quot;searchable&quot; : true,
+      &quot;sortable&quot; : true
+    } ]
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DRGetContractList</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;VPLGetContractList&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;FetchAccount_ContactId:AccountId&quot;,
+    &quot;inputParam&quot; : &quot;Id&quot;
+  } ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DRTransformContractList</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;ContractList&quot; : &quot;%DRGetContractList:data%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;VPLTransformContractList&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Fetch Account &amp; Contact Id</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FetchAccount_ContactId</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;disableChainable&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;integrationProcedureKey&quot; : &quot;VPL_GetCustomerAccountContact&quot;,
+  &quot;label&quot; : &quot;IntegrationProcedureAction1&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Response</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : {
+    &quot;ContractListData&quot; : &quot;%DRTransformContractList%&quot;,
+    &quot;columnsData&quot; : &quot;%columnsData%&quot;
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessKey>VPL_ContractList</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>ContractList</subType>
+    <type>VPL</type>
+    <uniqueName>VPL_ContractList_Procedure_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>56dd9d40-38c1-c833-9793-f8343e7e06c6</webComponentKey>
+</OmniIntegrationProcedure>

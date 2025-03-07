@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : &quot;800o00000000cui&quot;,
+  &quot;timeStamp&quot; : &quot;2016-01-22T21:46:40.821Z&quot;,
+  &quot;userName&quot; : &quot;bzhantelco2@vlocity.com&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;Step 1&quot; : 59812,
+    &quot;Extract contract line items&quot; : 1027
+  },
+  &quot;Step 1&quot; : {
+    &quot;Terminate Date&quot; : &quot;2016-01-20T08:00:00.000Z&quot;,
+    &quot;Terminate Type&quot; : &quot;With Cause&quot;,
+    &quot;Terminate Reason&quot; : &quot;Customer Not Compliance&quot;,
+    &quot;Terminate Option&quot; : &quot;Partially terminate lines in the contract&quot;
+  },
+  &quot;Step 2&quot; : {
+    &quot;ContractItem&quot; : [ {
+      &quot;Name&quot; : &quot;GenWatt Diesel 10kW&quot;,
+      &quot;Status&quot; : &quot;Inactive&quot;,
+      &quot;Id&quot; : &quot;a1Eo0000002Dc3MEAS&quot;,
+      &quot;$$hashKey&quot; : &quot;object:202&quot;,
+      &quot;vlcSelected&quot; : true
+    } ]
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>InactiveSelectedContractItems</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InactiveSelectedContractItemsCustom3263</globalKey>
+        <inputFieldName>Step 2:ContractItem:Status</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InactiveSelectedContractItems</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>InactiveSelectedContractItemsCustom1537</globalKey>
+        <inputFieldName>Step 2:ContractItem:Id</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>InactiveSelectedContractItems</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : &quot;800o00000000cui&quot;,
+  &quot;timeStamp&quot; : &quot;2016-01-22T21:46:40.821Z&quot;,
+  &quot;userName&quot; : &quot;bzhantelco2@vlocity.com&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;Step 1&quot; : 59812,
+    &quot;Extract contract line items&quot; : 1027
+  },
+  &quot;Step 1&quot; : {
+    &quot;Terminate Date&quot; : &quot;2016-01-20T08:00:00.000Z&quot;,
+    &quot;Terminate Type&quot; : &quot;With Cause&quot;,
+    &quot;Terminate Reason&quot; : &quot;Customer Not Compliance&quot;,
+    &quot;Terminate Option&quot; : &quot;Partially terminate lines in the contract&quot;
+  },
+  &quot;Step 2&quot; : {
+    &quot;ContractItem&quot; : [ {
+      &quot;Name&quot; : &quot;GenWatt Diesel 10kW&quot;,
+      &quot;Status&quot; : &quot;Inactive&quot;,
+      &quot;Id&quot; : &quot;a1Eo0000002Dc3MEAS&quot;,
+      &quot;$$hashKey&quot; : &quot;object:202&quot;,
+      &quot;vlcSelected&quot; : true
+    } ]
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>InactiveSelectedContractItems_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{
+    &quot;MemberIds&quot;: [],
+    &quot;QuoteGroupIds&quot;: [
+        {
+            &quot;GroupSize&quot;: 4,
+            &quot;Id&quot;: &quot;a3W5Y000004lQLMUA2&quot;
+        }
+    ],
+    &quot;SalesQuoteId&quot;: &quot;0Q05Y000006rCiJSAU&quot;,
+    &quot;WorkingCartId&quot;: &quot;0Q05Y000006rCiUSAU&quot;,
+    &quot;executeLastChunkSteps&quot;: true
+}</customJavaScript>
+    <description>B2B Express- GT3a: Add members and Order Group to the Working cart and copy to Enterprise Order.</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>AddOMOGToWCOIsCopyToEO</name>
+    <omniProcessElements>
+        <description>This call do complete migration of working cart items to sales order items, including renumbering and member tagging (bulkified version for MemberUpdateLoopBlock).</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CloneOIsFromWCToEO</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;ContextMapping&quot; : &quot;%ContextMapping:ContextMapping%&quot;,
+    &quot;GroupIds&quot; : &quot;=IF(ISBLANK(%GroupIds%), LIST(), %GroupIds%)&quot;,
+    &quot;MemberIds&quot; : &quot;=IF(ISBLANK(%MemberIds%), LIST(), %MemberIds%)&quot;,
+    &quot;SalesOrderId&quot; : &quot;%OrderId%&quot;,
+    &quot;WorkingCartId&quot; : &quot;%WorkingCartId%&quot;,
+    &quot;cloneSourceIdMap&quot; : &quot;%cloneSourceIdMap%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction13&quot;,
+  &quot;remoteClass&quot; : &quot;B2BCmexAppHandler&quot;,
+  &quot;remoteMethod&quot; : &quot;cloneOIFromWCToEC&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ResponseAction</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : {
+    &quot;OrderId&quot; : &quot;%OrderId%&quot;
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessKey>AddOMOGToWC_CopyToEO</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;trackingCustomData&quot; : { },
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;description&quot; : &quot;&quot;,
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;rollbackOnError&quot; : false,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;ttlMinutes&quot; : 5,
+  &quot;mockResponseMap&quot; : { }
+}</propertySetConfig>
+    <subType>CopyToEO</subType>
+    <type>AddOMOGToWC</type>
+    <uniqueName>AddOMOGToWC_CopyToEO_Procedure_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>0fa15a61-f35f-7fec-c52a-6f22991d7e3d</webComponentKey>
+</OmniIntegrationProcedure>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__PreviewOrder</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Preview Order</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&apos;//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&apos;)}
+{!REQUIRESCRIPT(&apos;//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js&apos;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/56.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/xdomain/xdomain.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/56.0/apex.js&quot;)}
+try{
+  jQuery(function() {
+    /*Append the jQuery CSS CDN Link to the Head tag.*/
+    jQuery(&apos;head&apos;).append(&apos;&lt;link rel=&quot;stylesheet&quot; href=&quot;//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css&quot; type=&quot;text/css&quot; /&gt;&apos;);
+    /*Create the HTML(DIV Tag) for the Dialog.*/
+
+    var namespace_prefix = &apos;&apos;;
+    var result = sforce.connection.describeGlobal();
+    var sobjects = result.getArray(&quot;sobjects&quot;);
+    for(var i=0; i&lt;sobjects.length; i++) {
+    var sobjName = sobjects[i].name;
+    var str = sobjName.split(&quot;__&quot;);
+    //if there are 3 values there is a namespace
+    if (str.length == 3){
+    namespace_prefix = str[0].valueOf();
+    }
+    }
+
+    var html = 
+      &apos;&lt;div style=&quot;display:none;&quot; id=&quot;dialog&quot;&gt;&lt;iframe style=&quot;border: 0px;&quot; width=&quot;600px&quot; height=&quot;800px&quot; src=&quot;/apex/&apos;+namespace_prefix+&apos;__OrderPDF?id={!Order.Id}&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&apos;;
+    /*Check if the Dialog(DIV Tag) already exists if not then Append the same to the Body tag.*/
+    jQuery(&apos;body&apos;).append(html);
+    /*Open the jQuery Dialog.*/ 
+    jQuery( &quot;#dialog&quot; ).dialog({
+      autoOpen: true,
+      modal: true,
+      width: 650,
+      buttons: [
+        {
+          text: &quot;OK&quot;,
+          click: function() {
+            $( this ).dialog( &quot;close&quot; );
+          }
+        }
+      ],
+      open: function (event, ui) {
+        jQuery(&apos;.ui-dialog&apos;).css(&apos;z-index&apos;,103);
+        jQuery(&apos;.ui-widget-overlay&apos;).css(&apos;z-index&apos;,102);
+      },
+    });
+  }); 
+}
+catch(e){
+  alert(&apos;An Error has Occured. Error: &apos; + e);
+}</url>
+</WebLink>

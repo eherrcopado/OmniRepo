@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{
+    &quot;Id&quot;: &quot;800f4000000db2g&quot;,
+    &quot;activationStatus&quot;: &quot;Activated&quot;
+}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>Activate Frame Agreement</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ActivateSourceDiscounts</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;RemoteAction3&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;useFormulas&quot; : true,
+  &quot;additionalInput&quot; : {
+    &quot;contextId&quot; : &quot;%Id%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;failureResponse&quot; : { },
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;remoteClass&quot; : &quot;ActivateFrameContract&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteMethod&quot; : &quot;activateSourceDiscounts&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;actionMessage&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>TerminateDeactivatedDiscounts</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;contextId&quot; : &quot;%Id%&quot;,
+    &quot;createNewVersion&quot; : false,
+    &quot;isContractActivated&quot; : true,
+    &quot;originalContractId&quot; : &quot;%originalContractId%&quot;,
+    &quot;parentObjectName&quot; : &quot;Quote&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : true,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction2&quot;,
+  &quot;remoteClass&quot; : &quot;ActivateFrameContract&quot;,
+  &quot;remoteMethod&quot; : &quot;terminateDeactivatedDiscounts&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>UpdateModifiedDiscounts</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;activationStatus&quot; : &quot;%activationStatus%&quot;,
+    &quot;contextId&quot; : &quot;%Id%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : true,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;%error% != &apos;OK&apos;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;updateOriginalDiscountserror&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;RemoteAction1&quot;,
+  &quot;remoteClass&quot; : &quot;ActivateFrameContract&quot;,
+  &quot;remoteMethod&quot; : &quot;updateOriginalDiscounts&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessKey>ActivateFrameAgreement_Quote</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : true,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { }
+}</propertySetConfig>
+    <subType>Quote</subType>
+    <type>ActivateFrameAgreement</type>
+    <uniqueName>ActivateFrameAgreement_Quote_Procedure_3</uniqueName>
+    <versionNumber>3.0</versionNumber>
+    <webComponentKey>af6ff5d1-fdc3-a908-97dd-4f533d77a154</webComponentKey>
+</OmniIntegrationProcedure>

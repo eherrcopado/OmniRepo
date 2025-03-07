@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__RevokeSignature</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Revoke eSignature</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+
+
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+
+
+
+
+
+
+
+var namespace_prefix = &apos;&apos;; 
+
+
+
+var result = sforce.connection.describeGlobal(); 
+
+
+
+var TOKEN_OBJ = &quot;Party__c&quot;; 
+
+
+
+var sobjects = result.getArray(&quot;sobjects&quot;); 
+
+
+
+
+
+
+
+for(var i=0; i&lt;sobjects.length; i++) 
+
+
+
+{ 
+
+
+
+var sobjName = sobjects[i].name; 
+
+
+
+var str = sobjName.split(&quot;__&quot;); 
+
+
+
+
+
+
+
+//if there are 3 values there is a namespace 
+
+
+
+if (str.length == 3) 
+
+
+
+{ 
+
+
+
+//Is it one of ours? 
+
+
+
+var sobj = str[1].valueOf() +&apos;__c&apos;; 
+
+
+
+if(sobj == TOKEN_OBJ) 
+
+
+
+{ 
+
+
+
+namespace_prefix = str[0].valueOf(); 
+
+
+
+break; 
+
+
+
+} 
+
+
+
+} 
+
+
+
+} 
+
+
+
+
+
+
+
+if(namespace_prefix != &quot;&quot;) 
+
+
+
+{ 
+
+
+
+namespace_prefix += &apos;.&apos;; 
+
+
+
+} 
+
+
+
+
+
+
+
+if(&apos;{!$User.vlocity_cmt__DocuSignEmail__c}&apos; == null || &apos;{!$User.vlocity_cmt__DocuSignEmail__c}&apos; == &quot;&quot;) 
+
+
+
+{ 
+
+
+
+alert(&apos;{!$User.Username}&apos; + &apos; does not have valid DocuSign account.&apos;); 
+
+
+
+} 
+
+
+
+else { 
+
+  var result =   sforce.apex.execute(namespace_prefix+&quot;ContractDocuSignResource&quot;,&quot;voidEnvelopes&quot;, {objectId: &apos;{!Contract.Id}&apos;, senderEmail:&apos;{!$User.vlocity_cmt__DocuSignEmail__c }&apos;}); 
+
+  if(result == &apos;OK&apos;)
+
+  {
+
+     window.location.reload();
+
+  }
+
+  else
+
+  {
+
+     alert(result);
+
+  } 
+
+
+
+}</url>
+</WebLink>

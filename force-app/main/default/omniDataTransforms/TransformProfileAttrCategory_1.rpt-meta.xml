@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Transform DR for the profile attribute Category</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;ManageNotificationPreferences&quot; : {
+    &quot;BillNotifications&quot; : null,
+    &quot;DNCFrom&quot; : null,
+    &quot;DNCTo&quot; : null,
+    &quot;OffersPromotions&quot; : null,
+    &quot;OutageNotifications&quot; : null,
+    &quot;PaymentRemindersNotifications&quot; : null,
+    &quot;WorkOrderNotifications&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRExtractAccountPreferences&quot; : null,
+    &quot;DRExtractAttrCategory&quot; : null,
+    &quot;DRTransformAccPrefAttr&quot; : null,
+    &quot;DRTransformAttrCategory&quot; : null,
+    &quot;DRTransformUpdatedAccountPref&quot; : null,
+    &quot;ManageNotificationPreferences&quot; : null,
+    &quot;PostAccountAttrAssignment&quot; : null,
+    &quot;SVAccNotification&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>TransformProfileAttrCategory</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustom7954</globalKey>
+        <inputFieldName>CustomerSatisfactionMaintenance</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:CustomerSatisfactionMaintenance</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;ANALYSIS_RENEWAL_POTENTIAL&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;ANALYSIS_RENEWAL_POTENTIAL&quot;&apos;)</formulaExpression>
+        <formulaResultPath>AnalysisRenewalPotential</formulaResultPath>
+        <formulaSequence>14.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustom6885</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustom3745</globalKey>
+        <inputFieldName>CustomerSatisfactionCoverage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:CustomerSatisfactionCoverage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem11</globalKey>
+        <inputFieldName>CustomerSatisfactionCost</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:CustomerSatisfactionCost</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem12</globalKey>
+        <inputFieldName>PurchaseCriteriaCost</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:PurchaseCriteriaCost</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustom2631</globalKey>
+        <inputFieldName>CustomerSatisfactionUsageCharges</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:CustomerSatisfactionUsageCharges</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustom3310</globalKey>
+        <inputFieldName>CustomerSatisfactionService</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:CustomerSatisfactionService</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem13</globalKey>
+        <inputFieldName>CustomerSatisfactionReliability</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:CustomerSatisfactionReliability</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem10</globalKey>
+        <inputFieldName>PurchaseCriteriaInsurance</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:PurchaseCriteriaInsurance</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem8</globalKey>
+        <inputFieldName>PurchaseCriteriaFamilyFriendly</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:PurchaseCriteriaFamilyFriendly</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;ANALYSIS_UPSELL_POTENTIAL&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;ANALYSIS_UPSELL_POTENTIAL&quot;&apos;)</formulaExpression>
+        <formulaResultPath>AnalysisUpsellPotential</formulaResultPath>
+        <formulaSequence>13.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustom1024</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem9</globalKey>
+        <inputFieldName>PurchaseCriteriaServiceAvailability</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:PurchaseCriteriaServiceAvailability</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem7</globalKey>
+        <inputFieldName>PurchaseCriteriaRenewableEnergy</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:PurchaseCriteriaRenewableEnergy</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;CUSTOMER_SATISFACTION_RELIABILITY&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;CUSTOMER_SATISFACTION_RELIABILITY&quot;&apos;)</formulaExpression>
+        <formulaResultPath>CustomerSatisfactionReliability</formulaResultPath>
+        <formulaSequence>7.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem6</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;CUSTOMER_SATISFACTION_MAINTENANCE&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;CUSTOMER_SATISFACTION_MAINTENANCE&quot;&apos;)</formulaExpression>
+        <formulaResultPath>CustomerSatisfactionMaintenance</formulaResultPath>
+        <formulaSequence>10.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustom6076</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;CUSTOMER_SATISFACTION_COVERAGE&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;CUSTOMER_SATISFACTION_COVERAGE&quot;&apos;)</formulaExpression>
+        <formulaResultPath>CustomerSatisfactionCoverage</formulaResultPath>
+        <formulaSequence>8.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustom8331</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;CUSTOMER_SATISFACTION_COST&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;CUSTOMER_SATISFACTION_COST&quot;&apos;)</formulaExpression>
+        <formulaResultPath>CustomerSatisfactionCost</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;CUSTOMER_SATISFACTION_USAGE_CHARGES&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;CUSTOMER_SATISFACTION_USAGE_CHARGES&quot;&apos;)</formulaExpression>
+        <formulaResultPath>CustomerSatisfactionUsageCharges</formulaResultPath>
+        <formulaSequence>11.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustom491</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;CUSTOMER_SATISFACTION_SERVICE&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;CUSTOMER_SATISFACTION_SERVICE&quot;&apos;)</formulaExpression>
+        <formulaResultPath>CustomerSatisfactionService</formulaResultPath>
+        <formulaSequence>9.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustom60</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;ANALYSIS_MOOD&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;ANALYSIS_MOOD&quot;&apos;)</formulaExpression>
+        <formulaResultPath>AnalysisMood</formulaResultPath>
+        <formulaSequence>12.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustom9411</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;PURCHASE_CRITERIA_RENEWABLE_ENERGY&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;PURCHASE_CRITERIA_RENEWABLE_ENERGY&quot;&apos;)</formulaExpression>
+        <formulaResultPath>PurchaseCriteriaRenewableEnergy</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;PURCHASE_CRITERIA_INSURANCE&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;PURCHASE_CRITERIA_INSURANCE&quot;&apos;)</formulaExpression>
+        <formulaResultPath>PurchaseCriteriaInsurance</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;PURCHASE_CRITERIA_FAMILY_FRIENDLY&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;PURCHASE_CRITERIA_FAMILY_FRIENDLY&quot;&apos;)</formulaExpression>
+        <formulaResultPath>PurchaseCriteriaFamilyFriendly</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem4</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;PURCHASE_CRITERIA_COST&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;PURCHASE_CRITERIA_COST&quot;&apos;)</formulaExpression>
+        <formulaResultPath>PurchaseCriteriaCost</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustom3744</globalKey>
+        <inputFieldName>AnalysisUpsellPotential</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:AnalysisUpsellPotential</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustom3662</globalKey>
+        <inputFieldName>AnalysisRenewalPotential</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:AnalysisRenewalPotential</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformProfileAttrCategoryCustom5446</globalKey>
+        <inputFieldName>AnalysisMood</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category:AnalysisMood</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:AttrCategory LIST &apos;CategoryCode/\/\/==/\/\/&quot;PURCHASE_CRITERIA_SERVICE_AVAILABILITY&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(AttrCategory), &apos;CategoryCode == &quot;PURCHASE_CRITERIA_SERVICE_AVAILABILITY&quot;&apos;)</formulaExpression>
+        <formulaResultPath>PurchaseCriteriaServiceAvailability</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>TransformProfileAttrCategoryCustoma1V3h000000mC0UEAUItem0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformProfileAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AttrCategory&quot; : [ {
+    &quot;CategoryCode&quot; : &quot;PURCHASE_CRITERIA_SERVICE_AVAILABILITY&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iF8cEAE&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;PRODUCT_INTERESTS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iF3FEAU&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;PURCHASE_CRITERIA_COST&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iF7FEAU&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;PURCHASE_CRITERIA_RENEWABLE_ENERGY&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iF7yEAE&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;PURCHASE_CRITERIA_FAMILY_FRIENDLY&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iF88EAE&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;PURCHASE_CRITERIA_INSURANCE&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iF8wEAE&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;WORKORDER_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iBG8EAM&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;BILL_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iBFtEAM&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;OUTAGE_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iBG3EAM&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;OFFERS_PROMOTIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iBG4EAM&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;PAYMENT_REMINDERS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iBFyEAM&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;DNC_FROM&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iBGDEA2&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;DNC_TO&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000iBGEEA2&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;CUSTOMER_SATISFACTION_RELIABILITY&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000xSkpEAE&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;CUSTOMER_SATISFACTION_MAINTENANCE&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000xSlNEAU&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;CUSTOMER_SATISFACTION_USAGE_CHARGES&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000xSlIEAU&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;ANALYSIS_UPSELL_POTENTIAL&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000xSlwEAE&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;ANALYSIS_RENEWAL_POTENTIAL&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000xSlxEAE&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;CUSTOMER_SATISFACTION_SERVICE&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000xSlDEAU&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;CUSTOMER_SATISFACTION_COST&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000xSkjEAE&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;ANALYSIS_MOOD&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000xSlrEAE&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;CUSTOMER_SATISFACTION_COVERAGE&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000000xSl8EAE&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>TransformProfileAttrCategory_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

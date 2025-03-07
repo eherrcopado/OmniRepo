@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataset>CLM_ContractHistory</dataset>
+    <dimensions>
+        <field>Contract.Contract_Renewal_Group</field>
+        <isDerived>false</isDerived>
+        <members>
+            <label>Less than 30 days</label>
+            <member>1. Less than 30 days</member>
+            <sortIndex>0</sortIndex>
+        </members>
+        <members>
+            <label>Between 30 to 60 days</label>
+            <member>2. Between 30 to 60 days</member>
+            <sortIndex>1</sortIndex>
+        </members>
+        <members>
+            <label>Between 60 to 90 days</label>
+            <member>3. Between 60 to 90 days</member>
+            <sortIndex>2</sortIndex>
+        </members>
+        <members>
+            <label>More than 90 days</label>
+            <member>4. More than 90 days</member>
+            <sortIndex>3</sortIndex>
+        </members>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <measures>
+        <field>Contract.SalesContractLine.Contract_TotalPrice</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>false</isDerived>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>Days Spent</field>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>Global Avg Time</field>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>*</field>
+        <isDerived>true</isDerived>
+        <label>Contract History</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>2</sortIndex>
+    </measures>
+</WaveXmd>

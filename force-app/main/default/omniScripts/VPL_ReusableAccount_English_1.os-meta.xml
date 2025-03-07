@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>VPL ReadAccount 13-2</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>true</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>English</language>
+    <name>VPL ReadAccount 13-2</name>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CustomerAddress</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;dataJSON&quot; : false,
+  &quot;label&quot; : null,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : null,
+  &quot;text&quot; : &quot;&lt;p&gt;Billing Address:&lt;/p&gt;\n&lt;table style=\&quot;height: 90px; background-color: #e5f8fe; border-color: #595959;\&quot; border=\&quot;.5\&quot; width=\&quot;400\&quot;&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;p&gt;&lt;br /&gt;&lt;br /&gt;%billingStreet%&lt;br /&gt;%billingCity%, %billingState% %billingPostCode%&lt;br /&gt;%billingCountry%&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&lt;p&gt;&lt;/p&gt;&quot;
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CustomerDetailsTxt</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;dataJSON&quot; : false,
+  &quot;label&quot; : null,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : null,
+  &quot;text&quot; : &quot;&lt;p&gt;Customer Details:&lt;/p&gt;\n&lt;table style=\&quot;height: 90px; background-color: #e5f8fe; border-color: #595959;\&quot; border=\&quot;.5\&quot; width=\&quot;400\&quot;&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;&lt;br /&gt;&lt;strong&gt;Name&lt;/strong&gt;: %Name%&lt;br /&gt;&lt;strong&gt;Phone&lt;/strong&gt;: %phone%&lt;br /&gt;&lt;strong&gt;Account Number&lt;/strong&gt;: %acctNumber%&lt;br /&gt;&lt;strong&gt;Account Type&lt;/strong&gt;: %acctType%&lt;br /&gt;&lt;strong&gt;Status&lt;/strong&gt;: %accountStatus%&lt;br /&gt;&lt;strong&gt;CLTV&lt;/strong&gt;: $%cltv%&lt;br /&gt;&lt;strong&gt;Churn&lt;/strong&gt;: %churn%&lt;br /&gt;&lt;br /&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&lt;p&gt;&lt;/p&gt;&quot;
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>account</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&lt;p&gt;Please review the account details before proceeding.&lt;/p&gt;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : &quot;Account Details&quot;,
+  &quot;message&quot; : { },
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;pubsub&quot; : false,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ReadAccount</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;bundle&quot; : &quot;VPLReadAccountAssets132&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;ContextId&quot;,
+    &quot;inputParam&quot; : &quot;Id&quot;
+  } ],
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;ignoreCache&quot; : false,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Retrieve Account Information&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;allowCancel&quot;:true,&quot;allowSaveForLater&quot;:false,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;bLK&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;consoleTabTitle&quot;:null,&quot;currencyCode&quot;:&quot;&quot;,&quot;disableUnloadWarn&quot;:true,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;enableKnowledge&quot;:false,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;hideStepChart&quot;:false,&quot;includeCustomization&quot;:true,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;lkObjName&quot;:null,&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;}],&quot;pubsub&quot;:false,&quot;rtpSeed&quot;:false,&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;seedDataJSON&quot;:{},&quot;showInputWidth&quot;:false,&quot;ssm&quot;:false,&quot;stylesheet&quot;:{&quot;lightning&quot;:&quot;&quot;,&quot;lightningRtl&quot;:&quot;&quot;,&quot;newport&quot;:&quot;&quot;,&quot;newportRtl&quot;:&quot;&quot;},&quot;timeTracking&quot;:false,&quot;trackingCustomData&quot;:{},&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
+    <subType>ReusableAccount</subType>
+    <type>VPL</type>
+    <uniqueName>VPL_ReusableAccount_English_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>b9863ad3-d722-8ba4-9316-77c18206dc5c</webComponentKey>
+</OmniScript>

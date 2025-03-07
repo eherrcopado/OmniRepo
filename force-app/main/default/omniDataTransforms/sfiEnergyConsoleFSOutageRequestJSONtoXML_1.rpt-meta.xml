@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;geoLocations&quot; : [ {
+    &quot;latitude&quot; : 26,
+    &quot;longitude&quot; : 60
+  }, {
+    &quot;latitude&quot; : 25.12,
+    &quot;longitude&quot; : 75.3457
+  }, {
+    &quot;latitude&quot; : 67,
+    &quot;longitude&quot; : 123
+  }, {
+    &quot;latitude&quot; : -40,
+    &quot;longitude&quot; : -100
+  }, {
+    &quot;latitude&quot; : -50,
+    &quot;longitude&quot; : 99
+  } ],
+  &quot;zipCodes&quot; : [ {
+    &quot;zipCode&quot; : &quot;CV3 4LF&quot;
+  }, {
+    &quot;zipCode&quot; : &quot;80220&quot;
+  }, {
+    &quot;zipCode&quot; : &quot;EH15 3HR&quot;
+  } ]
+}</expectedInputJson>
+    <expectedOutputXml>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;soapenv:Envelope
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+    xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+    &lt;soapenv:Body&gt;
+        &lt;geolocations
+            xmlns=&quot;http://soap.sforce.com/2005/09/outbound&quot;&gt;
+            &lt;geolocation&gt;
+                &lt;longitude&gt;60&lt;/longitude&gt;
+                &lt;latitude&gt;26&lt;/latitude&gt;
+            &lt;/geolocation&gt;
+            &lt;geolocation&gt;
+                &lt;longitude&gt;75.3457&lt;/longitude&gt;
+                &lt;latitude&gt;25.12&lt;/latitude&gt;
+            &lt;/geolocation&gt;
+            &lt;geolocation&gt;
+                &lt;longitude&gt;123&lt;/longitude&gt;
+                &lt;latitude&gt;67&lt;/latitude&gt;
+            &lt;/geolocation&gt;
+            &lt;geolocation&gt;
+                &lt;longitude&gt;-100&lt;/longitude&gt;
+                &lt;latitude&gt;-40&lt;/latitude&gt;
+            &lt;/geolocation&gt;
+            &lt;geolocation&gt;
+                &lt;longitude&gt;99&lt;/longitude&gt;
+                &lt;latitude&gt;-50&lt;/latitude&gt;
+            &lt;/geolocation&gt;
+        &lt;/geolocations&gt;
+        &lt;zipcodes
+        xmlns=&quot;http://soap.sforce.com/2005/09/outbound&quot;&gt;
+            &lt;zipcode&gt;CV3 4LF&lt;/zipcode&gt;
+            &lt;zipcode&gt;80220&lt;/zipcode&gt;
+            &lt;zipcode&gt;EH15 3HR&lt;/zipcode&gt;
+        &lt;/zipcodes&gt;
+        &lt;PartnerUrl&gt;https://vexenergyqa.my.salesforce.com/services/Soap/u/41.0/00Df2000000NVjK&lt;/PartnerUrl&gt;
+        &lt;EnterpriseUrl&gt;https://vexenergyqa.my.salesforce.com/services/Soap/c/41.0/00Df2000000NVjK&lt;/EnterpriseUrl&gt;
+        &lt;SessionId xsi:nil=&quot;true&quot;&gt;&lt;/SessionId&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;</expectedOutputXml>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>sfiEnergyConsoleFSOutageRequestJSONtoXML</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestJSONtoXMLCustom52</globalKey>
+        <inputFieldName>zipCodes:zipCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestJSONtoXML</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>soapenv#Envelope:soapenv#Body:zipcodes:zipcode:#text</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestJSONtoXMLCustom6104</globalKey>
+        <inputFieldName>geoLocations</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestJSONtoXML</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>soapenv#Envelope:soapenv#Body:geolocations:geolocation</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>http://www.w3.org/2001/XMLSchema</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestJSONtoXMLCustom5253</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestJSONtoXML</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>soapenv#Envelope:@xmlns#xsd</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>http://schemas.xmlsoap.org/soap/envelope/</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestJSONtoXMLCustom605</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestJSONtoXML</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>soapenv#Envelope:@xmlns#soapenv</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>true</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestJSONtoXMLCustom4859</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestJSONtoXML</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>soapenv#Envelope:soapenv#Body:SessionId:@xsi#nil</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>https://vexenergyqa.my.salesforce.com/services/Soap/u/41.0/00Df2000000NVjK</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestJSONtoXMLCustom6348</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestJSONtoXML</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>soapenv#Envelope:soapenv#Body:PartnerUrl</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>https://vexenergyqa.my.salesforce.com/services/Soap/c/41.0/00Df2000000NVjK</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestJSONtoXMLCustom7400</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestJSONtoXML</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>soapenv#Envelope:soapenv#Body:EnterpriseUrl</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>http://www.w3.org/2001/XMLSchema-instance</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestJSONtoXMLCustom3711</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestJSONtoXML</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>soapenv#Envelope:@xmlns#xsi</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>XML</outputType>
+    <previewJsonData>{
+  &quot;zipCodes&quot; : [ {
+    &quot;zipCode&quot; : &quot;CV3 4LF&quot;
+  }, {
+    &quot;zipCode&quot; : &quot;80220&quot;
+  }, {
+    &quot;zipCode&quot; : &quot;EH15 3HR&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>sfiEnergyConsoleFSOutageRequestJSONtoXML_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+    <xmlOutputTagsOrder>[&quot;soapenv#Envelope&quot;,&quot;soapenv#Envelope:#ns#xsi&quot;,&quot;soapenv#Envelope:#ns#xsd&quot;,&quot;soapenv#Envelope:#ns#soapenv&quot;,&quot;soapenv#Envelope:soapenv#Body&quot;,&quot;soapenv#Envelope:soapenv#Body:geolocations&quot;,&quot;soapenv#Envelope:soapenv#Body:geolocations:#ns#null&quot;,&quot;soapenv#Envelope:soapenv#Body:geolocations:geolocation&quot;,&quot;soapenv#Envelope:soapenv#Body:geolocations:geolocation:longitude&quot;,&quot;soapenv#Envelope:soapenv#Body:geolocations:geolocation:longitude:#text&quot;,&quot;soapenv#Envelope:soapenv#Body:geolocations:geolocation:latitude&quot;,&quot;soapenv#Envelope:soapenv#Body:geolocations:geolocation:latitude:#text&quot;,&quot;soapenv#Envelope:soapenv#Body:zipcodes&quot;,&quot;soapenv#Envelope:soapenv#Body:zipcodes:#ns#null&quot;,&quot;soapenv#Envelope:soapenv#Body:zipcodes:zipcode&quot;,&quot;soapenv#Envelope:soapenv#Body:zipcodes:zipcode:#text&quot;,&quot;soapenv#Envelope:soapenv#Body:PartnerUrl&quot;,&quot;soapenv#Envelope:soapenv#Body:PartnerUrl:#text&quot;,&quot;soapenv#Envelope:soapenv#Body:EnterpriseUrl&quot;,&quot;soapenv#Envelope:soapenv#Body:EnterpriseUrl:#text&quot;,&quot;soapenv#Envelope:soapenv#Body:SessionId&quot;,&quot;soapenv#Envelope:soapenv#Body:SessionId:@xsi#nil&quot;]</xmlOutputTagsOrder>
+</OmniDataTransform>

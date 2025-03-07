@@ -1,0 +1,19 @@
+<apex:page showHeader="true" sidebar="true" standardController="vlocity_cmt__ManualQueue__c" extensions="vlocity_cmt.XOMQueueItemsController">
+  <apex:stylesheet value="{!$Resource.vlocity_cmt__ManualQueueViewCss}"/>
+    <apex:includeLightning />    
+    <div id="LightningComponentid" />    
+    <script>
+      console.log ("{!JSENCODE(nameSpace)}");
+    (function(){
+        $Lightning.use("{!JSENCODE(nameSpace)}:ltngOutVF", function() {
+            $Lightning.createComponent("{!JSENCODE(nameSpace)}:xomManualQueueComponent",
+              { 
+                recordId: "{!JSENCODE($CurrentPage.parameters.Id)}", objectApiName: "{!JSENCODE(namespace)}__ManualQueue__c"
+              },
+              "LightningComponentid",
+              function(cmp) {
+                 console.log('LWC Component added in VF page');
+              });
+    });})()
+    </script>
+</apex:page>

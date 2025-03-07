@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Create Account</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountDetails&quot; : {
+    &quot;AccountType&quot; : &quot;Billing&quot;,
+    &quot;BillingAccountDetails&quot; : {
+      &quot;MsgConsumerAccountBillWarning&quot; : true
+    },
+    &quot;BusinessAccountDetails&quot; : null,
+    &quot;MsgConsumerAccountPremisesWarning&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;MsgInvalidPremises&quot; : null,
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : null
+    },
+    &quot;Premises-Block&quot; : null,
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : &quot;2020-08-19&quot;,
+      &quot;ExemptionPercentage&quot; : 20,
+      &quot;ExemptionStartDate&quot; : &quot;2020-08-19&quot;,
+      &quot;TaxExemption&quot; : &quot;Exempt&quot;,
+      &quot;TaxId&quot; : &quot;1212&quot;
+    }
+  },
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;AddAccount&quot;,
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;Success&quot; : null,
+  &quot;timeStamp&quot; : &quot;2020-08-11T07:28:39.211Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLCreateEnergyAccount</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a6851985-1f29-f712-4626-69f06bbf4ee9</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingState</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>975aca69-9fbd-306e-c5cf-e0377aa71046</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingPostalCode</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>a72e6243-9693-8f13-5dd4-df4043b4f994</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0b22f9c2-b546-78af-0f0e-530999542baf</globalKey>
+        <inputFieldName>AccountDetails:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c6bde7a6-e50c-4f26-3005-0a90c49b8bca</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingStreet</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d598a33e-994b-da43-efbd-af4c3613a057</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillDeliveryMethod</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillDeliveryMethod__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a743745f-cdbd-a00d-a037-f4085a471d29</globalKey>
+        <inputFieldName>AccountDetails:Phone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Phone</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3b24863a-3cc2-cab2-719d-0301c46f8978</globalKey>
+        <inputFieldName>AccountDetails:ParentAccount-Block:ParentAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ParentId</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f2d66dca-7035-1266-b026-97b295c5865a</globalKey>
+        <inputFieldName>AccountDetails:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d2e01b01-0706-1098-f642-91e8bcffad6f</globalKey>
+        <inputFieldName>AccountDetails:Industry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Industry</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>519d6d7b-eb4d-8bf5-006d-8193d648d3cf</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillFormat</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillFormat__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b1d871ff-21c7-4539-0645-3d105320c24a</globalKey>
+        <inputFieldName>AccountDetails:BusinessAccountDetails:ShippingCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingCountry</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e808e399-1b40-b26b-4d7b-b0d151dd8b84</globalKey>
+        <inputFieldName>AccountDetails:BusinessAccountDetails:ShippingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingCity</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4207f6a9-1f80-6310-6a28-dd5d18508067</globalKey>
+        <inputFieldName>RecordType|1:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7b4b5051-2b40-815e-fb2b-03aed582a619</globalKey>
+        <inputFieldName>AccountDetails:Website</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Website</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>275b5716-c54c-e809-880f-48c1260e86ef</globalKey>
+        <inputFieldName>AccountDetails:BusinessAccountDetails:ShippingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingStreet</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4749bbd6-4f6c-cc7a-6f72-a4d91db5559a</globalKey>
+        <inputFieldName>AccountDetails:BusinessAccountDetails:ShippingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingState</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0036b851-f7be-e7c7-85dd-dd0e9e187669</globalKey>
+        <inputFieldName>AccountDetails:BusinessAccountDetails:ShippingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ShippingPostalCode</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c323c231-e9f6-fd4a-753d-5ad5deddb5fb</globalKey>
+        <inputFieldName>AccountDetails:CustomerClass</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__CustomerClass__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>fc9d26a8-d2db-1e47-4968-c3939b0f1142</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillingEmailAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillingEmailAddress__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a37a1b0b-3648-cea6-a1cd-1c05c125827b</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:NumberOfBills</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillNumberOfCopies__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>321533f1-7418-98a2-ad55-3e82a08916f7</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillFrequency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillFrequency__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c5ab1336-0e7c-a57f-5e9e-c5b2964d027a</globalKey>
+        <inputFieldName>AccountDetails:BusinessAccountDetails:PrimaryContact-Block:ContactId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PrimaryContactId__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>09703f60-85d1-ccc8-fb4c-99cd212ab424</globalKey>
+        <inputFieldName>AccountDetails:Premises-Block:PremisesId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PremisesId__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>689fbf5d-ca98-d053-01ac-17d3f95657a6</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillCycle</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillCycle__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9a60b5d1-b4f4-f307-a0a3-75c14442b1d2</globalKey>
+        <inputFieldName>AccountDetails:TaxDetails:ExemptionStartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionStartDate__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>22d60e73-0ebb-28e1-8e78-932f4b3a01e6</globalKey>
+        <inputFieldName>AccountDetails:TaxDetails:ExemptionPercentage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionPercentage__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>efb21dbd-fb47-7b6f-5124-7e2b296f0eb5</globalKey>
+        <inputFieldName>AccountDetails:TaxDetails:ExemptionEndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionEndDate__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Active</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>00256b0f-4961-f940-50f7-c3b2cfa215f1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e793cc79-ced4-b0cd-da8b-07d74931bb4b</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillingCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCountry</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f5cbc3a1-439b-be6e-3c34-8750c88c1c6c</globalKey>
+        <inputFieldName>AccountDetails:BillingAccountDetails:BillingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCity</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5e6392c1-75dd-a599-0708-b32fe58f3ab6</globalKey>
+        <inputFieldName>AccountDetails:TaxDetails:TaxId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxID__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ab2fbfbe-3268-de96-5a8e-89a45042be34</globalKey>
+        <inputFieldName>AccountDetails:TaxDetails:TaxExemption</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnergyAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionType__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AccountDetails&quot; : {
+    &quot;AccountType&quot; : &quot;Service&quot;,
+    &quot;BillingAccountDetails&quot; : null,
+    &quot;BusinessAccountDetails&quot; : null,
+    &quot;CustomerClass&quot; : &quot;SMB&quot;,
+    &quot;Description&quot; : &quot;test dec&quot;,
+    &quot;Industry&quot; : &quot;Agriculture&quot;,
+    &quot;MsgConsumerAccountPremisesWarning&quot; : null,
+    &quot;Name&quot; : &quot;ABC federal service&quot;,
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : &quot;ABC No Billing Acc&quot;,
+      &quot;ParentAccountId&quot; : &quot;0013h00000G46RRAAZ&quot;,
+      &quot;ParentAccountName&quot; : &quot;ABC No Billing Acc&quot;
+    },
+    &quot;Phone&quot; : &quot;7687687879&quot;,
+    &quot;Premises-Block&quot; : {
+      &quot;Premises&quot; : &quot;Southampton Premise&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OvxEAE&quot;,
+      &quot;PremisesName&quot; : &quot;Southampton Premise&quot;
+    },
+    &quot;Website&quot; : &quot;www.accenture.com&quot;
+  },
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ContextId&quot; : &quot;0013h00000G46RRAAZ&quot;,
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;AddAccount&quot;,
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;Success&quot; : null,
+  &quot;timeStamp&quot; : &quot;2020-08-04T14:39:23.581Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLCreateEnergyAccount_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

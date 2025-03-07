@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Transforms GetPriceLists Response JSON to add additional required values</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;records&quot; : [ {
+    &quot;Id&quot; : &quot;a3GRN0000000EI32AM&quot;,
+    &quot;Name&quot; : &quot;B2B Pricelist&quot;,
+    &quot;actions&quot; : {
+      &quot;setpricelist&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;801RN000000FcW9YAK&quot;,
+            &quot;inputFields&quot; : [ {
+              &quot;vlocity_cmt__PriceListId__c&quot; : &quot;a3GRN0000000EI32AM&quot;
+            } ],
+            &quot;methodName&quot; : &quot;updateCarts&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : null,
+          &quot;method&quot; : null,
+          &quot;params&quot; : { }
+        }
+      }
+    },
+    &quot;displaySequence&quot; : -1
+  } ]
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;records&quot; : [ {
+    &quot;Id&quot; : &quot;a3GRN0000000EI32AM&quot;,
+    &quot;Name&quot; : &quot;B2B Pricelist&quot;,
+    &quot;actions&quot; : {
+      &quot;setpricelist&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;801RN000000FcW9YAK&quot;,
+            &quot;inputFields&quot; : [ {
+              &quot;vlocity_cmt__PriceListId__c&quot; : &quot;a3GRN0000000EI32AM&quot;
+            } ],
+            &quot;methodName&quot; : &quot;updateCarts&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : null,
+          &quot;method&quot; : null,
+          &quot;params&quot; : { }
+        }
+      }
+    },
+    &quot;displaySequence&quot; : -1,
+    &quot;label&quot; : &quot;B2B Pricelist&quot;,
+    &quot;value&quot; : &quot;a3GRN0000000EI32AM&quot;
+  } ]
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CPQGetPriceListsDR</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR5978825360491644</globalKey>
+        <inputFieldName>records:actions:setpricelist:rest:params</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:setpricelist:rest:params</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR1669105952208536</globalKey>
+        <inputFieldName>records:actions:setpricelist:remote:params:methodName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:setpricelist:remote:params:methodName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR40474524230934317</globalKey>
+        <inputFieldName>records:actions:setpricelist:rest:link</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:setpricelist:rest:link</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR7774166512010996</globalKey>
+        <inputFieldName>records:actions:setpricelist:rest:method</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:setpricelist:rest:method</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR8389737469325991</globalKey>
+        <inputFieldName>records:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>records:label</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR8047043650820609</globalKey>
+        <inputFieldName>records:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>records:value</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR9780943179730746</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>records</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR301174699111169</globalKey>
+        <inputFieldName>records:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR3962590352530586</globalKey>
+        <inputFieldName>records:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:Name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR4563231971523416</globalKey>
+        <inputFieldName>records:actions:setpricelist:client:params</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:setpricelist:client:params</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR7773465388874907</globalKey>
+        <inputFieldName>records:actions:setpricelist:remote:params:cartId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:setpricelist:remote:params:cartId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR3762351067291434</globalKey>
+        <inputFieldName>records:actions:setpricelist:remote:params:inputFields:vlocity_cmt__PriceListId__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:setpricelist:remote:params:inputFields:vlocity_cmt__PriceListId__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQGetPriceListsDR44717707319078737</globalKey>
+        <inputFieldName>records:displaySequence</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQGetPriceListsDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:displaySequence</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;records&quot; : [ {
+    &quot;Id&quot; : &quot;a3GRN0000000EI32AM&quot;,
+    &quot;Name&quot; : &quot;B2B Pricelist&quot;,
+    &quot;actions&quot; : {
+      &quot;setpricelist&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;801RN000000FcW9YAK&quot;,
+            &quot;inputFields&quot; : [ {
+              &quot;vlocity_cmt__PriceListId__c&quot; : &quot;a3GRN0000000EI32AM&quot;
+            } ],
+            &quot;methodName&quot; : &quot;updateCarts&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : null,
+          &quot;method&quot; : null,
+          &quot;params&quot; : { }
+        }
+      }
+    },
+    &quot;displaySequence&quot; : -1
+  }, {
+    &quot;Id&quot; : &quot;123&quot;,
+    &quot;Name&quot; : &quot;B2B&quot;,
+    &quot;actions&quot; : {
+      &quot;setpricelist&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;801RN000000FcW9YAK&quot;,
+            &quot;inputFields&quot; : [ {
+              &quot;vlocity_cmt__PriceListId__c&quot; : &quot;a3GRN0000000EI32AM&quot;
+            } ],
+            &quot;methodName&quot; : &quot;updateCarts&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : null,
+          &quot;method&quot; : null,
+          &quot;params&quot; : { }
+        }
+      }
+    },
+    &quot;displaySequence&quot; : -1
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>CPQGetPriceListsDR_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,177 @@
+{
+  
+ "rules": [
+   {
+     "name": "Remove benchmarking steps so they don't error out",
+     "condition": "${Constants.HasRevenueSchedule}",
+     "appliesTo": [
+       {
+         "type": "dashboard",
+         "name": "Sales_Rep_Overview"
+       }
+     ],
+     "actions": [
+       {
+         "action": "delete",
+         "description": "delete node from dashboard",
+         "path": "$.state.steps.color_kpi_closed_won_comparision"
+       },
+       {
+         "action": "delete",
+         "description": "delete node from dashboard",
+         "path": "$.state.steps.kpi_closed_won_comparision_benchmark"
+       },
+       {
+         "action": "delete",
+         "description": "delete node from dashboard",
+         "path": "$.state.steps.kpi_open_pipe_comparison_benchmark"
+       },
+       {
+         "action": "delete",
+         "description": "delete node from dashboard",
+         "path": "$.state.steps.color_kpi_open_pipe_comparison"
+       }
+     ]
+   },
+   {
+     "name": "Date Filter Name Changes",
+     "condition": "${Constants.HasRevenueSchedule}",
+     "appliesTo": [
+       {
+         "type": "dashboard",
+         "name": "Manager_Overview"
+       }
+     ],
+     "actions": [
+       {
+         "action": "set",
+         "description": "delete node from workflow",
+         "path": "$.state.filters..[?(@.label=='Close Date')].label",
+         "value": "Schedule Date"
+       }
+     ]
+   },
+   {
+     "name": "Remove all datasource links for product only",
+     "condition": "${Constants.HasRevenueSchedule}",
+     "appliesTo": [
+       {
+         "type": "dashboard",
+         "name": "*"
+       }
+     ],
+     "actions": [
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.name=~/.*product.*/)]"
+       }
+     ]
+   },
+   {
+     "name": "Remove all datasource links for product only",
+     "condition": "${Constants.HasRevenueSchedule}",
+     "appliesTo": [
+       {
+         "type": "dashboard",
+         "name": "*"
+       }
+     ],
+     "actions": [
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.name=~/.*product.*/)]"
+       }
+     ]
+   },
+   {
+     "name": "Remove all datasource links for ceratain dashboards",
+     "condition": "${Constants.HasRevenueSchedule}",
+     "appliesTo": [
+       {
+         "type": "dashboard",
+         "name": "Quota_Progress"
+       }
+     ],
+     "actions": [
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.name=='connection_record_type')]"
+       },
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.name=='connection_opp_type')]"
+       },
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.name=='connection_stagename')]"
+       },
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.name=='connection_lost')]"
+       },
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.name=='connection_forecast_category')]"
+       },
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..fields[1]"
+       },
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*pipeline_trending.*/)]"
+       }
+     ]
+   },
+   {
+     "name": "Remove duplicate Product Schedule connections",
+     "condition": "${Constants.HasRevenueSchedule}",
+     "appliesTo": [
+       {
+         "type": "dashboard",
+         "name": "Sales_Ops_Manager_Overview"
+       }
+     ],
+     "actions": [
+       
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*opportunity_products.*/)]"
+       },
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.name=='connection_forecast_category')]"
+       }
+     ]
+   },
+   {
+     "name": "Remove duplicate Product Schedule connections",
+     "condition": "${Constants.HasRevenueSchedule}",
+     "appliesTo": [
+       {
+         "type": "dashboard",
+         "name": "Exec_Overview_Pipeline_Performance"
+       }
+     ],
+     "actions": [
+       
+       {
+         "action": "delete",
+         "description": "remove data connection",
+         "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*opportunity_products.*/)]"
+       }
+     ]
+   }
+ ]
+}

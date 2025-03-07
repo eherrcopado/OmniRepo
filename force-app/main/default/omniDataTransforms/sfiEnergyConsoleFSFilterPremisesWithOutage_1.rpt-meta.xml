@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CheckForSameResolutionTimeGeoLoc&quot; : null,
+    &quot;CheckForSameResolutionTimeZipCode&quot; : null,
+    &quot;DRFetchServicePremisesInfo&quot; : null,
+    &quot;DRTransformOutageRequest&quot; : null,
+    &quot;DRTransformRequestJSONtoXML&quot; : null,
+    &quot;DRTransformResponseXMLtoJSON&quot; : null,
+    &quot;DataRaptorTransformAction4&quot; : null,
+    &quot;FilterDuplicatePremisesOutageGeoLoc&quot; : null,
+    &quot;FilterDuplicatePremisesOutageZipCode&quot; : null,
+    &quot;FilterPremisesOutageGeoLoc&quot; : null,
+    &quot;FilterPremisesOutageZipCode&quot; : null,
+    &quot;HAFetchOutageInfoJSON&quot; : null,
+    &quot;HAFetchOutageInfoXML&quot; : null,
+    &quot;RemoveDuplicateGeoLocations&quot; : null,
+    &quot;RemoveDuplicateZipCodes&quot; : null,
+    &quot;ResponseActionGeoLocation&quot; : null,
+    &quot;ResponseActionZipCode&quot; : null,
+    &quot;SVIntegrationResponse&quot; : null,
+    &quot;SVOutageConfigs&quot; : null,
+    &quot;SVStaticResponse&quot; : null,
+    &quot;SetValuesOutageResponse&quot; : null,
+    &quot;VIPGetAccountFromInteraction&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:earlierPremisesWithOutages ISNOTBLANK true false IF</formulaConverted>
+        <formulaExpression>IF(ISNOTBLANK(earlierPremisesWithOutages),true,false)</formulaExpression>
+        <formulaResultPath>isEarlierOutage</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom9943</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage3485106612926132</globalKey>
+        <inputFieldName>premises:startTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:startTime</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom6433</globalKey>
+        <inputFieldName>premisesId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:premisesId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage9164673004594768</globalKey>
+        <inputFieldName>premiseStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:premiseStreet</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom3933</globalKey>
+        <inputFieldName>premiseCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:premiseCity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom7362</globalKey>
+        <inputFieldName>isEarlierOutage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:isEarlierOutage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom3548</globalKey>
+        <inputFieldName>earlierPremisesWithOutages:estimatedRestoration</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:estimatedRestoration</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:premises ISNOTBLANK true false IF</formulaConverted>
+        <formulaExpression>IF(ISNOTBLANK(premises),true,false)</formulaExpression>
+        <formulaResultPath>isOutage</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage02911117256560969</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom8016</globalKey>
+        <inputFieldName>premiseName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:premiseName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom255</globalKey>
+        <inputFieldName>premiseCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:premiseCountry</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage36724391287389246</globalKey>
+        <inputFieldName>premises:estimatedRestoration</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:estimatedRestoration</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom273</globalKey>
+        <inputFieldName>premiseState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:premiseState</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom1521</globalKey>
+        <inputFieldName>earlierPremisesWithOutages:affectedZipCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:premisePostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:outages LIST &apos;status/\/\/==/\/\/&quot;CLOSED&quot;/\/\/&amp;&amp;/\/\/affectedZipCode/\/\/==/\/\/&quot;&apos; var:premisePostalCode + &apos;&quot;&apos; + FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(outages), &apos;status == &quot;CLOSED&quot; &amp;&amp; affectedZipCode == &quot;&apos; + premisePostalCode + &apos;&quot;&apos;)</formulaExpression>
+        <formulaResultPath>earlierPremisesWithOutages</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom7029</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom7398</globalKey>
+        <inputFieldName>premisesId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:premisesId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom1570</globalKey>
+        <inputFieldName>premiseStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:premiseStreet</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage7566704114449627</globalKey>
+        <inputFieldName>premiseCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:premiseCountry</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage21089853859775953</globalKey>
+        <inputFieldName>premiseCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:premiseCity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage4120385275925764</globalKey>
+        <inputFieldName>isOutage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:isOutage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutageCustom9271</globalKey>
+        <inputFieldName>earlierPremisesWithOutages:startTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>earlierPremisesWithOutages:startTime</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage24434051419159886</globalKey>
+        <inputFieldName>premiseState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:premiseState</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage2674753493066697</globalKey>
+        <inputFieldName>premises:affectedZipCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:premisePostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:outages LIST &apos;status/\/\/==/\/\/&quot;OPEN&quot;/\/\/&amp;&amp;/\/\/affectedZipCode/\/\/==/\/\/&quot;&apos; var:premisePostalCode + &apos;&quot;&apos; + FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(outages), &apos;status == &quot;OPEN&quot; &amp;&amp; affectedZipCode == &quot;&apos; + premisePostalCode + &apos;&quot;&apos;)</formulaExpression>
+        <formulaResultPath>premises</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage45320925144906954</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSFilterPremisesWithOutage8722955043485057</globalKey>
+        <inputFieldName>premiseName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSFilterPremisesWithOutage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>premises:premiseName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;outages&quot; : [ {
+    &quot;ProblemDetailsText&quot; : &quot;Caused by unexpected circumstances, such as traffic accidents or severe weather. We work to repair these outages quickly.&quot;,
+    &quot;ProblemTitle&quot; : &quot;Repair Outage&quot;,
+    &quot;ProblemURL&quot; : &quot;https://rhl41861.live.dynatrace.com/#problems/problemdetails;pid=-7567972756941671037_1597696877509V2&quot;,
+    &quot;affectedLatitude&quot; : &quot;67&quot;,
+    &quot;affectedLocation&quot; : &quot;N. California&quot;,
+    &quot;affectedLongitude&quot; : &quot;123&quot;,
+    &quot;affectedZipCode&quot; : &quot;CV3 4LF&quot;,
+    &quot;endTime&quot; : &quot;16th June 11:30 AM&quot;,
+    &quot;estimatedRestoration&quot; : &quot;16th June 11:30 AM&quot;,
+    &quot;hasRootCause&quot; : &quot;false&quot;,
+    &quot;id&quot; : &quot;167341383&quot;,
+    &quot;severityLevel&quot; : &quot;High&quot;,
+    &quot;startTime&quot; : &quot;15th June 08:30 AM&quot;,
+    &quot;status&quot; : &quot;OPEN&quot;
+  }, {
+    &quot;ProblemDetailsText&quot; : &quot;Caused by unexpected circumstances, such as traffic accidents or severe weather. We work to repair these outages quickly.&quot;,
+    &quot;ProblemTitle&quot; : &quot;Repair Outage&quot;,
+    &quot;ProblemURL&quot; : &quot;https://rhl41861.live.dynatrace.com/#problems/problemdetails;pid=-7567972756941671037_1597696877509V2&quot;,
+    &quot;affectedLatitude&quot; : &quot;25.12&quot;,
+    &quot;affectedLocation&quot; : &quot;S. California&quot;,
+    &quot;affectedLongitude&quot; : &quot;75.3457&quot;,
+    &quot;affectedZipCode&quot; : &quot;CV3 4LF&quot;,
+    &quot;endTime&quot; : &quot;19th June 11:30 AM&quot;,
+    &quot;estimatedRestoration&quot; : &quot;19th June 11:30 AM&quot;,
+    &quot;hasRootCause&quot; : &quot;false&quot;,
+    &quot;id&quot; : &quot;167341384&quot;,
+    &quot;severityLevel&quot; : &quot;High&quot;,
+    &quot;startTime&quot; : &quot;18th June 08:30 AM&quot;,
+    &quot;status&quot; : &quot;CLOSED&quot;
+  }, {
+    &quot;ProblemDetailsText&quot; : &quot;Caused by unexpected circumstances, such as traffic accidents or severe weather. We work to repair these outages quickly.&quot;,
+    &quot;ProblemTitle&quot; : &quot;Repair Outage&quot;,
+    &quot;ProblemURL&quot; : &quot;https://rhl41861.live.dynatrace.com/#problems/problemdetails;pid=-7567972756941671037_1597696877509V2&quot;,
+    &quot;affectedLatitude&quot; : &quot;-40&quot;,
+    &quot;affectedLocation&quot; : &quot;Texas&quot;,
+    &quot;affectedLongitude&quot; : &quot;-100&quot;,
+    &quot;affectedZipCode&quot; : &quot;EH15 3HR&quot;,
+    &quot;endTime&quot; : &quot;26th June 11:30 AM&quot;,
+    &quot;estimatedRestoration&quot; : &quot;26th June 11:30 AM&quot;,
+    &quot;hasRootCause&quot; : &quot;false&quot;,
+    &quot;id&quot; : &quot;167341385&quot;,
+    &quot;severityLevel&quot; : &quot;High&quot;,
+    &quot;startTime&quot; : &quot;25th June 08:30 AM&quot;,
+    &quot;status&quot; : &quot;OPEN&quot;
+  }, {
+    &quot;ProblemDetailsText&quot; : &quot;Caused by unexpected circumstances, such as traffic accidents or severe weather. We work to repair these outages quickly.&quot;,
+    &quot;ProblemTitle&quot; : &quot;Repair Outage&quot;,
+    &quot;ProblemURL&quot; : &quot;https://rhl41861.live.dynatrace.com/#problems/problemdetails;pid=-7567972756941671037_1597696877509V2&quot;,
+    &quot;affectedLatitude&quot; : &quot;-50&quot;,
+    &quot;affectedLocation&quot; : &quot;Texas&quot;,
+    &quot;affectedLongitude&quot; : &quot;99&quot;,
+    &quot;affectedZipCode&quot; : &quot;CV3 4LF&quot;,
+    &quot;endTime&quot; : &quot;26th June 11:30 AM&quot;,
+    &quot;estimatedRestoration&quot; : &quot;26th June 11:30 AM&quot;,
+    &quot;hasRootCause&quot; : &quot;false&quot;,
+    &quot;id&quot; : &quot;167341386&quot;,
+    &quot;severityLevel&quot; : &quot;High&quot;,
+    &quot;startTime&quot; : &quot;25th June 08:30 AM&quot;,
+    &quot;status&quot; : &quot;OPEN&quot;
+  } ],
+  &quot;premisePostalCode&quot; : &quot;CV3 4LF&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>sfiEnergyConsoleFSFilterPremisesWithOutage_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

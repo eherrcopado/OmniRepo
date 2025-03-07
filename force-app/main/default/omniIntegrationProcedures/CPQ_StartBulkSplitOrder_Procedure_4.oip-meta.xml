@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;cartId&quot;:&quot;8015e000000RFSG&quot;}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>CPQ_StartBulkSplitOrder</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CPQJobSubmittedNotification</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;body&quot; : &quot;Async Jobs for splitting Order: %cartId% have been submitted.&quot;,
+    &quot;customNotificationTypeName&quot; : &quot;BulkNotifications&quot;,
+    &quot;targetID&quot; : &quot;%cartId%&quot;,
+    &quot;title&quot; : &quot;CPQ Bulk Order to Order Async Jobs&quot;,
+    &quot;userID&quot; : &quot;= $Vlocity.UserId&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;disableChainable&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;integrationProcedureKey&quot; : &quot;CPQ_SendAppNotification&quot;,
+  &quot;label&quot; : &quot;IntegrationProcedureAction3&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CPQSendAppNotification</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;body&quot; : &quot;CPQ Bulk Order to Order for cartID: %cartId% has started&quot;,
+    &quot;customNotificationTypeName&quot; : &quot;BulkNotifications&quot;,
+    &quot;targetID&quot; : &quot;%cartId%&quot;,
+    &quot;title&quot; : &quot;CPQ Bulk Order to Order&quot;,
+    &quot;userID&quot; : &quot;= $Vlocity.UserId&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;disableChainable&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;integrationProcedureKey&quot; : &quot;CPQ_SendAppNotification&quot;,
+  &quot;label&quot; : &quot;IntegrationProcedureAction2&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetUserId</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : { },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;=$Vlocity.UserId&quot;,
+  &quot;responseJSONPath&quot; : &quot;userID&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SplitOrderResponse</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;StartAsyncJobForSplitOrder&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>StartAsyncJobForSplitOrder</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;additionalData&quot; : {
+      &quot;cartConfiguration&quot; : &quot;%cartConfiguration%&quot;,
+      &quot;cartId&quot; : &quot;%cartId%&quot;,
+      &quot;memberType&quot; : &quot;ServiceAccount&quot;,
+      &quot;userID&quot; : &quot;%SetUserId:userID%&quot;
+    },
+    &quot;asyncProcessName&quot; : &quot;CPQ Split and Submit Bulk Enterprise Orders&quot;,
+    &quot;asyncProcessSteps&quot; : [ {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_ExecuteSplitOrder&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetMemberTypeIds&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;executeNextStepIfAnyJobFails&quot; : true,
+      &quot;stepName&quot; : &quot;SplitEnterPriseOrder&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : false,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_SubmitOrderWrapper&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetSubOrderByCartId&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;executeNextStepIfAnyJobFails&quot; : true,
+      &quot;stepName&quot; : &quot;SubmitSubOrders&quot;
+    } ],
+    &quot;referenceId&quot; : &quot;%cartId%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction1&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.VOIAsyncProcess&quot;,
+  &quot;remoteMethod&quot; : &quot;startAsyncJob&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessKey>CPQ_StartBulkSplitOrder</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>StartBulkSplitOrder</subType>
+    <type>CPQ</type>
+    <uniqueName>CPQ_StartBulkSplitOrder_Procedure_4</uniqueName>
+    <versionNumber>4.0</versionNumber>
+    <webComponentKey>fc5fdbe9-d782-02d3-d64d-0496e62dd427</webComponentKey>
+</OmniIntegrationProcedure>

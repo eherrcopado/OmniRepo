@@ -1,0 +1,112 @@
+{
+  "pages": [
+    {
+      "title": "Create Revenue Insights App",
+      "variables": [
+        {
+          "name": "DefaultsVisibleMessages"
+        },
+        {
+          "name": "Fiscal_Month"
+        },
+        {
+          "name": "First_Day_Of_Week"
+        },
+        {
+          "name": "Can_Continue"
+        },
+        {
+          "name": "Has_CollaborativeForecasting"
+        },
+        {
+          "name": "Has_CollaborativeForecastingQuota"
+        },
+        {
+          "name": "Forecasting_Types"
+        },
+        {
+          "name": "Forecasting_Override"
+        },
+        {
+          "name": "ForecastingType_Names"
+        },
+        {
+          "name": "Has_OpportunitySplits"
+        },
+        {
+          "name": "Has_Products"
+        },
+        {
+          "name": "Has_RoleHierarchy"
+        },
+        {
+          "name": "Has_CustomAddressFieldsEnabled"
+        },
+        {
+          "name": "Has_Activities"
+        },
+        {
+          "name": "failedCheck"
+        }
+      ],
+      "vfPage": {
+        "name": "RevInsights_checklist"
+      }
+    },
+    {
+      "title": "Customize Revenue Insights App",
+      "condition": "{{Variables.Has_CollaborativeForecasting == 'Yes' && Variables.Has_CollaborativeForecastingQuota == 'Yes'}}",
+      "variables": [
+        {
+          "name": "Forecasting_Override"
+        }
+      ]
+    },
+    {
+      "title": "Customize Revenue Insights App",
+      "condition": "{{Variables.Forecasting_Override == 'Yes' && Variables.Has_CollaborativeForecasting == 'Yes' && Variables.Has_CollaborativeForecastingQuota == 'Yes'}}",
+      "variables": [
+        {
+          "name": "ForecastingType_Names"
+        }
+      ]
+    },
+    {
+      "title": "Customize Revenue Insights App",
+      "condition": "{{Variables.Forecasting_Override == 'No' && Variables.Has_OpportunitySplits == 'Yes' && Variables.Has_RoleHierarchy == 'Yes'}}",
+      "variables": [
+        {
+          "name": "Has_OpportunitySplits"
+        }
+      ]
+    },
+    {
+      "title": "Customize Revenue Insights App",
+      "condition": "{{Variables.Forecasting_Override == 'No' && Variables.Has_OpportunitySplits == 'Yes' && Variables.Has_RoleHierarchy == 'Yes'}}",
+      "variables": [
+        {
+          "name": "OpptySplitTypes"
+        }
+      ]
+    },
+    {
+      "title": "Customize Revenue Insights App",
+      "condition": "{{Variables.Forecasting_Override == 'No' && Variables.Has_OpportunitySplits == 'No' && Variables.Has_RoleHierarchy == 'Yes'}}",
+      "variables": [
+        {
+          "name": "Opportunity_Amount"
+        }
+      ]
+    },
+    {
+      "title": "Customize Revenue Insights App",
+      "condition": "{{Variables.Forecasting_Override == 'No' && Variables.Has_OpportunitySplits == 'Yes'}}",
+      "variables": [
+        {
+          "name": "OpportunitySplit_Amount"
+        }
+      ]
+    }
+  ],
+  "displayMessages": []
+}

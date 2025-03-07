@@ -1,0 +1,124 @@
+<apex:page sidebar="false" showHeader="true" controller="slackv2.setupAssistant">
+    <apex:includeLightning />
+    <apex:slds />
+    <style type="text/css">
+        #lightning {
+            position: relative;
+            height: 100%;
+            min-height: 100vh;
+            background-color: #f9f9fa;
+            margin-bottom: -2.75rem;
+        }
+        .noSidebarCell #lightning {
+            height: auto;
+            min-height: 0;
+            background-color: white;
+        }
+        .noSidebarCell #lightning #spinner {
+            min-height: 20rem;
+        }
+        .bodyDiv .outerNoSidebar,
+        .noSidebarCell,
+        .sidebarCell .fixed {
+            padding: 0;
+        }
+        #auraErrorMessage {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+        }
+    </style>
+
+    <div id="remoteError" class="slds-notify_container" style="display:none">
+        <div class="slds-notify slds-notify_toast slds-theme_error slds-p-right_large" role="status">
+            <span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top" title="Error">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="slds-icon slds-icon_small" aria-hidden="true">
+                    <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#error')}"></use>
+                </svg>
+            </span>
+            <div class="slds-notify__content">
+                <h3 class="slds-text-heading_small">Failed to create remote site</h3>
+                <p>Please manually create a “slack_org_domain” remote site for:</p>
+                <p>{!orgDomain}</p>
+            </div>
+            <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-inverse" title="Close" onclick="{document.getElementById('remoteError').style.display = 'none'}">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                        <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                    </svg>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightning" style="display:none;">
+        <div id="spinner">
+            <div role="status" class="slds-spinner slds-spinner_medium">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // Calls the Metdata API from JavaScript to create the Remote Site Setting to permit Apex callouts
+        if('{!createRemote}' == 'true'){
+            var binding = new XMLHttpRequest();
+            var request =
+                '<?xml version="1.0" encoding="utf-8"?>' +
+                '<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'+
+                    '<env:Header>' +
+                        '<urn:SessionHeader xmlns:urn="http://soap.sforce.com/2006/04/metadata">' +
+                            '<urn:sessionId>{!$Api.Session_ID}</urn:sessionId>' +
+                        '</urn:SessionHeader>' +
+                    '</env:Header>' +
+                    '<env:Body>' +
+                        '<createMetadata xmlns="http://soap.sforce.com/2006/04/metadata">' +
+                            '<metadata xsi:type="RemoteSiteSetting">' +
+                                '<fullName>{!JSENCODE(remoteName)}</fullName>' +
+                                '<description>Used by Slack to make webservice callouts</description>' +
+                                '<disableProtocolSecurity>false</disableProtocolSecurity>' +
+                                '<isActive>true</isActive>' +
+                                '<url>{!JSENCODE(orgDomain)}</url>' +
+                            '</metadata>' +
+                        '</createMetadata>' +
+                    '</env:Body>' +
+                '</env:Envelope>';
+            binding.open('POST', 'https://' + window.location.host + '/services/Soap/m/31.0');
+            binding.setRequestHeader('SOAPAction','""');
+            binding.setRequestHeader('Content-Type', 'text/xml');
+            binding.onreadystatechange =
+                function() {
+                    if(this.readyState==4) {
+                        var parser = new DOMParser();
+                        var doc  = parser.parseFromString(this.response, 'application/xml');
+                        var errors = doc.getElementsByTagName('errors');
+                        var messageText = '';
+                        for(var errorIdx = 0; errorIdx < errors.length; errorIdx++) {
+                            messageText+= errors.item(errorIdx).getElementsByTagName('message').item(0).innerHTML + '\n';
+                        }
+
+                        if(messageText != ''){
+                            document.getElementById('remoteError').style.display = 'block';
+                        }
+                    }
+                }
+            binding.send(request);
+        }
+
+
+        $Lightning.use('{!JSENCODE(namespace)}:lightningOut', function () {
+            document.getElementById('lightning').style.display = 'block';
+            $Lightning.createComponent('{!JSENCODE(namespace)}:setupAssistant', {
+                isClassic: {!'Theme3' == $User.UIThemeDisplayed}
+            }, 'lightning', function (component, status, errorMessage) {
+                document.getElementById('spinner').style.display = 'none';
+                if ('SUCCESS' != status) {
+                    document.getElementById('spinner').innerHTML = 'Failed to load Setup Assistant lightning component.';
+                }
+            });
+        });
+    </script>
+</apex:page>

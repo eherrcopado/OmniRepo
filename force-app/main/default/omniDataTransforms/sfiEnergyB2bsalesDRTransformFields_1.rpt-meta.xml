@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>sfiEnergyB2bsalesDRTransformFields</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyB2bsalesDRTransformFieldsCustom8601</globalKey>
+        <inputFieldName>ServicePoints:vlocity_cmt__MarketIdentifier__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyB2bsalesDRTransformFields</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePointList:MarketIdentifier</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyB2bsalesDRTransformFieldsCustom2118</globalKey>
+        <inputFieldName>ServicePoints:vlocity_cmt__LoadProfile__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyB2bsalesDRTransformFields</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePointList:LoadProfile</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyB2bsalesDRTransformFieldsCustom3807</globalKey>
+        <inputFieldName>ServicePoints:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyB2bsalesDRTransformFields</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePointList:Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyB2bsalesDRTransformFieldsCustom5746</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyB2bsalesDRTransformFields</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>ServicePointList</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyB2bsalesDRTransformFieldsCustom4516</globalKey>
+        <inputFieldName>ServicePoints:vlocity_cmt__AverageMonthlyUsage__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyB2bsalesDRTransformFields</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePointList:AverageUsage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyB2bsalesDRTransformFieldsCustom7893</globalKey>
+        <inputFieldName>ServicePoints:Address</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyB2bsalesDRTransformFields</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePointList:Address</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__StreetAddress__c var:null != var:ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__City__c var:null != &amp;&amp; var:ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__State__c var:null != &amp;&amp; var:ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__PostalCode__c var:null != &amp;&amp; | var:ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__StreetAddress__c &quot;,/\/\/&quot; var:ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__City__c &quot;,/\/\/&quot; var:ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__State__c &quot;,/\/\/&quot; var:ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__PostalCode__c CONCAT &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(%ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__StreetAddress__c%!=null&amp;&amp; %ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__City__c%!=null &amp;&amp; %ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__State__c%!=null &amp;&amp; %ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__PostalCode__c%!=null,CONCAT(%ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__StreetAddress__c%,&quot;, &quot; ,%ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__City__c%,&quot;, &quot;,  %ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__State__c%,&quot;, &quot;,
+%ServicePoints:vlocity_cmt__PremisesId__r:vlocity_cmt__PostalCode__c%),&quot;&quot;)</formulaExpression>
+        <formulaResultPath>ServicePoints:Address</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>sfiEnergyB2bsalesDRTransformFieldsCustom9313</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyB2bsalesDRTransformFields</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ServicePoints&quot; : [ {
+    &quot;vlocity_cmt__AverageMonthlyUsage__c&quot; : 2469,
+    &quot;vlocity_cmt__LoadProfile__c&quot; : &quot;Residential Low&quot;,
+    &quot;vlocity_cmt__MarketIdentifier__c&quot; : &quot;1594356800&quot;,
+    &quot;vlocity_cmt__PremisesId__c&quot; : &quot;a3B5g000000PFvnEAG&quot;,
+    &quot;vlocity_cmt__PremisesId__r&quot; : {
+      &quot;vlocity_cmt__City__c&quot; : &quot;Seattle&quot;,
+      &quot;vlocity_cmt__PostalCode__c&quot; : &quot;90209&quot;,
+      &quot;vlocity_cmt__State__c&quot; : &quot;Georgia&quot;,
+      &quot;vlocity_cmt__StreetAddress__c&quot; : &quot;Street2&quot;,
+      &quot;Id&quot; : &quot;a3B5g000000PFvnEAG&quot;,
+      &quot;attributes&quot; : {
+        &quot;type&quot; : &quot;vlocity_cmt__Premises__c&quot;,
+        &quot;url&quot; : &quot;/services/data/v56.0/sobjects/vlocity_cmt__Premises__c/a3B5g000000PFvnEAG&quot;
+      }
+    },
+    &quot;Id&quot; : &quot;a5a5g000000kTs7AAE&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>sfiEnergyB2bsalesDRTransformFields_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

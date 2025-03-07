@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__RetryIntervalsValidation</fullName>
+    <active>true</active>
+    <description>Retry Intervals field validation</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(vlocity_cmt__RetryIntervals__c)), NOT(REGEX(vlocity_cmt__RetryIntervals__c, &quot;(\\d+)(,\\s*\\d+)*&quot;)))</errorConditionFormula>
+    <errorDisplayField>vlocity_cmt__RetryIntervals__c</errorDisplayField>
+    <errorMessage>Retry Intervals must be whole numbers separated by commas.</errorMessage>
+</ValidationRule>

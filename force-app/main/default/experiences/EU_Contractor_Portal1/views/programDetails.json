@@ -1,0 +1,48 @@
+{
+  "appPageId" : "7e8d515f-8d73-402a-93fe-1a3461c33bb9",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "7789d3f2-d991-4621-a8e6-38357a3d1289",
+  "label" : "Program Details",
+  "regions" : [ {
+    "id" : "0a336d7b-e430-4802-9279-8dff70dcba61",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "exposedAttributes" : "{   \"BreadCrumbData\": [     {       \"name\": \"Programs\",       \"href\": \"Programs\",       \"hasNext\": true,       \"index\": 0,       \"attributes\": {         \"name\": \"Eu_Cp_Programs\"       },       \"state\": {}     },     {       \"name\": \"{!ProgramName}\",       \"href\": \"\",       \"hasNext\": false,       \"index\": 1,       \"attributes\": {         \"name\": \"Eu_Cp_Program_Details\"       },       \"state\": {         \"ProgramId\": \"{!ProgramId}\",         \"ProgramName\": \"{!ProgramName}\",         \"ApplicationStatus\": \"{!ApplicationStatus}\"       }     }   ] }",
+        "flexcardName" : "EnergyUtilitiesCPBreadCrumbs",
+        "objectApiName" : "{!objectApiName}",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "runtime_omnistudio:flexcard",
+      "id" : "5e82b7f8-9e74-45b5-b412-95cbcf3bdd90",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "exposedAttributes" : "{\"AccountId\":\"{!CurrentUser.accountId}\",\"UserId\":\"{!CurrentUser.id}\"}",
+        "flexcardName" : "EnergyUtilitiesCPViewProgramDetails",
+        "objectApiName" : "{!objectApiName}",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "runtime_omnistudio:flexcard",
+      "id" : "376ceb5b-424f-4147-b512-1c6dcda8ef5e",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "de868328-8a37-4295-b0f9-aa451c72a207",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "b95cbf36-4160-486c-9288-a040566389af",
+    "regionName" : "footer",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Programs",
+  "type" : "view",
+  "viewType" : "eu-cp-program-details"
+}

@@ -1,0 +1,2693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>11/21/2023: (SO): Debarshi: Adjusted for Standard Runtime+ OS Analytics IP</description>
+    <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>true</isWebCompEnabled>
+    <language>English</language>
+    <name>New Opportunity</name>
+    <omniProcessElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ConfirmationTextBlock</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;text&quot; : &quot;&lt;table style=\&quot;height: 93px; border-color: #757373; background-color: #c8f7c8;\&quot; border=\&quot;1\&quot; width=\&quot;839\&quot;&gt;\n&lt;tbody&gt;\n&lt;tr style=\&quot;height: 63.8477px;\&quot;&gt;\n&lt;td style=\&quot;width: 837.5px; height: 63.8477px;\&quot;&gt;\n&lt;h4&gt;Opportunity is created successfully!!&lt;/h4&gt;\n&lt;br /&gt;\n&lt;h4&gt;Follow up with the Engineering Department to complete technical evaluations. Use auto-created task &amp;ldquo;Get Technical Information&amp;rdquo; to track.&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;&quot;,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>NavigateAction1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 3.0,
+  &quot;label&quot; : &quot;Go To Opportunity&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;targetType&quot; : &quot;Record&quot;,
+  &quot;objectAction&quot; : &quot;new&quot;,
+  &quot;recordAction&quot; : &quot;view&quot;,
+  &quot;loginAction&quot; : &quot;login&quot;,
+  &quot;targetFilter&quot; : &quot;Recent&quot;,
+  &quot;targetId&quot; : &quot;%opptyId%&quot;,
+  &quot;variant&quot; : &quot;brand&quot;,
+  &quot;iconName&quot; : &quot;&quot;,
+  &quot;iconVariant&quot; : &quot;&quot;,
+  &quot;iconPosition&quot; : &quot;left&quot;,
+  &quot;replace&quot; : true,
+  &quot;targetLWCLayout&quot; : &quot;lightning&quot;,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;,
+  &quot;targetName&quot; : &quot;Opportunity&quot;
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Navigate Action</type>
+        </childElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Confirmation</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3.0,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3.0,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ null, null ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000.0,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Confirmation&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>21.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CreateAdditionalTasks</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;bundle&quot; : &quot;dcCreateTasks&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ null, null ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;label&quot; : &quot;CreateAdditionalTasks&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>17.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CreateOpportunityAndTasksIP</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;integrationProcedureKey&quot; : &quot;HQOpportunity_CreateOpptyAndTasks&quot;,
+  &quot;useContinuation&quot; : false,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;useFuture&quot; : false,
+    &quot;chainable&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>15.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CreateTasks</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;horizontalMode&quot; : false,
+  &quot;defaultValue&quot; : &quot;No&quot;,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Yes&quot;,
+    &quot;value&quot; : &quot;Yes&quot;
+  }, {
+    &quot;name&quot; : &quot;No&quot;,
+    &quot;value&quot; : &quot;No&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;optionWidth&quot; : 100.0,
+  &quot;optionHeight&quot; : 100.0,
+  &quot;imageCountInRow&quot; : 3.0,
+  &quot;enableCaption&quot; : true,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Create Additional Tasks&quot;
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Radio</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineBreak1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;LineBreak1&quot;,
+  &quot;padding&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Line Break</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineBreak2</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;LineBreak2&quot;,
+  &quot;padding&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Line Break</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>TaskAssignTo</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ { } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;Custom&quot;,
+    &quot;source&quot; : &quot;PicklistPopulation.PopulateUserPicklist&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Assign To&quot;
+}</propertySetConfig>
+                <sequenceNumber>4.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>TaskDescription</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Description&quot;
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>TaskDueDate</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;dateType&quot; : &quot;string&quot;,
+  &quot;modelDateFormat&quot; : &quot;yyyy-MM-dd&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;minDate&quot; : &quot;&quot;,
+  &quot;maxDate&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Due Date&quot;
+}</propertySetConfig>
+                <sequenceNumber>3.0</sequenceNumber>
+                <type>Date</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>TaskSubject</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Subject&quot;
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TaskBlock</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;collapse&quot; : false,
+  &quot;repeat&quot; : true,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;CreateTasks&quot;,
+        &quot;data&quot; : &quot;Yes&quot;
+      } ]
+    }
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Tasks&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Description</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Description&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>0.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>DueDate</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Due Date&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Subject</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Subject&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TaskTypeOut</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;allowEdit&quot; : false,
+  &quot;allowNew&quot; : false,
+  &quot;allowDelete&quot; : false,
+  &quot;newLabel&quot; : &quot;New&quot;,
+  &quot;editLabel&quot; : &quot;Edit&quot;,
+  &quot;deleteLabel&quot; : &quot;Delete&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;selectCheckBox&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;utility&quot;,
+  &quot;svgIcon&quot; : &quot;user&quot;,
+  &quot;elementName&quot; : &quot;&quot;,
+  &quot;valueSvgMap&quot; : [ ],
+  &quot;selectSobject&quot; : &quot;&quot;,
+  &quot;sobjectMapping&quot; : [ ],
+  &quot;sumElement&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;mode&quot; : &quot;Table&quot;,
+  &quot;maxDisplay&quot; : 3.0,
+  &quot;allowClear&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Edit Block</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TextBlock1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;TextBlock1&quot;,
+  &quot;text&quot; : &quot;&lt;p&gt;&lt;span style=\&quot;color: #169179;\&quot;&gt;The following tasks are automatically generated for your convinience. You will be able to manage them on the opportunity record.&lt;/span&gt;&lt;/p&gt;&quot;,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;&quot;,
+  &quot;sanitize&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GeneratedTasks</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3.0,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3.0,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000.0,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Auto-generated Next Steps&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>12.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetCases</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;bundle&quot; : &quot;dcGetAccountDetails&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;ContextId&quot;,
+    &quot;inputParam&quot; : &quot;AccountId&quot;
+  } ],
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ null, null ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;label&quot; : &quot;Get Cases&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetOpptyRecordType</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;bundle&quot; : &quot;dcGetOpportunityDetails&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;inputParam&quot; : &quot;RecordTypeName&quot;,
+    &quot;element&quot; : &quot;RecordTypeName&quot;
+  }, {
+    &quot;inputParam&quot; : &quot;SObjectType&quot;,
+    &quot;element&quot; : &quot;Opportunity&quot;
+  } ],
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;label&quot; : &quot;Get Oppty Record  Type&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>14.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetServiceAccounts</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;bundle&quot; : &quot;dcGetServiceAccountDetails&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;inputParam&quot; : &quot;ContextId&quot;,
+    &quot;element&quot; : &quot;ContextId&quot;
+  } ],
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;GetServiceAccounts&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;ignoreCache&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetTasks</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;label&quot; : &quot;Calc Action Get Tasks&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;remoteClass&quot; : &quot;PricingMatrixCalculationService&quot;,
+  &quot;remoteMethod&quot; : &quot;calculate&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;configurationName&quot; : &quot;AUTOTASK&quot;,
+    &quot;includeInputs&quot; : true,
+    &quot;preTransformBundle&quot; : &quot;PreTaskCalcTransform&quot;,
+    &quot;postTransformBundle&quot; : &quot;PostTaskTypeCalc&quot;,
+    &quot;matchInputVariables&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Calculation Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetTaskTypes</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;label&quot; : &quot;GetTaskTypes&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;bundle&quot; : &quot;dcGetTaskDetails&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>OmniScript_Analytics</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;OmniScript_Analytics&quot;,
+  &quot;integrationProcedureKey&quot; : &quot;OmniScript_Analytics&quot;,
+  &quot;useContinuation&quot; : false,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;useFuture&quot; : false,
+    &quot;chainable&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>0.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Case</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;VDOREGCases&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;dataJSON&quot; : false,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;maxCompareSize&quot; : 4.0,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CaseNumber</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Case Number&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>5.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CaseSubject</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Subject&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CreatedDate</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Created Date&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>6.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Priority</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Priority&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>4.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Reason</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Reason&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>3.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Status</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Status&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Type</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Type&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>0.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>cases</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;allowEdit&quot; : false,
+  &quot;allowNew&quot; : false,
+  &quot;allowDelete&quot; : false,
+  &quot;newLabel&quot; : &quot;New&quot;,
+  &quot;editLabel&quot; : &quot;Edit&quot;,
+  &quot;deleteLabel&quot; : &quot;Delete&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;selectCheckBox&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;utility&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;elementName&quot; : &quot;&quot;,
+  &quot;valueSvgMap&quot; : [ ],
+  &quot;selectSobject&quot; : &quot;&quot;,
+  &quot;sobjectMapping&quot; : [ ],
+  &quot;sumElement&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;mode&quot; : &quot;Table&quot;,
+  &quot;maxDisplay&quot; : 5.0,
+  &quot;allowClear&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Edit Block</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TextBlock2</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;text&quot; : &quot;&lt;h4&gt;&lt;span style=\&quot;color: #e03e2d;\&quot;&gt;Before you continue, make sure to address any open issues with the customer.&lt;/span&gt;&lt;/h4&gt;&quot;,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;TextBlock2&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>OpenCases</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3.0,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3.0,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000.0,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;%Case:CaseNumber%&quot;,
+        &quot;data&quot; : &quot;\&quot;\&quot;&quot;
+      } ]
+    }
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Open Cases&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>AxePrincipale</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;Axe principale&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;expression&quot; : &quot;IF(%OpptyTypeRadio%=&apos;Energy Utilization&apos;, \&quot;Opportunité Utilisation d&apos;énergie\&quot;, \n     IF(%OpptyTypeRadio%=&apos;Services&apos;,\&quot;Opportunité service\&quot;, \&quot;Opportunité produit\&quot;))&quot;,
+  &quot;hide&quot; : false,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>8.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CampaignId</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;label&quot; : &quot;Id&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CampaignName</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;label&quot; : &quot;No&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>3.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CampaignSearch</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;bundle&quot; : &quot;dcGetCampaignDetails&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;inputParam&quot; : &quot;CampaignName&quot;,
+    &quot;element&quot; : &quot;CampaignTypeAhead&quot;
+  } ],
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;Campaign&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;ignoreCache&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>DataRaptor Extract Action</type>
+            </childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CampaignTypeAhead</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;Campaign&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;googleTransformation&quot; : {
+    &quot;street&quot; : &quot;&quot;,
+    &quot;locality&quot; : &quot;&quot;,
+    &quot;administrative_area_level_1&quot; : &quot;&quot;,
+    &quot;country&quot; : &quot;&quot;,
+    &quot;postal_code&quot; : &quot;&quot;
+  },
+  &quot;required&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;typeAheadKey&quot; : &quot;CampaignName&quot;,
+  &quot;dataProcessorFunction&quot; : &quot;&quot;,
+  &quot;callFrequency&quot; : 300.0,
+  &quot;editMode&quot; : false,
+  &quot;newItemLabel&quot; : &quot;New&quot;,
+  &quot;hideEditButton&quot; : true,
+  &quot;enableGoogleMapsAutocomplete&quot; : false,
+  &quot;enableLookup&quot; : false,
+  &quot;googleMapsAPIKey&quot; : &quot;&quot;,
+  &quot;hideMap&quot; : true,
+  &quot;googleAddressCountry&quot; : &quot;all&quot;,
+  &quot;useDataJson&quot; : false,
+  &quot;dataJsonPath&quot; : &quot;&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>13.0</sequenceNumber>
+            <type>Type Ahead Block</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>EnergySubTypeRadio</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;Axes secondaire&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 6.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;horizontalMode&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Additional Energy&quot;,
+    &quot;value&quot; : &quot;Ajout de puissance&quot;
+  }, {
+    &quot;value&quot; : &quot;Efficacité énergétique&quot;,
+    &quot;name&quot; : &quot;Energy Efficiency&quot;
+  }, {
+    &quot;name&quot; : &quot;Power Management&quot;,
+    &quot;value&quot; : &quot;Gestion de puissance&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;optionWidth&quot; : 100.0,
+  &quot;optionHeight&quot; : 100.0,
+  &quot;imageCountInRow&quot; : 3.0,
+  &quot;enableCaption&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Radio</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Helper</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;expression&quot; : &quot;IF(%OpptyTypeRadio%=&apos;Energy Utilization&apos;, \&quot;Energy\&quot;, %OpptyTypeRadio%)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>MaxDemand</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;Max Demand (kW)&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 2.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;expression&quot; : &quot;%Result:AverageMaxDemand%&quot;,
+  &quot;hide&quot; : false,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>OpptyCloseDate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;Close Date&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 3.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : true,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;dateType&quot; : &quot;string&quot;,
+  &quot;modelDateFormat&quot; : &quot;yyyy-MM-dd&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;minDate&quot; : &quot;&quot;,
+  &quot;maxDate&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>11.0</sequenceNumber>
+            <type>Date</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>OpptyName</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;Opportunity Name&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 5.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : true,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>10.0</sequenceNumber>
+            <type>Text</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>OpptyText</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;text&quot; : &quot;&lt;h2&gt;%AxePrincipale%&lt;/h2&gt;\n&lt;hr /&gt;\n&lt;p&gt;&lt;/p&gt;&quot;,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>9.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>OpptyTypeRadio</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;enableCaption&quot; : true,
+  &quot;imageCountInRow&quot; : 3.0,
+  &quot;optionHeight&quot; : 100.0,
+  &quot;optionWidth&quot; : 100.0,
+  &quot;hide&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controllingField&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;element&quot; : &quot;&quot;
+  },
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;image&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;imgId&quot; : &quot;../servlet/servlet.ImageServer?id=015Hu000004xw99IAA&amp;&amp;docName=VDOBulb&amp;&amp;oid=00DHu000002hDV6&quot;,
+    &quot;value&quot; : &quot;Utilisation d&apos;énergie&quot;,
+    &quot;name&quot; : &quot;Energy Utilization&quot;
+  }, {
+    &quot;imgId&quot; : &quot;../servlet/servlet.ImageServer?id=015Hr000004h23GIAQ&amp;&amp;docName=Dataraptore24&amp;&amp;oid=00DHr00000KtEhY&quot;,
+    &quot;value&quot; : &quot;Service&quot;,
+    &quot;name&quot; : &quot;Services&quot;
+  }, {
+    &quot;imgId&quot; : &quot;../servlet/servlet.ImageServer?id=015Hu000004xw8xIAA&amp;&amp;docName=VDOUsage&amp;&amp;oid=00DHu000002hDV6&quot;,
+    &quot;value&quot; : &quot;Produits&quot;,
+    &quot;name&quot; : &quot;Products&quot;
+  } ],
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;help&quot; : false,
+  &quot;horizontalMode&quot; : &quot;image&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;required&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Axe principale&quot;
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Radio</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>RecordTypeDisplay</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;expression&quot; : &quot;IF(%SelectService:StepServiceSelection%=\&quot;Gas\&quot;,\&quot;Regulated Gas\&quot;,\&quot;Regulated Electricity\&quot;)&quot;,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;controlWidth&quot; : 6.0,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Record Type&quot;
+}</propertySetConfig>
+            <sequenceNumber>12.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>RecordTypeName</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;expression&quot; : &quot;IF(%SelectService:StepServiceSelection%=\&quot;Gas\&quot;,\&quot;Regulated\&quot;,\&quot;Regulated Electricity\&quot;)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SiteRadio</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;Service Locations&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 6.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;horizontalMode&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;New&quot;,
+    &quot;value&quot; : &quot;New&quot;
+  }, {
+    &quot;name&quot; : &quot;Existing&quot;,
+    &quot;value&quot; : &quot;Existing&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;optionWidth&quot; : 100.0,
+  &quot;optionHeight&quot; : 100.0,
+  &quot;imageCountInRow&quot; : 3.0,
+  &quot;enableCaption&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>7.0</sequenceNumber>
+            <type>Radio</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TotalYearlyUsage</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;Annual Consumption&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 2.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;expression&quot; : &quot;%TotalUsage%&quot;,
+  &quot;hide&quot; : false,
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>UOM</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 1.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;expression&quot; : &quot;%Result:UOM%&quot;,
+  &quot;hide&quot; : false,
+  &quot;dataType&quot; : &quot;Text&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>OpptyType</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3.0,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3.0,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000.0,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Create Opportunity&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>13.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ServiceAccount</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;account-overview-service-accounts&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;dataJSON&quot; : true,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;maxCompareSize&quot; : 4.0,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;accessibleInFutureSteps&quot; : true,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BillingStreet</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>City</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>3.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>IsChecked</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;Checkbox1&quot;,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;defaultValue&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;checkLabel&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>0.0</sequenceNumber>
+                <type>Checkbox</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Name</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>PostalCode</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>4.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>ServiceAccountId</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;ServiceAccountId&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;helpTextPos&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0.0,
+  &quot;maxLength&quot; : 255.0,
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>5.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ServiceAccounts</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;allowEdit&quot; : false,
+  &quot;allowNew&quot; : false,
+  &quot;allowDelete&quot; : false,
+  &quot;newLabel&quot; : &quot;New&quot;,
+  &quot;editLabel&quot; : &quot;Edit&quot;,
+  &quot;deleteLabel&quot; : &quot;Delete&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;selectCheckBox&quot; : &quot;IsChecked&quot;,
+  &quot;svgSprite&quot; : &quot;utility&quot;,
+  &quot;svgIcon&quot; : &quot;home&quot;,
+  &quot;elementName&quot; : &quot;&quot;,
+  &quot;valueSvgMap&quot; : [ ],
+  &quot;selectSobject&quot; : &quot;Account&quot;,
+  &quot;sobjectMapping&quot; : [ {
+    &quot;osElement&quot; : &quot;ServiceAccountId&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__RootAccountId__c&quot;,
+    &quot;duplicateKey&quot; : true
+  } ],
+  &quot;sumElement&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;mode&quot; : &quot;Cards&quot;,
+  &quot;maxDisplay&quot; : 4.0,
+  &quot;allowClear&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Edit Block</type>
+        </childElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>PickServiceAccount</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3.0,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3.0,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&lt;h5&gt;&lt;span style=\&quot;color: #169179;\&quot;&gt;Note: For new connections, create a service account before creating an opportunity, quote or an order&lt;/span&gt;&lt;/h5&gt;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000.0,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Select Service Location&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SelectMeters</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;label&quot; : &quot;Select Meters&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;bundle&quot; : &quot;VDOTransformSelectedMeters&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>StepServiceSelection</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;enableCaption&quot; : true,
+  &quot;imageCountInRow&quot; : 2.0,
+  &quot;optionHeight&quot; : 100.0,
+  &quot;optionWidth&quot; : 100.0,
+  &quot;hide&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controllingField&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;element&quot; : &quot;&quot;
+  },
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;image&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;imgId&quot; : &quot;/servlet/servlet.FileDownload?file=015Hr000004WXC9IAO&amp;docName=CACEACBFAbf75bfead63e4baa9cd857f9b0e286e0&quot;,
+    &quot;name&quot; : &quot;Electricity&quot;,
+    &quot;developerName&quot; : &quot;CACEACBFAbf75bfead63e4baa9cd857f9b0e286e0&quot;,
+    &quot;value&quot; : &quot;Electricity&quot;,
+    &quot;autoAdv&quot; : null
+  }, {
+    &quot;imgId&quot; : &quot;/servlet/servlet.FileDownload?file=015Hr000004WXCBIA4&amp;docName=CACEACBFA894f79d1b5e6461a98e3097f3a271f06&quot;,
+    &quot;name&quot; : &quot;Gas&quot;,
+    &quot;developerName&quot; : &quot;CACEACBFA894f79d1b5e6461a98e3097f3a271f06&quot;,
+    &quot;value&quot; : &quot;Gas&quot;,
+    &quot;autoAdv&quot; : null
+  } ],
+  &quot;helpTextPos&quot; : &quot;bottom-right&quot;,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;help&quot; : false,
+  &quot;horizontalMode&quot; : &quot;image&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;required&quot; : false,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12.0
+}</propertySetConfig>
+            <sequenceNumber>0.0</sequenceNumber>
+            <type>Radio</type>
+        </childElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SelectService</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;label&quot; : &quot;Select Your Service&quot;,
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3.0,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3.0,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ true, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000.0,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ]
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetUsageValues</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;label&quot; : &quot;Set Usage Values&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;TotalUsage&quot; : &quot;=%Result:SumTotalMeterUsage%&quot;,
+    &quot;MaxDemand&quot; : &quot;=%Result:AverageMaxDemand%&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>11.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValues5</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;opptyId&quot; : &quot;=&apos;%CreateOpportunity:Opportunity_1:Id%&apos;&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ null, null ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;label&quot; : &quot;SetValues5&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>16.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValuesForNewOppty</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;NewOpptyId&quot; : &quot;%CreateOpportunity:Opportunity_1:Id%&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>22.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValuesForReusableScripts</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;CompetitorOpportunityId&quot; : &quot;=&apos;%CreateOpportunity:Opportunity_1:Id%&apos;&quot;,
+    &quot;ProjectOpportunityId&quot; : &quot;=&apos;%CreateOpportunity:Opportunity_1:Id%&apos;&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ null, null ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;label&quot; : &quot;SetValuesForReusableScripts&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>18.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValuesTest</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12.0,
+  &quot;elementValueMap&quot; : {
+    &quot;StageName&quot; : &quot;=&apos;Qualification&apos;&quot;,
+    &quot;RiskCheck&quot; : &quot;=&apos;No&apos;&quot;,
+    &quot;OpptyCloseDate&quot; : &quot;=DATE(YEAR(TODAY()),MONTH(TODAY()),DAYOFMONTH(TODAY())+30)&quot;,
+    &quot;OpptyName&quot; : &quot;=\&quot;New Opportunity\&quot;&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Formula8</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;Formula8&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12.0,
+  &quot;expression&quot; : &quot;%CreateOpportunity:Opportunity_1:Id%&quot;,
+  &quot;hide&quot; : false,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Headline1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;label&quot; : &quot;&lt;p&gt;Done&lt;/p&gt;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;labelKey&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Headline</type>
+        </childElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Step3</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;label&quot; : &quot;Step3&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3.0,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3.0,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000.0,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>23.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SummarizeMeters</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;label&quot; : &quot;Summarize Meters&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12.0,
+  &quot;bundle&quot; : &quot;VDOREGSummarizeUsage&quot;,
+  &quot;remoteTimeout&quot; : 30000.0,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3.0,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3.0,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <embeddedOmniScriptKey>Sales|RegulatedOpportunityTrackCompetitors|English</embeddedOmniScriptKey>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>TrackCompetitors1</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;Type&quot; : &quot;Sales&quot;,
+  &quot;Sub Type&quot; : &quot;RegulatedOpportunityTrackCompetitors&quot;,
+  &quot;Language&quot; : &quot;English&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>20.0</sequenceNumber>
+        <type>OmniScript</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <discoveryFrameworkUsageType>0</discoveryFrameworkUsageType>
+        <embeddedOmniScriptKey>Sales|RegTrackProjectInfo|English</embeddedOmniScriptKey>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>TrackProjectInformation1</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;Type&quot; : &quot;Sales&quot;,
+  &quot;Sub Type&quot; : &quot;RegTrackProjectInfo&quot;,
+  &quot;Language&quot; : &quot;English&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>19.0</sequenceNumber>
+        <type>OmniScript</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;persistentComponent&quot;:[{&quot;render&quot;:false,&quot;label&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteTimeout&quot;:30000,&quot;remoteOptions&quot;:{&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;},&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalSize&quot;:&quot;lg&quot;}},{&quot;render&quot;:false,&quot;label&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteTimeout&quot;:30000,&quot;remoteOptions&quot;:{&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;},&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;,&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalController&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;}}],&quot;allowSaveForLater&quot;:true,&quot;saveNameTemplate&quot;:null,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveContentEncoded&quot;:false,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;autoSaveOnStepNext&quot;:false,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;seedDataJSON&quot;:{},&quot;trackingCustomData&quot;:{},&quot;enableKnowledge&quot;:false,&quot;bLK&quot;:false,&quot;lkObjName&quot;:null,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;timeTracking&quot;:false,&quot;hideStepChart&quot;:false,&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;cancelType&quot;:&quot;SObject&quot;,&quot;allowCancel&quot;:true,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;wpm&quot;:false,&quot;ssm&quot;:false,&quot;message&quot;:{},&quot;pubsub&quot;:false,&quot;autoFocus&quot;:false,&quot;currencyCode&quot;:&quot;USD&quot;,&quot;showInputWidth&quot;:false,&quot;rtpSeed&quot;:false,&quot;consoleTabTitle&quot;:&quot;New Opportunity&quot;,&quot;consoleTabIcon&quot;:&quot;standard:new_opportunity&quot;,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;disableUnloadWarn&quot;:true,&quot;stylesheet&quot;:{&quot;newport&quot;:&quot;&quot;,&quot;newportRtl&quot;:&quot;&quot;,&quot;lightning&quot;:&quot;&quot;,&quot;lightningRtl&quot;:&quot;&quot;},&quot;stepChartPlacement&quot;:&quot;right&quot;,&quot;currentLanguage&quot;:&quot;en_US&quot;}</propertySetConfig>
+    <subType>REGCreateOpportunity</subType>
+    <type>Sales</type>
+    <uniqueName>Sales_REGCreateOpportunity_English_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>b66bbf43-d24d-2e7a-c798-fb41073e4b83</webComponentKey>
+</OmniScript>

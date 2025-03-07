@@ -1,0 +1,107 @@
+{
+  "constants": [
+    
+    
+    {
+      "name": "HistoricalCloseDate",
+      "value": "${Constants.HasCustomHistory ? 'CloseDate__hst' : 'CloseDate'}"
+    },
+    {
+      "name": "HistoricalCloseDatePrev",
+      "value": "${Constants.HasCustomHistory ? 'CloseDate__hpr' : 'CloseDatePrev'}"
+    },
+    {
+      "name": "HistoricalAmountLabel",
+      "value": "${Constants.HasCustomHistory ? Variables.Opportunity_Amount.fieldLabel : 'Pipeline Amount'}"
+    },
+    
+    {
+      "name": "HistoricalAmount",
+      "value": "${Constants.HasCustomHistory ? Variables.Opportunity_Amount.fieldName : 'Amount'}"
+    },    
+    {
+      "name": "HistoricalForecastCategory",
+      "value": "${Constants.HasCustomHistory ? 'ForecastCategoryName' : 'ForecastCategory'}"
+    },
+    {
+      "name": "HistoricalForecastCategoryPrev",
+      "value": "${Constants.HasCustomHistory ? 'ForecastCategoryName__hpr' : 'ForecastCategoryPrev'}"
+    },
+    {
+      "name": "ForecastJoin",
+      "value": "${Constants.HasCustomHistory ? 'ForecastCategoryName' : 'ForecastCategory'}"
+    }
+    
+    
+   
+ ],
+ "rules": [
+   {
+     "name": "CustomHistoricalTrending",
+     "condition": "${Constants.HasCustomHistory}",
+     "appliesTo": [
+       {
+         "type": "workflow",
+         "name": "*"
+       }
+     ],
+     "actions": [
+       {
+         "action": "delete",
+         "description": "delete node from workflow",
+         "path": "$.workflowDefinition.Extract_OpportunityHistory"
+       },
+       {
+         "action": "delete",
+         "description": "delete node from workflow",
+         "path": "$.workflowDefinition.Add_Unique_Sort_Key_to_OpportunityHistory"
+       },
+       {
+         "action": "delete",
+         "description": "delete node from workflow",
+         "path": "$.workflowDefinition.Compute_Historical_Trending_Fields"
+       },
+       {
+         "action": "set",
+         "description": "delete node from workflow",
+         "path": "$.workflowDefinition.Add_Fields_to_OpportunityHistory.parameters.source",
+         "value": "ChangeHistoricalFieldNames"
+       },
+       {
+         "action": "add",
+         "description": "update node in workflow",
+         "path": "$.workflowDefinition.Join_OpportunityStage_Previous_with_Opp.parameters.right_select",
+         "value": "${Variables.Opportunity_Amount.fieldName}"
+       }
+     ]
+   },
+   {
+     "name": "CustomHistoricalTrending",
+     "condition": "${!Constants.HasCustomHistory}",
+     "appliesTo": [
+       {
+         "type": "workflow",
+         "name": "*"
+       }
+     ],
+     "actions": [
+       {
+         "action": "delete",
+         "description": "delete node from workflow",
+         "path": "$.workflowDefinition.Extract_Opportunity__hd"
+       },
+       {
+         "action": "delete",
+         "description": "delete node from workflow",
+         "path": "$.workflowDefinition.ChangeHistoricalFieldNames"
+       },
+       {
+         "action": "set",
+         "description": "delete node from workflow",
+         "path": "$.workflowDefinition.Add_Fields_to_OpportunityHistory.parameters.source",
+         "value": "Compute_Historical_Trending_Fields"
+       }
+     ]
+   }
+ ]
+}

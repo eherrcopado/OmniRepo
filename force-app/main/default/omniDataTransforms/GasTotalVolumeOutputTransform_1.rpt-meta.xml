@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;output&quot; : [ {
+    &quot;calculationResults&quot; : [ {
+      &quot;ProcessPerc1&quot; : 584,
+      &quot;WaterPerc1&quot; : 0,
+      &quot;HeatPerc1&quot; : 0,
+      &quot;Usage1&quot; : 584,
+      &quot;GasAppliance__Process&quot; : 100,
+      &quot;GasAppliance__HotWaterPercentage&quot; : 0,
+      &quot;GasAppliance__HeatingPercentage&quot; : 0,
+      &quot;GasAppliance__Usage&quot; : 0.8,
+      &quot;ID&quot; : &quot;input&quot;
+    } ],
+    &quot;aggregationResults&quot; : {
+      &quot;TotalProcPerc&quot; : 1,
+      &quot;TotalWaterPerc&quot; : 0,
+      &quot;TotHeatPerc&quot; : 0,
+      &quot;TotalUsage&quot; : 584
+    }
+  } ]
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>GasTotalVolumeOutputTransform</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5d81fbc7-2ea8-4f51-b4c0-d1e3dcd7419b</globalKey>
+        <inputFieldName>output:aggregationResults:TotalUsage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GasTotalVolumeOutputTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Result:TotalUsage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c3fe12a8-2a6f-478c-8756-0ad259950170</globalKey>
+        <inputFieldName>output:aggregationResults:TotHeatPerc</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GasTotalVolumeOutputTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Result:TotalHeatPercentage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1340a133-b767-4166-804a-735d291990cd</globalKey>
+        <inputFieldName>output:aggregationResults:TotalWaterPerc</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GasTotalVolumeOutputTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Result:TotalWaterPercentage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b3809c0c-ee55-4253-ba03-642d74782169</globalKey>
+        <inputFieldName>output:aggregationResults:TotalProcPerc</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GasTotalVolumeOutputTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Result:TotalProcessPercentage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;vlcTimeTracking&quot; : {
+    &quot;Step3&quot; : null,
+    &quot;CalculationAction1&quot; : null,
+    &quot;Equipment&quot; : null,
+    &quot;Building&quot; : null
+  },
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;userTimeZone&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;ContextId&quot; : null,
+  &quot;Step3&quot; : { },
+  &quot;Equipment&quot; : {
+    &quot;Multi-select1&quot; : null,
+    &quot;EqType&quot; : {
+      &quot;EquipmentType&quot; : null
+    }
+  },
+  &quot;Building&quot; : {
+    &quot;Volume1&quot; : null,
+    &quot;AvTempDiffWinter&quot; : null,
+    &quot;WinterFactor&quot; : null,
+    &quot;SummerMonths&quot; : null,
+    &quot;WinterMonths&quot; : null,
+    &quot;Insulation&quot; : null,
+    &quot;CubicFeet&quot; : null,
+    &quot;Hight&quot; : null,
+    &quot;Length&quot; : null,
+    &quot;Width&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>GasTotalVolumeOutputTransform_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

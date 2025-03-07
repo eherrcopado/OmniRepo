@@ -1,0 +1,593 @@
+{
+  "rules": [
+    {
+      "name": "VariationsforExecPipelineOverview",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Exec_Overview_Pipeline_Performance"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasProduct}",
+          "description": "Delete step for Product barchart",
+          "path": "$.state.steps.barchart_product"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasProduct}",
+          "description": "swap out step for Industry",
+          "path": "$.state.widgets.chart_7.parameters.step",
+          "value": "barchart_industry"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasProduct}",
+          "description": "swap out chart title for Product to Industry",
+          "path": "$.state.widgets.text_20.parameters.text",
+          "value": "Industry"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasProduct}",
+          "description": "remove product from data connections",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*product.*/)]"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasProduct}",
+          "description": "remove product data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=~/.*connection_product.*/)]"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasLead}",
+          "description": "remove lead from data connection",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*lead.*/)]"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasLead}",
+          "description": "delete lead data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=='connection_opportunity_name')]"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasLead}",
+          "description": "Delete step for lead conversion target line",
+          "path": "$.state.steps.lead_target_line"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasLead}",
+          "description": "Delete step for lead conversion",
+          "path": "$.state.steps.barchart_lead_conversion"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasLead}",
+          "description": "delete widget and layout for lead conversion",
+          "value": "${salesWaveMacros:deleteWidget('chart_15')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasLead}",
+          "description": "delete lead text",
+          "value": "${salesWaveMacros:deleteWidget('text_17')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasLead}",
+          "description": "delete mobile lead conversion container",
+          "value": "${salesWaveMacros:deleteWidget('container_14')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasLead}",
+          "description": "move mobile container up",
+          "value": "${salesWaveMacros:moveWidgetRow('container_15', 'iPhone', '82')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasLead}",
+          "description": "move mobile pillbox up",
+          "value": "${salesWaveMacros:moveWidgetRow('pillbox_3', 'iPhone', '82')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasLead}",
+          "description": "move mobile chart up",
+          "value": "${salesWaveMacros:moveWidgetRow('chart_14', 'iPhone', '85')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Service Performance title",
+          "value": "${salesWaveMacros:deleteWidget('text_4')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Service Performance title on Service Performance page",
+          "value": "${salesWaveMacros:deleteWidget('text_11')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for avg case duration",
+          "path": "$.state.steps.kpi_avg_case_duration"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for avg case duration",
+          "value": "${salesWaveMacros:deleteWidget('number_10')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for avg case duration",
+          "value": "${salesWaveMacros:deleteWidget('number_17')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for avg case duration",
+          "value": "${salesWaveMacros:deleteWidget('number_15')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for case compare",
+          "path": "$.state.steps.comparison_case_duration"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for comparison case duration",
+          "value": "${salesWaveMacros:deleteWidget('number_11')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for comparison case duration",
+          "value": "${salesWaveMacros:deleteWidget('number_16')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for comparison case duration",
+          "value": "${salesWaveMacros:deleteWidget('number_14')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Average Case text",
+          "value": "${salesWaveMacros:deleteWidget('text_15')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for This Year vs Last text",
+          "value": "${salesWaveMacros:deleteWidget('text_16')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for trend",
+          "path": "$.state.steps.trend_avg_case_duration"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for trend case duration",
+          "value": "${salesWaveMacros:deleteWidget('chart_3')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for service dashboard link",
+          "value": "${salesWaveMacros:deleteWidget('link_3')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for service container",
+          "value": "${salesWaveMacros:deleteWidget('container_4')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*case.*/)]"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Service chart",
+          "path": "$.state.steps.ClosedDate_Quarter_Y_2"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for service chart",
+          "value": "${salesWaveMacros:deleteWidget('chart_12')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for service details container",
+          "value": "${salesWaveMacros:deleteWidget('container_18')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for service details text",
+          "value": "${salesWaveMacros:deleteWidget('text_13')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for toggle",
+          "path": "$.state.steps.static_3"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for toggle",
+          "value": "${salesWaveMacros:deleteWidget('pillbox_4')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Service chart",
+          "path": "$.state.steps.graph_service_details"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for service chart",
+          "value": "${salesWaveMacros:deleteWidget('chart_16')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for KPI Summary text",
+          "value": "${salesWaveMacros:deleteWidget('text_18')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Created Cases",
+          "path": "$.state.steps.kpi_created_cases"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Created Cases",
+          "value": "${salesWaveMacros:deleteWidget('number_29')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Closed Cases",
+          "path": "$.state.steps.kpi_closed_count"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Closed Cases",
+          "value": "${salesWaveMacros:deleteWidget('number_30')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Open Cases",
+          "path": "$.state.steps.kpi_open_cases"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Open Cases",
+          "value": "${salesWaveMacros:deleteWidget('number_32')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Bookings",
+          "path": "$.state.steps.kpi_bookings"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Bookings",
+          "value": "${salesWaveMacros:deleteWidget('number_31')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Created Cases",
+          "path": "$.state.steps.trend_created_cases"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Created Cases",
+          "value": "${salesWaveMacros:deleteWidget('chart_17')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Created Cases average line",
+          "path": "$.state.steps.avg_created_case"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Closed Cases",
+          "path": "$.state.steps.trend_closed_count"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Closed Cases average line",
+          "path": "$.state.steps.avg_closed_case"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Closed Cases",
+          "value": "${salesWaveMacros:deleteWidget('chart_18')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Open Cases",
+          "path": "$.state.steps.trend_open_cases"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Open Cases average line",
+          "path": "$.state.steps.avg_backlog"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Open Cases",
+          "value": "${salesWaveMacros:deleteWidget('chart_19')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Bookings",
+          "path": "$.state.steps.trend_bookings"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Bookings average line",
+          "path": "$.state.steps.avg_bookings"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Bookings",
+          "value": "${salesWaveMacros:deleteWidget('chart_20')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Created Cases",
+          "path": "$.state.steps.comparison_created_cases"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Created Cases",
+          "value": "${salesWaveMacros:deleteWidget('number_33')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Closed Cases",
+          "path": "$.state.steps.comparison_closed_count"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Closed Cases",
+          "value": "${salesWaveMacros:deleteWidget('number_34')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Open Cases",
+          "path": "$.state.steps.comparison_open_cases"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Open Cases",
+          "value": "${salesWaveMacros:deleteWidget('number_35')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete step for Bookings",
+          "path": "$.state.steps.comparison_bookings"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Bookings",
+          "value": "${salesWaveMacros:deleteWidget('number_36')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "delete Service Performance page from desktop and mobile",
+          "path": "$.state.gridLayouts..pages.[?(@.label=='Service Performance')]"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for service container from mobile",
+          "value": "${salesWaveMacros:deleteWidget('container_16')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for KPI summary on mobile",
+          "value": "${salesWaveMacros:deleteWidget('text_6')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete widget for Service Details Container",
+          "value": "${salesWaveMacros:deleteWidget('container_17')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete container for Created Cases from mobile",
+          "value": "${salesWaveMacros:deleteWidget('container_19')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete container for Closed Cases from mobile",
+          "value": "${salesWaveMacros:deleteWidget('container_20')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete container for Open Cases from mobile",
+          "value": "${salesWaveMacros:deleteWidget('container_21')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete container for Bookings from mobile",
+          "value": "${salesWaveMacros:deleteWidget('container_22')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${Constants.HasCustomAmount}",
+          "description": "Delete widget for historical pipeline",
+          "value": "${salesWaveMacros:deleteWidget('number_9')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${Constants.HasCustomAmount}",
+          "description": "Delete widget for historical pipeline",
+          "value": "${salesWaveMacros:deleteWidget('number_5')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${Constants.HasCustomAmount}",
+          "description": "Delete widget for historical pipeline",
+          "value": "${salesWaveMacros:deleteWidget('number_8')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${Constants.HasCustomAmount}",
+          "description": "Delete widget for historical pipeline",
+          "value": "${salesWaveMacros:deleteWidget('number_19')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${Constants.HasCustomAmount}",
+          "description": "Delete widget for historical pipeline",
+          "value": "${salesWaveMacros:deleteWidget('number_24')}"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "description": "swap out account name",
+          "path": "$.state.widgets.text_21.parameters.text",
+          "value": "Account"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "description": "swap out Account Name on Sales Performance",
+          "path": "$.state.steps.static_2.start.display",
+          "value": ["Account"]
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "description": "swap out Account Name on Sales Performance",
+          "path": "$.state.steps.static_2.values[0].display",
+          "value": "Account"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasAccountHierarchy && Constants.HasCases}",
+          "description": "swap out Account Name",
+          "path": "$.state.steps.static_3.start.display",
+          "value": ["Account"]
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasAccountHierarchy && Constants.HasCases}",
+          "description": "swap out Account Name on Service Performance",
+          "path": "$.state.steps.static_3.values[0].display",
+          "value": "Account"
+        },
+        {
+          "action": "set",
+          "condition": "${Constants.HasUSMap && Constants.HasCases}",
+          "description": "Adds Map selection",
+          "path": "$.state.steps.static_3.values.[?(@.visual =='choropleth')].map",
+          "value": "US States"
+        },
+        {
+          "action": "set",
+          "condition": "${Constants.HasBarChartMap && Constants.HasCases}",
+          "description": "Changing Step to reflect grouping",
+          "path": "$.state.steps.static_3.values.[?(@.visual =='choropleth')].visual",
+          "value": "hbar"
+        }
+      ]
+    },
+    {
+      "name": "VariationsForExecSalesOverview",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Exec_Overview_Sales_Performance"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "condition": "${!Constants.HasProduct}",
+          "description": "doesn't exist in any layouts   - swap out step",
+          "path": "$.state.widgets.chart_2.parameters.step",
+          "value": "CumulativeCloseWon"
+        }
+      ]
+    },
+    {
+      "name": "RemoveParentAccountfromXMD",
+      "condition": "${!Constants.HasAccountHierarchy}",
+      "appliesTo": [
+        {
+          "type": "xmd",
+          "name": "opportunity"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Parent Account from custom Actions",
+          "path": "$..dimensions[?(@.label=='Account.Parent.ParentAccount.Name')]"
+        }
+      ]
+    }
+  ]
+}

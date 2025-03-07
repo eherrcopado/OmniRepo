@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;timeStamp&quot; : &quot;2018-11-09T13:36:39.168Z&quot;,
+  &quot;userId&quot; : &quot;005f4000003VvALAA0&quot;,
+  &quot;userName&quot; : &quot;sschupbach@energy.2018&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -480,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;id&quot; : &quot;a1If4000002SNhZEAW&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;OmniScriptSessionToken&quot; : &quot;f8979a0c-5fc6-4c0b-adad-24aadc3b684c&quot;,
+    &quot;AccountSelection&quot; : 19283,
+    &quot;SetParentAccount&quot; : 21,
+    &quot;SetParentAccountVariables&quot; : 13,
+    &quot;GetBillingAccounts&quot; : 363,
+    &quot;ChooseInput&quot; : 14496,
+    &quot;LoadSpreadsheet&quot; : 556,
+    &quot;TransformCSV&quot; : 3319,
+    &quot;CleanUpPostTransform&quot; : 116,
+    &quot;DisplayServiceAccounts&quot; : 22819
+  },
+  &quot;AccountSelection&quot; : {
+    &quot;AccountSearchTypeAhead-Block&quot; : {
+      &quot;AccountSearchTypeAhead&quot; : &quot;Cameron International Corp. - Houston, TX United States&quot;,
+      &quot;Id&quot; : &quot;001f400000f0ADkAAM&quot;,
+      &quot;Name&quot; : &quot;Cameron International Corp.&quot;
+    }
+  },
+  &quot;ChooseInput&quot; : {
+    &quot;InputMode&quot; : &quot;File&quot;,
+    &quot;FileBlock&quot; : {
+      &quot;File&quot; : [ {
+        &quot;filename&quot; : &quot;ServiceLocationImportTest.csv&quot;,
+        &quot;size&quot; : 88107,
+        &quot;data&quot; : &quot;0db3bc24-fbd1-4e66-8a56-06a923518246&quot;,
+        &quot;$$hashKey&quot; : &quot;object:438&quot;
+      } ],
+      &quot;FileCount&quot; : 1
+    },
+    &quot;QueryBlock&quot; : null
+  },
+  &quot;AccountSearchTypeAhead-Block&quot; : {
+    &quot;BillingCountry&quot; : &quot;United States&quot;,
+    &quot;BillingPostalCode&quot; : &quot;77027&quot;,
+    &quot;BillingState&quot; : &quot;TX&quot;,
+    &quot;BillingCity&quot; : &quot;Houston&quot;,
+    &quot;BillingStreet&quot; : &quot;1333 West Loop South&quot;
+  },
+  &quot;ParentAccount:AccountName&quot; : &quot;Cameron International Corp.&quot;,
+  &quot;ParentAccount:AccountId&quot; : &quot;001f400000f0ADkAAM&quot;,
+  &quot;ParentAccount&quot; : &quot;&quot;,
+  &quot;ParentAccountName&quot; : &quot;Cameron International Corp.&quot;,
+  &quot;ParentAccountId&quot; : &quot;001f400000f0ADkAAM&quot;,
+  &quot;billingAccounts&quot; : { },
+  &quot;spreadsheet&quot; : &quot;&quot;,
+  &quot;DisplayServiceAccounts&quot; : {
+    &quot;ServiceLocations&quot; : [ {
+      &quot;Country&quot; : &quot;US&quot;,
+      &quot;CustomerType&quot; : &quot;Large Non-Residential&quot;,
+      &quot;Status&quot; : &quot;Active&quot;,
+      &quot;Zone&quot; : &quot;LEMON&quot;,
+      &quot;ISO&quot; : &quot;ERCOT&quot;,
+      &quot;MeterType&quot; : &quot;Basic&quot;,
+      &quot;Utility&quot; : &quot;ONCOR&quot;,
+      &quot;PostalCode&quot; : &quot;752011888&quot;,
+      &quot;State&quot; : &quot;TX&quot;,
+      &quot;MeterNumber&quot; : &quot;4113525&quot;,
+      &quot;City&quot; : &quot;DALLAS&quot;,
+      &quot;StreetAddress&quot; : &quot;00400     CRESCENT                    CT&quot;,
+      &quot;PremiseId&quot; : &quot;10443720004113525&quot;,
+      &quot;$$hashKey&quot; : &quot;object:458&quot;,
+      &quot;vlcSelected&quot; : true
+    }, {
+      &quot;Country&quot; : &quot;US&quot;,
+      &quot;CustomerType&quot; : &quot;Residential&quot;,
+      &quot;Status&quot; : &quot;Active&quot;,
+      &quot;Zone&quot; : &quot;TMPLE&quot;,
+      &quot;ISO&quot; : &quot;ERCOT&quot;,
+      &quot;MeterType&quot; : &quot;Advanced&quot;,
+      &quot;Utility&quot; : &quot;ONCOR&quot;,
+      &quot;PostalCode&quot; : &quot;765045913&quot;,
+      &quot;State&quot; : &quot;TX&quot;,
+      &quot;MeterNumber&quot; : &quot;8048592&quot;,
+      &quot;City&quot; : &quot;TEMPLE&quot;,
+      &quot;StreetAddress&quot; : &quot;01402   S 2ND                         ST&quot;,
+      &quot;PremiseId&quot; : &quot;10443720008048592&quot;,
+      &quot;$$hashKey&quot; : &quot;object:460&quot;,
+      &quot;vlcSelected&quot; : true
+    }, {
+      &quot;Country&quot; : &quot;US&quot;,
+      &quot;CustomerType&quot; : &quot;Residential&quot;,
+      &quot;Status&quot; : &quot;Active&quot;,
+      &quot;Zone&quot; : &quot;ENSSO&quot;,
+      &quot;ISO&quot; : &quot;ERCOT&quot;,
+      &quot;MeterType&quot; : &quot;Advanced&quot;,
+      &quot;Utility&quot; : &quot;ONCOR&quot;,
+      &quot;PostalCode&quot; : &quot;751196635&quot;,
+      &quot;State&quot; : &quot;TX&quot;,
+      &quot;MeterNumber&quot; : &quot;4695973&quot;,
+      &quot;City&quot; : &quot;ENNIS&quot;,
+      &quot;StreetAddress&quot; : &quot;01020   S PARIS                       ST     APT  103&quot;,
+      &quot;PremiseId&quot; : &quot;10443720004695973&quot;,
+      &quot;$$hashKey&quot; : &quot;object:462&quot;,
+      &quot;vlcSelected&quot; : true
+    } ]
+  }
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;AccountHierarchy&quot; : {
+    &quot;ParentAccountName&quot; : &quot;Cameron International Corp.&quot;,
+    &quot;ParentAccountId&quot; : &quot;001f400000f0ADkAAM&quot;,
+    &quot;ServiceLocations&quot; : [ {
+      &quot;Country&quot; : &quot;US&quot;,
+      &quot;CustomerType&quot; : &quot;Large Non-Residential&quot;,
+      &quot;Status&quot; : &quot;Active&quot;,
+      &quot;Zone&quot; : &quot;LEMON&quot;,
+      &quot;ISO&quot; : &quot;ERCOT&quot;,
+      &quot;MeterType&quot; : &quot;Basic&quot;,
+      &quot;Utility&quot; : &quot;ONCOR&quot;,
+      &quot;PostalCode&quot; : &quot;752011888&quot;,
+      &quot;State&quot; : &quot;TX&quot;,
+      &quot;MeterNumber&quot; : &quot;4113525&quot;,
+      &quot;City&quot; : &quot;DALLAS&quot;,
+      &quot;StreetAddress&quot; : &quot;00400     CRESCENT                    CT&quot;,
+      &quot;PremiseId&quot; : &quot;10443720004113525&quot;
+    }, {
+      &quot;Country&quot; : &quot;US&quot;,
+      &quot;CustomerType&quot; : &quot;Residential&quot;,
+      &quot;Status&quot; : &quot;Active&quot;,
+      &quot;Zone&quot; : &quot;TMPLE&quot;,
+      &quot;ISO&quot; : &quot;ERCOT&quot;,
+      &quot;MeterType&quot; : &quot;Advanced&quot;,
+      &quot;Utility&quot; : &quot;ONCOR&quot;,
+      &quot;PostalCode&quot; : &quot;765045913&quot;,
+      &quot;State&quot; : &quot;TX&quot;,
+      &quot;MeterNumber&quot; : &quot;8048592&quot;,
+      &quot;City&quot; : &quot;TEMPLE&quot;,
+      &quot;StreetAddress&quot; : &quot;01402   S 2ND                         ST&quot;,
+      &quot;PremiseId&quot; : &quot;10443720008048592&quot;
+    }, {
+      &quot;Country&quot; : &quot;US&quot;,
+      &quot;CustomerType&quot; : &quot;Residential&quot;,
+      &quot;Status&quot; : &quot;Active&quot;,
+      &quot;Zone&quot; : &quot;ENSSO&quot;,
+      &quot;ISO&quot; : &quot;ERCOT&quot;,
+      &quot;MeterType&quot; : &quot;Advanced&quot;,
+      &quot;Utility&quot; : &quot;ONCOR&quot;,
+      &quot;PostalCode&quot; : &quot;751196635&quot;,
+      &quot;State&quot; : &quot;TX&quot;,
+      &quot;MeterNumber&quot; : &quot;4695973&quot;,
+      &quot;City&quot; : &quot;ENNIS&quot;,
+      &quot;StreetAddress&quot; : &quot;01020   S PARIS                       ST     APT  103&quot;,
+      &quot;PremiseId&quot; : &quot;10443720004695973&quot;
+    } ]
+  }
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>ServiceLocationImportToAccountHierarchyTransform</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5078427c-3531-4bc1-aeb9-d62267646a82</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:MeterType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:MeterType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>097a286f-1567-40f9-add4-b0e2650a6b04</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:MeterNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:MeterNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c482adca-3e1b-4176-af71-a3471fe89a73</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:ISO</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:ISO</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dca1cbcb-59fe-4424-ac0c-5dfa2dda0f40</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:Status</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9fdcdb98-e7b1-4077-b7a1-6809d7d26e70</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:State</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:State</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d749ee26-646e-4fa9-ba52-862823a450ae</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:PremiseId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:PremiseId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>48760cb4-3ddd-4873-a10d-19341013a3a1</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:PostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:PostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d5704c4e-f988-4785-a83c-894dfa0cda5a</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:City</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:City</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2b68e93b-db89-4741-bc5d-1108d8df1e2d</globalKey>
+        <inputFieldName>ParentAccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ParentAccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>82350855-3525-44a0-91a2-98b241ea1851</globalKey>
+        <inputFieldName>ParentAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ParentAccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>96aa92e2-1f0d-4d80-805f-5175339d30eb</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:CustomerType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:CustomerType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2a2fee57-6744-4cc4-b38b-d3e1ead6f6d5</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:Utility</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:Utility</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d31074b4-7ca3-4c79-9241-468ad0a203f3</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:StreetAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:StreetAddress</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2bd75141-d06e-420b-94e1-4f1345c728f5</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:Country</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:Country</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c77e3bad-529e-40cb-a588-51a94dc4eaa9</globalKey>
+        <inputFieldName>DisplayServiceAccounts:ServiceLocations:Zone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ServiceLocationImportToAccountHierarchyTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountHierarchy:ServiceLocations:Zone</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;timeStamp&quot; : &quot;2018-11-09T13:36:39.168Z&quot;,
+  &quot;userId&quot; : &quot;005f4000003VvALAA0&quot;,
+  &quot;userName&quot; : &quot;sschupbach@energy.2018&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -480,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;id&quot; : &quot;a1If4000002SNhZEAW&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;OmniScriptSessionToken&quot; : &quot;f8979a0c-5fc6-4c0b-adad-24aadc3b684c&quot;,
+    &quot;AccountSelection&quot; : 19283,
+    &quot;SetParentAccount&quot; : 21,
+    &quot;SetParentAccountVariables&quot; : 13,
+    &quot;GetBillingAccounts&quot; : 363,
+    &quot;ChooseInput&quot; : 14496,
+    &quot;LoadSpreadsheet&quot; : 556,
+    &quot;TransformCSV&quot; : 3319,
+    &quot;CleanUpPostTransform&quot; : 116,
+    &quot;DisplayServiceAccounts&quot; : 22819
+  },
+  &quot;AccountSelection&quot; : {
+    &quot;AccountSearchTypeAhead-Block&quot; : {
+      &quot;AccountSearchTypeAhead&quot; : &quot;Cameron International Corp. - Houston, TX United States&quot;,
+      &quot;Id&quot; : &quot;001f400000f0ADkAAM&quot;,
+      &quot;Name&quot; : &quot;Cameron International Corp.&quot;
+    }
+  },
+  &quot;ChooseInput&quot; : {
+    &quot;InputMode&quot; : &quot;File&quot;,
+    &quot;FileBlock&quot; : {
+      &quot;File&quot; : [ {
+        &quot;filename&quot; : &quot;ServiceLocationImportTest.csv&quot;,
+        &quot;size&quot; : 88107,
+        &quot;data&quot; : &quot;0db3bc24-fbd1-4e66-8a56-06a923518246&quot;,
+        &quot;$$hashKey&quot; : &quot;object:438&quot;
+      } ],
+      &quot;FileCount&quot; : 1
+    },
+    &quot;QueryBlock&quot; : null
+  },
+  &quot;AccountSearchTypeAhead-Block&quot; : {
+    &quot;BillingCountry&quot; : &quot;United States&quot;,
+    &quot;BillingPostalCode&quot; : &quot;77027&quot;,
+    &quot;BillingState&quot; : &quot;TX&quot;,
+    &quot;BillingCity&quot; : &quot;Houston&quot;,
+    &quot;BillingStreet&quot; : &quot;1333 West Loop South&quot;
+  },
+  &quot;ParentAccount:AccountName&quot; : &quot;Cameron International Corp.&quot;,
+  &quot;ParentAccount:AccountId&quot; : &quot;001f400000f0ADkAAM&quot;,
+  &quot;ParentAccount&quot; : &quot;&quot;,
+  &quot;ParentAccountName&quot; : &quot;Cameron International Corp.&quot;,
+  &quot;ParentAccountId&quot; : &quot;001f400000f0ADkAAM&quot;,
+  &quot;billingAccounts&quot; : { },
+  &quot;spreadsheet&quot; : &quot;&quot;,
+  &quot;DisplayServiceAccounts&quot; : {
+    &quot;ServiceLocations&quot; : [ {
+      &quot;Country&quot; : &quot;US&quot;,
+      &quot;CustomerType&quot; : &quot;Large Non-Residential&quot;,
+      &quot;Status&quot; : &quot;Active&quot;,
+      &quot;Zone&quot; : &quot;LEMON&quot;,
+      &quot;ISO&quot; : &quot;ERCOT&quot;,
+      &quot;MeterType&quot; : &quot;Basic&quot;,
+      &quot;Utility&quot; : &quot;ONCOR&quot;,
+      &quot;PostalCode&quot; : &quot;752011888&quot;,
+      &quot;State&quot; : &quot;TX&quot;,
+      &quot;MeterNumber&quot; : &quot;4113525&quot;,
+      &quot;City&quot; : &quot;DALLAS&quot;,
+      &quot;StreetAddress&quot; : &quot;00400     CRESCENT                    CT&quot;,
+      &quot;PremiseId&quot; : &quot;10443720004113525&quot;,
+      &quot;$$hashKey&quot; : &quot;object:458&quot;,
+      &quot;vlcSelected&quot; : true
+    }, {
+      &quot;Country&quot; : &quot;US&quot;,
+      &quot;CustomerType&quot; : &quot;Residential&quot;,
+      &quot;Status&quot; : &quot;Active&quot;,
+      &quot;Zone&quot; : &quot;TMPLE&quot;,
+      &quot;ISO&quot; : &quot;ERCOT&quot;,
+      &quot;MeterType&quot; : &quot;Advanced&quot;,
+      &quot;Utility&quot; : &quot;ONCOR&quot;,
+      &quot;PostalCode&quot; : &quot;765045913&quot;,
+      &quot;State&quot; : &quot;TX&quot;,
+      &quot;MeterNumber&quot; : &quot;8048592&quot;,
+      &quot;City&quot; : &quot;TEMPLE&quot;,
+      &quot;StreetAddress&quot; : &quot;01402   S 2ND                         ST&quot;,
+      &quot;PremiseId&quot; : &quot;10443720008048592&quot;,
+      &quot;$$hashKey&quot; : &quot;object:460&quot;,
+      &quot;vlcSelected&quot; : true
+    }, {
+      &quot;Country&quot; : &quot;US&quot;,
+      &quot;CustomerType&quot; : &quot;Residential&quot;,
+      &quot;Status&quot; : &quot;Active&quot;,
+      &quot;Zone&quot; : &quot;ENSSO&quot;,
+      &quot;ISO&quot; : &quot;ERCOT&quot;,
+      &quot;MeterType&quot; : &quot;Advanced&quot;,
+      &quot;Utility&quot; : &quot;ONCOR&quot;,
+      &quot;PostalCode&quot; : &quot;751196635&quot;,
+      &quot;State&quot; : &quot;TX&quot;,
+      &quot;MeterNumber&quot; : &quot;4695973&quot;,
+      &quot;City&quot; : &quot;ENNIS&quot;,
+      &quot;StreetAddress&quot; : &quot;01020   S PARIS                       ST     APT  103&quot;,
+      &quot;PremiseId&quot; : &quot;10443720004695973&quot;,
+      &quot;$$hashKey&quot; : &quot;object:462&quot;,
+      &quot;vlcSelected&quot; : true
+    } ]
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>ServiceLocationImportToAccountHierarchyTransform_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

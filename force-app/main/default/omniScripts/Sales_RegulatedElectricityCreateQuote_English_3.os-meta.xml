@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customHtmlTemplates>&lt;style&gt;
+ label {
+    color:#083EAB!important;
+    font-weight: bold !important;
+    font-size:15px!important;
+}
+&lt;/style&gt;
+
+&lt;script type=&quot;text/ng-template&quot; id=&quot;QuoteMeters.html&quot;&gt;
+    &lt;style&gt;
+        .via-slds input[type=&quot;checkbox&quot;], .via-slds input[type=&quot;radio&quot;] {
+            -webkit-appearance: checkbox;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;table class=&quot;slds-table slds-table--bordered slds-table--cell-buffer&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr class=&quot;slds-text-title--caps&quot;&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Select&quot;&gt;Select&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Name&quot;&gt;Premise&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Meter ID&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Total Consumption&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Max Demand&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;UOM&lt;/div&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class=&apos;ins&apos;&gt;
+                &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot;&gt;
+                    &lt;td&gt;
+                        &lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this, false)&apos; /&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.PremiseName}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.MeterId}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.TotalUsage}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.MaxDemand}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.UOM}}&lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/script&gt;&lt;script type=&quot;text/ng-template&quot; id=&quot;PriceComponent.html&quot;&gt;
+    &lt;style&gt;
+        .via-slds input[type=&quot;checkbox&quot;], .via-slds input[type=&quot;radio&quot;] {
+            -webkit-appearance: checkbox;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;table class=&quot;slds-table slds-table--bordered slds-table--cell-buffer&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr class=&quot;slds-text-title--caps&quot;&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Select&quot;&gt;Select&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Name&quot;&gt;Price Component&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Price&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;UOM&lt;/div&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class=&apos;ins&apos;&gt;
+                &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot;&gt;
+                    &lt;td&gt;
+                        &lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this, false)&apos; /&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Name}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Price}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.UOM}}&lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/ng-template&quot; id=&quot;SelectedMeters.html&quot;&gt;
+    &lt;style&gt;
+        .via-slds input[type=&quot;checkbox&quot;], .via-slds input[type=&quot;radio&quot;] {
+            -webkit-appearance: checkbox;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;table class=&quot;slds-table slds-table--bordered slds-table--cell-buffer&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr class=&quot;slds-text-title--caps&quot;&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Name&quot;&gt;Premise&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Name&quot;&gt;Meter&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Type&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Total Usage (kWh)&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;On Peak (kWh)&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Mid Peak (kWh)&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Off Peak (kWh)&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Demand (kW)&lt;/div&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class=&apos;ins&apos;&gt;
+                &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot;&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Premise}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.MeterName}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.MeterType}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.TotalUsage | number:2}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.OnPeakUsage | number:2}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.MidPeakUsage | number:2}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.OffPeakUsage | number:2}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.MaxDemand | number:2}}&lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/ng-template&quot; id=&quot;ServicePoint.html&quot;&gt;
+    &lt;style&gt;
+        .via-slds input[type=&quot;checkbox&quot;], .via-slds input[type=&quot;radio&quot;] {
+            -webkit-appearance: checkbox;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;table class=&quot;slds-table slds-table--bordered slds-table--cell-buffer&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr class=&quot;slds-text-title--caps&quot;&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Select&quot;&gt;Select&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Name&quot;&gt;Address&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;City&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Meter&quot;&gt;Meter&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Amount&quot;&gt;Meter Type&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Download&quot;&gt;Load Profile&lt;/div&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class=&apos;ins&apos;&gt;
+                &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot;&gt;
+                    &lt;td&gt;
+                        &lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this, false)&apos; /&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Street}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.City}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Meter.MeterName}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Meter.MeterType}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Download&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Meter.MeterLoadProfile}}&lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/ng-template&quot; id=&quot;AssetList.html&quot;&gt;
+    &lt;style&gt;
+        .via-slds input[type=&quot;checkbox&quot;], .via-slds input[type=&quot;radio&quot;] {
+            -webkit-appearance: checkbox;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;table class=&quot;slds-table slds-table--bordered slds-table--cell-buffer&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr class=&quot;slds-text-title--caps&quot;&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Select&quot;&gt;Select&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Name&quot;&gt;Asset&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Serial Number&quot;&gt;Serial #&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Activation Date&quot;&gt;Activation Date&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Status&quot;&gt;Status&lt;/div&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class=&apos;ins&apos;&gt;
+                &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot;&gt;
+                    &lt;td&gt;
+                        &lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this, false)&apos; /&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Name&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Assetname}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Serial Number&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Serialnumber}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Activation Date&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.ActivationDate | date:&apos;d MMM yy&apos;}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Status&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Status}}&lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/script&gt;</customHtmlTemplates>
+    <description>01/05: Debarshi: LWC - Modern Version</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[&quot;vlcHCartHyb.html&quot;]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>true</isWebCompEnabled>
+    <language>English</language>
+    <lastPreviewPage>Newport</lastPreviewPage>
+    <name>RegulatedElectricityCreateQuote</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CleanUpSites</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;bundle&quot; : &quot;REGVDO1031ExtractUsageSitesV2&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction6&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;ignoreCache&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AddedPower</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;defaultValue&quot; : null,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;###,##0.00&quot;,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Added Power Required (kW)&quot;
+}</propertySetConfig>
+                <sequenceNumber>15.0</sequenceNumber>
+                <type>Number</type>
+            </childElements>
+            <childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BillingMethod</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Methode de facturation&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;SObject&quot;,
+    &quot;source&quot; : &quot;Quote.VDO_Billing_Method__c&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>12.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CreateQuoteButton</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;bundle&quot; : &quot;dctCreateQuote&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;Save Quote Information&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>22.0</sequenceNumber>
+                <type>DataRaptor Post Action</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>ExpirationDate</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;dateType&quot; : &quot;string&quot;,
+  &quot;modelDateFormat&quot; : &quot;yyyy-MM-dd&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Quote Expiration Date&quot;
+}</propertySetConfig>
+                <sequenceNumber>9.0</sequenceNumber>
+                <type>Date</type>
+            </childElements>
+            <childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>GenerateNewConnectionRequestRadio</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;DRId_Quote&quot;,
+        &quot;data&quot; : null
+      } ]
+    }
+  },
+  &quot;label&quot; : &quot;Générer des tâches?&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;horizontalMode&quot; : false,
+  &quot;defaultValue&quot; : null,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Yes&quot;,
+    &quot;value&quot; : &quot;Oui&quot;
+  }, {
+    &quot;name&quot; : &quot;No&quot;,
+    &quot;value&quot; : &quot;No&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;optionWidth&quot; : 100,
+  &quot;optionHeight&quot; : 100,
+  &quot;imageCountInRow&quot; : 3,
+  &quot;enableCaption&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>25.0</sequenceNumber>
+                <type>Radio</type>
+            </childElements>
+            <childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Headline2</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;DRId_Quote&quot;,
+        &quot;data&quot; : null
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;&lt;table style=\&quot;height: 46px; border-color: #2d6ce0;\&quot; border=\&quot;3\&quot; width=\&quot;480\&quot;&gt;\n&lt;tbody&gt;\n&lt;tr style=\&quot;height: 46.9861px;\&quot;&gt;\n&lt;td style=\&quot;width: 478.889px; text-align: center; height: 46.9861px;\&quot;&gt;\n&lt;h3&gt;&lt;strong&gt;Quote Created&lt;/strong&gt;&lt;/h3&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>21.0</sequenceNumber>
+                <type>Headline</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>LineBreak2</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;padding&quot; : 0,
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;LineBreak2&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>5.0</sequenceNumber>
+                <type>Line Break</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>MaxPower</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;%MaxDemand%&quot;,
+  &quot;hide&quot; : true,
+  &quot;show&quot; : null,
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Max Power&quot;
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>MeterF</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;CONCATENATE(%MeterNumber%,&apos;, &apos;,%MeterType%)&quot;,
+  &quot;hide&quot; : true,
+  &quot;show&quot; : null,
+  &quot;mask&quot; : null,
+  &quot;dataType&quot; : null,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Meter&quot;
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>MinOrSubscribedPower</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;horizontalMode&quot; : false,
+  &quot;defaultValue&quot; : null,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Min&quot;,
+    &quot;value&quot; : &quot;Minimum Demand&quot;
+  }, {
+    &quot;name&quot; : &quot;Subscribed&quot;,
+    &quot;value&quot; : &quot;Contracted Demand&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;optionWidth&quot; : 100,
+  &quot;optionHeight&quot; : 100,
+  &quot;imageCountInRow&quot; : 3,
+  &quot;enableCaption&quot; : true,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Power Choice&quot;
+}</propertySetConfig>
+                <sequenceNumber>16.0</sequenceNumber>
+                <type>Radio</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>MinPower</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;defaultValue&quot; : 0,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;MinOrSubscribedPower&quot;,
+        &quot;data&quot; : &quot;Min&quot;
+      } ]
+    }
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : true,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Minimum Power&quot;
+}</propertySetConfig>
+                <sequenceNumber>17.0</sequenceNumber>
+                <type>Number</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>MonthlyConsumption</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;defaultValue&quot; : 70000,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Forecasted Additional Monthly Consumption (kWh)&quot;
+}</propertySetConfig>
+                <sequenceNumber>14.0</sequenceNumber>
+                <type>Number</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>NavigatetoQuote</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 4,
+  &quot;label&quot; : &quot;Go To Quote&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;DRId_Quote&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;targetType&quot; : &quot;Record&quot;,
+  &quot;objectAction&quot; : &quot;home&quot;,
+  &quot;recordAction&quot; : &quot;view&quot;,
+  &quot;loginAction&quot; : &quot;login&quot;,
+  &quot;targetFilter&quot; : &quot;Recent&quot;,
+  &quot;targetId&quot; : &quot;%DRId_Quote%&quot;,
+  &quot;variant&quot; : &quot;brand&quot;,
+  &quot;iconName&quot; : &quot;&quot;,
+  &quot;iconVariant&quot; : &quot;&quot;,
+  &quot;iconPosition&quot; : &quot;left&quot;,
+  &quot;replace&quot; : true,
+  &quot;targetLWCLayout&quot; : &quot;lightning&quot;,
+  &quot;businessCategory&quot; : &quot;&quot;,
+  &quot;businessEvent&quot; : &quot;&quot;,
+  &quot;targetName&quot; : &quot;Quote&quot;
+}</propertySetConfig>
+                <sequenceNumber>24.0</sequenceNumber>
+                <type>Navigate Action</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>PaymentTerms</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;SObject&quot;,
+    &quot;source&quot; : &quot;Quote.Payment_Terms__c&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Payment Terms&quot;
+}</propertySetConfig>
+                <sequenceNumber>13.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>PODate</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;dateType&quot; : &quot;string&quot;,
+  &quot;modelDateFormat&quot; : &quot;yyyy-MM-dd&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;PO Date&quot;
+}</propertySetConfig>
+                <sequenceNumber>11.0</sequenceNumber>
+                <type>Date</type>
+            </childElements>
+            <childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>PriceType</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Type&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;SObject&quot;,
+    &quot;source&quot; : &quot;Quote.VDO_Price_Type__c&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>10.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Purpose</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Objectif&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;SObject&quot;,
+    &quot;source&quot; : &quot;Quote.VDO_Purpose__c&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>8.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>QuoteName</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 6,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0,
+  &quot;maxLength&quot; : 255,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Quote Name&quot;
+}</propertySetConfig>
+                <sequenceNumber>6.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>QuoteTerm</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 6,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;defaultValue&quot; : 12,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Term&quot;
+}</propertySetConfig>
+                <sequenceNumber>7.0</sequenceNumber>
+                <type>Number</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>ServiceAccountNameF</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;CONCATENATE(%Account:ServiceAccountName%,&apos;, &apos;,%Account:ServiceStreet%,&apos;, &apos;,%Account:ServiceCity%)&quot;,
+  &quot;hide&quot; : true,
+  &quot;show&quot; : null,
+  &quot;mask&quot; : null,
+  &quot;dataType&quot; : null,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Service Account&quot;
+}</propertySetConfig>
+                <sequenceNumber>0.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>SubscribedPower</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;MinOrSubscribedPower&quot;,
+        &quot;data&quot; : &quot;Min&quot;
+      } ]
+    }
+  },
+  &quot;label&quot; : &quot;Subscribed Power&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;defaultValue&quot; : 6000,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : true,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>18.0</sequenceNumber>
+                <type>Number</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>TextBlock1</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;TextBlock1&quot;,
+  &quot;text&quot; : &quot;&lt;table style=\&quot;height: 46px; border-color: #2d6ce0;\&quot; border=\&quot;3\&quot; width=\&quot;480\&quot;&gt;\n&lt;tbody&gt;\n&lt;tr style=\&quot;height: 46.9861px;\&quot;&gt;\n&lt;td style=\&quot;width: 478.889px; text-align: center; height: 46.9861px;\&quot;&gt;\n&lt;h3&gt;&lt;strong&gt;Quote Created&lt;/strong&gt;&lt;/h3&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;DRId_Quote&quot;
+      } ]
+    }
+  },
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;&quot;,
+  &quot;sanitize&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>23.0</sequenceNumber>
+                <type>Text Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>TextBlock2</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;text&quot; : &quot;&lt;table style=\&quot;height: 86px; width: 726.094px;\&quot; border=\&quot;3\&quot;&gt;\n&lt;tbody&gt;\n&lt;tr style=\&quot;height: 20.2266px;\&quot;&gt;\n&lt;td style=\&quot;width: 165px; height: 20.2266px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;Service Location&lt;/h4&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 557.094px; height: 20.2266px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;%ServiceAccountNameF%&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr style=\&quot;height: 20px;\&quot;&gt;\n&lt;td style=\&quot;width: 165px; height: 20px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;Max Demand (kW)&lt;/h4&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 557.094px; height: 20px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;%MaxPower%&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr style=\&quot;height: 22px;\&quot;&gt;\n&lt;td style=\&quot;width: 165px; height: 22px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;Annual Consumption&lt;/h4&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 557.094px; height: 22px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;%YearlyUsage%&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&lt;hr /&gt;&quot;,
+  &quot;show&quot; : null,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;TextBlock2&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>4.0</sequenceNumber>
+                <type>Text Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Voltage</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;defaultValue&quot; : null,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;SObject&quot;,
+    &quot;source&quot; : &quot;Quote.VDO_Voltage_Range__c&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Voltage Range&quot;
+}</propertySetConfig>
+                <sequenceNumber>19.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>WeightedAveragePrice</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Weighted Average Price&quot;,
+  &quot;checkLabel&quot; : &quot;Weighted Average Price&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 4,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;defaultValue&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>20.0</sequenceNumber>
+                <type>Checkbox</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>YearlyUsage</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;%Usage%&quot;,
+  &quot;hide&quot; : true,
+  &quot;show&quot; : null,
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Yearly Consumption (kW)&quot;
+}</propertySetConfig>
+                <sequenceNumber>3.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>QuoteInformation</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;collapse&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Quotes&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CreateQuote</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Confirmez&quot;,
+  &quot;saveLabel&quot; : &quot;Save&quot;,
+  &quot;saveMessage&quot; : &quot;Confirmez&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Confirmez&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Quote Definitions&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetOpptyData</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;bundle&quot; : &quot;dctGetOpptyDataWithMeters&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;inputParam&quot; : &quot;ContextId&quot;,
+    &quot;element&quot; : &quot;ContextId&quot;
+  } ],
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;GetOpptyData&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;ignoreCache&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Reset</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;CheckboxMockPricingDone&quot; : false
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>=DATE(YEAR(TODAY()),MONTH(TODAY()),DATE(TODAY())+30)</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetDefaults</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;OpptyElectricityPrice&quot; : &quot;=60&quot;,
+    &quot;OpptyName&quot; : &quot;=CONCATENATE(%AccountName%,&apos;-&apos;,&apos;Custom Electricity Deal&apos;)&quot;,
+    &quot;OpptyTerm&quot; : 12,
+    &quot;OpptyCloseDate&quot; : &quot;=DATE(YEAR(TODAY()),MONTH(TODAY()),DAYOFMONTH(TODAY())+30)&quot;,
+    &quot;CustomerConsent&quot; : true
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;NewOrExistingOpptyRadio&quot;,
+        &quot;data&quot; : &quot;New&quot;
+      } ]
+    }
+  },
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;Set Default Values For Demo&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>0061U000004pBGgQAM
+
+0061U000004pKKgQAM - Service</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValues</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;NewOrExistingOpptyRadio&quot; : &quot;New&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>0.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValues3</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;MaxDemand&quot; : &quot;=%Result:SelectedMeters:AverageMaxDemand%&quot;,
+    &quot;MeterType&quot; : &quot;=%Result:MeterType%&quot;,
+    &quot;MeterNumber&quot; : &quot;=%Result:MeterNumber%&quot;,
+    &quot;UOM&quot; : &quot;=%Result:UOM%&quot;,
+    &quot;ServiceAccountName&quot; : &quot;=%Result:ServiceAccountName%&quot;,
+    &quot;ServiceStreet&quot; : &quot;=%Result:ServiceAccountShippingStreet%&quot;,
+    &quot;ServiceCity&quot; : &quot;=%Result:ServiceAccountShippingCity%&quot;,
+    &quot;Usage&quot; : &quot;=%Result:SelectedMeters:SumTotalMeterUsage%&quot;,
+    &quot;PickedServiceAccountId&quot; : &quot;=%Result:ServiceAccountId%&quot;,
+    &quot;MainAccountId&quot; : &quot;=%Opportunity:AccountId%&quot;,
+    &quot;OpportunityType&quot; : &quot;=%Opportunity:AxePrincipale%&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;NewOrExistingOpptyRadio&quot;,
+        &quot;data&quot; : &quot;New&quot;
+      } ]
+    }
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;SetValues3&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>=DATE(YEAR(TODAY()),MONTH(TODAY()),DAYOFMONTH(TODAY())+30)</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValuesQuote</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;WeightedAveragePrice&quot; : true,
+    &quot;QuoteName&quot; : &quot;Quote 1&quot;,
+    &quot;ExpirationDate&quot; : &quot;=DATE(YEAR(TODAY()),MONTH(TODAY()),DAYOFMONTH(TODAY())+1)&quot;,
+    &quot;PODate&quot; : &quot;=DATE(YEAR(TODAY()),MONTH(TODAY()),DAYOFMONTH(TODAY())+35)&quot;,
+    &quot;Purpose&quot; : &quot;Executable&quot;,
+    &quot;PriceType&quot; : &quot;New&quot;,
+    &quot;BillingMethod&quot; : &quot;Dual&quot;,
+    &quot;PaymentTerms&quot; : &quot;Net 15&quot;,
+    &quot;CheckboxMockPricingDone&quot; : false,
+    &quot;MonthlyConsumption&quot; : &quot;=%Opportunity:TechData:EstimatedUsage%&quot;,
+    &quot;AddedPower&quot; : &quot;=%Opportunity:TechData:TotalPowerRequired%&quot;,
+    &quot;Voltage&quot; : &quot;=%Opportunity:TechData:VoltageLevel%&quot;,
+    &quot;BillTo&quot; : &quot;CONCATENATE(%Account:ServiceAccountName%,&apos;, &apos;,%Account:ServiceStreet%,&apos;, &apos;,%Account:ServiceCity%,&apos;, &apos;,%Account:ServiceState%,&apos;, &apos;,%Account:PostalCode%)&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : null,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;persistentComponent&quot;:[{&quot;render&quot;:true,&quot;label&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;vlocity_cmt.CpqAppHandler&quot;,&quot;remoteMethod&quot;:&quot;putCartsItems&quot;,&quot;remoteTimeout&quot;:30000,&quot;remoteOptions&quot;:{&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;},&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalSize&quot;:&quot;lg&quot;}},{&quot;render&quot;:false,&quot;label&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteTimeout&quot;:30000,&quot;remoteOptions&quot;:{&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;},&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;,&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalController&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;}}],&quot;allowSaveForLater&quot;:false,&quot;saveNameTemplate&quot;:null,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveContentEncoded&quot;:false,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;autoSaveOnStepNext&quot;:true,&quot;elementTypeToHTMLTemplateMapping&quot;:{&quot;Horizontal Mode Persistent Component&quot;:&quot;vlcHCartHyb.html&quot;},&quot;seedDataJSON&quot;:{},&quot;trackingCustomData&quot;:{},&quot;enableKnowledge&quot;:false,&quot;bLK&quot;:false,&quot;lkObjName&quot;:null,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;timeTracking&quot;:true,&quot;hideStepChart&quot;:false,&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;cancelType&quot;:&quot;SObject&quot;,&quot;allowCancel&quot;:true,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;wpm&quot;:false,&quot;ssm&quot;:false,&quot;message&quot;:{},&quot;pubsub&quot;:false,&quot;autoFocus&quot;:false,&quot;currencyCode&quot;:&quot;USD&quot;,&quot;showInputWidth&quot;:false,&quot;rtpSeed&quot;:false,&quot;consoleTabTitle&quot;:&quot;Electricity Quote&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;disableUnloadWarn&quot;:true,&quot;stylesheet&quot;:{&quot;newport&quot;:&quot;&quot;,&quot;newportRtl&quot;:&quot;&quot;,&quot;lightning&quot;:&quot;&quot;,&quot;lightningRtl&quot;:&quot;&quot;},&quot;stepChartPlacement&quot;:&quot;right&quot;,&quot;currentLanguage&quot;:&quot;en_US&quot;}</propertySetConfig>
+    <subType>RegulatedElectricityCreateQuote</subType>
+    <type>Sales</type>
+    <uniqueName>Sales_RegulatedElectricityCreateQuote_English_3</uniqueName>
+    <versionNumber>3.0</versionNumber>
+    <webComponentKey>22ee019e-08c3-1e76-5cbe-20a9cf2d21bb</webComponentKey>
+</OmniScript>

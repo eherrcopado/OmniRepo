@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;CreateInteraction&quot; : {
+    &quot;vlocity_cmt__CustomerInteraction__c_1&quot; : [ {
+      &quot;vlocity_cmt__Channel__c&quot; : &quot;Contact Center&quot;,
+      &quot;vlocity_cmt__ContactId__c&quot; : &quot;00346000002HMFyAAO&quot;,
+      &quot;vlocity_cmt__Status__c&quot; : &quot;In Progress&quot;,
+      &quot;vlocity_cmt__Type__c&quot; : &quot;Call&quot;,
+      &quot;Id&quot; : &quot;a0I46000000GcanEAC&quot;,
+      &quot;Name&quot; : &quot;Ashley James&quot;,
+      &quot;UpsertSuccess&quot; : true
+    } ],
+    &quot;error&quot; : &quot;OK&quot;,
+    &quot;responseType&quot; : &quot;SObject&quot;
+  },
+  &quot;CreateInteractionStatus&quot; : true,
+  &quot;ExtractAccountFromContact&quot; : [ {
+    &quot;AccountId&quot; : &quot;00146000003lOOFAA2&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;00146000003lOOKAA2&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;00146000003lOONAA2&quot;
+  } ],
+  &quot;ExtractAccountFromContactStatus&quot; : true,
+  &quot;ExtractAssetBasedOnAccount&quot; : [ {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOOFAA2&quot;,
+    &quot;AssetId&quot; : &quot;02i460000018r9yAAA&quot;,
+    &quot;Name&quot; : &quot;test&quot;
+  }, {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOOKAA2&quot;,
+    &quot;AssetId&quot; : &quot;02i46000000mmafAAA&quot;,
+    &quot;Name&quot; : &quot;GenWatt Diesel 1000kW&quot;
+  }, {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOOKAA2&quot;,
+    &quot;AssetId&quot; : &quot;02i46000000mmakAAA&quot;,
+    &quot;Name&quot; : &quot;GenWatt Diesel 1000kW&quot;
+  }, {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOONAA2&quot;,
+    &quot;AssetId&quot; : &quot;02i46000000mmbiAAA&quot;,
+    &quot;Name&quot; : &quot;UK asset  Diesel 10kW&quot;
+  } ],
+  &quot;ExtractAssetBasedOnAccountStatus&quot; : true,
+  &quot;TransformNewInteraction&quot; : {
+    &quot;NewInteraction&quot; : {
+      &quot;ContactId&quot; : &quot;00346000002HMFyAAO&quot;,
+      &quot;Id&quot; : &quot;a0I46000000GcanEAC&quot;,
+      &quot;Name&quot; : &quot;Ashley James&quot;
+    }
+  },
+  &quot;TransformNewInteractionStatus&quot; : true,
+  &quot;consoleCardLayout&quot; : null,
+  &quot;drBundleName&quot; : null,
+  &quot;integrationProcName&quot; : &quot;CustomerInteractionContact_Creation&quot;,
+  &quot;interactionObjName&quot; : &quot;CustomerInteractionContact&quot;,
+  &quot;moreRequests&quot; : null,
+  &quot;numOfOptionalVerificationFields&quot; : null,
+  &quot;optionalVerificationFieldList&quot; : [ ],
+  &quot;options&quot; : { },
+  &quot;parentId&quot; : null,
+  &quot;recordId&quot; : &quot;00346000002HMFyAAO&quot;,
+  &quot;request&quot; : {
+    &quot;additionalData&quot; : null,
+    &quot;continueSearch&quot; : false,
+    &quot;displaySequence&quot; : 2,
+    &quot;fieldPicklistValues&quot; : { },
+    &quot;isClassBased&quot; : false,
+    &quot;lastRecordId&quot; : null,
+    &quot;previousSearchResults&quot; : null,
+    &quot;recordOffset&quot; : null,
+    &quot;referenceObjectName&quot; : null,
+    &quot;requestUniqueName&quot; : &quot;InteractionContact&quot;,
+    &quot;searchFieldList&quot; : [ &quot;FirstName&quot;, &quot;LastName&quot; ],
+    &quot;searchFieldsLabelTypeMap&quot; : {
+      &quot;FirstName&quot; : {
+        &quot;datatype&quot; : &quot;text&quot;,
+        &quot;label&quot; : &quot;First Name&quot;
+      },
+      &quot;LastName&quot; : {
+        &quot;datatype&quot; : &quot;text&quot;,
+        &quot;label&quot; : &quot;Last Name&quot;
+      }
+    },
+    &quot;searchObjectLabel&quot; : &quot;Agent&quot;,
+    &quot;searchObjectName&quot; : &quot;Contact&quot;,
+    &quot;searchType&quot; : &quot;Caller Identification&quot;,
+    &quot;searchValueMap&quot; : {
+      &quot;FirstName&quot; : &quot;*&quot;,
+      &quot;LastName&quot; : null
+    }
+  },
+  &quot;resultFieldList&quot; : [ &quot;Name&quot;, &quot;MailingStreet&quot;, &quot;Email&quot; ],
+  &quot;resultFieldsLabelTypeMap&quot; : {
+    &quot;BirthDate&quot; : {
+      &quot;datatype&quot; : &quot;date&quot;,
+      &quot;label&quot; : &quot;Birthdate&quot;
+    },
+    &quot;Email&quot; : {
+      &quot;datatype&quot; : null,
+      &quot;label&quot; : &quot;Email&quot;
+    },
+    &quot;MailingPostalCode&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Mailing Zip/Postal Code&quot;
+    },
+    &quot;MailingStreet&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Mailing Street&quot;
+    },
+    &quot;Name&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Full Name&quot;
+    }
+  },
+  &quot;resultValueMap&quot; : {
+    &quot;AccountId&quot; : &quot;00146000003lOONAA2&quot;,
+    &quot;BirthDate&quot; : &quot;6/7/1943&quot;,
+    &quot;Email&quot; : &quot;ajames@uog.com&quot;,
+    &quot;FirstName&quot; : &quot;Ashley&quot;,
+    &quot;LastName&quot; : &quot;James&quot;,
+    &quot;MailingPostalCode&quot; : null,
+    &quot;MailingStreet&quot; : &quot;&quot;,
+    &quot;Name&quot; : &quot;Ashley James&quot;
+  },
+  &quot;uniqueRequestName&quot; : &quot;InteractionContact&quot;,
+  &quot;verificationFieldList&quot; : [ &quot;Name&quot;, &quot;MailingPostalCode&quot;, &quot;BirthDate&quot; ],
+  &quot;verificationResult&quot; : {
+    &quot;BirthDate&quot; : null,
+    &quot;MailingPostalCode&quot; : null,
+    &quot;Name&quot; : null,
+    &quot;fields&quot; : {
+      &quot;BirthDate&quot; : true,
+      &quot;MailingPostalCode&quot; : true,
+      &quot;Name&quot; : true
+    }
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CreateInteractionTopics</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateInteractionTopicsCustom6998</globalKey>
+        <inputFieldName>TransformNewInteraction:NewInteraction:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionTopics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__CustomerInteractionId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateInteractionTopicsCustom5840</globalKey>
+        <inputFieldName>ExtractAssetBasedOnAccount:AssetId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionTopics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AssetId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateInteractionTopicsCustom8708</globalKey>
+        <inputFieldName>ExtractAssetBasedOnAccount:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionTopics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateInteractionTopicsCustom4380</globalKey>
+        <inputFieldName>ExtractAssetBasedOnAccount:AssetAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionTopics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AccountId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateInteractionTopicsCustom8188</globalKey>
+        <inputFieldName>CreateInteraction:vlocity_cmt__CustomerInteraction__c_1:vlocity_cmt__AccountId__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionTopics</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AccountId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteractionTopic__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ExtractAssetBasedOnAccount&quot; : [ {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOOFAA2&quot;,
+    &quot;Name&quot; : &quot;test&quot;,
+    &quot;AssetId&quot; : &quot;02i460000018r9yAAA&quot;
+  }, {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOOKAA2&quot;,
+    &quot;Name&quot; : &quot;GenWatt Diesel 1000kW&quot;,
+    &quot;AssetId&quot; : &quot;02i46000000mmafAAA&quot;
+  }, {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOOKAA2&quot;,
+    &quot;Name&quot; : &quot;GenWatt Diesel 1000kW&quot;,
+    &quot;AssetId&quot; : &quot;02i46000000mmakAAA&quot;
+  }, {
+    &quot;AssetAccountId&quot; : &quot;00146000003lOONAA2&quot;,
+    &quot;Name&quot; : &quot;UK asset  Diesel 10kW&quot;,
+    &quot;AssetId&quot; : &quot;02i46000000mmbiAAA&quot;
+  } ],
+  &quot;ExtractAssetBasedOnAccountStatus&quot; : true,
+  &quot;ExtractAccountFromContact&quot; : [ {
+    &quot;AccountId&quot; : &quot;00146000003lOOFAA2&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;00146000003lOOKAA2&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;00146000003lOONAA2&quot;
+  } ],
+  &quot;ExtractAccountFromContactStatus&quot; : true,
+  &quot;TransformNewInteraction&quot; : {
+    &quot;NewInteraction&quot; : {
+      &quot;Name&quot; : &quot;Ashley James&quot;,
+      &quot;ContactId&quot; : &quot;00346000002HMFyAAO&quot;,
+      &quot;Id&quot; : &quot;a0I46000000GcanEAC&quot;
+    }
+  },
+  &quot;TransformNewInteractionStatus&quot; : true,
+  &quot;CreateInteraction&quot; : {
+    &quot;vlocity_cmt__CustomerInteraction__c_1&quot; : [ {
+      &quot;UpsertSuccess&quot; : true,
+      &quot;Id&quot; : &quot;a0I46000000GcanEAC&quot;,
+      &quot;Name&quot; : &quot;Ashley James&quot;,
+      &quot;vlocity_cmt__ContactId__c&quot; : &quot;00346000002HMFyAAO&quot;,
+      &quot;vlocity_cmt__Type__c&quot; : &quot;Call&quot;,
+      &quot;vlocity_cmt__Status__c&quot; : &quot;In Progress&quot;,
+      &quot;vlocity_cmt__Channel__c&quot; : &quot;Contact Center&quot;
+    } ],
+    &quot;error&quot; : &quot;OK&quot;,
+    &quot;responseType&quot; : &quot;SObject&quot;
+  },
+  &quot;CreateInteractionStatus&quot; : true,
+  &quot;options&quot; : { },
+  &quot;parentId&quot; : null,
+  &quot;consoleCardLayout&quot; : null,
+  &quot;drBundleName&quot; : null,
+  &quot;integrationProcName&quot; : &quot;CustomerInteractionContact_Creation&quot;,
+  &quot;interactionObjName&quot; : &quot;CustomerInteractionContact&quot;,
+  &quot;moreRequests&quot; : null,
+  &quot;numOfOptionalVerificationFields&quot; : null,
+  &quot;optionalVerificationFieldList&quot; : [ ],
+  &quot;recordId&quot; : &quot;00346000002HMFyAAO&quot;,
+  &quot;request&quot; : {
+    &quot;additionalData&quot; : null,
+    &quot;continueSearch&quot; : false,
+    &quot;displaySequence&quot; : 2,
+    &quot;fieldPicklistValues&quot; : { },
+    &quot;isClassBased&quot; : false,
+    &quot;lastRecordId&quot; : null,
+    &quot;previousSearchResults&quot; : null,
+    &quot;recordOffset&quot; : null,
+    &quot;referenceObjectName&quot; : null,
+    &quot;requestUniqueName&quot; : &quot;InteractionContact&quot;,
+    &quot;searchFieldList&quot; : [ &quot;FirstName&quot;, &quot;LastName&quot; ],
+    &quot;searchFieldsLabelTypeMap&quot; : {
+      &quot;LastName&quot; : {
+        &quot;datatype&quot; : &quot;text&quot;,
+        &quot;label&quot; : &quot;Last Name&quot;
+      },
+      &quot;FirstName&quot; : {
+        &quot;datatype&quot; : &quot;text&quot;,
+        &quot;label&quot; : &quot;First Name&quot;
+      }
+    },
+    &quot;searchObjectLabel&quot; : &quot;Agent&quot;,
+    &quot;searchObjectName&quot; : &quot;Contact&quot;,
+    &quot;searchType&quot; : &quot;Caller Identification&quot;,
+    &quot;searchValueMap&quot; : {
+      &quot;LastName&quot; : null,
+      &quot;FirstName&quot; : &quot;*&quot;
+    }
+  },
+  &quot;resultFieldList&quot; : [ &quot;Name&quot;, &quot;MailingStreet&quot;, &quot;Email&quot; ],
+  &quot;resultFieldsLabelTypeMap&quot; : {
+    &quot;Name&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Full Name&quot;
+    },
+    &quot;MailingStreet&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Mailing Street&quot;
+    },
+    &quot;Email&quot; : {
+      &quot;datatype&quot; : null,
+      &quot;label&quot; : &quot;Email&quot;
+    },
+    &quot;MailingPostalCode&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Mailing Zip/Postal Code&quot;
+    },
+    &quot;BirthDate&quot; : {
+      &quot;datatype&quot; : &quot;date&quot;,
+      &quot;label&quot; : &quot;Birthdate&quot;
+    }
+  },
+  &quot;resultValueMap&quot; : {
+    &quot;Name&quot; : &quot;Ashley James&quot;,
+    &quot;MailingStreet&quot; : &quot;&quot;,
+    &quot;Email&quot; : &quot;ajames@uog.com&quot;,
+    &quot;MailingPostalCode&quot; : null,
+    &quot;BirthDate&quot; : &quot;6/7/1943&quot;,
+    &quot;AccountId&quot; : &quot;00146000003lOONAA2&quot;,
+    &quot;FirstName&quot; : &quot;Ashley&quot;,
+    &quot;LastName&quot; : &quot;James&quot;
+  },
+  &quot;uniqueRequestName&quot; : &quot;InteractionContact&quot;,
+  &quot;verificationFieldList&quot; : [ &quot;Name&quot;, &quot;MailingPostalCode&quot;, &quot;BirthDate&quot; ],
+  &quot;verificationResult&quot; : {
+    &quot;fields&quot; : {
+      &quot;BirthDate&quot; : true,
+      &quot;MailingPostalCode&quot; : true,
+      &quot;Name&quot; : true
+    },
+    &quot;Name&quot; : null,
+    &quot;MailingPostalCode&quot; : null,
+    &quot;BirthDate&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateInteractionTopics_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

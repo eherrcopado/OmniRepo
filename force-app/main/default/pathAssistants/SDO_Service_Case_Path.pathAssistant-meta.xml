@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Case</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Service - Case Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Reason</fieldNames>
+        <fieldNames>SDO_Service_Close_Summary__c</fieldNames>
+        <info>&lt;p&gt;&amp;#127881; Congratulations on closing the case! &lt;/p&gt;</info>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Review the case history to understand the problem and escalation reason&lt;/li&gt;&lt;li&gt;Resolve the issue and reach out to the customer with resolution&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>Escalated</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>OwnerId</fieldNames>
+        <info>&lt;ul&gt;&lt;li&gt;Assign the case to a Queue as appropriate&lt;/li&gt;&lt;li&gt;Go Available in Omni Channel to accept new work&lt;/li&gt;&lt;/ul&gt;</info>
+        <picklistValueName>New</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>SDO_Service_Case</recordTypeName>
+</PathAssistant>

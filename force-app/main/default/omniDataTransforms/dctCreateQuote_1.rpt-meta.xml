@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : &quot;0065f0000097fUPAAY&quot;,
+  &quot;timeStamp&quot; : &quot;2022-01-11T18:33:44.481Z&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-480&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userName&quot; : &quot;demo.org@energy.1635793336903&quot;,
+  &quot;userId&quot; : &quot;0055f000004j2CuAAI&quot;,
+  &quot;CreateorClone&quot; : null,
+  &quot;CloneQuotes&quot; : null,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;OmniScriptSessionToken&quot; : &quot;f471225c-3736-4579-b7c1-5470dc2aedad&quot;,
+    &quot;GetOpptyData&quot; : 329,
+    &quot;CleanUpSites&quot; : 249,
+    &quot;Reset&quot; : 0,
+    &quot;SetValuesQuote&quot; : 0
+  },
+  &quot;Account&quot; : {
+    &quot;Premise&quot; : {
+      &quot;ServicePoint&quot; : {
+        &quot;Meter&quot; : {
+          &quot;MeterType&quot; : &quot;Smar&quot;,
+          &quot;MeterNumber&quot; : &quot;100300100&quot;
+        }
+      },
+      &quot;PremiseType&quot; : &quot;Commercial Building&quot;,
+      &quot;PremiseName&quot; : &quot;PR-6004&quot;,
+      &quot;PremiseId&quot; : &quot;a1Y5f000000cubnEAA&quot;
+    },
+    &quot;Country&quot; : &quot;United States&quot;,
+    &quot;ServiceState&quot; : &quot;VA&quot;,
+    &quot;AccountStatus&quot; : &quot;Active&quot;,
+    &quot;Name&quot; : &quot;General Dynamics (SA1)&quot;,
+    &quot;ServiceAccountId&quot; : &quot;0015f00000B2kGEAAZ&quot;,
+    &quot;PostalCode&quot; : &quot;22042&quot;,
+    &quot;ServiceStreet&quot; : &quot;2941 Fairview Park Drive&quot;,
+    &quot;ServiceCity&quot; : &quot;Falls Church&quot;,
+    &quot;ServiceAccountName&quot; : &quot;General Dynamics (SA1)&quot;
+  },
+  &quot;Opportunity&quot; : {
+    &quot;PriceListId&quot; : null,
+    &quot;PriceBookId&quot; : &quot;01s5f000006fnrUAAQ&quot;
+  },
+  &quot;CheckboxMockPricingDone&quot; : false,
+  &quot;BillTo&quot; : &quot;2941 Fairview Park Drive, Falls Church, VA 22042 United States&quot;,
+  &quot;BillingMethod&quot; : &quot;Dual&quot;,
+  &quot;PriceType&quot; : &quot;New&quot;,
+  &quot;Purpose&quot; : &quot;Executable&quot;,
+  &quot;WeightedAveragePrice&quot; : true,
+  &quot;CreateQuote&quot; : {
+    &quot;Formula1&quot; : null,
+    &quot;QuoteInformation&quot; : {
+      &quot;ServiceAccountNameF&quot; : &quot;General Dynamics (SA1), 2941 Fairview Park Drive, Falls Church&quot;,
+      &quot;MeterF&quot; : &quot;, &quot;,
+      &quot;MaxPower&quot; : 0,
+      &quot;YearlyUsage&quot; : 0,
+      &quot;MinPower&quot; : null,
+      &quot;PODate&quot; : &quot;2022-02-15&quot;,
+      &quot;ExpirationDate&quot; : &quot;2022-01-12&quot;,
+      &quot;QuoteTerm&quot; : 12,
+      &quot;MonthlyConsumption&quot; : 70000,
+      &quot;SubscribedPower&quot; : 6000,
+      &quot;Voltage&quot; : &quot;5kV-15kV&quot;,
+      &quot;PaymentTerms&quot; : &quot;Net 15&quot;,
+      &quot;QuoteName&quot; : &quot;Quote 1&quot;,
+      &quot;MinOrSubscribedPower&quot; : &quot;Subscribed&quot;
+    }
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>dctCreateQuote</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote41800325715892694</globalKey>
+        <inputFieldName>Opportunity:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote5175952621006621</globalKey>
+        <inputFieldName>CreateQuote:QuoteInformation:Voltage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VDO_Voltage_Range__c</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote5939397005048961</globalKey>
+        <inputFieldName>CreateQuote:QuoteInformation:SubscribedPower</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VDO_Subscribed_Power__c</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote8639208952237876</globalKey>
+        <inputFieldName>CreateQuote:QuoteInformation:QuoteTerm</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__NumberOfContractedMonths__c</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote49172304330503347</globalKey>
+        <inputFieldName>Account:ServiceState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingStreet</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote8327045866648755</globalKey>
+        <inputFieldName>Result:SelectedMeters</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Object</outputFieldFormat>
+        <outputFieldName>vdo_uan__c</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote31832634160724194</globalKey>
+        <inputFieldName>Opportunity:PriceListId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PriceListId__c</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote8717581260291412</globalKey>
+        <inputFieldName>Opportunity:PriceBookId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Pricebook2Id</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote3161203071242724</globalKey>
+        <inputFieldName>Account:ServiceStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingStreet</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote016981598823256006</globalKey>
+        <inputFieldName>Account:PostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingPostalCode</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote011413991661165745</globalKey>
+        <inputFieldName>Account:Country</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCountry</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote9980266633267312</globalKey>
+        <inputFieldName>Account:ServiceCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCity</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote6646705697777626</globalKey>
+        <inputFieldName>RetailerAccount:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VDO_Retailer_Account__c</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote12959581129098274</globalKey>
+        <inputFieldName>CreateQuote:QuoteInformation:ContractType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VDO_Gas_Contract_Type__c</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote17845725789160105</globalKey>
+        <inputFieldName>ContextId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>OpportunityId</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>dctCreateQuote4871907195523242</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote0922636048836436</globalKey>
+        <inputFieldName>CreateQuote:QuoteInformation:QuoteName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote4418919086775672</globalKey>
+        <inputFieldName>CreateQuote:QuoteInformation:MonthlyConsumption</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VDO_Monthly_Consumption__c</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote3136347963613546</globalKey>
+        <inputFieldName>CreateQuote:QuoteInformation:MinPower</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>VDO_Minimum_Power__c</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctCreateQuote12994747624142966</globalKey>
+        <inputFieldName>CreateQuote:QuoteInformation:ExpirationDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctCreateQuote</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ExpirationDate</outputFieldName>
+        <outputObjectName>Quote</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : &quot;0065f0000097fUPAAY&quot;,
+  &quot;timeStamp&quot; : &quot;2022-01-11T18:33:44.481Z&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-480&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userName&quot; : &quot;demo.org@energy.1635793336903&quot;,
+  &quot;userId&quot; : &quot;0055f000004j2CuAAI&quot;,
+  &quot;CreateorClone&quot; : null,
+  &quot;CloneQuotes&quot; : null,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;OmniScriptSessionToken&quot; : &quot;f471225c-3736-4579-b7c1-5470dc2aedad&quot;,
+    &quot;GetOpptyData&quot; : 329,
+    &quot;CleanUpSites&quot; : 249,
+    &quot;Reset&quot; : 0,
+    &quot;SetValuesQuote&quot; : 0
+  },
+  &quot;Account&quot; : {
+    &quot;Premise&quot; : {
+      &quot;ServicePoint&quot; : {
+        &quot;Meter&quot; : {
+          &quot;MeterType&quot; : &quot;Smar&quot;,
+          &quot;MeterNumber&quot; : &quot;100300100&quot;
+        }
+      },
+      &quot;PremiseType&quot; : &quot;Commercial Building&quot;,
+      &quot;PremiseName&quot; : &quot;PR-6004&quot;,
+      &quot;PremiseId&quot; : &quot;a1Y5f000000cubnEAA&quot;
+    },
+    &quot;Country&quot; : &quot;United States&quot;,
+    &quot;ServiceState&quot; : &quot;VA&quot;,
+    &quot;AccountStatus&quot; : &quot;Active&quot;,
+    &quot;Name&quot; : &quot;General Dynamics (SA1)&quot;,
+    &quot;ServiceAccountId&quot; : &quot;0015f00000B2kGEAAZ&quot;,
+    &quot;PostalCode&quot; : &quot;22042&quot;,
+    &quot;ServiceStreet&quot; : &quot;2941 Fairview Park Drive&quot;,
+    &quot;ServiceCity&quot; : &quot;Falls Church&quot;,
+    &quot;ServiceAccountName&quot; : &quot;General Dynamics (SA1)&quot;
+  },
+  &quot;Opportunity&quot; : {
+    &quot;PriceListId&quot; : null,
+    &quot;PriceBookId&quot; : &quot;01s5f000006fnrUAAQ&quot;
+  },
+  &quot;CheckboxMockPricingDone&quot; : false,
+  &quot;BillTo&quot; : &quot;2941 Fairview Park Drive, Falls Church, VA 22042 United States&quot;,
+  &quot;BillingMethod&quot; : &quot;Dual&quot;,
+  &quot;PriceType&quot; : &quot;New&quot;,
+  &quot;Purpose&quot; : &quot;Executable&quot;,
+  &quot;WeightedAveragePrice&quot; : true,
+  &quot;CreateQuote&quot; : {
+    &quot;Formula1&quot; : null,
+    &quot;QuoteInformation&quot; : {
+      &quot;ServiceAccountNameF&quot; : &quot;General Dynamics (SA1), 2941 Fairview Park Drive, Falls Church&quot;,
+      &quot;MeterF&quot; : &quot;, &quot;,
+      &quot;MaxPower&quot; : 0,
+      &quot;YearlyUsage&quot; : 0,
+      &quot;MinPower&quot; : null,
+      &quot;PODate&quot; : &quot;2022-02-15&quot;,
+      &quot;ExpirationDate&quot; : &quot;2022-01-12&quot;,
+      &quot;QuoteTerm&quot; : 12,
+      &quot;MonthlyConsumption&quot; : 70000,
+      &quot;SubscribedPower&quot; : 6000,
+      &quot;Voltage&quot; : &quot;5kV-15kV&quot;,
+      &quot;PaymentTerms&quot; : &quot;Net 15&quot;,
+      &quot;QuoteName&quot; : &quot;Quote 1&quot;,
+      &quot;MinOrSubscribedPower&quot; : &quot;Subscribed&quot;
+    }
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>dctCreateQuote_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

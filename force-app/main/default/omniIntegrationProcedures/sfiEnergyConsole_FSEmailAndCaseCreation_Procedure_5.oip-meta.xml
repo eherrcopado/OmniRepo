@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;accountId&quot;:&quot;0013h00000CLSK5&quot;,&quot;contactEmail&quot;:&quot;smundhra@salesforce.com&quot;,&quot;contactId&quot;:&quot;0033h00000Au5DEAAZ&quot;,&quot;currentRangeDT&quot;:&quot;2021-06-17 09:00:00 _ 2021-06-24 15:00:00&quot;,&quot;schedulingPolicyId&quot;:&quot;a6j3h000000032OAAQ&quot;,&quot;selectedEndTime&quot;:&quot;2021-06-23T15:00:00.000Z&quot;,&quot;selectedStartTime&quot;:&quot;2021-06-23T13:00:00.000Z&quot;,&quot;serviceAppointmentValue&quot;:&quot;08p3h000001N2JPAA0&quot;,&quot;serviceDescription&quot;:&quot;test8789&quot;,&quot;serviceType&quot;:&quot;Gas&quot;,&quot;slotTime&quot;:&quot;Wednesday, June 23 at 01:00 PM - 03:00 PM&quot;,&quot;workOrderId&quot;:&quot;0WO3h000000q4kpGAA&quot;,&quot;workType&quot;:&quot;Gas Leakage Order&quot;}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>sfiEnergyConsoleFSEmailAndCaseCreation</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DRCreateCaseForAppointment</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;accountId&quot; : &quot;%accountId%&quot;,
+    &quot;caseRecordTypeId&quot; : &quot;%DRGetCaseRecordTypeId:RecordTypeId%&quot;,
+    &quot;contactId&quot; : &quot;%contactId%&quot;,
+    &quot;servApptDescription&quot; : &quot;%SVBookAppointment:servDescription%&quot;,
+    &quot;workOrderId&quot; : &quot;%workOrderId%&quot;,
+    &quot;workType&quot; : &quot;%workType%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;sfiEnergyConsoleFSCreateCase&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%isRescheduleFlow% == false&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;DRCreateCaseForAppointment : Failed to create service case&quot;
+  },
+  &quot;label&quot; : &quot;DataRaptorPostAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DRGetCaseRecordTypeId</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;recordTypeName&quot; : &quot;Service&quot;,
+    &quot;sObjectName&quot; : &quot;Case&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;sfiEnergyConsoleFSGetRecordTypeId&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%isRescheduleFlow% == false&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : {
+    &quot;ErrorMessage&quot; : &quot;DRGetCaseRecordTypeId : Failed to retrieve case recordtype id&quot;
+  },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>EASendEmail</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;OrgWideEmailAddress&quot; : &quot;agent@console.com&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;attachmentList&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;contentVersionList&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;emailInformation&quot; : {
+    &quot;bccAddressList&quot; : [ ],
+    &quot;ccAddressList&quot; : [ ],
+    &quot;emailBody&quot; : &quot;Your field service appointment is scheduled for %slotTime%\n\nPlease be available to provide access for our technician.  \n\nThank you!&quot;,
+    &quot;emailSubject&quot; : &quot;Field Service Appointment scheduled - %appointmentNumber%&quot;,
+    &quot;setHtmlBody&quot; : false,
+    &quot;toAddressList&quot; : [ &quot;%contactEmail%&quot; ]
+  },
+  &quot;emailTemplateInformation&quot; : {
+    &quot;emailTargetObjectId&quot; : &quot;%contactId%&quot;,
+    &quot;emailTemplateName&quot; : &quot;sfiEnergyConsoleFSBookAppointmentConfirmation&quot;,
+    &quot;saveAsActivity&quot; : false,
+    &quot;whatId&quot; : &quot;&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;%isRescheduleFlow% == false&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;EmailAction1&quot;,
+  &quot;show&quot; : null,
+  &quot;staticDocList&quot; : [ ],
+  &quot;useTemplate&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Email Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SendReScheduleEmail</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;OrgWideEmailAddress&quot; : &quot;agent@console.com&quot;,
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;attachmentList&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;contentVersionList&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;emailInformation&quot; : {
+    &quot;bccAddressList&quot; : [ ],
+    &quot;ccAddressList&quot; : [ ],
+    &quot;emailBody&quot; : &quot;Your field service appointment is rescheduled for %slotTime%\n\nPlease be available to provide access for our technician.  \n\nThank you!&quot;,
+    &quot;emailSubject&quot; : &quot;Field Service Appointment Rescheduled - %appointmentNumber%&quot;,
+    &quot;setHtmlBody&quot; : false,
+    &quot;toAddressList&quot; : [ &quot;%contactEmail%&quot; ]
+  },
+  &quot;emailTemplateInformation&quot; : {
+    &quot;emailTargetObjectId&quot; : &quot;%contactId%&quot;,
+    &quot;emailTemplateName&quot; : &quot;sfiEnergyConsoleFSBookAppointmentConfirmation&quot;,
+    &quot;saveAsActivity&quot; : false,
+    &quot;whatId&quot; : &quot;&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;%isRescheduleFlow% == true&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;EmailAction1&quot;,
+  &quot;show&quot; : null,
+  &quot;staticDocList&quot; : [ ],
+  &quot;useTemplate&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Email Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SVBookAppointment</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;servDescription&quot; : &quot;=CONCAT(&apos;Service Type: &apos;,%serviceType%,&apos; - &apos;,%serviceDescription%)&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessKey>sfiEnergyConsole_FSEmailAndCaseCreation</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <requiredPermission>sfiEnergyConsoleFSPermission</requiredPermission>
+    <subType>FSEmailAndCaseCreation</subType>
+    <type>sfiEnergyConsole</type>
+    <uniqueName>sfiEnergyConsole_FSEmailAndCaseCreation_Procedure_5</uniqueName>
+    <versionNumber>5.0</versionNumber>
+    <webComponentKey>9d6de487-6e41-1a53-928b-a7bf85928b4a</webComponentKey>
+</OmniIntegrationProcedure>

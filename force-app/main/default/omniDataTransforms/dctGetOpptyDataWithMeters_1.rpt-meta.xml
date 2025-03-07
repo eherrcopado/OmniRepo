@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedOutputJson>{
+  &quot;Account&quot; : {
+    &quot;City&quot; : &quot;Falls Church&quot;,
+    &quot;PostalCode&quot; : &quot;22042&quot;,
+    &quot;BillingStreet&quot; : &quot;2941 Fairview Park Drive&quot;,
+    &quot;ServiceAccountId&quot; : &quot;0015f00000B2kGEAAZ&quot;,
+    &quot;Name&quot; : &quot;General Dynamics (SA1)&quot;,
+    &quot;Number&quot; : &quot;GA1000&quot;,
+    &quot;ShippingCity&quot; : &quot;Falls Church&quot;,
+    &quot;ShippingPostalCode&quot; : &quot;22042&quot;,
+    &quot;ShippingState&quot; : &quot;VA&quot;,
+    &quot;ShippingStreet&quot; : &quot;2941 Fairview Park Drive&quot;,
+    &quot;AccountStatus&quot; : &quot;Active&quot;,
+    &quot;Premise&quot; : {
+      &quot;PremiseName&quot; : &quot;PR-6004&quot;,
+      &quot;PremiseType&quot; : &quot;Commercial Building&quot;,
+      &quot;ServicePoint&quot; : {
+        &quot;SPName&quot; : &quot;SP-6004&quot;,
+        &quot;Amperage&quot; : 100,
+        &quot;VoltageInd&quot; : &quot;High 44 kV&quot;,
+        &quot;ActivationDate&quot; : &quot;2013-03-28&quot;,
+        &quot;ServiceType&quot; : &quot;Electricity&quot;,
+        &quot;SPStatus&quot; : &quot;Connected&quot;,
+        &quot;Meter&quot; : {
+          &quot;MeterNumber&quot; : &quot;6004&quot;,
+          &quot;MeterType&quot; : &quot;Digital Smart&quot;,
+          &quot;Usage&quot; : {
+            &quot;Monthly&quot; : [ {
+              &quot;Month&quot; : 1,
+              &quot;MonthlyUsage&quot; : 98483.9876
+            }, {
+              &quot;Month&quot; : 2,
+              &quot;MonthlyUsage&quot; : 83292.4018
+            }, {
+              &quot;Month&quot; : 3,
+              &quot;MonthlyUsage&quot; : 75081.8964
+            }, {
+              &quot;Month&quot; : 4,
+              &quot;MonthlyUsage&quot; : 65477.1564
+            }, {
+              &quot;Month&quot; : 5,
+              &quot;MonthlyUsage&quot; : 47736.1714
+            }, {
+              &quot;Month&quot; : 6,
+              &quot;MonthlyUsage&quot; : 45998.1216
+            }, {
+              &quot;Month&quot; : 7,
+              &quot;MonthlyUsage&quot; : 48904.1755
+            }, {
+              &quot;Month&quot; : 8,
+              &quot;MonthlyUsage&quot; : 47800.554
+            }, {
+              &quot;Month&quot; : 9,
+              &quot;MonthlyUsage&quot; : 45555.1947
+            }, {
+              &quot;Month&quot; : 10,
+              &quot;MonthlyUsage&quot; : 85376.0379
+            }, {
+              &quot;Month&quot; : 11,
+              &quot;MonthlyUsage&quot; : 86965.77
+            }, {
+              &quot;Month&quot; : 12,
+              &quot;MonthlyUsage&quot; : 86936.5394
+            } ]
+          }
+        }
+      },
+      &quot;PremiseId&quot; : &quot;a1Y5f000000cubnEAA&quot;
+    },
+    &quot;IsChecked&quot; : true
+  }
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>dctGetOpptyDataWithMeters</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters42152474208523905</globalKey>
+        <inputFieldName>Opportunity:Pricebook2Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Opportunity:PriceBookId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters10248803686045083</globalKey>
+        <inputFieldName>Opportunity:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Opportunity:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>Opportunity:AccountId</filterValue>
+        <globalKey>dctGetOpptyDataWithMeters6369485367258445</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>Account</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Opportunity:Account</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters09624700688835053</globalKey>
+        <inputFieldName>Opportunity:vlocity_cmt__PriceListId__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Opportunity:PriceListId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters980006788354181</globalKey>
+        <inputFieldName>Opportunity:Account:BillingCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Country</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters8164491445994784</globalKey>
+        <inputFieldName>ServicePoint:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:ServicePoint:SPName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>Opportunity:Account:Premise:Id</filterValue>
+        <globalKey>dctGetOpptyDataWithMeters3064860367411475</globalKey>
+        <inputFieldName>vlocity_cmt__PremisesId__c</inputFieldName>
+        <inputObjectName>vlocity_cmt__ServicePoint__c</inputObjectName>
+        <inputObjectQuerySequence>4.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Opportunity:Account:Premise:ServicePoint</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters10476832538653014</globalKey>
+        <inputFieldName>Opportunity:Account:Premise:ServicePoint:vlocity_cmt__MeterNumber__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:ServicePoint:Meter:MeterNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters2390353027617227</globalKey>
+        <inputFieldName>Opportunity:Account:vlocity_cmt__Status__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:AccountStatus</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters21459023537995603</globalKey>
+        <inputFieldName>Opportunity:Account:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters4693538819306029</globalKey>
+        <inputFieldName>Opportunity:Account:BillingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:PostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>Opportunity:Account:vlocity_cmt__PremisesId__c</filterValue>
+        <globalKey>dctGetOpptyDataWithMetersCustom4062</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>vlocity_cmt__Premises__c</inputObjectName>
+        <inputObjectQuerySequence>3.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Opportunity:Account:Premise</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters0770186001460551</globalKey>
+        <inputFieldName>Opportunity:Account:Premise:ServicePoint:vlocity_cmt__MeterType__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:ServicePoint:Meter:MeterType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters08237720450886776</globalKey>
+        <inputFieldName>Usage:month__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:ServicePoint:Meter:Usage:Monthly:Month</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters15277709120654115</globalKey>
+        <inputFieldName>ServicePoint:vlocity_cmt__Status__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:ServicePoint:SPStatus</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters1315363920488406</globalKey>
+        <inputFieldName>ServicePoint:vlocity_cmt__ServiceType__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:ServicePoint:ServiceType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters15465607321226482</globalKey>
+        <inputFieldName>Opportunity:Account:Premise:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:PremiseId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters7223827066284754</globalKey>
+        <inputFieldName>Opportunity:Account:BillingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:ServiceStreet</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters7222524902743908</globalKey>
+        <inputFieldName>Opportunity:Account:BillingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:ServiceCity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters35203257509247576</globalKey>
+        <inputFieldName>Opportunity:Account:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:ServiceAccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters9000923678305979</globalKey>
+        <inputFieldName>Opportunity:VDO_Technical_Data__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Opportunity:TechData</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters6020439806618798</globalKey>
+        <inputFieldName>ServicePoint:vlocity_cmt__ServiceType__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:ServicePoint:ServiceType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters3931408199578379</globalKey>
+        <inputFieldName>Opportunity:Account:Premise:vlocity_cmt__PremisesType__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:PremiseType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters052284109613852436</globalKey>
+        <inputFieldName>Opportunity:Account:Premise:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:PremiseName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters3280977401694698</globalKey>
+        <inputFieldName>Opportunity:Account:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:ServiceAccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters6421450170525418</globalKey>
+        <inputFieldName>Opportunity:Vdo_Included_meters__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Opportunity:SelectedMeters</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters7080306117918398</globalKey>
+        <inputFieldName>Opportunity:Account:BillingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:ServiceState</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters7612457788889269</globalKey>
+        <inputFieldName>Usage:total_consumption__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:ServicePoint:Meter:Usage:Monthly:MonthlyUsage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters21379432454736125</globalKey>
+        <inputFieldName>ServicePoint:vlocity_cmt__ActivationDate__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Account:Premise:ServicePoint:ActivationDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>ContextId</filterValue>
+        <globalKey>dctGetOpptyDataWithMeters4776415579568991</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>Opportunity</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Opportunity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dctGetOpptyDataWithMeters3344551644917222</globalKey>
+        <inputFieldName>Opportunity:VDO_Included_Regions__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dctGetOpptyDataWithMeters</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Opportunity:SelectedSite</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : &quot;0063y00001AFlrvAAD&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>dctGetOpptyDataWithMeters_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

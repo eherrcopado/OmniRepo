@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelationshipGraphDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isActive>true</isActive>
+    <isTemplate>false</isTemplate>
+    <masterLabel>Contact Center Graph</masterLabel>
+    <relationshipGraphDefVersions>
+        <graphDefinition>{
+  &quot;graph&quot; : {
+    &quot;rootNode&quot; : {
+      &quot;id&quot; : &quot;b1add644-7539-4ecc-9593-23f6a4387232&quot;,
+      &quot;object&quot; : {
+        &quot;entity&quot; : &quot;Account&quot;
+      },
+      &quot;configurationType&quot; : &quot;Primary&quot;,
+      &quot;nodeUiConfig&quot; : {
+        &quot;label&quot; : &quot;Account&quot;,
+        &quot;fieldsToDisplay&quot; : [ ],
+        &quot;showFieldLabels&quot; : true,
+        &quot;actions&quot; : { },
+        &quot;isAnchorNode&quot; : true
+      },
+      &quot;childRelationships&quot; : [ {
+        &quot;OneToMany&quot; : {
+          &quot;targetObjectNode&quot; : {
+            &quot;sortFields&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;order&quot; : &quot;DESC&quot;
+            } ],
+            &quot;id&quot; : &quot;8de53244-e3f6-4324-8207-d25754aae0f2&quot;,
+            &quot;object&quot; : {
+              &quot;entity&quot; : &quot;Contact&quot;
+            },
+            &quot;configurationType&quot; : &quot;Primary&quot;,
+            &quot;nodeUiConfig&quot; : {
+              &quot;label&quot; : &quot;Contacts&quot;,
+              &quot;recordActionsLabel&quot; : &quot;&quot;,
+              &quot;isAnchorNode&quot; : false,
+              &quot;fieldsToDisplay&quot; : [ ],
+              &quot;showFieldLabels&quot; : true,
+              &quot;actions&quot; : {
+                &quot;containerActions&quot; : [ ],
+                &quot;recordActions&quot; : [ ]
+              }
+            },
+            &quot;childRelationships&quot; : [ ]
+          },
+          &quot;relationshipUiConfig&quot; : { },
+          &quot;filter&quot; : {
+            &quot;filterCriteria&quot; : [ ],
+            &quot;booleanFilter&quot; : &quot;&quot;
+          },
+          &quot;targetObjectField&quot; : {
+            &quot;field&quot; : &quot;AccountId&quot;,
+            &quot;whichEntity&quot; : &quot;TARGET&quot;
+          }
+        }
+      }, {
+        &quot;OneToMany&quot; : {
+          &quot;targetObjectNode&quot; : {
+            &quot;sortFields&quot; : [ {
+              &quot;field&quot; : {
+                &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                &quot;whichEntity&quot; : &quot;TARGET&quot;
+              },
+              &quot;order&quot; : &quot;DESC&quot;
+            } ],
+            &quot;id&quot; : &quot;1333a342-e079-424d-ab3d-7043de2b995a&quot;,
+            &quot;object&quot; : {
+              &quot;entity&quot; : &quot;Account&quot;
+            },
+            &quot;configurationType&quot; : &quot;Custom&quot;,
+            &quot;nodeUiConfig&quot; : {
+              &quot;label&quot; : &quot;Service Account&quot;,
+              &quot;recordActionsLabel&quot; : &quot;&quot;,
+              &quot;isAnchorNode&quot; : false,
+              &quot;fieldsToDisplay&quot; : [ ],
+              &quot;showFieldLabels&quot; : true,
+              &quot;actions&quot; : {
+                &quot;containerActions&quot; : [ ],
+                &quot;recordActions&quot; : [ ]
+              }
+            },
+            &quot;childRelationships&quot; : [ {
+              &quot;OneToMany&quot; : {
+                &quot;targetObjectNode&quot; : {
+                  &quot;sortFields&quot; : [ {
+                    &quot;field&quot; : {
+                      &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                      &quot;whichEntity&quot; : &quot;TARGET&quot;
+                    },
+                    &quot;order&quot; : &quot;DESC&quot;
+                  } ],
+                  &quot;id&quot; : &quot;c1f67686-e6c6-402d-b966-98ef0aa018a4&quot;,
+                  &quot;object&quot; : {
+                    &quot;entity&quot; : &quot;vlocity_cmt__Premises__c&quot;
+                  },
+                  &quot;configurationType&quot; : &quot;Primary&quot;,
+                  &quot;nodeUiConfig&quot; : {
+                    &quot;label&quot; : &quot;Premises&quot;,
+                    &quot;recordActionsLabel&quot; : &quot;&quot;,
+                    &quot;isAnchorNode&quot; : false,
+                    &quot;fieldsToDisplay&quot; : [ ],
+                    &quot;showFieldLabels&quot; : true,
+                    &quot;actions&quot; : {
+                      &quot;containerActions&quot; : [ ],
+                      &quot;recordActions&quot; : [ ]
+                    }
+                  },
+                  &quot;childRelationships&quot; : [ {
+                    &quot;OneToMany&quot; : {
+                      &quot;targetObjectNode&quot; : {
+                        &quot;sortFields&quot; : [ {
+                          &quot;field&quot; : {
+                            &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                            &quot;whichEntity&quot; : &quot;TARGET&quot;
+                          },
+                          &quot;order&quot; : &quot;DESC&quot;
+                        } ],
+                        &quot;id&quot; : &quot;9833b6a0-7677-4e0f-bdfc-1fa7bc0aedc6&quot;,
+                        &quot;object&quot; : {
+                          &quot;entity&quot; : &quot;vlocity_cmt__ServicePoint__c&quot;
+                        },
+                        &quot;configurationType&quot; : &quot;Primary&quot;,
+                        &quot;nodeUiConfig&quot; : {
+                          &quot;label&quot; : &quot;Service Points&quot;,
+                          &quot;recordActionsLabel&quot; : &quot;&quot;,
+                          &quot;isAnchorNode&quot; : false,
+                          &quot;fieldsToDisplay&quot; : [ ],
+                          &quot;showFieldLabels&quot; : true,
+                          &quot;actions&quot; : {
+                            &quot;containerActions&quot; : [ ],
+                            &quot;recordActions&quot; : [ ]
+                          }
+                        },
+                        &quot;childRelationships&quot; : [ {
+                          &quot;OneToMany&quot; : {
+                            &quot;targetObjectNode&quot; : {
+                              &quot;sortFields&quot; : [ {
+                                &quot;field&quot; : {
+                                  &quot;field&quot; : &quot;LastModifiedDate&quot;,
+                                  &quot;whichEntity&quot; : &quot;TARGET&quot;
+                                },
+                                &quot;order&quot; : &quot;DESC&quot;
+                              } ],
+                              &quot;id&quot; : &quot;60b66cad-665d-46eb-8b4b-b3b175dec11f&quot;,
+                              &quot;object&quot; : {
+                                &quot;entity&quot; : &quot;vlocity_cmt__InventoryItem__c&quot;
+                              },
+                              &quot;configurationType&quot; : &quot;Primary&quot;,
+                              &quot;nodeUiConfig&quot; : {
+                                &quot;label&quot; : &quot;Meter&quot;,
+                                &quot;recordActionsLabel&quot; : &quot;&quot;,
+                                &quot;fieldsToDisplay&quot; : [ ],
+                                &quot;showFieldLabels&quot; : true,
+                                &quot;actions&quot; : {
+                                  &quot;containerActions&quot; : [ ],
+                                  &quot;recordActions&quot; : [ ]
+                                }
+                              },
+                              &quot;childRelationships&quot; : [ ]
+                            },
+                            &quot;relationshipUiConfig&quot; : { },
+                            &quot;filter&quot; : {
+                              &quot;filterCriteria&quot; : [ ],
+                              &quot;booleanFilter&quot; : &quot;&quot;
+                            },
+                            &quot;targetObjectField&quot; : {
+                              &quot;field&quot; : &quot;vlocity_cmt__ServicePointId__c&quot;,
+                              &quot;whichEntity&quot; : &quot;TARGET&quot;
+                            }
+                          }
+                        } ]
+                      },
+                      &quot;relationshipUiConfig&quot; : { },
+                      &quot;filter&quot; : {
+                        &quot;filterCriteria&quot; : [ ],
+                        &quot;booleanFilter&quot; : &quot;&quot;
+                      },
+                      &quot;targetObjectField&quot; : {
+                        &quot;field&quot; : &quot;vlocity_cmt__PremisesId__c&quot;,
+                        &quot;whichEntity&quot; : &quot;TARGET&quot;
+                      }
+                    }
+                  } ]
+                },
+                &quot;relationshipUiConfig&quot; : { },
+                &quot;filter&quot; : {
+                  &quot;filterCriteria&quot; : [ ],
+                  &quot;booleanFilter&quot; : &quot;&quot;
+                },
+                &quot;targetObjectField&quot; : {
+                  &quot;field&quot; : &quot;vlocity_cmt__PropertyOwnerAccountId__c&quot;,
+                  &quot;whichEntity&quot; : &quot;TARGET&quot;
+                }
+              }
+            } ]
+          },
+          &quot;relationshipUiConfig&quot; : { },
+          &quot;filter&quot; : {
+            &quot;filterCriteria&quot; : [ ],
+            &quot;booleanFilter&quot; : &quot;&quot;
+          },
+          &quot;targetObjectField&quot; : {
+            &quot;field&quot; : &quot;vlocity_cmt__RootAccountId__c&quot;,
+            &quot;whichEntity&quot; : &quot;TARGET&quot;
+          }
+        }
+      } ]
+    },
+    &quot;globalUiConfig&quot; : {
+      &quot;allowRuntimeCustomizations&quot; : false
+    }
+  }
+}</graphDefinition>
+        <graphType>HorizontalHierarchy</graphType>
+    </relationshipGraphDefVersions>
+</RelationshipGraphDefinition>

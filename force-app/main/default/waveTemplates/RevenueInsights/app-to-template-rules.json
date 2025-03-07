@@ -1,0 +1,109 @@
+{
+  "constants": [],
+  "macros": [],
+  "rules": [
+    {
+      "name": "CreateVariableForAmountField",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "*"
+        },
+        {
+          "type": "component",
+          "name": "*"
+        },
+        {
+          "type": "xmd",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "replace",
+          "key": "\"Amount\"",
+          "value": "\"${Variables.Opportunity_Amount.fieldName}\""
+        },
+        {
+          "action": "replace",
+          "key": "\"Total Amount\"",
+          "value": "\"Total ${Variables.Opportunity_Amount.fieldName}\""
+        },
+        {
+          "action": "replace",
+          "key": "'Amount'",
+          "value": "'${Variables.Opportunity_Amount.fieldName}'"
+        },
+        {
+          "action": "replace",
+          "key": "sum_Amount",
+          "value": "sum_${Variables.Opportunity_Amount.fieldName}"
+        },
+        {
+          "action": "replace",
+          "key": "avg_Amount",
+          "value": "avg_${Variables.Opportunity_Amount.fieldName}"
+        },
+        {
+          "action": "replace",
+          "key": ".Amount\"",
+          "value": ".${Variables.Opportunity_Amount.fieldName}\""
+        },
+        {
+          "action": "replace",
+          "key": ".Amount'",
+          "value": ".${Variables.Opportunity_Amount.fieldName}'"
+        }
+      ]
+    },
+    {
+      "name": "CreateVariableForSplitAmountField",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "*"
+        },
+        {
+          "type": "component",
+          "name": "*"
+        },
+        {
+          "type": "xmd",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "replace",
+          "key": "\"SplitAmount\"",
+          "value": "\"${Variables.OpportunitySplit_Amount.fieldName}\""
+        },
+        {
+          "action": "replace",
+          "key": "'SplitAmount'",
+          "value": "'${Variables.OpportunitySplit_Amount.fieldName}'"
+        },
+        {
+          "action": "replace",
+          "key": "sum_SplitAmount",
+          "value": "sum_${Variables.OpportunitySplit_Amount.fieldName}"
+        },
+        {
+          "action": "replace",
+          "key": "avg_SplitAmount",
+          "value": "avg_${Variables.OpportunitySplit_Amount.fieldName}"
+        },
+        {
+          "action": "replace",
+          "key": ".SplitAmount\"",
+          "value": ".${Variables.OpportunitySplit_Amount.fieldName}\""
+        },
+        {
+          "action": "replace",
+          "key": ".SplitAmount'",
+          "value": ".${Variables.OpportunitySplit_Amount.fieldName}'"
+        }
+      ]
+    }
+  ]
+}

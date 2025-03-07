@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>This Dataraptor will update the case to closed</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;CaseDetails&quot; : {
+    &quot;CaseId&quot; : &quot;5003h000006I333AAC&quot;,
+    &quot;CaseNumber&quot; : &quot;00001012&quot;,
+    &quot;CaseOwner&quot; : &quot;Sebanti Chowhury&quot;,
+    &quot;CasePriority&quot; : &quot;High&quot;,
+    &quot;CaseStatusBillingDispute&quot; : &quot;New&quot;,
+    &quot;CaseStatusEnergyComplaint&quot; : &quot;Escalation&quot;,
+    &quot;RecordTypeName&quot; : &quot;Billing Dispute&quot;
+  },
+  &quot;DRGetCaseStatus&quot; : {
+    &quot;RelatedCaseDetails&quot; : {
+      &quot;AccountId&quot; : &quot;0013h00000C1iZWAAZ&quot;,
+      &quot;StatementId&quot; : &quot;a4V3h000000SMZaEAO&quot;
+    }
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLUpdateCaseStatus</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>4befa490-9f5f-b3da-144a-4a8b41d51449</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__Statement__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ddf74bdf-1036-1ba0-dbf8-4cbfc9ea07fa</globalKey>
+        <inputFieldName>CaseDetails:CaseComments</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Comments</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0a6f85eb-77b9-a07d-5db1-d4cad7e01b39</globalKey>
+        <inputFieldName>AccountStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7167571d-522c-c9ee-5d63-21e4817635a2</globalKey>
+        <inputFieldName>CaseStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>1643a76e-c18b-8d18-18da-a0d24e057aa9</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>72dda505-dd3a-7529-cdfe-3f7b4e70eb75</globalKey>
+        <inputFieldName>CaseDetails:CaseId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>eb00739f-2a40-1eff-97ca-83a8c7c247ce</globalKey>
+        <inputFieldName>StatementId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__Statement__c</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Approved</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f6e1d0e4-9625-0482-0d1a-cc0f77e7863c</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__Statement__c</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>80a8dba1-c66d-fc9f-a553-da02dac5f0b2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1517b305-9782-b133-b2a3-e36690444b2e</globalKey>
+        <inputFieldName>BillingAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-UpdateCaseStatus</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;CaseDetails&quot; : {
+    &quot;CaseId&quot; : &quot;5003h000006Hs6JAAS&quot;,
+    &quot;CaseNumber&quot; : &quot;00001008&quot;,
+    &quot;CaseOwner&quot; : &quot;Sebanti Chowhury&quot;,
+    &quot;CaseStatusBillingDispute&quot; : null,
+    &quot;CaseStatusEnergyComplaint&quot; : &quot;Under Investigation&quot;,
+    &quot;RecordTypeName&quot; : &quot;Energy Complaint&quot;
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLUpdateCaseStatus_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

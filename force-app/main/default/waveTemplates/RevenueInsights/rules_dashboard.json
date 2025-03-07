@@ -1,0 +1,223 @@
+{
+    "constants": [
+      {
+        "name": "Rollup_Commit_Filter",
+        "value": "${Variables.isCumulativeEnabled ? 'CommitForecast' : 'CommitOnly'}"
+      },
+      {
+        "name": "Rollup_Pipeline_Cumulative",
+        "value": "ForecastingItemCategory = 'OpenPipeline'"
+      },
+      {
+        "name": "Rollup_Pipeline_Single",
+        "value": "ForecastingItemCategory = 'PipelineOnly' OR ForecastingItemCategory = 'BestCaseOnly' OR ForecastingItemCategory = 'CommitOnly'"
+      },
+      {
+        "name": "Rollup_Pipeline_Filter",
+        "value": "${Variables.isCumulativeEnabled ? Constants.Rollup_Pipeline_Cumulative : Constants.Rollup_Pipeline_Single}"
+      },
+      {
+        "name": "Rollup_Last_7_Days_Cumulative",
+        "value": "[\"Closed\", \"Forecast\"]"
+      },
+      {
+        "name": "Rollup_Last_7_Days_Single",
+        "value": "[\"Forecast\"]"
+      },
+      {
+        "name": "Rollup_Last_7_Days_Filter",
+        "value": "${Variables.isCumulativeEnabled ? Constants.Rollup_Last_7_Days_Cumulative : Constants.Rollup_Last_7_Days_Single}"
+      }
+    ],
+    "rules":
+    [
+      {
+        "name": "RemoveProductFromDashboard",
+        "condition": "${Variables.Has_Products == 'No'}",
+        "appliesTo": [
+          {
+            "type": "dashboard",
+            "name": "*"
+          }
+        ],
+        "actions": [
+          {
+            "action": "delete",
+            "description": "Delete Top Products step",
+            "path": "$.state.steps.top_products"
+          },
+          {
+            "action": "delete",
+            "description": "Delete product widget",
+            "path": "$.state.widgets.table_3"
+          },
+          {
+            "action": "delete",
+            "description": "delete widget from layout",
+            "path": "$.state.gridLayouts..[?(@.name=='table_3')]"
+          },
+          {
+            "action": "delete",
+            "description": "delete Product from datasource connections",
+            "path": "$.state.dataSourceLinks..fields[?(@.dataSourceName=~ /.*Product.*/i)]"
+          },
+          {
+            "action": "set",
+            "description": "change Product text",
+            "path": "$.state.widgets.text_25.parameters.content.richTextContent[?(@.insert=='Top Products')].insert",
+            "value": "Opportunities with Overdue Tasks"
+          },
+          {
+            "action": "delete",
+            "description": "delete Product conditional formatting",
+            "path": "$.xmd.dimensions[?(@.field=='top_products.Product2.Name')]"
+          },
+          {
+            "action": "add",
+            "description": "Adding Overdue tasks widget to layout",
+            "path": "$.state.gridLayouts..[?(@.name=='Default')].pages[?(@.label=='Team Performance')].widgets",
+            "value": {
+                    "colspan": 14,
+                    "column": 32,
+                    "name": "table_5",
+                    "row": 70,
+                    "rowspan": 23,
+                    "widgetStyle": {
+                        "backgroundColor": "#FFFFFF",
+                        "borderColor": "#FFFFFF",
+                        "borderEdges": [
+                            "left",
+                            "right"
+                        ],
+                        "borderRadius": 0,
+                        "borderWidth": 8
+                    }
+                }
+          }
+        ]
+      },
+      {
+        "name": "QuarterlyForecastingEnabled",
+        "condition": "${Variables.isQuarterlyForecastingPeriod}",
+        "appliesTo": [
+          {
+            "type": "dashboard",
+            "name": "Revenue_Insights_tp"
+          }
+        ],
+        "actions": [
+          {
+            "action": "set",
+            "description": "set quarterly time filter values",
+            "path": "$.state.widgets.dateselector_2.parameters.customFilterPresets",
+            "value": [
+              "currentFiscalQuarter",
+              "previousFiscalQuarter",
+              "nextFiscalQuarter"
+           ]
+          }
+        ]
+      },
+      {
+        "name": "QuarterlyForecastingEnabled_w_splits",
+        "condition": "${Variables.isQuarterlyForecastingPeriod && Variables.Has_OpportunitySplits == 'Yes'}",
+        "appliesTo": [
+          {
+            "type": "dashboard",
+            "name": "Revenue_Insights_splits_w_collab"
+          }
+        ],
+        "actions": [
+          {
+            "action": "set",
+            "description": "set quarterly time filter values",
+            "path": "$.state.widgets.dateselector_2.parameters.customFilterPresets",
+            "value": [
+              "currentFiscalQuarter",
+              "previousFiscalQuarter",
+              "nextFiscalQuarter"
+           ]
+          }
+        ]
+      },
+      {
+        "name": "MonthlyForecastingEnabled",
+        "condition": "${!Variables.isQuarterlyForecastingPeriod}",
+        "appliesTo": [
+          {
+            "type": "dashboard",
+            "name": "Revenue_Insights_tp"
+          }
+        ],
+        "actions": [
+          {
+            "action": "set",
+            "description": "set monthly time filter values",
+            "path": "$.state.widgets.dateselector_2.parameters.customFilterPresets",
+            "value": [
+              "currentMonth",
+              "previousMonth",
+              "nextMonth"
+           ]
+          },
+          {
+            "action": "set",
+            "description": "set monthly time filter start value",
+            "path": "$.state.steps.CloseDate_1.start",
+            "value": [
+              [
+                  [
+                      "month",
+                      0
+                  ],
+                  [
+                      "month",
+                      0
+                  ]
+              ]
+          ]
+          }
+        ]
+      },
+      {
+        "name": "MonthlyForecastingEnabled_w_splits",
+        "condition": "${!Variables.isQuarterlyForecastingPeriod && Variables.Has_OpportunitySplits == 'Yes'}",
+        "appliesTo": [
+          {
+            "type": "dashboard",
+            "name": "Revenue_Insights_splits_w_collab"
+          }
+        ],
+        "actions": [
+          {
+            "action": "set",
+            "description": "set monthly time filter values",
+            "path": "$.state.widgets.dateselector_2.parameters.customFilterPresets",
+            "value": [
+              "currentMonth",
+              "previousMonth",
+              "nextMonth"
+           ]
+          },
+          {
+            "action": "set",
+            "description": "set monthly time filter start value",
+            "path": "$.state.steps.CloseDate_1.start",
+            "value": [
+              [
+                  [
+                      "month",
+                      0
+                  ],
+                  [
+                      "month",
+                      0
+                  ]
+              ]
+          ]
+          }
+        ]
+      }
+    ]
+  }
+  

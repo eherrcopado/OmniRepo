@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;accId&quot;:&quot;0018c0000292CfXAAU&quot;}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>sfiEnergySelfService/GetPaymentRecords</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DRGetPaymentRecords</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;sfiEnergySelfServiceGetPaymentRecords&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;accId&quot;,
+    &quot;inputParam&quot; : &quot;accId&quot;
+  } ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetComboBoxFields</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;comboboxfields&quot; : [ {
+      &quot;label&quot; : &quot;SfiEnergySelfServiceLast6Months&quot;,
+      &quot;value&quot; : &quot;6&quot;
+    }, {
+      &quot;label&quot; : &quot;SfiEnergySelfServiceLast12Months&quot;,
+      &quot;value&quot; : &quot;12&quot;
+    }, {
+      &quot;label&quot; : &quot;SfiEnergySelfServiceLast24Months&quot;,
+      &quot;value&quot; : &quot;24&quot;
+    } ]
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues2&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetCsvFileName</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;csvFileName&quot; : &quot;paymentRecord&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues3&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetPaymentColumns</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;columns&quot; : [ {
+      &quot;cellAttributes&quot; : {
+        &quot;alignment&quot; : &quot;left&quot;
+      },
+      &quot;fieldName&quot; : &quot;BillingPeriod&quot;,
+      &quot;fixedWidth&quot; : 185,
+      &quot;hideDefaultActions&quot; : true,
+      &quot;label&quot; : &quot;SfiEnergySelfServiceBillingPeriod&quot;,
+      &quot;sortable&quot; : false,
+      &quot;type&quot; : &quot;text&quot;
+    }, {
+      &quot;cellAttributes&quot; : {
+        &quot;alignment&quot; : &quot;left&quot;
+      },
+      &quot;fieldName&quot; : &quot;TotalUsage&quot;,
+      &quot;fixedWidth&quot; : 185,
+      &quot;hideDefaultActions&quot; : true,
+      &quot;label&quot; : &quot;SfiEnergySelfServiceConsumption&quot;,
+      &quot;sortable&quot; : true,
+      &quot;type&quot; : &quot;number&quot;
+    }, {
+      &quot;cellAttributes&quot; : {
+        &quot;alignment&quot; : &quot;left&quot;
+      },
+      &quot;fieldName&quot; : &quot;UoM&quot;,
+      &quot;fixedWidth&quot; : 185,
+      &quot;hideDefaultActions&quot; : true,
+      &quot;label&quot; : &quot;SfiEnergySelfServiceUoM&quot;,
+      &quot;sortable&quot; : false,
+      &quot;type&quot; : &quot;text&quot;
+    }, {
+      &quot;cellAttributes&quot; : {
+        &quot;alignment&quot; : &quot;left&quot;
+      },
+      &quot;fieldName&quot; : &quot;Amount&quot;,
+      &quot;fixedWidth&quot; : 185,
+      &quot;hideDefaultActions&quot; : true,
+      &quot;label&quot; : &quot;SfiEnergySelfServiceAmount&quot;,
+      &quot;sortable&quot; : true,
+      &quot;type&quot; : &quot;currency&quot;
+    }, {
+      &quot;cellAttributes&quot; : {
+        &quot;alignment&quot; : &quot;left&quot;
+      },
+      &quot;fieldName&quot; : &quot;DueDate&quot;,
+      &quot;fixedWidth&quot; : 185,
+      &quot;hideDefaultActions&quot; : true,
+      &quot;label&quot; : &quot;SfiEnergySelfServiceDueDate&quot;,
+      &quot;sortable&quot; : true,
+      &quot;type&quot; : &quot;date&quot;,
+      &quot;typeAttributes&quot; : {
+        &quot;day&quot; : &quot;2-digit&quot;,
+        &quot;month&quot; : &quot;short&quot;,
+        &quot;year&quot; : &quot;numeric&quot;
+      }
+    }, {
+      &quot;cellAttributes&quot; : {
+        &quot;alignment&quot; : &quot;left&quot;
+      },
+      &quot;fieldName&quot; : &quot;Bill&quot;,
+      &quot;fixedWidth&quot; : 190,
+      &quot;label&quot; : &quot;SfiEnergySelfServiceBill&quot;,
+      &quot;type&quot; : &quot;button&quot;,
+      &quot;typeAttributes&quot; : {
+        &quot;disabled&quot; : false,
+        &quot;iconPosition&quot; : &quot;right&quot;,
+        &quot;label&quot; : &quot;SfiEnergySelfServiceViewBill&quot;,
+        &quot;name&quot; : &quot;statementUrl&quot;,
+        &quot;title&quot; : &quot;SfiEnergySelfServiceBillURL&quot;,
+        &quot;value&quot; : &quot;ViewBill&quot;,
+        &quot;variant&quot; : &quot;base&quot;
+      }
+    } ]
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Response</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : {
+    &quot;ComboboxFields&quot; : &quot;%GetComboBoxFields:comboboxfields%&quot;,
+    &quot;CsvFileName&quot; : &quot;%GetCsvFileName:csvFileName%&quot;,
+    &quot;PaymentRecordColumns&quot; : &quot;%GetPaymentColumns:columns%&quot;,
+    &quot;PaymentRecords&quot; : &quot;%DRGetPaymentRecords:Statement%&quot;
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessKey>sfiEnergySelfService_GetPaymentRecords</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>GetPaymentRecords</subType>
+    <type>sfiEnergySelfService</type>
+    <uniqueName>sfiEnergySelfService_GetPaymentRecords_Procedure_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>0c387c86-b671-1bbe-d87c-182bad636eba</webComponentKey>
+</OmniIntegrationProcedure>

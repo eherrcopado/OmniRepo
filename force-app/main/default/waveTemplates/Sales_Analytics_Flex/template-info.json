@@ -1,0 +1,407 @@
+{
+  "assetVersion" : 42,
+  "releaseInfo" : {
+    "templateVersion" : "5.0",
+    "notesFile" : "releasenotes.html"
+  },
+  "apexCallback" : {
+    "name" : "SalesWaveConfigurationModifierFlex"
+  },
+  "icons" : {
+    "appBadge" : {
+      "name" : "6.png"
+    },
+    "templateBadge" : {
+      "name" : "sales.png"
+    },
+    "templateDetail" : {
+      "name" : "sales-details.png"
+    }
+  },
+  "dashboards" : [
+    {
+      "file" : "dashboard/Quota_Progress.json",
+      "name" : "Quota_Progress",
+      "label" : "Forecast"
+    },
+    {
+      "file" : "dashboard/Exec_Overview_Pipeline_Performance.json",
+      "name" : "Exec_Overview_Pipeline_Performance",
+      "label" : "Executive Overview"
+    },
+    {
+      "file" : "dashboard/Pipeline_Changes.json",
+      "name" : "Pipeline_Changes",
+      "label" : "Team Trending"
+    },
+    {
+      "file" : "dashboard/Account_Summary.json",
+      "name" : "Account_Summary",
+      "label" : "Summary of Account"
+    },
+    {
+      "file" : "dashboard/About_Wave_for_Sales.json",
+      "name" : "About_Wave_for_Sales",
+      "label" : "Sales Analytics Home"
+    },
+    {
+      "file" : "dashboard/Manager_Overview.json",
+      "name" : "Manager_Overview",
+      "label" : "Leaderboard"
+    },
+    {
+      "file" : "dashboard/Manager_Activities.json",
+      "name" : "Manager_Activities",
+      "label" : "Team Activities"
+    },
+    {
+      "file" : "dashboard/Sales_Overview_Home.json",
+      "name" : "Sales_Overview_Home",
+      "label" : "Sales Overview Home"
+    },
+    {
+      "condition" : "${Constants.HasProduct || Variables.Overrides.createAllDashboards}",
+      "file" : "dashboard/Manager_Opportunity_Discovery.json",
+      "name" : "Manager_Opportunity_Discovery",
+      "label" : "Team Whitespace"
+    },
+    {
+      "condition" : "${Constants.HasProduct || Variables.Overrides.createAllDashboards}",
+      "file" : "dashboard/Opportunity_Discovery.json",
+      "name" : "Opportunity_Discovery",
+      "label" : "Sales Rep Whitespace"
+    },
+    {
+      "file" : "dashboard/Sales_Ops_Manager_Overview.json",
+      "name" : "Sales_Ops_Manager_Overview",
+      "label" : "Company Overview"
+    },
+    {
+      "file" : "dashboard/Sales_Ops_Pipeline_Changes.json",
+      "name" : "Sales_Ops_Pipeline_Changes",
+      "label" : "Company Trending"
+    },
+    {
+      "file" : "dashboard/Sales_Rep_Pipeline_Changes.json",
+      "name" : "Sales_Rep_Pipeline_Changes",
+      "label" : "Trending"
+    },
+    {
+      "file" : "dashboard/Team_Productivity.json",
+      "name" : "Team_Productivity",
+      "label" : "Team Benchmark"
+    },
+    {
+      "file" : "dashboard/Sales_Performance.json",
+      "name" : "Sales_Performance",
+      "label" : "Sales Performance"
+    },
+    {
+      "file" : "dashboard/Sales_Rep_Overview.json",
+      "name" : "Sales_Rep_Overview",
+      "label" : "Sales Rep Overview"
+    },
+    {
+      "condition" : "${Constants.HasProduct || Variables.Overrides.createAllDashboards}",
+      "file" : "dashboard/Opportunity_Summary.json",
+      "name" : "Opportunity_Summary",
+      "label" : "Summary of Opportunity"
+    },
+    {
+      "condition" : "${Constants.HasLead || Variables.Overrides.createAllDashboards}",
+      "file" : "dashboard/Lead_Analysis.json",
+      "name" : "Lead_Analysis",
+      "label" : "Lead Analysis"
+    },
+    {
+      "file" : "dashboard/Sales_Stage_Analysis.json",
+      "name" : "Sales_Stage_Analysis",
+      "label" : "Sales Stage Analysis"
+    },
+    {
+      "file" : "dashboard/Accounts_Dashboard.json",
+      "name" : "Accounts_Dashboard",
+      "label" : "Accounts"
+    }
+  ],
+  "description" : "Demo template based off of v5 of the standard Sales Analytics template. This demo template is configured to use both the default out-of-the-box SDO data and data loaded by the Analytics Data Demo Tool to give you richer visualization in the dashboards.",
+  "name" : "Sales_Analytics_Flex",
+  "eltDataflows" : [
+    {
+      "file" : "workflow/SalesAnalyticsDataflow.json"
+    }
+  ],
+  "datasetFiles" : [
+    {
+      "label" : "Accounts",
+      "name" : "account",
+      "userXmd" : "external_files/account_XMD_template.json"
+    },
+    {
+      "label" : "Cases",
+      "condition" : "${Constants.HasCases}",
+      "name" : "case",
+      "userXmd" : "external_files/case_XMD_template.json"
+    },
+    {
+      "label" : "Users",
+      "name" : "user",
+      "userXmd" : "external_files/user_XMD_template.json"
+    },
+    {
+      "condition" : "${Variables.UsingRoleHierarchy == 'Yes'}",
+      "label" : "Roles",
+      "name" : "user_role"
+    },
+    {
+      "label" : "Opportunities",
+      "name" : "opportunity",
+      "userXmd" : "external_files/opportunity_XMD_template.json"
+    },
+    {
+      "label" : "Activities",
+      "name" : "activity",
+      "userXmd" : "external_files/activity_XMD_template.json"
+    },
+    {
+      "label" : "User Allocation",
+      "name" : "quota",
+      "userXmd" : "external_files/quota_XMD_template.json"
+    },
+    {
+      "label" : "Oppty Products",
+      "condition" : "${Constants.HasProduct || Variables.Overrides.createAllDashboards}",
+      "name" : "opportunity_products",
+      "userXmd" : "external_files/opportunity_products_XMD_template.json"
+    },
+    {
+      "label" : "Products",
+      "condition" : "${Constants.HasProduct || Variables.Overrides.createAllDashboards}",
+      "name" : "product"
+    },
+    {
+      "label" : "Pipeline Trending",
+      "name" : "pipeline_trending",
+      "userXmd" : "external_files/pipeline_trending_XMD_template.json"
+    },
+    {
+      "label" : "Leads",
+      "condition" : "${Constants.HasLead}",
+      "name" : "lead",
+      "userXmd" : "external_files/lead_XMD_template.json"
+    },
+    {
+      "label" : "Campaigns",
+      "condition" : "${Constants.HasCampaigns}",
+      "name" : "campaigns"
+    },
+    {
+      "label" : "Campaign Members",
+      "condition" : "${Constants.HasCampaigns}",
+      "name" : "campaign_members"
+    },
+    {
+      "label" : "ForecastingItem",
+      "condition" : "${Constants.HasCollaborativeForecasting}",
+      "name" : "forecasting_item",
+      "userXmd" : "external_files/forecasting_item_XMD_template.json"
+    },
+    {
+      "label" : "Opportunity Splits",
+      "condition" : "${Constants.HasOpportunitySplits}",
+      "name" : "opportunity_splits",
+      "userXmd" : "external_files/opportunitysplits_XMD_template.json"
+    },
+    {
+      "label" : "ProductSchedules",
+      "condition" : "${Constants.HasRevenueSchedule}",
+      "name" : "ProductSchedules",
+      "userXmd" : "external_files/opportunityProductSchedule_XMD_template.json"
+    },
+    {
+      "label" : "RPLCM_Opportunity_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_opportunity_dataset"
+    },
+    {
+      "label" : "RPLCM_PipelineTrending_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_pipelinetrending_dataset"
+    },
+    {
+      "label" : "RPLCM_OpportunityProducts_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_opportunityproducts_dataset"
+    },
+    {
+      "label" : "RPLCM_User_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_user_dataset"
+    },
+    {
+      "label" : "RPLCM_Lead_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_lead_dataset"
+    },
+    {
+      "label" : "RPLCM_SalesRepOpportunity_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_salesrepopportunity_dataset"
+    },
+    {
+      "label" : "RPLCM_SplitsOrProductOpportunity_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_splitsorproductopportunity_dataset"
+    },
+    {
+      "label" : "RPLCM_ProductOrSchedule_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_productorschedule_dataset"
+    },
+    {
+      "label" : "RPLCM_ProductOrOpportunity_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_productoropportunity_dataset"
+    },
+    {
+      "label" : "RPLCM_OpportunityOrSchedules_Dataset",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "name" : "rplcm_opportunityorschedules_dataset"
+    }
+  ],
+  "externalFiles" : [
+    {
+      "file" : "external_files/plain_quota.csv",
+      "condition" : "${!Constants.HasCollaborativeForecastingQuota}",
+      "name" : "plain_quota",
+      "overwriteOnUpgrade" : "${Variables.DontOverwriteQuota ? 'Never' : 'IfDifferent'}",
+      "schema" : "external_files/plain_quota.json",
+      "type" : "CSV"
+    }
+  ],
+  "imageFiles" : [
+    {
+      "name" : "SalesWaveLogo",
+      "file" : "images/SalesWaveLogo.png"
+    },
+    {
+      "name" : "OpportunityLogo",
+      "file" : "images/OpportunityLogo.png"
+    },
+    {
+      "name" : "astro_binoculars",
+      "file" : "images/astro_binoculars.png"
+    },
+    {
+      "name" : "Info",
+      "file" : "images/Info.png"
+    }
+  ],
+  "lenses" : [
+    {
+      "file" : "lenses/Historical_Pipeline_By_Stage.json",
+      "name" : "Historical_Pipeline_By_Stage",
+      "label" : "Historical Pipeline By Stage"
+    },
+    {
+      "file" : "lenses/Historical_Pipeline_By_Forecast.json",
+      "name" : "Historical_Pipeline_By_Forecast",
+      "label" : "Historical Pipeline By Forecast"
+    },
+    {
+      "file" : "lenses/Historical_Pipeline_Stage_By_Quarter.json",
+      "name" : "Historical_Pipeline_Stage_By_Quarter",
+      "label" : "Historical Pipeline Stage by Quarter"
+    },
+    {
+      "file" : "lenses/Historical_Pipeline_Forecast_By_Quarter.json",
+      "name" : "Historical_Pipeline_Forecast_By_Quarter",
+      "label" : "Historical Pipeline Forecast by Quarter"
+    },
+    {
+      "file" : "lenses/Explore_Opportunities.json",
+      "name" : "Explore_Opportunities",
+      "label" : "Explore Opportunities"
+    },
+    {
+      "file" : "lenses/Sales_Stage_Details.json",
+      "name" : "Sales_Stage_Details",
+      "label" : "Sales Stage Details"
+    }
+  ],
+  "label" : "Sales Analytics v5 - Demo",
+  "folderDefinition" : "folder.json",
+  "rules" : [
+    {
+      "type" : "templateToApp",
+      "file" : "macros.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules_exec_dashboard.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules-leads.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules_collaborative_forecasting.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules_no_hierarchy.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules_MapReplacement.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules_Custom_History.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules_rplcm.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules_Product_Schedules.json"
+    },
+    {
+      "file" : "demo_rules/handle-account.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-event.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-task.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-lead.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-case.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-oppty.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-opptyhistory.rules.json",
+      "type" : "templateToApp"
+    }
+  ],
+  "templateIcon" : "sales.png",
+  "uiDefinition" : "ui.json",
+  "variableDefinition" : "variables.json"
+}

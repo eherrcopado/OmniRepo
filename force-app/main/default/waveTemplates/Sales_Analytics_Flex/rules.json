@@ -1,0 +1,3087 @@
+{
+  "constants": [
+    {
+      "name": "SplitOwnerPrefix",
+      "value": "${array:contains(Variables.SObjectChoices, 'Opportunity Splits') ? '' : ''}"
+    },    
+    {
+      "name": "AmountField",
+      "value": "${array:contains(Variables.SObjectChoices, 'Opportunity Splits') ? 'SplitAmount' : Variables.Opportunity_Amount.fieldName}"
+    },
+    {
+      "name": "OpportunitydatasetPrefix",
+      "value": "${array:contains(Variables.SObjectChoices, 'Products') ? 'Opportunity.' : ''}"
+    },
+    {
+      "name": "ProductOrSplitAmountField",
+      "value": "${array:contains(Variables.SObjectChoices, 'Opportunity Splits') ? 'SplitAmount' : array:contains(Variables.SObjectChoices, 'Products') ? Variables.Product_Amount.fieldName : Variables.Opportunity_Amount.fieldName}"
+    },
+    {
+      "name": "OpportunityOrSplitdatasetPrefix",
+      "value": "${array:contains(Variables.SObjectChoices, 'Opportunity Splits') || array:contains(Variables.SObjectChoices, 'Products') ? 'Opportunity.' : ''}"
+    },
+    {
+      "name": "Total",
+      "value": "${array:contains(Variables.SObjectChoices, 'Products') ? Variables.Product_Amount.fieldName : Variables.Opportunity_Amount.fieldName}"
+    },
+    {
+      "name": "Fiscal_Month_Offset",
+      "value": "${Variables.FY_Month_Offset_Map[Variables.Fiscal_Month]}"
+    },
+    {
+      "name": "Fiscal_Prefix",
+      "value": "${Variables.FY_Month_Offset_Map[Variables.Fiscal_Month] == '0' ? '' : 'fiscal_'}"
+    },
+    {
+      "name": "Fiscal_Postfix",
+      "value": "${Variables.FY_Month_Offset_Map[Variables.Fiscal_Month] == '0' ? '' : '_Fiscal'}"
+    },
+    {
+      "name": "First_Day_Of_Week_Number",
+      "value": "${Variables.First_Day_Of_Week}"
+    },
+    {
+      "name": "OpportunityRecordTypeField",
+      "value": "${Variables.Has_OpportunityRecordType == 'Yes' ? 'Opportunity.RecordType.Name' : 'Id'}"
+    },
+    {
+      "name": "RecordTypeField",
+      "value": "${Variables.Has_OpportunityRecordType == 'Yes'? 'RecordType.Name' : 'Id'}"
+    },
+    {
+      "name": "OpportunityMoreHasValues",
+      "value": "${!empty(Variables.Opportunity_All[0].fieldName)}"
+    },
+    {
+      "name": "OpportunityMoreMeasuresHasValues",
+      "value": "${!empty(Variables.Opportunity_Measure[0].fieldName)}"
+    },
+    {
+      "name": "OpportunityMoreDimsHasValues",
+      "value": "${!empty(Variables.Opportunity_Dimension[0].fieldName)}"
+    },
+    {
+      "name": "AccountMoreHasValues",
+      "value": "${!empty(Variables.Account_All[0].fieldName)}"
+    },
+    {
+      "name": "AccountMoreMeasuresHasValues",
+      "value": "${!empty(Variables.Account_Measure[0].fieldName)}"
+    },
+    {
+      "name": "AccountMoreDimsHasValues",
+      "value": "${!empty(Variables.Account_Dimension[0].fieldName)}"
+    },
+    {
+      "name": "UserMoreHasValues",
+      "value": "${!empty(Variables.User_All[0].fieldName)}"
+    },
+    {
+      "name": "ProductMoreHasValues",
+      "value": "${!empty(Variables.Product_All[0].fieldName)}"
+    },
+    {
+      "name": "CaseMoreHasValues",
+      "value": "${!empty(Variables.Case_All[0].fieldName)}"
+    },
+    {
+      "name": "EventMoreHasValues",
+      "value": "${!empty(Variables.Activities_All[0].fieldName)}"
+    },
+    {
+      "name": "TaskMoreHasValues",
+      "value": "${!empty(Variables.Activities_All[0].fieldName)}"
+    },
+    {
+      "name": "LeadMoreHasValues",
+      "value": "${!empty(Variables.Lead_All[0].fieldName)}"
+    },
+    {
+      "name": "LeadsMoreMeasuresHasValues",
+      "value": "${!empty(Variables.Lead_Measure[0].fieldName)}"
+    },
+    {
+      "name": "LeadsMoreDimsHasValues",
+      "value": "${!empty(Variables.Lead_Dimension[0].fieldName)}"
+    },
+    {
+      "name": "CampaignMoreHasValues",
+      "value": "${!empty(Variables.Campaign_All[0].fieldName)}"
+    },
+    {
+      "name": "CampaignMoreMeasuresHasValues",
+      "value": "${!empty(Variables.Campaign_Measure[0].fieldName)}"
+    },
+    {
+      "name": "CampaignMoreDimsHasValues",
+      "value": "${!empty(Variables.Campaign_Dimension[0].fieldName)}"
+    },
+    {
+      "name": "HasCustomHistory",
+      "value": "${Variables.Opportunity_Amount.fieldName != 'Amount' && array:contains(Variables.CustomHistoricalAmount, Variables.Opportunity_Amount.fieldName) }"
+    },
+    
+    {
+      "name": "HasRecordType",
+      "value": "${Variables.Has_OpportunityRecordType == 'Yes'}"
+    },
+    {
+      "name": "HasLead",
+      "value": "${array:contains(Variables.SObjectChoices,'Leads')}"
+    },
+    {
+      "name": "HasCampaigns",
+      "value": "${array:contains(Variables.SObjectChoices,'Campaigns')}"
+    },
+    {
+      "name": "HasOpportunitySplits",
+      "value": "${array:contains(Variables.SObjectChoices,'Opportunity Splits')}"
+    },
+    {
+      "name": "HasTeamBenchmarking",
+      "value": "${Variables.Has_SecurityPredicate != 'Option 1: Users view data owned by them and subordinates'}"
+    },
+    {
+      "name": "UsersSeeAll",
+      "value": "${Variables.Has_SecurityPredicate == 'Option 3: Users view all data'}"
+    },
+    {
+      "name": "HasProduct",
+      "value": "${array:contains(Variables.SObjectChoices, 'Products')}"
+    },
+    {
+      "name": "HasNoProduct",
+      "value": "${!array:contains(Variables.SObjectChoices, 'Products')}"
+    },
+    {
+      "name": "HasRevenueSchedule",
+      "value": "${array:contains(Variables.SObjectChoices,'Product Schedules') && Constants.HasProduct}"
+    },
+    {
+      "name": "HasCustomAmount",
+      "value": "${(Variables.Opportunity_Amount.fieldName != 'Amount' && !Constants.HasCustomHistory) || Constants.HasRevenueSchedule}"
+    },
+    {
+      "name": "AllProdsHaveSchedules",
+      "value": "${Variables.Has_LineItems_with_No_Schedule == 'No' && Constants.HasRevenueSchedule}"
+    },
+    {
+      "name": "IsStandardOpportunityDataset",
+      "value": "${!Constants.HasOpportunitySplits && !Constants.HasRevenueSchedule}"
+    },
+    {
+      "name": "HasAccountTeams",
+      "value": "${Variables.Has_AccountTeams != 'Option 3: Exclude account team members data'}"
+    },
+    {
+      "name": "HasOpportunityTeams",
+      "value": "${Variables.Has_OpportunityTeams != 'Option 3: Exclude opportunity team members data'}"
+    },
+    {
+      "name": "AllOpsHaveLineItems",
+      "value": "${Variables.Has_Opps_With_No_LineItems == 'No' && array:contains(Variables.SObjectChoices, 'Products')}"
+    },
+    
+    {
+      "name": "HasUSMap",
+      "value": "${Variables.Geo_Maps == 'US Map'}"
+    },
+    {
+      "name": "HasWorldMap",
+      "value": "${Variables.Geo_Maps == 'World Map'}"
+    },
+    {
+      "name": "HasBarChartMap",
+      "value": "${Variables.Geo_Maps == 'Bar Chart'}"
+    },
+    {
+      "name": "HasQuota",
+      "value": "${Variables.Has_Quota != 'No Quota'}"
+    },
+    {
+      "name": "HasOpportunityRecordType_Dataflow",
+      "value": "${Variables.Has_OpportunityRecordType_Dataflow == 'Yes'}"
+    },
+    {
+      "name": "HasCases",
+      "value": "${array:contains(Variables.SObjectChoices, 'Cases')}"
+    },
+    {
+      "name": "HasOpptyTeamSecurity",
+      "value": "${Variables.OpportunityTeam_SecurityPredicate[Variables.Has_OpportunityTeams] == 'Yes'}"
+    },
+    {
+      "name": "HasAcctTeamSecurity",
+      "value": "${Variables.AccountTeam_SecurityPredicate[Variables.Has_AccountTeams] == 'Yes'}"
+    },
+    {
+      "name": "StandardSecurityPredicate",
+      "value": "'Owner.Role.Roles' == \"$User.UserRoleId\" || 'OwnerId' == \"$User.Id\" || 'Account.OwnerId' == \"$User.Id\""
+    },
+    {
+      "name": "StandardAndAccountTeamSecurityPredicate",
+      "value": "'Owner.Role.Roles' == \"$User.UserRoleId\" || 'OwnerId' == \"$User.Id\" || 'Account.OwnerId' == \"$User.Id\" || 'Account.AccountTeam.UserId' == \"$User.Id\" || 'Account.AccountTeam.User.Role.Roles' == \"$User.UserRoleId\""
+    },
+    {
+      "name": "StandardAndOpportunityTeamSecurityPredicate",
+      "value": "'Owner.Role.Roles' == \"$User.UserRoleId\" || 'OwnerId' == \"$User.Id\" || 'Account.OwnerId' == \"$User.Id\" || 'OpportunityTeam.UserId' == \"$User.Id\" || 'OpportunityTeam.User.Role.Roles' == \"$User.UserRoleId\" "
+    },
+    {
+      "name": "StandardAndBothTeamSecurityPredicate",
+      "value": "'Owner.Role.Roles' == \"$User.UserRoleId\" || 'OwnerId' == \"$User.Id\" || 'Account.OwnerId' == \"$User.Id\" || 'Account.AccountTeam.UserId' == \"$User.Id\" || 'OpportunityTeam.UserId' == \"$User.Id\" || 'OpportunityTeam.User.Role.Roles' == \"$User.UserRoleId\" || 'Account.AccountTeam.User.Role.Roles' == \"$User.UserRoleId\""
+    },
+    {
+      "name": "OpportunitySecurityPredicate",
+      "value": "${Constants.HasOpptyTeamSecurity && Constants.HasAcctTeamSecurity ? Constants.StandardAndBothTeamSecurityPredicate : Constants.HasOpptyTeamSecurity ? Constants.StandardAndOpportunityTeamSecurityPredicate : Constants.HasAcctTeamSecurity? Constants.StandardAndAccountTeamSecurityPredicate : Constants.StandardSecurityPredicate}"
+    },
+    {
+      "name": "StandardAndBothTeamSecurityPredicateSplits",
+      "value": "'Owner.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.Owner.Role.Roles' == \"$User.UserRoleId\" || 'SplitOwnerId' == \"$User.Id\" || 'Opportunity.OwnerId' == \"$User.Id\" || 'Opportunity.Account.OwnerId' == \"$User.Id\" || 'Opportunity.Account.AccountTeam.UserId' == \"$User.Id\" || 'Opportunity.OpportunityTeam.UserId' == \"$User.Id\" || 'Opportunity.OpportunityTeam.User.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.Account.AccountTeam.User.Role.Roles' == \"$User.UserRoleId\""
+    },
+    {
+      "name": "StandardAndOpportunityTeamSecurityPredicateSplits",
+      "value": "'Owner.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.Owner.Role.Roles' == \"$User.UserRoleId\" || 'SplitOwnerId' == \"$User.Id\" || 'Opportunity.OwnerId' == \"$User.Id\" || 'Opportunity.Account.OwnerId' == \"$User.Id\" || 'Opportunity.OpportunityTeam.UserId' == \"$User.Id\" || 'Opportunity.OpportunityTeam.User.Role.Roles' == \"$User.UserRoleId\""
+    },
+    {
+      "name": "StandardAndAccountTeamSecurityPredicateSplits",
+      "value": "'Owner.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.Owner.Role.Roles' == \"$User.UserRoleId\" || 'SplitOwnerId' == \"$User.Id\" || 'Opportunity.OwnerId' == \"$User.Id\" || 'Opportunity.Account.OwnerId' == \"$User.Id\" || 'Opportunity.Account.AccountTeam.UserId' == \"$User.Id\"  || 'Opportunity.Account.AccountTeam.User.Role.Roles' == \"$User.UserRoleId\""
+    },
+    {
+      "name": "StandardSecurityPredicateSplits",
+      "value": "'Owner.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.Owner.Role.Roles' == \"$User.UserRoleId\" || 'SplitOwnerId' == \"$User.Id\" || 'Opportunity.OwnerId' == \"$User.Id\" || 'Opportunity.Account.OwnerId' == \"$User.Id\""
+    },
+    {
+      "name": "OpportunitySplitsSecurityPredicate",
+      "value": "${Constants.HasOpptyTeamSecurity && Constants.HasAcctTeamSecurity ? Constants.StandardAndBothTeamSecurityPredicateSplits : Constants.HasOpptyTeamSecurity ? Constants.StandardAndOpportunityTeamSecurityPredicateSplits : Constants.HasAcctTeamSecurity? Constants.StandardAndAccountTeamSecurityPredicateSplits : Constants.StandardSecurityPredicateSplits}"
+    },
+    {
+      "name": "StandardProductSecurityPredicate",
+      "value": "'Opportunity.Owner.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.OwnerId' == \"$User.Id\" || 'Opportunity.Account.OwnerId' == \"$User.Id\""
+    },
+    {
+      "name": "StandardProductAndAccountTeamSecurityPredicate",
+      "value": "'Opportunity.Owner.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.OwnerId' == \"$User.Id\" || 'Opportunity.Account.OwnerId' == \"$User.Id\" || 'Opportunity.Account.AccountTeam.UserId' == \"$User.Id\" || 'Opportunity.Account.AccountTeam.User.Role.Roles' == \"$User.UserRoleId\""
+    },
+    {
+      "name": "StandardProductAndOpportunityTeamSecurityPredicate",
+      "value": "'Opportunity.Owner.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.OwnerId' == \"$User.Id\" || 'Opportunity.Account.OwnerId' == \"$User.Id\" || 'Opportunity.OpportunityTeam.UserId' == \"$User.Id\" || 'Opportunity.OpportunityTeam.User.Role.Roles' == \"$User.UserRoleId\""
+    },
+    {
+      "name": "StandardProductAndBothTeamSecurityPredicate",
+      "value": "'Opportunity.Owner.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.OwnerId' == \"$User.Id\" || 'Opportunity.Account.OwnerId' == \"$User.Id\" || 'Opportunity.Account.AccountTeam.UserId' == \"$User.Id\" || 'Opportunity.OpportunityTeam.UserId' == \"$User.Id\" || 'Opportunity.Account.AccountTeam.User.Role.Roles' == \"$User.UserRoleId\" || 'Opportunity.OpportunityTeam.User.Role.Roles' == \"$User.UserRoleId\" "
+    },
+    {
+      "name": "OpportunityProductSecurityPredicate",
+      "value": "${Constants.HasOpptyTeamSecurity && Constants.HasAcctTeamSecurity? Constants.StandardProductAndBothTeamSecurityPredicate : Constants.HasOpptyTeamSecurity ? Constants.StandardProductAndOpportunityTeamSecurityPredicate : Constants.HasAcctTeamSecurity? Constants.StandardProductAndAccountTeamSecurityPredicate : Constants.StandardProductSecurityPredicate}"
+    },
+    {
+      "name": "FilterByRecordType",
+      "value": "${!empty(Variables.OpptyRecordType[0]) && Variables.Has_OpportunityRecordType == 'Yes'}"
+    },
+    {
+      "name": "HasCollaborativeForecasting",
+      "value": "${array:contains(Variables.SObjectChoices, 'Collaborative Forecasting')}"
+    },
+    {
+      "name": "HasCumulativeForecasting",
+      "value": "${Variables.isCumulativeEnabled == true && Constants.HasCollaborativeForecasting}"
+    },
+    {
+      "name": "CumulativeForecastCategory",
+      "value": "${Constants.HasCumulativeForecasting? 'ForecastingItemCategory' : 'ForecastCategoryName'}"
+    },
+    {
+      "name": "CumulativePrefix",
+      "value": "${Constants.HasCumulativeForecasting ? 'Forecast.' : ''}"
+    },
+    {
+      "name": "OpportunityDatasetPrefix",
+      "value": "${Constants.HasOpportunitySplits || Constants.HasRevenueSchedule  ? 'Opportunity.' : ''}"
+    },
+    {
+      "name": "SalesRepBenchMarkRoleName",
+      "value": "${Variables.UsingRoleHierarchy == \"Yes\" ? 'Role.DeveloperName' : Variables.UsingRoleHierarchy == \"User Manager\" ? 'UserManager.UniqueUserName' : 'UniqueUserName'}"
+    },
+    {
+      "name": "UserRoleDevName",
+      "value": "${Constants.HasCollaborativeForecasting ? 'UniqueUserName' : Variables.UsingRoleHierarchy == \"Yes\" ? 'Role.DeveloperName' : Variables.UsingRoleHierarchy == \"User Manager\" ? 'UserManager.UniqueUserName' : 'UniqueUserName'}"
+    },
+    {
+      "name": "OwnerRoleName",
+      "value": "${Variables.UsingRoleHierarchy == \"Yes\" ? 'Owner.Role.Name' : Variables.UsingRoleHierarchy == \"User Manager\" ? 'Owner.UserManager.Name' : 'Owner.UniqueUserName'}"
+    },
+    {
+      "name": "OwnerMultiField",
+      "value": "${Variables.UsingRoleHierarchy == \"Yes\" ? 'Owner.Role.RoleNames' : Variables.UsingRoleHierarchy == \"User Manager\" ? 'Owner.UserManagerNames' : 'Owner.UniqueUserName'}"
+    },
+    {
+      "name": "HierarchyOwnerMultiField",
+      "value": "${Variables.UsingRoleHierarchy == \"Yes\" ? 'Owner.Role.Hierarchy_RoleNames' : Variables.UsingRoleHierarchy == \"User Manager\" ? 'Owner.UserManagerNames' : 'Owner.UniqueUserName'}"
+    },
+    {
+      "name": "UserMultiField",
+      "value": "${Variables.UsingRoleHierarchy == \"Yes\" ? 'Role.RoleNames' : Variables.UsingRoleHierarchy == \"User Manager\" ? 'UserManagerNames' : 'UniqueUserName'}"
+    },
+    {
+      "name": "RoleDevName",
+      "value": "${Constants.HasCollaborativeForecasting ? 'UniqueUserName' : Variables.UsingRoleHierarchy == \"Yes\" && !Constants.HasCollaborativeForecasting ? 'DeveloperName' : Variables.UsingRoleHierarchy == \"User Manager\" ? 'UniqueUserName' : 'UniqueUserName'}"
+    },
+    {
+      "name": "OwnerParentRollupField",
+      "value": "${Variables.UsingRoleHierarchy == \"Yes\" ? 'Owner.Role.RoleNames' : Variables.UsingRoleHierarchy == \"User Manager\" ? 'Owner.UserManagerNames' : 'Owner.UniqueUserName'}"
+    },
+    {
+      "name": "UserParentRollupField",
+      "value": "${Variables.UsingRoleHierarchy == \"Yes\" ? 'Role.RoleNames' : Variables.UsingRoleHierarchy == \"User Manager\" ? 'UserManagerNames' : 'UniqueUserName'}"
+    },
+    {
+      "name": "HasRoleHierarchy",
+      "value": "${Variables.UsingRoleHierarchy == \"Yes\"}"
+    },
+    {
+      "name": "HasUserManager",
+      "value": "${Variables.Has_Managers == \"Yes\"}"
+    },
+    
+    {
+      "name": "HasCollaborativeForecastingQuota",
+      "value": "${array:contains(Variables.SObjectChoices, 'Collaborative Forecasting') && Variables.Has_Quota == \"Collaborative Forecasting Quota\"}"
+    },
+    {
+      "name": "HasAccountHierarchy",
+      "value": "${Variables.UsingAccountHierarchy == \"Yes\"}"
+    },
+    {
+      "name": "ParentAccountNameField",
+      "value": "${Variables.UsingAccountHierarchy == \"Yes\" ? 'Account.Parent.ParentAccount.Name' : 'Account.Name'}"
+    },
+    {
+      "name": "ParentAccountCountryField",
+      "value": "${Variables.UsingAccountHierarchy == \"Yes\" ? 'Parent.ParentAccount.' : \"\"}"
+    },
+    {
+      "name": "ParentAccountIDField",
+      "value": "${Variables.UsingAccountHierarchy == \"Yes\" ? 'Account.Parent.AccountParents' : 'AccountId'}"
+    },
+    {
+      "name": "ChartTypeGeo1",
+      "value": "${Variables.MapType_Geo1 == \"Bar\" ? \"hbar\" : \"choropleth\"}"
+    },
+    {
+      "name": "ChartTypeGeo2",
+      "value": "${Variables.MapType_Geo2 == \"Bar\" ? \"hbar\" : \"choropleth\"}"
+    },
+    {
+      "name": "MapTypeGeo1",
+      "value": "${Variables.MapType_Geo1 == \"World\" ? \"World Countries\" : Variables.MapType_Geo1 == \"US\" ? \"US States\" : \"\"}"
+    },
+    {
+      "name": "MapTypeGeo2",
+      "value": "${Variables.MapType_Geo2 == \"World\" ? \"World Countries\" : Variables.MapType_Geo2 == \"US\" ? \"US States\" : \"\"}"
+    },
+    {
+      "name": "LeadScoreField",
+      "value": "${Variables.Has_LeadScore ? 'ScoreBucket' : Variables.Lead_Rating.fieldName}"
+    },
+    {
+      "name": "LeadScoreFieldLabel",
+      "value": "${Variables.Has_LeadScore ? 'Lead Score' : Variables.Lead_Rating.fieldLabel}"
+    }
+  ],
+  "rules": [
+    {
+      "name": "RemoveProductDatasetFromDataFlow",
+      "condition": "${!Constants.HasProduct && !Variables.Overrides.createAllDashboards}",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Opportunities_No_Products"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Compute_Opportunities_No_Products"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Compute_Opportunities_No_Products_Id"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Append_LineItems"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_PricebookEntry"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_OpportunityLineItemPricebookEntry"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_OpportunityLineItemPricebookEntryProduct"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_OpportunityOpportunityLineItemPricebookEntryProduct"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Add_Fields_To_Oppty_Product"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Opportunity_Products_Custom_Filter_Flag"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Register_OpportunityProducts"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Filter_Opportunity_Products"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_Product_ForecastCategoryMapping"
+        },
+        {
+          "action": "delete",
+          "description": "delete register_product node from workflow",
+          "path": "$.workflowDefinition.Register_Products"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_Product"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Register_Product"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_OpportunityLineItem"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Discount_Field"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_OpportunityOwner_Product"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_ActivityOwner_Product"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_OpportunityStage_Previous_with_Opp_Amount_Product"
+        },
+        {
+          "action": "set",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Opportunity_Custom_Filter_Flag.parameters.source",
+          "value": "Opportunity_add_closed_won"
+        },
+        {
+          "action": "set",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Pipeline_Trending_Custom_Filter_Flag.parameters.source",
+          "value": "Join_OpportunityStage_Previous_with_Opp_Amount"
+        },
+        {
+          "action": "set",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Join_ActivityOwner_Product_Opp.parameters.left",
+          "value": "Join_ActivityOwner"
+        },
+        {
+          "action": "set",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Join_CampaignOpportunity.parameters.right",
+          "value": "Join_OpportunityOwner"
+        },
+        {
+          "action": "set",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Join_CampaignMember_Campaign_Opportunity.parameters.right",
+          "value": "Join_OpportunityOwner"
+        },
+        {
+          "action": "set",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Join_OpportunityOwner_Splits.parameters.right",
+          "value": "Opportunity_add_closed_won"
+        },
+        {
+          "action": "delete",
+          "description": "fields from right select",
+          "path": "$.workflowDefinition.Join_OpportunityOwner_Splits.parameters.right_select[?(@=~ /^.*Product.*$/i)]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveSchedulesDatasetFromDataFlow",
+      "condition": "${!Constants.HasRevenueSchedule}",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_OpportunityLineItemSchedule"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Filter_ProductNoSchedule"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.ComputeFieldsForProducts"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.ComputeFieldsForProducts_Id"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Append_ProductRevenueSchedule"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_ProductRevenueSchedule_Product"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_ProductRevenueSchedule_Opportunity"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.ProductRevenueSchedule_Custom_Filter_Flag"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Filter_ProductRevenueSchedule"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Register_OpportunityProductSchedules"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition..[?(@.name=='HasRevenueSchedule')]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromFolder",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "folder",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Sales Rep Whitespace from Folder",
+          "path": "$.featuredAssets.default.assets..[?(@.id=~ /^.*Sales Rep Whitespace.*$/i)]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveCasesFromFolder",
+      "condition": "${Constants.HasLead == 'No'}",
+      "appliesTo": [
+        {
+          "type": "folder",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Manager Whitespace from Folder",
+          "path": "$.featuredAssets.default.assets..[?(@.id=~ /^.*Exec Overview - Service Performance.*$/i)]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveLinksFromAboutOverview",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "About_Wave_for_Sales"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasProduct}",
+          "description": "Delete unused widget link",
+          "path": "$.state.widgets.link_44"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasProduct}",
+          "description": "delete Link layout",
+          "path": "$.state.gridLayouts..[?(@.name=='link_44')]"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasProduct}",
+          "description": "Delete unused text",
+          "path": "$.state.widgets.text_37"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasProduct}",
+          "description": "delete text layout",
+          "path": "$.state.gridLayouts..[?(@.name=='text_37')]"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete unused widget link",
+          "path": "$.state.widgets.link_45"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "delete Link layout",
+          "path": "$.state.gridLayouts..[?(@.name=='link_45')]"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "Delete unused text",
+          "path": "$.state.widgets.text_38"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCases}",
+          "description": "delete text layout",
+          "path": "$.state.gridLayouts..[?(@.name=='text_38')]"
+        }
+      ]
+    },
+    {
+      "name": "Delete Company Whitespace from home page",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "About_Wave_for_Sales"
+        }
+      ],
+      "actions": [
+        {
+          "action":"eval",
+          "description":"Delete Company Whitespace Link from home page",
+          "value":"${link_macros:removeVerticalLink('link_34')}"
+        },
+        {
+          "action":"eval",
+          "description":"Delete Company Whitespace Text from home page",
+          "value":"${link_macros:removeVerticalText('text_25')}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Product from Account Dashboard",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Accounts_Dashboard"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*product.*/)]"
+        },
+        {
+          "action":"eval",
+          "description":"Move text widgets (which look like links) left",
+          "value":"${link_macros:moveHorizontalTextLeft('link_4')}"
+        },
+        {
+          "action":"eval",
+          "description":"Delete Whiespace dashboard Link",
+          "value":"${link_macros:removeHorizontalLinkLeft('link_4')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete Product option from pillbox",
+          "path": "$.state.steps.product_mix_dimension.values..[?(@.display== 'Products')]"
+        }
+      ]
+    },
+    {
+      "name": "Remove Account Hierarchy from Account Dashboard",
+      "condition": "${!Constants.HasAccountHierarchy}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Accounts_Dashboard"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete Parent Account from global filter panel",
+          "path": "$.state.filters.[?(@.label=='Parent Account')]"
+        },
+        {
+          "action": "delete",
+          "description": "delete Parent Account from table",
+          "path": "$.state.steps.details_table.query.query.values[0]"
+        },
+        {
+          "action": "delete",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=~/.*parent.*/)]"
+        }
+      ]
+    },
+    {
+      "name": "Delete Cases from Account Dashboard",
+      "condition": "${!Constants.HasCases}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Accounts_Dashboard"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*case.*/)]"
+        },
+        {
+          "action": "delete",
+          "description": "delete Case step",
+          "path": "$.state.steps.cases_by_type"
+        },
+        {
+          "action": "eval",
+          "description": "Delete Sales Rep Whitespace link",
+          "value": "${salesWaveMacros:deleteWidget('chart_17')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete Case step",
+          "path": "$.state.steps.case_toggle"
+        },
+        {
+          "action": "eval",
+          "description": "Delete cases pillbox",
+          "value": "${salesWaveMacros:deleteWidget('pillbox_6')}"
+        },
+        {
+          "action": "eval",
+          "description": "Delete mobile cases container",
+          "value": "${salesWaveMacros:deleteWidget('container_9')}"
+        },
+        {
+          "action": "eval",
+          "description": "Delete Sales Rep Whitespace link",
+          "value": "${salesWaveMacros:deleteWidget('text_18')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete Case step",
+          "path": "$.state.steps.kpi_open_cases"
+        },
+        {
+          "action": "eval",
+          "description": "Delete Open Cases widget",
+          "value": "${salesWaveMacros:deleteWidget('number_8')}"
+        },
+        {
+          "action": "eval",
+          "description": "Delete Open Cases on mobile",
+          "value": "${salesWaveMacros:deleteWidget('number_6')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete Case step",
+          "path": "$.state.steps.open_case_count"
+        },
+        {
+          "action": "eval",
+          "description": "Delete Sales Rep Whitespace link",
+          "value": "${salesWaveMacros:deleteWidget('chart_8')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete Case step",
+          "path": "$.state.steps.comparison_open_cases"
+        },
+        {
+          "action": "eval",
+          "description": "Delete Sales Rep Whitespace link",
+          "value": "${salesWaveMacros:deleteWidget('number_19')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete Case step",
+          "path": "$.state.steps.mobile_cases_by_status"
+        },
+        {
+          "action": "eval",
+          "description": "Delete case layout",
+          "value": "${salesWaveMacros:deleteWidget('chart_4')}"
+        },
+        {
+          "action": "eval",
+          "description": "Delete case layout",
+          "value": "${salesWaveMacros:deleteWidget('text_8')}"
+        },
+        {
+          "action": "eval",
+          "description": "Delete case layout",
+          "value": "${salesWaveMacros:deleteWidget('text_13')}"
+        },
+        {
+          "action": "eval",
+          "description": "DDelete case layout",
+          "value": "${salesWaveMacros:deleteWidget('text_26')}"
+        },
+        {
+          "action": "eval",
+          "description": "Move product mix chart",
+          "value":"${saleswaveMacros:moveWidget('chart_1', 'Default', '6')}"
+        },
+        {
+          "action": "eval",
+          "description": "Move product toggle",
+          "value":"${saleswaveMacros:moveWidget('pillbox_4', 'Default', '12')}"
+        },
+        {
+          "action": "eval",
+          "description": "Move Activities text",
+          "value":"${saleswaveMacros:moveWidget('text_17', 'Default', '26')}"
+        },
+        {
+          "action": "eval",
+          "description": "Move Activities chart",
+          "value":"${saleswaveMacros:moveWidget('chart_10', 'Default', '26')}"
+        },
+        {
+          "action": "eval",
+          "description": "Move Product text",
+          "value":"${saleswaveMacros:moveWidget('text_15', 'Default', '7')}"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromSalesOpsOverview",
+      "condition": "${!Constants.HasProduct || Constants.HasOpportunitySplits}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Manager_Overview"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "Changing step",
+          "path": "$.state.widgets.segment_chart_1.parameters.step",
+          "value": "Segment_Source"
+        },
+        {
+          "action": "set",
+          "description": "Changing step",
+          "path": "$.state.widgets.first_dimension_dropdown_widget.parameters.step",
+          "value": "source_dimension_dropdown"
+        },
+        {
+          "action": "delete",
+          "description": "Delete unused step",
+          "path": "$.state.steps.product_dimension_dropdown"
+        },
+        {
+          "action": "delete",
+          "description": "Delete unused step",
+          "path": "$.state.steps.Segment_Product"
+        },
+        {
+          "action": "delete",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*product.*/)]"
+        },        
+        {
+          "action": "delete",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=~/.*connection_product.*/)]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromManagerOverview",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Manager_Overview"
+        }
+      ],
+      "actions": [
+        {
+          "action":"eval",
+          "description":"Delete Manager Whitespace from Leaderboard",
+          "value":"${link_macros:removeHorizontalLinkLeft('link_5')}"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromManagerPipelineChanges",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Pipeline_Changes"
+        }
+      ],
+      "actions": [
+        {
+          "action":"eval",
+          "description":"Delete Manager Whitespace Link from Manager Trending",
+          "value":"${link_macros:removeHorizontalLinkLeft('link_3')}"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromTeamProductivity",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Team_Productivity"
+        }
+      ],
+      "actions": [
+        {
+          "action":"eval",
+          "description":"Delete Manager Whitespace Link from Team Benchmark",
+          "value":"${link_macros:removeHorizontalLinkLeft('link_6')}"
+        },
+        {
+          "action":"eval",
+          "description":"Delete Company Whitespace Text from home page",
+          "value":"${saleswaveMacros:moveWidget('text_29', 'Default', '16')}"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromActivities",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Manager_Activities"
+        }
+      ],
+      "actions": [
+        {
+          "action":"eval",
+          "description":"Delete Manager Whitespace Link from Team Benchmark",
+          "value":"${link_macros:removeHorizontalLinkLeft('link_4')}"
+        },
+        {
+          "action":"eval",
+          "description":"Delete Company Whitespace Text from home page",
+          "value":"${saleswaveMacros:moveWidget('text_1', 'Account Activites', '20')}"
+        }
+      ]
+    },
+    {
+      "name": "RemoveTeamAveragesFromActivities",
+      "condition": "${!Constants.HasRoleHierarchy}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Manager_Activities"
+        }
+      ],
+      "actions": [
+        {
+          "action":"set",
+          "description":"Delete Team Average from Events",
+          "path": "$.state.widgets.chart_8.parameters.referenceLines[0].label",
+          "value": "Avg = {{cell(kpi_avg_events.result, 0, \"avg_activities_completed\").asObject()}}"
+        },
+        {
+          "action":"set",
+          "description":"Delete Team Average from Calls",
+          "path": "$.state.widgets.chart_2.parameters.referenceLines[0].label",
+          "value": "Avg = {{cell(kpi_avg_calls.result, 0, \"avg_activities_completed\").asObject()}}"
+        },
+        {
+          "action":"set",
+          "description":"Delete Team Average from Tasks",
+          "path": "$.state.widgets.chart_12.parameters.referenceLines[0].label",
+          "value": "Avg = {{cell(kpi_avg_tasks.result, 0, \"avg_activities_completed\").asObject()}}"
+        },
+        {
+          "action":"set",
+          "description":"Delete Team Average from Emails",
+          "path": "$.state.widgets.chart_11.parameters.referenceLines[0].label",
+          "value": "Avg = {{cell(kpi_avg_emails.result, 0, \"avg_activities_completed\").asObject()}}"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductOrSplitsFromQuotaProgress",
+      "condition": "${!Constants.HasProduct || Constants.HasOpportunitySplits}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Quota_Progress"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove data connections",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*product.*/)]"
+        },
+        {
+          "action": "set",
+          "description": "change product text",
+          "path": "$.state.widgets.text_1.parameters.text",
+          "value": "Top Owners"
+        },
+        {
+          "action":"eval",
+          "condition": "${!Constants.HasProduct}",
+          "description":"Delete Manager Whitespace Link from Forecast",
+          "value":"${link_macros:removeHorizontalLinkLeft('link_7')}"
+        },
+        {
+          "action":"delete",
+          "condition": "${Constants.HasOpportunitySplits}",
+          "description":"Delete Forecast Comparison step",
+          "path": "$.state.steps.percent_open_pipe"
+        },
+        {
+          "action": "eval",
+          "condition": "${Constants.HasOpportunitySplits}",
+          "description": "Delete Forecast Comparison widget",
+          "value": "${salesWaveMacros:deleteWidget('ui_percent_open_pipe')}"
+        },
+        {
+          "action": "eval",
+          "condition": "${Constants.HasOpportunitySplits}",
+          "description": "Delete Forecast Comparison text widget",
+          "value": "${salesWaveMacros:deleteWidget('text_10')}"
+        },
+        {
+          "action": "delete",
+          "condition": "${Constants.HasOpportunitySplits}",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=='connection_record_type')]"
+        },
+        {
+          "action": "delete",
+          "condition": "${Constants.HasOpportunitySplits}",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=='connection_opp_type')]"
+        },
+        {
+          "action": "delete",
+          "condition": "${Constants.HasOpportunitySplits}",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*trending.*/)]"
+        },
+        {
+          "action": "delete",
+          "condition": "${Constants.HasOpportunitySplits}",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=='connection_stagename')]"
+        },
+        {
+          "action": "delete",
+          "condition": "${Constants.HasOpportunitySplits}",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=='connection_lost')]"
+        }
+      ]
+    },
+    {
+      "name": "ChangeSplitFilterOnDashbaords",
+      "condition": "${Constants.HasOpportunitySplits}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Manager_Overview"
+        },
+        {
+          "type": "dashboard",
+          "name": "Quota_Progress"
+        },
+        {
+          "type": "dashboard",
+          "name": "Team_Productivity"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "Change Opportuntiy Owner to Split Owner in global filters",
+          "path": "$.state.filters..[?(@.label=='Opportunity Owner')].label",
+          "value": "Split Owners"
+        }
+      ]
+    },
+    {
+      "name": "ChangeSplitFilterOnSalesRepOverview",
+      "condition": "${Constants.HasOpportunitySplits}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Rep_Overview"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "Delete unused step",
+          "path": "$.state.filters..[?(@.label=='Opportunity Owner')].label",
+          "value": "Split Owners"
+        }
+      ]
+    },
+    {
+      "name": "RemoveSourceFromSalesOpsOverview",
+      "condition": "${Constants.HasProduct && !Constants.HasOpportunitySplits && !Variables.Overrides.createAllDashboards}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Manager_Overview"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete unused step",
+          "path": "$.state.steps.source_dimension_dropdown"
+        },
+        {
+          "action": "delete",
+          "description": "Delete unused step",
+          "path": "$.state.steps.Segment_Source"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromSalesPerformanceDashboard",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Performance"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Product from dropdown",
+          "path": "$.state.steps.dropdown_product_level_group.values[?(@.display=~/.*Product.*/)]"
+        },
+        {
+          "action": "set",
+          "description": "Define start value for dropdown",
+          "path": "$.state.steps.dropdown_product_level_group.start.display",
+          "value": ["${Variables.Geography.fieldLabel}"]
+        },
+        {
+          "action": "delete",
+          "description": "Delete Product from table",
+          "path": "$.state.steps.details_table.query.query.values[3:5]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveParentAccountFromSalesPerformanceDashboard",
+      "condition": "${!Constants.HasAccountHierarchy}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Performance"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Parent Account from Dropdown",
+          "path": "$.state.steps.dropdown_product_level_group.values[?(@.display=~/.*Parent Account.*/)]"
+        }
+      ]
+    },
+    {
+      "name": "DataflowHandling",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "condition": "${!Constants.HasOpportunityTeams}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_OpportunityTeamMember"
+        },
+        {
+          "condition": "${!Constants.HasOpportunityTeams}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_OpportunityTeam_User"
+        },
+        {
+          "condition": "${!Constants.HasOpportunityTeams}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_Opportunity_OpportunityTeam"
+        },
+        {
+          "condition": "${!Constants.HasOpportunityTeams}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.*.parameters.right_select[?(@=~ /^.*OpportunityTeam.*$/i)]"
+        },
+        {
+          "condition": "${!Constants.HasOpportunityTeams}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Join_OpportunityOwner.parameters['left']",
+          "value": "Join_OpportunityAccount"
+        },
+        {
+          "condition": "${!Constants.HasAccountTeams}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_AccountTeamMember"
+        },
+        {
+          "condition": "${!Constants.HasAccountTeams}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_AccountOwner_AccountTeam"
+        },
+        {
+          "condition": "${!Constants.HasAccountTeams}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_AccountTeam_User"
+        },
+        {
+          "condition": "${!Constants.HasAccountTeams}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.*.parameters.right_select[?(@=~ /^.*AccountTeam.*$/i)]"
+        },
+        {
+          "condition": "${!Constants.HasAccountTeams}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.*.parameters[?(@.right=='Join_AccountOwner_AccountTeam')].right",
+          "value": "Join_AccountOwner"
+        },
+        {
+          "condition": "${!Constants.HasAccountTeams}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.*.parameters[?(@.source=='Join_AccountOwner_AccountTeam')].source",
+          "value": "Join_AccountOwner"
+        },
+        {
+          "condition": "${Constants.AllOpsHaveLineItems}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Opportunities_No_Products"
+        },
+        {
+          "condition": "${Constants.AllOpsHaveLineItems}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Compute_Opportunities_No_Products"
+        },
+        {
+          "condition": "${Constants.AllOpsHaveLineItems}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Compute_Opportunities_No_Products_Id"
+        },
+        {
+          "condition": "${Constants.AllOpsHaveLineItems}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Append_LineItems"
+        },
+        {
+          "condition": "${Constants.AllOpsHaveLineItems}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Discount_Field.parameters['source']",
+          "value": "Extract_OpportunityLineItem"
+        },
+        {
+          "condition": "${Constants.AllProdsHaveSchedules && Constants.HasRevenueSchedule}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Filter_ProductNoSchedule"
+        },
+        {
+          "condition": "${Constants.AllProdsHaveSchedules && Constants.HasRevenueSchedule}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.ComputeFieldsForProducts"
+        },
+        {
+          "condition": "${Constants.AllProdsHaveSchedules && Constants.HasRevenueSchedule}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.ComputeFieldsForProducts_Id"
+        },
+        {
+          "condition": "${Constants.AllProdsHaveSchedules && Constants.HasRevenueSchedule}",
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Append_ProductRevenueSchedule"
+        },
+        {
+          "condition": "${Constants.AllProdsHaveSchedules && Constants.HasRevenueSchedule}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Join_ProductRevenueSchedule_Product.parameters['source']",
+          "value": "Extract_OpportunityLineItemSchedule"
+        },
+        {
+          "condition": "${Constants.HasTeamBenchmarking}",
+          "action": "put",
+          "description": "Allow logged-in user to see opportunity information if Owner of Opp has the same Role",
+          "path": "$.workflowDefinition.Flatten_UserRole.parameters",
+          "key": "include_self_id",
+          "value": true
+        },
+        {
+          "condition": "${!Constants.HasOpportunityRecordType_Dataflow}",
+          "action": "delete",
+          "description": "remove Extract_RecordTypes node in dataflow",
+          "path": "$.workflowDefinition.Extract_RecordTypes"
+        },
+        {
+          "condition": "${!Constants.HasOpportunityRecordType_Dataflow}",
+          "action": "delete",
+          "description": "remove Join_OpportunityRecordType node in dataflow",
+          "path": "$.workflowDefinition.Join_OpportunityRecordType"
+        },
+        {
+          "condition": "${!Constants.HasOpportunityRecordType_Dataflow}",
+          "action": "delete",
+          "description": "remove RecordType from Extract_Opportunity Dataflow",
+          "path": "$.workflowDefinition.Extract_Opportunity.parameters.fields[?(@.name=='RecordTypeId')]"
+        },
+        {
+          "condition": "${!Constants.HasOpportunityRecordType_Dataflow}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_Time_In_Current_Stage_to_Opportunity",
+          "path": "$.workflowDefinition.Join_Time_In_Current_Stage_to_Opportunity.parameters['left']",
+          "value": "Join_OpportunityOpportunityStage"
+        },
+        {
+          "condition": "${Constants.FilterByRecordType}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Opportunity_Custom_Filter_Flag.parameters.computedFields[0].saqlExpression",
+          "value": "case when 'RecordType.Name' in  ${array:forEach(Variables.OpptyRecordType,'\"${var}\"')} then \"true\" else \"false\" end"
+        },
+        {
+          "condition": "${Constants.FilterByRecordType && Constants.HasProduct}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Opportunity_Products_Custom_Filter_Flag.parameters.computedFields[0].saqlExpression",
+          "value": "case when 'Opportunity.RecordType.Name' in  ${array:forEach(Variables.OpptyRecordType,'\"${var}\"')} then \"true\" else \"false\" end"
+        },
+        {
+          "condition": "${Constants.FilterByRecordType && Constants.HasRevenueSchedule}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.ProductRevenueSchedule_Custom_Filter_Flag.parameters.computedFields[0].saqlExpression",
+          "value": "case when 'Opportunity.RecordType.Name' in  ${array:forEach(Variables.OpptyRecordType,'\"${var}\"')} then \"true\" else \"false\" end"
+        },
+        {
+          "condition": "${Constants.FilterByRecordType}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Pipeline_Trending_Custom_Filter_Flag.parameters.computedFields[0].saqlExpression",
+          "value": "case when 'Opportunity.RecordType.Name' in  ${array:forEach(Variables.OpptyRecordType,'\"${var}\"')} then \"true\" else \"false\" end"
+        },
+        {
+          "condition": "${Constants.FilterByRecordType}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Activity_Custom_Filter_Flag.parameters.computedFields[0].saqlExpression",
+          "value": "case when 'Opportunity.RecordType.Name' in  ${array:forEach(Variables.OpptyRecordType,'\"${var}\"')} then \"true\" else \"false\" end"
+        },
+        {
+          "condition": "${Constants.FilterByRecordType && Constants.HasOpportunitySplits}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Opportunity_Splits_Custom_Filter_Flag.parameters.computedFields[0].saqlExpression",
+          "value": "case when 'Opportunity.RecordType.Name' in  ${array:forEach(Variables.OpptyRecordType,'\"${var}\"')} then \"true\" else \"false\" end"
+        },
+         {
+          "condition": "${Constants.OpportunityMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Opportunity.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Opportunity_All,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.OpportunityMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Opportunities in dataflow",
+          "path": "$..[?(@.right_select[1]=~/.*StageName.*/ || @.right_select[7]=~/.*StageName.*/ || @.right_select[8]=~/.*StageName.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Opportunity_All,'${var.fieldName}'))}"
+        },      
+        {
+          "condition": "${Constants.OpportunityMoreMeasuresHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Opportunities in dataflow",
+          "path": "$..[?(@.right_select[1]=~/.*StageName.*/ || @.right_select[7]=~/.*StageName.*/ || @.right_select[8]=~/.*StageName.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Opportunity_Measure,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.OpportunityMoreDimsHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Opportunity.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Opportunity_Dimension,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.OpportunityMoreDimsHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Opportunities in dataflow",
+          "path": "$..[?(@.right_select[1]=~/.*StageName.*/ || @.right_select[7]=~/.*StageName.*/ || @.right_select[8]=~/.*StageName.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Opportunity_Dimension,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.AccountMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Account.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Account_All,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.AccountMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$..[?(@.right_select[11]=~/.*Account[.][$][{]Variables.Customer.fieldName[}].*/ || @.right_select[12]=~/.*Account[.][$][{]Variables.Customer.fieldName[}].*/ || @.right_select[13]=~/.*Account[.][$][{]Variables.Customer.fieldName[}].*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Account_All,'Account.${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.AccountMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$..[?(@.right_select[1]=~/.*[$][{]Variables.Customer.fieldName[}].*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Account_All,'${var.fieldName}'))}"
+        },   
+        {
+          "condition": "${Constants.AccountMoreMeasuresHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Account.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Account_Measure,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.AccountMoreMeasuresHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$..[?(@.right_select[1]=~/.*[$][{]Variables.Customer.fieldName[}].*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Account_Measure,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.AccountMoreMeasuresHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$..[?(@.right_select[11]=~/.*Account[.][$][{]Variables.Customer.fieldName[}].*/ || @.right_select[12]=~/.*Account[.][$][{]Variables.Customer.fieldName[}].*/ || @.right_select[13]=~/.*Account[.][$][{]Variables.Customer.fieldName[}].*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Account_Measure,'Account.${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.AccountMoreDimsHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Account.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Account_Dimension,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.AccountMoreDimsHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$..[?(@.right_select[1]=~/.*[$][{]Variables.Customer.fieldName[}].*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Account_Dimension,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.AccountMoreDimsHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$..[?(@.right_select[11]=~/.*Account[.][$][{]Variables.Customer.fieldName[}].*/ || @.right_select[12]=~/.*Account[.][$][{]Variables.Customer.fieldName[}].*/ || @.right_select[13]=~/.*Account[.][$][{]Variables.Customer.fieldName[}].*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Account_Dimension,'Account.${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.UserMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for User sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_User.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.User_All,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.UserMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with User in dataflow",
+          "path": "$..[?(@.relationship=~/.*User.*/ || @.relationship=~/.*Owner.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.User_All,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.UserMoreHasValues && Constants.HasRevenueSchedule}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$..Join_ProductRevenueSchedule_Opportunity..right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.User_All,'Owner.${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.CaseMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for Case sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Case.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Case_All,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.ProductMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for Product sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Product.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Product_All,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.ProductMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for Product in Join_OpportunityLineItemPricebookEntryProduct right select",
+          "path": "$.workflowDefinition.Join_OpportunityLineItemPricebookEntryProduct.parameters.right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Product_All,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.EventMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for Event sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Event.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Activities_All,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.TaskMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for Task sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Task.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Activities_All,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.LeadMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for Lead sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Lead.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Lead_All,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.LeadMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Opportunities in dataflow",
+          "path": "$..[?(@.right_select[7]=~/.*ConvertedOpportunityId.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Lead_All,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.LeadsMoreMeasuresHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Lead.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Lead_Measure,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.LeadsMoreMeasuresHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Opportunities in dataflow",
+          "path": "$..[?(@.right_select[7]=~/.*ConvertedOpportunityId.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Lead_Measure,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.LeadsMoreDimsHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Lead.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Lead_Dimension,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.LeadsMoreDimsHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Opportunities in dataflow",
+          "path": "$..[?(@.right_select[7]=~/.*ConvertedOpportunityId.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Lead_Dimension,'${var.fieldName}'))}"
+        },
+         {
+          "condition": "${Constants.CampaignMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Campaign.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Campaign_All,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.CampaignMoreHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Opportunities in dataflow",
+          "path": "$..[?(@.right_select[12]=~/.*AmountWonOpportunities.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Campaign_All,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.CampaignMoreMeasuresHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Campaign.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Campaign_Measure,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.CampaignMoreMeasuresHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Opportunities in dataflow",
+          "path": "$..[?(@.right_select[12]=~/.*AmountWonOpportunities.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Campaign_Measure,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${Constants.CampaignMoreDimsHasValues}",
+          "action": "set",
+          "description": "put selected values for sfdcDigest in dataflow",
+          "path": "$.workflowDefinition.Extract_Campaign.parameters.fields",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Campaign_Dimension,'{\"name\":\"${var.fieldName}\"}'))}"
+        },
+        {
+          "condition": "${Constants.CampaignMoreDimsHasValues}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Campagins in dataflow",
+          "path": "$..[?(@.right_select[12]=~/.*AmountWonOpportunities.*/)].right_select",
+          "value": "${array:concat(Rules.CurrentNode, array:forEach(Variables.Campaign_Dimension,'${var.fieldName}'))}"
+        },
+        {
+          "condition": "${!Constants.HasLead}",
+          "action": "delete",
+          "description": "remove Lead nodes in dataflow",
+          "path": "$.workflowDefinition..[?(@.parameters.source=~ /^.*lead.*$/i)]"
+        },
+        {
+          "condition": "${!Constants.HasLead}",
+          "action": "delete",
+          "description": "remove Lead nodes in dataflow",
+          "path": "$.workflowDefinition..[?(@.parameters.left=~ /^.*lead.*$/i)]"
+        },
+        {
+          "condition": "${!Constants.HasLead}",
+          "action": "delete",
+          "description": "remove Lead nodes in dataflow",
+          "path": "$.workflowDefinition..[?(@.parameters.right=~ /^.*lead.*$/i)]"
+        },
+        {
+          "condition": "${!Constants.HasLead}",
+          "action": "delete",
+          "description": "remove Lead nodes in dataflow",
+          "path": "$.workflowDefinition..[?(@.parameters.object=~ /^.*lead.*$/i)]"
+        },
+        {
+          "condition": "${!Constants.HasCampaigns}",
+          "action": "delete",
+          "description": "remove Campaign nodes in dataflow",
+          "path": "$.workflowDefinition..[?(@.parameters.source=~ /^.*Campaign.*$/i)]"
+        },
+        {
+          "condition": "${!Constants.HasCampaigns}",
+          "action": "delete",
+          "description": "remove Campaign nodes in dataflow",
+          "path": "$.workflowDefinition..[?(@.parameters.left=~ /^.*Campaign.*$/i)]"
+        },        
+        {
+          "condition": "${!Constants.HasOpportunityRecordType_Dataflow}",
+          "action": "delete",
+          "description": "remove RecordType fields from Join_OpportunityStage_Previous_with_Opp node",
+          "path": "$.workflowDefinition..parameters.right_select[?(@=='RecordTypeId' || @=='RecordType.Name')]"
+        },        
+        {
+          "condition": "${!Constants.HasCampaigns}",
+          "action": "delete",
+          "description": "remove Campaign nodes in dataflow",
+          "path": "$.workflowDefinition..fields[?(@.name=='CampaignId')]"
+        },
+        {
+          "condition": "${!Constants.HasCampaigns}",
+          "action": "delete",
+          "description": "remove Campaign extract node in dataflow",
+          "path": "$.workflowDefinition.Extract_Campaign"
+        },
+        {
+          "condition": "${!Constants.HasCampaigns}",
+          "action": "delete",
+          "description": "remove Campaign Member extract node in dataflow",
+          "path": "$.workflowDefinition.Extract_CampaignMember"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "remove Lead nodes in dataflow",
+          "path": "$.workflowDefinition.Flatten_UserRole"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "remove Lead nodes in dataflow",
+          "path": "$.workflowDefinition.Flatten_ParentName"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "remove Lead nodes in dataflow",
+          "path": "$.workflowDefinition.Flatten_Hierarchy_Grouping"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$..right_select[?(@=~/.*RoleNames.*/)]"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$..right_select[?(@=~/.*Hierarchy_RoleNames.*/)]"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$..right_select[?(@=~/.*Roles.*/)]"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$..right_select[?(@=~/.*RolePath.*/)]"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$.workflowDefinition.Extract_UserRole"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$.workflowDefinition.Augment_ParentName"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$.workflowDefinition.Register_UserRole"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$..right_select[?(@=~/.*Role.*/)]"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "set",
+          "description": "delete role names from right selects everywhere",
+          "path": "$..[?(@.right=~/User_with_Roles/)].right",
+          "value": "${!Constants.HasUserManager ? 'Compute_Manager_Unique' : 'Flatten_UserManager'}"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "set",
+          "description": "delete role names from right selects everywhere",
+          "path": "$..[?(@.left=~/User_with_Roles/)].left",
+          "value": "${!Constants.HasUserManager ? 'Compute_Manager_Unique' : 'Flatten_UserManager'}"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "set",
+          "description": "delete role names from right selects everywhere",
+          "path": "$..[?(@.source=~/User_with_Roles/)].source",
+          "value": "${!Constants.HasUserManager ? 'Compute_Manager_Unique' : 'Flatten_UserManager'}"
+        },
+        {
+          "condition": "${!Constants.HasRoleHierarchy}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$.workflowDefinition.User_with_Roles"
+        },
+        {
+          "condition": "${!Constants.HasUserManager}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$..right_select[?(@=~/.*UserManager.*/)]"
+        },
+        {
+          "condition": "${!Constants.HasUserManager}",
+          "action": "delete",
+          "description": "delete role names from right selects everywhere",
+          "path": "$.workflowDefinition.Flatten_UserManager"
+        },
+        {
+          "condition": "${!Constants.HasUserManager}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Campagins in dataflow",
+          "path": "$..[?(@.right=~/.*Flatten_UserManager.*/)].right",
+          "value": "Compute_Manager_Unique"
+        },
+        {
+          "condition": "${!Constants.HasUserManager}",
+          "action": "set",
+          "description": "put selected values for all things that are right joined with Campagins in dataflow",
+          "path": "$..[?(@.left=~/.*Flatten_UserManager.*/)].left",
+          "value": "Compute_Manager_Unique"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Register_ForecastingItem"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_ForecastingItem_Period_User_Type"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_ForecastingItem_Period_User"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_ForecastingType"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_ForecastingItem_Period"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.User_with_Roles_Forecasting_Hierarchy"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_ForecastingItem"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_Period"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "path": "$.workflowDefinition.Filter_For_Forecast_Users"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_RoleUser"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_Role_on_ForecastUser"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.User_with_Roles.parameters.left",
+          "value": "${!Constants.HasUserManager ? 'Compute_Manager_Unique' : 'Flatten_UserManager'}"
+        },
+        {
+          "action": "add",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.User_with_Roles.parameters.right_select",
+          "value": "RoleNames"
+        },
+        {
+          "action": "add",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.User_with_Roles.parameters.right_select",
+          "value": "Hierarchy_RoleNames"
+        },
+        {
+          "action": "add",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.User_with_Roles.parameters.right_select",
+          "value": "RoleNamesPath"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.User_with_Roles.parameters.right",
+          "value": "${!Constants.HasRoleHierarchy? (!Constants.HasUserManager ? 'Compute_Manager_Unique' : 'Flatten_UserManager') : 'Flatten_Hierarchy_Grouping'}"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "action": "delete",
+          "description": "delete ForecastManager from right selects everywhere",
+          "path": "$..right_select[?(@=~/.*ForecastManager.*/)]"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "action": "delete",
+          "description": "delete ForecastManager from right selects everywhere",
+          "path": "$..right_select[?(@=~/.*ForecastManager.*/)]"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Flatten_ParentName.parameters.source",
+          "value": "Augment_ParentName"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "delete ForecastUserID from workflow",
+          "path": "$.workflowDefinition..parameters.fields[?(@.name=='ForecastUserId')]"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Flatten_ParentName.parameters.parent_field",
+          "value": "ParentRole.DeveloperName"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Flatten_ParentName.parameters.self_field",
+          "value": "DeveloperName"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Flatten_Hierarchy_Grouping.parameters.parent_field",
+          "value": "ParentRole.DeveloperName"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Flatten_Hierarchy_Grouping.parameters.self_field",
+          "value": "DeveloperName"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Augment_ParentName.parameters.right",
+          "value": "Extract_UserRole"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasRoleHierarchy}",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Flatten_UserRole.parameters.source",
+          "value": "Extract_UserRole"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecasting}",
+          "action": "delete",
+          "description": "delete ForecastManager from right selects everywhere",
+          "path": "$..parameters.fields[?(@.name=='ForecastEnabled')]"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecastingQuota}",
+          "action": "delete",
+          "description": "delete ForecastManager from right selects everywhere",
+          "path": "$.workflowDefinition.Extract_ForecastingQuota"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecastingQuota}",
+          "action": "delete",
+          "description": "delete ForecastManager from right selects everywhere",
+          "path": "$.workflowDefinition.Join_ForecastQuota_ForecastType"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecastingQuota}",
+          "action": "delete",
+          "description": "delete ForecastManager from right selects everywhere",
+          "path": "$.workflowDefinition.Filter_ForecastQuota"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecastingQuota}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.*.parameters[?(@.left=='Filter_ForecastQuota')].left",
+          "value": "Extract_Quota"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecastingQuota}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.*.parameters[?(@.source=='Filter_ForecastQuota')].source",
+          "value": "Extract_Quota"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecastingQuota}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Join_Quota_User.parameters.left_key[0]",
+          "value": "Username"
+        },
+        {
+          "condition": "${!Constants.HasCollaborativeForecastingQuota}",
+          "action": "set",
+          "description": "Change the Left Join Source in node Join_OpportunityAccount to use Extract_Opportunity",
+          "path": "$.workflowDefinition.Join_Quota_User.parameters.right_key[0]",
+          "value": "Username"
+        },
+        {
+          "condition": "${Constants.HasCollaborativeForecastingQuota}",
+          "action": "delete",
+          "description": "Remove registering of plain quota dataset",
+          "path": "$.workflowDefinition.Register_PlainQuota"
+        },
+        {
+          "condition": "${Constants.HasCollaborativeForecastingQuota}",
+          "action": "delete",
+          "description": "Remove extraction of plain quota dataset",
+          "path": "$.workflowDefinition.Extract_Quota"
+        },
+        {
+          "condition": "${Constants.HasCustomAmount && !Constants.HasRevenueSchedule}",
+          "action": "add",
+          "description": "Always include Amount field in Opportunity dataset",
+          "index": 0,
+          "path": "$.workflowDefinition.Extract_Opportunity.parameters.fields",
+          "value": {
+            "name": "Amount"
+          }
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "description": "delete ParentId from workflow",
+          "path": "$.workflowDefinition.Extract_Account.parameters.fields[?(@.name=='ParentId')]"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "description": "delete ParentId from workflow",
+          "path": "$..right_select[?(@=~/.*Parent\\..*/)]"
+        },
+        {
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "action": "delete",
+          "description": "Remove account flattening node",
+          "path": "$.workflowDefinition.Flatten_UltimateParent"
+        },
+        {
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "action": "delete",
+          "description": "Remove UltimateParent compute expression",
+          "path": "$.workflowDefinition.Compute_UltimateParent"
+        },        
+        {
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "action": "delete",
+          "description": "Remove Augment Parent node",
+          "path": "$.workflowDefinition.Augment_ParentAccountName"
+        },
+        {
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "action": "delete",
+          "description": "Remove Join Parent back on Account node",
+          "path": "$.workflowDefinition.Join_Parent_on_Account"
+        },
+        {
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "action": "set",
+          "description": "Change the Left Join Source back to Add_Fields_To_Account",
+          "path": "$.workflowDefinition.Join_AccountOwner.parameters.left",
+          "value": "Add_Fields_To_Account"
+        },
+        {
+          "condition": "${!Constants.HasAccountHierarchy && !Constants.HasProduct}",
+          "action": "set",
+          "description": "Change the Left Join Source back to Add_Fields_To_Account",
+          "path": "$.workflowDefinition.Opportunity_Custom_Filter_Flag.parameters.source",
+          "value": "Opportunity_add_closed_won"
+        },
+        
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasAccountHierarchy}",
+          "description": "delete Parent Account from right selects everywhere",
+          "path": "$..right_select[?(@=~/.*Parent.ParentAccount.*/)]"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "set correct node for opportunity dataset",
+          "path": "$.workflowDefinition.Register_Opportunity.parameters.source",
+          "value": "Filter_Opportunity"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "set correct node for opportunity dataset",
+          "path": "$.workflowDefinition.RPLCM_AddFakeFields_SalesRepOpportunity.parameters.source",
+          "value": "Filter_Opportunity"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "set correct node for opportunity dataset",
+          "path": "$.workflowDefinition.RPLCM_AddFakeFields_Opportunity.parameters.source",
+          "value": "Filter_Opportunity"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "set correct node for opportunity dataset",
+          "path": "$.workflowDefinition.RPLCM_AddFakeFields_OpportunityOrSchedules.parameters.source",
+          "value": "Filter_Opportunity"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "delete join for Cumulative Forecasting",
+          "path": "$.workflowDefinition.Join_Opportunity_ForecastCategoryMapping"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting && Constants.HasProduct}",
+          "description": "set correct node for products dataset",
+          "path": "$.workflowDefinition.Register_OpportunityProducts.parameters.source",
+          "value": "Filter_Opportunity_Products"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting && Constants.HasProduct}",
+          "description": "set correct node for products dataset",
+          "path": "$.workflowDefinition.RPLCM_AddFakeFields_SplitsOrProductOpportunity.parameters.source",
+          "value": "Filter_Opportunity_Products"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting && Constants.HasProduct}",
+          "description": "set correct node for products dataset",
+          "path": "$.workflowDefinition.RPLCM_AddFakeFields_ProductOrOpportunity.parameters.source",
+          "value": "Filter_Opportunity_Products"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting && Constants.HasProduct}",
+          "description": "set correct node for products dataset",
+          "path": "$.workflowDefinition.RPLCM_AddFakeFields_OpportunityProducts.parameters.source",
+          "value": "Filter_Opportunity_Products"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting && Constants.HasProduct}",
+          "description": "set correct node for products dataset",
+          "path": "$.workflowDefinition.RPLCM_AddFakeFields_ProductOrSchedule.parameters.source",
+          "value": "Filter_Opportunity_Products"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "delete join for Cumulative Forecasting",
+          "path": "$.workflowDefinition.Join_Product_ForecastCategoryMapping"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "set correct node for trending dataset",
+          "path": "$.workflowDefinition.Register_PipelineTrending.parameters.source",
+          "value": "Filter_Pipeline_Trending"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "set correct node for trending dataset",
+          "path": "$.workflowDefinition.RPLCM_AddFakeFields_PipelineTrending.parameters.source",
+          "value": "Filter_Pipeline_Trending"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "delete join for Cumulative Forecasting",
+          "path": "$.workflowDefinition.Join_Trending_ForecastCategoryMapping"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "set correct node for splits dataset",
+          "path": "$.workflowDefinition.Register_OpportunitySplit.parameters.source",
+          "value": "Filter_OpportunitySplits"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "delete join for Cumulative Forecasting",
+          "path": "$.workflowDefinition.Join_Activity_ForecastCategoryMapping"
+        },
+        {
+          "action": "set",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "set correct node for activity dataset",
+          "path": "$.workflowDefinition.Register_Activity.parameters.source",
+          "value": "Filter_Activity"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "delete join for Cumulative Forecasting",
+          "path": "$.workflowDefinition.Join_Splits_ForecastCategoryMapping"
+        },
+        {
+          "action": "delete",
+          "condition": "${!Constants.HasCumulativeForecasting}",
+          "description": "delete compute expression for Cumulative Forecasting",
+          "path": "$.workflowDefinition.Extract_ForecastingCategoryMapping"
+        }
+      ]
+    },
+    {
+      "name": "FiscalDataflowRule",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "put",
+          "description": "put a month offset to all dates in dataflow",
+          "path": "$.workflowDefinition..[?(@.action=='sfdcDigest')].parameters.fields[?(@.name=='CreatedDate'||@.name=='CloseDate'||@.name=='ClosedDate'||@.name=='LastModifiedDate'||@.name=='ConvertedDate'||@.name=='LastActivityDate'||@.name=='ActivityDate'||@.name=='StartDate'||@.name=='EndDate'||@.name=='ScheduleDate')]",
+          "key": "fiscalMonthOffset",
+          "value": "${Constants.Fiscal_Month_Offset}"
+        },
+        {
+          "action": "put",
+          "description": "put a month offset to all dates in dataflow compute expression",
+          "path": "$.workflowDefinition..[?(@.action=='computeExpression')].parameters.computedFields[?(@.name=='ScheduleDate')]",
+          "key": "fiscalMonthOffset",
+          "value": "${Constants.Fiscal_Month_Offset}"
+        }
+      ]
+    },
+    {
+      "name": "FirstDayOfWeekDataflow",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "put",
+          "description": "Overrides Wave default first day of week and sets it to Sunday",
+          "path": "$.workflowDefinition..[?(@.action=='sfdcDigest')].parameters.fields[?(@.name=='CreatedDate'||@.name=='CloseDate'||@.name=='ClosedDate'||@.name=='LastModifiedDate'||@.name=='ConvertedDate'||@.name=='LastActivityDate'||@.name=='ActivityDate'||@.name=='StartDate'||@.name=='EndDate'||@.name=='ScheduleDate')]",
+          "key": "firstDayOfWeek",
+          "value": "${Constants.First_Day_Of_Week_Number}"
+        },
+        {
+          "action": "put",
+          "description": "Overrides Wave default first day of week and sets it to Sunday for compute expressions",
+          "path": "$.workflowDefinition..[?(@.action=='computeExpression')].parameters.computedFields[?(@.name=='ScheduleDate')]",
+          "key": "firstDayOfWeek",
+          "value": "${Constants.First_Day_Of_Week_Number}"
+        }
+      ]
+    },
+    {
+      "name": "RemoveSplits",
+      "condition": "${!Constants.HasOpportunitySplits}",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        { 
+          "action": "delete",
+          "description": "",
+          "path": "$.workflowDefinition.Join_Splits_ForecastCategoryMapping"
+        },
+        { 
+          "action": "delete",
+          "description": "",
+          "path": "$.workflowDefinition.Extract_OpportunitySplit"
+        },
+        { 
+          "action": "delete",
+          "description": "",
+          "path": "$.workflowDefinition.Extract_OpportunitySplitType"
+        },
+        { 
+          "action": "delete",
+          "description": "",
+          "path": "$.workflowDefinition.Join_OpportunitySplitType"
+        },
+        { 
+          "action": "delete",
+          "description": "",
+          "path": "$.workflowDefinition.Join_OpportunityOwner_Splits"
+        },
+        { 
+          "action": "delete",
+          "description": "",
+          "path": "$.workflowDefinition.Register_OpportunitySplit"
+        },
+        { 
+          "action": "delete",
+          "description": "",
+          "path": "$.workflowDefinition.Join_OpportunitySplitType_SplitOwner"
+        },
+        { 
+          "action": "delete",
+          "description": "",
+          "path": "$.workflowDefinition.Filter_OpportunitySplits"
+        },
+        { 
+          "action": "delete",
+          "description": "",
+          "path": "$.workflowDefinition.Opportunity_Splits_Custom_Filter_Flag"
+        }
+      ]
+    },
+    {
+      "name": "RemoveLinkFromRepOverview",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Rep_Overview"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete Link for Opportunity Discovery Dashboard",
+          "path": "$.state.widgets.link_1"
+        },
+        {
+          "action": "delete",
+          "description": "delete Link for Opportunity Discovery Dashboard",
+          "path": "$.state.gridLayouts..[?(@.name=='link_1')]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromSalesRepPipelineChanges",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Rep_Pipeline_Changes"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Manager WhiteSpace link",
+          "path": "$.state.widgets.link_3"
+        },
+        {
+          "action": "delete",
+          "description": "Delete Manager WhiteSpace link layout",
+          "path": "$.state.gridLayouts..[?(@.name=='link_3')]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromManagerActivities",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Manager_Activities"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Manager WhiteSpace link",
+          "path": "$.state.widgets.link_4"
+        },
+        {
+          "action": "delete",
+          "description": "Delete Manager WhiteSpace link layout",
+          "path": "$.state.gridLayouts..[?(@.name=='link_4')]"
+        }
+
+      ]
+    },
+    {
+      "name": "RemoveCasesFromWorkflow",
+      "condition": "${!Constants.HasCases}",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete case from workflow",
+          "path": "$.workflowDefinition.Extract_Case"
+        },
+        {
+          "action": "delete",
+          "description": "delete case from workflow",
+          "path": "$.workflowDefinition.Join_CaseAccount"
+        },
+        {
+          "action": "delete",
+          "description": "delete case from workflow",
+          "path": "$.workflowDefinition.Register_Case"
+        },
+        {
+          "action": "delete",
+          "description": "delete case from workflow",
+          "path": "$.workflowDefinition.compute_CurrentDateForCase"
+        },
+        {
+          "action": "delete",
+          "description": "delete case from workflow",
+          "path": "$.workflowDefinition.compute_CalculatedCaseDuration"
+        },
+        {
+          "action": "delete",
+          "description": "delete case from workflow",
+          "path": "$.workflowDefinition.Filter_WonOppty"
+        },
+        {
+          "action": "delete",
+          "description": "delete case from workflow",
+          "path": "$.workflowDefinition.Join_CaseAccount_Oppty"
+        }
+      ]
+    },
+    {
+      "name": "RemoveSecurityPredicatesFromWorkflow",
+      "condition": "${Constants.UsersSeeAll}",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete security predicates from workflow",
+          "path": "$..rowLevelSecurityFilter"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromAccountSummary",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Account_Summary"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=~/.*connection_product.*/)]"
+        },
+        {
+          "action": "delete",
+          "description": "delete discount if no product",
+          "path": "$.state.steps.discount"
+        },
+        {
+          "action": "set",
+          "description": "change discount if no product",
+          "path": "$.state.widgets.number_12.parameters.step",
+          "value": "DaysOverdue_1"
+        },
+        {
+          "action": "set",
+          "description": "change discount if no product",
+          "path": "$.state.widgets.number_13.parameters.step",
+          "value": "DaysOverdue_1"
+        },
+        {
+          "action": "set",
+          "description": "delete mobile discount if no product",
+          "path": "$.state.widgets.text_11.parameters.text",
+          "value": "Overdue Activities"
+        },
+        {
+          "action": "set",
+          "description": "delete pillbox if no product",
+          "path": "$.state.widgets.chart_10.parameters.step",
+          "value": "DaysOverdue_1"
+        },
+        {
+          "action": "delete",
+          "description": "delete discount if no product",
+          "path": "$.state.steps.explore_discount_1"
+        },
+        {
+          "action": "set",
+          "description": "change discount to overdue activities",
+          "path": "$.state.widgets.link_4.parameters.destinationLink.name",
+          "value": "explore_overdue_activities"
+        },
+        {
+          "action": "set",
+          "description": "delete mobile discount if no product",
+          "path": "$.state.widgets.text_12.parameters.text",
+          "value": "Activity Breakdown"
+        },
+        {
+          "action": "set",
+          "description": "delete pillbox if no product",
+          "path": "$.state.widgets.chart_1.parameters.step",
+          "value": "activities_breakdown_1"
+        },
+        {
+          "action": "delete",
+          "description": "delete pillbox if no product",
+          "path": "$.state.steps.product_mix"
+        },
+        {
+          "action": "set",
+          "description": "need to change this one",
+          "path": "$.state.widgets.link_5.parameters.destinationLink.name",
+          "value": "explore_activities_table"
+        },
+        {
+          "action": "delete",
+          "description": "delete pillbox if no product",
+          "path": "$.state.steps.explore_product_mix_1"
+        },
+        {
+          "action": "eval",
+          "description": "delete discount chart",
+          "value": "${salesWaveMacros:deleteWidget('pillbox_1')}"
+        },
+        {
+          "action": "set",
+          "description": "delete pillbox if no product",
+          "path": "$.state.widgets.chart_2.parameters.step",
+          "value": "no_product_mix"
+        },
+        {
+          "action": "delete",
+          "description": "delete pillbox if no product",
+          "path": "$.state.steps.product_mix_dimension"
+        }
+      ]
+    },
+    {
+      "name": "RemoveCaseFromAccountSummary",
+      "condition": "${!Constants.HasCases}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Account_Summary"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=~/.*connection_cases.*/)]"
+        },
+        {
+          "action": "delete",
+          "description": "delete cases",
+          "path": "$.state.steps.open_case_count"
+        },
+        {
+          "action": "eval",
+          "description": "delete widget mobile",
+          "value": "${salesWaveMacros:deleteWidget('chart_8')}"
+        },
+        {
+          "action": "eval",
+          "description": "delete widget mobile",
+          "value": "${salesWaveMacros:deleteWidget('number_8')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete cases",
+          "path": "$.state.steps.mobile_cases_by_status"
+        },
+        {
+          "action": "eval",
+          "description": "delete widget mobile",
+          "value": "${salesWaveMacros:deleteWidget('chart_4')}"
+        },
+        {
+          "action": "eval",
+          "description": "delete widget mobile",
+          "value": "${salesWaveMacros:deleteWidget('text_8')}"
+        },
+        {
+          "action": "eval",
+          "description": "delete widget mobile",
+          "value": "${salesWaveMacros:deleteWidget('text_13')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete cases",
+          "path": "$.state.steps.explore_open_cases"
+        },
+        {
+          "action": "eval",
+          "description": "delete widget mobile",
+          "value": "${salesWaveMacros:deleteWidget('link_6')}"
+        },
+        {
+          "action": "eval",
+          "description": "delete case container",
+          "value": "${salesWaveMacros:deleteWidget('container_19')}"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromOpportunitySummary",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Opportunity_Summary"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=~/.*connection_product.*/)]"
+        },
+        {
+          "action": "delete",
+          "description": "delete product breakdown step",
+          "path": "$.state.steps.product_mix"
+        },
+        {
+          "action": "eval",
+          "description": "delete product breakdown widget",
+          "value": "${salesWaveMacros:deleteWidget('ui_product_mix')}"
+        },
+        {
+          "action": "eval",
+          "description": "delete mobile product breakdown widget",
+          "value": "${salesWaveMacros:deleteWidget('chart_5')}"
+        },
+        {
+          "action": "eval",
+          "description": "delete product mix text widget",
+          "value": "${salesWaveMacros:deleteWidget('text_1')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete linked lense",
+          "path": "$.state.steps.explore_product_1"
+        },
+        {
+          "action": "delete",
+          "description": "delete product breakdown step",
+          "path": "$.state.steps.product_mix_measures"
+        },
+        {
+          "action": "eval",
+          "description": "delete discount widget",
+          "value": "${salesWaveMacros:deleteWidget('ui_product_mix_measures')}"
+        },
+        {
+          "action": "set",
+          "description": "need to change this one",
+          "path": "$.state.widgets.link_3.parameters.destinationLink.name",
+          "value": "explore_activities_table"
+        },
+        {
+          "action": "delete",
+          "description": "delete discount step",
+          "path": "$.state.steps.discount_percent"
+        },
+        {
+          "action": "eval",
+          "description": "delete discount widget",
+          "value": "${salesWaveMacros:deleteWidget('ui_discount_percent')}"
+        },
+        {
+          "action": "eval",
+          "description": "delete mobile discount widget",
+          "value": "${salesWaveMacros:deleteWidget('mobile_ui_discount_percent')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete discount step",
+          "path": "$.state.steps.discount_chart"
+        },
+        {
+          "action": "eval",
+          "description": "delete discount widget",
+          "value": "${salesWaveMacros:deleteWidget('chart_4')}"
+        },
+        {
+          "action": "delete",
+          "description": "delete discount step",
+          "path": "$.state.steps.explore_discount_1"
+        },
+        {
+          "action": "set",
+          "description": "need to change this one",
+          "path": "$.state.widgets.link_6.parameters.destinationLink.name",
+          "value": "explore_activities_table"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromEmbeddedSalesOverview",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Overview_Home"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "need to change this one",
+          "path": "$.state.widgets.link_4.parameters.destinationLink.name",
+          "value": "${App.Dashboards['Trending'].Name}"
+        },
+        {
+          "action": "set",
+          "description": "need to change this one",
+          "path": "$.state.widgets.link_4.parameters.text",
+          "value": "View Pipeline Trending"
+        }
+      ]
+    },
+    {
+      "name": "RemoveComparisonForOpptySplits",
+      "condition": "${Constants.HasOpportunitySplits}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Overview_Home"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete open pipe comparison step",
+          "path": "$.state.steps.comparison_open_pipe"
+        },
+        {
+          "action": "eval",
+          "description": "delete open pipe comparison widget",
+          "value": "${salesWaveMacros:deleteWidget('ui_comparison_open_pipe')}"
+        },
+        {
+          "action": "eval",
+          "description": "delete reference line for open pipe comparison",
+          "value": "$.state.widgets.chart_11.parameters.referenceLine"
+        },
+        {
+          "action": "eval",
+          "description": "On Mobile: delete reference line for open pipe comparison",
+          "value": "$.state.widgets.chart_15.parameters.referenceLine"
+        }
+      ]
+    },
+    {
+      "name": "RemoveAccountOwnerFilterIfSecurity",
+      "condition": "${!Constants.UsersSeeAll && !Variables.Overrides.createAllDashboards}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Opportunity_Discovery"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete owner widget",
+          "path": "$.state.widgets.ui_account_owner"
+        },
+        {
+          "action": "delete",
+          "description": "delete owner step",
+          "path": "$.state.steps.step_account_owner"
+        }
+      ]
+    },
+    {
+      "name": "RemoveOpenPipeWhenCustomAmountQuotaProgress",
+      "condition": "${Constants.HasCustomAmount}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Quota_Progress"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete widget for comparision kpi",
+          "path": "$.state.widgets.ui_percent_open_pipe"
+        },
+        {
+          "action": "delete",
+          "description": "delete step for comparision kpi",
+          "path": "$.state.steps.percent_open_pipe"
+        },
+        {
+          "action": "delete",
+          "description": "delete step for color chart",
+          "path": "$.state.steps.color_open_pipe"
+        },
+        {
+          "action": "delete",
+          "description": "delete ui_percent_open_pipe from layouts",
+          "path": "$.state.gridLayouts.*.pages.*.widgets[?(@.name=='ui_percent_open_pipe')]"
+        },
+        {
+          "action": "eval",
+          "description": "delete comparison text widget",
+          "value": "${salesWaveMacros:deleteWidget('text_10')}"
+        }
+      ]
+    },
+    {
+      "name": "RemoveRecordTypeFilter",
+      "condition": "${! Constants.HasRecordType}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Manager_Overview"
+        },
+        {
+          "type": "dashboard",
+          "name": "Pipeline_Changes"
+        },
+        {
+          "type": "dashboard",
+          "name": "Quota_Progress"
+        },
+        {
+          "type": "dashboard",
+          "name": "Team_Productivity"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Manager_Overview"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Pipeline_Changes"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Stage_Analysis"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Performance"
+        },
+        {
+          "type": "dashboard",
+          "name": "Opportunity_Discovery"
+        },
+        {
+          "type": "dashboard",
+          "name": "Manager_Opportunity_Discovery"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Rep_Overview"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Rep_Pipeline_Changes"
+        },
+        {
+          "type": "dashboard",
+          "name": "Accounts_Dashboard"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete global filter for RecordType",
+          "path": "$.state.filters..[?(@.label=='Record Type')]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveFiscalOptioninTrending",
+      "condition": "${Variables.FY_Month_Offset_Map[Variables.Fiscal_Month] == '0'}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Pipeline_Changes"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Rep_Pipeline_Changes"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Pipeline_Changes"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "delete global filter for RecordType",
+          "path": "$.state.widgets.dateselector_1.parameters.calendarTypeSwitchingAllowed",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "RemoveProductFromUserXMDv20",
+      "condition": "${!Constants.HasProduct}",
+      "appliesTo": [
+        {
+          "type": "xmd",
+          "name": "opportunity"
+        },
+        {
+          "type": "xmd",
+          "name": "pipeline_trending"
+        },
+        {
+          "type": "xmd",
+          "name": "ProductSchedules"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove product dimension so system.xmd doesn't complain",
+          "path": "$..dimensions[?(@.label=='${Variables.Product_L2.fieldLabel}')]"
+        },
+        {
+          "action": "delete",
+          "description": "remove product dimension so system.xmd doesn't complain",
+          "path": "$..dimensions[?(@.label=='${Variables.Product.fieldLabel}')]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveParentAccountFromOpportunityXMD",
+      "condition": "${!Constants.HasAccountHierarchy}",
+      "appliesTo": [
+        {
+          "type": "xmd",
+          "name": "opportunity"
+        },
+        {
+          "type": "xmd",
+          "name": "ProductSchedules"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove parent account dimension so system.xmd doesn't complain",
+          "path": "$..dimensions[?(@.label=='Parent Account Name')]"
+        }
+      ]
+    }
+  ]
+}

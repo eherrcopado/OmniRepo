@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Launched using the Execute button on View Work Item Details (for manual tasks alone)</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>English</language>
+    <name>XOMWorkItemExecutionOmni</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Done</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;Outcome&quot; : &quot;&quot;,
+  &quot;consoleTabLabel&quot; : &quot;New&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Done&quot;,
+  &quot;message&quot; : { },
+  &quot;redirectPageName&quot; : &quot;mobileDone&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcMobileConfirmation.html&quot;,
+  &quot;show&quot; : null,
+  &quot;source&quot; : &quot;https://vins4-dev-ed.lightning.force.com/lightning/r/vlocity_cmt__OrchestrationItem__c/%ContextId%/view&quot;,
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;URL&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Done Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Name</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;debounceValue&quot; : 0,
+  &quot;defaultValue&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Name&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Text</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>State</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;defaultValue&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;State&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Pending&quot;,
+    &quot;value&quot; : &quot;Pending&quot;
+  }, {
+    &quot;name&quot; : &quot;Ready&quot;,
+    &quot;value&quot; : &quot;Ready&quot;
+  }, {
+    &quot;name&quot; : &quot;In Progress&quot;,
+    &quot;value&quot; : &quot;In Progress&quot;
+  }, {
+    &quot;name&quot; : &quot;Completed&quot;,
+    &quot;value&quot; : &quot;Completed&quot;
+  }, {
+    &quot;name&quot; : &quot;Failed&quot;,
+    &quot;value&quot; : &quot;Failed&quot;
+  }, {
+    &quot;name&quot; : &quot;Fatally Failed&quot;,
+    &quot;value&quot; : &quot;Fatally Failed&quot;
+  }, {
+    &quot;name&quot; : &quot;Frozen&quot;,
+    &quot;value&quot; : &quot;Frozen&quot;
+  }, {
+    &quot;name&quot; : &quot;Freezing&quot;,
+    &quot;value&quot; : &quot;Freezing&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Enter details</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;chartLabel&quot; : null,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Enter details&quot;,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ExtractWorkItem</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;bundle&quot; : &quot;WorkItemExtractDR&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;ContextId&quot;,
+    &quot;inputParam&quot; : &quot;ContextId&quot;
+  } ],
+  &quot;disOnTplt&quot; : false,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Extract Work Item&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Submit</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;bundle&quot; : &quot;WorkItemUpdate&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Submit&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 6,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;allowSaveForLater&quot;:true,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;bLK&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;consoleTabTitle&quot;:null,&quot;currencyCode&quot;:&quot;&quot;,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;enableKnowledge&quot;:false,&quot;hideStepChart&quot;:false,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;lkObjName&quot;:null,&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;},{&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;&quot;,&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false}],&quot;rtpSeed&quot;:false,&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;seedDataJSON&quot;:{},&quot;showInputWidth&quot;:false,&quot;ssm&quot;:false,&quot;timeTracking&quot;:false,&quot;trackingCustomData&quot;:{},&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
+    <subType>XOMCustomOmniscriptExecution</subType>
+    <type>XOM</type>
+    <uniqueName>XOM_XOMCustomOmniscriptExecution_English_7</uniqueName>
+    <versionNumber>7.0</versionNumber>
+    <webComponentKey>96206559-3ced-6ceb-d025-e130c3701dcc</webComponentKey>
+</OmniScript>

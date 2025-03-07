@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Demo Content Team: Extract Task Related Details</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;Task&quot; : [ {
+    &quot;Subject&quot; : &quot;Renewal reminder&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Send email&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Call to change order&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Account planning&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Contract renewal&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Prepare a Quote&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Review latest billing information&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Email Alert&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Set Appointment&quot;
+  } ]
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>dcGetTaskDetails</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>&apos;RegTaskTypes&apos;</filterValue>
+        <globalKey>a3324bed-01fb-427b-b0d8-d46952eb9493</globalKey>
+        <inputFieldName>Name</inputFieldName>
+        <inputObjectName>vlocity_cmt__Picklist__c</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dcGetTaskDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Picklist</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a588e4c3-c335-4533-bdbb-c9e63516040d</globalKey>
+        <inputFieldName>Picklist:PV:vlocity_cmt__Code__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dcGetTaskDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TaskPicklistValue:TaskType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>Picklist:Id</filterValue>
+        <globalKey>929c1b2f-618c-4283-a0d2-ec000c050f82</globalKey>
+        <inputFieldName>vlocity_cmt__PicklistId__c</inputFieldName>
+        <inputObjectName>vlocity_cmt__PicklistValue__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dcGetTaskDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Picklist:PV</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>&apos;true&apos;</filterValue>
+        <globalKey>122b5684-a3cf-4dd4-a461-02b172d44693</globalKey>
+        <inputFieldName>vlocity_cmt__IsActive__c</inputFieldName>
+        <inputObjectName>vlocity_cmt__PicklistValue__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>dcGetTaskDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Picklist:PV</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>dcGetTaskDetails_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

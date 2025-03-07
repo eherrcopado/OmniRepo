@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>CreateInteraction</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;consoleCardLayout&quot; : null,
+  &quot;drBundleName&quot; : null,
+  &quot;integrationProcName&quot; : &quot;CustomerInteraction_Creation&quot;,
+  &quot;interactionObjName&quot; : &quot;CustomerInteraction&quot;,
+  &quot;moreRequests&quot; : null,
+  &quot;numOfOptionalVerificationFields&quot; : null,
+  &quot;optionalVerificationFieldList&quot; : [ ],
+  &quot;parentId&quot; : null,
+  &quot;recordId&quot; : &quot;0014600000n4MwLAAU&quot;,
+  &quot;request&quot; : {
+    &quot;additionalData&quot; : null,
+    &quot;continueSearch&quot; : false,
+    &quot;displaySequence&quot; : 1,
+    &quot;fieldPicklistValues&quot; : { },
+    &quot;isClassBased&quot; : false,
+    &quot;lastRecordId&quot; : null,
+    &quot;previousSearchResults&quot; : null,
+    &quot;recordOffset&quot; : null,
+    &quot;referenceObjectName&quot; : null,
+    &quot;requestUniqueName&quot; : &quot;InteractionAccount&quot;,
+    &quot;searchFieldList&quot; : [ &quot;Name&quot; ],
+    &quot;searchFieldsLabelTypeMap&quot; : {
+      &quot;Name&quot; : {
+        &quot;datatype&quot; : &quot;text&quot;,
+        &quot;label&quot; : &quot;Account Name&quot;
+      }
+    },
+    &quot;searchObjectLabel&quot; : &quot;InteractionAccount&quot;,
+    &quot;searchObjectName&quot; : &quot;Account&quot;,
+    &quot;searchType&quot; : &quot;Caller Identification&quot;,
+    &quot;searchValueMap&quot; : {
+      &quot;Name&quot; : &quot;*&quot;
+    }
+  },
+  &quot;resultFieldList&quot; : [ &quot;Name&quot;, &quot;BillingStreet&quot;, &quot;BillingCity&quot; ],
+  &quot;resultFieldsLabelTypeMap&quot; : {
+    &quot;BillingCity&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Billing City&quot;
+    },
+    &quot;BillingStreet&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Billing Street&quot;
+    },
+    &quot;Name&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Account Name&quot;
+    }
+  },
+  &quot;resultValueMap&quot; : {
+    &quot;BillingCity&quot; : null,
+    &quot;BillingStreet&quot; : null,
+    &quot;Name&quot; : &quot;testsetest&quot;
+  },
+  &quot;uniqueRequestName&quot; : &quot;InteractionAccount&quot;,
+  &quot;verificationFieldList&quot; : [ &quot;Name&quot;, &quot;BillingStreet&quot;, &quot;BillingCity&quot; ],
+  &quot;verificationResult&quot; : {
+    &quot;BillingCity&quot; : null,
+    &quot;BillingStreet&quot; : null,
+    &quot;Name&quot; : null,
+    &quot;fields&quot; : {
+      &quot;BillingCity&quot; : true,
+      &quot;BillingStreet&quot; : true,
+      &quot;Name&quot; : true
+    }
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CreateInteractionContactAccConRel</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem3</globalKey>
+        <inputFieldName>resultValueMap:AccountId</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AccountId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem8</globalKey>
+        <inputFieldName>verificationResult:timestamp</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__VerificationTimestamp__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Call</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem6</globalKey>
+        <inputFieldName>type</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Type__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>In Progress</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem5</globalKey>
+        <inputFieldName>status</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem4</globalKey>
+        <inputFieldName>resultValueMap:ContactId</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ContactId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem2</globalKey>
+        <inputFieldName>resultValueMap:Account.Name</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem7</globalKey>
+        <inputFieldName>verificationResult:status</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Verified__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem9</globalKey>
+        <inputFieldName>verificationResult:username</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__VerifiedAgentName__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Contact Center</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem0</globalKey>
+        <inputFieldName>channel</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Channel__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>0.0</formulaSequence>
+        <globalKey>CreateInteractionContactAccConRelCustoma1V3h000002Q2LlEAKItem1</globalKey>
+        <inputFieldName>consoleCardLayout</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateInteractionContactAccConRel</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ConsoleCardLayout__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__CustomerInteraction__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;consoleCardLayout&quot; : null,
+  &quot;drBundleName&quot; : &quot;CloneCreateInteractionContact&quot;,
+  &quot;integrationProcName&quot; : null,
+  &quot;interactionObjName&quot; : &quot;CustomerInteraction&quot;,
+  &quot;moreRequests&quot; : null,
+  &quot;numOfOptionalVerificationFields&quot; : null,
+  &quot;optionalVerificationFieldList&quot; : [ ],
+  &quot;parentId&quot; : null,
+  &quot;recordId&quot; : &quot;07k3h000002KCUWAA4&quot;,
+  &quot;request&quot; : {
+    &quot;additionalData&quot; : null,
+    &quot;continueSearch&quot; : false,
+    &quot;displaySequence&quot; : 3,
+    &quot;fieldPicklistValues&quot; : { },
+    &quot;isClassBased&quot; : false,
+    &quot;lastRecordId&quot; : null,
+    &quot;nonWildCardFields&quot; : [ ],
+    &quot;previousSearchResults&quot; : null,
+    &quot;recordOffset&quot; : null,
+    &quot;referenceObjectName&quot; : &quot;AccountContactRelation&quot;,
+    &quot;requestUniqueName&quot; : &quot;InteractionContact2&quot;,
+    &quot;searchFieldList&quot; : [ &quot;Contact.FirstName&quot;, &quot;Contact.LastName&quot; ],
+    &quot;searchFieldsLabelTypeMap&quot; : {
+      &quot;Contact.FirstName&quot; : {
+        &quot;datatype&quot; : &quot;text&quot;,
+        &quot;label&quot; : &quot;First Name&quot;
+      },
+      &quot;Contact.LastName&quot; : {
+        &quot;datatype&quot; : &quot;text&quot;,
+        &quot;label&quot; : &quot;Last Name&quot;
+      }
+    },
+    &quot;searchObjectLabel&quot; : &quot;Contact&quot;,
+    &quot;searchObjectName&quot; : &quot;AccountContactRelation&quot;,
+    &quot;searchType&quot; : &quot;Caller Identification&quot;,
+    &quot;searchValueMap&quot; : {
+      &quot;Contact.FirstName&quot; : &quot;test*&quot;,
+      &quot;Contact.LastName&quot; : null
+    }
+  },
+  &quot;resultFieldList&quot; : [ &quot;Account.Name&quot;, &quot;Account.BillingPostalCode&quot;, &quot;Account.BillingStreet&quot;, &quot;Account.BillingCity&quot;, &quot;Account.BillingState&quot;, &quot;Account.BillingCountry&quot; ],
+  &quot;resultFieldsLabelTypeMap&quot; : {
+    &quot;Account.BillingCity&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Billing City&quot;
+    },
+    &quot;Account.BillingCountry&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Billing Country&quot;
+    },
+    &quot;Account.BillingPostalCode&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Billing Zip/Postal Code&quot;
+    },
+    &quot;Account.BillingState&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Billing State/Province&quot;
+    },
+    &quot;Account.BillingStreet&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Billing Street&quot;
+    },
+    &quot;Account.Name&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Account Name&quot;
+    },
+    &quot;Account.Phone&quot; : {
+      &quot;datatype&quot; : &quot;text&quot;,
+      &quot;label&quot; : &quot;Account Phone&quot;
+    }
+  },
+  &quot;resultValueMap&quot; : {
+    &quot;Account.BillingCity&quot; : null,
+    &quot;Account.BillingCountry&quot; : null,
+    &quot;Account.BillingPostalCode&quot; : null,
+    &quot;Account.BillingState&quot; : null,
+    &quot;Account.BillingStreet&quot; : null,
+    &quot;Account.Name&quot; : &quot;Oxford Dealer&quot;,
+    &quot;Account.Phone&quot; : null,
+    &quot;AccountId&quot; : &quot;0013h00000C1vrjAAB&quot;,
+    &quot;Contact.FirstName&quot; : &quot;Test&quot;,
+    &quot;Contact.LastName&quot; : &quot;AccRel&quot;,
+    &quot;ContactId&quot; : &quot;0033h00000BgFsWAAV&quot;
+  },
+  &quot;uniqueRequestName&quot; : &quot;InteractionContact2&quot;,
+  &quot;verificationFieldList&quot; : [ &quot;Account.Phone&quot;, &quot;Account.BillingPostalCode&quot; ],
+  &quot;verificationResult&quot; : {
+    &quot;Account.BillingPostalCode&quot; : null,
+    &quot;Account.Phone&quot; : null,
+    &quot;fields&quot; : {
+      &quot;Account.BillingPostalCode&quot; : true,
+      &quot;Account.Phone&quot; : true
+    }
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateInteractionContactAccConRel_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

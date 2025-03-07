@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__ServiceId__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>ID of the service Asset which is the subject of this Case.</description>
+    <label>Service ID</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <filterItems>
+            <field>$Source.AccountId</field>
+            <operation>equals</operation>
+            <valueField>Asset.AccountId</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.AccountId</field>
+            <operation>equals</operation>
+            <valueField>Asset.vlocity_cmt__BillingAccountId__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.AccountId</field>
+            <operation>equals</operation>
+            <valueField>Asset.vlocity_cmt__ServiceAccountId__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Asset</referenceTo>
+    <relationshipLabel>Cases</relationshipLabel>
+    <relationshipName>Cases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

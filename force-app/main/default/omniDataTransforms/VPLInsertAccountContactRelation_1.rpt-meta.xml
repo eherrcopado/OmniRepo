@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContactDetails&quot; : {
+    &quot;AllContacts&quot; : {
+      &quot;Email&quot; : null,
+      &quot;FirstName&quot; : null,
+      &quot;IsPrimary&quot; : null,
+      &quot;LastName&quot; : null,
+      &quot;Phone&quot; : null,
+      &quot;Role&quot; : null
+    }
+  },
+  &quot;ContextId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;ContactDetails&quot; : null,
+    &quot;IPGetAllContacts&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLInsertAccountContactRelation</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <defaultValue>Primary Contact</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>41625da6-bb5c-e1e3-c16e-469312659a85</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertAccountContactRelation</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Roles</outputFieldName>
+        <outputObjectName>AccountContactRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>d4193f5e-6726-10d0-0844-426b2f2c2aed</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-InsertAccountContactRelation</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>AccountContactRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f17b0cdf-06c0-b0c1-aab2-6fe0b2469d2d</globalKey>
+        <inputFieldName>DRId_Contact</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertAccountContactRelation</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>AccountContactRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8d7894ba-9742-c047-7cbd-924793cf6e14</globalKey>
+        <inputFieldName>Account_Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertAccountContactRelation</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>AccountContactRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CustomerSelection:AccountType &apos;Consumer&apos; = var:DRId_Account var:BusinessAccountId IF</formulaConverted>
+        <formulaExpression>IF(%CustomerSelection:AccountType% = &apos;Consumer&apos;, %DRId_Account%, %BusinessAccountId%)</formulaExpression>
+        <formulaResultPath>Account_Id</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>aac5c05d-e711-99b6-5763-ee093d4287c3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertAccountContactRelation</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountDisplayName&quot; : &quot;Dull Wiser&quot;,
+  &quot;AccountIdRedirection&quot; : &quot;0013h00000KSh8jAAD&quot;,
+  &quot;AgreementIdList&quot; : [ &quot;1500011384&quot;, &quot;1500011385&quot;, &quot;1500011386&quot; ],
+  &quot;AgreementMessageList&quot; : [ &quot;Contract 1500011384 created for installation 800012984 (move-in date 04.05.2019) Move-in document 100011516 created.Contract 1500011385 created for installation 800012987 (move-in date 2020-09-22 08:57:46.895947).&quot;, &quot;Contract 1500011384 created for installation 800012985 (move-in date 2020-09-22 08:57:46.895947) Move-in document 100011516 created.Contract 1500011385 created for installation 800012987 (move-in date 2020-09-22 08:57:46.895947).&quot;, &quot;Contract 1500011384 created for installation 800012986 (move-in date 04.05.2019) Move-in document 100011516 created.Contract 1500011385 created for installation 800012987 (move-in date 2020-09-22 08:57:46.895947).&quot; ],
+  &quot;AttrCategory&quot; : [ {
+    &quot;CategoryCode&quot; : &quot;COST&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MyF9EAK&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;PURCHASE_CRITERIA_COST&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MytJEAS&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;OUTAGE_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mfw4EAC&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;OFFERS_PROMOTIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mfw5EAC&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;WORKORDER_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mfw6EAC&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;BILL_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MfvkEAC&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;PAYMENT_REMINDERS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MfvlEAC&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;DNC_FROM&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MfvmEAC&quot;
+  }, {
+    &quot;CategoryCode&quot; : &quot;DNC_TO&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mg0HEAS&quot;
+  } ],
+  &quot;AttributeAccountId&quot; : &quot;0013h00000KSh8jAAD&quot;,
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingAccountRecTypeId&quot; : &quot;0123h000000jV4IAAU&quot;,
+  &quot;BillingAccountRecordType&quot; : &quot;Billing&quot;,
+  &quot;BillingPreferences&quot; : {
+    &quot;APaymentType&quot; : &quot;Postpaid&quot;,
+    &quot;AutoPay&quot; : &quot;No&quot;,
+    &quot;BillNotification&quot; : &quot;No&quot;,
+    &quot;MailingAddres&quot; : null,
+    &quot;MailingAddresss&quot; : null,
+    &quot;MailingCity&quot; : null,
+    &quot;MailingCountry&quot; : null,
+    &quot;MailingState&quot; : null,
+    &quot;MailingStreet&quot; : null,
+    &quot;MailingZipCode&quot; : null,
+    &quot;OffersPromotions&quot; : &quot;Yes&quot;,
+    &quot;OutageNotification&quot; : &quot;Yes&quot;,
+    &quot;PaymentNotification&quot; : &quot;Yes&quot;,
+    &quot;WorkOrderNotification&quot; : &quot;No&quot;
+  },
+  &quot;BusinessAccountId&quot; : &quot;0013h00000KSh8jAAD&quot;,
+  &quot;BusinessAccountRecTypeId&quot; : &quot;0123h000000jV4HAAU&quot;,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;Category&quot; : {
+    &quot;BillNotifications&quot; : {
+      &quot;CategoryCode&quot; : &quot;BILL_NOTIFICATIONS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001MfvkEAC&quot;
+    },
+    &quot;DNCFrom&quot; : {
+      &quot;CategoryCode&quot; : &quot;DNC_FROM&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001MfvmEAC&quot;
+    },
+    &quot;DNCTo&quot; : {
+      &quot;CategoryCode&quot; : &quot;DNC_TO&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001Mg0HEAS&quot;
+    },
+    &quot;OffersPromotions&quot; : {
+      &quot;CategoryCode&quot; : &quot;OFFERS_PROMOTIONS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001Mfw5EAC&quot;
+    },
+    &quot;OutageNotifications&quot; : {
+      &quot;CategoryCode&quot; : &quot;OUTAGE_NOTIFICATIONS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001Mfw4EAC&quot;
+    },
+    &quot;PaymentReminders&quot; : {
+      &quot;CategoryCode&quot; : &quot;PAYMENT_REMINDERS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001MfvlEAC&quot;
+    },
+    &quot;WorkorderNotifications&quot; : {
+      &quot;CategoryCode&quot; : &quot;WORKORDER_NOTIFICATIONS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000001Mfw6EAC&quot;
+    }
+  },
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;Confirmation&quot; : { },
+  &quot;ContactIdRedirection&quot; : &quot;0033h00000E4rgMAAR&quot;,
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Business&quot;,
+    &quot;BillingDetails&quot; : { },
+    &quot;BusinessAccountName&quot; : &quot;Dull east&quot;,
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-09-29T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : true,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;CustomerDOB&quot; : &quot;09/21/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;Dull&quot;,
+      &quot;CustomerLastName&quot; : &quot;Wiser&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;TaxID&quot;,
+      &quot;SSN&quot; : null,
+      &quot;TaxId&quot; : &quot;655765777&quot;
+    },
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : &quot;All east&quot;,
+      &quot;ParentAccountId&quot; : &quot;0013h00000KSh8UAAT&quot;,
+      &quot;ParentAccountName&quot; : &quot;All east&quot;
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : null,
+      &quot;ExemptionPercentage&quot; : null,
+      &quot;ExemptionStartDate&quot; : null
+    }
+  },
+  &quot;DRId_Account&quot; : &quot;0013h00000KSh8jAAD&quot;,
+  &quot;DRId_Contact&quot; : &quot;0033h00000E4rgMAAR&quot;,
+  &quot;ERPAccountID__c&quot; : 6011110,
+  &quot;ERP_Contract_ID__c&quot; : 2334455,
+  &quot;FML_Today&quot; : &quot;2020-09-21T18:30:00.000Z&quot;,
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;PreConfirm&quot; : {
+    &quot;Confirm&quot; : &quot;Yes&quot;
+  },
+  &quot;PremisesDisplayName&quot; : &quot;Coventry premise&quot;,
+  &quot;Products&quot; : {
+    &quot;ElectricityProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+      &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;001&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+      &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;003&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+      &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;002&quot;
+    } ],
+    &quot;GasProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+      &quot;Name&quot; : &quot;Turn Off Order&quot;,
+      &quot;ProductCode&quot; : &quot;004&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+      &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+    } ],
+    &quot;WaterProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+      &quot;Name&quot; : &quot;Water&quot;,
+      &quot;ProductCode&quot; : &quot;water&quot;
+    } ]
+  },
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4JAAU&quot;,
+    &quot;Name&quot; : &quot;Service&quot;
+  } ],
+  &quot;SAPIntegrated&quot; : &quot;Yes&quot;,
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectPremises&quot; : {
+    &quot;ExistingAccountExistingPremisesId&quot; : null,
+    &quot;NewAccountPremises&quot; : null,
+    &quot;PremiseError&quot; : null,
+    &quot;ServiceLocation-Block&quot; : {
+      &quot;PremCity&quot; : &quot;Kolkata&quot;,
+      &quot;PremCountry&quot; : &quot;India&quot;,
+      &quot;PremId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;PremPostalCode&quot; : &quot;700059&quot;,
+      &quot;PremState&quot; : &quot;West Bengal&quot;,
+      &quot;PremiseName&quot; : &quot;Coventry premise&quot;,
+      &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+      &quot;PremiseStreetAddress&quot; : &quot;Akshara Lotus Garden Coevtry&quot;,
+      &quot;ServiceLocation&quot; : &quot;Coventry premise&quot;
+    }
+  },
+  &quot;SelectService&quot; : [ {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDfEAI&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h000000VDn6EAG&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Day Night Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50004&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50003&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDVEAY&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wGEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50001&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDQEAY&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wHEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Water&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50002&quot;,
+    &quot;ServiceType&quot; : &quot;Water&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  } ],
+  &quot;SelectServicePoints&quot; : [ {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDfEAI&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h000000VDn6EAG&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Day Night Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50004&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50003&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDVEAY&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wGEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50001&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDQEAY&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wHEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Water&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50002&quot;,
+    &quot;ServiceType&quot; : &quot;Water&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  } ],
+  &quot;SelectTypeofService&quot; : {
+    &quot;SelectServicePoint&quot; : null,
+    &quot;SelectServicePoints&quot; : [ {
+      &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDfEAI&quot;,
+      &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;ProductId&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+      &quot;ProductName&quot; : &quot;Night Display Tariff&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h000000VDn6EAG&quot;,
+      &quot;ServicePointName&quot; : &quot;Coventry Day Night Electricity&quot;,
+      &quot;ServicePointNumber&quot; : &quot;SR50004&quot;,
+      &quot;ServiceType&quot; : &quot;Electricity&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;,
+      &quot;originalIndex&quot; : &quot;0&quot;
+    }, {
+      &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+      &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;ProductId&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;ProductName&quot; : &quot;Regulated Gas Rate&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+      &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+      &quot;ServicePointNumber&quot; : &quot;SR50003&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;,
+      &quot;originalIndex&quot; : &quot;1&quot;
+    }, {
+      &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDVEAY&quot;,
+      &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;ProductId&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+      &quot;ProductName&quot; : &quot;Night Display Tariff&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059wGEAQ&quot;,
+      &quot;ServicePointName&quot; : &quot;Coventry Electricity&quot;,
+      &quot;ServicePointNumber&quot; : &quot;SR50001&quot;,
+      &quot;ServiceType&quot; : &quot;Electricity&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;,
+      &quot;originalIndex&quot; : &quot;2&quot;
+    }, {
+      &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDQEAY&quot;,
+      &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;ProductId&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+      &quot;ProductName&quot; : &quot;Water&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059wHEAQ&quot;,
+      &quot;ServicePointName&quot; : &quot;Coventry Water&quot;,
+      &quot;ServicePointNumber&quot; : &quot;SR50002&quot;,
+      &quot;ServiceType&quot; : &quot;Water&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;,
+      &quot;originalIndex&quot; : &quot;3&quot;
+    } ],
+    &quot;ServicePointsFormula&quot; : 4
+  },
+  &quot;SelectedPremises&quot; : &quot;a3X3h0000006OviEAE&quot;,
+  &quot;SelectedServiceData&quot; : [ {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDfEAI&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ProductId&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+    &quot;ProductName&quot; : &quot;Night Display Tariff&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h000000VDn6EAG&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Day Night Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50004&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;,
+    &quot;originalIndex&quot; : &quot;0&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ProductId&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+    &quot;ProductName&quot; : &quot;Regulated Gas Rate&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50003&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;,
+    &quot;originalIndex&quot; : &quot;1&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDVEAY&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ProductId&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+    &quot;ProductName&quot; : &quot;Night Display Tariff&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wGEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50001&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;,
+    &quot;originalIndex&quot; : &quot;2&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDQEAY&quot;,
+    &quot;PremiseNumber&quot; : &quot;PR70001&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ProductId&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+    &quot;ProductName&quot; : &quot;Water&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wHEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Water&quot;,
+    &quot;ServicePointNumber&quot; : &quot;SR50002&quot;,
+    &quot;ServiceType&quot; : &quot;Water&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;,
+    &quot;originalIndex&quot; : &quot;3&quot;
+  } ],
+  &quot;SelectedServiceMaxRow&quot; : &quot;&quot;,
+  &quot;ServiceAccountId&quot; : &quot;0013h00000KSh8pAAD&quot;,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;Checked&quot;,
+    &quot;label&quot; : &quot;&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServiceAccountRecTypeId&quot; : &quot;0123h000000jV4JAAU&quot;,
+  &quot;ServiceAccountRecordType&quot; : &quot;Service&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SelectProduct&quot;,
+    &quot;label&quot; : &quot;Select Product&quot;
+  } ],
+  &quot;ServicePointsColumnsConfirm&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProductName&quot;,
+    &quot;label&quot; : &quot;Select Product&quot;
+  } ],
+  &quot;ServicePointsError&quot; : null,
+  &quot;ServicePremises&quot; : null,
+  &quot;UpdatedAccountPref&quot; : [ {
+    &quot;AccountId&quot; : &quot;0013h00000KSh8jAAD&quot;,
+    &quot;AccountName&quot; : &quot;Dull Wiser&quot;,
+    &quot;AttrValue&quot; : &quot;No&quot;,
+    &quot;CategoryCode&quot; : &quot;BILL_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MfvkEAC&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;0013h00000KSh8jAAD&quot;,
+    &quot;AccountName&quot; : &quot;Dull Wiser&quot;,
+    &quot;AttrValue&quot; : &quot;Yes&quot;,
+    &quot;CategoryCode&quot; : &quot;PAYMENT_REMINDERS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MfvlEAC&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;0013h00000KSh8jAAD&quot;,
+    &quot;AccountName&quot; : &quot;Dull Wiser&quot;,
+    &quot;AttrValue&quot; : &quot;Yes&quot;,
+    &quot;CategoryCode&quot; : &quot;OUTAGE_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mfw4EAC&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;0013h00000KSh8jAAD&quot;,
+    &quot;AccountName&quot; : &quot;Dull Wiser&quot;,
+    &quot;AttrValue&quot; : &quot;Yes&quot;,
+    &quot;CategoryCode&quot; : &quot;OFFERS_PROMOTIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mfw5EAC&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;0013h00000KSh8jAAD&quot;,
+    &quot;AccountName&quot; : &quot;Dull Wiser&quot;,
+    &quot;AttrValue&quot; : &quot;No&quot;,
+    &quot;CategoryCode&quot; : &quot;WORKORDER_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mfw6EAC&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;0013h00000KSh8jAAD&quot;,
+    &quot;AccountName&quot; : &quot;Dull Wiser&quot;,
+    &quot;AttrValue&quot; : &quot;None&quot;,
+    &quot;CategoryCode&quot; : &quot;DNC_FROM&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MfvmEAC&quot;
+  }, {
+    &quot;AccountId&quot; : &quot;0013h00000KSh8jAAD&quot;,
+    &quot;AccountName&quot; : &quot;Dull Wiser&quot;,
+    &quot;AttrValue&quot; : &quot;None&quot;,
+    &quot;CategoryCode&quot; : &quot;DNC_TO&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mg0HEAS&quot;
+  } ],
+  &quot;createResidentialAccount_Msg&quot; : &quot;Contract created in SAP successfully..!&quot;,
+  &quot;result&quot; : {
+    &quot;Account_1&quot; : [ {
+      &quot;AccountNumber&quot; : &quot;2334455&quot;,
+      &quot;UpsertError&quot; : &quot;Required fields are missing: [Account Name] &quot;,
+      &quot;UpsertSuccess&quot; : false
+    } ],
+    &quot;error&quot; : true,
+    &quot;errors&quot; : {
+      &quot;VPL-UpdateBillingAccountAfterIntegration&quot; : {
+        &quot;2:0&quot; : {
+          &quot;1&quot; : &quot;Required fields are missing: [Account Name] &quot;
+        }
+      }
+    },
+    &quot;errorsAsJson&quot; : {
+      &quot;AccountDisplayName&quot; : &quot;&quot;,
+      &quot;AccountIdRedirection&quot; : &quot;&quot;,
+      &quot;AttrCategory&quot; : [ {
+        &quot;CategoryCode&quot; : &quot;&quot;,
+        &quot;CategoryId&quot; : &quot;&quot;
+      }, {
+        &quot;CategoryCode&quot; : &quot;&quot;,
+        &quot;CategoryId&quot; : &quot;&quot;
+      }, {
+        &quot;CategoryCode&quot; : &quot;&quot;,
+        &quot;CategoryId&quot; : &quot;&quot;
+      }, {
+        &quot;CategoryCode&quot; : &quot;&quot;,
+        &quot;CategoryId&quot; : &quot;&quot;
+      }, {
+        &quot;CategoryCode&quot; : &quot;&quot;,
+        &quot;CategoryId&quot; : &quot;&quot;
+      }, {
+        &quot;CategoryCode&quot; : &quot;&quot;,
+        &quot;CategoryId&quot; : &quot;&quot;
+      }, {
+        &quot;CategoryCode&quot; : &quot;&quot;,
+        &quot;CategoryId&quot; : &quot;&quot;
+      }, {
+        &quot;CategoryCode&quot; : &quot;&quot;,
+        &quot;CategoryId&quot; : &quot;&quot;
+      }, {
+        &quot;CategoryCode&quot; : &quot;&quot;,
+        &quot;CategoryId&quot; : &quot;&quot;
+      } ],
+      &quot;AttributeAccountId&quot; : &quot;&quot;,
+      &quot;AvailableProductMaxRowSelection&quot; : &quot;&quot;,
+      &quot;AvialbleProductsColumns&quot; : [ {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      }, {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      }, {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      }, {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      } ],
+      &quot;BankPaymentDetails&quot; : null,
+      &quot;BillingAccountRecTypeId&quot; : &quot;&quot;,
+      &quot;BillingAccountRecordType&quot; : &quot;&quot;,
+      &quot;BillingPreferences&quot; : {
+        &quot;APaymentType&quot; : &quot;&quot;,
+        &quot;AutoPay&quot; : &quot;&quot;,
+        &quot;BillNotification&quot; : &quot;&quot;,
+        &quot;MailingAddres&quot; : null,
+        &quot;MailingAddresss&quot; : null,
+        &quot;MailingCity&quot; : null,
+        &quot;MailingCountry&quot; : null,
+        &quot;MailingState&quot; : null,
+        &quot;MailingStreet&quot; : null,
+        &quot;MailingZipCode&quot; : null,
+        &quot;OffersPromotions&quot; : &quot;&quot;,
+        &quot;OutageNotification&quot; : &quot;&quot;,
+        &quot;PaymentNotification&quot; : &quot;&quot;,
+        &quot;WorkOrderNotification&quot; : &quot;&quot;
+      },
+      &quot;BusinessAccountId&quot; : &quot;&quot;,
+      &quot;BusinessAccountRecTypeId&quot; : &quot;&quot;,
+      &quot;BusinessAccountRecordType&quot; : &quot;&quot;,
+      &quot;Category&quot; : {
+        &quot;BillNotifications&quot; : {
+          &quot;CategoryCode&quot; : &quot;&quot;,
+          &quot;CategoryId&quot; : &quot;&quot;
+        },
+        &quot;DNCFrom&quot; : {
+          &quot;CategoryCode&quot; : &quot;&quot;,
+          &quot;CategoryId&quot; : &quot;&quot;
+        },
+        &quot;DNCTo&quot; : {
+          &quot;CategoryCode&quot; : &quot;&quot;,
+          &quot;CategoryId&quot; : &quot;&quot;
+        },
+        &quot;OffersPromotions&quot; : {
+          &quot;CategoryCode&quot; : &quot;&quot;,
+          &quot;CategoryId&quot; : &quot;&quot;
+        },
+        &quot;OutageNotifications&quot; : {
+          &quot;CategoryCode&quot; : &quot;&quot;,
+          &quot;CategoryId&quot; : &quot;&quot;
+        },
+        &quot;PaymentReminders&quot; : {
+          &quot;CategoryCode&quot; : &quot;&quot;,
+          &quot;CategoryId&quot; : &quot;&quot;
+        },
+        &quot;WorkorderNotifications&quot; : {
+          &quot;CategoryCode&quot; : &quot;&quot;,
+          &quot;CategoryId&quot; : &quot;&quot;
+        }
+      },
+      &quot;ChoosePaymentMethod&quot; : null,
+      &quot;Confirmation&quot; : { },
+      &quot;ContactIdRedirection&quot; : &quot;&quot;,
+      &quot;CustomerSelection&quot; : {
+        &quot;AccountType&quot; : &quot;&quot;,
+        &quot;BillingDetails&quot; : { },
+        &quot;BusinessAccountName&quot; : &quot;&quot;,
+        &quot;ConNameError&quot; : null,
+        &quot;ExistingAccount-Block&quot; : null,
+        &quot;GetCustomer-Block&quot; : null,
+        &quot;MoveInDate&quot; : &quot;&quot;,
+        &quot;MoveInDateFormula&quot; : &quot;&quot;,
+        &quot;MoveInMessage&quot; : &quot;&quot;,
+        &quot;MsgInvalidExistingAccount&quot; : null,
+        &quot;MsgInvalidParentAccount&quot; : &quot;&quot;,
+        &quot;NewAccountNeeded&quot; : null,
+        &quot;NewCustomer&quot; : &quot;&quot;,
+        &quot;NewCustomerDetails&quot; : {
+          &quot;CustomerDOB&quot; : &quot;&quot;,
+          &quot;CustomerEmail&quot; : &quot;&quot;,
+          &quot;CustomerFirstName&quot; : &quot;&quot;,
+          &quot;CustomerLastName&quot; : &quot;&quot;,
+          &quot;CustomerPhone&quot; : &quot;&quot;,
+          &quot;DOBFormula&quot; : &quot;&quot;,
+          &quot;DOBMsg&quot; : &quot;&quot;,
+          &quot;DriverLicense&quot; : null,
+          &quot;IdentificationType&quot; : &quot;&quot;,
+          &quot;SSN&quot; : null,
+          &quot;TaxId&quot; : &quot;&quot;
+        },
+        &quot;ParentAccount-Block&quot; : {
+          &quot;ParentAccount&quot; : &quot;&quot;,
+          &quot;ParentAccountId&quot; : &quot;&quot;,
+          &quot;ParentAccountName&quot; : &quot;&quot;
+        },
+        &quot;TaxDetails&quot; : {
+          &quot;ExemptionEndDate&quot; : null,
+          &quot;ExemptionPercentage&quot; : null,
+          &quot;ExemptionStartDate&quot; : null
+        }
+      },
+      &quot;DRError&quot; : &quot;Required fields are missing: Account Name&quot;,
+      &quot;DRId_Account&quot; : &quot;&quot;,
+      &quot;DRId_Contact&quot; : &quot;&quot;,
+      &quot;DRUpdateContact&quot; : {
+        &quot;Contact_1&quot; : [ {
+          &quot;vlocity_cmt__ContactNumber__c&quot; : &quot;&quot;,
+          &quot;AccountId&quot; : &quot;&quot;,
+          &quot;Id&quot; : &quot;&quot;,
+          &quot;UpsertSuccess&quot; : &quot;&quot;
+        } ],
+        &quot;error&quot; : &quot;&quot;,
+        &quot;responseType&quot; : &quot;&quot;
+      },
+      &quot;DRUpdateContactStatus&quot; : &quot;&quot;,
+      &quot;DRUpdateCosnumerBusinessAccount&quot; : {
+        &quot;Account_1&quot; : [ {
+          &quot;AccountNumber&quot; : &quot;&quot;,
+          &quot;Id&quot; : &quot;&quot;,
+          &quot;UpsertSuccess&quot; : &quot;&quot;
+        } ],
+        &quot;error&quot; : &quot;&quot;,
+        &quot;responseType&quot; : &quot;&quot;
+      },
+      &quot;DRUpdateCosnumerBusinessAccountStatus&quot; : &quot;&quot;,
+      &quot;ERPAccountID__c&quot; : &quot;&quot;,
+      &quot;ERP_Contract_ID__c&quot; : &quot;&quot;,
+      &quot;FML_Today&quot; : &quot;&quot;,
+      &quot;IntegrationType&quot; : &quot;&quot;,
+      &quot;OmniscriptType&quot; : &quot;&quot;,
+      &quot;PaymentDetails&quot; : null,
+      &quot;PreConfirm&quot; : {
+        &quot;Confirm&quot; : &quot;&quot;
+      },
+      &quot;PremisesDisplayName&quot; : &quot;&quot;,
+      &quot;Products&quot; : {
+        &quot;ElectricityProduct&quot; : [ {
+          &quot;Id&quot; : &quot;&quot;,
+          &quot;Name&quot; : &quot;&quot;,
+          &quot;ProductCode&quot; : &quot;&quot;
+        }, {
+          &quot;Id&quot; : &quot;&quot;,
+          &quot;Name&quot; : &quot;&quot;,
+          &quot;ProductCode&quot; : &quot;&quot;
+        }, {
+          &quot;Id&quot; : &quot;&quot;,
+          &quot;Name&quot; : &quot;&quot;,
+          &quot;ProductCode&quot; : &quot;&quot;
+        } ],
+        &quot;GasProduct&quot; : [ {
+          &quot;Id&quot; : &quot;&quot;,
+          &quot;Name&quot; : &quot;&quot;,
+          &quot;ProductCode&quot; : &quot;&quot;
+        }, {
+          &quot;Id&quot; : &quot;&quot;,
+          &quot;Name&quot; : &quot;&quot;,
+          &quot;ProductCode&quot; : &quot;&quot;
+        } ],
+        &quot;WaterProduct&quot; : [ {
+          &quot;Id&quot; : &quot;&quot;,
+          &quot;Name&quot; : &quot;&quot;,
+          &quot;ProductCode&quot; : &quot;&quot;
+        } ]
+      },
+      &quot;RecordType&quot; : [ {
+        &quot;Id&quot; : &quot;&quot;,
+        &quot;Name&quot; : &quot;&quot;
+      } ],
+      &quot;SAPIntegrated&quot; : &quot;&quot;,
+      &quot;SObjectName&quot; : &quot;&quot;,
+      &quot;SelectPremises&quot; : {
+        &quot;ExistingAccountExistingPremisesId&quot; : null,
+        &quot;NewAccountPremises&quot; : null,
+        &quot;PremiseError&quot; : null,
+        &quot;ServiceLocation-Block&quot; : {
+          &quot;PremCity&quot; : &quot;&quot;,
+          &quot;PremCountry&quot; : &quot;&quot;,
+          &quot;PremId&quot; : &quot;&quot;,
+          &quot;PremPostalCode&quot; : &quot;&quot;,
+          &quot;PremState&quot; : &quot;&quot;,
+          &quot;PremiseName&quot; : &quot;&quot;,
+          &quot;PremiseNumber&quot; : &quot;&quot;,
+          &quot;PremiseStreetAddress&quot; : &quot;&quot;,
+          &quot;ServiceLocation&quot; : &quot;&quot;
+        }
+      },
+      &quot;SelectService&quot; : [ {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;
+      }, {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;
+      }, {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;
+      }, {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;
+      } ],
+      &quot;SelectServicePoints&quot; : [ {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;
+      }, {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;
+      }, {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;
+      }, {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;
+      } ],
+      &quot;SelectTypeofService&quot; : {
+        &quot;SelectServicePoint&quot; : null,
+        &quot;SelectServicePoints&quot; : [ {
+          &quot;InventoryItemId&quot; : &quot;&quot;,
+          &quot;PremiseNumber&quot; : &quot;&quot;,
+          &quot;PremisesId&quot; : &quot;&quot;,
+          &quot;ProductId&quot; : &quot;&quot;,
+          &quot;ProductName&quot; : &quot;&quot;,
+          &quot;ServicePointId&quot; : &quot;&quot;,
+          &quot;ServicePointName&quot; : &quot;&quot;,
+          &quot;ServicePointNumber&quot; : &quot;&quot;,
+          &quot;ServiceType&quot; : &quot;&quot;,
+          &quot;Status&quot; : &quot;&quot;,
+          &quot;originalIndex&quot; : &quot;&quot;
+        }, {
+          &quot;InventoryItemId&quot; : &quot;&quot;,
+          &quot;PremiseNumber&quot; : &quot;&quot;,
+          &quot;PremisesId&quot; : &quot;&quot;,
+          &quot;ProductId&quot; : &quot;&quot;,
+          &quot;ProductName&quot; : &quot;&quot;,
+          &quot;ServicePointId&quot; : &quot;&quot;,
+          &quot;ServicePointName&quot; : &quot;&quot;,
+          &quot;ServicePointNumber&quot; : &quot;&quot;,
+          &quot;ServiceType&quot; : &quot;&quot;,
+          &quot;Status&quot; : &quot;&quot;,
+          &quot;originalIndex&quot; : &quot;&quot;
+        }, {
+          &quot;InventoryItemId&quot; : &quot;&quot;,
+          &quot;PremiseNumber&quot; : &quot;&quot;,
+          &quot;PremisesId&quot; : &quot;&quot;,
+          &quot;ProductId&quot; : &quot;&quot;,
+          &quot;ProductName&quot; : &quot;&quot;,
+          &quot;ServicePointId&quot; : &quot;&quot;,
+          &quot;ServicePointName&quot; : &quot;&quot;,
+          &quot;ServicePointNumber&quot; : &quot;&quot;,
+          &quot;ServiceType&quot; : &quot;&quot;,
+          &quot;Status&quot; : &quot;&quot;,
+          &quot;originalIndex&quot; : &quot;&quot;
+        }, {
+          &quot;InventoryItemId&quot; : &quot;&quot;,
+          &quot;PremiseNumber&quot; : &quot;&quot;,
+          &quot;PremisesId&quot; : &quot;&quot;,
+          &quot;ProductId&quot; : &quot;&quot;,
+          &quot;ProductName&quot; : &quot;&quot;,
+          &quot;ServicePointId&quot; : &quot;&quot;,
+          &quot;ServicePointName&quot; : &quot;&quot;,
+          &quot;ServicePointNumber&quot; : &quot;&quot;,
+          &quot;ServiceType&quot; : &quot;&quot;,
+          &quot;Status&quot; : &quot;&quot;,
+          &quot;originalIndex&quot; : &quot;&quot;
+        } ],
+        &quot;ServicePointsFormula&quot; : &quot;&quot;
+      },
+      &quot;SelectedPremises&quot; : &quot;&quot;,
+      &quot;SelectedServiceData&quot; : [ {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ProductId&quot; : &quot;&quot;,
+        &quot;ProductName&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;,
+        &quot;originalIndex&quot; : &quot;&quot;
+      }, {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ProductId&quot; : &quot;&quot;,
+        &quot;ProductName&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;,
+        &quot;originalIndex&quot; : &quot;&quot;
+      }, {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ProductId&quot; : &quot;&quot;,
+        &quot;ProductName&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;,
+        &quot;originalIndex&quot; : &quot;&quot;
+      }, {
+        &quot;InventoryItemId&quot; : &quot;&quot;,
+        &quot;PremiseNumber&quot; : &quot;&quot;,
+        &quot;PremisesId&quot; : &quot;&quot;,
+        &quot;ProductId&quot; : &quot;&quot;,
+        &quot;ProductName&quot; : &quot;&quot;,
+        &quot;ServicePointId&quot; : &quot;&quot;,
+        &quot;ServicePointName&quot; : &quot;&quot;,
+        &quot;ServicePointNumber&quot; : &quot;&quot;,
+        &quot;ServiceType&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;,
+        &quot;originalIndex&quot; : &quot;&quot;
+      } ],
+      &quot;SelectedServiceMaxRow&quot; : &quot;&quot;,
+      &quot;ServiceAccountId&quot; : &quot;&quot;,
+      &quot;ServiceAccountPremisesColumns&quot; : [ {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      }, {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      }, {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      } ],
+      &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;&quot;,
+      &quot;ServiceAccountRecTypeId&quot; : &quot;&quot;,
+      &quot;ServiceAccountRecordType&quot; : &quot;&quot;,
+      &quot;ServicePointsColumns&quot; : [ {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      }, {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      }, {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      } ],
+      &quot;ServicePointsColumnsConfirm&quot; : [ {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      }, {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      }, {
+        &quot;fieldName&quot; : &quot;&quot;,
+        &quot;label&quot; : &quot;&quot;
+      } ],
+      &quot;ServicePointsError&quot; : null,
+      &quot;ServicePremises&quot; : null,
+      &quot;createResidentialAccount_Msg&quot; : &quot;&quot;,
+      &quot;options&quot; : {
+        &quot;chainable&quot; : &quot;&quot;,
+        &quot;postTransformBundle&quot; : &quot;&quot;,
+        &quot;preTransformBundle&quot; : &quot;&quot;,
+        &quot;useContinuation&quot; : &quot;&quot;,
+        &quot;useFuture&quot; : &quot;&quot;,
+        &quot;useQueueableApexRemoting&quot; : &quot;&quot;,
+        &quot;vlcClass&quot; : &quot;&quot;
+      },
+      &quot;timeStamp&quot; : &quot;&quot;,
+      &quot;userCurrencyCode&quot; : &quot;&quot;,
+      &quot;userId&quot; : &quot;&quot;,
+      &quot;userName&quot; : &quot;&quot;,
+      &quot;userProfile&quot; : &quot;&quot;,
+      &quot;userTimeZone&quot; : &quot;&quot;,
+      &quot;vlcTimeTracking&quot; : {
+        &quot;BankPaymentDetails&quot; : &quot;&quot;,
+        &quot;BillingPreferences&quot; : &quot;&quot;,
+        &quot;ChoosePaymentMethod&quot; : &quot;&quot;,
+        &quot;CreateBankAccountPaymentMethod&quot; : &quot;&quot;,
+        &quot;CreateCreditCardPaymentMethod&quot; : &quot;&quot;,
+        &quot;CustomerSelection&quot; : &quot;&quot;,
+        &quot;DR-GetProducts&quot; : &quot;&quot;,
+        &quot;DRCreatServiceAccount&quot; : &quot;&quot;,
+        &quot;DRCreateBillingAccount&quot; : &quot;&quot;,
+        &quot;DRCreateBusinessAccount&quot; : &quot;&quot;,
+        &quot;DRCreateConsumerAccount&quot; : &quot;&quot;,
+        &quot;DRExtractAttrCategory&quot; : &quot;&quot;,
+        &quot;DRExtractBussinessAccountRecId&quot; : &quot;&quot;,
+        &quot;DRFetchBillingAccountRecTypeId&quot; : &quot;&quot;,
+        &quot;DRFetchDesiredRecordType&quot; : &quot;&quot;,
+        &quot;DRFetchServiceAccountRecTypeId&quot; : &quot;&quot;,
+        &quot;DRInsertContact&quot; : &quot;&quot;,
+        &quot;DRTransformAttrCategory&quot; : &quot;&quot;,
+        &quot;ExtractServiceAccountPremises&quot; : &quot;&quot;,
+        &quot;GetPremServicePoints&quot; : &quot;&quot;,
+        &quot;OmniScriptSessionToken&quot; : &quot;&quot;,
+        &quot;PaymentDetails&quot; : &quot;&quot;,
+        &quot;PreConfirm&quot; : &quot;&quot;,
+        &quot;SVBusinessAccountRecTypeId&quot; : &quot;&quot;,
+        &quot;SVDisplayData&quot; : &quot;&quot;,
+        &quot;SVServiceAccountRecTypeId&quot; : &quot;&quot;,
+        &quot;SVSetAttributeAccountValues&quot; : &quot;&quot;,
+        &quot;SelectPremises&quot; : &quot;&quot;,
+        &quot;SelectTypeofService&quot; : &quot;&quot;,
+        &quot;ServicePointsError&quot; : &quot;&quot;,
+        &quot;SetBillingAccountId&quot; : &quot;&quot;,
+        &quot;SetBusinessAccountId&quot; : &quot;&quot;,
+        &quot;SetCustomLWCValues&quot; : &quot;&quot;,
+        &quot;SetDefaultValues&quot; : &quot;&quot;,
+        &quot;SetExistingBusinessaccountId&quot; : &quot;&quot;,
+        &quot;SetPremisesBusinessAccountRecTypeId&quot; : &quot;&quot;,
+        &quot;SetRedirectionIdValues&quot; : &quot;&quot;,
+        &quot;SetServiceAccountId&quot; : &quot;&quot;,
+        &quot;SetServicePointVal&quot; : &quot;&quot;,
+        &quot;VIPCreateBusinessPartner&quot; : &quot;&quot;,
+        &quot;VIPCreateBusinessPartner_NonSAP&quot; : &quot;&quot;,
+        &quot;VIPCreateContractAccount&quot; : &quot;&quot;,
+        &quot;VIPCreateContractAccount_NonSAP&quot; : &quot;&quot;
+      }
+    },
+    &quot;responseType&quot; : &quot;SObject&quot;
+  },
+  &quot;success&quot; : false,
+  &quot;timeStamp&quot; : &quot;2020-09-22T08:54:59.127Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;BankPaymentDetails&quot; : 0,
+    &quot;BillingPreferences&quot; : 22485,
+    &quot;ChoosePaymentMethod&quot; : 0,
+    &quot;CreateBankAccountPaymentMethod&quot; : 0,
+    &quot;CreateCreditCardPaymentMethod&quot; : 0,
+    &quot;CustomerSelection&quot; : 45110,
+    &quot;DR-GetProducts&quot; : 566,
+    &quot;DRCreatServiceAccount&quot; : 1347,
+    &quot;DRCreateBillingAccount&quot; : 962,
+    &quot;DRCreateBusinessAccount&quot; : 5084,
+    &quot;DRCreateConsumerAccount&quot; : 0,
+    &quot;DRExtractAttrCategory&quot; : 1025,
+    &quot;DRExtractBussinessAccountRecId&quot; : 729,
+    &quot;DRFetchBillingAccountRecTypeId&quot; : 13194,
+    &quot;DRFetchDesiredRecordType&quot; : 538,
+    &quot;DRFetchServiceAccountRecTypeId&quot; : 2243,
+    &quot;DRInsertContact&quot; : 1021,
+    &quot;DRTransformAttrCategory&quot; : 2555,
+    &quot;DRTransformAttributePreferences&quot; : 4985,
+    &quot;DRUpdateCosnumerBusinessAccount&quot; : 7730,
+    &quot;ExtractServiceAccountPremises&quot; : 0,
+    &quot;GetPremServicePoints&quot; : 6830,
+    &quot;OmniScriptSessionToken&quot; : &quot;e65fd08f-447c-4c17-96e3-dc43c48f445b&quot;,
+    &quot;PaymentDetails&quot; : 0,
+    &quot;PreConfirm&quot; : 4308,
+    &quot;SVBusinessAccountRecTypeId&quot; : 197,
+    &quot;SVDisplayData&quot; : 54,
+    &quot;SVServiceAccountRecTypeId&quot; : 187,
+    &quot;SVSetAttributeAccountValues&quot; : 52,
+    &quot;SelectPremises&quot; : 32119,
+    &quot;SelectTypeofService&quot; : 8895,
+    &quot;ServicePointsError&quot; : 0,
+    &quot;SetBillingAccountId&quot; : 0,
+    &quot;SetBusinessAccountId&quot; : 48,
+    &quot;SetCustomLWCValues&quot; : 73,
+    &quot;SetDefaultValues&quot; : 53,
+    &quot;SetExistingBusinessaccountId&quot; : 0,
+    &quot;SetPremisesBusinessAccountRecTypeId&quot; : 126,
+    &quot;SetRedirectionIdValues&quot; : 65,
+    &quot;SetServiceAccountId&quot; : 75,
+    &quot;SetServicePointVal&quot; : 69,
+    &quot;VIPCreateAgreement&quot; : 3486,
+    &quot;VIPCreateAgreement_NonSAP&quot; : 0,
+    &quot;VIPCreateBusinessPartner&quot; : 3160,
+    &quot;VIPCreateBusinessPartner_NonSAP&quot; : 0,
+    &quot;VIPCreateContractAccount&quot; : 935,
+    &quot;VIPCreateContractAccount_NonSAP&quot; : 0,
+    &quot;VIPMoveInPost&quot; : 4517
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLInsertAccountContactRelation_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

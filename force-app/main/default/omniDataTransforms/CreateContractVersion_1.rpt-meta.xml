@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;timeStamp&quot; : &quot;2016-03-15T20:47:24.981Z&quot;,
+  &quot;userName&quot; : &quot;qlu_contract_test@vlocity.com&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;ContractType&quot; : true,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;Lines&quot; : 3575,
+    &quot;SelectProduct&quot; : 2417,
+    &quot;CreateVersion?&quot; : 2564,
+    &quot;PickTemplate&quot; : 6000
+  },
+  &quot;Lines&quot; : {
+    &quot;CreateNewLine&quot; : &quot;CreateNewLine&quot;
+  },
+  &quot;SelectProduct&quot; : {
+    &quot;Product&quot; : [ {
+      &quot;Name&quot; : &quot;Starter Bundle&quot;,
+      &quot;Id&quot; : &quot;01t15000004vhh0AAA&quot;,
+      &quot;Family&quot; : &quot;Internet&quot;,
+      &quot;ContractType&quot; : &quot;Amendment&quot;,
+      &quot;vlcSelected&quot; : true,
+      &quot;Status&quot; : &quot;Inactive&quot;
+    } ]
+  },
+  &quot;CreateVersion?&quot; : {
+    &quot;NewVersionOrNewContract&quot; : &quot;New Version&quot;
+  },
+  &quot;PickTemplate&quot; : {
+    &quot;DocumentTemplate&quot; : [ {
+      &quot;VersionNumber&quot; : 3,
+      &quot;Name&quot; : &quot;Vlocity Subscription Agreement&quot;,
+      &quot;Id&quot; : &quot;a1d15000000QqhMAAS&quot;,
+      &quot;vlcSelected&quot; : true,
+      &quot;Status&quot; : &quot;Inactive&quot;
+    } ]
+  },
+  &quot;DocumentCreation&quot; : {
+    &quot;AutoCreateDoc&quot; : &quot;DocumentYes&quot;
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <name>CreateContractVersion</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionCustom3818</globalKey>
+        <inputFieldName>ContractType</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersion</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Type__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersion__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionAndLineCustom8465</globalKey>
+        <inputFieldName>ContextId</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersion</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ContractId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersion__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateContractVersion_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

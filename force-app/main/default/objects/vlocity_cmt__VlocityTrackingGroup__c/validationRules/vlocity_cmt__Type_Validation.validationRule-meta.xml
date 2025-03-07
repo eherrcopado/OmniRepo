@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__Type_Validation</fullName>
+    <active>true</active>
+    <description>When Type is Web, Web Tracking Configuration look up must be populated.</description>
+    <errorConditionFormula>AND(ISPICKVAL(vlocity_cmt__Type__c, &apos;Web&apos;), vlocity_cmt__VlocityWebTrackingConfigurationId__c == null)</errorConditionFormula>
+    <errorDisplayField>vlocity_cmt__VlocityWebTrackingConfigurationId__c</errorDisplayField>
+    <errorMessage>Please select a Web Tracking Configuration.</errorMessage>
+</ValidationRule>

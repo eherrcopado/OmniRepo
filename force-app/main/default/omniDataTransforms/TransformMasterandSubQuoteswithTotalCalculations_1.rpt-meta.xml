@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;Quote&quot; : [ {
+    &quot;SQuoteTotal&quot; : 155066.35,
+    &quot;SQuoteRecurringTotal&quot; : 4513.27,
+    &quot;SQuoteOneTimeTotal&quot; : 132500,
+    &quot;SQuoteName&quot; : &quot;Quote_Walmart Site A&quot;,
+    &quot;SQuoteRecordType&quot; : &quot;Sub Quote&quot;,
+    &quot;SQuoteNumber&quot; : &quot;00000454&quot;,
+    &quot;SQuoteId&quot; : &quot;0Q05e000000cxr2CAA&quot;
+  }, {
+    &quot;SQuoteTotal&quot; : 155066.35,
+    &quot;SQuoteRecurringTotal&quot; : 4513.27,
+    &quot;SQuoteOneTimeTotal&quot; : 132500,
+    &quot;SQuoteName&quot; : &quot;Quote_Walmart Site B&quot;,
+    &quot;SQuoteRecordType&quot; : &quot;Sub Quote&quot;,
+    &quot;SQuoteNumber&quot; : &quot;00000455&quot;,
+    &quot;SQuoteId&quot; : &quot;0Q05e000000cxr3CAA&quot;
+  } ],
+  &quot;CloseDate&quot; : &quot;2021-08-27&quot;,
+  &quot;MQuoteTerm&quot; : 5,
+  &quot;MQuoteStatus&quot; : &quot;Draft&quot;,
+  &quot;MQuoteName&quot; : &quot;JK Master Test&quot;,
+  &quot;AccountPostalCode&quot; : &quot;0015e000009ffkuAAA&quot;,
+  &quot;AccountState&quot; : &quot;AR&quot;,
+  &quot;AccountCity&quot; : &quot;Bentonville&quot;,
+  &quot;AccountStreet&quot; : &quot;100 North Main Street&quot;,
+  &quot;AccountName&quot; : &quot;Walmart (Legal Entity)&quot;,
+  &quot;MQuoteNumber&quot; : &quot;00000452&quot;,
+  &quot;MQuoteId&quot; : &quot;0Q05e000000cxmkCAA&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations6263547041342061</globalKey>
+        <inputFieldName>AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Quote:SQuoteOneTimeTotal SUM</formulaConverted>
+        <formulaExpression>SUM(Quote:SQuoteOneTimeTotal)</formulaExpression>
+        <formulaResultPath>OneTimeTotal</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations9456428277855038</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations14295749760303877</globalKey>
+        <inputFieldName>MQuoteId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MQuoteId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations9978260904137952</globalKey>
+        <inputFieldName>MQuoteNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MQuoteNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations7016503670349656</globalKey>
+        <inputFieldName>RecurringTotal</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Currency</outputFieldFormat>
+        <outputFieldName>RecurringTotal</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations42598009687075367</globalKey>
+        <inputFieldName>MQuoteStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MQuoteStatus</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations20895901599323752</globalKey>
+        <inputFieldName>MQuoteName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MQuoteName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations32843274622631147</globalKey>
+        <inputFieldName>OneTimeTotal</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Currency</outputFieldFormat>
+        <outputFieldName>OneTimeTotal</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations11446641152613579</globalKey>
+        <inputFieldName>QuoteTotal</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Currency</outputFieldFormat>
+        <outputFieldName>QuoteTotal</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Quote:SQuoteTotal SUM</formulaConverted>
+        <formulaExpression>SUM(Quote:SQuoteTotal)</formulaExpression>
+        <formulaResultPath>QuoteTotal</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations27619692547386143</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations6669866977259837</globalKey>
+        <inputFieldName>MQuoteTerm</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MQuoteTerm</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Quote:SQuoteRecurringTotal SUM</formulaConverted>
+        <formulaExpression>SUM(Quote:SQuoteRecurringTotal)</formulaExpression>
+        <formulaResultPath>RecurringTotal</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations28573444990519503</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations5960064837493064</globalKey>
+        <inputFieldName>RecordType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>QuoteRecordType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations21451679066103635</globalKey>
+        <inputFieldName>PriceList</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PriceList</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformMasterandSubQuoteswithTotalCalculations4357528502572172</globalKey>
+        <inputFieldName>CloseDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformMasterandSubQuoteswithTotalCalculations</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CloseDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;Quote&quot; : [ {
+    &quot;SQuoteTotal&quot; : 155066.35,
+    &quot;SQuoteRecurringTotal&quot; : 4513.27,
+    &quot;SQuoteOneTimeTotal&quot; : 132500,
+    &quot;SQuoteName&quot; : &quot;Quote_Walmart Site A&quot;,
+    &quot;SQuoteRecordType&quot; : &quot;Sub Quote&quot;,
+    &quot;SQuoteNumber&quot; : &quot;00000454&quot;,
+    &quot;SQuoteId&quot; : &quot;0Q05e000000cxr2CAA&quot;
+  }, {
+    &quot;SQuoteTotal&quot; : 155066.35,
+    &quot;SQuoteRecurringTotal&quot; : 4513.27,
+    &quot;SQuoteOneTimeTotal&quot; : 132500,
+    &quot;SQuoteName&quot; : &quot;Quote_Walmart Site B&quot;,
+    &quot;SQuoteRecordType&quot; : &quot;Sub Quote&quot;,
+    &quot;SQuoteNumber&quot; : &quot;00000455&quot;,
+    &quot;SQuoteId&quot; : &quot;0Q05e000000cxr3CAA&quot;
+  } ],
+  &quot;PriceList&quot; : &quot;Greenlots&quot;,
+  &quot;CloseDate&quot; : &quot;2021-08-27&quot;,
+  &quot;MQuoteTerm&quot; : 5,
+  &quot;MQuoteStatus&quot; : &quot;Draft&quot;,
+  &quot;MQuoteName&quot; : &quot;JK Master Test&quot;,
+  &quot;AccountPostalCode&quot; : &quot;0015e000009ffkuAAA&quot;,
+  &quot;AccountState&quot; : &quot;AR&quot;,
+  &quot;AccountCity&quot; : &quot;Bentonville&quot;,
+  &quot;AccountStreet&quot; : &quot;100 North Main Street&quot;,
+  &quot;AccountName&quot; : &quot;Walmart (Legal Entity)&quot;,
+  &quot;MQuoteNumber&quot; : &quot;00000452&quot;,
+  &quot;MQuoteId&quot; : &quot;0Q05e000000cxmkCAA&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>TransformMasterandSubQuoteswithTotalCalculations_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

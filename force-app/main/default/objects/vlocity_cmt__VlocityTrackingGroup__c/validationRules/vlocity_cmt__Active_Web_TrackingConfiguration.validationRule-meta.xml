@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__Active_Web_TrackingConfiguration</fullName>
+    <active>true</active>
+    <description>Only active Web Tracking Configuration records are allowed to be selected with Tracking Group.</description>
+    <errorConditionFormula>AND(vlocity_cmt__VlocityWebTrackingConfigurationId__c &lt;&gt; null,vlocity_cmt__VlocityWebTrackingConfigurationId__r.vlocity_cmt__IsActive__c == false)</errorConditionFormula>
+    <errorDisplayField>vlocity_cmt__VlocityWebTrackingConfigurationId__c</errorDisplayField>
+    <errorMessage>Only active Web Tracking Configuration records are allowed to be selected with Tracking Group.</errorMessage>
+</ValidationRule>

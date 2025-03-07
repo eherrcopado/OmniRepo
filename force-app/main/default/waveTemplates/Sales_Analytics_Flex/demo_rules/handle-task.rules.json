@@ -1,0 +1,182 @@
+{
+	"rules": [
+		{
+      		"name": "HandleTaskExtraction",
+      		"condition": "${Variables.isDemoApplication == 'Yes'}",
+      		"actions": [
+      			{
+      				"action": "add",
+      				"description": "Add CreatedDate__c field in Task extraction.",
+      				"path": "$.workflowDefinition.Extract_Task.parameters.fields",
+      				"index": 10,
+      				"value": {
+      					"name": "CreatedDate__c"
+      				}
+      			},
+      			{
+      				"action": "add",
+      				"description": "Add Put External ID field in Task extraction.",
+      				"path": "$.workflowDefinition.Extract_Task.parameters.fields",
+      				"index": 10,
+      				"value": {
+      					"name": "External_ID__c"
+      				}
+      			},
+      			{
+      				"action": "put",
+      				"description": "Filter to get the user's generated data.",
+      				"key": "Extract_Task_get_Users_Data",
+      				"path": "$.workflowDefinition",
+      				"value": {
+      					"action": "filter",      
+						"parameters": {            
+							"filter": "External_ID__c:EQ:''",
+							"source": "Extract_Task"
+						}
+      				}
+      			},
+      			{
+      				"action": "put",
+      				"description": "Filter to get the data generated for demo.",
+      				"path": "$.workflowDefinition",
+      				"key": "Extract_Task_get_Demo_Data",
+      				"value": {
+      					"action": "filter",      
+						"parameters": {            
+							"filter": "External_ID__c:N:''",
+							"source": "Extract_Task"
+						}
+      				}
+      			},
+                        {
+                              "action": "put",
+                              "description": "Generate auxiliar CreatedDateAux field after Extract_Task_get_Demo_Data",
+                              "key": "Extract_Task_get_Demo_Data_rename_fields",
+                              "path": "$.workflowDefinition",
+                              "value": {
+                                    "action": "computeExpression",
+                                    "parameters": {
+                                          "source": "Extract_Task_get_Demo_Data",
+                                          "mergeWithSource": true,
+                                          "computedFields": [
+                                                {
+                                                      "name": "CreatedDateAux",
+                                                      "type": "Date",
+                                                      "label": "CreatedDateAux",
+                                                      "saqlExpression": "case when 'CreatedDate__c' != \"\" then toDate('CreatedDate__c_sec_epoch') else toDate('CreatedDate_sec_epoch') end",
+                                                      "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                                }
+                                          ]
+                                    }
+                              }
+                        },                        
+      			{
+      				"action": "put",
+      				"description": "Drop CreatedDate field from Extract_Task_get_Demo_Data.",
+      				"key": "Extract_Task_get_Demo_Data_drop_dates",
+      				"path": "$.workflowDefinition",
+      				"value": {
+      					"action": "sliceDataset",
+						"parameters": {            
+							"source": "Extract_Task_get_Demo_Data_rename_fields",
+							"mode": "drop",
+							"fields": [
+								{
+									"name": "CreatedDate"
+								}
+							]
+						}
+      				}
+      			},
+                        {
+                              "action": "put",
+                              "description": "Rename fields in Extract_Task_get_Demo_Data_drop_dates",
+                              "key": "Extract_Task_get_Demo_Data_rename_fieldsAux",
+                              "path": "$.workflowDefinition",
+                              "value": {
+                                    "action": "computeExpression",
+                                    "parameters": {
+                                          "source": "Extract_Task_get_Demo_Data_drop_dates",
+                                          "mergeWithSource": true,
+                                          "computedFields": [
+                                                {
+                                                      "name": "CreatedDate",
+                                                      "type": "Date",
+                                                      "label": "CreatedDate",
+                                                      "saqlExpression": "toDate(CreatedDateAux, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                                      "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                                }
+                                          ]
+                                    }
+                              }
+                        },
+                        {
+                              "action": "put",
+                              "description": "Drop CreatedDateAux field from Extract_Task_get_Demo_Data_rename_fieldsAux.",
+                              "key": "Extract_Task_get_Demo_Data_drop_fields",
+                              "path": "$.workflowDefinition",
+                              "value": {
+                                    "action": "sliceDataset",
+                                    "parameters": {
+                                          "source": "Extract_Task_get_Demo_Data_rename_fieldsAux",
+                                          "mode": "drop",
+                                          "fields": [
+                                                {
+                                                      "name": "CreatedDateAux"
+                                                }
+                                          ]
+                                    }
+                              }
+                        },
+      			{
+      				"action": "put",
+      				"description": "Final merge of user and demo data for Task.",
+      				"key": "Extract_Task_merge",
+      				"path": "$.workflowDefinition",
+      				"value": {
+      					"action": "append",
+						"parameters": {            
+							"sources": [
+								"Extract_Task_get_Demo_Data_drop_fields",
+								"Extract_Task_get_Users_Data"
+							]
+						}
+      				}
+      			},
+                        {
+                              "action": "put",
+                              "description": "Final cleaning of user and demo data for Task.",
+                              "key": "Extract_Task_cleaned",
+                              "path": "$.workflowDefinition",
+                              "value": {
+                                    "action": "sliceDataset",
+                                    "parameters": {            
+                                          "source": "Extract_Task_merge",
+                                          "mode": "drop",
+                                          "fields": [
+                                                {
+                                                      "name": "CreatedDate__c"
+                                                },
+                                                {
+                                                      "name": "External_ID__c"
+                                                }
+                                          ]
+                                    }
+                              }
+                        },
+      			{
+      				"action": "set",
+      				"description": "Set the source property of Add_Fields_To_Task.parameters based on Demo App or not.",
+      				"path": "$.workflowDefinition.Add_Fields_To_Task.parameters['source']",
+      				"value": "Extract_Task_cleaned"
+      			}
+			],						
+			"appliesTo": [
+                        {
+                              "type": "workflow",
+                              "name": "*"
+                        }
+      		]
+		}
+	]
+}

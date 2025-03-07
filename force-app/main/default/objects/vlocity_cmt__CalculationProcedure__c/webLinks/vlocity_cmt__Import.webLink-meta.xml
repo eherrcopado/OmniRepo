@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__Import</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Import</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/32.0/apex.js&quot;)}
+
+var namespace_prefix = &apos;&apos;;
+var gettingnamespace = sforce.connection.query(&quot;SELECT NamespacePrefix FROM ApexClass where Name = &apos;ApplicationUtilities&apos; LIMIT 1&quot;); 
+var getname = gettingnamespace.getArray(&quot;records&quot;); 
+if(getname.length &gt; 0) 
+{ 
+  if(getname[0].NamespacePrefix !== null)
+    namespace_prefix = getname[0].NamespacePrefix + &apos;__&apos;; 
+}
+
+function showSimpleDialog(){ 
+var sd = new SimpleDialog(&quot;Import&quot;+Dialogs.getNextId(), false); 
+sd.setTitle(&quot;Import Calculation Procedure &lt;button style=&apos;float:right;&apos; class=&apos;btn&apos; onclick=&apos;window.parent.sd.hide(); return false;&apos;&gt;X&lt;/button&gt;&quot;);
+sd.createDialog(); 
+window.parent.sd = sd; 
+sd.setContentInnerHTML(&quot;&lt;iframe src=&apos;/apex/&quot;+namespace_prefix+&quot;PricingCalculationImportPage?wrapMassAction=1&amp;scontrolCaching=1&apos; style=&apos;border:none&apos; width=&apos;100%&apos;/&gt;&lt;/p&gt;&quot;); 
+sd.show(); 
+} 
+showSimpleDialog(); //open the popup</url>
+</WebLink>

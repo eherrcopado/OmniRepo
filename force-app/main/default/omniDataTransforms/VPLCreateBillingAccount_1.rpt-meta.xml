@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Creates Service Account, used in MoveIn omniscript</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AvailableProductList&quot; : null,
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingPreferences&quot; : null,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;Confirmation&quot; : null,
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Consumer&quot;,
+    &quot;BillingDetails&quot; : {
+      &quot;BillCycle&quot; : &quot;2&quot;,
+      &quot;BillDeliveryMethod&quot; : &quot;Paper Billing&quot;,
+      &quot;BillFormat&quot; : &quot;Summary&quot;,
+      &quot;BillFrequency&quot; : &quot;Quarterly&quot;,
+      &quot;BillingCity&quot; : &quot;bengaluru&quot;,
+      &quot;BillingCountry&quot; : &quot;India&quot;,
+      &quot;BillingEmailAddress&quot; : &quot;test@tt.co&quot;,
+      &quot;BillingPostalCode&quot; : &quot;56001&quot;,
+      &quot;BillingState&quot; : &quot;karnataka&quot;,
+      &quot;BillingStreet&quot; : &quot;Vidhan soudha&quot;,
+      &quot;NumberOfBills&quot; : 2
+    },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-08-27T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;CustomerClass&quot; : &quot;SMB&quot;,
+      &quot;CustomerDOB&quot; : &quot;08/06/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;terst&quot;,
+      &quot;CustomerLastName&quot; : &quot;ttt&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;Description&quot; : &quot;asdsad&quot;,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;SSN&quot;,
+      &quot;Industry&quot; : &quot;Agriculture&quot;,
+      &quot;SSN&quot; : &quot;132132222&quot;,
+      &quot;TaxId&quot; : null,
+      &quot;Website&quot; : &quot;www.test.com&quot;
+    },
+    &quot;ParentAccount-Block&quot; : null,
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : &quot;2020-08-31&quot;,
+      &quot;ExemptionPercentage&quot; : 60,
+      &quot;ExemptionStartDate&quot; : &quot;2020-08-28&quot;,
+      &quot;TaxExemption&quot; : &quot;Exempt&quot;,
+      &quot;TaxIds&quot; : &quot;121212&quot;
+    }
+  },
+  &quot;ElectricityProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+    &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;001&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+    &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;003&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+    &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;002&quot;
+  } ],
+  &quot;Error&quot; : { },
+  &quot;GasProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+    &quot;Name&quot; : &quot;Turn Off Order&quot;,
+    &quot;ProductCode&quot; : &quot;004&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+    &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+    &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+  } ],
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;PremiseServicePointsListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  } ],
+  &quot;ProductListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectService&quot; : null,
+  &quot;SelectServicePoints&quot; : null,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServicePointNumber&quot;,
+    &quot;label&quot; : &quot;Service Point Number&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;Status&quot;,
+    &quot;label&quot; : &quot;Status&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SerialNumber&quot;,
+    &quot;label&quot; : &quot;Serial Number&quot;
+  } ],
+  &quot;ServicePointsError&quot; : { },
+  &quot;ServicePointsMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;ServicePremises&quot; : null,
+  &quot;WaterProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+    &quot;Name&quot; : &quot;Water&quot;,
+    &quot;ProductCode&quot; : &quot;water&quot;
+  } ],
+  &quot;timeStamp&quot; : &quot;2020-08-27T05:46:13.107Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DR-GetProducts&quot; : 1207,
+    &quot;DRExtractBussinessAccountRecId&quot; : 911,
+    &quot;OmniScriptSessionToken&quot; : &quot;a722fba1-cbcd-4c1f-a7be-6cd78bf3e0e9&quot;,
+    &quot;SetCustomLWCValues&quot; : 154,
+    &quot;SetDefaultValues&quot; : 72
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLCreateBillingAccount</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bb722c74-b452-cbc6-a9c4-c8ab8ef18028</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillFormat</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillFormat__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3e18d502-0a83-e90f-7464-158f8555607c</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillDeliveryMethod</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillDeliveryMethod__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CustomerSelection:BusinessAccountName &apos;/\/\/-/\/\/Billing&apos; CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(%CustomerSelection:BusinessAccountName%, &apos; - Billing&apos;)</formulaExpression>
+        <formulaResultPath>BillingAccountName</formulaResultPath>
+        <formulaSequence>7.0</formulaSequence>
+        <globalKey>0bb6a77f-4d3d-d097-ebc7-ecdc78bebf99</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b7e04a14-4d6d-cfbf-9343-64e900679dda</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillFrequency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillFrequency__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Active</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6bc92fe0-c5f9-a339-5534-611f103f0009</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>eaa193f6-147f-b98d-fd14-098d2e5b995d</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerClass</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__CustomerClass__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7d04bbef-8dda-7a27-cc6a-d6266eb2695d</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingEmailAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillingEmailAddress__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ec189171-e65a-b432-00ac-ea54f1beee55</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:NumberOfBills</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillNumberOfCopies__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CustomerSelection:NewCustomerDetails:CustomerFirstName &apos;/\/\/&apos; var:CustomerSelection:NewCustomerDetails:CustomerLastName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(%CustomerSelection:NewCustomerDetails:CustomerFirstName%, &apos; &apos;, %CustomerSelection:NewCustomerDetails:CustomerLastName%)</formulaExpression>
+        <formulaResultPath>AccountName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>34b60053-191c-ea01-d460-3ed0e6ccc9e1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1fdaefe0-53b0-13a1-c48f-d834888b4b3b</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:ExemptionStartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionStartDate__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>66fdb7b8-8722-76f0-3dd5-bb8b3a957a3b</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:ExemptionPercentage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionPercentage__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8f23ebac-d89c-00bc-b264-67479d38b87e</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:ExemptionEndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionEndDate__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5ecd1b56-5b0b-fcdb-9c0b-b41bb4b4f982</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCountry</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c26b3e14-f68a-0b1c-d0ff-80cf223c0d57</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCity</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>000ae236-11b7-2420-b06f-f5b8c44c2cda</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:TaxIds</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxID__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>fbb26249-d44c-c785-e660-d531b81c3029</globalKey>
+        <inputFieldName>CustomerSelection:TaxDetails:TaxExemption</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TaxExemptionType__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b371a357-f929-1a3d-8611-c9abd4b2bd1d</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>104d49e0-a553-6ed2-b4f5-401d3fcfac86</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingStreet</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dfdfbae1-95d6-c721-d50b-6ba5f3dece49</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingState</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1dae20a1-21cc-1b39-ce86-d47ff753b4df</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingPostalCode</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>afe0e9a1-40f3-0a14-1963-a4dd56d1f97e</globalKey>
+        <inputFieldName>BillingAccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingCity var:SelectPremises:ServiceLocation-Block:PremCity IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingCity%, %SelectPremises:ServiceLocation-Block:PremCity%)</formulaExpression>
+        <formulaResultPath>FML_MailingCity</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>4b43f5b7-092a-95f0-b398-3b75bda5d0df</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6c0e28c5-ff01-ee37-e3de-4e4dffe9fc42</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:Industry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Industry</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>db841273-98dc-f506-496d-cd6a3d66bc2a</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c065d578-e6d6-95f9-fabe-b4aee73fa805</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:Website</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Website</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a7643b05-2956-2ccd-223c-34b73c3847f3</globalKey>
+        <inputFieldName>BillingAccountRecTypeId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ccc2efca-c6b4-eb8a-2f9c-54c58d9c1f49</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerPhone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Phone</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>adc21d00-9bf0-f525-a882-acc6a087e21e</globalKey>
+        <inputFieldName>BusinessAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ParentId</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingCountry var:SelectPremises:ServiceLocation-Block:PremCountry IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingCountry%, %SelectPremises:ServiceLocation-Block:PremCountry%)</formulaExpression>
+        <formulaResultPath>FML_MailingCountry</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>a3e90633-9fc3-45ff-e588-f08fbc22f7fc</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingState var:SelectPremises:ServiceLocation-Block:PremState IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingState%, %SelectPremises:ServiceLocation-Block:PremState%)</formulaExpression>
+        <formulaResultPath>FML_MailingState</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>4f77e3c5-2740-524f-e2c8-8a427c66bacd</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>df1f7dc6-ce9f-723f-21c7-ab8c4d3dc82f</globalKey>
+        <inputFieldName>CustomerSelection:BillingDetails:BillCycle</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__BillCycle__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>74546a7d-4089-0f85-0c2c-bc13ccfc8db7</globalKey>
+        <inputFieldName>BillingPreferences:APaymentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AccountPaymentType__c</outputFieldName>
+        <outputObjectName>Account</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingZipCode var:SelectPremises:ServiceLocation-Block:PremPostalCode IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingZipCode%, %SelectPremises:ServiceLocation-Block:PremPostalCode%)</formulaExpression>
+        <formulaResultPath>FML_MailingPostalCode</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>10a8b890-ae0a-a799-0fd4-0a888737ca24</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingStreet var:SelectPremises:ServiceLocation-Block:PremiseStreetAddress IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingStreet%, %SelectPremises:ServiceLocation-Block:PremiseStreetAddress%)</formulaExpression>
+        <formulaResultPath>FML_MailingStreet</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>cf7d86b2-0610-3d4c-4e6e-ba6009615cd0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateBillingAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AvailableProductList&quot; : null,
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingPreferences&quot; : null,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;Confirmation&quot; : null,
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Consumer&quot;,
+    &quot;BillingDetails&quot; : {
+      &quot;BillCycle&quot; : &quot;2&quot;,
+      &quot;BillDeliveryMethod&quot; : &quot;Paper Billing&quot;,
+      &quot;BillFormat&quot; : &quot;Summary&quot;,
+      &quot;BillFrequency&quot; : &quot;Quarterly&quot;,
+      &quot;BillingCity&quot; : &quot;bengaluru&quot;,
+      &quot;BillingCountry&quot; : &quot;India&quot;,
+      &quot;BillingEmailAddress&quot; : &quot;test@tt.co&quot;,
+      &quot;BillingPostalCode&quot; : &quot;56001&quot;,
+      &quot;BillingState&quot; : &quot;karnataka&quot;,
+      &quot;BillingStreet&quot; : &quot;Vidhan soudha&quot;,
+      &quot;NumberOfBills&quot; : 2
+    },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-08-27T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;CustomerClass&quot; : &quot;SMB&quot;,
+      &quot;CustomerDOB&quot; : &quot;08/06/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;terst&quot;,
+      &quot;CustomerLastName&quot; : &quot;ttt&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;Description&quot; : &quot;asdsad&quot;,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;SSN&quot;,
+      &quot;Industry&quot; : &quot;Agriculture&quot;,
+      &quot;SSN&quot; : &quot;132132222&quot;,
+      &quot;TaxId&quot; : null,
+      &quot;Website&quot; : &quot;www.test.com&quot;
+    },
+    &quot;ParentAccount-Block&quot; : null,
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : &quot;2020-08-31&quot;,
+      &quot;ExemptionPercentage&quot; : 60,
+      &quot;ExemptionStartDate&quot; : &quot;2020-08-28&quot;,
+      &quot;TaxExemption&quot; : &quot;Exempt&quot;,
+      &quot;TaxIds&quot; : &quot;121212&quot;
+    }
+  },
+  &quot;ElectricityProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+    &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;001&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+    &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;003&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+    &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;002&quot;
+  } ],
+  &quot;Error&quot; : { },
+  &quot;GasProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+    &quot;Name&quot; : &quot;Turn Off Order&quot;,
+    &quot;ProductCode&quot; : &quot;004&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+    &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+    &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+  } ],
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;PremiseServicePointsListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  } ],
+  &quot;ProductListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectService&quot; : null,
+  &quot;SelectServicePoints&quot; : null,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServicePointNumber&quot;,
+    &quot;label&quot; : &quot;Service Point Number&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;Status&quot;,
+    &quot;label&quot; : &quot;Status&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SerialNumber&quot;,
+    &quot;label&quot; : &quot;Serial Number&quot;
+  } ],
+  &quot;ServicePointsError&quot; : { },
+  &quot;ServicePointsMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;ServicePremises&quot; : null,
+  &quot;WaterProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+    &quot;Name&quot; : &quot;Water&quot;,
+    &quot;ProductCode&quot; : &quot;water&quot;
+  } ],
+  &quot;timeStamp&quot; : &quot;2020-08-27T05:46:13.107Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DR-GetProducts&quot; : 1207,
+    &quot;DRExtractBussinessAccountRecId&quot; : 911,
+    &quot;OmniScriptSessionToken&quot; : &quot;a722fba1-cbcd-4c1f-a7be-6cd78bf3e0e9&quot;,
+    &quot;SetCustomLWCValues&quot; : 154,
+    &quot;SetDefaultValues&quot; : 72
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLCreateBillingAccount_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

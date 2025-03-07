@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;CreatedById&quot;:&quot;0055e0000063fyvAAA&quot;}</customJavaScript>
+    <description>Fetch opportunity, quotes and leads for user</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>sfiEnergyB2bsalesAgentTargets</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DRGetSalesAgentTargets</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;sfiEnergyB2bsalesGetAgentTargets&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;CreatedById&quot;,
+    &quot;inputParam&quot; : &quot;CreatedById&quot;
+  } ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Response</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : {
+    &quot;chartData&quot; : &quot;%DRGetSalesAgentTargets%&quot;,
+    &quot;metaData&quot; : [ {
+      &quot;attributes&quot; : [ {
+        &quot;label&quot; : &quot;SfiEnergyProposal&quot;,
+        &quot;name&quot; : &quot;proposal&quot;
+      }, {
+        &quot;label&quot; : &quot;SfiEnergyNegotiation&quot;,
+        &quot;name&quot; : &quot;negotiation&quot;
+      } ],
+      &quot;label&quot; : &quot;SfiEnergyOpportunities&quot;,
+      &quot;name&quot; : &quot;opportunity&quot;
+    }, {
+      &quot;attributes&quot; : [ {
+        &quot;label&quot; : &quot;SfiEnergyPresented&quot;,
+        &quot;name&quot; : &quot;presented&quot;
+      }, {
+        &quot;label&quot; : &quot;SfiEnergyInReview&quot;,
+        &quot;name&quot; : &quot;inReview&quot;
+      } ],
+      &quot;label&quot; : &quot;SfiEnergyQuotes&quot;,
+      &quot;name&quot; : &quot;quote&quot;
+    }, {
+      &quot;attributes&quot; : [ {
+        &quot;label&quot; : &quot;SfiEnergyHot&quot;,
+        &quot;name&quot; : &quot;hot&quot;
+      }, {
+        &quot;label&quot; : &quot;SfiEnergyWarm&quot;,
+        &quot;name&quot; : &quot;warm&quot;
+      }, {
+        &quot;label&quot; : &quot;SfiEnergyCold&quot;,
+        &quot;name&quot; : &quot;cold&quot;
+      } ],
+      &quot;label&quot; : &quot;SfiEnergyLeads&quot;,
+      &quot;name&quot; : &quot;lead&quot;
+    } ]
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : true,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessKey>sfiEnergyB2bsales_AgentTargets</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>AgentTargets</subType>
+    <type>sfiEnergyB2bsales</type>
+    <uniqueName>sfiEnergyB2bsales_AgentTargets_Procedure_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>cd096c96-fb13-af56-a3b7-7c474c567318</webComponentKey>
+</OmniIntegrationProcedure>

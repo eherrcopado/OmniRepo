@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__Effective_Start_Date_and_End_Date</fullName>
+    <active>true</active>
+    <description>Effective End Date can not be in the past relative to Effective Start Date.</description>
+    <errorConditionFormula>AND(ISBLANK(vlocity_cmt__EffectiveStartDate__c) = false, ISBLANK(vlocity_cmt__EffectiveEndDate__c) = false, vlocity_cmt__EffectiveStartDate__c - vlocity_cmt__EffectiveEndDate__c &gt; 0)</errorConditionFormula>
+    <errorDisplayField>vlocity_cmt__EffectiveEndDate__c</errorDisplayField>
+    <errorMessage>End Date can not be older than Start Date.</errorMessage>
+</ValidationRule>

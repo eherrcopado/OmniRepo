@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Demo Content Team: DR Transform for use with Quick Quote Summary Template</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;SObjectId&quot; : &quot;0065f000006LrOAAA0&quot;,
+  &quot;selectedTemplate&quot; : [ {
+    &quot;Id&quot; : &quot;a0r5f000000ZNEAAA4&quot;,
+    &quot;FetchDocumentTemplateFromNameStatus&quot; : true,
+    &quot;LoopBlockIterationStatus&quot; : true,
+    &quot;LoopBlockIterationIndex&quot; : 1
+  } ],
+  &quot;docTitle&quot; : &quot;Energy Quote&quot;,
+  &quot;ContextId&quot; : &quot;0065f000006LrOAAA0&quot;,
+  &quot;LanguageCode&quot; : &quot;en_US&quot;,
+  &quot;timeStamp&quot; : &quot;2022-01-07T01:34:35.602Z&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-480&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userName&quot; : &quot;demo.org@energy.1635793336903&quot;,
+  &quot;userId&quot; : &quot;0055f000004j2CuAAI&quot;,
+  &quot;Quote&quot; : [ {
+    &quot;OpportunityType&quot; : &quot;Regulated Electricity&quot;,
+    &quot;OpportunityId&quot; : &quot;0065f000006LrOAAA0&quot;,
+    &quot;QuoteLine&quot; : [ {
+      &quot;LineItemMargin&quot; : 100,
+      &quot;EffectiveRecurringTotal&quot; : 0,
+      &quot;EffectiveOneTimeTotal&quot; : 999,
+      &quot;EffectiveQuantity&quot; : 1,
+      &quot;LineRecCharge&quot; : &quot;$0.00&quot;,
+      &quot;LineOTCharge&quot; : &quot;$999.00&quot;,
+      &quot;Quantity&quot; : 1,
+      &quot;ProductName&quot; : &quot;Complete Solar Solution&quot;
+    }, {
+      &quot;Child&quot; : {
+        &quot;BillFrequency&quot; : &quot;Monthly&quot;,
+        &quot;RecCharge&quot; : &quot;$0.13&quot;,
+        &quot;OTCharge&quot; : &quot;$0.00&quot;,
+        &quot;Quantity&quot; : 61320.6,
+        &quot;ChildName&quot; : &quot;Electricity Rate&quot;
+      },
+      &quot;LineItemMargin&quot; : 100,
+      &quot;EffectiveRecurringTotal&quot; : 7726.4,
+      &quot;EffectiveOneTimeTotal&quot; : 0,
+      &quot;EffectiveQuantity&quot; : 1,
+      &quot;LineRecCharge&quot; : &quot;$0.00&quot;,
+      &quot;LineOTCharge&quot; : &quot;$0.00&quot;,
+      &quot;Quantity&quot; : 1,
+      &quot;ProductName&quot; : &quot;Fixed Electricity Offer&quot;
+    }, {
+      &quot;Child&quot; : [ {
+        &quot;BillFrequency&quot; : &quot;Monthly&quot;,
+        &quot;RecCharge&quot; : &quot;$0.09&quot;,
+        &quot;OTCharge&quot; : &quot;$0.00&quot;,
+        &quot;Quantity&quot; : 1000,
+        &quot;ChildName&quot; : &quot;Block 2&quot;
+      }, {
+        &quot;BillFrequency&quot; : &quot;Monthly&quot;,
+        &quot;RecCharge&quot; : &quot;$0.09&quot;,
+        &quot;OTCharge&quot; : &quot;$0.00&quot;,
+        &quot;Quantity&quot; : 500,
+        &quot;ChildName&quot; : &quot;Block 1&quot;
+      }, {
+        &quot;BillFrequency&quot; : &quot;Monthly&quot;,
+        &quot;RecCharge&quot; : &quot;$0.09&quot;,
+        &quot;OTCharge&quot; : &quot;$0.00&quot;,
+        &quot;Quantity&quot; : 59820.6,
+        &quot;ChildName&quot; : &quot;Index Energy Product&quot;
+      } ],
+      &quot;LineItemMargin&quot; : 100,
+      &quot;EffectiveRecurringTotal&quot; : 5518.85,
+      &quot;EffectiveOneTimeTotal&quot; : 0,
+      &quot;EffectiveQuantity&quot; : 1,
+      &quot;LineRecCharge&quot; : &quot;$0.00&quot;,
+      &quot;LineOTCharge&quot; : &quot;$0.00&quot;,
+      &quot;Quantity&quot; : 1,
+      &quot;ProductName&quot; : &quot;Block Electricty Plan&quot;
+    }, {
+      &quot;LineItemMargin&quot; : 100,
+      &quot;EffectiveRecurringTotal&quot; : 0,
+      &quot;EffectiveOneTimeTotal&quot; : 999,
+      &quot;EffectiveQuantity&quot; : 1,
+      &quot;LineRecCharge&quot; : &quot;$0.00&quot;,
+      &quot;LineOTCharge&quot; : &quot;$999.00&quot;,
+      &quot;Quantity&quot; : 1,
+      &quot;ProductName&quot; : &quot;Installation and Setup&quot;
+    }, {
+      &quot;LineItemMargin&quot; : 100,
+      &quot;EffectiveRecurringTotal&quot; : 99,
+      &quot;EffectiveOneTimeTotal&quot; : 0,
+      &quot;EffectiveQuantity&quot; : 1,
+      &quot;LineRecCharge&quot; : &quot;$99.00&quot;,
+      &quot;LineOTCharge&quot; : &quot;$0.00&quot;,
+      &quot;Quantity&quot; : 1,
+      &quot;ProductName&quot; : &quot;Energy Optimization Service&quot;
+    } ],
+    &quot;QuoteStatus&quot; : &quot;Draft&quot;,
+    &quot;PriceList&quot; : &quot;Commercial &amp; Industrial&quot;,
+    &quot;QuoteNumber&quot; : &quot;00000422&quot;,
+    &quot;SubmissionStatus&quot; : &quot;Waiting&quot;,
+    &quot;PricingStatus&quot; : &quot;Waiting For Pricing&quot;,
+    &quot;Id&quot; : &quot;0Q05f000000QN6iCAG&quot;,
+    &quot;OneTimeTotal&quot; : &quot;$1,998.00&quot;,
+    &quot;QuoteMargin&quot; : &quot;145.89&quot;,
+    &quot;TotalAmount&quot; : &quot;$162,129.00&quot;,
+    &quot;Term&quot; : 12,
+    &quot;QuoteRECTotal&quot; : &quot;$13,344.25&quot;,
+    &quot;QuoteOTTotal&quot; : &quot;$1,998.00&quot;,
+    &quot;Name&quot; : &quot;Quote Block May 2021&quot;,
+    &quot;ExpDate&quot; : &quot;05/26/2021&quot;
+  }, {
+    &quot;OpportunityType&quot; : &quot;Regulated Electricity&quot;,
+    &quot;OpportunityId&quot; : &quot;0065f000006LrOAAA0&quot;,
+    &quot;QuoteLine&quot; : [ {
+      &quot;LineItemMargin&quot; : 100,
+      &quot;EffectiveRecurringTotal&quot; : 99,
+      &quot;EffectiveOneTimeTotal&quot; : 999,
+      &quot;EffectiveQuantity&quot; : 1,
+      &quot;LineRecCharge&quot; : &quot;$99.00&quot;,
+      &quot;LineOTCharge&quot; : &quot;$999.00&quot;,
+      &quot;Quantity&quot; : 1,
+      &quot;ProductName&quot; : &quot;Analytics Service&quot;
+    }, {
+      &quot;Child&quot; : [ {
+        &quot;BillFrequency&quot; : &quot;Monthly&quot;,
+        &quot;RecCharge&quot; : &quot;$0.09&quot;,
+        &quot;OTCharge&quot; : &quot;$0.00&quot;,
+        &quot;Quantity&quot; : 500,
+        &quot;ChildName&quot; : &quot;Block 1&quot;
+      }, {
+        &quot;BillFrequency&quot; : &quot;Monthly&quot;,
+        &quot;RecCharge&quot; : &quot;$0.09&quot;,
+        &quot;OTCharge&quot; : &quot;$0.00&quot;,
+        &quot;Quantity&quot; : 1000,
+        &quot;ChildName&quot; : &quot;Block 2&quot;
+      }, {
+        &quot;BillFrequency&quot; : &quot;Monthly&quot;,
+        &quot;RecCharge&quot; : &quot;$0.09&quot;,
+        &quot;OTCharge&quot; : &quot;$0.00&quot;,
+        &quot;Quantity&quot; : 59820.6,
+        &quot;ChildName&quot; : &quot;Index Energy Product&quot;
+      } ],
+      &quot;LineItemMargin&quot; : 100,
+      &quot;EffectiveRecurringTotal&quot; : 5518.85,
+      &quot;EffectiveOneTimeTotal&quot; : 0,
+      &quot;EffectiveQuantity&quot; : 1,
+      &quot;LineRecCharge&quot; : &quot;$0.00&quot;,
+      &quot;LineOTCharge&quot; : &quot;$0.00&quot;,
+      &quot;Quantity&quot; : 1,
+      &quot;ProductName&quot; : &quot;Block Electricty Plan&quot;
+    } ],
+    &quot;QuoteStatus&quot; : &quot;Draft&quot;,
+    &quot;PriceList&quot; : &quot;Commercial &amp; Industrial&quot;,
+    &quot;QuoteNumber&quot; : &quot;00000421&quot;,
+    &quot;SubmissionStatus&quot; : &quot;Waiting&quot;,
+    &quot;PricingStatus&quot; : &quot;Waiting For Pricing&quot;,
+    &quot;Id&quot; : &quot;0Q05f000000QN6hCAG&quot;,
+    &quot;OneTimeTotal&quot; : &quot;$999.00&quot;,
+    &quot;QuoteMargin&quot; : &quot;5.19&quot;,
+    &quot;TotalAmount&quot; : &quot;$68,413.20&quot;,
+    &quot;Term&quot; : 12,
+    &quot;QuoteRECTotal&quot; : &quot;$5,617.85&quot;,
+    &quot;QuoteOTTotal&quot; : &quot;$999.00&quot;,
+    &quot;Name&quot; : &quot;Quote May 2021&quot;,
+    &quot;ExpDate&quot; : &quot;05/26/2021&quot;
+  } ],
+  &quot;templates&quot; : [ {
+    &quot;VlocityDocumentTemplate&quot; : &quot;Energy Summary Quote&quot;
+  } ],
+  &quot;documentTitle&quot; : &quot;Energy Quote&quot;,
+  &quot;FileFormat&quot; : &quot;pdf&quot;,
+  &quot;attachFileFormat&quot; : &quot;pdf&quot;,
+  &quot;docGenerationMechanism&quot; : &quot;VlocityClientSide&quot;,
+  &quot;documentViewer&quot; : &quot;VlocityClientSideViewer&quot;,
+  &quot;downloadFileFormat&quot; : &quot;all&quot;,
+  &quot;pdfGenerationSource&quot; : &quot;VlocityClientSide&quot;,
+  &quot;useTemplateDRExtract&quot; : &quot;No&quot;,
+  &quot;templateType&quot; : &quot;Microsoft Word .DOCX Template&quot;,
+  &quot;generateDocument&quot; : {
+    &quot;GenerateDocumentWord&quot; : [ {
+      &quot;Id&quot; : &quot;a0r5f000000ZNEAAA4&quot;,
+      &quot;FetchDocumentTemplateFromNameStatus&quot; : true,
+      &quot;LoopBlockIterationStatus&quot; : true,
+      &quot;LoopBlockIterationIndex&quot; : 1,
+      &quot;wordContentVersionId&quot; : &quot;0685f000002iv1oAAA&quot;,
+      &quot;initiatePDFGeneration&quot; : true,
+      &quot;pdfContentVersionId&quot; : &quot;0685f000002iv1tAAA&quot;,
+      &quot;documentTitle&quot; : &quot;Energy Quote.docx&quot;,
+      &quot;distributionPublicUrl&quot; : &quot;&quot;
+    } ]
+  },
+  &quot;CountTemplateSelected&quot; : 1,
+  &quot;generatePdfDocument&quot; : true,
+  &quot;pdfGenerationCompleted&quot; : true,
+  &quot;pdfContentVersionIds&quot; : [ &quot;0685f000002iv1tAAA&quot; ]
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>transformContractDetailsDCT</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem22</globalKey>
+        <inputFieldName>Meters:MaxDemand</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Meters:Demand</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem21</globalKey>
+        <inputFieldName>Meters:MeterId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Meters:MeterId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem19</globalKey>
+        <inputFieldName>LineItems:Quantity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>lineitems:Quantity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem18</globalKey>
+        <inputFieldName>QuoteTerm</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>lineitems:term</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem23</globalKey>
+        <inputFieldName>Meters:MeterType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Meters:MeterType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom5180</globalKey>
+        <inputFieldName>ContractTerm</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>term</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom8178</globalKey>
+        <inputFieldName>ContractNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContractNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom1623</globalKey>
+        <inputFieldName>ContractEndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContractEndDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom6981</globalKey>
+        <inputFieldName>ContractStartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContractStartDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>var:Line:LineNumber &apos;%.%&apos; NOTLIKE</formulaConverted>
+        <formulaExpression>var:&quot;Line:LineNumber&quot; NOTLIKE &apos;%.%&apos;</formulaExpression>
+        <formulaResultPath>Line:IsTopLevelProduct</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | &quot;SELECT/\/\/COUNT()/\/\/FROM/\/\/QuoteLineItem/\/\/WHERE/\/\/QuoteId/\/\/=/\/\/&apos;{0}&apos;/\/\/AND/\/\/Product2.Name/\/\/LIKE/\/\/&apos;%Custom%&apos;/\/\/&quot; var:QuoteId &quot;Custom&quot; COUNTQUERY 0 &gt; true false IF</formulaConverted>
+        <formulaExpression>IF (COUNTQUERY( &quot;SELECT COUNT() FROM QuoteLineItem WHERE QuoteId = &apos;{0}&apos; AND Product2.Name LIKE &apos;%Custom%&apos; &quot;, QuoteId, &quot;Custom&quot;) &gt; 0,true, false)</formulaExpression>
+        <formulaResultPath>Quote_contains_CustomElectricty</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem3</globalKey>
+        <inputFieldName>Country</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>country</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem2</globalKey>
+        <inputFieldName>City</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>city</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>false</defaultValue>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem6</globalKey>
+        <inputFieldName>Line:IsTopLevelProduct</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>lineitems:IF_top_level_product</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>true</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem5</globalKey>
+        <inputFieldName>ContractAccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>ContractAccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem4</globalKey>
+        <inputFieldName>State</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>state</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem10</globalKey>
+        <inputFieldName>LineItems:Quantity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>lineitems:qty</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem9</globalKey>
+        <inputFieldName>LineItems:ProductName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>lineitems:ProductName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem8</globalKey>
+        <inputFieldName>LineItems:TotalPrice</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Currency</outputFieldFormat>
+        <outputFieldName>lineitems:TotalPrice</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem7</globalKey>
+        <inputFieldName>LineItems:OneTimeCharge</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Currency</outputFieldFormat>
+        <outputFieldName>lineitems:otc</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem14</globalKey>
+        <inputFieldName>City</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>lineitems:city</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem13</globalKey>
+        <inputFieldName>ContractAccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>lineitems:ContractAccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem12</globalKey>
+        <inputFieldName>LineItems:RecurringTotal</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Currency</outputFieldFormat>
+        <outputFieldName>lineitems:mrc_total</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem11</globalKey>
+        <inputFieldName>LineItems:RecurringCharges</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Currency</outputFieldFormat>
+        <outputFieldName>lineitems:mrc</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem17</globalKey>
+        <inputFieldName>Street</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>lineitems:street</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem20</globalKey>
+        <inputFieldName>Quote_contains_CustomElectricty</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>IF_Custom_Electricity_Product</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem16</globalKey>
+        <inputFieldName>State</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>lineitems:state</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>transformContractDetailsDCTCustom0jI3y000000XcZhEAKItem15</globalKey>
+        <inputFieldName>Country</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>transformContractDetailsDCT</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>lineitems:Country</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>PDF</outputType>
+    <previewJsonData>{
+  &quot;LineItems&quot; : [ {
+    &quot;UnitPrice&quot; : 100,
+    &quot;TotalPrice&quot; : 100,
+    &quot;Quantity&quot; : 1,
+    &quot;Id&quot; : &quot;0sL3y00000000kAEAQ&quot;,
+    &quot;ProductName&quot; : &quot;Rate LG&quot;
+  }, {
+    &quot;UnitPrice&quot; : 0,
+    &quot;TotalPrice&quot; : 0,
+    &quot;Quantity&quot; : 1,
+    &quot;Id&quot; : &quot;0sL3y00000000kBEAQ&quot;,
+    &quot;ProductName&quot; : &quot;Electricity Charge&quot;
+  }, {
+    &quot;UnitPrice&quot; : 0,
+    &quot;TotalPrice&quot; : 0,
+    &quot;Quantity&quot; : 1,
+    &quot;Id&quot; : &quot;0sL3y00000000kCEAQ&quot;,
+    &quot;ProductName&quot; : &quot;Demand Power Charge&quot;
+  }, {
+    &quot;UnitPrice&quot; : 0,
+    &quot;TotalPrice&quot; : 0,
+    &quot;Quantity&quot; : 1,
+    &quot;Id&quot; : &quot;0sL3y00000000kDEAQ&quot;,
+    &quot;ProductName&quot; : &quot;Voltage Credits&quot;
+  } ],
+  &quot;ContractNumber&quot; : &quot;00000112&quot;,
+  &quot;ContractStartDate&quot; : &quot;2024-02-16&quot;,
+  &quot;ContractEndDate&quot; : &quot;2025-02-15&quot;,
+  &quot;ContractName&quot; : &quot;Green Energy Quote&quot;,
+  &quot;ContractTerm&quot; : 12,
+  &quot;ContractAccountId&quot; : &quot;0013y00001gkqMMAAY&quot;,
+  &quot;Country&quot; : &quot;United States&quot;,
+  &quot;ContractAccountName&quot; : &quot;General Dynamics (SA1)&quot;,
+  &quot;PostalCode&quot; : &quot;22042&quot;,
+  &quot;Street&quot; : &quot;2941 Fairview Park Drive&quot;,
+  &quot;City&quot; : &quot;Falls Church&quot;,
+  &quot;State&quot; : &quot;VA&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <targetOutputFileName>EnergyContract(Version 1)</targetOutputFileName>
+    <type>Transform</type>
+    <uniqueName>transformContractDetailsDCT_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

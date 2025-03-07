@@ -1,0 +1,236 @@
+{
+  "constants": [],
+  "rules": [
+    {
+      "name": "LeaderOverview No CollabForecast Yes on Quota",
+      "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasQuota}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Manager_Overview"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete forecast toggle from layout",
+          "path": "$.state.gridLayouts..[?(@.name=='pillbox_2')]"
+        },
+        {
+          "action": "delete",
+          "description": "delete forecast toggle from layout",
+          "path": "$.state.gridLayouts..[?(@.name=='listselector_1')]"
+        }, 
+        {
+          "action": "add",
+          "description": "Adding Total Forecast text to layout",
+          "path": "$.state.gridLayouts..[?(@.name=='Default')].pages[0].widgets",
+          "value": {
+                                "row": 41,
+                                "column": 17,
+                                "rowspan": 3,
+                                "colspan": 6,
+                                "name": "text_9",
+                                "widgetStyle": {}
+                            }
+
+        },
+        {
+          "action": "set",
+          "description": "change step to unadjusted forecast",
+          "path": "$.state.widgets.number_2.parameters.step",
+          "value": "kpi_open_pipe"
+        },
+        {
+          "action": "delete",
+          "description": "delete step for adjusted open forecast",
+          "path": "$.state.steps.kpi_adjusted_open_pipe"
+        },
+        {
+          "action": "delete",
+          "description": "delete step for adjusted forecast",
+          "path": "$.state.steps.forecast_adjustment"
+        },
+        {
+          "action": "set",
+          "description": "Use No Collaborative Forecast of Forecast Chart",
+          "path": "$.state.widgets.chart_6.parameters.step",
+          "value": "forecast_chart"
+        },
+        {
+          "action": "set",
+          "description": "Use No Collaborative Forecast of Forecast Chart",
+          "path": "$.state.widgets.chart_2.parameters.step",
+          "value": "forecast_chart"
+        },
+        {
+          "action": "delete",
+          "description": "delete step for adjusted forecast",
+          "path": "$.state.steps.adjusted_forecast_chart"
+        },
+        {
+          "action": "set",
+          "description": "Change label for hierarchy",
+          "path": "$.state.widgets.text_2.parameters.text",
+          "value": "Role Hierarchy"
+        },
+        {
+          "action": "set",
+          "description": "Change label for hierarchy",
+          "path": "$.state.widgets.text_4.parameters.text",
+          "value": "Role Hierarchy"
+        },
+        {
+          "action": "delete",
+          "description": "Delete forecast enabled filter",
+          "path": "$.state.steps.Id_1.query.query.filters[0]"
+        },
+        {
+          "action": "set",
+          "description": "change step to unadjusted forecast",
+          "path": "$.state.widgets.number_1.parameters.step",
+          "value": "kpi_closed_won"
+        },
+        {
+          "action": "set",
+          "description": "change step to unadjusted forecast",
+          "path": "$.state.widgets.number_5.parameters.step",
+          "value": "kpi_closed_won"
+        },
+        {
+          "action": "set",
+          "description": "change step to unadjusted forecast",
+          "path": "$.state.widgets.number_3.parameters.step",
+          "value": "kpi_total_forecast"
+        },
+        {
+          "action": "delete",
+          "description": "Delete forecast enabled filter",
+          "path": "$.state.steps.kpi_total_adjusted_forecast"
+        },
+        {
+          "action": "delete",
+          "description": "delete step for adjusted open forecast",
+          "path": "$.state.steps.kpi_adjusted_closed_won"
+        },
+        {
+          "action": "delete",
+          "description": "Delete text widget for dynamic step",
+          "path": "$.state.widgets.text_10"
+        },
+        {
+          "action": "delete",
+          "description": "delete widget from layout",
+          "path": "$.state.gridLayouts..[?(@.name=='text_10')]"
+        },
+        {
+          "action": "delete",
+          "description": "Delete text widget layout for dynamic step",
+          "path": "$.state.steps.view_all_text"
+        },
+        {
+          "action": "delete",          
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*forecasting_item.*/)]"
+        }
+      ]
+    },
+    {
+      "name": "modify and remove widgets on Forecast Review dashboard",
+      "condition": "${!Constants.HasCollaborativeForecasting && Constants.HasQuota}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Quota_Progress"
+        }
+      ],
+      "actions": [
+        
+        {
+          "action": "delete",
+          "description": "delete step for adjusted forecast",
+          "path": "$.state.steps.kpi_forecast_adjustment"
+        },        
+        {
+          "action": "set",
+          "description": "Switch out table to opportunities",
+          "path": "$.state.widgets.table_2.parameters.step",
+          "value": "raw_opportunities"
+        },
+        {
+          "action": "set",
+          "description": "Switch out table to opportunities",
+          "path": "$.state.widgets.table_1.parameters.step",
+          "value": "raw_opportunities"
+        },
+        {
+          "action": "delete",
+          "description": "delete step for forecast barchart",
+          "path": "$.state.steps.forecast_barchart"
+        },
+        {
+          "action": "eval",
+          "description": "Delete widget for forecast barchart",
+          "value": "${salesWaveMacros:deleteWidget('chart_6')}"
+        },
+        {
+          "action": "set",
+          "description": "Change label for table",
+          "path": "$.state.widgets.text_6.parameters.text",
+          "value": "Opportunity Details"
+        },
+        {
+          "action": "eval",
+          "description": "Delete widget for forecast user filter",
+          "value": "${salesWaveMacros:deleteWidget('list_manager_role')}"
+        },
+        {
+          "action": "delete",
+          "description": "Delete forecast user filter",
+          "path": "$.state.steps.manager_role"
+        },
+        {
+          "action": "eval",
+          "description": "Delete text widget for forecast user",
+          "value": "${salesWaveMacros:deleteWidget('text_13')}"
+        },
+        {
+          "action": "delete",
+          "description": "Delete forecast enabled filter",
+          "path": "$.state.steps.team_details_table"
+        },
+        {
+          "action": "eval",
+          "description": "Delete text widget for dynamic step",
+          "value": "${salesWaveMacros:deleteWidget('text_9')}"
+        },
+        {
+          "action": "delete",
+          "description": "Delete step for dynamic text",
+          "path": "$.state.steps.view_all_text"
+        },
+        {
+          "action": "delete",
+          "condition": "${Constants.HasOpportunitySplits}",
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=='connection_forecast_category')]"
+        },
+        {
+          "action": "delete",          
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*forecasting_item.*/)]"
+        },
+        {
+          "action": "delete",          
+          "description": "remove data connection",
+          "path": "$.state.dataSourceLinks..[?(@.dataSourceName=~/.*user.*/)]"
+        },
+        {
+          "action": "eval",
+          "description": "Delete widget for adjusted forecast",
+          "value": "${salesWaveMacros:deleteWidget('number_11')}"
+        }
+      ]
+    }
+  ]
+}

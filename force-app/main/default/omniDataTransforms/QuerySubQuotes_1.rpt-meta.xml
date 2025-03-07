@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CreateMasterContract&quot; : null,
+    &quot;CreateMasterContractLines&quot; : null,
+    &quot;QueryMasterQuote&quot; : null,
+    &quot;QuerySubQuotes&quot; : null,
+    &quot;QuerySubQuotesDR&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>QuerySubQuotes</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>QuerySubQuotesCustom1044</globalKey>
+        <inputFieldName>SubQuote:vlocity_cmt__PriceListId__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubQuote:PriceListId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>QuerySubQuotesCustom5055</globalKey>
+        <inputFieldName>SubQuote:ContractGroup:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubQuote:ContractGroupId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>QuerySubQuotesCustom953</globalKey>
+        <inputFieldName>SubQuote:BillingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubQuote:BillingStreet</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>&lt;&gt;</filterOperator>
+        <filterValue>ConvertGroupsToExclude:convertedListMap:Id</filterValue>
+        <globalKey>QuerySubQuotesCustom5198</globalKey>
+        <inputFieldName>vlocity_cmt__QuoteGroupId__c</inputFieldName>
+        <inputObjectName>Quote</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>SubQuote</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>parentQuoteId</filterValue>
+        <globalKey>QuerySubQuotesCustom53</globalKey>
+        <inputFieldName>vlocity_cmt__ParentQuoteId__c</inputFieldName>
+        <inputObjectName>Quote</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>SubQuote</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>QuerySubQuotesCustom5316</globalKey>
+        <inputFieldName>SubQuote:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubQuote:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>SubQuote:vlocity_cmt__QuoteGroupId__c</filterValue>
+        <globalKey>QuerySubQuotesCustom505</globalKey>
+        <inputFieldName>vlocity_cmt__QuoteGroupId__c</inputFieldName>
+        <inputObjectName>vlocity_cmt__ContractGroup__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>SubQuote:ContractGroup</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>&lt;&gt;</filterOperator>
+        <filterValue>&apos;Group Cart&apos;</filterValue>
+        <globalKey>QuerySubQuotesCustom3182</globalKey>
+        <inputFieldName>RecordType.Name</inputFieldName>
+        <inputObjectName>Quote</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>SubQuote</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>QuerySubQuotesCustom6672</globalKey>
+        <inputFieldName>SubQuote:BillingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubQuote:BillingState</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>QuerySubQuotesCustom4266</globalKey>
+        <inputFieldName>SubQuote:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubQuote:Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>QuerySubQuotesCustom4231</globalKey>
+        <inputFieldName>SubQuote:BillingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubQuote:BillingPostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>QuerySubQuotesCustom5247</globalKey>
+        <inputFieldName>SubQuote:BillingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>QuerySubQuotes</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubQuote:BillingCity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ConvertGroupsToExclude&quot; : {
+    &quot;convertedListMap&quot; : [ {
+      &quot;Id&quot; : &quot;a4H6g000000TmADE00&quot;
+    }, {
+      &quot;Id&quot; : &quot;a4H6g000000TmADE01&quot;
+    } ]
+  },
+  &quot;parentQuoteId&quot; : &quot;0Q06g000000EgHi&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>QuerySubQuotes_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

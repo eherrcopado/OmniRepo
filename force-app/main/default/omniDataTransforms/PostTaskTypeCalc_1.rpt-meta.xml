@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;timeStamp&quot; : &quot;2019-02-20T19:49:43.001Z&quot;,
+  &quot;userId&quot; : &quot;0051U0000036yEPQAY&quot;,
+  &quot;userName&quot; : &quot;mjelaca@hqc.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -480,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://mjhcq0219--vlocity-cmt.visualforce.com&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;id&quot; : &quot;a1I1U000001VB3kUAG&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;OpptyType&quot; : {
+    &quot;OpptyTypeRadio&quot; : null,
+    &quot;EnergySubTypeRadio&quot; : null,
+    &quot;SiteRadio&quot; : null
+  },
+  &quot;RiskCheck&quot; : &quot;No&quot;,
+  &quot;StageName&quot; : &quot;Qualification&quot;,
+  &quot;TaskPicklistValue&quot; : [ {
+    &quot;TaskType&quot; : &quot;Meeting&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Technical Information&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Criteria&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Risk Evaluation&quot;
+  } ],
+  &quot;output&quot; : [ {
+    &quot;calculationResults&quot; : [ {
+      &quot;RiskCheck&quot; : &quot;No&quot;,
+      &quot;StageName&quot; : &quot;Qualification&quot;,
+      &quot;TaskType&quot; : &quot;Meeting&quot;,
+      &quot;DueDate&quot; : &quot;2019-02-21&quot;,
+      &quot;HQTaskMatrixFinal__DueDateOffset&quot; : 1,
+      &quot;HQTaskMatrixFinal__Description&quot; : &quot;Réunion pour obtenir plus de details&quot;,
+      &quot;HQTaskMatrixFinal__Subject&quot; : &quot;Organiser une réunion&quot;,
+      &quot;ID&quot; : &quot;0&quot;
+    }, {
+      &quot;RiskCheck&quot; : &quot;No&quot;,
+      &quot;StageName&quot; : &quot;Qualification&quot;,
+      &quot;TaskType&quot; : &quot;Technical Information&quot;,
+      &quot;DueDate&quot; : &quot;2019-02-22&quot;,
+      &quot;HQTaskMatrixFinal__DueDateOffset&quot; : 2,
+      &quot;HQTaskMatrixFinal__Description&quot; : &quot;Obtenir des informations techniques&quot;,
+      &quot;HQTaskMatrixFinal__Subject&quot; : &quot;Obtenir des informations techniques&quot;,
+      &quot;ID&quot; : &quot;1&quot;
+    }, {
+      &quot;RiskCheck&quot; : &quot;No&quot;,
+      &quot;StageName&quot; : &quot;Qualification&quot;,
+      &quot;TaskType&quot; : &quot;Criteria&quot;,
+      &quot;DueDate&quot; : &quot;2019-02-23&quot;,
+      &quot;HQTaskMatrixFinal__DueDateOffset&quot; : 3,
+      &quot;HQTaskMatrixFinal__Description&quot; : &quot;Confirmer le budget et les critères de decision&quot;,
+      &quot;HQTaskMatrixFinal__Subject&quot; : &quot;Confirmer le budget et les critères de decision&quot;,
+      &quot;ID&quot; : &quot;2&quot;
+    } ],
+    &quot;aggregationResults&quot; : null
+  } ],
+  &quot;error&quot; : &quot;OK&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>PostTaskTypeCalc</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ba2b64bc-5013-8edf-371c-9ee79fe47387</globalKey>
+        <inputFieldName>output:calculationResults:AUTOTASKMATRIX__Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostTaskTypeCalc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TaskTypeOut:Description</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8487dac0-cf51-bb71-f176-885e1c1f625c</globalKey>
+        <inputFieldName>output:calculationResults:AUTOTASKMATRIX__Subject</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostTaskTypeCalc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TaskTypeOut:Subject</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>47a2ff7f-860b-0632-a38b-26de40636917</globalKey>
+        <inputFieldName>output:calculationResults:DueDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostTaskTypeCalc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TaskTypeOut:DueDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : &quot;001Dn000003UbJ1IAK&quot;,
+  &quot;timeStamp&quot; : &quot;2022-10-17T22:30:58.062Z&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/Los_Angeles&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userName&quot; : &quot;debarshisharma@debarshisharma-221010-261.demo&quot;,
+  &quot;userId&quot; : &quot;005Dn000000QxmJIAS&quot;,
+  &quot;omniProcessId&quot; : &quot;0jNDn000000L2T4MAK&quot;,
+  &quot;OpenCases&quot; : { },
+  &quot;StageName&quot; : &quot;Qualification&quot;,
+  &quot;RiskCheck&quot; : &quot;No&quot;,
+  &quot;TaskPicklistValue&quot; : [ {
+    &quot;TaskType&quot; : &quot;Meeting&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Technical Information&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Criteria&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Risk Evaluation&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Quote&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>PostTaskTypeCalc_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

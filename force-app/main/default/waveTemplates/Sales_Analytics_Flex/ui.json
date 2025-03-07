@@ -1,0 +1,425 @@
+{
+  "pages": [
+    {
+      "title": "Create Sales Analytics App",
+      "variables": [
+        {
+          "name": "Geography"
+        },
+        {
+          "name": "Customer"
+        },
+        {
+          "name": "Fiscal_Month"
+        },
+        {
+          "name": "Has_Products_Visible"
+        },
+        {
+          "name": "Has_Opps_With_No_LineItems"
+        },
+        {
+          "name": "Has_Managers"
+        },
+        {
+          "name": "UsingRoleHierarchy"
+        },
+        {
+          "name": "UsingAccountHierarchy"
+        },
+        {
+          "name": "Has_SecurityPredicate"
+        },
+        {
+          "name": "Has_SecurityPredicate_Visible"
+        },
+        {
+          "name": "Has_AccountHierarchy_Visible"
+        },
+        {
+          "name": "Has_AccountTeams_Visible"
+        },
+        {
+          "name": "Has_OpportunityTeams_Visible"
+        },
+        {
+          "name": "First_Day_Of_Week"
+        },
+        {
+          "name": "Has_Cases_Visible"
+        },
+        {
+          "name": "Has_Leads_Visible"
+        },
+        {
+          "name": "Has_CollaborativeForecasting"
+        },
+        {
+          "name": "Has_CollaborativeForecasting_Visible"
+        },
+        {
+          "name": "Has_Quota"
+        },
+        {
+          "name": "Has_Campaigns_Visible"
+        },
+        {
+          "name": "Can_Continue"
+        },
+        {
+          "name": "SObjectChoices"
+        },
+        {
+          "name": "autoconfig"
+        },
+        {
+          "name": "Opportunity_All"
+        },
+        {
+          "name": "Opportunity_Dimension"
+        },
+        {
+          "name": "Opportunity_Measure"
+        },
+        {
+          "name": "Account_All"
+        },
+        {
+          "name": "Account_Dimension"
+        },
+        {
+          "name": "Account_Measure"
+        },
+        {
+          "name": "Lead_All"
+        },
+        {
+          "name": "Lead_Dimension"
+        },
+        {
+          "name": "Lead_Measure"
+        },
+        {
+          "name": "Campaign_All"
+        },
+        {
+          "name": "Campaign_Dimension"
+        },
+        {
+          "name": "Campaign_Measure"
+        },
+        {
+          "name": "Product_All"
+        },
+        {
+          "name": "Activities_All"
+        },
+        {
+          "name": "User_All"
+        },
+        {
+          "name": "Case_All"
+        },
+        {
+          "name": "Has_OpportunitySplits_Visible"
+        },
+        {
+          "name": "Has_ProductSchedules_Visible"
+        },
+        {
+          "name": "OpportunityFieldMap"
+        },
+        {
+          "name": "Has_LeadScore"
+        },
+        {
+          "name": "Lead_Rating_Visible"
+        },
+        {
+          "name": "DefaultsVisible"
+        },
+        {
+          "name": "Backdoor"
+        },
+        {
+          "name": "SObjectDescriptions"
+        },
+        {
+          "name": "Show_First_Page"
+        },
+        {
+          "name": "One_Click_Install"
+        },
+        {
+          "name": "OpptyRecordType"
+        },
+        {
+          "name": "DontOverwriteQuota"
+        },
+        {
+          "name": "Geo_Maps"
+        },
+        {
+          "name": "Has_OpportunityRecordType"
+        },
+        {
+          "name": "Has_OpportunityRecordType_Dataflow"
+        },
+        {
+          "name": "Has_Exception"
+        },
+        {
+          "name": "Has_Activities"
+        },
+        {
+          "name": "Has_ForecastCategory"
+        },
+        {
+          "name": "RoleSecurity"
+        },
+        {
+          "name": "Opportunity_Amount"
+        },
+        {
+          "name": "Bookings"
+        },
+        {
+          "name": "Account_All"
+        },
+        {
+          "name": "Geography_L2"
+        },
+        {
+          "name": "Source"
+        },
+        {
+          "name": "Source_L2"
+        },
+        {
+          "name": "Product_Amount"
+        },
+        {
+          "name": "Customer_L2"
+        },
+        {
+          "name": "Product"
+        },
+        {
+          "name": "Product_L2"
+        },
+        {
+          "name": "Has_AccountTeams"
+        },
+        {
+          "name": "Has_OpportunityTeams"
+        },
+        {
+          "name": "Lead_Source"
+        },
+        {
+          "name": "Lead_Rating"
+        },
+        {
+          "name": "Lead_Geography"
+        },
+        {
+          "name": "Lead_Industry"
+        },
+        {
+          "name": "OpportunitySplitTypeId"
+        }
+      ],
+      "vfPage": {
+        "name": "checklist"
+      },
+      "helpUrl": "https://help.salesforce.com/articleView?id=bi_app_sales_analytics_data_feature_check.htm&type=5"
+    },
+    {
+      "title": "Create Sales Analytics App",
+      "condition": "{{ Variables.isDemoApplication == 'No' && Variables.Backdoor == false }}",
+      "variables": [
+        {
+          "name": "autoconfig"
+        }
+      ],
+      "vfPage": {
+        "name": "default_or_custom"
+      },
+      "helpUrl": "https://help.salesforce.com/articleView?id=bi_app_sales_analytics_wizard_options.htm&type=5"
+    },
+    {
+      "title": "Choose additional objects to include in your app",
+      "condition": "{{Variables.isDemoApplication == 'No' && Variables.autoconfig == 'false'}}",
+      "variables": [
+        {
+          "name": "SObjectChoices"
+        },
+        {
+          "name": "SObjectDescriptions",
+          "visibility": "Hidden"
+        },
+        {
+          "name": "Has_CollaborativeForecasting",
+          "visibility": "Hidden"
+        },
+        {
+          "name": "Amount_Visible",
+          "visibility": "Hidden"
+        },
+        {
+          "name": "TotalPrice_Visible",
+          "visibility": "Hidden"
+        }
+      ],
+      "vfPage": {
+        "name": "add_objects"
+      },
+      "helpUrl": "https://help.salesforce.com/articleView?id=bi_app_sales_analytics_wizard_custom.htm&type=5"
+    },
+    {
+      "title": "These questions focus on how Sales Analytics displays data from the Accounts object.",
+      "condition": "{{Variables.isDemoApplication == 'No' && Variables.autoconfig == 'false'}}",
+      "variables": [
+        {
+          "name": "Customer"
+        },
+        {
+          "name": "Customer_L2"
+        },
+        {
+          "name": "Source"
+        },
+        {
+          "name": "Geography"
+        },
+        {
+          "name": "Geography_L2"
+        },
+        {
+          "name": "UsingAccountHierarchy",
+          "visibility": "{{Variables.Has_AccountHierarchy_Visible}}"
+        }
+      ],
+      "helpUrl": "https://help.salesforce.com/articleView?id=bi_app_sales_analytics_wizard_guidelines.htm&type=5"
+    },
+    {
+      "title": "These questions focus on how Sales Analytics displays data from the Opportunities object.",
+      "condition": "{{Variables.isDemoApplication == 'No' && Variables.autoconfig == 'false'}}",
+      "variables": [
+        {
+          "name": "OpportunitySplitType",
+          "visibility": "{{Variables.SObjectChoices contains 'Opportunity Splits' ? 'Visible' : 'Hidden'}}"
+        },
+        {
+          "name": "Opportunity_Amount",
+          "visibility": "{{Variables.Amount_Visible}}"
+        },
+        {
+          "name": "CustomHistoricalCheck",
+          "visibility": "{{Variables.TotalPrice_Visible == 'Visible' ? 'Disabled' : 'Hidden'}}"
+        },
+        {
+          "name": "Source_L2"
+        },
+        {
+          "name": "Bookings"
+        }
+      ],
+      "helpUrl": "https://help.salesforce.com/articleView?id=bi_app_sales_analytics_wizard_opportunities_step5.htm&type=5"
+    },
+    {
+      "title": "These questions focus on how Sales Analytics displays data about the Products object.",
+      "condition": "{{Variables.isDemoApplication == 'No' && Variables.SObjectChoices contains 'Products' && Variables.autoconfig == 'false'}}",
+      "variables": [
+        {
+          "name": "Product_Amount"
+        },
+        {
+          "name": "Product"
+        },
+        {
+          "name": "Product_L2"
+        }
+      ],
+      "helpUrl": "https://help.salesforce.com/articleView?id=bi_app_sales_analytics_wizard_products_step6.htm&type=5"
+    },
+    {
+      "title": "These questions help Sales Analytics enhance your analytics experience.",
+      "condition": "{{Variables.isDemoApplication == 'No' && Variables.autoconfig == 'false'}}",
+      "variables": [
+        {
+          "name": "Has_SecurityPredicate",
+          "visibility": "{{Variables.Has_SecurityPredicate_Visible}}"
+        },
+        {
+          "name": "Has_AccountTeams",
+          "visibility": "{{Variables.Has_AccountTeams_Visible}}"
+        },
+        {
+          "name": "Has_OpportunityTeams",
+          "visibility": "{{Variables.Has_OpportunityTeams_Visible}}"
+        },
+        {
+          "name": "OpptyRecordType",
+          "visibility": "{{Variables.Has_OpportunityRecordType_Dataflow}}"
+        }
+      ],
+      "helpUrl": "https://help.salesforce.com/articleView?id=bi_app_sales_analytics_wizard_enhance_step7.htm&type=5"
+    },
+    {
+      "title": "Sales Analytics uses the answers to these questions to determine how to display data in your Leads dashboard.",
+      "condition": "{{Variables.isDemoApplication == 'No' && Variables.SObjectChoices contains 'Leads' && Variables.autoconfig == 'false'}}",
+      "variables": [
+        {
+          "name": "Lead_Rating",
+          "visibility": "{{Variables.Lead_Rating_Visible}}"
+        },
+        {
+          "name": "Lead_Source"
+        },
+        {
+          "name": "Lead_Geography"
+        },
+        {
+          "name": "Lead_Industry"
+        }
+      ],
+      "helpUrl": "https://help.salesforce.com/articleView?id=bi_app_sales_analytics_wizard_leads_step8.htm&type=5"
+    },
+    {
+      "title": "Sales Analytics uses the answers to these questions to bring additional data into datasets.",
+      "condition": "{{Variables.isDemoApplication == 'No' && Variables.autoconfig == 'false'}}",
+      "variables": [
+        {
+          "name": "Account_All"
+        },
+        {
+          "name": "Opportunity_All"
+        },
+        {
+          "name": "User_All"
+        },
+        {
+          "name": "Activities_All"
+        },
+        {
+          "name": "Product_All",
+          "visibility": "{{Variables.SObjectChoices contains 'Products' ? 'Visible' : 'Hidden'}}"
+        },
+        {
+          "name": "Lead_All",
+          "visibility": "{{Variables.SObjectChoices contains 'Leads' ? 'Visible' : 'Hidden'}}"
+        },
+        {
+          "name": "Case_All",
+          "visibility": "{{Variables.SObjectChoices contains 'Cases' ? 'Visible' : 'Hidden'}}"
+        },
+        {
+          "name": "Campaign_All",
+          "visibility": "{{Variables.SObjectChoices contains 'Campaigns' ? 'Visible' : 'Hidden'}}"
+        }
+      ],
+      "helpUrl": "https://help.salesforce.com/articleView?id=bi_app_sales_analytics_wizard_add_data_step9.htm&type=5"
+    }
+  ]
+}

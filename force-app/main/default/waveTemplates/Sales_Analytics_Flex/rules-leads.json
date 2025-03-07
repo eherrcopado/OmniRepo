@@ -1,0 +1,227 @@
+{
+  "rules": [
+    {
+      "name": "RemoveLeadsFromFolder",
+      "condition": "${! Constants.HasLead}",
+      "appliesTo": [
+        {
+          "type": "folder",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Manager Whitespace from Folder",
+          "path": "$.featuredAssets.default.assets..[?(@.id=~ /^.*Lead Analysis.*$/i)]"
+        }
+      ]
+    },
+    {
+      "name": "delete links to lead analysis dashboard",
+      "condition": "${! Constants.HasLead }",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Performance"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Manager_Overview"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Pipeline_Changes"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Stage_Analysis"
+        }
+      ],
+      "actions": [
+        {
+          "action": "eval",
+          "description": "Move text widgets (which look like links) left on all Sales Ops dashboards",
+          "value": "${link_macros:moveHorizontalTextLeft('link_lead_analysis')}"
+        },
+        {
+          "action": "eval",
+          "description": "Delete Leads dashboard Link from Sales Ops dashboards",
+          "value": "${link_macros:removeHorizontalLinkLeft('link_lead_analysis')}"
+        }
+      ]
+    },
+    {
+      "name": "Delete Leads Link from home page",
+      "condition": "${Constants.HasLead == 'No'}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "About_Wave_for_Sales"
+        }
+      ],
+      "actions": [
+        {
+          "action": "eval",
+          "description": "Delete Leads Link from home page",
+          "value": "${link_macros:removeVerticalLink('link_37')}"
+        },
+        {
+          "action": "eval",
+          "description": "Delete Leads Text from home page",
+          "value": "${link_macros:removeVerticalText('text_30')}"
+        }
+      ]
+    },
+    {
+      "name": "SelectGEOMapLeadsCountry",
+      "condition": "${Constants.HasLead && Variables.Lead_Geography.fieldName == 'Country' && ! Variables.Overrides.createAllDashboards}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Lead_Analysis"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "set map to world map",
+          "path": "$.state.widgets.ui_leads_by_region_map.parameters.map",
+          "value": "World Countries"
+        }
+      ]
+    },
+    {
+      "name": "SelectGEOMapLeadsState",
+      "condition": "${Constants.HasLead && Variables.Lead_Geography.fieldName == 'State'}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Lead_Analysis"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "set map to us map",
+          "path": "$.state.widgets.ui_leads_by_region_map.parameters.map",
+          "value": "US States"
+        }
+      ]
+    },
+    {
+      "name": "SelectGEOMapLeadsOthers",
+      "condition": "${Constants.HasLead && Variables.Lead_Geography.fieldName != 'State' && Variables.Lead_Geography.fieldName != 'Country'}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Lead_Analysis"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "update chart type",
+          "path": "$.state.widgets.ui_leads_by_region_map.parameters.visualizationType",
+          "value": "hbar"
+        }
+      ]
+    },
+    {
+      "name": "RemoveLeadScoreFromDataflow",
+      "condition": "${!Variables.Has_LeadScore}",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Extract_ScoreIntelligence"
+        },
+        {
+          "action": "delete",
+          "description": "delete node from workflow",
+          "path": "$.workflowDefinition.Join_LeadScore"
+        }
+      ]
+    },
+    {
+      "name": "RemoveLeadScoreFromDataflowHasLeadObject",
+      "condition": "${!Variables.Has_LeadScore && Constants.HasLead}",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete computed field for score bucket",
+          "path": "$.workflowDefinition.Compute_CurrentDateForLeads.parameters.computedFields[?(@.name=='ScoreBucket')]"
+        },
+        {
+          "action": "set",
+          "description": "update node in workflow",
+          "path": "$.workflowDefinition.Compute_CurrentDateForLeads.parameters.source",
+          "value": "Extract_Lead"
+        }
+      ]
+    },
+    {
+      "name": "RemoveLeadScoreFromDataflowNoLeadObject",
+      "condition": "${!Variables.Has_LeadScore && !Constants.HasLead}",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "delete computed field for score bucket",
+          "path": "$.workflowDefinition.Compute_CurrentDateForLeads"
+        }
+      ]
+    },
+    {
+      "name": "RemoveLeadScoreFromXMD",
+      "condition": "${!Variables.Has_LeadScore}",
+      "appliesTo": [
+        {
+          "type": "xmd",
+          "name": "lead"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove dimension so system.xmd doesn't complain",
+          "path": "$..dimensions[?(@.field=='ScoreBucket')]"
+        }
+      ]
+    },
+    {
+      "name": "RemoveLeadScoreFromXMD",
+      "condition": "${Variables.Has_LeadScore}",
+      "appliesTo": [
+        {
+          "type": "xmd",
+          "name": "lead"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "remove dimension so system.xmd doesn't complain",
+          "path": "$..dimensions[?(@.field=='${Variables.Lead_Rating.fieldName}')]"
+        }
+      ]
+    }
+  ]
+}

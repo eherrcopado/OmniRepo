@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;timeStamp&quot; : &quot;2019-04-03T15:20:04.560Z&quot;,
+  &quot;userId&quot; : &quot;00541000002N7gsAAC&quot;,
+  &quot;userName&quot; : &quot;admin@vdo.energy.master&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -420,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://vdo-energy--vlocity-cmt.na75.visual.force.com&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;id&quot; : &quot;a1I1K00000T2Zh9UAF&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;OmniScriptSessionToken&quot; : &quot;43268782-ceb2-4fb5-8863-8a8fe6ed3c3c&quot;,
+    &quot;Building&quot; : 22089,
+    &quot;Equipment&quot; : 14137,
+    &quot;CalculationAction1&quot; : 1676,
+    &quot;FinalVolume&quot; : 1566,
+    &quot;GetMonths&quot; : 1261,
+    &quot;CalcShape&quot; : 735
+  },
+  &quot;Building&quot; : {
+    &quot;Width&quot; : 100,
+    &quot;Length&quot; : 200,
+    &quot;Hight&quot; : 12,
+    &quot;Floors&quot; : 2,
+    &quot;Units&quot; : 1,
+    &quot;CubicFeet&quot; : 480000,
+    &quot;Insulation&quot; : &quot;2&quot;,
+    &quot;WinterMonths&quot; : 5,
+    &quot;AvTempDiffWinter&quot; : 45,
+    &quot;WinterFactor&quot; : 0.375,
+    &quot;BldgHeatVol&quot; : 87670.07999999999,
+    &quot;BldgHeatVolMcf&quot; : 3095.6305248
+  },
+  &quot;Equipment&quot; : {
+    &quot;EqType&quot; : [ {
+      &quot;EquipmentType&quot; : &quot;Automatic 30-40 gal&quot;,
+      &quot;HoursPerDay&quot; : 5
+    }, {
+      &quot;EquipmentType&quot; : &quot;Cooking&quot;,
+      &quot;HoursPerDay&quot; : 3
+    } ]
+  },
+  &quot;FinalVolume&quot; : {
+    &quot;ConvertRadio&quot; : &quot;Yes&quot;,
+    &quot;FinalHeat&quot; : 87670.07999999999,
+    &quot;TotEqCalcUsage&quot; : 2651.73,
+    &quot;TotalVolume&quot; : 90321.80999999998,
+    &quot;TotHeatPerc&quot; : 97.06413102217505,
+    &quot;TotWaterPerc&quot; : 1.9670322151427218,
+    &quot;TotalProcessPerc&quot; : 0.9688367626822361,
+    &quot;TotalVolumeMcf&quot; : 3189.2631110999996,
+    &quot;TotalVolumeTherm&quot; : 32489.859712230213,
+    &quot;MonthlyHeat&quot; : 2628,
+    &quot;MonthlyBase&quot; : 79.48830935251799
+  },
+  &quot;error&quot; : &quot;OK&quot;,
+  &quot;Result&quot; : {
+    &quot;TotalHeatPercentage&quot; : 0,
+    &quot;TotalWaterPercentage&quot; : 0.67,
+    &quot;TotalProcessPercentage&quot; : 0.33,
+    &quot;TotalUsage&quot; : 2651.73
+  },
+  &quot;External&quot; : [ {
+    &quot;Month&quot; : 1
+  }, {
+    &quot;Month&quot; : 2
+  }, {
+    &quot;Month&quot; : 3
+  }, {
+    &quot;Month&quot; : 4
+  }, {
+    &quot;Month&quot; : 5
+  }, {
+    &quot;Month&quot; : 6
+  }, {
+    &quot;Month&quot; : 7
+  }, {
+    &quot;Month&quot; : 8
+  }, {
+    &quot;Month&quot; : 9
+  }, {
+    &quot;Month&quot; : 10
+  }, {
+    &quot;Month&quot; : 11
+  }, {
+    &quot;Month&quot; : 12
+  } ],
+  &quot;Step7&quot; : {
+    &quot;CalcResult&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VDOGasEstimatePreCalc</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VDOGasEstimatePreCalc08016420779927902</globalKey>
+        <inputFieldName>FinalVolume:MonthlyHeat</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VDOGasEstimatePreCalc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>input:VolumeIn</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VDOGasEstimatePreCalc07682739647525305</globalKey>
+        <inputFieldName>FinalVolume:MonthlyBase</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VDOGasEstimatePreCalc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>input:Base</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VDOGasEstimatePreCalc9317785984295912</globalKey>
+        <inputFieldName>External:Month</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VDOGasEstimatePreCalc</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>input:Month</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;timeStamp&quot; : &quot;2019-04-03T15:20:04.560Z&quot;,
+  &quot;userId&quot; : &quot;00541000002N7gsAAC&quot;,
+  &quot;userName&quot; : &quot;admin@vdo.energy.master&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -420,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://vdo-energy--vlocity-cmt.na75.visual.force.com&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;id&quot; : &quot;a1I1K00000T2Zh9UAF&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;OmniScriptSessionToken&quot; : &quot;43268782-ceb2-4fb5-8863-8a8fe6ed3c3c&quot;,
+    &quot;Building&quot; : 22089,
+    &quot;Equipment&quot; : 14137,
+    &quot;CalculationAction1&quot; : 1676,
+    &quot;FinalVolume&quot; : 1566,
+    &quot;GetMonths&quot; : 1261,
+    &quot;CalcShape&quot; : 735
+  },
+  &quot;Building&quot; : {
+    &quot;Width&quot; : 100,
+    &quot;Length&quot; : 200,
+    &quot;Hight&quot; : 12,
+    &quot;Floors&quot; : 2,
+    &quot;Units&quot; : 1,
+    &quot;CubicFeet&quot; : 480000,
+    &quot;Insulation&quot; : &quot;2&quot;,
+    &quot;WinterMonths&quot; : 5,
+    &quot;AvTempDiffWinter&quot; : 45,
+    &quot;WinterFactor&quot; : 0.375,
+    &quot;BldgHeatVol&quot; : 87670.07999999999,
+    &quot;BldgHeatVolMcf&quot; : 3095.6305248
+  },
+  &quot;Equipment&quot; : {
+    &quot;EqType&quot; : [ {
+      &quot;EquipmentType&quot; : &quot;Automatic 30-40 gal&quot;,
+      &quot;HoursPerDay&quot; : 5
+    }, {
+      &quot;EquipmentType&quot; : &quot;Cooking&quot;,
+      &quot;HoursPerDay&quot; : 3
+    } ]
+  },
+  &quot;FinalVolume&quot; : {
+    &quot;ConvertRadio&quot; : &quot;Yes&quot;,
+    &quot;FinalHeat&quot; : 87670.07999999999,
+    &quot;TotEqCalcUsage&quot; : 2651.73,
+    &quot;TotalVolume&quot; : 90321.80999999998,
+    &quot;TotHeatPerc&quot; : 97.06413102217505,
+    &quot;TotWaterPerc&quot; : 1.9670322151427218,
+    &quot;TotalProcessPerc&quot; : 0.9688367626822361,
+    &quot;TotalVolumeMcf&quot; : 3189.2631110999996,
+    &quot;TotalVolumeTherm&quot; : 32489.859712230213,
+    &quot;MonthlyHeat&quot; : 2628,
+    &quot;MonthlyBase&quot; : 79.48830935251799
+  },
+  &quot;error&quot; : &quot;OK&quot;,
+  &quot;Result&quot; : {
+    &quot;TotalHeatPercentage&quot; : 0,
+    &quot;TotalWaterPercentage&quot; : 0.67,
+    &quot;TotalProcessPercentage&quot; : 0.33,
+    &quot;TotalUsage&quot; : 2651.73
+  },
+  &quot;External&quot; : [ {
+    &quot;Month&quot; : 1
+  }, {
+    &quot;Month&quot; : 2
+  }, {
+    &quot;Month&quot; : 3
+  }, {
+    &quot;Month&quot; : 4
+  }, {
+    &quot;Month&quot; : 5
+  }, {
+    &quot;Month&quot; : 6
+  }, {
+    &quot;Month&quot; : 7
+  }, {
+    &quot;Month&quot; : 8
+  }, {
+    &quot;Month&quot; : 9
+  }, {
+    &quot;Month&quot; : 10
+  }, {
+    &quot;Month&quot; : 11
+  }, {
+    &quot;Month&quot; : 12
+  } ],
+  &quot;Step7&quot; : {
+    &quot;CalcResult&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VDOGasEstimatePreCalc_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,87 @@
+<apex:page standardStylesheets="true" showHeader="false" sidebar="false" docType="html-5.0">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ng="http://angularjs.org">
+        <head>
+            <link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.slds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+            <style>
+                body { 
+                  background-image: url('{!$Resource.greybg}');
+                  background-repeat: repeat;
+                }
+                .vlc-move-wrapper {
+                    background-color: #f2f2f2;
+                    color: #777;
+                    margin-top: 20px;
+                }
+                .vlc-move-wrapper .header {
+                    height: 25vh;
+                    margin: 0 auto;
+                    margin-top: -20px;
+                    position: relative;
+                }
+                .vlc-move-wrapper .header .headline {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 26rem;
+                    display: inline;
+                }
+                .vlc-move-wrapper .header .headline h1 {
+                    color: #444;
+                    text-shadow: #fff 1px 1px 1px;
+                    font-weight: bold;}
+                .vlc-move-wrapper .vlcpanel {
+                    border-top: 4px solid #cbc9c9;
+                    background: url("{!$Resource.greybg}") repeat #e6e6e6;
+                    margin: 50px auto 0;}
+                .vlc-move-wrapper .vlcpanel .content {
+                    width: 980px;
+                    margin: -80px auto auto;
+                    background-color: #fff;
+                    -webkit-box-shadow: 0 -8px 30px 0 rgba(33, 29, 31, 0.38);
+                    -moz-box-shadow: 0 -8px 30px 0 rgba(33, 29, 31, 0.38);
+                    box-shadow: 0 -8px 30px 0 rgba(33, 29, 31, 0.38);}
+                .vlocity .via-slds.via-omni form[stepForm] {
+                    min-height: unset;
+                }
+                .vlocity .via-slds .bPageBlock.brandSecondaryBrd.apexDefaultPageBlock.secondaryPalette{
+                    display: none;
+                }
+                .vlocity .via-slds .vlc-slds-bpTree-step-chart__container{
+                    margin-bottom: 0px !important;
+                }
+               </style>
+        </head>
+        <body class="">
+            <div class="via-slds">
+                <div class="vlc-move-wrapper">
+                    <div class="header" role="banner">
+                        <div class="headline">
+                            <h1 class="slds-text-heading_large">{!JSENCODE($Label.MACDFdoTitle)}</h1>
+                        </div>
+                    </div>
+                    <div class="vlcpanel">
+                        <div class="content">
+                            <div class="vlocity" ng-app="MACDFdo">
+                                <c:BusinessProcessComponent strOmniScriptType="MACD"
+                                            strOmniScriptSubType="FDO"
+                                            strOmniScriptLang="English"/>
+                                <c:BusinessProcessHelperComponent />
+                                <c:JSONTreeHTMLTemplateComponent />
+                                <c:MACDMoveAssetHTMLTemplateComponent />         
+                                <c:RenderAssetTreeHierarchyComponent />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                (function(){                                                                     
+                    var myModule = angular.module('MACDFdo', ['vlocity-business-process']);
+                })(); 
+            </script>
+        </body>
+    </html>
+</apex:page>

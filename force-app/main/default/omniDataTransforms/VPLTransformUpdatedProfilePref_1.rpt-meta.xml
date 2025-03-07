@@ -1,0 +1,1670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>It transforms updated account profile attributes</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;ManageNotificationPreferences&quot; : {
+    &quot;BillNotifications&quot; : null,
+    &quot;DNCFrom&quot; : null,
+    &quot;DNCTo&quot; : null,
+    &quot;OffersPromotions&quot; : null,
+    &quot;OutageNotifications&quot; : null,
+    &quot;PaymentRemindersNotifications&quot; : null,
+    &quot;WorkOrderNotifications&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRExtractAccountPreferences&quot; : null,
+    &quot;DRTransformAccPrefAttr&quot; : null,
+    &quot;DataRaptorTransformAction2&quot; : null,
+    &quot;ManageNotificationPreferences&quot; : null,
+    &quot;PostAccountAttrAssignment&quot; : null,
+    &quot;SVAccNotification&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformUpdatedProfilePref</name>
+    <nullInputsIncludedInOutput>true</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f2c8d869-4690-9a89-e50a-b191453d6491</globalKey>
+        <inputFieldName>ManageProfileAttributes:CustomerSatisfactionService</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|9:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7551cfb4-73e4-f465-8ff5-7701a31b9712</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|11:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>74c9fb22-01be-7f52-9616-0d75fcc3cfa2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bd209ce9-5962-dc59-bba2-b1bfc61b60b2</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionUsageCharges:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|11:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>28f536cd-ff90-c12b-edc6-ec1b3fbb1e63</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionService:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|9:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>195e4b17-627c-613d-bf22-008fa9d44b8e</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionService:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|9:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e4b83b4e-3579-a7e4-dd55-29bcce4505d4</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionService:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|9:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a698cae4-5157-5e99-fd22-56a06a4cfade</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionUsageCharges:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|11:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5fb7eace-c7d4-ba00-e9b1-b5c9a93217b4</globalKey>
+        <inputFieldName>ManageProfileAttributes:CustomerSatisfactionUsageCharges</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|11:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6f63bfff-793f-dfba-a16c-7abdb8772e59</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|12:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f7992de2-3be7-a688-0b8c-91db23f83613</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|12:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5b3a974e-3386-2173-1951-e4f80dd23dc0</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionUsageCharges:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|11:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9e7b55fb-2fbe-6dd0-529b-e8d117c16250</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|10:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>02d9a2e4-cb95-3d2e-a48d-00ab25d8a928</globalKey>
+        <inputFieldName>AccountPref:AnalysisMood:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|12:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5185a22d-4e02-2089-9f3d-9edee8171109</globalKey>
+        <inputFieldName>ManageProfileAttributes:AnalysisMood</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|12:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3c7a28cc-9851-e050-5b68-fbc2b22218ca</globalKey>
+        <inputFieldName>AccountPref:AnalysisMood:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|12:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>43b34b40-fc17-1998-3f4a-ad5abf978fad</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|13:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a80f4ba9-3dde-f22d-1634-2d8e63347fa9</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|13:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d403ef65-09ff-d3b5-bf84-1b646b23bf9f</globalKey>
+        <inputFieldName>AccountPref:AnalysisMood:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|12:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bd6d3cb5-2ad7-a00e-f0e1-1f53e20a6a9e</globalKey>
+        <inputFieldName>AccountPref:AnalysisMood:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|12:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>066571c8-21e6-02da-9faf-9cf569925024</globalKey>
+        <inputFieldName>AccountPref:AnalysisUpsellPotential:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|13:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>37deb3fb-1f21-de9f-cf45-f266ebada820</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaServiceAvailability:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>953280c6-957c-784b-0856-9f4238d833c8</globalKey>
+        <inputFieldName>AccountPref:AnalysisUpsellPotential:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|13:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9fe7162b-a909-4f56-b67a-ffc932c2193a</globalKey>
+        <inputFieldName>ManageProfileAttributes:AnalysisUpsellPotential</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|13:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e0ac2773-fd12-bad9-9a4a-9a275bde2ba5</globalKey>
+        <inputFieldName>AccountPref:AnalysisUpsellPotential:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|13:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>67f9b295-abaf-2505-80bf-76a092d621a7</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|14:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>42c38eae-e532-c9aa-08a8-c81b14337cc4</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>911a59ea-fa1e-6c57-28f1-9c0ae80a3795</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|10:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>648e29a4-1551-d46e-1202-34e86ce6aeed</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>24163448-6ab4-c7d0-e620-c82eaa65b20c</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|14:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6a50fe6f-8cf9-3ac3-70de-c1f940815bf3</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaServiceAvailability:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>63fb00d1-ba52-31a1-4d09-4ceb2d2a05e8</globalKey>
+        <inputFieldName>AccountPref:AnalysisUpsellPotential:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|13:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>22e8d0d0-5559-6623-eb62-723369c8ce5c</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaServiceAvailability:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>22ddefe3-0b1a-ed31-443b-2e6b68e640f0</globalKey>
+        <inputFieldName>AccountPref:AnalysisRenewalPotential:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|14:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d98870c8-2277-eb8e-0914-7aa53159b575</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaInsurance:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8f76b782-5966-c217-f855-36eb34daa6e4</globalKey>
+        <inputFieldName>AccountPref:AnalysisRenewalPotential:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|14:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>503a3f55-a9d6-31cc-948c-4064e9fef775</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaInsurance:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>330380d8-be03-e4aa-3bb9-5e43820939ed</globalKey>
+        <inputFieldName>ManageProfileAttributes:AnalysisRenewalPotential</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|14:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1a654fb2-9b7e-7f5a-c30e-3dd36921882b</globalKey>
+        <inputFieldName>ManageProfileAttributes:PurchaseCriteriaInsurance</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>86892ab2-cae8-57b8-0ec1-0c6b4097aef6</globalKey>
+        <inputFieldName>AccountPref:AnalysisRenewalPotential:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|14:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>85d19875-f8cc-71cd-f78b-949ed632c72c</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaInsurance:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b47b9f10-daf9-3dbd-684f-9be3d8c8c527</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f8a2b9a0-2b63-c9ff-dc31-7d2647cd9d5d</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b286b24a-f2ac-0b6d-eb1d-b75164ae3c31</globalKey>
+        <inputFieldName>AccountPref:AnalysisRenewalPotential:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|14:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>19eac6ba-d8eb-6823-3d2b-f91ecda4fc11</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionMaintenance:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|10:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>cff6d24e-ab0f-4eb3-4804-be3502d943b3</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionMaintenance:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|10:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b07ed906-0d0d-1918-0297-cedc7a954a2f</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionCost:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ac6265d3-5c4e-a99c-fce0-5dce48238712</globalKey>
+        <inputFieldName>ManageProfileAttributes:PurchaseCriteriaCost</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b881f1d9-cf6e-f916-dc38-d1bf66bbba88</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0a07ada2-b77b-c5ca-423f-9308cde7648d</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaCost:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>78d33614-005d-8218-9d1e-6caf63d04be8</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3df7547e-f5da-3779-5ab6-a082415e1135</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaInsurance:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|5:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>21a27409-5c23-912c-002c-7c222ca7d898</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2e39bdbe-532b-da28-a80f-d966c8e3c9cf</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionCost:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2422e34c-1496-eb05-2398-40be8e1cdbc2</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaCost:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0ce60cd0-b121-0674-7067-c816a93b276c</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionCost:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>936a6d2a-dae6-8617-99e7-68da80f88073</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaCost:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e267cf69-64c9-f599-a86e-c2ef13c0edf9</globalKey>
+        <inputFieldName>dncFromTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9a7d53b6-abd3-43a4-40ef-18b96b7efe87</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaCost:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|1:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2c1b0005-6089-887f-10be-bf3c22960d81</globalKey>
+        <inputFieldName>ManageProfileAttributes:CustomerSatisfactionCost</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dd89ade1-9ab4-b683-82ec-15f311012c89</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaRenewableEnergy:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>56b5a671-0e91-f512-76d1-ab6056261ef9</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>710906a0-ec4c-c2bd-102b-9582e926462a</globalKey>
+        <inputFieldName>ManageProfileAttributes:PurchaseCriteriaRenewableEnergy</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f38b5af9-20e4-5594-ad66-c22438b6546c</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionMaintenance:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|10:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>988519f3-cd81-26b2-9d81-c555b146850b</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaRenewableEnergy:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9a406a40-4049-a300-5de6-5f9858e3b7d9</globalKey>
+        <inputFieldName>DNCFromIsDeleted</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>UpdatedAccountPref|6:isDeleted</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f1c38da7-6ece-a714-4a7e-d151646c8adf</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dfbda68c-5cc1-0e91-3f1b-99986bbd1a30</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionCost:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|6:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bd96c2e8-1c6c-5bfe-d1ac-2abaa46a218a</globalKey>
+        <inputFieldName>dncToTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>846b206d-9819-79d2-817e-15d6b206390d</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bcd1c593-26bd-1890-c064-0b4c93754a32</globalKey>
+        <inputFieldName>ManageProfileAttributes:CustomerSatisfactionReliability</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>59e9008c-fe5f-25db-a71b-0fa37facdffb</globalKey>
+        <inputFieldName>ManageProfileAttributes:CustomerSatisfactionMaintenance</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|10:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e93c010f-d72f-ff80-1b27-33f216e9618e</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaRenewableEnergy:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e0c26b03-c0dc-029a-f01f-f88857fb8da6</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionReliability:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d19ef1a6-1819-89f8-fac5-116899da2105</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaRenewableEnergy:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|2:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5bfab07f-2bd3-6708-71d9-adceae58dcdd</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>37c8893f-e733-cd48-cf76-666b74dfbc37</globalKey>
+        <inputFieldName>DNCToIsActive</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>UpdatedAccountPref|7:isActive</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>56619290-8dde-9984-8d0d-4d45fb487f28</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaFamilyFriendly:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>edab0d0e-028a-f9af-fc06-3cf5c11a42d1</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionReliability:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ca38f2a3-52c2-f100-c476-e2a66597abde</globalKey>
+        <inputFieldName>ManageProfileAttributes:PurchaseCriteriaFamilyFriendly</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>16101875-7fd4-25d8-675f-dade7c7e3525</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionReliability:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ad11dedc-8300-12e0-dea4-a660ff63631e</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaFamilyFriendly:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0eddda43-09a0-a765-0781-fcaddc05179c</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionReliability:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|7:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d967a64b-8863-2f7b-a60c-a82f41daf6b8</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f3430a97-1bc9-23c1-4a38-df6c6c35b279</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|8:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>None</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>298b41ef-6ae2-350d-0661-8b38e775707b</globalKey>
+        <inputFieldName>ManageProfileAttributes:PurchaseCriteriaServiceAvailability</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1da2bf65-66b1-77ad-c826-a3bfd0649127</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|8:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0f862770-2ecc-a3fa-369d-8d2558873df6</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>85782b86-d486-172f-eb7a-bdd52cf3b5ca</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|11:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8c40878e-a1f6-2321-100e-73af0dd16f95</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaFamilyFriendly:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>cb95181d-96d1-63f9-9d11-88c276d02596</globalKey>
+        <inputFieldName>DNCToIsDeleted</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>UpdatedAccountPref|7:isDeleted</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>21d9dada-ad38-13c0-9004-6783d6213143</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaFamilyFriendly:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|3:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5e691f2c-4150-b788-e216-a7030d90eb0a</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionMaintenance:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|10:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>afa710e5-24bf-e100-15f4-955f852a7244</globalKey>
+        <inputFieldName>ManageProfileAttributes:CustomerSatisfactionCoverage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|8:AttrValue</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3c828acf-84dc-2ec5-affb-72cd8384db84</globalKey>
+        <inputFieldName>AccountPref:PurchaseCriteriaServiceAvailability:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0cfb9739-2028-2c8f-2830-efceead0f24a</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionCoverage:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|8:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>13fcf2f8-3bb8-f085-f774-34c6b9c9e998</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|4:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5395d5ed-e58f-37b0-a026-eec8a4cb7379</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|9:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ea7a945f-2e4c-a55b-c836-6fa179ad72bc</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionCoverage:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|8:CategoryId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>05889056-07b4-1d51-443d-0834f1a660d6</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionCoverage:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|8:CategoryCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4104a480-0f4d-fd00-972f-9ba522595dc9</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionCoverage:AttrId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|8:AttributeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>aee95cfd-77bd-04b8-9af9-f94eaa709735</globalKey>
+        <inputFieldName>AccountPref:CustomerSatisfactionService:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|9:AttrAssignId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3187e48b-fca1-49d5-3d66-ddb13c1a338a</globalKey>
+        <inputFieldName>AccountNotificationPreference:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLTransformUpdatedProfilePref</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UpdatedAccountPref|9:AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountNotificationPreference&quot; : {
+    &quot;AccountId&quot; : &quot;0013h00000Bue2WAAR&quot;,
+    &quot;AccountName&quot; : &quot;Northern Region&quot;,
+    &quot;AnalysisMood&quot; : 2,
+    &quot;AnalysisRenewalPotential&quot; : 1,
+    &quot;AnalysisUpsellPotential&quot; : 3,
+    &quot;CustomerSatisfactionCost&quot; : 2,
+    &quot;CustomerSatisfactionCoverage&quot; : 1,
+    &quot;CustomerSatisfactionMaintenance&quot; : 3,
+    &quot;CustomerSatisfactionReliability&quot; : 3,
+    &quot;CustomerSatisfactionService&quot; : 2,
+    &quot;CustomerSatisfactionUsageCharges&quot; : &quot;a0O3h000000xSlIEAU&quot;,
+    &quot;ProductInterests&quot; : [ &quot;Savings Programs&quot;, &quot;Green Energy&quot; ],
+    &quot;PurchaseCriteriaCost&quot; : 5,
+    &quot;PurchaseCriteriaFamilyFriendly&quot; : 3,
+    &quot;PurchaseCriteriaInsurance&quot; : 1,
+    &quot;PurchaseCriteriaRenewableEnergy&quot; : 4,
+    &quot;PurchaseCriteriaServiceAvailability&quot; : 2,
+    &quot;TotalNotification&quot; : 14
+  },
+  &quot;AccountPref&quot; : {
+    &quot;AnalysisMood&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002isixEAA&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012OaREAU&quot;,
+      &quot;AttrValue&quot; : &quot;2&quot;,
+      &quot;Category&quot; : &quot;ANALYSIS_MOOD&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000xSlrEAE&quot;
+    },
+    &quot;AnalysisRenewalPotential&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002isj7EAA&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012OabEAE&quot;,
+      &quot;AttrValue&quot; : &quot;1&quot;,
+      &quot;Category&quot; : &quot;ANALYSIS_RENEWAL_POTENTIAL&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000xSlxEAE&quot;
+    },
+    &quot;AnalysisUpsellPotential&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002isj2EAA&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012OaWEAU&quot;,
+      &quot;AttrValue&quot; : &quot;3&quot;,
+      &quot;Category&quot; : &quot;ANALYSIS_UPSELL_POTENTIAL&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000xSlwEAE&quot;
+    },
+    &quot;CustomerSatisfactionCost&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002isZlEAI&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012OZiEAM&quot;,
+      &quot;AttrValue&quot; : &quot;2&quot;,
+      &quot;Category&quot; : &quot;CUSTOMER_SATISFACTION_COST&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000xSkjEAE&quot;
+    },
+    &quot;CustomerSatisfactionCoverage&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002isa0EAA&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012OZxEAM&quot;,
+      &quot;AttrValue&quot; : &quot;1&quot;,
+      &quot;Category&quot; : &quot;CUSTOMER_SATISFACTION_COVERAGE&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000xSl8EAE&quot;
+    },
+    &quot;CustomerSatisfactionMaintenance&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002isaFEAQ&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012OaCEAU&quot;,
+      &quot;AttrValue&quot; : &quot;3&quot;,
+      &quot;Category&quot; : &quot;CUSTOMER_SATISFACTION_MAINTENANCE&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000xSlNEAU&quot;
+    },
+    &quot;CustomerSatisfactionReliability&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002isZqEAI&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012OZnEAM&quot;,
+      &quot;AttrValue&quot; : &quot;3&quot;,
+      &quot;Category&quot; : &quot;CUSTOMER_SATISFACTION_RELIABILITY&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000xSkpEAE&quot;
+    },
+    &quot;CustomerSatisfactionService&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002isa5EAA&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012Oa2EAE&quot;,
+      &quot;AttrValue&quot; : &quot;2&quot;,
+      &quot;Category&quot; : &quot;CUSTOMER_SATISFACTION_SERVICE&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000xSlDEAU&quot;
+    },
+    &quot;CustomerSatisfactionUsageCharges&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002isaAEAQ&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012Oa7EAE&quot;,
+      &quot;AttrValue&quot; : &quot;a0O3h000000xSlIEAU&quot;,
+      &quot;Category&quot; : &quot;CUSTOMER_SATISFACTION_USAGE_CHARGES&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000xSlIEAU&quot;
+    },
+    &quot;ProductInterests&quot; : [ {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002iuulEAA&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012SWQEA2&quot;,
+      &quot;AttrValue&quot; : &quot;Savings Programs&quot;,
+      &quot;Category&quot; : &quot;PRODUCT_INTERESTS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000iF3FEAU&quot;
+    }, {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002itRWEAY&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h0000012PKcEAM&quot;,
+      &quot;AttrValue&quot; : &quot;Green Energy&quot;,
+      &quot;Category&quot; : &quot;PRODUCT_INTERESTS&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000iF3FEAU&quot;
+    } ],
+    &quot;PurchaseCriteriaCost&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002CjN3EAK&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h00000108gvEAA&quot;,
+      &quot;AttrValue&quot; : &quot;5&quot;,
+      &quot;Category&quot; : &quot;PURCHASE_CRITERIA_COST&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000iF7FEAU&quot;
+    },
+    &quot;PurchaseCriteriaFamilyFriendly&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002CjNXEA0&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h00000108hKEAQ&quot;,
+      &quot;AttrValue&quot; : &quot;3&quot;,
+      &quot;Category&quot; : &quot;PURCHASE_CRITERIA_FAMILY_FRIENDLY&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000iF88EAE&quot;
+    },
+    &quot;PurchaseCriteriaInsurance&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002CjY0EAK&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h00000108mwEAA&quot;,
+      &quot;AttrValue&quot; : &quot;1&quot;,
+      &quot;Category&quot; : &quot;PURCHASE_CRITERIA_INSURANCE&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000iF8wEAE&quot;
+    },
+    &quot;PurchaseCriteriaRenewableEnergy&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002CjNNEA0&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h00000108hFEAQ&quot;,
+      &quot;AttrValue&quot; : &quot;4&quot;,
+      &quot;Category&quot; : &quot;PURCHASE_CRITERIA_RENEWABLE_ENERGY&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000iF7yEAE&quot;
+    },
+    &quot;PurchaseCriteriaServiceAvailability&quot; : {
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002CjNrEAK&quot;,
+      &quot;AttrId&quot; : &quot;a0P3h00000108hPEAQ&quot;,
+      &quot;AttrValue&quot; : &quot;2&quot;,
+      &quot;Category&quot; : &quot;PURCHASE_CRITERIA_SERVICE_AVAILABILITY&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000iF8cEAE&quot;
+    }
+  },
+  &quot;ContextId&quot; : &quot;0013h00000Bue2WAAR&quot;,
+  &quot;DNCFrom&quot; : &quot;&quot;,
+  &quot;DNCTo&quot; : &quot;&quot;,
+  &quot;ManageProfileAttributes&quot; : {
+    &quot;AnalysisMood&quot; : &quot;2&quot;,
+    &quot;AnalysisRenewalPotential&quot; : &quot;1&quot;,
+    &quot;AnalysisUpsellPotential&quot; : &quot;3&quot;,
+    &quot;CustomerSatisfactionCost&quot; : &quot;2&quot;,
+    &quot;CustomerSatisfactionCoverage&quot; : &quot;1&quot;,
+    &quot;CustomerSatisfactionMaintenance&quot; : &quot;3&quot;,
+    &quot;CustomerSatisfactionReliability&quot; : &quot;3&quot;,
+    &quot;CustomerSatisfactionService&quot; : &quot;2&quot;,
+    &quot;CustomerSatisfactionUsageCharges&quot; : &quot;2&quot;,
+    &quot;PurchaseCriteriaCost&quot; : &quot;5&quot;,
+    &quot;PurchaseCriteriaFamilyFriendly&quot; : &quot;3&quot;,
+    &quot;PurchaseCriteriaInsurance&quot; : &quot;1&quot;,
+    &quot;PurchaseCriteriaRenewableEnergy&quot; : &quot;4&quot;,
+    &quot;PurchaseCriteriaServiceAvailability&quot; : &quot;2&quot;
+  },
+  &quot;ProductInterestValues&quot; : &quot;&quot;,
+  &quot;TotalAttrAssignCount&quot; : 14,
+  &quot;id&quot; : &quot;a2j3h000000wpPNAAY&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://express-energy--vlocity-cmt.visualforce.com&quot;,
+  &quot;testContextId&quot; : &quot;0013h00000Bue2WAAR&quot;,
+  &quot;timeStamp&quot; : &quot;2020-08-20T10:50:12.098Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002eRjUAAU&quot;,
+  &quot;userName&quot; : &quot;express_org_shekhar@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -420,
+  &quot;vlcPersistentComponent&quot; : { }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformUpdatedProfilePref_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

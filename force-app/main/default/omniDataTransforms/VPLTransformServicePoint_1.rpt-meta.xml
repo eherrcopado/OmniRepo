@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>This dataraptor will transform the service point data</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountNumber&quot; : &quot;3840-2873&quot;,
+  &quot;AssetId&quot; : &quot;02i3h000002NvrsAAC&quot;,
+  &quot;ContractedUsage&quot; : 3,
+  &quot;PremiseCity&quot; : &quot;Kolkata&quot;,
+  &quot;PremisePostalCode&quot; : &quot;70091&quot;,
+  &quot;PremiseState&quot; : &quot;West Bengal&quot;,
+  &quot;PremiseStreet&quot; : &quot;3 Mahisbathan&quot;,
+  &quot;ProductDescription&quot; : &quot;Good Pipe&quot;,
+  &quot;ProductFamily&quot; : &quot;Gas&quot;,
+  &quot;ProductName&quot; : &quot;Gas Tarrif&quot;,
+  &quot;ServicePointName&quot; : &quot;WBSDCL&quot;,
+  &quot;ServicePointNumber&quot; : &quot;10382388&quot;,
+  &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+  &quot;ServiceType&quot; : &quot;Electricity&quot;,
+  &quot;UnitOfMeasure&quot; : &quot;Kwh&quot;
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;AccountNumber&quot; : &quot;3840-2873&quot;,
+  &quot;AssetId&quot; : &quot;02i3h000002NvrsAAC&quot;,
+  &quot;ContractedUsage&quot; : 3,
+  &quot;PremiseCity&quot; : &quot;Kolkata&quot;,
+  &quot;PremisePostalCode&quot; : &quot;70091&quot;,
+  &quot;PremiseState&quot; : &quot;West Bengal&quot;,
+  &quot;PremiseStreet&quot; : &quot;3 Mahisbathan&quot;,
+  &quot;ProductDescription&quot; : &quot;Good Pipe&quot;,
+  &quot;ProductFamily&quot; : &quot;Gas&quot;,
+  &quot;ProductName&quot; : &quot;Gas Tarrif&quot;,
+  &quot;ServicePointName&quot; : &quot;WBSDCL&quot;,
+  &quot;ServicePointNumber&quot; : &quot;10382388&quot;,
+  &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+  &quot;ServiceType&quot; : &quot;Electricity&quot;,
+  &quot;UnitOfMeasure&quot; : &quot;Kwh&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformServicePoint</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>26b1eef8-67aa-4ae2-3e95-c12bfb3c2407</globalKey>
+        <inputFieldName>ServicePointName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePointName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>65576f2e-99be-19f9-6181-81ff8e443332</globalKey>
+        <inputFieldName>TotalWaterServicePoint</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:TotalWaterServicePoint</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b4847d70-d703-2e4e-8de9-7c1e82107274</globalKey>
+        <inputFieldName>TotalServicePoint</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Integer</outputFieldFormat>
+        <outputFieldName>TotalServicePoint</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3201935e-6ae1-c488-d1be-625df229dfd2</globalKey>
+        <inputFieldName>ServiceType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServiceType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>fc548998-d7d4-92a6-df1b-450ff9fd4a48</globalKey>
+        <inputFieldName>ServicePointStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePointStatus</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>146ed0c7-7f80-afb6-32de-330647125f8d</globalKey>
+        <inputFieldName>ServicePointNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePointNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:TotalSVPoint SUM</formulaConverted>
+        <formulaExpression>SUM(%TotalSVPoint%)</formulaExpression>
+        <formulaResultPath>TotalServicePoint</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>f597c53b-cbd8-c29c-6f37-5f382b92a9e6</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:TotalGasSVPoint SUM</formulaConverted>
+        <formulaExpression>SUM(%TotalGasSVPoint%)</formulaExpression>
+        <formulaResultPath>TotalGasServicePoint</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>b98c5404-6a40-f0cf-62b7-58020f6ee378</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>303f554a-eae3-01a7-5438-97f6305d27d4</globalKey>
+        <inputFieldName>UnitOfMeasure</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UnitOfMeasure</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:TotalElectricitySVPoint SUM</formulaConverted>
+        <formulaExpression>SUM(%TotalElectricitySVPoint%)</formulaExpression>
+        <formulaResultPath>TotalElectricityServicePoint</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>44a49182-421d-7ec8-1f1c-0a3199a4059d</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9e04140a-a5ac-68e5-4e9c-2b9221a13790</globalKey>
+        <inputFieldName>ContractedUsage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContractedUsage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>da6844cd-e389-faeb-6f7d-ad57c0226c52</globalKey>
+        <inputFieldName>AssetId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AssetId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>cbfa61ec-1bec-49ee-2984-6c9cf08787eb</globalKey>
+        <inputFieldName>AccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:TotalWaterSVPoint SUM</formulaConverted>
+        <formulaExpression>SUM(%TotalWaterSVPoint%)</formulaExpression>
+        <formulaResultPath>TotalWaterServicePoint</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>02f5e0f2-16dd-0025-55c7-66ac99606482</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ServicePointDisconnectCount MAX 0 != true false IF</formulaConverted>
+        <formulaExpression>IF(MAX(%ServicePointDisconnectCount%)!=0,true,false)</formulaExpression>
+        <formulaResultPath>ServicePointOutage</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>e9a3ec7f-8a1b-d042-ab1a-5ed6c28e5abb</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7756a2d0-7ee0-4270-6a88-a77f779770f6</globalKey>
+        <inputFieldName>ProductName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ProductName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1a9443e8-1cfd-27aa-b2ab-907c017e27c0</globalKey>
+        <inputFieldName>ProductFamily</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ProductFamily</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a6f548f7-6c02-0ba4-464f-49ddcca29116</globalKey>
+        <inputFieldName>ProductDescription</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ProductDescription</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e59b0c1c-a8dd-26eb-788a-8bf7524ed1fe</globalKey>
+        <inputFieldName>PremiseAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;String&gt;</outputFieldFormat>
+        <outputFieldName>PremiseAddress</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>feddc156-9a0e-370a-b2db-2d5966184907</globalKey>
+        <inputFieldName>ServiceCount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServiceCount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Gas</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4d807d85-0e07-9c73-8076-3ee2f28368df</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:ServicePointGas</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>bulb</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>be4a6cf4-dbe3-8536-9d48-59a0b1d99713</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:ServicePointElectricityIcon</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Electricity</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>787c908a-9afa-7008-b9fc-fd7020b0267a</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:ServicePointElectricity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Water</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c38821b0-83e1-dadb-ce5b-1f11ed1fdf50</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:ServicePointWater</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:PremiseStreet var:null != var:PremiseState var:null != &amp;&amp; var:PremiseCity var:null != &amp;&amp; var:PremisePostalCode var:null != &amp;&amp; | var:PremiseStreet &quot;,/\/\/&quot; var:PremiseCity &quot;,/\/\/&quot; var:PremiseState &quot;,/\/\/&quot; var:PremisePostalCode CONCAT var:null IF</formulaConverted>
+        <formulaExpression>IF(PremiseStreet!=null &amp;&amp; PremiseState!=null &amp;&amp; PremiseCity!=null &amp;&amp; PremisePostalCode!=null,CONCAT(PremiseStreet,&quot;, &quot; PremiseCity,&quot;, &quot; PremiseState,&quot;, &quot;,  PremisePostalCode),null)</formulaExpression>
+        <formulaResultPath>PremiseAddress</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>9f5b56af-97f0-8936-62ec-0c0aa58fc355</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d7d3fa56-64b9-0788-f15f-8999d315385e</globalKey>
+        <inputFieldName>ServicePointOutage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:ServicePointOutage</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>gas</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>50560418-8027-c168-6323-8d40d79c8d72</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:ServicePointGasIcon</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a0386ef6-d763-22b5-b2c1-f52f2b8fa181</globalKey>
+        <inputFieldName>TotalGasServicePoint</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:TotalGasServicePoint</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>22b97bed-fe57-9940-aa2b-7775ef33e423</globalKey>
+        <inputFieldName>TotalElectricityServicePoint</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:TotalElectricityServicePoint</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>water</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7c42a991-99af-f61b-a091-c5d2a79259d8</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformServicePoint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServicePoint:ServicePointWaterIcon</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountNumber&quot; : &quot;3840-2873&quot;,
+  &quot;AssetId&quot; : &quot;02i3h000002NvrsAAC&quot;,
+  &quot;ContractedUsage&quot; : 3,
+  &quot;PremiseCity&quot; : &quot;Kolkata&quot;,
+  &quot;PremisePostalCode&quot; : &quot;70091&quot;,
+  &quot;PremiseState&quot; : &quot;West Bengal&quot;,
+  &quot;PremiseStreet&quot; : &quot;3 Mahisbathan&quot;,
+  &quot;ProductDescription&quot; : &quot;Good Pipe&quot;,
+  &quot;ProductFamily&quot; : &quot;Gas&quot;,
+  &quot;ProductName&quot; : &quot;Gas Tarrif&quot;,
+  &quot;ServicePointName&quot; : &quot;WBSDCL&quot;,
+  &quot;ServicePointNumber&quot; : &quot;10382388&quot;,
+  &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+  &quot;ServiceType&quot; : &quot;Electricity&quot;,
+  &quot;UnitOfMeasure&quot; : &quot;Kwh&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformServicePoint_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;returnResultsData&quot; : { },
+  &quot;responseType&quot; : &quot;JSON&quot;,
+  &quot;hasErrors&quot; : false,
+  &quot;errorsAsJson&quot; : {
+    &quot;AccountHierarchy&quot; : {
+      &quot;ParentAccountId&quot; : &quot;&quot;,
+      &quot;ParentAccountName&quot; : &quot;&quot;,
+      &quot;ServiceLocations&quot; : [ {
+        &quot;City&quot; : &quot;&quot;,
+        &quot;Country&quot; : &quot;&quot;,
+        &quot;CustomerType&quot; : &quot;&quot;,
+        &quot;ISO&quot; : &quot;&quot;,
+        &quot;MeterNumber&quot; : &quot;&quot;,
+        &quot;MeterType&quot; : &quot;&quot;,
+        &quot;PostalCode&quot; : &quot;&quot;,
+        &quot;PremiseId&quot; : &quot;&quot;,
+        &quot;State&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;,
+        &quot;StreetAddress&quot; : &quot;&quot;,
+        &quot;Utility&quot; : &quot;&quot;,
+        &quot;Zone&quot; : &quot;&quot;
+      }, {
+        &quot;City&quot; : &quot;&quot;,
+        &quot;Country&quot; : &quot;&quot;,
+        &quot;CustomerType&quot; : &quot;&quot;,
+        &quot;ISO&quot; : &quot;&quot;,
+        &quot;MeterNumber&quot; : &quot;&quot;,
+        &quot;MeterType&quot; : &quot;&quot;,
+        &quot;PostalCode&quot; : &quot;&quot;,
+        &quot;PremiseId&quot; : &quot;&quot;,
+        &quot;State&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;,
+        &quot;StreetAddress&quot; : &quot;&quot;,
+        &quot;Utility&quot; : &quot;&quot;,
+        &quot;Zone&quot; : &quot;&quot;
+      } ]
+    }
+  },
+  &quot;interfaceInfo&quot; : {
+    &quot;CreatePremisesAndServicePoints&quot; : &quot;Load&quot;
+  },
+  &quot;errorsByField&quot; : { },
+  &quot;errors&quot; : { },
+  &quot;createdObjectsByOrder&quot; : {
+    &quot;CreatePremisesAndServicePoints&quot; : {
+      &quot;1&quot; : [ &quot;a1Yf4000001JNQ3EAO&quot;, &quot;a1Yf4000001JNQ6EAO&quot; ],
+      &quot;2&quot; : [ &quot;001f400000enWYmAAM&quot;, &quot;001f400000enWYoAAM&quot; ],
+      &quot;3&quot; : [ &quot;a1rf40000011MXyAAM&quot;, &quot;a1rf40000011MXzAAM&quot; ],
+      &quot;4&quot; : [ &quot;a1Bf4000001kVhZEAU&quot;, &quot;a1Bf4000001klZJEAY&quot; ]
+    }
+  },
+  &quot;createdObjectsByType&quot; : {
+    &quot;CreatePremisesAndServicePoints&quot; : {
+      &quot;vlocity_cmt__InventoryItem__c&quot; : [ &quot;a1Bf4000001kVhZEAU&quot;, &quot;a1Bf4000001klZJEAY&quot; ],
+      &quot;vlocity_cmt__ServicePoint__c&quot; : [ &quot;a1rf40000011MXyAAM&quot;, &quot;a1rf40000011MXzAAM&quot; ],
+      &quot;Account&quot; : [ &quot;001f400000enWYmAAM&quot;, &quot;001f400000enWYoAAM&quot; ],
+      &quot;vlocity_cmt__Premises__c&quot; : [ &quot;a1Yf4000001JNQ3EAO&quot;, &quot;a1Yf4000001JNQ6EAO&quot; ]
+    }
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CreatePremisesResultTransform</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0ff28b6d-7b9d-42c1-9051-5195bc682d18</globalKey>
+        <inputFieldName>createdObjectsByType:CreatePremisesAndServicePoints:vlocity_cmt__Premises__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreatePremisesResultTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>result:Premises</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f4dee478-7b26-4682-87af-ae750599b716</globalKey>
+        <inputFieldName>createdObjectsByType:CreatePremisesAndServicePoints:Account</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreatePremisesResultTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;String&gt;</outputFieldFormat>
+        <outputFieldName>result:Accounts</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>02a66f91-c47f-49fb-8d8f-63226be41c64</globalKey>
+        <inputFieldName>createdObjectsByType:CreatePremisesAndServicePoints:vlocity_cmt__ServicePoint__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreatePremisesResultTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;String&gt;</outputFieldFormat>
+        <outputFieldName>result:ServicePoints</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>18db01f5-4aed-42ad-a131-d645593cd7ff</globalKey>
+        <inputFieldName>createdObjectsByType:CreatePremisesAndServicePoints:vlocity_cmt__InventoryItem__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreatePremisesResultTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;String&gt;</outputFieldFormat>
+        <outputFieldName>result:InventoryItems</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4732cad5-e99f-45be-a223-769717d2b142</globalKey>
+        <inputFieldName>hasErrors</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreatePremisesResultTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>result:hasErrors</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e9e400bd-a7dc-41fd-9ccc-67d408c3788e</globalKey>
+        <inputFieldName>errors</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreatePremisesResultTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>result:errors</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;returnResultsData&quot; : { },
+  &quot;responseType&quot; : &quot;JSON&quot;,
+  &quot;hasErrors&quot; : false,
+  &quot;errorsAsJson&quot; : {
+    &quot;AccountHierarchy&quot; : {
+      &quot;ParentAccountId&quot; : &quot;&quot;,
+      &quot;ParentAccountName&quot; : &quot;&quot;,
+      &quot;ServiceLocations&quot; : [ {
+        &quot;City&quot; : &quot;&quot;,
+        &quot;Country&quot; : &quot;&quot;,
+        &quot;CustomerType&quot; : &quot;&quot;,
+        &quot;ISO&quot; : &quot;&quot;,
+        &quot;MeterNumber&quot; : &quot;&quot;,
+        &quot;MeterType&quot; : &quot;&quot;,
+        &quot;PostalCode&quot; : &quot;&quot;,
+        &quot;PremiseId&quot; : &quot;&quot;,
+        &quot;State&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;,
+        &quot;StreetAddress&quot; : &quot;&quot;,
+        &quot;Utility&quot; : &quot;&quot;,
+        &quot;Zone&quot; : &quot;&quot;
+      }, {
+        &quot;City&quot; : &quot;&quot;,
+        &quot;Country&quot; : &quot;&quot;,
+        &quot;CustomerType&quot; : &quot;&quot;,
+        &quot;ISO&quot; : &quot;&quot;,
+        &quot;MeterNumber&quot; : &quot;&quot;,
+        &quot;MeterType&quot; : &quot;&quot;,
+        &quot;PostalCode&quot; : &quot;&quot;,
+        &quot;PremiseId&quot; : &quot;&quot;,
+        &quot;State&quot; : &quot;&quot;,
+        &quot;Status&quot; : &quot;&quot;,
+        &quot;StreetAddress&quot; : &quot;&quot;,
+        &quot;Utility&quot; : &quot;&quot;,
+        &quot;Zone&quot; : &quot;&quot;
+      } ]
+    }
+  },
+  &quot;interfaceInfo&quot; : {
+    &quot;CreatePremisesAndServicePoints&quot; : &quot;Load&quot;
+  },
+  &quot;errorsByField&quot; : { },
+  &quot;errors&quot; : { },
+  &quot;createdObjectsByOrder&quot; : {
+    &quot;CreatePremisesAndServicePoints&quot; : {
+      &quot;1&quot; : [ &quot;a1Yf4000001JNQ1EAO&quot;, &quot;a1Yf4000001JTP5EAO&quot; ],
+      &quot;2&quot; : [ &quot;001f400000enV1jAAE&quot;, &quot;001f400000enWYnAAM&quot; ],
+      &quot;3&quot; : [ &quot;a1rf40000011ImfAAE&quot;, &quot;a1rf40000011ImbAAE&quot; ],
+      &quot;4&quot; : [ &quot;a1Bf4000001kVhXEAU&quot;, &quot;a1Bf4000001kVkFEAU&quot; ]
+    }
+  },
+  &quot;createdObjectsByType&quot; : {
+    &quot;CreatePremisesAndServicePoints&quot; : {
+      &quot;vlocity_cmt__InventoryItem__c&quot; : [ &quot;a1Bf4000001kVhXEAU&quot;, &quot;a1Bf4000001kVkFEAU&quot; ],
+      &quot;vlocity_cmt__ServicePoint__c&quot; : [ &quot;a1rf40000011ImfAAE&quot;, &quot;a1rf40000011ImbAAE&quot; ],
+      &quot;Account&quot; : [ &quot;001f400000enV1jAAE&quot;, &quot;001f400000enWYnAAM&quot; ],
+      &quot;vlocity_cmt__Premises__c&quot; : [ &quot;a1Yf4000001JNQ1EAO&quot;, &quot;a1Yf4000001JTP5EAO&quot; ]
+    }
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>CreatePremisesResultTransform_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

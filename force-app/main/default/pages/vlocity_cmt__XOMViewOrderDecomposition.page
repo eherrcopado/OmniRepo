@@ -1,0 +1,55 @@
+<apex:page docType="html-5.0" sidebar="false"
+    applyHtmlTag="true"
+    standardController="Order"
+    extensions="vlocity_cmt.SimpleDecompositionController,vlocity_cmt.XOMOffPlatformAccessConfigController"
+    cache="false"
+>
+<apex:slds />
+<apex:stylesheet value="{!$Resource.vlocity_cmt__XOMCustomStyles}" />
+ <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+        <title></title>
+        <head>
+            <meta charset="utf-8" />
+            <meta name="generator" content="Vlocity Product Decomposition" />
+            <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
+            <meta name="description" content="Vlocity Product Decomposition" />
+            <!-- Common scripts -->
+
+            <style>
+                #lightning {
+                    height: 100%;
+                    overflow:auto;
+                }   
+                .slds-scope .arrow-icon .slds-icon {
+                    fill: var(--slds-g-color-neutral-base-50, #747474) !important;
+                    height: inherit;
+                }
+                .slds-scope .arrow-icon * {
+                    height: inherit !important;
+                }
+            </style>
+            <script>
+
+            const recordId = '{!LEFT(JSENCODE($CurrentPage.parameters.Id), 15)}';
+            const decompose = '{!JSENCODE($CurrentPage.parameters.decompose)}';
+            const nsp = "{!JSENCODE(nsp)}";
+            const namespace =  nsp.slice(0, -2);
+  
+            $Lightning.use(namespace+":ltngOutVF", function() {
+            $Lightning.createComponent(
+                namespace+":xomDecompView",
+                { recordId: recordId, container:"Visualforce", namespace: nsp, decompose: decompose },
+                "lightning",
+                function(cmp) {
+                    console.log('component created');
+                    console.log(cmp);
+                });
+            });
+        </script>
+    </head>
+<body>
+    <apex:includeLightning />
+    <div id="lightning" role="main"/>
+</body>
+</html>
+</apex:page>

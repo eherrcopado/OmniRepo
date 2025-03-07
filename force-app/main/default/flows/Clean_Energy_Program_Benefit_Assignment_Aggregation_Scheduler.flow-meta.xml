@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Clean Energy Program Benefit Assignment Aggregator</description>
+        <name>Clean_Energy_Program_Benefit_Assignment_Aggregator</name>
+        <label>Clean Energy Program Benefit Assignment Aggregator</label>
+        <locationX>308</locationX>
+        <locationY>360</locationY>
+        <actionName>Clean_Energy_Program_Benefit_Assignment_Aggregator</actionName>
+        <actionType>dataProcessingEngineAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Benefit_Assignment_Aggregation_Field</name>
+            <value>
+                <elementReference>BenefitAssignmentAggregationField</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Benefit_Type_Category</name>
+            <value>
+                <elementReference>BenefitTypeCategory</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Indicator_Definition_Id</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Clean_Energy_Program_Benefit_Assignment_Aggregator</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <decisions>
+        <description>The Indicator Definition record is valid if the corresponding BenefitTypeCategory and BenefitAssignmentAggregationField exists</description>
+        <name>Is_Valid_Record</name>
+        <label>Is Valid Record</label>
+        <locationX>176</locationX>
+        <locationY>252</locationY>
+        <defaultConnector>
+            <targetReference>Clean_Energy_Program_Benefit_Assignment_Aggregator</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>Is_Valid_Record_No</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>BenefitTypeCategory</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>BenefitAssignmentAggregationField</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <description>Clean Energy Program Benefit Assignment Aggregation Scheduler</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Benefit Assignment Field To Aggregate</description>
+        <name>BenefitAssignmentAggregationField</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.Name}, &quot;Overall Energy Savings&quot;, &quot;Quantity&quot;, &quot;Incentive Budget Spent&quot;, &quot;TotalApprovedAmount&quot;, NULL)</expression>
+    </formulas>
+    <formulas>
+        <description>Benefit Type Category To Aggregate</description>
+        <name>BenefitTypeCategory</name>
+        <dataType>String</dataType>
+        <expression>CASE({!$Record.Name}, &quot;Overall Energy Savings&quot;, &quot;Calculated Energy Savings&quot;, &quot;Incentive Budget Spent&quot; , &quot;Incentive or Rebate&quot;, NULL)</expression>
+    </formulas>
+    <interviewLabel>Clean E {!$Flow.CurrentDateTime}</interviewLabel>
+    <isOverridable>true</isOverridable>
+    <label>Clean Energy Program Benefit Assignment Aggregation Scheduler</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Valid_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <object>IndicatorDefinition</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2024-06-18</startDate>
+            <startTime>18:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

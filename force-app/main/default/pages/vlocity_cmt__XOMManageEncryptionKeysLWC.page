@@ -1,0 +1,41 @@
+<apex:page docType="html-5.0"
+   controller="vlocity_cmt.XOMAdminPageController"
+    applyHtmlTag="true"
+    cache="false"
+>
+<apex:slds />
+ <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="generator" content="Manage Encryption keys" />
+            <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
+            <meta name="description" content="Manage Encryption keys" />
+            <!-- Common scripts -->
+            <style>
+                html,
+                body,
+                #lightning {
+                    height: 100%;
+                }
+            </style>
+            <script>
+            const namespacePrefix       = '{!JSENCODE(namespacePrefix)}';
+            const namespacePrefixLWC    = namespacePrefix.slice(0, -2);
+            const vlocAccessToken       = '{!JSENCODE(vlocAccessToken)}';
+            
+            $Lightning.use(namespacePrefixLWC+":ltngOutVF", function() {
+            $Lightning.createComponent(
+                namespacePrefixLWC+":XomManageEncryptionKeys",
+                { container:"Visualforce", namespacePrefix:namespacePrefix,vlocAccessToken:vlocAccessToken},
+                "lightning",
+                function(cmp) {
+                });
+            });
+        </script>
+    </head>
+<body>
+    <apex:includeLightning />
+    <div id="lightning" />
+</body>
+</html>
+</apex:page>

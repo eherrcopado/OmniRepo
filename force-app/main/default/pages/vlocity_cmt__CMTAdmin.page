@@ -1,0 +1,385 @@
+<apex:page controller="vlocity_cmt.CMTAdminController" showHeader="true" sidebar="true" standardStylesheets="false" docType="html-5.0" title="{!JSENCODE($Label.vlocity_cmt__VlocityCMTAdministration)}">
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ng="http://angularjs.org" ng-app="CMTAdmin">
+		<head>
+			<base href="/"/>
+			<link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.slds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+			<link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.CMTAdminCss)}" />
+			<script type="text/javascript" src="/support/console/56.0/integration.js"></script>
+			<script type="text/javascript" src="/soap/ajax/56.0/connection.js"></script>
+			<script src="{!URLFOR($Resource.vlocity_core_assets, '/latest/vlocity_core_assets.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.SldsAngular)}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.CMTAdmin)}"></script>
+            <script type="text/javascript" src="{!$Resource.EPCAdmin}"></script>
+            <script type="text/javascript" src="{!$Resource.FieldLookupAngDirective}"></script>
+            <script type="text/javascript" src="{!$Resource.AttributeLookupAngDirective}"></script>
+		</head>
+		<body ng-controller="CMTAdminController" ng-init="initApp()">
+			<div class="via-slds">
+                <div class="slds-page-header slds-theme_shade" role="banner">
+                    <div class="slds-media slds-media_center">
+                        <div class="slds-media__figure">
+                            <svg aria-hidden="true" class="slds-icon">
+                                <use xlink:href="{{SLDSICON.SETTINGS}}"></use>
+                            </svg>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-page-header__title slds-truncate slds-align-middle" title="Vlocity Admin">{{labels.CMTAdminHeaderLabel}}</p>
+                            <p class="slds-text-body_small page-header__info">{{labels.CMTAdminHeaderDescLabel}}</p>
+                        </div>
+                    </div>
+                </div>
+                <ng-include src="activeMenu.getActiveMenu()"></ng-include>
+                <div class="slds-spinner_container" ng-show="spinner.getSpinner()">
+                    <div class="slds-spinner_brand slds-spinner slds-spinner_large" aria-hidden="false" role="alert">
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+			</div>
+			<script type="text/javascript">
+				'use strict';
+				window.j$ = jQuery.noConflict();
+                window.$ = jQuery.noConflict();
+				//Define remote actions.
+				var remoteActions = {
+                    getAdminOptions: {
+                        action: "{!$RemoteAction.CMTAdminController.getAdminOptions}",
+                        config: {escape: false}
+                    },
+                    getPageList: {
+                        action: "{!$RemoteAction.CMTAdminController.getPageList}",
+                        config: {escape: false}
+                    },
+                    getCustomSettingsMetadata: {
+                    	action: "{!$RemoteAction.CMTAdminController.getCustomSettingsMetadata}",
+                    	config: {escape: false}
+                    },
+                    getCustomSettingsRecord: {
+                    	action: "{!$RemoteAction.CMTAdminController.getCustomSettingsRecord}",
+                    	config: {escape: false}
+                    },
+                    saveCustomSettings: {
+                    	action: "{!$RemoteAction.CMTAdminController.saveCustomSettings}",
+                    	config: {escape: false}
+                    },
+                    getObjectList: {
+                    	action: "{!$RemoteAction.CMTAdminController.invokeMethod}",
+                    	config: {escape: false}
+                    },
+                    deleteCustomSettings: {
+                    	action: "{!$RemoteAction.CMTAdminController.deleteCustomSettings}",
+                    	config: {escape: false}
+                    },
+                    adminInvokeMethod: {
+                    	action: "{!$RemoteAction.CMTAdminController.invokeMethod}",
+                    	config: {escape: false}
+                    },
+                    telcoAdminConsloleInvokeMethod: {
+                        action: "{!$RemoteAction.CMTAdminController.telcoAdminConsloleInvokeMethod}",
+                        config: {escape: false}
+                    },
+                    testConfigurationsJob: {
+                    	action: "{!$RemoteAction.CMTAdminController.testConfigurationsJob}",
+                    	config: {escape: false}
+                    },
+                    getStandardAPIDiagnosticDetails: {
+                    	action: "{!$RemoteAction.CMTAdminController.getStandardAPIDiagnosticDetails}",
+                    	config: {escape: false}
+                    },
+                    executeStandardAPIDiagnostics: {
+                    	action: "{!$RemoteAction.CMTAdminController.executeStandardAPIDiagnostics}",
+                    	config: {escape: false}
+                    },
+                    AddXLITime: {
+                    	action: "{!$RemoteAction.CMTAdminController.AddXLITime}",
+                    	config: {escape: false}
+                    },
+                    getObjectAndFieldsLabel: {
+                        action: "{!$RemoteAction.CMTAdminController.getObjectAndFieldsLabel}",
+                        config: {escape: false}
+                    },
+                    getCatalogs: {
+                        action: "{!$RemoteAction.CMTAdminController.getCatalogs}",
+                        config: {escape: false}
+                    },
+                    invokeMethod2: {
+                        action: "{!$RemoteAction.CMTAdminController.invokeMethod2}",
+                    	config: {escape: false}
+                    },
+                    productConsoleControllerInvokeMethod: {
+                        action: "{!$RemoteAction.CMTAdminController.productConsoleControllerInvokeMethod}",
+                        config: {escape: false}
+                    }
+                };
+                //Config data from APEX
+                var configData = {
+                	adminClassType: "{!adminUtilitiesClassType}",
+                    telcoAdminConsoleClassType: "{!telcoAdminConsoleClassType}",
+                	nsPrefix: "{!nsPrefix}",
+                	waitingImage: "{!$Resource.WAITGIF}",
+                    adminInvokeMethod: "{!$RemoteAction.CMTAdminController.invokeMethod}"
+                }
+                //labels
+                var labels = {
+                    CMTAdminHeaderLabel: "{!JSENCODE($Label.vlocity_cmt__VlocityCMTAdministration)}",
+                    CMTAdminHeaderDescLabel: "{!JSENCODE($Label.CMTAdminConfigurations)}",
+                    AccountHierarchyMaintenance:"{!JSENCODE($Label.AccountHierarchyMaintenance)}",
+                    JobRestoreAccountHierarchy: "{!JSENCODE($Label.JobRestoreAccountHierarchy)}",
+                    StartDT: "{!JSENCODE($Label.StartDT)}",
+                    JobName: "{!JSENCODE($Label.JobName)}",
+                    ResolveRootAccounts: "{!JSENCODE($Label.ResolveRootAccounts)}",
+                    InterfaceImplementationMaintenanceRestore: "{!JSENCODE($Label.InterfaceImplementationMaintenanceRestore)}",
+                    InterfaceImplementationMaintenanceMerge: "{!JSENCODE($Label.InterfaceImplementationMaintenanceMerge)}",
+                    ProductHierarchyMaintenanceTitle: "{!JSENCODE($Label.ProductHierarchyMaintenanceTitle)}",
+                    ProductHierarchyMaintenanceDescription: "{!JSENCODE($Label.ProductHierarchyMaintenanceDescription)}",
+                    ProductHierarchyMaintenanceJobName: "{!JSENCODE($Label.ProductHierarchyMaintenanceJobName)}",
+                    DeleteOldProductHierarchyData:"{!JSENCODE($Label.DeleteOldProductHierarchyData)}",
+                    JobRestoreImplementations: "{!JSENCODE($Label.JobRestoreImplementations)}",
+                    MergeInterfaceImplementations: "{!JSENCODE($Label.MergeInterfaceImplementations)}",
+                    FieldMapsMaintenance: "{!JSENCODE($Label.FieldMapsMaintenance)}",
+                    JobRestoreFieldMaps: "{!JSENCODE($Label.JobRestoreFieldMaps)}",
+                    ObjectMapMaintenance: "{!JSENCODE($Label.ObjectMapMaintenance)}",
+                    ObjectMapMaintenanceDescription: "{!JSENCODE($Label.ObjectMapMaintenanceDesc)}",
+                    BatchValidation: "{!JSENCODE($Label.BatchValidation)}",
+                    StartBatchJobValidation: "{!JSENCODE($Label.BatchValidationDesc)}",
+                    ResetXLIValiatonData: "{!JSENCODE($Label.ResetXLIValidationData)}",
+                    ValidateOrdersReset: "{!JSENCODE($Label.ResetXLIValidationDataDesc)}",
+                    ClearManagedPlatformCache: "{!JSENCODE($Label.ClearManagedPlatformCache)}",
+                    ClearManagedPlatformCacheDescription: "{!JSENCODE($Label.ClearManagedPlatformCacheDesc)}",
+                    RefreshPricebook: "{!JSENCODE($Label.FullRefreshPlatformCache)}",
+                    RefreshPricebookDescription: "{!JSENCODE($Label.FullRefreshPlatformCacheDesc)}",
+                    IncrementalRefreshPlatformCache: "{!JSENCODE($Label.IncrementalRefreshPlatformCache)}",
+                    IncrementalRefreshPlatformCacheDesc: "{!JSENCODE($Label.IncrementalRefreshPlatformCacheDesc)}",
+                    InstallDefaultLayouts: "{!JSENCODE($Label.InstallDefaultVlocityObjects)}",
+                    InstallDefaultLayoutsDesc:"{!JSENCODE($Label.InstallDefaultVlocityObjectsDesc)}",
+                    InstallProductReport: "{!JSENCODE($Label.InstallUPCProductDP)}",
+                    InstallProductReportDesc:"{!JSENCODE($Label.InstallUPCProductDPDesc)}",
+                    InstallDefaultPPD: "{!JSENCODE($Label.InstallPricingPlanData)}",
+                    InstallDefaultPPDDesc:"{!JSENCODE($Label.InstallPricingPlanDataDesc)}",
+                    InstallExtendedPPD: "{!JSENCODE($Label.InstallExtendedPricingPlanData)}",
+                    InstallExtendedPPDDesc:"{!JSENCODE($Label.InstallExtendedPricingPlanDataDesc)}",
+                    DeleteDefaultObjectLayouts: "{!JSENCODE($Label.DeleteDefaultObjectLayouts)}",
+                    DeleteLayoutsDesc: "{!JSENCODE($Label.DeleteLayoutsObjectClasses)}",
+                    CreateDefaultPVB: "{!JSENCODE($Label.CreateDefaultPricingVariables)}",
+                    CreateDefaultPVBDesc: "{!JSENCODE($Label.CreateDefaultPricingVariablesDesc)}",
+                    CreateContextualAdjustmentData: "{!JSENCODE($Label.CreateContextualAdjustmentData)}",
+                    GenerateGlobalKey: "{!JSENCODE($Label.GenerateGlobalKeys)}",
+                    GenerateGlobalKeyDesc: "{!JSENCODE($Label.GenerateGlobalKeysDesc1)} {!JSENCODE($Label.GenerateGlobalKeysDesc2)}",
+                    CreateDefaultObjectClass: "{!JSENCODE($Label.CreateObjectClasses)}",
+                    CreateDefaultObjectClassDesc: "{!JSENCODE($Label.CreateObjectClassesDesc)}",
+                    CreateDefaultLayout: "{!JSENCODE($Label.CreateDefaultLayouts)}",
+                    CreateDefaultLayoutDesc: "{!JSENCODE($Label.CreateDefaultLayoutsDesc)}",
+                    RootPCIUpgrade: "{!JSENCODE($Label.RootProductChildItemUpgrade)}",
+                    RootPCIUpgradeDesc: "{!JSENCODE($Label.RootProductChildItemUpgradeDesc1)} {!JSENCODE($Label.RootProductChildItemUpgradeDesc2)}",
+                    EnableFeatureError: "{!JSENCODE($Label.EnableFeatureError)}",
+                    EnableFeatureWarning: "{!JSENCODE($Label.EnableFeatureWarning)}",
+                    CancelLabel: "{!JSENCODE($Label.Cancel)}",
+                    OKLabel: "{!JSENCODE($Label.Ok)}",
+                    CPQGotIt: "{!JSENCODE($Label.CPQGotIt)}",
+                    InstallLabel: "{!JSENCODE($Label.Install)}",
+                    DeprecatedLabel: "{!JSENCODE($Label.Deprecated)}",
+                    BackToDashboardLabel: "{!JSENCODE($Label.BackToDashboard)}",
+                    XLIAPILabel: "{!JSENCODE($Label.XLIAPI)}",
+                    XLIAPIDesc: "{!JSENCODE($Label.XLIAPIDesc1)} {!JSENCODE($Label.XLIAPIDesc2)}",
+                    AddXLILabel: "{!JSENCODE($Label.AddXLI)}",
+                    CloseLabel: "{!JSENCODE($Label.Close)}",
+                    SearchLabel: "{!JSENCODE($Label.Search)}",
+                    SelectLabel: "{!JSENCODE($Label.Select)}",
+                    LabelLabel: "{!JSENCODE($Label.Label)}",
+                    ApiVersionLabel: "{!JSENCODE($Label.ApiVersion)}",
+                    NoPageFoundError: "{!JSENCODE($Label.NoPageFoundError)}",
+                    SaveLabel: "{!JSENCODE($Label.Save)}",
+                    AddLabel: "{!JSENCODE($Label.Add)}",
+                    BasicConfigLabel: "{!JSENCODE($Label.BasicConfigurations)}",
+                    BasicConfigDesc: "{!JSENCODE($Label.BasicConfigurationsDesc)}",
+                    CheckLabel: "{!JSENCODE($Label.Check)}",
+                    StandardAPIDiagnostic: "{!JSENCODE($Label.StandardAPIDiagnostics)}",
+                    StandardAPIDiagnosticDesc: "{!JSENCODE($Label.StandardAPIDiagnosticsDesc)}",
+                    CMTValidateStandardDataSetup: "{!JSENCODE($Label.CMTValidateStandardDataSetup)}",
+                    ValidationChecksSuccessful: "{!JSENCODE($Label.ValidationChecksSuccessful)}",
+                    StandardAPIDiagnosticDetailsLabel: "{!JSENCODE($Label.StandardAPIDiagnosticDetailsLabel)}",
+                    EnabledLabel: "{!JSENCODE($Label.Enabled)}",
+                    DisabledLabel: "{!JSENCODE($Label.Disabled)}",
+                    CustomSettingsError: "{!JSENCODE($Label.CustomSettingsErrorLabel)}",
+                    CMTAdminError: "{!JSENCODE($Label.CMTAdminErrorLabel)}",
+                    Enable: "{!JSENCODE($Label.Enable)}",
+                    TurnOn: "{!JSENCODE($Label.TurnOn)}",
+                    Disable: "{!JSENCODE($Label.Disable)}",
+                    TurnOff: "{!JSENCODE($Label.TurnOff)}",
+                    EnableSettingWarning: "{!JSENCODE($Label.EnableSettingWarning)}",
+                    DisableSettingWarning: "{!JSENCODE($Label.DisableSettingWarning)}",
+                    EnableFeatureSuccessMessage: "{!JSENCODE($Label.EnableFeatureSuccessMessage)}",
+                    DisableFeatureSuccessMessage: "{!JSENCODE($Label.DisableFeatureSuccessMessage)}",
+                    PageSelectionLabel: "{!JSENCODE($Label.PageSelection)}",
+                    DeleteCustomSettingsLabel: "{!JSENCODE($Label.DeleteCustomSettingsLabel)}",
+                    DeleteCustomSettingsWarningMessage: "{!JSENCODE($Label.DeleteCustomSettingsWarningMessage)}",
+                    DeleteLabel: "{!JSENCODE($Label.Delete)}",
+                    FieldSelectionLabel: "{!JSENCODE($Label.FieldSelection)}",
+                    CMTOptionMaintenanceJobsLabel: "{!JSENCODE($Label.CMTOptionMaintenanceJobsLabel)}",
+                    CMTOptionMLSJobsLabel: "{!JSENCODE($Label.CMTOptionMLSJobsLabel)}",
+                    CMTOptionUpgradeJobsLabel: "{!JSENCODE($Label.CMTOptionUpgradeJobsLabel)}",
+                    CMTOptionEPCJobsLabel: "{!JSENCODE($Label.CMTOptionEPCJobsLabel)}",
+                    CMTOptionFunctionalJobsLabel: "{!JSENCODE($Label.CMTOptionFunctionalJobsLabel)}",
+                    CMTOptionPerformanceJobsLabel: "{!JSENCODE($Label.CMTOptionPerformanceJobsLabel)}",
+                    CreateTranslationJobLabel: "{!JSENCODE($Label.CMTOptionCreateTranslationJobLabel)}",
+                    TranslationJobLabel: "{!JSENCODE($Label.CMTOptionTranslationJobLabel)}",
+                    CachedTranslationJobLabel: "{!JSENCODE($Label.CMTOptionCachedTranslationJobLabel)}",
+                    CreateTranslationJobDesc: "{!JSENCODE($Label.CMTOptionCreateTranslationJobDescLabel)}",
+                    LoadDefaultObjectFieldMLS: "{!JSENCODE($Label.CMTOptionLoadDefaultObjectFieldMLSLabel)}",
+                    LoadDefaultObjectFieldMLSDesc: "{!JSENCODE($Label.CMTOptionLoadDefaultObjectFieldMLSDescLabel)}",
+                    CreateTranslationCacheJobLabel: "{!JSENCODE($Label.CMTOptionCreateTranslationCacheJobLabel)}",
+                    CreateTranslationCacheJobDesc: "{!JSENCODE($Label.CMTOptionCreateTranslationCacheJobDescLabel)}",
+                    MaintenanceJobRunWarning: "{!JSENCODE($Label.MaintenanceJobRunWarning)}",
+                    StartingLabel: "{!JSENCODE($Label.StartingLabel)}",
+                    RunningLabel: "{!JSENCODE($Label.RunningLabel)}",
+                    CouldntStartLabel: "{!JSENCODE($Label.CouldntStartLabel)}",
+                    SuccessfullyCompletedLabel: "{!JSENCODE($Label.SuccessfullyCompletedLabel)}",
+                    ActionLabel: "{!JSENCODE($Label.ActionLabel)}",
+                    AttributeModelUpgrade: "{!JSENCODE($Label.AttributeModelUpgrade)}",
+                    AttributeModelUpgradeDesc: "{!JSENCODE($Label.AttributeModelUpgradeDesc)}",
+                    ProductAttributesConversion: "{!JSENCODE($Label.ProductAttributesConversion)}",
+                    ProductAttributesConversionDesc: "{!JSENCODE($Label.ProductAttributesConversionDesc)}",
+                    LineItemAttributesConversion: "{!JSENCODE($Label.LineItemAttributesConversion)}",
+                    LineItemAttributesConversionDesc: "{!JSENCODE($Label.LineItemAttributesConversionDesc)}",
+                    LineItemAttributesConversionObjectInput: "{!JSENCODE($Label.LineItemAttributesConversionObjectInput)}",
+                    LoadAPIMetadataCAJob: "{!JSENCODE($Label.LoadAPIMetadataCAJob)}",
+                    LoadAPIMetadataCAJobDesc: "{!JSENCODE($Label.LoadAPIMetadataCAJobDesc)}",
+                    PopulateCacheCAJob: "{!JSENCODE($Label.PopulateCacheCAJob)}",
+                    PopulateCacheCAJobDesc: "{!JSENCODE($Label.PopulateCacheCAJobDesc)}",
+                    CatalogProductDefinitionJobs: "{!JSENCODE($Label.CatalogProductDefinitionJobs)}",
+                    GenerateCompiledData: "{!JSENCODE($Label.GenerateCompiledData)}",
+                    GenerateCompiledDataDesc: "{!JSENCODE($Label.GenerateCompiledDataDesc)}",
+                    GenerateCatalogProductDefinitions: "{!JSENCODE($Label.GenerateCatalogProductDefinitions)}",
+                    GenerateCatalogProductDefinitionsDesc: "{!JSENCODE($Label.GenerateCatalogProductDefinitionsDesc)}",
+                    GenerateEPCDefinitions: "{!JSENCODE($Label.GenerateEPCDefinitions)}",
+                    GenerateEPCDefinitionsDesc: "{!JSENCODE($Label.GenerateEPCDefinitionsDesc)}",
+                    GenerateEPCDefinitionsStatus: "{!JSENCODE($Label.GenerateEPCDefinitionsStatus)}",
+                    GenerateIncrementalCatalogProductDefinitions: "{!JSENCODE($Label.GenerateIncrementalCatalogProductDefinitions)}",
+                    GenerateIncrementalCatalogProductDefinitionsDesc: "{!JSENCODE($Label.GenerateIncrementalCatalogProductDefinitionsDesc)}",
+                    GenerateIncrementalCacheDefinitions: "{!JSENCODE($Label.GenerateIncrementalCacheDefinitions)}",
+                    GenerateIncrementalCacheDefinitionsDesc: "{!JSENCODE($Label.GenerateIncrementalCacheDefinitionsDesc)}",
+                    GenerateIncrementalCacheDefinitionsStatus: "{!JSENCODE($Label.GenerateIncrementalCacheDefinitionsStatus)}",
+                    GenerateCompiledDataPopupApplyFilters: "{!JSENCODE($Label.GenerateCompiledDataPopupApplyFilters)}",
+                    EPCJobExecutionHasWarning: "{!JSENCODE($Label.EPCJobExecutionHasWarning)}",
+                    EPCJobExecutionReview: "{!JSENCODE($Label.EPCJobExecutionReview)}",
+                    PriceLists: "{!JSENCODE($Label.PriceLists)}",
+                    CMTOptionCacheableAPIJobsLabel: "{!JSENCODE($Label.CMTOptionCacheableAPIJobsLabel)}",
+                    CachePopulationJob: "{!JSENCODE($Label.CachePopulationJob)}",
+                    SelectAll: "{!JSENCODE($Label.SelectAll)}",
+                    PopulateSellingPeriodDates: "{!JSENCODE($Label.PopulateSellingPeriodDates)}",
+                    PopulateSellingPeriodDesc: "{!JSENCODE($Label.PopulateSellingPeriodDesc)}",
+                    DeleteExpiredAPICache: "{!JSENCODE($Label.DeleteExpiredAPICache)}",
+                    DeleteExpiredAPICacheDesc: "{!JSENCODE($Label.DeleteExpiredAPICacheDesc)}",
+                    RegenerateCachedAPIRecords: "{!JSENCODE($Label.RegenerateCachedAPIRecords)}",
+                    RegenerateCachedAPIRecordsDesc: "{!JSENCODE($Label.RegenerateCachedAPIRecordsDesc)}",
+                    CacheMigrationJobs: "{!JSENCODE($Label.CacheMigrationJobs)}",
+                    CacheMigrationJobsDesc: "{!JSENCODE($Label.CacheMigrationJobsDesc)}",
+                    DeleteQuasiRecords: "{!JSENCODE($Label.DeleteQuasiRecords)}",
+                    DeleteQuasiRecordsDesc: "{!JSENCODE($Label.DeleteQuasiRecordsDesc)}",
+                    EffectiveStartDate: "{!JSENCODE($Label.EffectiveStartDate)}",
+                    ExpirationDate: "{!JSENCODE($Label.ExpirationDate)}",
+                    LastEffectiveStartDate: "{!JSENCODE($Label.LastEffectiveStartDate)}",
+                    LastExpirationDate: "{!JSENCODE($Label.LastExpirationDate)}",
+                    LastCachedDate: "{!JSENCODE($Label.LastCachedDate)}",
+                    Name: "{!JSENCODE($Label.Name)}",
+                    PopulateRequestedStartDates: "{!JSENCODE($Label.PopulateRequestedStartDates)}",
+                    PopulateRequestedStartDatesDesc: "{!JSENCODE($Label.PopulateRequestedStartDatesDesc)}",
+                    CMTAdminBatchSize: "{!JSENCODE($Label.CMTAdminBatchSize)}",
+                    CMTAdminBatchSizeLimit100: "{!JSENCODE($Label.CMTAdminBatchSizeLimit100)}",
+                    CMTAdminChooseAField: "{!JSENCODE($Label.CMTAdminChooseAField)}",
+                    CMTAdminFiltersPreview: "{!JSENCODE($Label.CMTAdminFiltersPreview)}",
+                    CMTAdminFilterRecordsBy: "{!JSENCODE($Label.CMTAdminFilterRecordsBy)}",
+                    CMTAdminObjectToUpgrade: "{!JSENCODE($Label.CMTAdminObjectToUpgrade)}",
+                    CMTAdminPopulateGlobalKeyPathJob: "{!JSENCODE($Label.CMTAdminPopulateGlobalKeyPathJob)}",
+                    CMTAdminPopulateGlobalKeyPathJobDesc: "{!JSENCODE($Label.CMTAdminPopulateGlobalKeyPathJobDesc)}",
+                    CMTAdminUpdateEncryptAttrJob: "{!JSENCODE($Label.CMTAdminUpdateEncryptAttrJob)}",
+                    CMTAdminUpdateEncryptAttrJobDesc: "{!JSENCODE($Label.CMTAdminUpdateEncryptAttrJobDesc)}",
+                    CMTAdminCreateDefaultTPJob: "{!JSENCODE($Label.CMTAdminCreateDefaultTPJob)}",
+                    CMTAdminCreateDefaultTPJobDesc: "{!JSENCODE($Label.CMTAdminCreateDefaultTPJobDesc)}",
+                    CreateRelationshipRecordsDesc: "{!JSENCODE($Label.CreateRelationshipRecordsDesc)}",
+                    CreateRelationshipRecords: "{!JSENCODE($Label.CreateRelationshipRecords)}",
+                    PopulateMissingActionInXLIs: "{!JSENCODE($Label.PopulateMissingActionInXLIs)}",
+                    PopulateMissingActionInXLIsDesc: "{!JSENCODE($Label.PopulateMissingActionInXLIsDesc)}",
+                    PopulateOrderStatusInOrder: "{!JSENCODE($Label.PopulateOrderStatusInOrder)}",
+                    PopulateOrderStatusInOrderDesc: "{!JSENCODE($Label.PopulateOrderStatusInOrderDesc)}",
+                    QuasiEntriesCreationTimeDeletion: "{!JSENCODE($Label.QuasiEntriesCreationTimeDeletion)}",
+                    RegenerateEntriesCreationTime: "{!JSENCODE($Label.RegenerateEntriesCreationTime)}",
+                    RecordsCreationDateTime: "{!JSENCODE($Label.RecordsCreationDateTime)}",
+                    EmailSendingConfirmation: "{!JSENCODE($Label.EmailSendingConfirmation)}",
+                    CMTOptionReportJobsLabel: "{!JSENCODE($Label.CMTOptionReportJobsLabel)}",
+                    AuditProductSpecificationType: "{!JSENCODE($Label.AuditProductSpecificationType)}",
+                    AuditProductSpecificationTypeDesc: "{!JSENCODE($Label.AuditProductSpecificationTypeDesc)}",
+                    AuditProductStructure: "{!JSENCODE($Label.AuditProductStructure)}",
+                    AuditProductStructureDesc: "{!JSENCODE($Label.AuditProductStructureDesc)}",
+                    PopulateCatalogCode: "{!JSENCODE($Label.PopulateCatalogCode)}",
+                    PopulateCatalogCodeDesc: "{!JSENCODE($Label.PopulateCatalogCodeDesc)}",
+                    PopulateNewFieldsJob: "{!JSENCODE($Label.PopulateNewFieldsJob)}",
+                    PopulateNewFieldsJobDesc: "{!JSENCODE($Label.PopulateNewFieldsJobDesc)}",
+                    VersionLabel: "{!JSENCODE($Label.VersionLabel)}",
+                    LifecycleStatus: "{!JSENCODE($Label.LifecycleStatus)}",
+                    PopulateProductHierarchyGroupKeyPathJob: "{!JSENCODE($Label.PopulateProductHierarchyGroupKeyPathJob)}",
+                    PopulateProductHierarchyGroupKeyPathJobDesc: "{!JSENCODE($Label.PopulateProductHierarchyGroupKeyPathJobDesc)}",
+                    UpgradeEPCSchemaJob: "{!JSENCODE($Label.UpgradeEPCSchemaJob)}",
+                    UpgradeEPCSchemaJobDesc: "{!JSENCODE($Label.UpgradeEPCSchemaJobDesc)}",
+                    WorkSetItemUpgradeLabel: "{!JSENCODE($Label.WorkSetItemUpgradeLabel)}",
+                    WorkSetItemUpgradeDesc: "{!JSENCODE($Label.WorkSetItemUpgradeDesc)}",
+                    MutiServiceUpgradeLabel: "{!JSENCODE($Label.MutiServiceUpgradeLabel)}",
+                    MutiServiceUpgradeDesc: "{!JSENCODE($Label.MutiServiceUpgradeDesc)}",
+                    UpdateIsChangesAllowed: "{!JSENCODE($Label.UpdateIsChangesAllowed)}",
+                    UpdateIsChangesAllowedDesc: "{!JSENCODE($Label.UpdateIsChangesAllowedDesc)}",
+                    UpgradePricingFieldsLabel: "{!JSENCODE($Label.UpgradePricingFieldsLabel)}",
+                    UpgradePricingFieldsDesc: "{!JSENCODE($Label.UpgradePricingFieldsDesc)}",
+                    PopulateOrderStatusInOrder: "{!JSENCODE($Label.PopulateOrderStatusInOrder)}",
+                    PopulateOrderStatusInOrderDesc: "{!JSENCODE($Label.PopulateOrderStatusInOrderDesc)}",
+                    OrderPoolAPI: "{!JSENCODE($Label.OrderPoolAPI)}",
+                    OrderPoolAPIDesc: "{!JSENCODE($Label.OrderPoolAPIDesc)}",
+                    ProductCatagoryDataMaintenance:"{!JSENCODE($Label.ProductCatagoryDataMaintenance)}",
+                    JobPopulateProductCategoryData: "{!JSENCODE($Label.JobPopulateProductCategoryData)}",
+                    PopulateProductCategoryData: "{!JSENCODE($Label.PopulateProductCategoryData)}",
+                    ProductCatDataJobBatchSize: "{!JSENCODE($Label.ProductCatDataJobBatchSize)}",
+                    LifecycleStatusJob: "{!JSENCODE($Label.LifecycleStatusJob)}",
+                    LifecycleStatusJobDesc: "{!JSENCODE($Label.LifecycleStatusJobDesc)}",
+                    BatchJobDisabled: "{!JSENCODE($Label.BatchJobDisabled)}",
+                    PopulateCatalogItemReferenceDateTimeJob: "{!JSENCODE($Label.PopulateCatalogItemReferenceDateTimeJob)}",
+                    PopulateCatalogItemReferenceDateTimeJobDesc: "{!JSENCODE($Label.PopulateCatalogItemReferenceDateTimeJobDesc)}",
+                    PreImportValidateVersioningDate: "{!JSENCODE($Label.PreImportValidateVersioningDate)}",
+                    PreImportValidateVersioningDateDesc: "{!JSENCODE($Label.PreImportValidateVersioningDateDesc)}",
+                    CMTOptionCPQNextJobsLabel: "{!JSENCODE($Label.CMTOptionCPQNextJobsLabel)}",
+                    GenerateValidationRulesCompiledData: "{!JSENCODE($Label.GenerateValidationRulesCompiledData)}",
+                    GenerateValidationRulesCompiledDataDesc: "{!JSENCODE($Label.GenerateValidationRulesCompiledDataDesc)}",
+                    GenerateCompileMatrixData:"{!JSENCODE($Label.GenerateCompileMatrixData)}",
+                    GenerateCompileMatrixDataDesc:"{!JSENCODE($Label.GenerateCompileMatrixDataDesc)}",
+                    StandardCpqGenerateCompileMatrix1bData:"{!JSENCODE($Label.StandardCpqGenerateCompileMatrixData)}",
+                    StandardCpqGenerateCompileMatrixDataDesc:"{!JSENCODE($Label.StandardCpqGenerateCompileMatrixDataDesc)}",
+                    SearchPriceListLabel:"{!JSENCODE($Label.SearchPriceList)}",
+                    AvailableLabel:"{!JSENCODE($Label.DualListBoxAvailable)}",
+                    SelectedLabel:"{!JSENCODE($Label.DualListBoxSelected)}",
+                    MoveToSelectedLabel:"{!JSENCODE($Label.DualListBoxMoveToSelected)}",
+                    MoveToAvailableLabel:"{!JSENCODE($Label.DualListBoxMoveToAvailable)}",
+                    PopulatePBEInPLEJobLabel: "{!JSENCODE($Label.PopulatePBEInPLEJobLabel)}",
+                    PopulatePBEInPLEJobDesc: "{!JSENCODE($Label.PopulatePBEInPLEJobDesc)}",
+                    CPQNext1BFeatureInfo: "{!JSENCODE($Label.CPQNext1BFeatureInfo)}",
+                    CPQNext1BFeatureSuccMessage: "{!JSENCODE($Label.CPQNext1BFeatureSuccMessage)}"
+                }
+                var asyncApexJobFieldsLabels = {
+                    status: "{!JSENCODE($ObjectType.AsyncApexJob.Fields.Status.Label)}",
+                    totalJobItems: "{!JSENCODE($ObjectType.AsyncApexJob.Fields.TotalJobItems.Label)}",
+                    jobItemsProcessed: "{!JSENCODE($ObjectType.AsyncApexJob.Fields.JobItemsProcessed.Label)}",
+                    createdDate: "{!JSENCODE($ObjectType.AsyncApexJob.Fields.CreatedDate.Label)}",
+                    completedDate: "{!JSENCODE($ObjectType.AsyncApexJob.Fields.CompletedDate.Label)}",
+                    extendedStatus: "{!JSENCODE($ObjectType.AsyncApexJob.Fields.ExtendedStatus.Label)}"
+                }
+                //Define ICONs
+                var SLDSICON = {
+                    'SETTINGS': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#settings")}',
+                    'RIGHT_ARROW': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#right")}',
+                    'SEARCH': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#search")}',
+                    'EDIT': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#edit")}',
+                    'ADD': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#add")}',
+                    'DELETE': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#delete")}',
+                    'CLOSE': '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#close")}'
+                };
+			</script>
+		</body>
+	</html>
+</apex:page>

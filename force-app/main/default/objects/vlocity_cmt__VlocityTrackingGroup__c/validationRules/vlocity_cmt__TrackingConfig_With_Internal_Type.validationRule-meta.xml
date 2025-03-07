@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__TrackingConfig_With_Internal_Type</fullName>
+    <active>true</active>
+    <description>When Type is Internal, Web Tracking Configuration look up must be empty.</description>
+    <errorConditionFormula>AND(ISPICKVAL(vlocity_cmt__Type__c, &apos;Internal&apos;), vlocity_cmt__VlocityWebTrackingConfigurationId__c &lt;&gt; null)</errorConditionFormula>
+    <errorDisplayField>vlocity_cmt__VlocityWebTrackingConfigurationId__c</errorDisplayField>
+    <errorMessage>Vlocity Web Tracking Configuration with Tracking Group type Internal is invalid.</errorMessage>
+</ValidationRule>

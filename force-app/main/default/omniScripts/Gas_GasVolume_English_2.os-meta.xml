@@ -1,0 +1,1703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customHtmlTemplates>&lt;script type=&quot;text/ng-template&quot; id=&quot;Print.html&quot;&gt;
+    &lt;style&gt;
+        .via-slds input[type=&quot;checkbox&quot;], .via-slds input[type=&quot;radio&quot;] {
+            -webkit-appearance: checkbox;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;table class=&quot;slds-table slds-table--bordered slds-table--cell-buffer&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr class=&quot;slds-text-title--caps&quot;&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Select&quot;&gt;Select&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Yr&quot;&gt;Yr&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Revenue&quot;&gt;Investment&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Revenue&quot;&gt;Revenue&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;OPEXr&quot;&gt;OPEX&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Tax&quot;&gt;Tax&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Total&quot;&gt;Total&lt;/div&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class=&apos;ins&apos;&gt;
+                &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot;&gt;
+                    &lt;td&gt;
+                        &lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this, false)&apos; /&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Print&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Year}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Investment | number:0}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Revenue | number:0 }}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Opex | number:0}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Download&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Tax | number:0}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Download&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Total | number:0}}&lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/ng-template&quot; id=&quot;AccountList.html&quot;&gt;
+    &lt;style&gt;
+        .via-slds input[type=&quot;checkbox&quot;], .via-slds input[type=&quot;radio&quot;] {
+            -webkit-appearance: checkbox;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;table class=&quot;slds-table slds-table--bordered slds-table--cell-buffer&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr class=&quot;slds-text-title--caps&quot;&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Select&quot;&gt;Select&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Name&quot;&gt;Name&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Acct Number&quot;&gt;Acct #&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;DueDate&quot;&gt;Due Date&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Amount&quot;&gt;Amount&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Address&quot;&gt;Address&lt;/div&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class=&apos;ins&apos;&gt;
+                &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot;&gt;
+                    &lt;td&gt;
+                        &lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this, false)&apos; /&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.AccountName}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.AccountNumber}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Balance.BalanceDate | date:&apos;d MMM yy&apos;}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Account&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Balance.BalanceValue}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Address&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.BillingStreet}},{{p.BillingPostalCode}}&lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/ng-template&quot; id=&quot;AssetList.html&quot;&gt;
+    &lt;style&gt;
+        .via-slds input[type=&quot;checkbox&quot;], .via-slds input[type=&quot;radio&quot;] {
+            -webkit-appearance: checkbox;
+        }
+    &lt;/style&gt;
+    &lt;div class=&quot;panel panel-default&quot;&gt;
+        &lt;table class=&quot;slds-table slds-table--bordered slds-table--cell-buffer&quot;&gt;
+            &lt;thead&gt;
+                &lt;tr class=&quot;slds-text-title--caps&quot;&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Select&quot;&gt;Select&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Name&quot;&gt;Asset&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Serial Number&quot;&gt;Serial #&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Activation Date&quot;&gt;Activation Date&lt;/div&gt;
+                    &lt;/th&gt;
+                    &lt;th scope=&quot;col&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot; title=&quot;Status&quot;&gt;Status&lt;/div&gt;
+                    &lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody class=&apos;ins&apos;&gt;
+                &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot;&gt;
+                    &lt;td&gt;
+                        &lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this, false)&apos; /&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Name&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Assetname}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Serial Number&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Serialnumber}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Activation Date&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.ActivationDate | date:&apos;d MMM yy&apos;}}&lt;/div&gt;
+                    &lt;/td&gt;
+                    &lt;td data-label=&quot;Status&quot;&gt;
+                        &lt;div class=&quot;slds-truncate&quot;&gt;{{p.Status}}&lt;/div&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/script&gt;</customHtmlTemplates>
+    <description>02/13: Debarshi: LWC</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>true</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>true</isWebCompEnabled>
+    <language>English</language>
+    <name>GasVolumeCalc</name>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>AvTempDiffWinter</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Average Temp Differe&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;defaultValue&quot; : 45
+}</propertySetConfig>
+            <sequenceNumber>11.0</sequenceNumber>
+            <type>Number</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>BldgHeatVol</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Annual Volume Bldg (m3)&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;(%CubicFeet%*%Insulation%*%WinterFactor%*0.0278/1000)*24*365&quot;,
+  &quot;hide&quot; : false,
+  &quot;mask&quot; : &quot;###,##0.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>13.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>BldgHeatVolMcf</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Annual Volume Bldg (Mcf)&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;((%CubicFeet%*%Insulation%*%WinterFactor%*0.0278/1000)*24*365*35.31)/1000&quot;,
+  &quot;hide&quot; : false,
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>14.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CubicFeet</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Feet3&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 2,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;%Width%*%Length%*%Hight%*%Floors%*%Units%&quot;,
+  &quot;hide&quot; : false,
+  &quot;mask&quot; : null,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0
+}</propertySetConfig>
+            <sequenceNumber>7.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Desc1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;text&quot; : &quot;&lt;h3&gt;Because we do not have historical data, first we need&amp;nbsp;to estimate gas volume for the new site .&amp;nbsp;&lt;/h3&gt;\n&lt;hr /&gt;\n&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;&quot;,
+  &quot;dataJSON&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Floors</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Number of floors&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 2,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;hide&quot; : false,
+  &quot;defaultValue&quot; : 2
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Number</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Hight</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Height&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 2,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;hide&quot; : false,
+  &quot;defaultValue&quot; : 12
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Number</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Insulation</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Insulation&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;2&quot;,
+    &quot;value&quot; : &quot;Well&quot;
+  }, {
+    &quot;name&quot; : &quot;4&quot;,
+    &quot;value&quot; : &quot;Partly&quot;
+  }, {
+    &quot;name&quot; : &quot;5&quot;,
+    &quot;value&quot; : &quot;Poor&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>8.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Length</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Length&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 2,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;defaultValue&quot; : 200
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Number</type>
+        </childElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SummerMonths</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;SummerMonths&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>10.0</sequenceNumber>
+            <type>Number</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Units</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 2,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;defaultValue&quot; : 1,
+  &quot;help&quot; : false,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Number of units&quot;
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Number</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Width</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Width&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 2,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;hide&quot; : false,
+  &quot;defaultValue&quot; : 100
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Number</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>WinterFactor</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Winter Factor&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;((%WinterMonths%)/12)*%AvTempDiffWinter%*0.2/10&quot;,
+  &quot;hide&quot; : false,
+  &quot;mask&quot; : &quot;###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;persistentComponent&quot; : [ {
+    &quot;render&quot; : false,
+    &quot;label&quot; : &quot;&quot;,
+    &quot;remoteClass&quot; : &quot;&quot;,
+    &quot;remoteMethod&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;remoteOptions&quot; : {
+      &quot;preTransformBundle&quot; : &quot;&quot;,
+      &quot;postTransformBundle&quot; : &quot;&quot;
+    },
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;sendJSONPath&quot; : &quot;&quot;,
+    &quot;sendJSONNode&quot; : &quot;&quot;,
+    &quot;responseJSONPath&quot; : &quot;&quot;,
+    &quot;responseJSONNode&quot; : &quot;&quot;,
+    &quot;id&quot; : &quot;vlcCart&quot;,
+    &quot;itemsKey&quot; : &quot;cartItems&quot;,
+    &quot;modalConfigurationSetting&quot; : {
+      &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+      &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+      &quot;modalSize&quot; : &quot;lg&quot;
+    }
+  }, {
+    &quot;render&quot; : false,
+    &quot;label&quot; : &quot;&quot;,
+    &quot;remoteClass&quot; : &quot;&quot;,
+    &quot;remoteMethod&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;remoteOptions&quot; : {
+      &quot;preTransformBundle&quot; : &quot;&quot;,
+      &quot;postTransformBundle&quot; : &quot;&quot;
+    },
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;id&quot; : &quot;vlcKnowledge&quot;,
+    &quot;itemsKey&quot; : &quot;knowledgeItems&quot;,
+    &quot;modalConfigurationSetting&quot; : {
+      &quot;modalHTMLTemplateId&quot; : &quot;&quot;,
+      &quot;modalController&quot; : &quot;&quot;,
+      &quot;modalSize&quot; : &quot;lg&quot;
+    }
+  } ],
+  &quot;allowSaveForLater&quot; : true,
+  &quot;saveForLaterRedirectPageName&quot; : &quot;sflRedirect&quot;,
+  &quot;saveForLaterRedirectTemplateUrl&quot; : &quot;vlcSaveForLaterAcknowledge.html&quot;,
+  &quot;saveContentEncoded&quot; : false,
+  &quot;saveObjectId&quot; : &quot;%ContextId%&quot;,
+  &quot;saveURLPatterns&quot; : { },
+  &quot;autoSaveOnStepNext&quot; : false,
+  &quot;elementTypeToHTMLTemplateMapping&quot; : { },
+  &quot;seedDataJSON&quot; : { },
+  &quot;trackingCustomData&quot; : { },
+  &quot;enableKnowledge&quot; : false,
+  &quot;knowledgeArticleTypeQueryFieldsMap&quot; : { },
+  &quot;timeTracking&quot; : true,
+  &quot;visualforcePagesAvailableInPreview&quot; : { },
+  &quot;cancelType&quot; : &quot;SObject&quot;,
+  &quot;cancelSource&quot; : &quot;%ContextId%&quot;,
+  &quot;cancelRedirectPageName&quot; : &quot;OmniScriptCancelled&quot;,
+  &quot;cancelRedirectTemplateUrl&quot; : &quot;vlcCancelled.html&quot;,
+  &quot;consoleTabLabel&quot; : &quot;New&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;autoFocus&quot; : false,
+  &quot;Type__c&quot; : {
+    &quot;label&quot; : &quot;Formula&quot;,
+    &quot;type&quot; : &quot;input&quot;
+  }
+}</propertySetConfig>
+            <sequenceNumber>12.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>WinterMonths</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Winter Months&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;defaultValue&quot; : 5
+}</propertySetConfig>
+            <sequenceNumber>9.0</sequenceNumber>
+            <type>Number</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Building</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Estimate Gas Volume&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CalcShape</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.PricingMatrixCalculationService&quot;,
+  &quot;remoteMethod&quot; : &quot;calculate&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;configurationName&quot; : &quot;HDDFactorCalc&quot;,
+    &quot;includeInputs&quot; : false,
+    &quot;preTransformBundle&quot; : &quot;VDOGasEstimatePreCalc&quot;,
+    &quot;postTransformBundle&quot; : &quot;VDOGasEstimatePostCalc&quot;,
+    &quot;matchInputVariables&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;Calculate Shape&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Calculation Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CalculationAction1</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.PricingMatrixCalculationService&quot;,
+  &quot;remoteMethod&quot; : &quot;calculate&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;configurationName&quot; : &quot;GasVolumeCalc&quot;,
+    &quot;includeInputs&quot; : true,
+    &quot;preTransformBundle&quot; : &quot;GasVolumeCalcTransform&quot;,
+    &quot;postTransformBundle&quot; : &quot;GasTotalVolumeOutputTransform&quot;,
+    &quot;matchInputVariables&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;extraPayload&quot; : { },
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : &quot;CalculationAction1&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Calculation Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EquipmentType</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 5,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Automatic 30-40 gal&quot;,
+    &quot;value&quot; : &quot;Automatic 30-40 gal&quot;
+  }, {
+    &quot;name&quot; : &quot;Automatic 50 gal&quot;,
+    &quot;value&quot; : &quot;Automatic 50 gal&quot;
+  }, {
+    &quot;name&quot; : &quot;Insta 2 gal/min&quot;,
+    &quot;value&quot; : &quot;Insta 2 gal/min&quot;
+  }, {
+    &quot;name&quot; : &quot;Insta 4 gal/min&quot;,
+    &quot;value&quot; : &quot;Insta 4 gal/min&quot;
+  }, {
+    &quot;name&quot; : &quot;Water Heater Domestic, Circulation&quot;,
+    &quot;value&quot; : &quot;Water Heater Domestic, Circulation&quot;
+  }, {
+    &quot;name&quot; : &quot;Cooking&quot;,
+    &quot;value&quot; : &quot;Cooking&quot;
+  }, {
+    &quot;name&quot; : &quot;Dryier&quot;,
+    &quot;value&quot; : &quot;Dryier&quot;
+  }, {
+    &quot;name&quot; : &quot;Fireplace&quot;,
+    &quot;value&quot; : &quot;Fireplace&quot;
+  }, {
+    &quot;name&quot; : &quot;Gaslog unit&quot;,
+    &quot;value&quot; : &quot;Gaslog unit&quot;
+  }, {
+    &quot;name&quot; : &quot;BBQ&quot;,
+    &quot;value&quot; : &quot;BBQ&quot;
+  }, {
+    &quot;name&quot; : &quot;Gaslight&quot;,
+    &quot;value&quot; : &quot;Gaslight&quot;
+  }, {
+    &quot;name&quot; : &quot;Cast Iron Boiler&quot;,
+    &quot;value&quot; : &quot;Cast Iron Boiler&quot;
+  }, {
+    &quot;name&quot; : &quot;Heating Roof Unit&quot;,
+    &quot;value&quot; : &quot;Heating Roof Unit&quot;
+  }, {
+    &quot;name&quot; : &quot;Unit Heater&quot;,
+    &quot;value&quot; : &quot;Unit Heater&quot;
+  }, {
+    &quot;name&quot; : &quot;Ventilation Rotary Heat Exchanger&quot;,
+    &quot;value&quot; : &quot;Ventilation Rotary Heat Exchanger&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Equimpent&quot;
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>HoursPerDay</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Hours (Daily)&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;mask&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Number</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>EqType</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Type&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;collapse&quot; : false,
+  &quot;repeat&quot; : true,
+  &quot;repeatClone&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Multi-select1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Multi-select1&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;horizontalMode&quot; : false,
+  &quot;help&quot; : false,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Automatic 30-40 gal&quot;,
+    &quot;value&quot; : &quot;Automatic 30-40 gal&quot;
+  }, {
+    &quot;name&quot; : &quot;Automatic 50 gal&quot;,
+    &quot;value&quot; : &quot;Automatic 50 gal&quot;
+  }, {
+    &quot;name&quot; : &quot;Insta 2 gal/min&quot;,
+    &quot;value&quot; : &quot;Insta 2 gal/min&quot;
+  }, {
+    &quot;name&quot; : &quot;Insta 4 gal/min&quot;,
+    &quot;value&quot; : &quot;Insta 4 gal/min&quot;
+  }, {
+    &quot;name&quot; : &quot;Insta 6 gal/min&quot;,
+    &quot;value&quot; : &quot;Insta 6 gal/min&quot;
+  }, {
+    &quot;name&quot; : &quot;Water Heater Domestic, Circulation&quot;,
+    &quot;value&quot; : &quot;Water Heater Domestic, Circulation&quot;
+  }, {
+    &quot;name&quot; : &quot;Cooking&quot;,
+    &quot;value&quot; : &quot;Cooking&quot;
+  }, {
+    &quot;name&quot; : &quot;Dryier&quot;,
+    &quot;value&quot; : &quot;Dryier&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;optionWidth&quot; : 100,
+  &quot;optionHeight&quot; : 100,
+  &quot;enableCaption&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Multi-select</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Equipment</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Equipment&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ConvertRadio</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;horizontalMode&quot; : false,
+  &quot;defaultValue&quot; : &quot;Yes&quot;,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Yes&quot;,
+    &quot;value&quot; : &quot;Yes&quot;
+  }, {
+    &quot;name&quot; : &quot;No&quot;,
+    &quot;value&quot; : &quot;No&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;optionWidth&quot; : 100,
+  &quot;optionHeight&quot; : 100,
+  &quot;imageCountInRow&quot; : 3,
+  &quot;enableCaption&quot; : true,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Show In Mcf And Therms?&quot;
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Radio</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DemandHourly</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 6,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 6,
+  &quot;expression&quot; : &quot;%TotEqCalcUsage%/(365*24)&quot;,
+  &quot;hide&quot; : false,
+  &quot;show&quot; : null,
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Total Hourly Demand (m3)&quot;
+}</propertySetConfig>
+            <sequenceNumber>8.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DemandHourlyCF</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 6,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 6,
+  &quot;expression&quot; : &quot;((%DemandHourly%)*35.31)&quot;,
+  &quot;hide&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;ConvertRadio&quot;,
+        &quot;data&quot; : &quot;Yes&quot;
+      }, {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;ConvertRadio&quot;,
+        &quot;data&quot; : null
+      } ]
+    }
+  },
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Hourly Demand (cf)&quot;
+}</propertySetConfig>
+            <sequenceNumber>9.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>FinalHeat</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;%BldgHeatVol%&quot;,
+  &quot;hide&quot; : true,
+  &quot;show&quot; : null,
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Heating Volume (m3)&quot;,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;horizontalMode&quot; : false,
+  &quot;help&quot; : false,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;optionWidth&quot; : 100,
+  &quot;optionHeight&quot; : 100,
+  &quot;imageCountInRow&quot; : 3,
+  &quot;enableCaption&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>MonthlyBase</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Monthly Base Volume (therm)&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;(%TotEqCalcUsage%/12)/2.78&quot;,
+  &quot;hide&quot; : true,
+  &quot;mask&quot; : null,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>14.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>MonthlyHeat</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Monthly Heating (therm)&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;(%BldgHeatVol%/12)/2.78&quot;,
+  &quot;hide&quot; : true,
+  &quot;mask&quot; : null,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>13.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TotalProcessPerc</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Process %&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;(%Result:TotalProcessPercentage%*%TotEqCalcUsage%)/(%TotalVolume%)*100&quot;,
+  &quot;hide&quot; : false,
+  &quot;mask&quot; : &quot;###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>7.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TotalVolume</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;%TotEqCalcUsage%+%FinalHeat%&quot;,
+  &quot;hide&quot; : false,
+  &quot;show&quot; : null,
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Total Volume (m3)&quot;
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TotalVolumeMcf</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 6,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 6,
+  &quot;expression&quot; : &quot;((%TotEqCalcUsage%+%FinalHeat%)*35.31)/1000&quot;,
+  &quot;hide&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;ConvertRadio&quot;,
+        &quot;data&quot; : &quot;Yes&quot;
+      }, {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;ConvertRadio&quot;,
+        &quot;data&quot; : null
+      } ]
+    }
+  },
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Total Consumption (Mcf)&quot;
+}</propertySetConfig>
+            <sequenceNumber>10.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TotalVolumeTherm</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 6,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 6,
+  &quot;expression&quot; : &quot;((%TotEqCalcUsage%+%FinalHeat%)/2.78)&quot;,
+  &quot;hide&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;ConvertRadio&quot;,
+        &quot;data&quot; : &quot;Yes&quot;
+      }, {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;ConvertRadio&quot;,
+        &quot;data&quot; : null
+      } ]
+    }
+  },
+  &quot;mask&quot; : &quot;###,###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Total Consumption (therm)&quot;
+}</propertySetConfig>
+            <sequenceNumber>11.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TotEqCalcUsage</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;%Result:TotalUsage%*%Units%&quot;,
+  &quot;hide&quot; : true,
+  &quot;show&quot; : null,
+  &quot;mask&quot; : null,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Total Equipment Volume (m3)&quot;
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TotHeatPerc</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Heat %&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;(%Result:TotalHeatPercentage%*%TotEqCalcUsage% + %FinalHeat%)/(%TotalVolume%)*100&quot;,
+  &quot;hide&quot; : false,
+  &quot;mask&quot; : &quot;###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>TotWaterPerc</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Hot Water %&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 3,
+  &quot;showInputWidth&quot; : true,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;(%Result:TotalWaterPercentage%*%TotEqCalcUsage%)/(%TotalVolume%)*100&quot;,
+  &quot;hide&quot; : false,
+  &quot;mask&quot; : &quot;###.00&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>VolumeTextBlock</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Volume Estimate&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;text&quot; : &quot;&lt;table style=\&quot;height: 146px; width: 585px; border-color: #403e3e;\&quot;&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 193px;\&quot;&gt;\n&lt;h3&gt;&amp;nbsp;Total Annual Volume (m3)&lt;/h3&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 194px;\&quot;&gt;&lt;strong&gt;%TotalVolume%&lt;/strong&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 193px;\&quot;&gt;\n&lt;h3&gt;&amp;nbsp;Heat (%)&lt;/h3&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 194px;\&quot;&gt;&amp;nbsp;&lt;strong&gt;%TotHeatPerc%&lt;/strong&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 193px;\&quot;&gt;\n&lt;h3&gt;&amp;nbsp;Hot Water (%)&lt;/h3&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 194px;\&quot;&gt;&amp;nbsp;&lt;strong&gt;%TotWaterPerc%&lt;/strong&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 193px;\&quot;&gt;\n&lt;h3&gt;Process (%)&lt;/h3&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 194px;\&quot;&gt;&lt;strong&gt;%TotalProcessPerc%&lt;/strong&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;&quot;,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>12.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FinalVolume</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Estimated Volume&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Explanation</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;text&quot; : &quot;&lt;h4&gt;&lt;strong&gt;The table below represents estimated load shape based on:&lt;/strong&gt;&lt;/h4&gt;\n&lt;h4&gt;1. the calculated volume (wather dependant and base volume)&lt;/h4&gt;\n&lt;h4&gt;2. HDD factor (for a specific region)&lt;/h4&gt;&quot;,
+  &quot;show&quot; : null,
+  &quot;dataJSON&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;&quot;,
+  &quot;label&quot; : null,
+  &quot;sanitize&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <description>CalcResult</description>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LoadShape</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;vdo-gas-forecasted-volume-table&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;dataJSON&quot; : true,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Forecasted Load Shape</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;chartLabel&quot; : null,
+  &quot;label&quot; : &quot;Forecasted Load Shape (Next 12 Months)&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;pubsub&quot; : false,
+  &quot;message&quot; : { },
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetMonths</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;bundle&quot; : &quot;VDOGetMonthsExternal&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;label&quot; : null,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;ignoreCache&quot; : false,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Element to extract the information in order to be saved on the opportunity record</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetCalShape</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;LoadShape&quot; : &quot;=%CalcResult%&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;show&quot; : null,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;label&quot; : &quot;SetCalcShape&quot;,
+  &quot;disOnTplt&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;persistentComponent&quot;:[{&quot;render&quot;:false,&quot;label&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteTimeout&quot;:30000,&quot;remoteOptions&quot;:{&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;},&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalSize&quot;:&quot;lg&quot;}},{&quot;render&quot;:false,&quot;label&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteTimeout&quot;:30000,&quot;remoteOptions&quot;:{&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;},&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;,&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalController&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;}}],&quot;allowSaveForLater&quot;:true,&quot;saveNameTemplate&quot;:null,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveContentEncoded&quot;:false,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;autoSaveOnStepNext&quot;:false,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;seedDataJSON&quot;:{},&quot;trackingCustomData&quot;:{},&quot;enableKnowledge&quot;:false,&quot;bLK&quot;:false,&quot;lkObjName&quot;:null,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;timeTracking&quot;:true,&quot;hideStepChart&quot;:false,&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;cancelType&quot;:&quot;SObject&quot;,&quot;allowCancel&quot;:true,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;wpm&quot;:false,&quot;ssm&quot;:false,&quot;message&quot;:{},&quot;pubsub&quot;:false,&quot;autoFocus&quot;:false,&quot;currencyCode&quot;:&quot;$&quot;,&quot;showInputWidth&quot;:false,&quot;rtpSeed&quot;:false,&quot;consoleTabTitle&quot;:null,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;disableUnloadWarn&quot;:true,&quot;stylesheet&quot;:{&quot;newport&quot;:&quot;&quot;,&quot;newportRtl&quot;:&quot;&quot;,&quot;lightning&quot;:&quot;&quot;,&quot;lightningRtl&quot;:&quot;&quot;},&quot;stepChartPlacement&quot;:&quot;right&quot;,&quot;currentLanguage&quot;:&quot;en_US&quot;}</propertySetConfig>
+    <subType>GasVolume</subType>
+    <type>Gas</type>
+    <uniqueName>Gas_GasVolume_English_2</uniqueName>
+    <versionNumber>2.0</versionNumber>
+    <webComponentKey>a96b495f-4410-7752-af3e-8935caf13c8c</webComponentKey>
+</OmniScript>

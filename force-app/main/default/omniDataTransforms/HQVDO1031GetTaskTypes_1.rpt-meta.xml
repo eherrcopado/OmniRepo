@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;Task&quot; : [ {
+    &quot;Subject&quot; : &quot;Renewal reminder&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Send email&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Call to change order&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Account planning&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Contract renewal&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Prepare a Quote&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Review latest billing information&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Email Alert&quot;
+  }, {
+    &quot;Subject&quot; : &quot;Set Appointment&quot;
+  } ]
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>HQVDO1031GetTaskTypes</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>Picklist:Id</filterValue>
+        <globalKey>aa5a83e7-d781-0446-4eaf-41efc0a50a9c</globalKey>
+        <inputFieldName>vlocity_cmt__PicklistId__c</inputFieldName>
+        <inputObjectName>vlocity_cmt__PicklistValue__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-103-1-GetTaskTypes</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Picklist:PV</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>&apos;true&apos;</filterValue>
+        <globalKey>586b1607-6e9b-c832-341d-57830e5b1597</globalKey>
+        <inputFieldName>vlocity_cmt__IsActive__c</inputFieldName>
+        <inputObjectName>vlocity_cmt__PicklistValue__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-103-1-GetTaskTypes</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Picklist:PV</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>cd85e6b4-2ef3-f25b-58f0-81260178636e</globalKey>
+        <inputFieldName>Picklist:PV:vlocity_cmt__Value__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-103-1-GetTaskTypes</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>TaskPicklistValue:TaskType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>&apos;RegTaskTypes&apos;</filterValue>
+        <globalKey>fe667fda-a65f-c319-79de-bbf0ebcb433b</globalKey>
+        <inputFieldName>Name</inputFieldName>
+        <inputObjectName>vlocity_cmt__Picklist__c</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-103-1-GetTaskTypes</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Picklist</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;0015f00000B2kA3AAJ&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>HQVDO1031GetTaskTypes_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

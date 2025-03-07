@@ -1,0 +1,312 @@
+{
+  "templateType" : "app",
+  "description" : "Demo template based off of v6 of the standard Service Analytics template. This demo template is configured to use both the default out-of-the-box SDO data and data loaded by the Analytics Data Demo Tool to give you richer visualization in the dashboards.",
+  "name" : "Service_Analytics_Flex",
+  "releaseInfo" : {
+    "notesFile" : "releasenotes.html",
+    "templateVersion" : "6.0"
+  },
+  "assetVersion" : 43,
+  "icons" : {
+    "appBadge" : {
+      "name" : "10.png"
+    },
+    "templateBadge" : {
+      "name" : "service.png"
+    },
+    "templatePreviews" : [
+      {
+        "name" : "preview_service1.png",
+        "label" : "Service Analytics Home",
+        "description" : "Demo template based off of v6 of the standard Service Analytics template. This demo template is configured to use both the default out-of-the-box SDO data and data loaded by the Analytics Data Demo Tool to give you richer visualization in the dashboards."
+      },
+      {
+        "name" : "preview_service2.png",
+        "label" : "Service Open Cases",
+        "description" : "Demo template based off of v6 of the standard Service Analytics template. This demo template is configured to use both the default out-of-the-box SDO data and data loaded by the Analytics Data Demo Tool to give you richer visualization in the dashboards."
+      },
+      {
+        "name" : "preview_service3.png",
+        "label" : "Service Agent Performance",
+        "description" : "Demo template based off of v6 of the standard Service Analytics template. This demo template is configured to use both the default out-of-the-box SDO data and data loaded by the Analytics Data Demo Tool to give you richer visualization in the dashboards."
+      },
+      {
+        "name" : "preview_service4.png",
+        "label" : "Service My Performance",
+        "description" : "Demo template based off of v6 of the standard Service Analytics template. This demo template is configured to use both the default out-of-the-box SDO data and data loaded by the Analytics Data Demo Tool to give you richer visualization in the dashboards."
+      }
+    ]
+  },
+  "tags" : [
+    "Service",
+    "Trending",
+    "Customer 360"
+  ],
+  "customAttributes" : [
+    {
+      "label" : "Features",
+      "values" : [
+        "Embeddable Dashboards",
+        "Mobile Ready",
+        "Prebuilt Dashboards",
+        "Dataflow",
+        "KPI Rich Datasets"
+      ]
+    },
+    {
+      "label" : "Salesforce Objects",
+      "values" : [
+        "Account",
+        "Case",
+        "Contact",
+        "Task",
+        "User",
+        "User Role"
+      ]
+    },
+    {
+      "label" : "Publisher",
+      "values" : [
+        "Einstein Analytics"
+      ]
+    }
+  ],
+  "variableDefinition" : "demo-variables.json",
+  "dashboards" : [
+    {
+      "condition" : "${Variables.IncludeKnowledge == 'Yes'}",
+      "name" : "Service_Knowledge",
+      "file" : "dashboards/Service_Knowledge_Efficiency.json",
+      "label" : "Service Knowledge Efficiency"
+    },
+    {
+      "condition" : "${Variables.IncludeKnowledge == 'Yes'}",
+      "name" : "Service_Knowledge_Metrics",
+      "file" : "dashboards/Service_Knowledge_Usage.json",
+      "label" : "Service Knowledge Usage"
+    },
+    {
+      "name" : "Service_Agent_Sidebar_By_Similarity",
+      "file" : "dashboards/Service_Agent_Sidebar_By_Similarity.json",
+      "label" : "Service Agent Sidebar By Similarity"
+    },
+    {
+      "name" : "Service_Account_Profile",
+      "file" : "dashboards/Service_Account_Profile.json",
+      "label" : "Service Account Profile"
+    },
+    {
+      "name" : "Service_Agent_Activity",
+      "file" : "dashboards/Service_Agent_Activity.json",
+      "label" : "Service Agent Activity"
+    },
+    {
+      "name" : "Service_By_TeamEfficiency",
+      "file" : "dashboards/Service_Agent_Performance.json",
+      "label" : "Service Agent Performance"
+    },
+    {
+      "condition" : "${Variables.IncludeCaseHistory == 'Yes'}",
+      "name" : "Service_Case_History_Sidebar",
+      "file" : "dashboards/Service_Agent_Sidebar_By_Case_History.json",
+      "label" : "Service Agent Sidebar By Case History"
+    },
+    {
+      "name" : "Service_Agent_Sidebar_By_Customer",
+      "file" : "dashboards/Service_Agent_Sidebar_By_Customer.json",
+      "label" : "Service Agent Sidebar By Customer"
+    },
+    {
+      "name" : "Service_Backlog_Analysis",
+      "file" : "dashboards/Service_Backlog.json",
+      "label" : "Service Backlog"
+    },
+    {
+      "name" : "My_Performance_Summary",
+      "file" : "dashboards/My_Performance_Summary.json",
+      "label" : "My Performance Summary"
+    },
+    {
+      "name" : "Service_By_EngagementEfficiency",
+      "file" : "dashboards/Service_Channel_Review.json",
+      "label" : "Service Channel Review"
+    },
+    {
+      "condition" : "${Variables.IncludeCSAT == 'Yes'}",
+      "name" : "Service_Customer_Satisfaction",
+      "file" : "dashboards/Service_Customer_Satisfaction.json",
+      "label" : "Service Customer Satisfaction"
+    },
+    {
+      "name" : "Service_By_OpenCases",
+      "file" : "dashboards/Service_Open_Cases.json",
+      "label" : "Service Open Cases"
+    },
+    {
+      "name" : "Service_Overview",
+      "file" : "dashboards/Service_Manager_Overview.json",
+      "label" : "Service Analytics Overview"
+    },
+    {
+      "condition" : "${Variables.IncludeTelephony == 'Yes'}",
+      "name" : "Service_Telephony",
+      "file" : "dashboards/Service_Telephony.json",
+      "label" : "Service Telephony"
+    },
+    {
+      "condition" : "${Variables.IncludeChat == 'Yes'}",
+      "name" : "Service_Live_Agent_Chat",
+      "file" : "dashboards/Service_Live_Agent_Chat.json",
+      "label" : "Service Live Agent Chat"
+    },
+    {
+      "condition" : "${Variables.IncludeOmni == 'Yes'}",
+      "name" : "Service_Omni",
+      "file" : "dashboards/Service_Omni.json",
+      "label" : "Service Omni"
+    }
+  ],
+  "label" : "Service Analytics v6 - Demo",
+  "folderDefinition" : "folder.json",
+  "rules" : [
+    {
+      "file" : "rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "macros.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-case.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-case-article.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-case-history.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-event.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-knowledge-data-category.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-knowledge-view-stat.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-knowledge-vote-stat.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-kcs-article-ka.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-knowledge-article-kav.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-opportunity.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-task.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-live-chat-transcript-event.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-live-chat-transcript.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-agent-work.rules.json",
+      "type" : "templateToApp"
+    },
+    {
+      "file" : "demo_rules/handle-user-service-presence.rules.json",
+      "type" : "templateToApp"
+    }
+  ],
+  "eltDataflows" : [
+    {
+      "file" : "dataflows/ServiceAnalyticsDataflow.json"
+    }
+  ],
+  "externalFiles" : [ ],
+  "datasetFiles" : [
+    {
+      "name" : "ServiceCase",
+      "label" : "ServiceCase",
+      "userXmd" : "dataset_files/ServiceApp_XMD_20_template.json"
+    },
+    {
+      "condition" : "${Variables.IncludeOpportunity == 'Yes'}",
+      "name" : "ServiceOpportunity",
+      "label" : "ServiceOpportunity",
+      "userXmd" : "dataset_files/ServiceOpportunity_XMD_20_template.json"
+    },
+    {
+      "condition" : "${Variables.IncludeKnowledge == 'Yes'}",
+      "name" : "ServiceKnowledge",
+      "label" : "ServiceKnowledge",
+      "userXmd" : "dataset_files/ServiceKnowledge_XMD_20_template.json"
+    },
+    {
+      "condition" : "${Variables.IncludeKnowledge == 'Yes'}",
+      "name" : "ServiceKnowledgeAttached",
+      "label" : "ServiceKnowledgeAttached",
+      "userXmd" : "dataset_files/ServiceKnowledgeAttached_XMD_20_template.json"
+    },
+    {
+      "name" : "ServiceActivity",
+      "label" : "ServiceActivity",
+      "userXmd" : "dataset_files/ServiceActivity_XMD_20_template.json"
+    },
+    {
+      "condition" : "${Variables.IncludeCaseHistory == 'Yes'}",
+      "label" : "ServiceCaseHistory",
+      "name" : "ServiceCaseHistory",
+      "userXmd" : "dataset_files/ServiceCaseHistory_XMD_20_template.json"
+    },
+    {
+      "condition" : "${Variables.IncludeChat == 'Yes'}",
+      "label" : "ServiceChatTranscript",
+      "name" : "ServiceChatTranscript",
+      "userXmd" : "dataset_files/ServiceChatTranscript_XMD_20_template.json"
+    },
+    {
+      "condition" : "${Variables.IncludeChat == 'Yes'}",
+      "label" : "ServiceChatTranscriptEvent",
+      "name" : "ServiceChatTranscriptEvent",
+      "userXmd" : "dataset_files/ServiceChatTranscriptEvent_XMD_20_template.json"
+    },
+    {
+      "condition" : "${Variables.IncludeOmni == 'Yes'}",
+      "label" : "ServiceOmniAgentWork",
+      "name" : "ServiceOmniAgentWork",
+      "userXmd" : "dataset_files/ServiceOmniAgentWork_XMD_20_template.json"
+    },
+    {
+      "condition" : "${Variables.IncludeOmni == 'Yes'}",
+      "label" : "ServiceOmniUserPresence",
+      "name" : "ServiceOmniUserPresence",
+      "userXmd" : "dataset_files/ServiceOmniUserPresence_XMD_20_template.json"
+    }
+  ],
+  "apexCallback" : {
+    "name" : "ServiceWaveConfigurationModifier"
+  },
+  "uiDefinition" : "demo-ui.json",
+  "lenses" : [ ]
+}

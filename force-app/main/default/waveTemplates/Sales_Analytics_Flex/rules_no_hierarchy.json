@@ -1,0 +1,172 @@
+{
+  "rules": [
+    {
+      "name": "DeleteManagerRoleDropdownAndMoveOtherWidgets",
+      "condition": "${!Constants.HasRoleHierarchy}",
+      "appliesTo": [
+        
+        {
+          "type": "dashboard",
+          "name": "Pipeline_Changes"
+        },
+        {
+          "type": "dashboard",
+          "name": "Team_Productivity"
+        },
+        {
+           "type": "dashboard",
+           "name": "Manager_Overview"
+         },
+         {
+           "type": "dashboard",
+           "name": "Quota_Progress"
+         }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Manager Role filter",
+          "path": "$.state.filters..[?(@.label=='View As')]"
+        },
+        {
+          "action": "set",
+          "description": "Changing Owner filter label",
+          "path": "$.state.filters..[?(@.label=='Opportunity Owner')].label",
+          "value": "Owner"
+        }
+      ]
+    },
+    {
+      "name": "DeleteManagerRoleDropdownforActivities",
+      "condition": "${!Constants.HasRoleHierarchy}",
+      "appliesTo": [
+        
+        {
+          "type": "dashboard",
+          "name": "Manager_Activities"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Delete Manager Role filter",
+          "path": "$.state.filters..[?(@.label=='View As')]"
+        }
+      ]
+    },
+    {
+      "name": "DeleteManagerRoleDropdownAndMoveOtherWidgets",
+      "condition": "${!Constants.HasRoleHierarchy}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Pipeline_Changes"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Manager_Overview"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "Changing Filter title",
+          "path": "$.state.filters..[?(@.label=='View As')].label",
+          "value": "Owner"
+        }
+      ]
+    },
+    {
+      "name": "RenameText",
+      "condition": "${!Constants.HasRoleHierarchy}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Manager_Overview"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "Changing Hierarchy titles",
+          "path": "$.state.widgets..[?(@.text=='Forecast Hierarchy')].text",
+          "value": "Owner"
+        },
+        {
+          "action": "delete",
+          "description": "Remove all references to Roles in all XMDs",
+          "path": "$..table_detail..groups[3]"
+        },
+        {
+          "action": "delete",
+          "description": "Remove hierarchy dataset connection",
+          "path": "$.state.dataSourceLinks..[?(@.name=='connection_hierarchy')]"
+        },
+        {
+          "action": "set",
+          "description": "Changing Hierarchy titles",
+          "path": "$.state.widgets..[?(@.text=='Role Hierarchy')].text",
+          "value": "Owner"
+        }
+      ]
+    },
+    {
+      "name": "UpdateXMDs",
+      "condition": "${!Constants.HasRoleHierarchy}",
+      "appliesTo": [
+        {
+          "type": "xmd",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "delete",
+          "description": "Remove all references to Roles in all XMDs",
+          "path": "$..[?(@.field=~/.*Role.*/)]",
+          "value": "Owner"
+        }
+      ]
+    },
+    {
+      "name": "DeleteOwnerNameDropdownFromSalesStage",
+      "condition": "${!Constants.HasRoleHierarchy}",
+      "appliesTo": [
+        {
+          "type": "dashboard",
+          "name": "Sales_Stage_Analysis"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "path": "$.state.filters..[?(@.label=='Owner Role')].label",
+          "value": "Owner"
+        },
+        {
+          "action": "delete",
+          "description": "Removing Owner Name filter",
+          "path": "$.state.filters..[?(@.label=='Owner Name')]"
+        }
+      ]
+    },
+    {
+      "name": "FilterForOpportunityOwnersOnly",
+      "condition": "${!Constants.HasRoleHierarchy}",
+      "appliesTo": [
+        {
+          "type": "workflow",
+          "name": "*"
+        }
+      ],
+      "actions": [
+        {
+          "action": "set",
+          "description": "set filter criteria",
+          "path": "$.workflowDefinition.Filter_UserManager.parameters.filter",
+          "value": "CustomFilter:EQ:true,hasOpportunity:EQ:true"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;accountId&quot;:&quot;0015g00000GSQtJ&quot;,&quot;cartConfiguration&quot;:{},&quot;cartId&quot;:&quot;8015g0000004aBo&quot;,&quot;cartType&quot;:&quot;Quote&quot;,&quot;groupCartId&quot;:&quot;8015g0000004aBo&quot;,&quot;groupCartName&quot;:&quot;Residential combo&quot;}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>CPQ_StartBulkChange</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>OrderResponse</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%cartType% == &apos;Order&apos;&quot;,
+  &quot;label&quot; : &quot;ResponseAction2&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;StartAsyncJobForOrder&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>QuoteResponse</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%cartType% == &apos;Quote&apos;&quot;,
+  &quot;label&quot; : &quot;ResponseAction2&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : false,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;StartAsyncJobForQuote&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>sendNotificationFailedToStart</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;body&quot; : &quot;%SetUserId:asyncProcessName% has failed to start&quot;,
+    &quot;customNotificationTypeName&quot; : &quot;BulkNotifications&quot;,
+    &quot;targetID&quot; : &quot;%cartId%&quot;,
+    &quot;title&quot; : &quot;Bulk Change&quot;,
+    &quot;userID&quot; : &quot;= $Vlocity.UserId&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;disableChainable&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%sendNotificationStartedStatus% == false&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;integrationProcedureKey&quot; : &quot;CPQ_SendAppNotification&quot;,
+  &quot;label&quot; : &quot;IntegrationProcedureAction2&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;response&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>sendNotificationStarted</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;body&quot; : &quot;%SetUserId:asyncProcessName% has started&quot;,
+    &quot;customNotificationTypeName&quot; : &quot;BulkNotifications&quot;,
+    &quot;targetID&quot; : &quot;%cartId%&quot;,
+    &quot;title&quot; : &quot;Bulk Change&quot;,
+    &quot;userID&quot; : &quot;= $Vlocity.UserId&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;disableChainable&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%StartAsyncJobForOrder:code% == 202 OR %StartAsyncJobForQuote:code% == 202&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;integrationProcedureKey&quot; : &quot;CPQ_SendAppNotification&quot;,
+  &quot;label&quot; : &quot;IntegrationProcedureAction1&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetUserId</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;asyncProcessName&quot; : &quot;Bulk Change for %cartId% %groupCartName%&quot;,
+    &quot;userID&quot; : &quot;= $Vlocity.UserId&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>StartAsyncJobForOrder</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;additionalData&quot; : {
+      &quot;accountId&quot; : &quot;%accountId%&quot;,
+      &quot;cartConfiguration&quot; : &quot;%cartConfiguration%&quot;,
+      &quot;cartId&quot; : &quot;%cartId%&quot;,
+      &quot;cartType&quot; : &quot;%cartType%&quot;,
+      &quot;groupCartId&quot; : &quot;%groupCartId%&quot;,
+      &quot;userID&quot; : &quot;%SetUserId:userID%&quot;
+    },
+    &quot;asyncProcessName&quot; : &quot;%SetUserId:asyncProcessName%&quot;,
+    &quot;asyncProcessSteps&quot; : [ {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_CreateAssetizedOrderItem&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_CreateLineItemsFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetAssetsFromGroupCart&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Create Line Items&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_ExecuteAddLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_BulkAddFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetLineItemIdsUsingAssetIds&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Bulk Add&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_ExecuteDisconnectLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_BulkDisconnectFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetLineItemIdsUsingAssetIds&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Bulk Disconnect&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_ExecuteUpdateLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_BulkUpdateFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetLineItemIdsUsingAssetIds&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Bulk Update&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 5,
+          &quot;name&quot; : &quot;CPQ_ValidateLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_ValidateLineItemsFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetLineItemIdsUsingAssetIds&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Validate&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 5,
+          &quot;name&quot; : &quot;CPQ_PriceLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_PriceLineItemsFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Price&quot;
+    } ],
+    &quot;referenceId&quot; : &quot;%cartId%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%cartType% == &apos;Order&apos;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction2&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.VOIAsyncProcess&quot;,
+  &quot;remoteMethod&quot; : &quot;startAsyncJob&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>StartAsyncJobForQuote</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;additionalData&quot; : {
+      &quot;accountId&quot; : &quot;%accountId%&quot;,
+      &quot;cartConfiguration&quot; : &quot;%cartConfiguration%&quot;,
+      &quot;cartId&quot; : &quot;%cartId%&quot;,
+      &quot;cartType&quot; : &quot;%cartType%&quot;,
+      &quot;groupCartId&quot; : &quot;%groupCartId%&quot;,
+      &quot;userID&quot; : &quot;%SetUserId:userID%&quot;
+    },
+    &quot;asyncProcessName&quot; : &quot;%SetUserId:asyncProcessName%&quot;,
+    &quot;asyncProcessSteps&quot; : [ {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_CreateAssetizedQuoteLineItem&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_CreateLineItemsFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetAssetsFromGroupCart&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Create Line Items&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_ExecuteAddLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_BulkAddFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetLineItemIdsUsingAssetIds&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Bulk Add&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_ExecuteDisconnectLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_BulkDisconnectFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetLineItemIdsUsingAssetIds&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Bulk Disconnect&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 1,
+          &quot;name&quot; : &quot;CPQ_ExecuteUpdateLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_BulkUpdateFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetLineItemIdsUsingAssetIds&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Bulk Update&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 5,
+          &quot;name&quot; : &quot;CPQ_ValidateLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;name&quot; : &quot;CPQ_ValidateLineItemsFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;startProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_GetLineItemIdsUsingAssetIds&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Validate&quot;
+    }, {
+      &quot;asyncJobDetails&quot; : {
+        &quot;executeProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;executeAsyncJobsInSequence&quot; : true,
+          &quot;itemsToProcessPerAsyncJob&quot; : 5,
+          &quot;name&quot; : &quot;CPQ_PriceLineItems&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        },
+        &quot;finishProcess&quot; : {
+          &quot;asyncJobNumberOfRetriesOnFail&quot; : 0,
+          &quot;name&quot; : &quot;CPQ_PriceLineItemsFinishProcess&quot;,
+          &quot;type&quot; : &quot;Integration Procedure&quot;
+        }
+      },
+      &quot;stepName&quot; : &quot;Price&quot;
+    } ],
+    &quot;referenceId&quot; : &quot;%cartId%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%cartType% == &apos;Quote&apos;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction1&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.VOIAsyncProcess&quot;,
+  &quot;remoteMethod&quot; : &quot;startAsyncJob&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessKey>CPQ_StartBulkChange</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>StartBulkChange</subType>
+    <type>CPQ</type>
+    <uniqueName>CPQ_StartBulkChange_Procedure_4</uniqueName>
+    <versionNumber>4.0</versionNumber>
+    <webComponentKey>1e642404-8a88-b658-8033-6b793c3e0ef0</webComponentKey>
+</OmniIntegrationProcedure>

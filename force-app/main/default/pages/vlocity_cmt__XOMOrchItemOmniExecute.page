@@ -1,0 +1,26 @@
+<apex:page standardController="vlocity_cmt__OrchestrationItem__c" extensions="vlocity_cmt.XOMQueueItemsController" showHeader="false" sidebar="false">
+    <apex:includeLightning />
+    <div id="LightningComponentid" />
+    <script>
+
+        let recordId = '{!LEFT($CurrentPage.parameters.Id, 15)}';
+        let itemType = '{!JSENCODE(OrchestrationItem__c.OrchestrationItemType__c)}';
+        let execURL = '{!JSENCODE(OrchestrationItem__c.CustomTaskExecutionURL__c)}';
+        
+        try{
+            $Lightning.use(`c:ltngOutVF`, function() {
+                $Lightning.createComponent(
+                    `c:omniExecLWC`,{
+                        recordId: '{!$CurrentPage.parameters.id}',
+                        itemType: itemType,
+                        execURL: execURL
+                    },
+                    "LightningComponentid",
+                    function(cmp) {
+
+                    });
+            });
+        }catch(e){ 
+        }
+    </script>
+</apex:page>

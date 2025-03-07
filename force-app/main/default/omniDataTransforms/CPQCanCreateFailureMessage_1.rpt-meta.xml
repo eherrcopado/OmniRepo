@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;data&quot; : {
+    &quot;canCreateFDO&quot; : true,
+    &quot;disconnectedAssets&quot; : false,
+    &quot;messages&quot; : [ ],
+    &quot;noRequestDateTime&quot; : true
+  },
+  &quot;messages&quot; : [ {
+    &quot;code&quot; : &quot;215&quot;,
+    &quot;message&quot; : &quot;Change To Order Failed.&quot;,
+    &quot;severity&quot; : &quot;ERROR&quot;
+  } ],
+  &quot;totalSize&quot; : 0
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;data&quot; : {
+    &quot;canCreateFDO&quot; : true,
+    &quot;disconnectedAssets&quot; : false,
+    &quot;messages&quot; : [ ],
+    &quot;noRequestDateTime&quot; : true
+  },
+  &quot;messages&quot; : [ {
+    &quot;code&quot; : &quot;215&quot;,
+    &quot;message&quot; : &quot;Change To Order Failed.&quot;,
+    &quot;severity&quot; : &quot;ERROR&quot;
+  } ],
+  &quot;totalSize&quot; : 0
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CPQCanCreateFailureMessage</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-CanCreateFailureMessageCustom9760</globalKey>
+        <inputFieldName>consolidatedMsg</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQCanCreateFailureMessage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>messages:message</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-CanCreateFailureMessageCustom644</globalKey>
+        <inputFieldName>data</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQCanCreateFailureMessage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>data</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-CanCreateFailureMessageCustom914</globalKey>
+        <inputFieldName>messages</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQCanCreateFailureMessage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>messages</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:data:canCreateFDO NOT | var:data:disconnectedAssets NOT &amp;&amp; var:messages:errorMessage &apos;&apos; == &amp;&amp; &apos;Can/\/\/not/\/\/create/\/\/the/\/\/Order/\/\/as/\/\/there/\/\/is/\/\/already/\/\/an/\/\/Order/\/\/with/\/\/Request/\/\/Date/\/\/greater/\/\/than/\/\/Order/\/\/Request/\/\/Date&apos; var:messages:errorMessage IF</formulaConverted>
+        <formulaExpression>IF((NOT(data:canCreateFDO) &amp;&amp; NOT(data:disconnectedAssets) &amp;&amp; messages:errorMessage == &apos;&apos;),&apos;Can not create the Order as there is already an Order with Request Date greater than Order Request Date&apos;,messages:errorMessage )</formulaExpression>
+        <formulaResultPath>messages:errorMessage</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>CPQ-CanCreateFailureMessageCustom648</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQCanCreateFailureMessage</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:data:canCreateFDO NOT var:data:disconnectedAssets &amp;&amp; var:messages:errorMessage &apos;&apos; == &amp;&amp; &apos;Assets/\/\/cannot/\/\/be/\/\/modified/\/\/because/\/\/a/\/\/request/\/\/has/\/\/already/\/\/been/\/\/made/\/\/to/\/\/disconnect/\/\/it.&apos; var:messages:errorMessage IF</formulaConverted>
+        <formulaExpression>IF((NOT(data:canCreateFDO) &amp;&amp; data:disconnectedAssets &amp;&amp; messages:errorMessage == &apos;&apos;),&apos;Assets cannot be modified because a request has already been made to disconnect it.&apos;, messages:errorMessage )</formulaExpression>
+        <formulaResultPath>messages:errorMessage</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>CPQ-CanCreateFailureMessageCustom245</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQCanCreateFailureMessage</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CPQ-CanCreateFailureMessageCustom1354</globalKey>
+        <inputFieldName>totalSize</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQCanCreateFailureMessage</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>totalSize</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:data:canCreateFDO NOT var:data:noRequestDateTime &amp;&amp; &apos;Cannot/\/\/add/\/\/asset/\/\/to/\/\/order/\/\/as/\/\/there/\/\/is/\/\/no/\/\/request/\/\/Start/\/\/date/\/\/in/\/\/the/\/\/order&apos; &apos;&apos; IF</formulaConverted>
+        <formulaExpression>IF((NOT(data:canCreateFDO) &amp;&amp; data:noRequestDateTime),&apos;Cannot add asset to order as there is no request Start date in the order&apos;, &apos;&apos; )</formulaExpression>
+        <formulaResultPath>messages:errorMessage</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>CPQ-CanCreateFailureMessageCustom2600</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQCanCreateFailureMessage</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:messages:errorMessage &apos;&apos; != var:messages:errorMessage var:messages:message IF</formulaConverted>
+        <formulaExpression>IF((messages:errorMessage != &apos;&apos;),messages:errorMessage,messages:message)</formulaExpression>
+        <formulaResultPath>messages:message</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>CPQ-CanCreateFailureMessageCustom257</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CPQCanCreateFailureMessage</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;data&quot; : {
+    &quot;canCreateFDO&quot; : true,
+    &quot;disconnectedAssets&quot; : false,
+    &quot;messages&quot; : [ ],
+    &quot;noRequestDateTime&quot; : false
+  },
+  &quot;messages&quot; : [ {
+    &quot;code&quot; : &quot;215&quot;,
+    &quot;message&quot; : &quot;Change To Order Failed.&quot;,
+    &quot;severity&quot; : &quot;ERROR&quot;
+  } ],
+  &quot;totalSize&quot; : 0
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>CPQCanCreateFailureMessage_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

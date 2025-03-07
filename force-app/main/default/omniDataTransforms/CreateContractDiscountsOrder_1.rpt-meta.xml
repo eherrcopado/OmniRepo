@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>This Data Raptor is used for creating and Updating the Frame Contracts, Contract Documents and Contract Discounts</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountId&quot; : &quot;001f400000R8I3eAAF&quot;,
+  &quot;ContractId&quot; : &quot;&quot;,
+  &quot;ContractStatus&quot; : &quot;Draft&quot;,
+  &quot;ContractType&quot; : &quot;Default&quot;,
+  &quot;Order&quot; : {
+    &quot;AccountId&quot; : &quot;001f400000R8I3eAAF&quot;,
+    &quot;Discount&quot; : [ {
+      &quot;AppliesToAllItems&quot; : true,
+      &quot;Description&quot; : &quot;TEST ORDER DISCOUNT 1 DESCRIPTIONS&quot;,
+      &quot;DiscountItem&quot; : {
+        &quot;CatalogCategoryId&quot; : &quot;a0Ff4000003W2I7EAK&quot;,
+        &quot;Description&quot; : &quot;TEST ORDER DISCOUNT ITEM1&quot;,
+        &quot;Name&quot; : &quot;TEST ORDER DISCOUNT ITEM1&quot;,
+        &quot;ProductId&quot; : &quot;01tf4000003hmOdAAI&quot;
+      },
+      &quot;DiscountPricing&quot; : {
+        &quot;AdjustmentValue&quot; : 100,
+        &quot;Amount&quot; : 10,
+        &quot;Name&quot; : &quot;TEST ORDER DISCOUNT PRICING1&quot;,
+        &quot;PricingVariableId&quot; : &quot;a2rf4000000Qwz7AAC&quot;,
+        &quot;TimePlanId&quot; : &quot;a39f4000000R2vhAAC&quot;,
+        &quot;TimePolicyId&quot; : &quot;a3Af40000009YaJEAU&quot;
+      },
+      &quot;EffectiveEndDate&quot; : &quot;2020-01-21T21:13:00.000Z&quot;,
+      &quot;EffectiveStartDate&quot; : &quot;2019-01-21T21:13:00.000Z&quot;,
+      &quot;Name&quot; : &quot;TestOrderDiscount1&quot;,
+      &quot;ReferenceNumber&quot; : &quot;lwkdalkmsdlk&quot;,
+      &quot;TemplateId&quot; : &quot;a2yf4000000unwXAAQ&quot;
+    }, {
+      &quot;AppliesToAllItems&quot; : true,
+      &quot;Description&quot; : &quot;TEST ORDER DISCOUNT 1 DESCRIPTIONS&quot;,
+      &quot;DiscountItem&quot; : {
+        &quot;CatalogCategoryId&quot; : &quot;a0Ff4000003W2I7EAK&quot;,
+        &quot;Description&quot; : &quot;TEST ORDER DISCOUNT ITEM2&quot;,
+        &quot;Name&quot; : &quot;TEST ORDER DISCOUNT ITEM--2&quot;
+      },
+      &quot;DiscountPricing&quot; : {
+        &quot;AdjustmentValue&quot; : 2000,
+        &quot;Name&quot; : &quot;TEST ORDER DISCOUNT PRICING2&quot;,
+        &quot;PricingVariableId&quot; : &quot;a2rf4000000Qwz7AAC&quot;
+      },
+      &quot;EffectiveStartDate&quot; : &quot;2019-01-21T21:13:00.000Z&quot;,
+      &quot;Name&quot; : &quot;TestOrderDiscount2&quot;,
+      &quot;ReferenceNumber&quot; : &quot;lwkdalkmsdlk&quot;
+    } ],
+    &quot;Name&quot; : &quot;New Order&quot;,
+    &quot;originalContractId&quot; : &quot;800f4000000wMc8AAE&quot;
+  },
+  &quot;OrderId&quot; : &quot;801f4000001V6RU&quot;,
+  &quot;StartDate&quot; : &quot;2019-02-14&quot;,
+  &quot;VersionStatus&quot; : &quot;Active&quot;,
+  &quot;errorDetails&quot; : &quot;&quot;,
+  &quot;errorInfo&quot; : &quot;&quot;,
+  &quot;errorOK&quot; : &quot;&quot;,
+  &quot;isFrameContract&quot; : true
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>CreateContractDiscountsOrder</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem18</globalKey>
+        <inputFieldName>Order:Discount:DiscountItem:CatalogCategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__CatalogCategoryId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem16</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem15</globalKey>
+        <inputFieldName>Order:Discount:TemplateId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__DiscountTemplateId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscount__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustom5316</globalKey>
+        <inputFieldName>Order:Discount:AppliesToAllItems</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AppliesToAllItems__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscount__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem0</globalKey>
+        <inputFieldName>ContractStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem21</globalKey>
+        <inputFieldName>Order:Discount:DiscountItem:ProductId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ProductId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem20</globalKey>
+        <inputFieldName>Order:Discount:DiscountItem:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountItem__c</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem19</globalKey>
+        <inputFieldName>Order:Discount:DiscountItem:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Description__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem17</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>3.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ContractVersionDiscountId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem4</globalKey>
+        <inputFieldName>Order:Name</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem3</globalKey>
+        <inputFieldName>Order:AccountId</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem2</globalKey>
+        <inputFieldName>isFrameContract</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__IsFrameContract__c</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem24</globalKey>
+        <inputFieldName>Order:Discount:DiscountPricing:AdjustmentValue</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AdjustmentValue__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountPricing__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem22</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountPricing__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem28</globalKey>
+        <inputFieldName>Order:Discount:DiscountPricing:TimePlanId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TimePlanId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountPricing__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem27</globalKey>
+        <inputFieldName>Order:Discount:DiscountPricing:PricingVariableId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PricingVariableId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountPricing__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem26</globalKey>
+        <inputFieldName>Order:Discount:DiscountPricing:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountPricing__c</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem25</globalKey>
+        <inputFieldName>Order:Discount:DiscountPricing:Amount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Amount__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountPricing__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem23</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>3.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ContractVersionDiscountId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountPricing__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem29</globalKey>
+        <inputFieldName>Order:Discount:DiscountPricing:TimePolicyId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__TimePolicyId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscountPricing__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem1</globalKey>
+        <inputFieldName>ContractType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ContractType__c</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem6</globalKey>
+        <inputFieldName>OrderId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__OrderId__c</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem5</globalKey>
+        <inputFieldName>Order:originalContractId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__OriginalContractId__c</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem10</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscount__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem9</globalKey>
+        <inputFieldName>VersionStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersion__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem8</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ContractId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersion__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem7</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersion__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem14</globalKey>
+        <inputFieldName>Order:Discount:ReferenceNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ReferenceNumber__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscount__c</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem13</globalKey>
+        <inputFieldName>Order:Discount:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscount__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem12</globalKey>
+        <inputFieldName>Order:Discount:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Description__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscount__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateContractDiscountsOrderCustoma0Nf4000004AIjVEAWItem11</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>2.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateContractDiscountsOrder</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ContractVersionId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractVersionDiscount__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;Quote&quot; : {
+    &quot;Discount&quot; : [ {
+      &quot;DiscountPricing&quot; : {
+        &quot;TimePolicyId&quot; : &quot;a3Af40000009YaJEAU&quot;,
+        &quot;TimePlanId&quot; : &quot;a39f4000000R2vhAAC&quot;,
+        &quot;PricingVariableId&quot; : &quot;a2rf4000000Qwz7AAC&quot;,
+        &quot;Amount&quot; : 10,
+        &quot;Name&quot; : &quot;Discount Pricing1-1&quot;,
+        &quot;AdjustmentValue&quot; : 400
+      },
+      &quot;DiscountItem&quot; : {
+        &quot;ProductId&quot; : &quot;01tf4000001opAuAAI&quot;,
+        &quot;CatalogCategoryId&quot; : &quot;a0Ff4000003W2I7EAK&quot;,
+        &quot;Name&quot; : &quot;Discount Item 1-1&quot;
+      },
+      &quot;ReferenceNumber&quot; : &quot;111111&quot;,
+      &quot;EffectiveStartDate&quot; : &quot;2019-01-28T23:29:00.000Z&quot;,
+      &quot;EffectiveEndDate&quot; : &quot;2020-01-28T23:40:00.000Z&quot;,
+      &quot;Name&quot; : &quot;QuoteDiscount1&quot;
+    }, {
+      &quot;ReferenceNumber&quot; : &quot;3333333&quot;,
+      &quot;EffectiveStartDate&quot; : &quot;2019-01-29T00:48:00.000Z&quot;,
+      &quot;Name&quot; : &quot;QuoteDiscount3&quot;
+    } ],
+    &quot;Name&quot; : &quot;NewQuote3&quot;,
+    &quot;AccountId&quot; : &quot;001f400000R8I3eAAF&quot;
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateContractDiscountsOrder_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

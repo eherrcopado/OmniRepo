@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AdjustmentRequested&quot; : { },
+  &quot;ContextId&quot; : null,
+  &quot;MeterReadRebill&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;AdjustmentRequested&quot; : null,
+    &quot;DRGetCaseStatus&quot; : null,
+    &quot;DRUpdateAccountStatement&quot; : null,
+    &quot;DRUpdateCase&quot; : null,
+    &quot;MeterReadRebill&quot; : null,
+    &quot;Response&quot; : null,
+    &quot;SVCheckUpdateCase&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformCreatePaymentPlanToJSON</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>85a1a9d2-bcbb-4aec-7553-3bbac8a98878</globalKey>
+        <inputFieldName>PaymentPlans:DownPaymentAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>DownPaymentAmount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5abe0237-5971-3c82-efd4-862ed3223882</globalKey>
+        <inputFieldName>PaymentPlans:BalanceAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BalanceAmount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8d55e2b4-f9e7-dba7-614e-61d4686c3f1a</globalKey>
+        <inputFieldName>BillingAccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BPNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>cf448334-f682-efeb-5852-9928715ad9e5</globalKey>
+        <inputFieldName>PaymentPlans:StartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StartDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a11f94cc-51d1-d714-aa44-d58cd943520b</globalKey>
+        <inputFieldName>PaymentPlans:PaymentPlanName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PaymentPlanName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2bd53775-f97b-88d0-bc14-a5bcf3da2a72</globalKey>
+        <inputFieldName>SelectPaymentMethods:Payments:MethodType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PaymentMethod</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4dabf25b-5cf1-1023-391d-c61b1354c430</globalKey>
+        <inputFieldName>PaymentPlans:NumberOfInstallments</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>NumberOfInstallments</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f2f291d1-893a-2ad7-dd35-f9301b37f5dd</globalKey>
+        <inputFieldName>PaymentPlans:InstallmentAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>InstallmentAmount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>808dc147-9019-cc66-dac0-93124dec47f1</globalKey>
+        <inputFieldName>PaymentPlans:PaymentPlanReason</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PaymentPlanReason</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d27dd733-72d5-258e-7554-16b2bdd72385</globalKey>
+        <inputFieldName>PaymentPlans:ServiceTerms</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ServiceTerms</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:AccountBalanceDetails:PaymentPlan &apos;AccountBalance&apos; = var:AccountBalanceDetails:AccountBalances var:AccountBalanceDetails:BalanceAmount IF</formulaConverted>
+        <formulaExpression>IF(%AccountBalanceDetails:PaymentPlan%=&apos;AccountBalance&apos;,%AccountBalanceDetails:AccountBalances%,%AccountBalanceDetails:BalanceAmount%)</formulaExpression>
+        <formulaResultPath>BalanceAmount</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>a7e289f5-97d5-9046-d942-40e6a1e514ce</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreatePaymentPlanToJSON</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountBalanceDetails&quot; : {
+    &quot;AccountBalanceMsg&quot; : null,
+    &quot;AccountBalances&quot; : 23456,
+    &quot;BalanceAmount&quot; : null,
+    &quot;CountPaymentMethod&quot; : 2,
+    &quot;DetectChange&quot; : 5,
+    &quot;DownPayment&quot; : 10000,
+    &quot;InstallmentAmount&quot; : 2691.2,
+    &quot;InstallmentAmountMessaging&quot; : true,
+    &quot;InsufficentBalanceMsg&quot; : true,
+    &quot;NumberOfInstallments&quot; : 5,
+    &quot;PaymentDate&quot; : &quot;09/17/2020&quot;,
+    &quot;PaymentDateFormula&quot; : false,
+    &quot;PaymentDateMessaging&quot; : true,
+    &quot;PaymentPlan&quot; : &quot;AccountBalance&quot;,
+    &quot;PaymentPlanReason&quot; : &quot;Amount in dispute&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;StartDate&quot; : &quot;9/16/2020&quot;
+  },
+  &quot;AccountRelatedDetails&quot; : {
+    &quot;AccountBalance&quot; : {
+      &quot;CurrentBalance&quot; : 23456,
+      &quot;DueDate&quot; : &quot;2020-08-25&quot;,
+      &quot;Id&quot; : &quot;a023h000009WtvcAAC&quot;,
+      &quot;Name&quot; : &quot;AB-0000&quot;
+    },
+    &quot;PaymentMethod&quot; : [ {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a3Q3h00000058nfEAA&quot;,
+      &quot;MethodType&quot; : &quot;Credit Card&quot;,
+      &quot;Name&quot; : &quot;PM-0000&quot;
+    }, {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a3Q3h00000058oOEAQ&quot;,
+      &quot;MethodType&quot; : &quot;Bank Account&quot;,
+      &quot;Name&quot; : &quot;PM-0003&quot;
+    } ]
+  },
+  &quot;BankAccountDetails&quot; : [ {
+    &quot;Active&quot; : true,
+    &quot;Id&quot; : &quot;a3Q3h00000058nfEAA&quot;,
+    &quot;MethodType&quot; : &quot;Credit Card&quot;,
+    &quot;Name&quot; : &quot;PM-0000&quot;
+  }, {
+    &quot;Active&quot; : true,
+    &quot;Id&quot; : &quot;a3Q3h00000058oOEAQ&quot;,
+    &quot;MethodType&quot; : &quot;Bank Account&quot;,
+    &quot;Name&quot; : &quot;PM-0003&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingAccountId&quot; : &quot;0013h00000CVS7SAAX&quot;,
+  &quot;BillingAccountNumber&quot; : &quot;&quot;,
+  &quot;BillingProfileDetails&quot; : {
+    &quot;BillingAccountProfile&quot; : {
+      &quot;AccountId&quot; : &quot;0013h00000CVS7SAAX&quot;,
+      &quot;AccountName&quot; : &quot;Head Office - Billing&quot;,
+      &quot;AccountNumber&quot; : &quot;&quot;,
+      &quot;BillCycle&quot; : &quot;3&quot;,
+      &quot;BillDeliveryMethod&quot; : &quot;Electronic Statements Online&quot;,
+      &quot;BillFormat&quot; : &quot;Detail&quot;,
+      &quot;BillFrequency&quot; : &quot;Weekly&quot;,
+      &quot;BillNumberCopies&quot; : 8,
+      &quot;BillingAddressCity&quot; : &quot;Boston&quot;,
+      &quot;BillingAddressCountry&quot; : &quot;United States&quot;,
+      &quot;BillingAddressPostalCode&quot; : &quot;18913&quot;,
+      &quot;BillingAddressState&quot; : &quot;Pennsylvania&quot;,
+      &quot;BillingAddressStreet&quot; : &quot;100 Main St, 100&quot;,
+      &quot;BillingEmailAddress&quot; : &quot;test1@gmail.com&quot;
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;TaxExcemptionEndDate&quot; : &quot;09/26/2020&quot;,
+      &quot;TaxExcemptionPercentage&quot; : 12,
+      &quot;TaxExcemptionStartDate&quot; : &quot;09/09/2020&quot;,
+      &quot;TaxExcemptionType&quot; : &quot;Exempt&quot;,
+      &quot;TaxId&quot; : &quot;76-4874848&quot;
+    }
+  },
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;ContextAccountId&quot; : &quot;0013h00000CVS5qAAH&quot;,
+  &quot;ContextId&quot; : &quot;0013h00000CVS7SAAX&quot;,
+  &quot;CountPaymentPlan&quot; : 1,
+  &quot;DRId_vlocity_cmt__PaymentPlan__c&quot; : &quot;a3R3h000000IjxwEAC&quot;,
+  &quot;FetchAcc&quot; : &quot;yes&quot;,
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;MaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;Message&quot; : &quot;Payment Plan created successfully.&quot;,
+  &quot;OmniscriptType&quot; : &quot;CreatePaymentPlan&quot;,
+  &quot;OverridePaymentPlan&quot; : {
+    &quot;OverwritePaymentPlan&quot; : &quot;Yes&quot;
+  },
+  &quot;PaymentColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;Id&quot;,
+    &quot;label&quot; : &quot;&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;Name&quot;,
+    &quot;label&quot; : &quot;Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;MethodType&quot;,
+    &quot;label&quot; : &quot;Method Type&quot;
+  } ],
+  &quot;PaymentDetails&quot; : null,
+  &quot;PaymentId&quot; : &quot;a3Q3h00000058nfEAA&quot;,
+  &quot;PaymentPlans&quot; : {
+    &quot;AccountId&quot; : &quot;0013h00000CVS7SAAX&quot;,
+    &quot;BalanceAmount&quot; : 23456,
+    &quot;DeactivationDate&quot; : &quot;&quot;,
+    &quot;DownPaymentAmount&quot; : 10000,
+    &quot;EndDate&quot; : &quot;&quot;,
+    &quot;InstallmentAmount&quot; : 2691.2,
+    &quot;NumberOfInstallments&quot; : 5,
+    &quot;PaymentFrequency&quot; : &quot;Monthly&quot;,
+    &quot;PaymentPlanId&quot; : &quot;a3R3h000000IjxwEAC&quot;,
+    &quot;PaymentPlanName&quot; : &quot;a3R3h000000Ijxw&quot;,
+    &quot;PaymentPlanReason&quot; : &quot;Amount in dispute&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;StartDate&quot; : &quot;&quot;,
+    &quot;Status&quot; : &quot;Active&quot;
+  },
+  &quot;SAPIntegrated&quot; : &quot;Yes&quot;,
+  &quot;SelectPaymentMethods&quot; : {
+    &quot;CreateNewPaymentQuestion&quot; : null,
+    &quot;PaymentMethodMessaging&quot; : true,
+    &quot;Payments&quot; : {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a3Q3h00000058nfEAA&quot;,
+      &quot;MethodType&quot; : &quot;Credit Card&quot;,
+      &quot;Name&quot; : &quot;PM-0000&quot;,
+      &quot;originalIndex&quot; : &quot;0&quot;
+    }
+  },
+  &quot;timeStamp&quot; : &quot;2020-09-16T06:57:03.392Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002vubKAAQ&quot;,
+  &quot;userName&quot; : &quot;energy_express@qe.org&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;330&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;AccountBalanceDetails&quot; : 186647,
+    &quot;BankPaymentDetails&quot; : 0,
+    &quot;ChoosePaymentMethod&quot; : 0,
+    &quot;CreateBankAccountPaymentMethod&quot; : 0,
+    &quot;CreateCreditCardPaymentMethod&quot; : 0,
+    &quot;CreatePaymentPlan&quot; : 1244,
+    &quot;FetchAccountBalanceDetails&quot; : 4777,
+    &quot;FetchActivePaymentPlans&quot; : 3754,
+    &quot;FetchCreatedPaymentPlanDetails&quot; : 1095,
+    &quot;IPGetBillingAccountDetails&quot; : 920,
+    &quot;OmniScriptSessionToken&quot; : &quot;4e2fc0d1-663c-47a3-9430-c120c95e4704&quot;,
+    &quot;OverridePaymentPlan&quot; : 9823,
+    &quot;PaymentDetails&quot; : 0,
+    &quot;SVBillingAccountId&quot; : 191,
+    &quot;SVPaymentColumns&quot; : 155,
+    &quot;SelectPaymentMethods&quot; : 17036,
+    &quot;SetAccountDetails&quot; : 183,
+    &quot;SetPaymentIds&quot; : 48,
+    &quot;UpdatePaymentPlan&quot; : 1841,
+    &quot;VIPCreatePaymentPlan&quot; : 1069,
+    &quot;VIPCreatePaymentPlan_NonSAP&quot; : 0
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformCreatePaymentPlanToJSON_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,70 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Order",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "dxpStyle" : { },
+            "sectionConfig" : "{\"UUID\":\"23717737-92bd-41a5-b92b-8f664cdfcdcf\",\"columns\":[{\"UUID\":\"1c85bb53-62c7-4e27-a8b2-7c75192c379a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "bodyText" : "We will send an email with your confirmation number and receipt shortly.",
+                "buttonText" : "Continue Shopping",
+                "confirmationNumberText" : "Confirmation Number",
+                "dxpStyle" : { },
+                "headerText" : "Thank you for your order!"
+              },
+              "definition" : "commerce_unified_checkout:orderConfirmation",
+              "id" : "386e4b77-0617-4b9f-ae27-3bb3f86fc901",
+              "type" : "component"
+            } ],
+            "id" : "1c85bb53-62c7-4e27-a8b2-7c75192c379a",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "23717737-92bd-41a5-b92b-8f664cdfcdcf",
+          "type" : "component"
+        } ],
+        "id" : "763e29cf-c29b-4ff0-b82b-2c1efabcd02d",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { },
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "ff65eb56-2161-4950-b6cc-994d40ad205c",
+          "type" : "component"
+        } ],
+        "id" : "8550ac94-fb1b-4089-98c8-f53fbb0625f3",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "4be43504-d564-4098-a634-4062bd961b38",
+      "type" : "component"
+    },
+    "dataProviders" : [ {
+      "definition" : "sfdc_cms__commerceOrderDetailDataProvider",
+      "sfdcExpressionKey" : "Order",
+      "attributes" : {
+        "recordId" : "{!Route.orderNumber}"
+      }
+    } ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "order"
+  },
+  "urlName" : "order"
+}

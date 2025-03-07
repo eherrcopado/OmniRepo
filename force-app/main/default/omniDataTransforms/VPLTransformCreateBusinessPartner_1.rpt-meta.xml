@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Used to transform inputs to call IP for Create Business partner in external system</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingAccountRecordType&quot; : &quot;Billing&quot;,
+  &quot;BillingPreferences&quot; : { },
+  &quot;BusinessAccountRecTypeId&quot; : &quot;0123h000000jV4HAAU&quot;,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;Confirmation&quot; : null,
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Business&quot;,
+    &quot;BillingDetails&quot; : { },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-09-02T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;BusinessAccountName&quot; : &quot;test&quot;,
+      &quot;CustomerDOB&quot; : &quot;09/01/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;iiiuyi&quot;,
+      &quot;CustomerLastName&quot; : &quot;iyiyi&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;TaxID&quot;,
+      &quot;SSN&quot; : null,
+      &quot;TaxId&quot; : &quot;335446768&quot;
+    },
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : null
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : null,
+      &quot;ExemptionPercentage&quot; : null,
+      &quot;ExemptionStartDate&quot; : null
+    }
+  },
+  &quot;Error&quot; : { },
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;Products&quot; : {
+    &quot;ElectricityProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+      &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;001&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+      &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;003&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+      &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;002&quot;
+    } ],
+    &quot;GasProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+      &quot;Name&quot; : &quot;Turn Off Order&quot;,
+      &quot;ProductCode&quot; : &quot;004&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+      &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+    } ],
+    &quot;WaterProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+      &quot;Name&quot; : &quot;Water&quot;,
+      &quot;ProductCode&quot; : &quot;water&quot;
+    } ]
+  },
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectPremises&quot; : {
+    &quot;NewAccountPremises&quot; : null,
+    &quot;PremiseError&quot; : null,
+    &quot;ServiceLocation-Block&quot; : {
+      &quot;PremCity&quot; : &quot;Kolkata&quot;,
+      &quot;PremCountry&quot; : &quot;India&quot;,
+      &quot;PremId&quot; : &quot;a3X3h0000006OvsEAE&quot;,
+      &quot;PremPostalCode&quot; : &quot;700059&quot;,
+      &quot;PremState&quot; : &quot;West Bengal&quot;,
+      &quot;PremiseName&quot; : &quot;London Premise&quot;,
+      &quot;PremiseNumber&quot; : &quot;12121&quot;,
+      &quot;PremiseStreetAddress&quot; : &quot;Akshara Lotus Garden London&quot;,
+      &quot;ServiceLocation&quot; : &quot;London Premise&quot;
+    }
+  },
+  &quot;SelectService&quot; : {
+    &quot;PremiseNumber&quot; : &quot;12121&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvsEAE&quot;
+  },
+  &quot;SelectedPremises&quot; : &quot;a3X3h0000006OvsEAE&quot;,
+  &quot;SelectedServiceMaxRow&quot; : &quot;&quot;,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServiceAccountRecordType&quot; : &quot;Service&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SelectProduct&quot;,
+    &quot;label&quot; : &quot;Select Product&quot;
+  } ],
+  &quot;ServicePointsError&quot; : {
+    &quot;CountofServicePoints&quot; : 0,
+    &quot;NoServicePointsError&quot; : false
+  },
+  &quot;timeStamp&quot; : &quot;2020-09-02T05:27:37.391Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CustomerSelection&quot; : 40967,
+    &quot;DR-GetProducts&quot; : 2975,
+    &quot;DRExtractBussinessAccountRecId&quot; : 1063,
+    &quot;ExtractServiceAccountPremises&quot; : 0,
+    &quot;GetPremServicePoints&quot; : 1076,
+    &quot;OmniScriptSessionToken&quot; : &quot;9ec194c3-95e3-4e8f-a2bd-cc48aa51bad4&quot;,
+    &quot;SelectPremises&quot; : 8830,
+    &quot;SetCustomLWCValues&quot; : 190,
+    &quot;SetDefaultValues&quot; : 142,
+    &quot;SetPremisesBusinessAccountRecTypeId&quot; : 106
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformCreateBusinessPartner</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9e3cf696-1d9e-f9f9-2b77-2ea3f9681688</globalKey>
+        <inputFieldName>SelectPremises:ServiceLocation-Block:PremState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingState</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1007da20-9670-1b33-4e7e-ba748d840e05</globalKey>
+        <inputFieldName>SelectPremises:ServiceLocation-Block:PremPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingPostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9bd0dfcd-677d-9f14-ad4e-2a5c6bcef767</globalKey>
+        <inputFieldName>SelectPremises:ServiceLocation-Block:PremCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCountry</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5844eede-16f0-9cb1-9d9f-e01b4ecae54a</globalKey>
+        <inputFieldName>SelectPremises:ServiceLocation-Block:PremCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingCity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ee8738c6-b52f-cd10-cbc1-0e5bcea632bd</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerLastName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LastName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c83295d3-2623-bedd-1130-ab6ff936897e</globalKey>
+        <inputFieldName>FML_AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a54d0744-3b97-2e89-da52-70bbd2059654</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerFirstName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FirstName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ed826511-7468-1c52-a54c-80f1fcebd2d6</globalKey>
+        <inputFieldName>SelectPremises:ServiceLocation-Block:PremiseStreetAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BillingStreet</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2a9bba78-1050-c73e-ebf8-c2a762cdd82a</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerPhone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>Phone</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>da5f9f12-27f9-9288-3a0c-87f1ecca7a50</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerEmail</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PersonEmail</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1e26ae01-d124-5c73-e1a6-6fa12437a5f3</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerDOB</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PersonBirthdate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CustomerSelection:AccountType &apos;Business&apos; = var:BusinessAccountId var:DRId_Contact IF</formulaConverted>
+        <formulaExpression>IF(%CustomerSelection:AccountType% = &apos;Business&apos;, %BusinessAccountId%, %DRId_Contact%)</formulaExpression>
+        <formulaResultPath>FML_AccountId</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>0cd9f986-bba7-f61e-2b04-26f0eb8891a5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateBusinessPartner</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingAccountRecordType&quot; : &quot;Billing&quot;,
+  &quot;BillingPreferences&quot; : { },
+  &quot;BusinessAccountRecTypeId&quot; : &quot;0123h000000jV4HAAU&quot;,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;Confirmation&quot; : null,
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Business&quot;,
+    &quot;BillingDetails&quot; : { },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-09-02T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;BusinessAccountName&quot; : &quot;test&quot;,
+      &quot;CustomerDOB&quot; : &quot;09/01/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;iiiuyi&quot;,
+      &quot;CustomerLastName&quot; : &quot;iyiyi&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;TaxID&quot;,
+      &quot;SSN&quot; : null,
+      &quot;TaxId&quot; : &quot;335446768&quot;
+    },
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : null
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : null,
+      &quot;ExemptionPercentage&quot; : null,
+      &quot;ExemptionStartDate&quot; : null
+    }
+  },
+  &quot;Error&quot; : { },
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;Products&quot; : {
+    &quot;ElectricityProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+      &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;001&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+      &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;003&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+      &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;002&quot;
+    } ],
+    &quot;GasProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+      &quot;Name&quot; : &quot;Turn Off Order&quot;,
+      &quot;ProductCode&quot; : &quot;004&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+      &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+    } ],
+    &quot;WaterProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+      &quot;Name&quot; : &quot;Water&quot;,
+      &quot;ProductCode&quot; : &quot;water&quot;
+    } ]
+  },
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectPremises&quot; : {
+    &quot;NewAccountPremises&quot; : null,
+    &quot;PremiseError&quot; : null,
+    &quot;ServiceLocation-Block&quot; : {
+      &quot;PremCity&quot; : &quot;Kolkata&quot;,
+      &quot;PremCountry&quot; : &quot;India&quot;,
+      &quot;PremId&quot; : &quot;a3X3h0000006OvsEAE&quot;,
+      &quot;PremPostalCode&quot; : &quot;700059&quot;,
+      &quot;PremState&quot; : &quot;West Bengal&quot;,
+      &quot;PremiseName&quot; : &quot;London Premise&quot;,
+      &quot;PremiseNumber&quot; : &quot;12121&quot;,
+      &quot;PremiseStreetAddress&quot; : &quot;Akshara Lotus Garden London&quot;,
+      &quot;ServiceLocation&quot; : &quot;London Premise&quot;
+    }
+  },
+  &quot;SelectService&quot; : {
+    &quot;PremiseNumber&quot; : &quot;12121&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvsEAE&quot;
+  },
+  &quot;SelectedPremises&quot; : &quot;a3X3h0000006OvsEAE&quot;,
+  &quot;SelectedServiceMaxRow&quot; : &quot;&quot;,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServiceAccountRecordType&quot; : &quot;Service&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SelectProduct&quot;,
+    &quot;label&quot; : &quot;Select Product&quot;
+  } ],
+  &quot;ServicePointsError&quot; : {
+    &quot;CountofServicePoints&quot; : 0,
+    &quot;NoServicePointsError&quot; : false
+  },
+  &quot;timeStamp&quot; : &quot;2020-09-02T05:27:37.391Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CustomerSelection&quot; : 40967,
+    &quot;DR-GetProducts&quot; : 2975,
+    &quot;DRExtractBussinessAccountRecId&quot; : 1063,
+    &quot;ExtractServiceAccountPremises&quot; : 0,
+    &quot;GetPremServicePoints&quot; : 1076,
+    &quot;OmniScriptSessionToken&quot; : &quot;9ec194c3-95e3-4e8f-a2bd-cc48aa51bad4&quot;,
+    &quot;SelectPremises&quot; : 8830,
+    &quot;SetCustomLWCValues&quot; : 190,
+    &quot;SetDefaultValues&quot; : 142,
+    &quot;SetPremisesBusinessAccountRecTypeId&quot; : 106
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformCreateBusinessPartner_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

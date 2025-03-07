@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>GetExistingAssetsFromQuoteLineItem</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GetExistingAssetsFromQuoteLineItemCustom2655</globalKey>
+        <inputFieldName>vlocity_cmt__AssetId__c</inputFieldName>
+        <inputObjectName>QuoteLineItem</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GetExistingAssetsFromQuoteLineItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>existingAssetIds</outputFieldName>
+        <outputObjectName>Turbo Extract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GetExistingAssetsFromQuoteLineItemCustom9013</globalKey>
+        <inputFieldName>vlocity_cmt__AssetId__r.Name</inputFieldName>
+        <inputObjectName>QuoteLineItem</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GetExistingAssetsFromQuoteLineItem</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>existingAssetIds</outputFieldName>
+        <outputObjectName>Turbo Extract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterDataType>REFERENCE</filterDataType>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>IN</filterOperator>
+        <filterValue>AssetIds</filterValue>
+        <globalKey>GetExistingAssetsFromQuoteLineItem36452375833532247</globalKey>
+        <inputFieldName>vlocity_cmt__AssetId__c</inputFieldName>
+        <inputObjectName>QuoteLineItem</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GetExistingAssetsFromQuoteLineItem</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>existingAssetIds</outputFieldName>
+        <outputObjectName>Turbo Extract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterDataType>REFERENCE</filterDataType>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>QuoteId</filterValue>
+        <globalKey>GetExistingAssetsFromQuoteLineItem4023215570592673</globalKey>
+        <inputFieldName>QuoteId</inputFieldName>
+        <inputObjectName>QuoteLineItem</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GetExistingAssetsFromQuoteLineItem</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>existingAssetIds</outputFieldName>
+        <outputObjectName>Turbo Extract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AssetIds&quot; : [ &quot;02i5g0000001a7JAAQ&quot;, &quot;02i5g0000001ZqAAAU&quot; ],
+  &quot;QuoteId&quot; : &quot;0Q05g000000IcjyCAC&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Turbo Extract</type>
+    <uniqueName>GetExistingAssetsFromQuoteLineItem_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

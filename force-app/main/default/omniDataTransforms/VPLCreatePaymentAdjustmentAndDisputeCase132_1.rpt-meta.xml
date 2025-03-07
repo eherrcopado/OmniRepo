@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>VPL CreatePaymentAdjustmentAndDisputeCase 13- used on OS VPL Billing Dispute 13-1</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AdjustmentType&quot; : &quot;CSR Adjustment&quot;,
+  &quot;ContextId&quot; : &quot;00141000002zCnC&quot;,
+  &quot;DRId_Case&quot; : &quot;50041000001tvXcAAI&quot;,
+  &quot;DisputeStep&quot; : {
+    &quot;CaseDescription&quot; : &quot;Billing Dispute for Line Item: SLI-000053728 - Iphone&quot;,
+    &quot;CaseOrigin&quot; : &quot;Web&quot;,
+    &quot;CaseReason&quot; : &quot;New problem&quot;,
+    &quot;CaseStatus&quot; : &quot;New&quot;,
+    &quot;CaseSubject&quot; : &quot;Billing Dispute&quot;,
+    &quot;CaseType&quot; : &quot;Problem&quot;
+  },
+  &quot;GetStatement&quot; : {
+    &quot;Statement&quot; : [ {
+      &quot;Bill_Account_Id&quot; : &quot;00141000002zCnCAAU&quot;,
+      &quot;Invoice Status&quot; : &quot;Approved&quot;,
+      &quot;Statement Amount Due&quot; : 100,
+      &quot;Statement Due Date&quot; : &quot;2016-07-31&quot;,
+      &quot;Statement Name&quot; : &quot;June 2016&quot;,
+      &quot;Statement Original Amount&quot; : 100,
+      &quot;Statement Reason&quot; : &quot;Equipment and Usage&quot;,
+      &quot;StatementID&quot; : &quot;a1v410000002TsSAAU&quot;,
+      &quot;vlcSelected&quot; : true
+    } ]
+  },
+  &quot;InvoiceLineItem&quot; : {
+    &quot;AssetName&quot; : &quot;Iphone&quot;,
+    &quot;FurtherActionRequired&quot; : &quot;Required further actions&quot;,
+    &quot;LineItemAmount&quot; : 50,
+    &quot;OneTime&quot; : &quot;N&quot;,
+    &quot;Recurring&quot; : &quot;Y&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2016-06-30T07:00:00.000Z&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2016-06-01T07:00:00.000Z&quot;
+  },
+  &quot;PaymentAdjustment&quot; : {
+    &quot;AdjustmentDate&quot; : &quot;2016-09-19T07:00:00.000Z&quot;,
+    &quot;AdjustmentType&quot; : &quot;CSR Adjustment&quot;,
+    &quot;Amount&quot; : 4523.53,
+    &quot;AmountType&quot; : null,
+    &quot;Notes&quot; : null
+  },
+  &quot;StatementDetails&quot; : {
+    &quot;LineItem&quot; : [ {
+      &quot;AccountId&quot; : &quot;00141000002zCnC&quot;,
+      &quot;AccountName&quot; : &quot;2016-09-19&quot;,
+      &quot;Amount&quot; : 50,
+      &quot;AssetName&quot; : &quot;Iphone&quot;,
+      &quot;Category&quot; : &quot;Usage&quot;,
+      &quot;Id&quot; : &quot;a1u410000001x8sAAA&quot;,
+      &quot;LineItemName&quot; : &quot;SLI-000053728&quot;,
+      &quot;OneTime&quot; : &quot;N&quot;,
+      &quot;Recurring&quot; : &quot;Y&quot;,
+      &quot;ServiceEndDate&quot; : &quot;2016-06-30&quot;,
+      &quot;ServiceStartDate&quot; : &quot;2016-06-01&quot;,
+      &quot;StatementDate&quot; : &quot;2016-07-01&quot;,
+      &quot;vlcSelected&quot; : true
+    } ]
+  },
+  &quot;acctId&quot; : null,
+  &quot;id&quot; : &quot;a1I41000000ieoYEAQ&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;testContextId&quot; : &quot;00141000002zCnC&quot;,
+  &quot;timeStamp&quot; : &quot;2016-09-20T00:19:51.875Z&quot;,
+  &quot;userName&quot; : &quot;dlq@cmt-vdo.vpl&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CreateDispute&quot; : 510,
+    &quot;DisputeStep&quot; : 6521,
+    &quot;GetInvoice&quot; : 4860,
+    &quot;GetInvoices&quot; : 2730,
+    &quot;GetLineItems&quot; : 788,
+    &quot;InvoiceDetails&quot; : 4763,
+    &quot;InvoiceLineItem&quot; : 8201,
+    &quot;OmniScriptSessionToken&quot; : &quot;f40828c5-bc89-46d2-85af-95986a3ad646&quot;,
+    &quot;SetBillingDisputeCaseValues&quot; : 7,
+    &quot;SetLineItems&quot; : 9
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLCreatePaymentAdjustmentAndDisputeCase132</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8c100ad7-807a-4c90-a793-5bbe37648ebd</globalKey>
+        <inputFieldName>PaymentAdjustment:Notes</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Notes__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentAdjustment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>aaa56d29-ba6e-4661-ab4f-8751128fb564</globalKey>
+        <inputFieldName>PaymentAdjustment:AmountType</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Method__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentAdjustment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4d36877c-137e-4e94-b30e-38ce9ea8b690</globalKey>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__DisputeId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentAdjustment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>30f00931-aae3-428f-945d-60adbc983121</globalKey>
+        <inputFieldName>PaymentAdjustment:AdjustmentDate</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Date__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentAdjustment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b34243cc-e188-4614-8726-88a0e092b14c</globalKey>
+        <inputFieldName>DisputeStep:CaseStatus</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>10c830bc-723b-45c4-be48-3fbb8e668a66</globalKey>
+        <inputFieldName>acctId</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2c549a6c-a7c8-448d-86b1-818db16e5cfd</globalKey>
+        <inputFieldName>GetStatement:Statement:StatementID</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__StatementId__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4f0f0495-7b1d-4898-a4c3-fedb414991ca</globalKey>
+        <inputFieldName>PaymentAdjustment:AdjustmentType</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Type__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentAdjustment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>743f1123-fb76-4bcf-a38b-bba9dead0e26</globalKey>
+        <inputFieldName>StatementDetails:LineItem:Id</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__StatementLineItemId__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0464d41f-82d5-4410-9f95-ef9e3dbe4950</globalKey>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>vlocity_cmt__StatementId__c</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__StatementId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentAdjustment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>66f15d8f-472e-4a88-8ab1-045772791000</globalKey>
+        <inputFieldName>PaymentAdjustment:Amount</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Amount__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentAdjustment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>14cffac1-e7cb-4ee3-8b19-d5c62a582c6b</globalKey>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>AccountId</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AccountId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentAdjustment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7a9105d2-7a84-4c58-926a-0afbc6f0a468</globalKey>
+        <inputFieldName>DisputeStep:CaseType</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Type</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4e98ba48-df28-49a2-9af1-c83ee3ec1a8f</globalKey>
+        <inputFieldName>Asset Information:contact</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e28b145b-fe0b-4c6f-8cb4-39d6802d5b13</globalKey>
+        <inputFieldName>DisputeStep:CaseSubject</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e2997f79-ec29-43bd-bc13-66158acdd907</globalKey>
+        <inputFieldName>assetAccountId</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0fb50654-4cee-43f1-b2a0-194258a1a5ab</globalKey>
+        <inputFieldName>DisputeStep:CaseOrigin</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Origin</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9bd14db6-88a9-4f28-8cd4-fb031df3f597</globalKey>
+        <inputFieldName>DisputeStep:CaseDescription</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dad46fbf-3750-4689-ab7d-b7657b9e263a</globalKey>
+        <inputFieldName>account:contact</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>138eac99-dfab-475c-bae3-95d644fc25e2</globalKey>
+        <inputFieldName>GetStatement:Statement:Statement Reason</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL CreatePaymentAdjustmentAndDisputeCase 13-2</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Reason</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AdjustmentType&quot; : &quot;CSR Adjustment&quot;,
+  &quot;ContextId&quot; : &quot;00141000002zCnC&quot;,
+  &quot;DRId_Case&quot; : &quot;50041000001tvXcAAI&quot;,
+  &quot;DisputeStep&quot; : {
+    &quot;CaseDescription&quot; : &quot;Billing Dispute for Line Item: SLI-000053728 - Iphone&quot;,
+    &quot;CaseOrigin&quot; : &quot;Web&quot;,
+    &quot;CaseReason&quot; : &quot;New problem&quot;,
+    &quot;CaseStatus&quot; : &quot;New&quot;,
+    &quot;CaseSubject&quot; : &quot;Billing Dispute&quot;,
+    &quot;CaseType&quot; : &quot;Problem&quot;
+  },
+  &quot;GetStatement&quot; : {
+    &quot;Statement&quot; : [ {
+      &quot;Bill_Account_Id&quot; : &quot;00141000002zCnCAAU&quot;,
+      &quot;Invoice Status&quot; : &quot;Approved&quot;,
+      &quot;Statement Amount Due&quot; : 100,
+      &quot;Statement Due Date&quot; : &quot;2016-07-31&quot;,
+      &quot;Statement Name&quot; : &quot;June 2016&quot;,
+      &quot;Statement Original Amount&quot; : 100,
+      &quot;Statement Reason&quot; : &quot;Equipment and Usage&quot;,
+      &quot;StatementID&quot; : &quot;a1v410000002TsSAAU&quot;,
+      &quot;vlcSelected&quot; : true
+    } ]
+  },
+  &quot;InvoiceLineItem&quot; : {
+    &quot;AssetName&quot; : &quot;Iphone&quot;,
+    &quot;FurtherActionRequired&quot; : &quot;Required further actions&quot;,
+    &quot;LineItemAmount&quot; : 50,
+    &quot;OneTime&quot; : &quot;N&quot;,
+    &quot;Recurring&quot; : &quot;Y&quot;,
+    &quot;ServiceEndDate&quot; : &quot;2016-06-30T07:00:00.000Z&quot;,
+    &quot;ServiceStartDate&quot; : &quot;2016-06-01T07:00:00.000Z&quot;
+  },
+  &quot;PaymentAdjustment&quot; : {
+    &quot;AdjustmentDate&quot; : &quot;2016-09-19T07:00:00.000Z&quot;,
+    &quot;AdjustmentType&quot; : &quot;CSR Adjustment&quot;,
+    &quot;Amount&quot; : 4523.53,
+    &quot;AmountType&quot; : null,
+    &quot;Notes&quot; : null
+  },
+  &quot;StatementDetails&quot; : {
+    &quot;LineItem&quot; : [ {
+      &quot;AccountId&quot; : &quot;00141000002zCnC&quot;,
+      &quot;AccountName&quot; : &quot;2016-09-19&quot;,
+      &quot;Amount&quot; : 50,
+      &quot;AssetName&quot; : &quot;Iphone&quot;,
+      &quot;Category&quot; : &quot;Usage&quot;,
+      &quot;Id&quot; : &quot;a1u410000001x8sAAA&quot;,
+      &quot;LineItemName&quot; : &quot;SLI-000053728&quot;,
+      &quot;OneTime&quot; : &quot;N&quot;,
+      &quot;Recurring&quot; : &quot;Y&quot;,
+      &quot;ServiceEndDate&quot; : &quot;2016-06-30&quot;,
+      &quot;ServiceStartDate&quot; : &quot;2016-06-01&quot;,
+      &quot;StatementDate&quot; : &quot;2016-07-01&quot;,
+      &quot;vlcSelected&quot; : true
+    } ]
+  },
+  &quot;acctId&quot; : null,
+  &quot;id&quot; : &quot;a1I41000000ieoYEAQ&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;testContextId&quot; : &quot;00141000002zCnC&quot;,
+  &quot;timeStamp&quot; : &quot;2016-09-20T00:19:51.875Z&quot;,
+  &quot;userName&quot; : &quot;dlq@cmt-vdo.vpl&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CreateDispute&quot; : 510,
+    &quot;DisputeStep&quot; : 6521,
+    &quot;GetInvoice&quot; : 4860,
+    &quot;GetInvoices&quot; : 2730,
+    &quot;GetLineItems&quot; : 788,
+    &quot;InvoiceDetails&quot; : 4763,
+    &quot;InvoiceLineItem&quot; : 8201,
+    &quot;OmniScriptSessionToken&quot; : &quot;f40828c5-bc89-46d2-85af-95986a3ad646&quot;,
+    &quot;SetBillingDisputeCaseValues&quot; : 7,
+    &quot;SetLineItems&quot; : 9
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLCreatePaymentAdjustmentAndDisputeCase132_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

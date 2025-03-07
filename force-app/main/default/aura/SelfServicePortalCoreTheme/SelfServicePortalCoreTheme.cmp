@@ -1,0 +1,25 @@
+<aura:component implements="forceCommunity:themeLayout">
+    <aura:attribute name="header" type="Aura.Component[]" />
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false" />
+    <aura:attribute name="footer" type="Aura.Component[]" required="false" />
+    <aura:attribute name="content" type="Aura.Component[]" required="false" />
+    <aura:attribute name="rightSidebarTop" type="Aura.Component[]" required="false" />
+    <aura:attribute name="rightSidebarBottom" type="Aura.Component[]" required="false" />
+    
+    <div>
+        <div>{!v.header}</div>
+        <div>{!v.navBar}</div>
+      	<div class='slds-grid slds-grid_align-center'>
+            <div class='slds-medium-size--7-of-12 slds-large-size--7-of-12'>
+                {!v.body}
+            </div>
+            <div class='slds-medium-size--3-of-12 slds-large-size--3-of-12'>
+                <div class='slds-grid--vertical'>
+                    <div>{!v.rightSidebarTop}</div>
+                    <div>{!v.rightSidebarBottom}</div>
+                </div>
+            </div>
+        </div>
+        <div>{!v.footer}</div>
+    </div>
+</aura:component>

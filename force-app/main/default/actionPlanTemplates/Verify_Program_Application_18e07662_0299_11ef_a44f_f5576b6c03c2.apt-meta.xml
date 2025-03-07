@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionPlanTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Subject</name>
+            <valueLiteral>Verify Energy Savings and Benefit Value</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Priority</name>
+            <valueLiteral>Normal</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>IsReminderSet</name>
+            <valueLiteral>false</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>ReminderDateTime</name>
+            <valueFormula>StartDate + 6 - 0 +</valueFormula>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Description</name>
+            <valueLiteral>Utility verifies the benefit value, approves.</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>ActivityDate</name>
+            <valueFormula>StartDate + 6</valueFormula>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>OwnerId</name>
+            <valueFormula>Queue.00G3y000004QOMSEA4</valueFormula>
+        </actionPlanTemplateItemValue>
+        <isRequired>true</isRequired>
+        <itemEntityType>Task</itemEntityType>
+        <name>Verify Energy Savings and Benefit Value</name>
+        <uniqueName>Verify_Energy_Savings_and_Benefit_Value_19005a79_0299_11ef_a44f_83043ff1d103</uniqueName>
+    </actionPlanTemplateItem>
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Description</name>
+            <valueLiteral>Verify completeness and details of the Application.</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>OwnerId</name>
+            <valueFormula>Queue.00G3y000004QOMTEA4</valueFormula>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>ReminderDateTime</name>
+            <valueFormula>StartDate + 10 - 0 +</valueFormula>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>ActivityDate</name>
+            <valueFormula>StartDate + 10</valueFormula>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>IsReminderSet</name>
+            <valueLiteral>false</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Subject</name>
+            <valueLiteral>Verify Completeness</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Priority</name>
+            <valueLiteral>Normal</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <isRequired>true</isRequired>
+        <itemEntityType>Task</itemEntityType>
+        <name>Verify Completeness</name>
+        <uniqueName>Verify_Completeness_19000c57_0299_11ef_a44f_f90b8c0e6272</uniqueName>
+    </actionPlanTemplateItem>
+    <actionPlanTemplateItem>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>IsReminderSet</name>
+            <valueLiteral>false</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>ReminderDateTime</name>
+            <valueFormula>StartDate + 5 - 0 +</valueFormula>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>ActivityDate</name>
+            <valueFormula>StartDate + 5</valueFormula>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Description</name>
+            <valueLiteral>Approve Benefit Value</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Subject</name>
+            <valueLiteral>Approve Benefit Value</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>Priority</name>
+            <valueLiteral>Normal</valueLiteral>
+        </actionPlanTemplateItemValue>
+        <actionPlanTemplateItemValue>
+            <itemEntityType>Task</itemEntityType>
+            <name>OwnerId</name>
+            <valueFormula>Queue.00G3y000004QOMTEA4</valueFormula>
+        </actionPlanTemplateItemValue>
+        <isRequired>true</isRequired>
+        <itemEntityType>Task</itemEntityType>
+        <name>Approve Benefit Value</name>
+        <uniqueName>Approve_Benefit_Value_18ffbe35_0299_11ef_a44f_f3ce83eb5d80</uniqueName>
+    </actionPlanTemplateItem>
+    <actionPlanTemplateItemDependencies>
+        <creationType>OnPreviousItemCompleted</creationType>
+        <name>name</name>
+        <previousTemplateItem>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Description</name>
+                <valueLiteral>Verify completeness and details of the Application.</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>OwnerId</name>
+                <valueFormula>Queue.00G3y000004QOMTEA4</valueFormula>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>ReminderDateTime</name>
+                <valueFormula>StartDate + 10 - 0 +</valueFormula>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>ActivityDate</name>
+                <valueFormula>StartDate + 10</valueFormula>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>IsReminderSet</name>
+                <valueLiteral>false</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Subject</name>
+                <valueLiteral>Verify Completeness</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Priority</name>
+                <valueLiteral>Normal</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <isRequired>true</isRequired>
+            <itemEntityType>Task</itemEntityType>
+            <name>Verify Completeness</name>
+            <uniqueName>Verify_Completeness_19000c57_0299_11ef_a44f_f90b8c0e6272</uniqueName>
+        </previousTemplateItem>
+        <templateItem>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Subject</name>
+                <valueLiteral>Verify Energy Savings and Benefit Value</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Priority</name>
+                <valueLiteral>Normal</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>IsReminderSet</name>
+                <valueLiteral>false</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>ReminderDateTime</name>
+                <valueFormula>StartDate + 6 - 0 +</valueFormula>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Description</name>
+                <valueLiteral>Utility verifies the benefit value, approves.</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>ActivityDate</name>
+                <valueFormula>StartDate + 6</valueFormula>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>OwnerId</name>
+                <valueFormula>Queue.00G3y000004QOMSEA4</valueFormula>
+            </actionPlanTemplateItemValue>
+            <isRequired>true</isRequired>
+            <itemEntityType>Task</itemEntityType>
+            <name>Verify Energy Savings and Benefit Value</name>
+            <uniqueName>Verify_Energy_Savings_and_Benefit_Value_19005a79_0299_11ef_a44f_83043ff1d103</uniqueName>
+        </templateItem>
+    </actionPlanTemplateItemDependencies>
+    <actionPlanTemplateItemDependencies>
+        <creationType>OnPreviousItemCompleted</creationType>
+        <name>name</name>
+        <previousTemplateItem>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Subject</name>
+                <valueLiteral>Verify Energy Savings and Benefit Value</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Priority</name>
+                <valueLiteral>Normal</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>IsReminderSet</name>
+                <valueLiteral>false</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>ReminderDateTime</name>
+                <valueFormula>StartDate + 6 - 0 +</valueFormula>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Description</name>
+                <valueLiteral>Utility verifies the benefit value, approves.</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>ActivityDate</name>
+                <valueFormula>StartDate + 6</valueFormula>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>OwnerId</name>
+                <valueFormula>Queue.00G3y000004QOMSEA4</valueFormula>
+            </actionPlanTemplateItemValue>
+            <isRequired>true</isRequired>
+            <itemEntityType>Task</itemEntityType>
+            <name>Verify Energy Savings and Benefit Value</name>
+            <uniqueName>Verify_Energy_Savings_and_Benefit_Value_19005a79_0299_11ef_a44f_83043ff1d103</uniqueName>
+        </previousTemplateItem>
+        <templateItem>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>IsReminderSet</name>
+                <valueLiteral>false</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>ReminderDateTime</name>
+                <valueFormula>StartDate + 5 - 0 +</valueFormula>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>ActivityDate</name>
+                <valueFormula>StartDate + 5</valueFormula>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Description</name>
+                <valueLiteral>Approve Benefit Value</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Subject</name>
+                <valueLiteral>Approve Benefit Value</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>Priority</name>
+                <valueLiteral>Normal</valueLiteral>
+            </actionPlanTemplateItemValue>
+            <actionPlanTemplateItemValue>
+                <itemEntityType>Task</itemEntityType>
+                <name>OwnerId</name>
+                <valueFormula>Queue.00G3y000004QOMTEA4</valueFormula>
+            </actionPlanTemplateItemValue>
+            <isRequired>true</isRequired>
+            <itemEntityType>Task</itemEntityType>
+            <name>Approve Benefit Value</name>
+            <uniqueName>Approve_Benefit_Value_18ffbe35_0299_11ef_a44f_f3ce83eb5d80</uniqueName>
+        </templateItem>
+    </actionPlanTemplateItemDependencies>
+    <description>To verify utility Program Applications</description>
+    <isAdHocItemCreationEnabled>true</isAdHocItemCreationEnabled>
+    <name>Verify Program Application</name>
+    <targetEntityType>IndividualApplication</targetEntityType>
+    <uniqueName>Verify_Program_Application_18e07662_0299_11ef_a44f_f5576b6c03c2</uniqueName>
+</ActionPlanTemplate>

@@ -1,0 +1,19 @@
+<apex:page showHeader="true" sidebar="true" standardController="User" extensions="vlocity_cmt.XOMAdminPageController">
+    <apex:includeLightning />
+    <div id="LightningComponentid" />
+    <script>
+        const recordId = '{!LEFT($CurrentPage.parameters.Id, 15)}';
+        const nsp = "{!JSENCODE(nsp)}";
+        const namespace = nsp ? nsp.slice(0, -2) : 'c';
+
+        $Lightning.use(namespace+":ltngOutVF", function() {
+            $Lightning.createComponent(
+                namespace + ":xomCurrentUserItems", {
+                    recordId: recordId
+                },
+                "LightningComponentid",
+                function(cmp) {
+                });
+        });
+    </script>
+</apex:page>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;timeStamp&quot; : &quot;2018-07-27T14:52:30.873Z&quot;,
+  &quot;userId&quot; : &quot;005f2000008VRYzAAO&quot;,
+  &quot;userName&quot; : &quot;mjelaca@eng-main.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -420,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;id&quot; : &quot;a1If200000KAw6CEAT&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;OmniScriptSessionToken&quot; : &quot;d594c559-7e9e-4b59-9700-9bf468d6bf18&quot;,
+    &quot;Building&quot; : 22562,
+    &quot;Equipment&quot; : 3377,
+    &quot;CalculationAction1&quot; : 670,
+    &quot;Step3&quot; : 4229
+  },
+  &quot;Building&quot; : {
+    &quot;Width&quot; : 30,
+    &quot;Length&quot; : 50,
+    &quot;Hight&quot; : 10,
+    &quot;CubicFeet&quot; : 15000,
+    &quot;Insulation&quot; : &quot;2&quot;,
+    &quot;WinterMonths&quot; : 6,
+    &quot;SummerMonths&quot; : 6,
+    &quot;AvTempDiffWinter&quot; : 40,
+    &quot;WinterFactor&quot; : 0.4,
+    &quot;Volume1&quot; : 2922.336
+  },
+  &quot;Equipment&quot; : {
+    &quot;Multi-select1&quot; : null,
+    &quot;EqType&quot; : {
+      &quot;EquipmentType&quot; : &quot;Insta 4 gal/min&quot;,
+      &quot;HoursPerDay&quot; : 2
+    }
+  },
+  &quot;error&quot; : &quot;OK&quot;,
+  &quot;Result&quot; : {
+    &quot;TotalUsage&quot; : 69405.48
+  },
+  &quot;Step3&quot; : {
+    &quot;TotCalcUsage&quot; : 69405.48
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>GasVolumeCalcTransform</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>94711d7f-9827-48ce-b947-b2d3aba0ef94</globalKey>
+        <inputFieldName>Equipment:EqType:HoursPerDay</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GasVolumeCalcTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>input:DayHours</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5bbae1d1-9f3c-469e-9fb1-2eb7759f39be</globalKey>
+        <inputFieldName>Equipment:EqType:EquipmentType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GasVolumeCalcTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>input:Item</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;vlcTimeTracking&quot; : {
+    &quot;Step3&quot; : null,
+    &quot;CalculationAction1&quot; : null,
+    &quot;Equipment&quot; : null,
+    &quot;Building&quot; : null
+  },
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;userTimeZone&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;ContextId&quot; : null,
+  &quot;Step3&quot; : { },
+  &quot;Equipment&quot; : {
+    &quot;Multi-select1&quot; : null,
+    &quot;EqType&quot; : {
+      &quot;EquipmentType&quot; : null
+    }
+  },
+  &quot;Building&quot; : {
+    &quot;Volume1&quot; : null,
+    &quot;AvTempDiffWinter&quot; : null,
+    &quot;WinterFactor&quot; : null,
+    &quot;SummerMonths&quot; : null,
+    &quot;WinterMonths&quot; : null,
+    &quot;Insulation&quot; : null,
+    &quot;CubicFeet&quot; : null,
+    &quot;Hight&quot; : null,
+    &quot;Length&quot; : null,
+    &quot;Width&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>GasVolumeCalcTransform_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

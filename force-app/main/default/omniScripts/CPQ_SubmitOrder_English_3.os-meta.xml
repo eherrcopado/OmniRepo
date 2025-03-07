@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>English</language>
+    <name>Submit Order</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>canSubmitOrder</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;extraPayload&quot; : {
+    &quot;cartId&quot; : &quot;%ContextId%&quot;
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;canSubmitOrder&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;SubmitOrderService&quot;,
+  &quot;remoteMethod&quot; : &quot;canSubmitOrder&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;canSubmitOrder&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;createAccountDiscounts:messages|1:severity&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>canSubmitOrderFailure</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Validation of order failed, Error occurred when attempting to check if the order can be submitted.&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;OR&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;false&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:canSubmitOrder&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:hasError&quot;
+      } ]
+    }
+  },
+  &quot;text&quot; : &quot;&lt;p&gt;&lt;span style=\&quot;color: #ff0000;\&quot;&gt;ERROR Message&lt;/span&gt;:&lt;/p&gt;\n&lt;p&gt;%canSubmitOrder:messages|0:message%&lt;/p&gt;&quot;,
+  &quot;textKey&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Text Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>checkout</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ {
+      &quot;message&quot; : &quot;&quot;,
+      &quot;path&quot; : &quot;&quot;,
+      &quot;value&quot; : &quot;&quot;
+    } ],
+    &quot;default&quot; : &quot;&quot;
+  },
+  &quot;extraPayload&quot; : {
+    &quot;ContextId&quot; : &quot;%ContextId%&quot;,
+    &quot;cartId&quot; : &quot;%ContextId%&quot;,
+    &quot;orderId&quot; : &quot;%ContextId%&quot;,
+    &quot;skipCheckoutValidation&quot; : true
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;checkout&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.CPQAppHandler&quot;,
+  &quot;remoteMethod&quot; : &quot;checkout&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;checkout&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:canSubmitOrder&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;createAccountDiscounts:messages|1:severity&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:isOrderProductPresent&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;toastComplete&quot; : false,
+  &quot;validationRequired&quot; : null,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Create Account Discounts</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;extraPayload&quot; : {
+    &quot;cartId&quot; : &quot;%cartId%&quot;
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Create Account Discounts&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.CPQAppHandler&quot;,
+  &quot;remoteMethod&quot; : &quot;createAccountDiscounts&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;createAccountDiscounts&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>createAccountDiscountsFailure</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Create Account Discounts Failed&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;createAccountDiscounts:messages|1:severity&quot;
+      } ]
+    }
+  },
+  &quot;text&quot; : &quot;&quot;,
+  &quot;textKey&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Text Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>LockGroupsAndMembers</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;extraPayload&quot; : {
+    &quot;cartId&quot; : &quot;%ContextId%&quot;
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;integrationProcedureKey&quot; : &quot;CPQ_LockGroupsAndMembers&quot;,
+  &quot;label&quot; : &quot;Lock Groups and Members&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;chainable&quot; : false,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;useFuture&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:canSubmitOrder&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;false&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:hasError&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;checkout:messages|1:severity&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ null, null ],
+  &quot;ssm&quot; : false,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;useContinuation&quot; : false,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Navigate to Account</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;Outcome&quot; : &quot;&quot;,
+  &quot;consoleTabLabel&quot; : &quot;New&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Navigate to Account&quot;,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;redirectPageName&quot; : &quot;mobileDone&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;cpq-redirect-account&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:canSubmitOrder&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;false&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:hasError&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;createAccountDiscounts:messages|1:severity&quot;
+      }, {
+        &quot;group&quot; : {
+          &quot;operator&quot; : &quot;OR&quot;,
+          &quot;rules&quot; : [ {
+            &quot;condition&quot; : &quot;=&quot;,
+            &quot;data&quot; : &quot;false&quot;,
+            &quot;field&quot; : &quot;canSubmitOrder:isOrderProductPresent&quot;
+          }, {
+            &quot;condition&quot; : &quot;=&quot;,
+            &quot;data&quot; : &quot;INFO&quot;,
+            &quot;field&quot; : &quot;checkout:messages|1:severity&quot;
+          } ]
+        }
+      } ]
+    }
+  },
+  &quot;source&quot; : &quot;%AccountId%&quot;,
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;Redirect&quot;,
+  &quot;validationRequired&quot; : null,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>Done Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Navigate to Order</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;consoleTabLabel&quot; : &quot;New&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;Navigate to Order&quot;,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;redirectPageName&quot; : &quot;mobileDone&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcMobileConfirmation.html&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;OR&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;false&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:canSubmitOrder&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:hasError&quot;
+      }, {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;createAccountDiscounts:messages|1:severity&quot;
+      }, {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;checkout&quot;
+      } ]
+    }
+  },
+  &quot;source&quot; : &quot;/apex/vlocity_cmt__HybridCPQ?id=%ContextId%&quot;,
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;URL&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>Done Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Redirect to Order Decomposition page</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;Outcome&quot; : &quot;&quot;,
+  &quot;consoleTabLabel&quot; : &quot;New&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;redirectToOrderDecomposition&quot;,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;redirectPageName&quot; : &quot;mobileDone&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcMobileConfirmation.html&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:canSubmitOrder&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;false&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:hasError&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;createAccountDiscounts:messages|1:severity&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;checkout:messages|1:severity&quot;
+      } ]
+    }
+  },
+  &quot;source&quot; : &quot;/apex/vlocity_cmt__XOMViewOrderDecomposition?id=%ContextId%&quot;,
+  &quot;ssm&quot; : false,
+  &quot;type&quot; : &quot;URL&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>Done Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DiscountSuccessfullyCheckedout</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;&lt;p&gt;Discount(s) successfully Activated&lt;/p&gt;&quot;,
+  &quot;labelKey&quot; : &quot;&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:canSubmitOrder&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;false&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:isOrderProductPresent&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;false&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:hasError&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;INFO&quot;,
+        &quot;field&quot; : &quot;createAccountDiscounts:messages|1:severity&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Headline</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>OrderQueuingResult</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;&lt;p&gt;%canSubmitOrder:message%&lt;/p&gt;&quot;,
+  &quot;labelKey&quot; : &quot;&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;false&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:canSubmitOrder&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Headline</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>OrderSubmissionResults</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;&lt;p&gt;%checkout:messages|1:message%&lt;/p&gt;\n&lt;p&gt;%checkout:messages|2:message%&lt;/p&gt;\n&lt;p&gt;%checkout:messages|3:message%&lt;/p&gt;\n&lt;p&gt;%checkout:messages|4:message%&lt;/p&gt;\n&lt;p&gt;%checkout:messages|5:message%&lt;/p&gt;\n&lt;p&gt;%checkout:messages|6:message%&lt;/p&gt;\n&lt;p&gt;%checkout:messages|7:message%&lt;/p&gt;\n&lt;p&gt;%checkout:messages|8:message%&lt;/p&gt;\n&lt;p&gt;%checkout:messages|9:message%&lt;/p&gt;\n&lt;p&gt;%checkout:messages|10:message%&lt;/p&gt;\n&lt;div id=\&quot;gtx-trans\&quot; style=\&quot;position: absolute; left: -179px; top: -20px;\&quot;&gt;&amp;nbsp;&lt;/div&gt;&quot;,
+  &quot;labelKey&quot; : &quot;&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:canSubmitOrder&quot;
+      }, {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;canSubmitOrder:isOrderProductPresent&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>2.0</sequenceNumber>
+            <type>Headline</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ResultsGroup</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;chartLabel&quot; : null,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;instructionKey&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Order Submission Results&quot;,
+  &quot;message&quot; : { },
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;pubsub&quot; : false,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;allowCancel&quot;:false,&quot;allowSaveForLater&quot;:false,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;bLK&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;consoleTabTitle&quot;:null,&quot;currencyCode&quot;:&quot;&quot;,&quot;disableUnloadWarn&quot;:true,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;enableKnowledge&quot;:false,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;hideStepChart&quot;:true,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;lkObjName&quot;:null,&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;},{&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;&quot;,&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false}],&quot;pubsub&quot;:false,&quot;rtpSeed&quot;:false,&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;seedDataJSON&quot;:{},&quot;showInputWidth&quot;:false,&quot;ssm&quot;:false,&quot;stylesheet&quot;:{&quot;lightning&quot;:&quot;&quot;,&quot;newport&quot;:&quot;&quot;},&quot;timeTracking&quot;:false,&quot;trackingCustomData&quot;:{},&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
+    <subType>SubmitOrder</subType>
+    <type>CPQ</type>
+    <uniqueName>CPQ_SubmitOrder_English_3</uniqueName>
+    <versionNumber>3.0</versionNumber>
+    <webComponentKey>8f49ac5b-6d52-e912-9f38-2f4f3fdaaed5</webComponentKey>
+</OmniScript>

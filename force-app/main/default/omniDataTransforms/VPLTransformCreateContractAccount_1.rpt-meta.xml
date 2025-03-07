@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Used to transform inputs to call IP for Create Contract Account in external system</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : null,
+  &quot;BillingAccountRecordType&quot; : &quot;Billing&quot;,
+  &quot;BillingPreferences&quot; : { },
+  &quot;BusinessAccountRecTypeId&quot; : &quot;0123h000000jV4HAAU&quot;,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ChoosePaymentMethod&quot; : null,
+  &quot;Confirmation&quot; : null,
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Business&quot;,
+    &quot;BillingDetails&quot; : { },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-09-02T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;BusinessAccountName&quot; : &quot;test&quot;,
+      &quot;CustomerDOB&quot; : &quot;09/01/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;iiiuyi&quot;,
+      &quot;CustomerLastName&quot; : &quot;iyiyi&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;TaxID&quot;,
+      &quot;SSN&quot; : null,
+      &quot;TaxId&quot; : &quot;335446768&quot;
+    },
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : null
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : null,
+      &quot;ExemptionPercentage&quot; : null,
+      &quot;ExemptionStartDate&quot; : null
+    }
+  },
+  &quot;Error&quot; : { },
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;Products&quot; : {
+    &quot;ElectricityProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+      &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;001&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+      &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;003&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+      &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;002&quot;
+    } ],
+    &quot;GasProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+      &quot;Name&quot; : &quot;Turn Off Order&quot;,
+      &quot;ProductCode&quot; : &quot;004&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+      &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+    } ],
+    &quot;WaterProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+      &quot;Name&quot; : &quot;Water&quot;,
+      &quot;ProductCode&quot; : &quot;water&quot;
+    } ]
+  },
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectPremises&quot; : {
+    &quot;NewAccountPremises&quot; : null,
+    &quot;PremiseError&quot; : null,
+    &quot;ServiceLocation-Block&quot; : {
+      &quot;PremCity&quot; : &quot;Kolkata&quot;,
+      &quot;PremCountry&quot; : &quot;India&quot;,
+      &quot;PremId&quot; : &quot;a3X3h0000006OvsEAE&quot;,
+      &quot;PremPostalCode&quot; : &quot;700059&quot;,
+      &quot;PremState&quot; : &quot;West Bengal&quot;,
+      &quot;PremiseName&quot; : &quot;London Premise&quot;,
+      &quot;PremiseNumber&quot; : &quot;12121&quot;,
+      &quot;PremiseStreetAddress&quot; : &quot;Akshara Lotus Garden London&quot;,
+      &quot;ServiceLocation&quot; : &quot;London Premise&quot;
+    }
+  },
+  &quot;SelectService&quot; : {
+    &quot;PremiseNumber&quot; : &quot;12121&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvsEAE&quot;
+  },
+  &quot;SelectedPremises&quot; : &quot;a3X3h0000006OvsEAE&quot;,
+  &quot;SelectedServiceMaxRow&quot; : &quot;&quot;,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServiceAccountRecordType&quot; : &quot;Service&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SelectProduct&quot;,
+    &quot;label&quot; : &quot;Select Product&quot;
+  } ],
+  &quot;ServicePointsError&quot; : {
+    &quot;CountofServicePoints&quot; : 0,
+    &quot;NoServicePointsError&quot; : false
+  },
+  &quot;timeStamp&quot; : &quot;2020-09-02T05:27:37.391Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CustomerSelection&quot; : 40967,
+    &quot;DR-GetProducts&quot; : 2975,
+    &quot;DRExtractBussinessAccountRecId&quot; : 1063,
+    &quot;ExtractServiceAccountPremises&quot; : 0,
+    &quot;GetPremServicePoints&quot; : 1076,
+    &quot;OmniScriptSessionToken&quot; : &quot;9ec194c3-95e3-4e8f-a2bd-cc48aa51bad4&quot;,
+    &quot;SelectPremises&quot; : 8830,
+    &quot;SetCustomLWCValues&quot; : 190,
+    &quot;SetDefaultValues&quot; : 142,
+    &quot;SetPremisesBusinessAccountRecTypeId&quot; : 106
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformCreateContractAccount</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b0028c9b-e530-3f61-74a1-bac33b829935</globalKey>
+        <inputFieldName>VIPCreateBusinessPartner:ERPAccountID__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateContractAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>ERP_Account_Id__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6dc36f36-12d4-b65a-2be6-fc8ce421da96</globalKey>
+        <inputFieldName>CustomerSelection:MoveInDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateContractAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CloseDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>61b62470-3c09-21a4-49a6-ab32c1c3a59a</globalKey>
+        <inputFieldName>FML_AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateContractAccount</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CustomerSelection:AccountType &apos;Business&apos; = var:BillingAccountId var:DRId_Account IF</formulaConverted>
+        <formulaExpression>IF(%CustomerSelection:AccountType% = &apos;Business&apos;, %BillingAccountId%, %DRId_Account%)</formulaExpression>
+        <formulaResultPath>FML_AccountId</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>b1e19196-c35f-3451-3777-c31f241c7da2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateContractAccount</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountDetails&quot; : &quot;&lt;p&gt;&lt;strong&gt;&lt;img src=\&quot;../servlet/servlet.ImageServer?docName=015f2000001sxa4AAA&amp;amp;&amp;amp;id=015f2000001sxa4AAA&amp;amp;&amp;amp;oid=00Df2000000NVjKEAW\&quot; alt=\&quot;\&quot; width=\&quot;25\&quot; height=\&quot;25\&quot; /&gt;&amp;nbsp;Account Number:&lt;/strong&gt;&amp;nbsp; &amp;nbsp; 22000015029&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;&lt;img src=\&quot;../servlet/servlet.ImageServer?id=015f2000001sxkiAAA&amp;amp;&amp;amp;id=015f2000001sxkiAAA&amp;amp;&amp;amp;oid=00Df2000000NVjKEAW\&quot; alt=\&quot;\&quot; width=\&quot;27\&quot; height=\&quot;25\&quot; /&gt;&amp;nbsp;Customer:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/strong&gt;phei qowo&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/strong&gt;2131232132&lt;/p&gt;\n&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;strong&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/strong&gt;qwoqw@asyu.cp&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;&lt;img src=\&quot;../servlet/servlet.ImageServer?id=015f2000001sxkiAAA&amp;amp;&amp;amp;id=015f2000001sxkiAAA&amp;amp;&amp;amp;oid=00Df2000000NVjKEAW\&quot; alt=\&quot;\&quot; width=\&quot;27\&quot; height=\&quot;25\&quot; /&gt;&amp;nbsp;Customer ID:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/strong&gt;003f200002nfqaPAAQ&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;&lt;img src=\&quot;../servlet/servlet.ImageServer?id=015f2000001sxknAAA&amp;amp;&amp;amp;id=015f2000001sxknAAA&amp;amp;&amp;amp;oid=00Df2000000NVjKEAW\&quot; alt=\&quot;\&quot; width=\&quot;25\&quot; height=\&quot;25\&quot; /&gt;&amp;nbsp;Premise Address:&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/strong&gt;19 Harper Ave, Detroit, MI, 48202&lt;/p&gt;&quot;,
+  &quot;AccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+  &quot;AccountName&quot; : &quot;phei qowo&quot;,
+  &quot;AccountNumber&quot; : &quot;22000015029&quot;,
+  &quot;Asset1&quot; : &quot;&quot;,
+  &quot;Asset2&quot; : &quot;&quot;,
+  &quot;Asset3&quot; : &quot;&quot;,
+  &quot;BillDeliveryMethod&quot; : &quot;Electronic Statements Online&quot;,
+  &quot;BillFrequency&quot; : &quot;Weekly&quot;,
+  &quot;BillingPreferences&quot; : {
+    &quot;APaymentType&quot; : &quot;Prepaid&quot;,
+    &quot;AutoPay&quot; : &quot;No&quot;,
+    &quot;BillNotification&quot; : &quot;Yes&quot;,
+    &quot;BillingFrequency&quot; : &quot;Weekly&quot;,
+    &quot;DeliveryMethod&quot; : &quot;Paper Billing&quot;,
+    &quot;DifferntPremiseSearch-Block&quot; : null,
+    &quot;MailingAddres&quot; : &quot;AccountAddress&quot;,
+    &quot;MailingAddresss&quot; : null,
+    &quot;NoContactFrom&quot; : null,
+    &quot;NoContactTo&quot; : null,
+    &quot;OffersPromotions&quot; : &quot;No&quot;,
+    &quot;OutageNotification&quot; : &quot;Yes&quot;,
+    &quot;PaymentNotification&quot; : &quot;No&quot;,
+    &quot;WorkOrderNotification&quot; : &quot;Yes&quot;
+  },
+  &quot;CancelledServices&quot; : 0,
+  &quot;Completed&quot; : { },
+  &quot;ConfirmTxtBlck&quot; : &quot;&lt;p&gt;at &lt;span style=\&quot;color: #0000ff;\&quot;&gt;&lt;strong&gt;19 Harper Ave, Detroit, MI, 48202&lt;/strong&gt;&lt;/span&gt;&lt;span style=\&quot;color: #3366ff;\&quot;&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/span&gt;as of&amp;nbsp;&lt;strong&gt;05-23-2019&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;/p&gt;\n&lt;p&gt;The account will bill &lt;strong&gt;Weekly&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;/p&gt;&quot;,
+  &quot;Confirmation&quot; : {
+    &quot;Confirm&quot; : &quot;Yes&quot;
+  },
+  &quot;ConnectedAsset&quot; : {
+    &quot;AssetName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+    &quot;Id&quot; : &quot;02if200000WsJPFAA3&quot;
+  },
+  &quot;ContactFirstName&quot; : &quot;phei&quot;,
+  &quot;ContactId&quot; : &quot;003f200002nfqaPAAQ&quot;,
+  &quot;ContactLastName&quot; : &quot;qowo&quot;,
+  &quot;ContactName&quot; : &quot;phei qowo&quot;,
+  &quot;ContactNumber__c&quot; : &quot;6011196&quot;,
+  &quot;ContextId&quot; : &quot;001f200001vKvWQAA0&quot;,
+  &quot;Contracts&quot; : {
+    &quot;AvailableProductList&quot; : [ {
+      &quot;$$hashKey&quot; : &quot;object:1396&quot;,
+      &quot;ProdFamily&quot; : &quot;Gas&quot;,
+      &quot;ProdId&quot; : &quot;01tf20000088syBAAQ&quot;,
+      &quot;ProdName&quot; : &quot;TestGas&quot;,
+      &quot;selectedValue&quot; : true,
+      &quot;vlcSelected&quot; : true
+    } ],
+    &quot;ContractTermSum&quot; : null,
+    &quot;ProducltListMsg&quot; : true,
+    &quot;ProductSelectedCount&quot; : 1
+  },
+  &quot;CountAccountAssets&quot; : 1,
+  &quot;CountTransferAsset&quot; : false,
+  &quot;CreateAgreement_Msg&quot; : null,
+  &quot;CustomerSelection&quot; : {
+    &quot;MoveInDate&quot; : &quot;2019-05-22T18:30:00.000Z&quot;,
+    &quot;MoveInDateMessage&quot; : true,
+    &quot;MoveInDateValidation&quot; : true,
+    &quot;NeedNewAccount&quot; : &quot;No&quot;,
+    &quot;ServiceLocation-Block&quot; : null,
+    &quot;ServiceLocationMsg&quot; : null
+  },
+  &quot;DRId_vlocity_cmt__InventoryItem__c&quot; : &quot;a25f2000004DtDoAAK&quot;,
+  &quot;DRId_vlocity_cmt__PaymentMethod__c&quot; : &quot;a0if200000AP1UPAA1&quot;,
+  &quot;DRId_vlocity_cmt__ServicePoint__c&quot; : &quot;a26f200000KhBdSAAV&quot;,
+  &quot;DRId_Account&quot; : &quot;001f200001vKvWQAA0&quot;,
+  &quot;DRId_AccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+  &quot;DRId_Asset&quot; : &quot;02if200000WsJPPAA3&quot;,
+  &quot;DRId_Contact&quot; : &quot;003f200002nfqaPAAQ&quot;,
+  &quot;DRId_ExistingAccount&quot; : &quot;001f200001vKvWQAA0&quot;,
+  &quot;ERPAccountID__c&quot; : &quot;6011196&quot;,
+  &quot;ERP_Agreement_ID1__c&quot; : null,
+  &quot;ERP_msg&quot; : &quot;Partner Created in SAP Successfully..!!!&quot;,
+  &quot;ElecMeterReading&quot; : {
+    &quot;Id&quot; : &quot;a25f2000004DtD0AAK&quot;,
+    &quot;MeterName&quot; : &quot;Electricity Meter - ISUMDG135209E&quot;,
+    &quot;ProductName&quot; : &quot;Electricity Standard Tariff&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135209E&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;
+  },
+  &quot;Electricity&quot; : false,
+  &quot;ElectricityService&quot; : &quot;&quot;,
+  &quot;Email&quot; : &quot;qwoqw@asyu.cp&quot;,
+  &quot;Existing&quot; : {
+    &quot;Email&quot; : &quot;qwoqw@asyu.cp&quot;,
+    &quot;PremiseCity&quot; : &quot;Detroit&quot;,
+    &quot;PremiseCountry&quot; : &quot;US&quot;,
+    &quot;PremiseId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+    &quot;PremisePostalCode&quot; : &quot;48202&quot;,
+    &quot;PremiseState&quot; : &quot;MI&quot;,
+    &quot;PremiseStreet&quot; : &quot;19 Harper Ave&quot;,
+    &quot;PrimaryAccName&quot; : &quot;phei qowo&quot;,
+    &quot;PrimaryAccStatus&quot; : &quot;Inactive&quot;,
+    &quot;PrimaryAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;PrimaryAccountNumber&quot; : &quot;22000015029&quot;,
+    &quot;PrimaryAccountPremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;
+  },
+  &quot;Gas&quot; : false,
+  &quot;GasMeterReading&quot; : {
+    &quot;Id&quot; : &quot;a25f2000004DtDoAAK&quot;,
+    &quot;MeterName&quot; : &quot;Gas Meter - ISUMDG135210G&quot;,
+    &quot;ProductName&quot; : &quot;TestGas&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;
+  },
+  &quot;GasService&quot; : &quot;Gas&quot;,
+  &quot;IntergationMtd&quot; : {
+    &quot;IntergationType&quot; : &quot;XML&quot;,
+    &quot;Name&quot; : &quot;Transfer&quot;
+  },
+  &quot;Meter1&quot; : &quot;a25f2000004DtDoAAK&quot;,
+  &quot;Meter2&quot; : &quot;&quot;,
+  &quot;Meter3&quot; : &quot;&quot;,
+  &quot;MoveOutDateToday&quot; : false,
+  &quot;MuleMoveInDate&quot; : &quot;2019-5-23&quot;,
+  &quot;NoOfAccounts&quot; : 1,
+  &quot;OmniscriptType&quot; : &quot;Transfer&quot;,
+  &quot;Phone&quot; : &quot;2131232132&quot;,
+  &quot;PostConfirmTxtBlck&quot; : &quot;&lt;p&gt;at &lt;span style=\&quot;color: #0000ff;\&quot;&gt;&lt;strong&gt;19 Harper Ave, Detroit, MI, 48202&lt;/strong&gt;&lt;/span&gt;&lt;span style=\&quot;color: #3366ff;\&quot;&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/span&gt;as of&amp;nbsp;&lt;strong&gt;05-23-2019&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;/p&gt;\n&lt;p&gt;The account will bill &lt;strong&gt;Weekly&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;Your details can be found&amp;nbsp;&lt;strong&gt;&lt;a href=\&quot;../001f200001vKvWQAA0\&quot; target=\&quot;_blank\&quot;&gt;here&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Message from SAP&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;/p&gt;&quot;,
+  &quot;PremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+  &quot;PremiseCity&quot; : &quot;Detroit&quot;,
+  &quot;PremiseCountry&quot; : &quot;US&quot;,
+  &quot;PremiseId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+  &quot;PremisePostalCode&quot; : &quot;48202&quot;,
+  &quot;PremiseState&quot; : &quot;MI&quot;,
+  &quot;PremiseStreet&quot; : &quot;19 Harper Ave&quot;,
+  &quot;PremiseTxtBlk&quot; : &quot;&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;&lt;img src=\&quot;../servlet/servlet.ImageServer?docName=015f2000001sxknAAA&amp;amp;&amp;amp;id=015f2000001sxknAAA&amp;amp;&amp;amp;oid=00Df2000000NVjKEAW\&quot; alt=\&quot;\&quot; width=\&quot;25\&quot; height=\&quot;25\&quot; /&gt;&amp;nbsp; Premise Address&lt;/strong&gt;&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;Premise Number:&amp;nbsp; &amp;nbsp;&lt;/strong&gt;700012759&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;Street:&lt;/strong&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 19 Harper Ave&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;City:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/strong&gt;Detroit&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;State:&lt;/strong&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;MI&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;Country:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/strong&gt;US&lt;/p&gt;\n&lt;p style=\&quot;text-align: left;\&quot;&gt;&lt;strong&gt;Postal Code:&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/strong&gt;48202&lt;/p&gt;&quot;,
+  &quot;PrimaryContactPreferences&quot; : &quot;Phone&quot;,
+  &quot;ProductList&quot; : [ {
+    &quot;ProdCategory&quot; : &quot;Gas&quot;,
+    &quot;ProdDescription&quot; : &quot;Gas Standard Tariff&quot;,
+    &quot;ProdFamily&quot; : &quot;Gas&quot;,
+    &quot;ProdId&quot; : &quot;01tf2000007tC3dAAE&quot;,
+    &quot;ProdName&quot; : &quot;Gas Standard Tariff&quot;
+  }, {
+    &quot;ProdFamily&quot; : &quot;Gas&quot;,
+    &quot;ProdId&quot; : &quot;01tf20000088syBAAQ&quot;,
+    &quot;ProdName&quot; : &quot;TestGas&quot;
+  }, {
+    &quot;ProdCategory&quot; : &quot;Gas&quot;,
+    &quot;ProdFamily&quot; : &quot;Gas&quot;,
+    &quot;ProdId&quot; : &quot;01tf20000088QOsAAM&quot;,
+    &quot;ProdName&quot; : &quot;Gas Price Protection Tariff - 1 Year&quot;
+  }, {
+    &quot;ProdCategory&quot; : &quot;Gas&quot;,
+    &quot;ProdFamily&quot; : &quot;Gas&quot;,
+    &quot;ProdId&quot; : &quot;01tf2000007u2g3AAA&quot;,
+    &quot;ProdName&quot; : &quot;Gas Price Protection Tariff - 1 Year&quot;
+  } ],
+  &quot;SAP_Parnter_id&quot; : 6011110,
+  &quot;SelectAsset&quot; : {
+    &quot;AccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;AssetId&quot; : &quot;02if200000WsJPFAA3&quot;,
+    &quot;AssetName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+    &quot;BillingAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;ConnectDate&quot; : &quot;2019-05-22T18:30:00.000Z&quot;,
+    &quot;Meter&quot; : &quot;a25f2000004DtDoAAK&quot;,
+    &quot;PremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+    &quot;PremiseId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+    &quot;ProductCode&quot; : &quot;TEST1234&quot;,
+    &quot;ProductFamily&quot; : &quot;Gas&quot;,
+    &quot;ProductId&quot; : &quot;01tf20000088syBAAQ&quot;,
+    &quot;ProductName&quot; : &quot;TestGas&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+    &quot;ServiceAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;ServicePointId&quot; : &quot;a26f200000KhBdSAAV&quot;,
+    &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012999&quot;,
+    &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;
+  },
+  &quot;SelectAssetsService&quot; : {
+    &quot;AccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;AssetId&quot; : &quot;02if200000WsJPFAA3&quot;,
+    &quot;AssetName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+    &quot;BillingAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;ConnectDate&quot; : &quot;2019-05-22T18:30:00.000Z&quot;,
+    &quot;Meter&quot; : &quot;a25f2000004DtDoAAK&quot;,
+    &quot;PremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+    &quot;PremiseId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+    &quot;ProductCode&quot; : &quot;TEST1234&quot;,
+    &quot;ProductFamily&quot; : &quot;Gas&quot;,
+    &quot;ProductId&quot; : &quot;01tf20000088syBAAQ&quot;,
+    &quot;ProductName&quot; : &quot;TestGas&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+    &quot;ServiceAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;ServicePointId&quot; : &quot;a26f200000KhBdSAAV&quot;,
+    &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012999&quot;,
+    &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;
+  },
+  &quot;SelectExistingAccount&quot; : {
+    &quot;AccountSelectionMsg&quot; : true,
+    &quot;AvailableAccounts&quot; : [ {
+      &quot;$$hashKey&quot; : &quot;object:1364&quot;,
+      &quot;Email&quot; : &quot;qwoqw@asyu.cp&quot;,
+      &quot;PremiseCity&quot; : &quot;Detroit&quot;,
+      &quot;PremiseCountry&quot; : &quot;US&quot;,
+      &quot;PremiseId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+      &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+      &quot;PremisePostalCode&quot; : &quot;48202&quot;,
+      &quot;PremiseState&quot; : &quot;MI&quot;,
+      &quot;PremiseStreet&quot; : &quot;19 Harper Ave&quot;,
+      &quot;PrimaryAccName&quot; : &quot;phei qowo&quot;,
+      &quot;PrimaryAccStatus&quot; : &quot;Inactive&quot;,
+      &quot;PrimaryAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+      &quot;PrimaryAccountNumber&quot; : &quot;22000015029&quot;,
+      &quot;PrimaryAccountPremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+      &quot;vlcSelected&quot; : true
+    } ],
+    &quot;CountAccounts&quot; : 1,
+    &quot;ExistingAccountsFml&quot; : 1,
+    &quot;NoPrimaryAccountMsg&quot; : true
+  },
+  &quot;SelectMeter&quot; : {
+    &quot;Id&quot; : &quot;a25f2000004DtD0AAK&quot;,
+    &quot;MeterName&quot; : &quot;Electricity Meter - ISUMDG135209E&quot;,
+    &quot;ProductName&quot; : &quot;Electricity Standard Tariff&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135209E&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;
+  },
+  &quot;SelectMeter2&quot; : {
+    &quot;Id&quot; : &quot;a25f2000004DtDoAAK&quot;,
+    &quot;MeterName&quot; : &quot;Gas Meter - ISUMDG135210G&quot;,
+    &quot;ProductName&quot; : &quot;TestGas&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;
+  },
+  &quot;SelectService&quot; : [ {
+    &quot;Meter&quot; : &quot;a25f2000004DtD0AAK&quot;,
+    &quot;PremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+    &quot;Premises&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+    &quot;PremisesId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135209E&quot;,
+    &quot;ServicePointId&quot; : &quot;a26f200000KhBcUAAV&quot;,
+    &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012998&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Vacant&quot;
+  }, {
+    &quot;Meter&quot; : &quot;a25f2000004DtDoAAK&quot;,
+    &quot;PremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+    &quot;Premises&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+    &quot;PremisesId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+    &quot;ServicePointId&quot; : &quot;a26f200000KhBdSAAV&quot;,
+    &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012999&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Vacant&quot;
+  } ],
+  &quot;SelectService1&quot; : {
+    &quot;MeterId&quot; : &quot;a25f2000004DtDoAAK&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+    &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012999&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;
+  },
+  &quot;SelectService3&quot; : {
+    &quot;MeterId&quot; : &quot;a25f2000004DtD0AAK&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135209E&quot;,
+    &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012998&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;
+  },
+  &quot;SelectServicestoCancel&quot; : {
+    &quot;MoveOutDate&quot; : &quot;2019-05-21T18:30:00.000Z&quot;,
+    &quot;MoveOutDateMessaging&quot; : true,
+    &quot;MoveOutDateValidation&quot; : false,
+    &quot;SelectCancelServices&quot; : null
+  },
+  &quot;SelectTransferAssetsService&quot; : {
+    &quot;SelectServiceMsg&quot; : null,
+    &quot;SelectTransferServiceMessage&quot; : true,
+    &quot;SelectTransferServices&quot; : [ {
+      &quot;$$hashKey&quot; : &quot;object:670&quot;,
+      &quot;AccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+      &quot;AssetId&quot; : &quot;02if200000WsJPFAA3&quot;,
+      &quot;AssetName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+      &quot;BillingAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+      &quot;ConnectDate&quot; : &quot;2019-05-22T18:30:00.000Z&quot;,
+      &quot;Meter&quot; : &quot;a25f2000004DtDoAAK&quot;,
+      &quot;PremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+      &quot;PremiseId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+      &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+      &quot;ProductCode&quot; : &quot;TEST1234&quot;,
+      &quot;ProductFamily&quot; : &quot;Gas&quot;,
+      &quot;ProductId&quot; : &quot;01tf20000088syBAAQ&quot;,
+      &quot;ProductName&quot; : &quot;TestGas&quot;,
+      &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+      &quot;ServiceAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+      &quot;ServicePointId&quot; : &quot;a26f200000KhBdSAAV&quot;,
+      &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+      &quot;ServicePointNumber&quot; : &quot;800012999&quot;,
+      &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;TransferService&quot; : true
+    } ]
+  },
+  &quot;SelectTypeofService&quot; : {
+    &quot;CountofServicePoints&quot; : 2,
+    &quot;SelectServicePointMsg&quot; : null,
+    &quot;SelectServicePointMsgNew&quot; : null,
+    &quot;SelectServicePoints&quot; : [ {
+      &quot;$$hashKey&quot; : &quot;object:1385&quot;,
+      &quot;Meter&quot; : &quot;a25f2000004DtDoAAK&quot;,
+      &quot;PremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+      &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+      &quot;Premises&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+      &quot;PremisesId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+      &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+      &quot;ServicePointId&quot; : &quot;a26f200000KhBdSAAV&quot;,
+      &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+      &quot;ServicePointNumber&quot; : &quot;800012999&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;Status&quot; : &quot;Vacant&quot;,
+      &quot;value&quot; : true,
+      &quot;vlcSelected&quot; : true
+    } ],
+    &quot;SelectServicePointsNew&quot; : [ {
+      &quot;$$hashKey&quot; : &quot;object:1381&quot;,
+      &quot;Meter&quot; : &quot;a25f2000004DtDoAAK&quot;,
+      &quot;PremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+      &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+      &quot;Premises&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+      &quot;PremisesId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+      &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+      &quot;ServicePointId&quot; : &quot;a26f200000KhBdSAAV&quot;,
+      &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+      &quot;ServicePointNumber&quot; : &quot;800012999&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;Status&quot; : &quot;Vacant&quot;,
+      &quot;value&quot; : true,
+      &quot;vlcSelected&quot; : true
+    } ],
+    &quot;ServicePointsFormula&quot; : 1,
+    &quot;ServicePointsFormulaNew&quot; : null,
+    &quot;ServiceValidationMsg&quot; : null
+  },
+  &quot;ServicePoint1&quot; : &quot;a26f200000KhBdSAAV&quot;,
+  &quot;ServicePoint2&quot; : &quot;&quot;,
+  &quot;ServicePoint3&quot; : &quot;&quot;,
+  &quot;ServicesChosen&quot; : [ &quot;Gas&quot; ],
+  &quot;TransferAsset1&quot; : &quot;02if200000WsJPFAA3&quot;,
+  &quot;TransferAsset2&quot; : &quot;&quot;,
+  &quot;TransferAsset3&quot; : &quot;&quot;,
+  &quot;TransferElectricity&quot; : false,
+  &quot;TransferGas&quot; : true,
+  &quot;TransferServices&quot; : [ {
+    &quot;$$hashKey&quot; : &quot;object:670&quot;,
+    &quot;AccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;AssetId&quot; : &quot;02if200000WsJPFAA3&quot;,
+    &quot;AssetName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+    &quot;BillingAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;ConnectDate&quot; : &quot;2019-05-22T18:30:00.000Z&quot;,
+    &quot;Meter&quot; : &quot;a25f2000004DtDoAAK&quot;,
+    &quot;PremiseAddress&quot; : &quot;19 Harper Ave, Detroit, MI, 48202&quot;,
+    &quot;PremiseId&quot; : &quot;a0lf2000007hSvFAAU&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012759&quot;,
+    &quot;ProductCode&quot; : &quot;TEST1234&quot;,
+    &quot;ProductFamily&quot; : &quot;Gas&quot;,
+    &quot;ProductId&quot; : &quot;01tf20000088syBAAQ&quot;,
+    &quot;ProductName&quot; : &quot;TestGas&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG135210G&quot;,
+    &quot;ServiceAccountId&quot; : &quot;001f200001vKvWQAA0&quot;,
+    &quot;ServicePointId&quot; : &quot;a26f200000KhBdSAAV&quot;,
+    &quot;ServicePointName&quot; : &quot;19 Harper Ave, Detroit - Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012999&quot;,
+    &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;TransferService&quot; : true
+  } ],
+  &quot;TransferWater&quot; : false,
+  &quot;ValidationCheck&quot; : &quot;Yes&quot;,
+  &quot;Water&quot; : false,
+  &quot;WaterMeterReading&quot; : &quot;&quot;,
+  &quot;WaterService&quot; : &quot;&quot;,
+  &quot;error&quot; : &quot;OK&quot;,
+  &quot;id&quot; : &quot;a0Zf200000PUjAvEAL&quot;,
+  &quot;info&quot; : {
+    &quot;Connection&quot; : &quot;keep-alive&quot;,
+    &quot;Content-Type&quot; : &quot;application/xml; charset=UTF-8&quot;,
+    &quot;Date&quot; : &quot;Tue, 21 May 2019 07:49:19 GMT&quot;,
+    &quot;Server&quot; : &quot;nginx&quot;,
+    &quot;status&quot; : &quot;Server Error&quot;,
+    &quot;statusCode&quot; : 500,
+    &quot;transfer-encoding&quot; : &quot;chunked&quot;
+  },
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;result&quot; : &quot;&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;\n&lt;ns0:Envelope xmlns:ns0=\&quot;http://schemas.xmlsoap.org/soap/envelope/\&quot;&gt;\n  &lt;ns0:Body&gt;\n    &lt;ns01:notificationsResponse xmlns:ns01=\&quot;http://soap.sforce.com/2005/09/outbound\&quot;&gt;\n      &lt;ns01:Ack&gt;false&lt;/ns01:Ack&gt;\n    &lt;/ns01:notificationsResponse&gt;\n  &lt;/ns0:Body&gt;\n&lt;/ns0:Envelope&gt;&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://vlocity-accenture-energy--vlocity-cmt.na53.visual.force.com&quot;,
+  &quot;success&quot; : false,
+  &quot;testContextId&quot; : &quot;001f200001vKvWQAA0&quot;,
+  &quot;timeStamp&quot; : &quot;2019-05-21T07:48:10.734Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;CAD&quot;,
+  &quot;userId&quot; : &quot;005f2000008YzmAAAS&quot;,
+  &quot;userName&quot; : &quot;akash.naik@accenture.com.vlocity&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -240,
+  &quot;vlcPersistentComponent&quot; : { }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformCreateContractAccount_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Creates contact, used in MoveIn Omniscript</description>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLInsertEnergyContact</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>93a081ba-65b9-2be7-8a83-002fb5da4bf7</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerLastName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LastName</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>e1030508-c427-5d57-1dd2-6abcfb66e343</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingCity var:SelectPremises:ServiceLocation-Block:PremCity IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingCity%, %SelectPremises:ServiceLocation-Block:PremCity%)</formulaExpression>
+        <formulaResultPath>FML_MailingCity</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>73b874da-30d9-f4a0-aaba-83eada348cd9</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>45f69969-8eae-12eb-911e-3de7d759d0d6</globalKey>
+        <inputFieldName>FML_MailingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingState</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8c22a8ef-db3a-cdd6-f92b-723c5f5ed766</globalKey>
+        <inputFieldName>FML_MailingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingPostalCode</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>98d27b5c-fff5-dbf6-4124-68ea2d6467f5</globalKey>
+        <inputFieldName>FML_MailingCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingCountry</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d2e3b7e1-1d9d-6545-b1d9-4da31b422387</globalKey>
+        <inputFieldName>FML_MailingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingCity</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingState var:SelectPremises:ServiceLocation-Block:PremState IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingState%, %SelectPremises:ServiceLocation-Block:PremState%)</formulaExpression>
+        <formulaResultPath>FML_MailingState</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>472b1824-2716-765a-7dc1-8329ea3cb63b</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingCountry var:SelectPremises:ServiceLocation-Block:PremCountry IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingCountry%, %SelectPremises:ServiceLocation-Block:PremCountry%)</formulaExpression>
+        <formulaResultPath>FML_MailingCountry</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>8aa443f5-fd98-4e58-215f-bffa2c48e89b</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5fdcfb6a-d17c-b6f3-9ca6-526c23e59e54</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerPhone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Phone</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6087f2e8-9b94-da75-69d9-2193898dafbf</globalKey>
+        <inputFieldName>FML_MailingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingStreet</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f2e0d611-4523-fc85-a6c6-1cb46139967d</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerDOB</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Birthdate</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e2c0dcd8-22e6-c4ae-7171-7a468c0b681e</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:SSN</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__SSN__c</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingZipCode var:SelectPremises:ServiceLocation-Block:PremPostalCode IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingZipCode%, %SelectPremises:ServiceLocation-Block:PremPostalCode%)</formulaExpression>
+        <formulaResultPath>FML_MailingPostalCode</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>a596f556-79e2-1383-aaa8-6c91dac44b1f</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BillingPreferences:MailingAddres &apos;DifferentAddress&apos; == var:BillingPreferences:MailingAddresss &apos;DifferentAddress&apos; == OR var:BillingPreferences:MailingStreet var:SelectPremises:ServiceLocation-Block:PremiseStreetAddress IF</formulaConverted>
+        <formulaExpression>IF(OR(%BillingPreferences:MailingAddres% == &apos;DifferentAddress&apos;, %BillingPreferences:MailingAddresss% == &apos;DifferentAddress&apos;),%BillingPreferences:MailingStreet%, %SelectPremises:ServiceLocation-Block:PremiseStreetAddress%)</formulaExpression>
+        <formulaResultPath>FML_MailingStreet</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>b1d86a0f-1bc7-08d4-1b58-9cf32d1c9f53</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f80b4625-1030-fbcb-aa9e-da93bc9af5c5</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerFirstName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FirstName</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7e80000f-f8a7-0556-9ca9-0b25949465d7</globalKey>
+        <inputFieldName>CustomerSelection:NewCustomerDetails:CustomerEmail</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-InsertEnergyContact</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Email</outputFieldName>
+        <outputObjectName>Contact</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BillingPreferences&quot; : {
+    &quot;APaymentType&quot; : &quot;Postpaid&quot;,
+    &quot;AutoPay&quot; : &quot;No&quot;,
+    &quot;BillNotification&quot; : &quot;Yes&quot;,
+    &quot;MailingAddres&quot; : &quot;SamePremise&quot;,
+    &quot;MailingAddresss&quot; : null,
+    &quot;MailingCity&quot; : null,
+    &quot;MailingCountry&quot; : null,
+    &quot;MailingState&quot; : null,
+    &quot;MailingStreet&quot; : null,
+    &quot;MailingZipCode&quot; : null,
+    &quot;OffersPromotions&quot; : &quot;No&quot;,
+    &quot;OutageNotification&quot; : &quot;No&quot;,
+    &quot;PaymentNotification&quot; : &quot;No&quot;,
+    &quot;WorkOrderNotification&quot; : &quot;No&quot;
+  },
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;Confirmation&quot; : null,
+  &quot;CustomerName&quot; : &quot;force india&quot;,
+  &quot;CustomerName_Fml1&quot; : &quot;force india&quot;,
+  &quot;CustomerName_Fml2&quot; : &quot; &quot;,
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Business&quot;,
+    &quot;BillingDetails&quot; : {
+      &quot;BillCycle&quot; : &quot;2&quot;,
+      &quot;BillDeliveryMethod&quot; : &quot;Paper Billing&quot;,
+      &quot;BillFormat&quot; : &quot;Detail&quot;,
+      &quot;BillFrequency&quot; : &quot;Monthly&quot;,
+      &quot;BillingCity&quot; : &quot;bengaluru&quot;,
+      &quot;BillingCountry&quot; : &quot;India&quot;,
+      &quot;BillingEmailAddress&quot; : &quot;test@tt.co&quot;,
+      &quot;BillingPostalCode&quot; : &quot;56001&quot;,
+      &quot;BillingState&quot; : &quot;karnataka&quot;,
+      &quot;BillingStreet&quot; : &quot;Vidhan soudha&quot;,
+      &quot;NumberOfBills&quot; : 1
+    },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-08-27T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : true,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;CustomerClass&quot; : &quot;Residential&quot;,
+      &quot;CustomerDOB&quot; : &quot;08/21/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;amy&quot;,
+      &quot;CustomerLastName&quot; : &quot;best&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;Description&quot; : &quot;test desc&quot;,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;SSN&quot;,
+      &quot;Industry&quot; : &quot;Agriculture&quot;,
+      &quot;SSN&quot; : &quot;212121211&quot;,
+      &quot;TaxId&quot; : null,
+      &quot;Website&quot; : &quot;www.twitter.com/akashnaik010&quot;
+    },
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : &quot;Ferrari&quot;,
+      &quot;ParentAccountId&quot; : &quot;0013h00000EGcT3AAL&quot;,
+      &quot;ParentAccountName&quot; : &quot;Ferrari&quot;
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : &quot;2020-08-31&quot;,
+      &quot;ExemptionPercentage&quot; : 10,
+      &quot;ExemptionStartDate&quot; : &quot;2020-08-31&quot;,
+      &quot;TaxExemption&quot; : &quot;Exempt&quot;,
+      &quot;TaxIds&quot; : &quot;21121211&quot;
+    }
+  },
+  &quot;ElectricityProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+    &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;001&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+    &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;003&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+    &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+    &quot;ProductCode&quot; : &quot;002&quot;
+  } ],
+  &quot;Error&quot; : { },
+  &quot;GasProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+    &quot;Name&quot; : &quot;Turn Off Order&quot;,
+    &quot;ProductCode&quot; : &quot;004&quot;
+  }, {
+    &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+    &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+    &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+  } ],
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;MuleCloseDate&quot; : &quot;2020-8-27&quot;,
+  &quot;MuleMoveInDate&quot; : &quot;2020-8-28&quot;,
+  &quot;NewAccountName&quot; : &quot;force india&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PreConfirm&quot; : {
+    &quot;Confirm&quot; : &quot;Yes&quot;,
+    &quot;SelectedServices&quot; : [ {
+      &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+      &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059wCEAQ&quot;,
+      &quot;ServicePointName&quot; : &quot;Leicester Water&quot;,
+      &quot;ServiceType&quot; : &quot;Water&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;
+    }, {
+      &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+      &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059wbEAA&quot;,
+      &quot;ServicePointName&quot; : &quot;Leicester Gas&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;
+    }, {
+      &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+      &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059whEAA&quot;,
+      &quot;ServicePointName&quot; : &quot;Leicester Electricity&quot;,
+      &quot;ServiceType&quot; : &quot;Electricity&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;
+    } ],
+    &quot;ServicesChoosen&quot; : &quot;&quot;
+  },
+  &quot;PremiseServicePointsListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  } ],
+  &quot;ProductListReadOnlyColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4HAAU&quot;,
+    &quot;Name&quot; : &quot;Business&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectPremises&quot; : {
+    &quot;NewAccountPremises&quot; : null,
+    &quot;PremiseError&quot; : null,
+    &quot;ServiceLocation-Block&quot; : {
+      &quot;PremCity&quot; : &quot;Kolkata&quot;,
+      &quot;PremCountry&quot; : &quot;India&quot;,
+      &quot;PremId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;PremPostalCode&quot; : &quot;700059&quot;,
+      &quot;PremState&quot; : &quot;West Bengal&quot;,
+      &quot;PremiseName&quot; : &quot;Leicester Premise&quot;,
+      &quot;PremiseStreetAddress&quot; : &quot;Akshara Lotus Garden Leicester&quot;,
+      &quot;ServiceLocation&quot; : &quot;Leicester Premise&quot;
+    }
+  },
+  &quot;SelectService&quot; : [ {
+    &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+    &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wCEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Leicester Water&quot;,
+    &quot;ServiceType&quot; : &quot;Water&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+    &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wbEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Leicester Gas&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+    &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059whEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Leicester Electricity&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  } ],
+  &quot;SelectTypeofService&quot; : {
+    &quot;SelectServicePoint&quot; : null,
+    &quot;SelectServicePoints&quot; : [ {
+      &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+      &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059wCEAQ&quot;,
+      &quot;ServicePointName&quot; : &quot;Leicester Water&quot;,
+      &quot;ServiceType&quot; : &quot;Water&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;
+    }, {
+      &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+      &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059wbEAA&quot;,
+      &quot;ServicePointName&quot; : &quot;Leicester Gas&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;
+    }, {
+      &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+      &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059whEAA&quot;,
+      &quot;ServicePointName&quot; : &quot;Leicester Electricity&quot;,
+      &quot;ServiceType&quot; : &quot;Electricity&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;
+    } ],
+    &quot;ServicePointsFormula&quot; : 3
+  },
+  &quot;SelectedPremises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+  &quot;SelectedServices1&quot; : [ {
+    &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+    &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wCEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Leicester Water&quot;,
+    &quot;ServiceType&quot; : &quot;Water&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+    &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wbEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Leicester Gas&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;PremiseAddress&quot; : &quot;Leicester Premise&quot;,
+    &quot;Premises&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvjEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059whEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Leicester Electricity&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  } ],
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServicePointNumber&quot;,
+    &quot;label&quot; : &quot;Service Point Number&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;Status&quot;,
+    &quot;label&quot; : &quot;Status&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SerialNumber&quot;,
+    &quot;label&quot; : &quot;Serial Number&quot;
+  } ],
+  &quot;ServicePointsError&quot; : null,
+  &quot;ServicePointsMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;WaterProduct&quot; : [ {
+    &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+    &quot;Name&quot; : &quot;Water&quot;,
+    &quot;ProductCode&quot; : &quot;water&quot;
+  } ],
+  &quot;bundleName&quot; : &quot;VPL-CreateEnergyContact&quot;,
+  &quot;timeStamp&quot; : &quot;2020-08-27T10:38:04.935Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;BillingPreferences&quot; : 38518,
+    &quot;ConfirmUserActionError&quot; : 3208,
+    &quot;CustomerSelection&quot; : 145934,
+    &quot;DR-GetProducts&quot; : 945,
+    &quot;DRExtractBussinessAccountRecId&quot; : 1225,
+    &quot;ExtractServiceAccountPremises&quot; : 0,
+    &quot;GetPremServicePoints&quot; : 892,
+    &quot;OmniScriptSessionToken&quot; : &quot;88d43606-11b5-48fc-b201-d01585dc7d62&quot;,
+    &quot;PreConfirm&quot; : 6656,
+    &quot;SelectPremises&quot; : 271294,
+    &quot;SelectTypeofService&quot; : 2310,
+    &quot;ServicePointsError&quot; : 0,
+    &quot;SetCustomLWCValues&quot; : 168,
+    &quot;SetDefaultValues&quot; : 51,
+    &quot;SetExistingCustomerDetails&quot; : 146,
+    &quot;SetPremisesValue&quot; : 87,
+    &quot;SetServicePointVal&quot; : 32
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLInsertEnergyContact_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

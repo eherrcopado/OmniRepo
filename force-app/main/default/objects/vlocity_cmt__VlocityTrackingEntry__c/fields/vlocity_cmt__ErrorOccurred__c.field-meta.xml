@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__ErrorOccurred__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Denotes if an error occured in Test Procedure. Computed to true if Error Code is not null</description>
+    <formula>IF(ISNULL(vlocity_cmt__ErrorCode__c)  || ISBLANK(vlocity_cmt__ErrorCode__c), false, true)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Denotes if an error occured in Test Procedure. Computed to true if Error Code is not null</inlineHelpText>
+    <label>Error Occurred</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

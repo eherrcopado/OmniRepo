@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;response&quot; : { },
+  &quot;DR_GetWorkOrderNotifications&quot; : {
+    &quot;WorkOrder&quot; : {
+      &quot;WONumber&quot; : &quot;00000087&quot;,
+      &quot;Status&quot; : &quot;New&quot;,
+      &quot;Description&quot; : &quot;description&quot;,
+      &quot;Subject&quot; : &quot;subject&quot;
+    },
+    &quot;Id&quot; : &quot;0014x00000CulkkAAB&quot;
+  },
+  &quot;DR_GetWorkOrderNotificationsStatus&quot; : true,
+  &quot;TRNS_CaseNotifications&quot; : [ ],
+  &quot;TRNS_CaseNotificationsStatus&quot; : true,
+  &quot;DR_GetCases&quot; : [ {
+    &quot;Type&quot; : &quot;Problem&quot;,
+    &quot;Subject&quot; : &quot;test2&quot;,
+    &quot;Status&quot; : &quot;New&quot;,
+    &quot;Reason&quot; : &quot;Instructions not clear&quot;,
+    &quot;Priority&quot; : &quot;Medium&quot;,
+    &quot;CaseId&quot; : &quot;5004x000005JxToAAK&quot;,
+    &quot;CreatedDate&quot; : &quot;2021-03-01T21:49:31.000Z&quot;,
+    &quot;CaseNumber&quot; : &quot;00001101&quot;
+  }, {
+    &quot;Type&quot; : &quot;Problem&quot;,
+    &quot;Subject&quot; : &quot;test1&quot;,
+    &quot;Status&quot; : &quot;New&quot;,
+    &quot;Reason&quot; : &quot;User didn&apos;t attend training&quot;,
+    &quot;Priority&quot; : &quot;Medium&quot;,
+    &quot;CaseId&quot; : &quot;5004x000005JxZMAA0&quot;,
+    &quot;CreatedDate&quot; : &quot;2021-03-19T21:49:21.000Z&quot;,
+    &quot;CaseNumber&quot; : &quot;00001100&quot;
+  } ],
+  &quot;DR_GetCasesStatus&quot; : true,
+  &quot;SetRecordAgeLimits&quot; : {
+    &quot;CaseOpenAge&quot; : 30,
+    &quot;QuoteOpenAge&quot; : 30,
+    &quot;OrderOpenAge&quot; : 30,
+    &quot;ContractExpiringIn&quot; : 100,
+    &quot;WorkOrderAge&quot; : 90,
+    &quot;WorkOrderWithin&quot; : 60
+  },
+  &quot;SetRecordAgeLimitsStatus&quot; : true,
+  &quot;options&quot; : {
+    &quot;useQueueableApexRemoting&quot; : false,
+    &quot;queueableChainable&quot; : false,
+    &quot;ignoreCache&quot; : true,
+    &quot;resetCache&quot; : false,
+    &quot;chainable&quot; : false
+  },
+  &quot;AccountId&quot; : &quot;0014x00000CulkkAAB&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>TransformCaseintoCaseNotificationsStandardized</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized35032300594884935</globalKey>
+        <inputFieldName>DR_GetCases:CreatedDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordCreatedDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized8225487025958291</globalKey>
+        <inputFieldName>DR_GetCases:CaseNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized8358051664851913</globalKey>
+        <inputFieldName>DR_GetCases:CaseId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized543523962018879</globalKey>
+        <inputFieldName>DR_GetCases:Type</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:DR_GetCases:DateDiffCalc var:SetRecordAgeLimits:CaseOpenAge &gt; &quot;Overdue&quot; &quot;DoNotNotify&quot; IF</formulaConverted>
+        <formulaExpression>IF(DR_GetCases:DateDiffCalc&gt;SetRecordAgeLimits:CaseOpenAge,&quot;Overdue&quot;,&quot;DoNotNotify&quot;)</formulaExpression>
+        <formulaResultPath>DR_GetCases:NotificationType</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized7423415978078334</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>case</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized07877076675648231</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ObjectType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| 0 | | TODAY var:DR_GetCases:CreatedDate DATEDIFF - SUM</formulaConverted>
+        <formulaExpression>SUM(0-(DATEDIFF(TODAY,DR_GetCases:CreatedDate)))</formulaExpression>
+        <formulaResultPath>DR_GetCases:DateDiffCalc</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized6077499465387257</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized9207324199524376</globalKey>
+        <inputFieldName>DR_GetCases:Subject</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordSubject</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized9143604492702102</globalKey>
+        <inputFieldName>DR_GetCases:Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordStatus</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized6558829006055118</globalKey>
+        <inputFieldName>DR_GetCases:DateDiffCalc</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>DateDiffCalc</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformCaseintoCaseNotificationsStandardized5854553806128489</globalKey>
+        <inputFieldName>DR_GetCases:NotificationType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformCaseintoCaseNotificationsStandardized</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>NotificationType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;response&quot; : { },
+  &quot;DR_GetWorkOrderNotifications&quot; : {
+    &quot;WorkOrder&quot; : {
+      &quot;WONumber&quot; : &quot;00000087&quot;,
+      &quot;Status&quot; : &quot;New&quot;,
+      &quot;Description&quot; : &quot;description&quot;,
+      &quot;Subject&quot; : &quot;subject&quot;
+    },
+    &quot;Id&quot; : &quot;0014x00000CulkkAAB&quot;
+  },
+  &quot;DR_GetWorkOrderNotificationsStatus&quot; : true,
+  &quot;TRNS_CaseNotifications&quot; : [ ],
+  &quot;TRNS_CaseNotificationsStatus&quot; : true,
+  &quot;DR_GetCases&quot; : [ {
+    &quot;Type&quot; : &quot;Problem&quot;,
+    &quot;Subject&quot; : &quot;test2&quot;,
+    &quot;Status&quot; : &quot;New&quot;,
+    &quot;Reason&quot; : &quot;Instructions not clear&quot;,
+    &quot;Priority&quot; : &quot;Medium&quot;,
+    &quot;CaseId&quot; : &quot;5004x000005JxToAAK&quot;,
+    &quot;CreatedDate&quot; : &quot;2021-03-19T21:49:31.000Z&quot;,
+    &quot;CaseNumber&quot; : &quot;00001101&quot;
+  }, {
+    &quot;Type&quot; : &quot;Problem&quot;,
+    &quot;Subject&quot; : &quot;test1&quot;,
+    &quot;Status&quot; : &quot;New&quot;,
+    &quot;Reason&quot; : &quot;User didn&apos;t attend training&quot;,
+    &quot;Priority&quot; : &quot;Medium&quot;,
+    &quot;CaseId&quot; : &quot;5004x000005JxZMAA0&quot;,
+    &quot;CreatedDate&quot; : &quot;2021-03-01T21:49:21.000Z&quot;,
+    &quot;CaseNumber&quot; : &quot;00001100&quot;
+  } ],
+  &quot;DR_GetCasesStatus&quot; : true,
+  &quot;SetRecordAgeLimits&quot; : {
+    &quot;CaseOpenAge&quot; : 30,
+    &quot;QuoteOpenAge&quot; : 30,
+    &quot;OrderOpenAge&quot; : 30,
+    &quot;ContractExpiringIn&quot; : 100,
+    &quot;WorkOrderAge&quot; : 90,
+    &quot;WorkOrderWithin&quot; : 60
+  },
+  &quot;SetRecordAgeLimitsStatus&quot; : true,
+  &quot;options&quot; : {
+    &quot;useQueueableApexRemoting&quot; : false,
+    &quot;queueableChainable&quot; : false,
+    &quot;ignoreCache&quot; : true,
+    &quot;resetCache&quot; : false,
+    &quot;chainable&quot; : false
+  },
+  &quot;AccountId&quot; : &quot;0014x00000CulkkAAB&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>TransformCaseintoCaseNotificationsStandardized_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

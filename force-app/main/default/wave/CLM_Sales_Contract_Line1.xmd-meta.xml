@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dataset>CLM_Sales_Contract_Line1</dataset>
+    <dates>
+        <alias>Contract.Contract End Date</alias>
+        <dateFieldDay>Contract.EndDate_Day</dateFieldDay>
+        <dateFieldEpochDay>Contract.EndDate_day_epoch</dateFieldEpochDay>
+        <dateFieldEpochSecond>Contract.EndDate_sec_epoch</dateFieldEpochSecond>
+        <dateFieldFullYear>Contract.EndDate</dateFieldFullYear>
+        <dateFieldHour>Contract.EndDate_Hour</dateFieldHour>
+        <dateFieldMinute>Contract.EndDate_Minute</dateFieldMinute>
+        <dateFieldMonth>Contract.EndDate_Month</dateFieldMonth>
+        <dateFieldQuarter>Contract.EndDate_Quarter</dateFieldQuarter>
+        <dateFieldSecond>Contract.EndDate_Second</dateFieldSecond>
+        <dateFieldWeek>Contract.EndDate_Week</dateFieldWeek>
+        <dateFieldYear>Contract.EndDate_Year</dateFieldYear>
+        <firstDayOfWeek>-1</firstDayOfWeek>
+        <fiscalMonthOffset>0</fiscalMonthOffset>
+        <label>Contract End Date</label>
+        <sortIndex>0</sortIndex>
+        <type xsi:nil="true"/>
+    </dates>
+    <dimensions>
+        <field>Contract.Account.Name</field>
+        <isDerived>false</isDerived>
+        <label>Account</label>
+        <linkTemplateEnabled>true</linkTemplateEnabled>
+        <recordIdField>Contract.AccountId</recordIdField>
+        <salesforceActionsEnabled>true</salesforceActionsEnabled>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Account</field>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Contract.Contract</field>
+        <isDerived>false</isDerived>
+        <linkTemplateEnabled>true</linkTemplateEnabled>
+        <recordIdField>Contract.Id</recordIdField>
+        <salesforceActionsEnabled>true</salesforceActionsEnabled>
+        <sortIndex>1</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>ContractLineItem</field>
+        <isDerived>true</isDerived>
+        <label>Contract Line Item</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>1</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Name</field>
+        <isDerived>false</isDerived>
+        <label>Contract Line Item</label>
+        <linkTemplateEnabled>true</linkTemplateEnabled>
+        <recordIdField>Id</recordIdField>
+        <salesforceActionsEnabled>true</salesforceActionsEnabled>
+        <sortIndex>2</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Contract</field>
+        <isDerived>true</isDerived>
+        <label>Contract Name</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>2</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Contract.Contract_Renewal_Group</field>
+        <isDerived>false</isDerived>
+        <members>
+            <label>Less than 30 days</label>
+            <member>1. Less than 30 days</member>
+            <sortIndex>0</sortIndex>
+        </members>
+        <members>
+            <label>Between 30 to 60 days</label>
+            <member>2. Between 30 to 60 days</member>
+            <sortIndex>1</sortIndex>
+        </members>
+        <members>
+            <label>Between 60 to 90 days</label>
+            <member>3. Between 60 to 90 days</member>
+            <sortIndex>2</sortIndex>
+        </members>
+        <members>
+            <label>More than 90 days</label>
+            <member>4. More than 90 days</member>
+            <sortIndex>3</sortIndex>
+        </members>
+        <sortIndex>3</sortIndex>
+    </dimensions>
+    <measures>
+        <field>TotalPrice</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>false</isDerived>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>MinUnitPrice</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>MaxUnitPrice</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>AvgUnitPrice</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>AvgRevenue</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>3</sortIndex>
+    </measures>
+    <measures>
+        <field>TotalRevenueperQuote</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>4</sortIndex>
+    </measures>
+    <measures>
+        <field>AvgPricePerQuote</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>5</sortIndex>
+    </measures>
+    <measures>
+        <field>TextPercent</field>
+        <formatCustomFormat>[&quot;#,###.##%&quot;,100]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>6</sortIndex>
+    </measures>
+    <measures>
+        <field>VsAvgPrice</field>
+        <formatCustomFormat>[&quot;▲#,###.#%;▼-#,###.#%;◀ ▶ 0%&quot;,100]</formatCustomFormat>
+        <formatDecimalSeparator>.</formatDecimalSeparator>
+        <formatThousandsSeparator>,</formatThousandsSeparator>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>7</sortIndex>
+    </measures>
+    <measures>
+        <field>VsAvgrevenue</field>
+        <formatCustomFormat>[&quot;▲#,###.#%;▼-#,###.#%;◀ ▶ 0%&quot;,100]</formatCustomFormat>
+        <formatDecimalSeparator>.</formatDecimalSeparator>
+        <formatThousandsSeparator>,</formatThousandsSeparator>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>8</sortIndex>
+    </measures>
+    <measures>
+        <field>DueforRenewalin</field>
+        <isDerived>true</isDerived>
+        <label>Due for Renewal in (Days)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>9</sortIndex>
+    </measures>
+    <measures>
+        <field>TotalRevenueperAccount</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>10</sortIndex>
+    </measures>
+    <measures>
+        <field>AvgPricePerAccount</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>11</sortIndex>
+    </measures>
+    <measures>
+        <field>AvgPricePerContract</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>12</sortIndex>
+    </measures>
+    <measures>
+        <field>TotalrevenuePerContract</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>13</sortIndex>
+    </measures>
+    <measures>
+        <field>TotalRevenueInStages</field>
+        <formatCustomFormat>[&quot;$#,###.00&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>14</sortIndex>
+    </measures>
+    <measures>
+        <field>*</field>
+        <isDerived>true</isDerived>
+        <label>Sales Contract Lines</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>15</sortIndex>
+    </measures>
+</WaveXmd>

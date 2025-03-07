@@ -1,0 +1,65 @@
+<apex:page controller="vlocity_cmt.PCAppHandler"
+    showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0" cache="true" expires="86400">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" dir="{!IF(isLanguageRTL, 'rtl', 'ltr')}">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="generator" content="Vlocity Product Designer" />
+            <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
+            <meta name="description" content="Vlocity Product Designer" />
+            <!-- Common scripts -->
+            <apex:includeScript value="/support/console/44.0/integration.js" />
+            <style>
+                html,
+                body {
+                    height: 100%;
+                    overflow: hidden;
+                }
+            </style>    
+        </head>
+        <body>
+            <apex:includeLightning />
+            <div id="upc-offer-migration-plan"></div>
+            <script type="text/javascript">
+
+                function resizeTabContent() {
+                    //Console error if we remove this method as part of old pc code is used
+                }
+
+                function updateActiveTab(tabName) {
+                    //Console error if we remove this method as part of old pc code is used
+                }
+
+                sforce.console.getEnclosingPrimaryTabId(result => {
+                 sforce.console.setTabTitle(
+                  "Vlocity Offer Migration",
+                  result.id
+                 );
+                });
+
+                function closeTab() {
+                 setTimeout(function() {
+                  sforce.console.getEnclosingPrimaryTabId(result => {
+                   sforce.console.closeTab(result.id);
+                  });
+                 }, 5000);
+                }
+                
+                $Lightning.use("{!JSENCODE(namespace)}:ltngOutVF", function() {
+                 $Lightning.createComponent(
+                  "{!JSENCODE(namespace)}:upcOfferMigrationPlan", 
+                  { recordId : "{!JSENCODE($CurrentPage.parameters.id)}" }, 
+                  "upc-offer-migration-plan",
+                  function(cmp, status) {
+                      if (status === "SUCCESS") {
+                            cmp.set("v.recordId" , '{!JSENCODE($CurrentPage.parameters.Id)}');
+                            cmp.elements[0].addEventListener("closeTab", event => {
+                                closeTab();
+                            });
+                      }
+                  }
+                 );
+                });
+            </script>
+        </body>
+    </html>
+</apex:page>

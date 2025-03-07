@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Used to transform inputs to call IP for Create Agreement in external system</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : {
+    &quot;BankDetails&quot; : {
+      &quot;BankAccountName&quot; : &quot;Aksh&quot;,
+      &quot;BankAccountNumber&quot; : &quot;221212122323&quot;,
+      &quot;BankAccountType&quot; : &quot;Checking&quot;,
+      &quot;BankName&quot; : &quot;test&quot;,
+      &quot;BankRoutingTransitNumber&quot; : &quot;655768779&quot;
+    }
+  },
+  &quot;BillingAccountId&quot; : &quot;0013h00000JOTEIAA5&quot;,
+  &quot;BillingAccountRecTypeId&quot; : &quot;0123h000000jV4IAAU&quot;,
+  &quot;BillingAccountRecordType&quot; : &quot;Billing&quot;,
+  &quot;BillingPreferences&quot; : {
+    &quot;APaymentType&quot; : &quot;Postpaid&quot;,
+    &quot;AutoPay&quot; : &quot;Yes&quot;,
+    &quot;BillNotification&quot; : &quot;No&quot;,
+    &quot;MailingAddres&quot; : null,
+    &quot;MailingAddresss&quot; : null,
+    &quot;MailingCity&quot; : null,
+    &quot;MailingCountry&quot; : null,
+    &quot;MailingState&quot; : null,
+    &quot;MailingStreet&quot; : null,
+    &quot;MailingZipCode&quot; : null,
+    &quot;OffersPromotions&quot; : &quot;No&quot;,
+    &quot;OutageNotification&quot; : &quot;No&quot;,
+    &quot;PaymentNotification&quot; : &quot;No&quot;,
+    &quot;WorkOrderNotification&quot; : &quot;No&quot;
+  },
+  &quot;BusinessAccountId&quot; : &quot;0013h00000JOTEHAA5&quot;,
+  &quot;BusinessAccountRecTypeId&quot; : &quot;0123h000000jV4HAAU&quot;,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ChoosePaymentMethod&quot; : {
+    &quot;PaymentMethod&quot; : &quot;Bank Account&quot;
+  },
+  &quot;Confirmation&quot; : { },
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Business&quot;,
+    &quot;BillingDetails&quot; : { },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-09-15T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;BusinessAccountName&quot; : &quot;rolly rames&quot;,
+      &quot;CustomerDOB&quot; : &quot;08/05/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;rolly&quot;,
+      &quot;CustomerLastName&quot; : &quot;rames&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;TaxID&quot;,
+      &quot;SSN&quot; : null,
+      &quot;TaxId&quot; : &quot;212132123&quot;
+    },
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : null
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : null,
+      &quot;ExemptionPercentage&quot; : null,
+      &quot;ExemptionStartDate&quot; : null
+    }
+  },
+  &quot;DRId_Account&quot; : &quot;0013h00000JOTEMAA5&quot;,
+  &quot;DRId_Contact&quot; : &quot;0033h00000DWvMAAA1&quot;,
+  &quot;ERPAccountID__c&quot; : 6011110,
+  &quot;ERP_Contract_ID__c&quot; : 2334455,
+  &quot;Error&quot; : { },
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;PreConfirm&quot; : {
+    &quot;Confirm&quot; : &quot;Yes&quot;
+  },
+  &quot;Products&quot; : {
+    &quot;ElectricityProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+      &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;001&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+      &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;003&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+      &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;002&quot;
+    } ],
+    &quot;GasProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+      &quot;Name&quot; : &quot;Turn Off Order&quot;,
+      &quot;ProductCode&quot; : &quot;004&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+      &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+    } ],
+    &quot;WaterProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+      &quot;Name&quot; : &quot;Water&quot;,
+      &quot;ProductCode&quot; : &quot;water&quot;
+    } ]
+  },
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4JAAU&quot;,
+    &quot;Name&quot; : &quot;Service&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectPremises&quot; : {
+    &quot;NewAccountPremises&quot; : null,
+    &quot;PremiseError&quot; : null,
+    &quot;ServiceLocation-Block&quot; : {
+      &quot;PremCity&quot; : &quot;Kolkata&quot;,
+      &quot;PremCountry&quot; : &quot;India&quot;,
+      &quot;PremId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;PremPostalCode&quot; : &quot;700059&quot;,
+      &quot;PremState&quot; : &quot;West Bengal&quot;,
+      &quot;PremiseName&quot; : &quot;Coventry premise&quot;,
+      &quot;PremiseStreetAddress&quot; : &quot;Akshara Lotus Garden Coevtry&quot;,
+      &quot;ServiceLocation&quot; : &quot;Coventry premise&quot;
+    }
+  },
+  &quot;SelectService&quot; : [ {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDVEAY&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wGEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Electricity&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDQEAY&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wHEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Water&quot;,
+    &quot;ServiceType&quot; : &quot;Water&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  } ],
+  &quot;SelectServicePoints&quot; : [ {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDVEAY&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wGEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Electricity&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDQEAY&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wHEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Water&quot;,
+    &quot;ServiceType&quot; : &quot;Water&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  } ],
+  &quot;SelectTypeofService&quot; : {
+    &quot;SelectServicePoint&quot; : null,
+    &quot;SelectServicePoints&quot; : [ {
+      &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;ProductId&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+      &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;,
+      &quot;originalIndex&quot; : &quot;0&quot;
+    }, {
+      &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDVEAY&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;ProductId&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+      &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;,
+      &quot;originalIndex&quot; : &quot;0&quot;
+    } ],
+    &quot;ServicePointsFormula&quot; : 1
+  },
+  &quot;SelectedPremises&quot; : &quot;a3X3h0000006OviEAE&quot;,
+  &quot;SelectedServiceData&quot; : [ {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ProductId&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;,
+    &quot;originalIndex&quot; : &quot;0&quot;
+  } ],
+  &quot;SelectedServiceMaxRow&quot; : &quot;&quot;,
+  &quot;ServiceAccountId&quot; : &quot;0013h00000JOTEMAA5&quot;,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServiceAccountRecTypeId&quot; : &quot;0123h000000jV4JAAU&quot;,
+  &quot;ServiceAccountRecordType&quot; : &quot;Service&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SelectProduct&quot;,
+    &quot;label&quot; : &quot;Select Product&quot;
+  } ],
+  &quot;ServicePointsError&quot; : null,
+  &quot;ServicePremises&quot; : null,
+  &quot;createResidentialAccount_Msg&quot; : &quot;Contract created in SAP successfully..!&quot;,
+  &quot;timeStamp&quot; : &quot;2020-09-02T06:49:23.409Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;BankPaymentDetails&quot; : 18958,
+    &quot;BillingPreferences&quot; : 28991,
+    &quot;ChoosePaymentMethod&quot; : 7625,
+    &quot;ConfirmUserActionError&quot; : 5100,
+    &quot;CreateBankAccountPaymentMethod&quot; : 0,
+    &quot;CreateCreditCardPaymentMethod&quot; : 0,
+    &quot;CustomerSelection&quot; : 48953,
+    &quot;DR-GetProducts&quot; : 647,
+    &quot;DRCreatServiceAccount&quot; : 2911,
+    &quot;DRCreateBillingAccount&quot; : 2723,
+    &quot;DRCreateBusinessAccount&quot; : 2431,
+    &quot;DRExtractBussinessAccountRecId&quot; : 695,
+    &quot;DRFetchBillingAccountRecTypeId&quot; : 663,
+    &quot;DRFetchDesiredRecordType&quot; : 1206,
+    &quot;DRFetchServiceAccountRecTypeId&quot; : 613,
+    &quot;DRInsertContact&quot; : 2172,
+    &quot;ExtractMeterSerialNumber&quot; : 1529,
+    &quot;ExtractServiceAccountPremises&quot; : 0,
+    &quot;GetPremServicePoints&quot; : 806,
+    &quot;OmniScriptSessionToken&quot; : &quot;1c071850-998a-4a83-b429-f0e54a4c8939&quot;,
+    &quot;PaymentDetails&quot; : 4063,
+    &quot;PreConfirm&quot; : 398718,
+    &quot;SVBusinessAccountRecTypeId&quot; : 80,
+    &quot;SVSelectedServicesData&quot; : 128,
+    &quot;SVServiceAccountRecTypeId&quot; : 42,
+    &quot;SelectPremises&quot; : 13021,
+    &quot;SelectTypeofService&quot; : 4418,
+    &quot;ServicePointsError&quot; : 0,
+    &quot;SetBillingAccountId&quot; : 129,
+    &quot;SetBusinessAccountId&quot; : 139,
+    &quot;SetCustomLWCValues&quot; : 63,
+    &quot;SetDefaultValues&quot; : 47,
+    &quot;SetPremisesBusinessAccountRecTypeId&quot; : 109,
+    &quot;SetServiceAccountId&quot; : 128,
+    &quot;SetServicePointVal&quot; : 48,
+    &quot;VIPCreateBusinessPartner&quot; : 6610,
+    &quot;VIPCreateContractAccount&quot; : 2813,
+    &quot;VIPMoveInPost&quot; : 1060095
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformCreateJSONAgreement</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:CustomerSelection:AccountType &apos;Business&apos; = var:BillingAccountId var:DRId_Account IF</formulaConverted>
+        <formulaExpression>IF(%CustomerSelection:AccountType% = &apos;Business&apos;, %BillingAccountId%, %DRId_Account%)</formulaExpression>
+        <formulaResultPath>FML_AccountId</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>1e9fc483-0f25-a368-3926-f5996d278149</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>42bbbe9a-c963-da9b-728a-077afe0cc474</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>agreementList</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| TODAY</formulaConverted>
+        <formulaExpression>TODAY()</formulaExpression>
+        <formulaResultPath>Today</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>86d780e7-840d-f898-ada5-982943b5f0ac</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>43e5aec9-f6ff-a2ae-d4fe-d785d929560b</globalKey>
+        <inputFieldName>ExtractMeterDetails:MeterDetails:SerialNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>agreementList:SerialNumber__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c8581843-c351-3763-dceb-e6f8f3cc3f24</globalKey>
+        <inputFieldName>ExtractMeterDetails:MeterDetails:ProdId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>agreementList:Product2Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b35d7fc5-e630-272f-baad-e3d2c5ed6cde</globalKey>
+        <inputFieldName>ExtractMeterDetails:MeterDetails:IntsallationNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>agreementList:Con_Installation_Number__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d5cb84b1-09d0-25a7-dfaf-a011e51556fb</globalKey>
+        <inputFieldName>CustomerSelection:MoveInDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>agreementList:Agreement_Start_Date__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a6bf7cd2-8364-173b-0a02-4d0e2d4e4b85</globalKey>
+        <inputFieldName>VIPCreateBusinessPartner:ERPAccountID__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>agreementList:Account_ERP_Id__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>6306e7e8-1fb4-e2ef-3a22-12cc4243d312</globalKey>
+        <inputFieldName>FML_AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>agreementList:AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b6149f9a-6786-b4cb-550c-adf9764d6b1f</globalKey>
+        <inputFieldName>ExtractMeterDetails:MeterDetails:ProductFamily</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>agreementList:PROD_Utility_Type__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>81fb70f2-3159-2411-ed7c-4e072a160ebb</globalKey>
+        <inputFieldName>VIPCreateContractAccount:ERP_Contract_ID__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformCreateJSONAgreement</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>agreementList:Contract_ERP_ID__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AvailableAccounts&quot; : &quot;&quot;,
+  &quot;BillingPreferences&quot; : {
+    &quot;APaymentType&quot; : &quot;Prepaid&quot;,
+    &quot;AutoPay&quot; : &quot;No&quot;,
+    &quot;BillNotification&quot; : &quot;No&quot;,
+    &quot;BillingFrequency&quot; : &quot;Monthly&quot;,
+    &quot;DeliveryMethod&quot; : &quot;Paper Billing&quot;,
+    &quot;DifferntPremiseSearch-Block&quot; : {
+      &quot;DifferentAdmin&quot; : null,
+      &quot;DifferentCountry&quot; : null,
+      &quot;DifferentLocality&quot; : null,
+      &quot;DifferentStreet&quot; : null,
+      &quot;DifferentZip&quot; : null,
+      &quot;DifferntPremiseSearch&quot; : null
+    },
+    &quot;MailingAddres&quot; : &quot;AccountAddress&quot;,
+    &quot;MailingAddresss&quot; : null,
+    &quot;NoContactFrom&quot; : null,
+    &quot;NoContactTo&quot; : null,
+    &quot;OffersPromotions&quot; : &quot;No&quot;,
+    &quot;OutageNotification&quot; : &quot;Yes&quot;,
+    &quot;PaymentNotification&quot; : &quot;Yes&quot;,
+    &quot;WorkOrderNotification&quot; : &quot;No&quot;
+  },
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;Contracts&quot; : {
+    &quot;AvailableProductList&quot; : [ {
+      &quot;ProdCategory&quot; : &quot;Electricity&quot;,
+      &quot;ProdFamily&quot; : &quot;Electricity&quot;,
+      &quot;ProdId&quot; : &quot;01tf2000007tC3TAAU&quot;,
+      &quot;ProdName&quot; : &quot;Electricity Standard Tariff&quot;,
+      &quot;vlcSelected&quot; : true
+    }, {
+      &quot;ProdCategory&quot; : &quot;Gas&quot;,
+      &quot;ProdDescription&quot; : &quot;Gas Standard Tariff&quot;,
+      &quot;ProdFamily&quot; : &quot;Gas&quot;,
+      &quot;ProdId&quot; : &quot;01tf2000007tC3dAAE&quot;,
+      &quot;ProdName&quot; : &quot;Gas Standard Tariff&quot;,
+      &quot;vlcSelected&quot; : true
+    } ],
+    &quot;ContractTermSum&quot; : null,
+    &quot;ProducltListMsg&quot; : true,
+    &quot;ProductSelectedCount&quot; : 2
+  },
+  &quot;CustomerName_Fml1&quot; : &quot;Ramya D&quot;,
+  &quot;CustomerName_Fml2&quot; : &quot; &quot;,
+  &quot;CustomerSelection&quot; : {
+    &quot;ConNameError&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2019-05-03T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;CustomerDOB&quot; : &quot;05/01/2019&quot;,
+      &quot;CustomerEmail&quot; : &quot;akash.naik@accentyre.com&quot;,
+      &quot;CustomerFirstName&quot; : &quot;Ramya&quot;,
+      &quot;CustomerLastName&quot; : &quot;D&quot;,
+      &quot;CustomerPhone&quot; : &quot;7687989878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;DriverLicense&quot; : &quot;1232132&quot;,
+      &quot;IdentificationType&quot; : &quot;DriverLicense&quot;,
+      &quot;SSN&quot; : null,
+      &quot;TaxId&quot; : null
+    },
+    &quot;PremiseError&quot; : false,
+    &quot;ServiceLocation-Block&quot; : {
+      &quot;PremCity&quot; : &quot;Detroit&quot;,
+      &quot;PremCountry&quot; : &quot;US&quot;,
+      &quot;PremId&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+      &quot;PremPostalCode&quot; : &quot;48202&quot;,
+      &quot;PremState&quot; : &quot;MI&quot;,
+      &quot;PremiseNumber&quot; : &quot;700012753&quot;,
+      &quot;PremiseStreetAddress&quot; : &quot;13 Harper Ave&quot;,
+      &quot;ServiceLocation&quot; : &quot;13 Harper Ave, Detroit, MI, 48202&quot;
+    }
+  },
+  &quot;DRId_Account&quot; : &quot;001f200001uqHenAAE&quot;,
+  &quot;DRId_Contact&quot; : &quot;003f200002mu2vnAAA&quot;,
+  &quot;ERPAccountID__c&quot; : 6011101,
+  &quot;ERP_Contract_ID__c&quot; : 22000014951,
+  &quot;ElectricityService&quot; : &quot;Electricity&quot;,
+  &quot;GasService&quot; : &quot;Gas&quot;,
+  &quot;IntergationMtd&quot; : {
+    &quot;IntergationType&quot; : &quot;JSON&quot;,
+    &quot;Name&quot; : &quot;Move_In&quot;
+  },
+  &quot;Meter&quot; : [ {
+    &quot;IntsallationNumber&quot; : &quot;800012986&quot;,
+    &quot;MeterId&quot; : &quot;a25f2000004DtBsAAK&quot;,
+    &quot;ProdId&quot; : &quot;01tf2000007tC3TAAU&quot;,
+    &quot;ProductFamily&quot; : &quot;Electricity&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG133734E&quot;
+  }, {
+    &quot;IntsallationNumber&quot; : &quot;800012987&quot;,
+    &quot;MeterId&quot; : &quot;a25f2000004DtDKAA0&quot;,
+    &quot;ProdId&quot; : &quot;01tf2000007tC3dAAE&quot;,
+    &quot;ProductFamily&quot; : &quot;Gas&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG133736G&quot;
+  } ],
+  &quot;Meter1&quot; : &quot;a25f2000004DtBsAAK&quot;,
+  &quot;Meter2&quot; : &quot;a25f2000004DtDKAA0&quot;,
+  &quot;Meter3&quot; : &quot;&quot;,
+  &quot;MuleCloseDate&quot; : &quot;2019-5-3&quot;,
+  &quot;MuleMoveInDate&quot; : &quot;2019-5-4&quot;,
+  &quot;NoOfAccounts&quot; : 0,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PreConfirm&quot; : {
+    &quot;Confirm&quot; : &quot;Yes&quot;,
+    &quot;ServicesChoosen&quot; : null
+  },
+  &quot;ProductList&quot; : [ {
+    &quot;ProdFamily&quot; : &quot;Electricity&quot;,
+    &quot;ProdId&quot; : &quot;01tf20000081ZapAAE&quot;,
+    &quot;ProdName&quot; : &quot;Test Electricity Product&quot;
+  }, {
+    &quot;ProdFamily&quot; : &quot;Electricity&quot;,
+    &quot;ProdId&quot; : &quot;01tf20000081bHmAAI&quot;,
+    &quot;ProdName&quot; : &quot;Electricity Standard Tariff&quot;
+  }, {
+    &quot;ProdCategory&quot; : &quot;Electricity&quot;,
+    &quot;ProdFamily&quot; : &quot;Electricity&quot;,
+    &quot;ProdId&quot; : &quot;01tf2000007tC3TAAU&quot;,
+    &quot;ProdName&quot; : &quot;Electricity Standard Tariff&quot;
+  }, {
+    &quot;ProdCategory&quot; : &quot;Electricity&quot;,
+    &quot;ProdFamily&quot; : &quot;Electricity&quot;,
+    &quot;ProdId&quot; : &quot;01tf2000007u2fyAAA&quot;,
+    &quot;ProdName&quot; : &quot;Electricity Price Protected Tariff - 1 Year&quot;
+  }, {
+    &quot;ProdCategory&quot; : &quot;Gas&quot;,
+    &quot;ProdDescription&quot; : &quot;Gas Standard Tariff&quot;,
+    &quot;ProdFamily&quot; : &quot;Gas&quot;,
+    &quot;ProdId&quot; : &quot;01tf2000007tC3dAAE&quot;,
+    &quot;ProdName&quot; : &quot;Gas Standard Tariff&quot;
+  }, {
+    &quot;ContractTerm&quot; : &quot;12&quot;,
+    &quot;ProdFamily&quot; : &quot;Gas&quot;,
+    &quot;ProdId&quot; : &quot;01tf20000088syBAAQ&quot;,
+    &quot;ProdName&quot; : &quot;TestGas&quot;
+  }, {
+    &quot;ContractTerm&quot; : &quot;1&quot;,
+    &quot;ProdCategory&quot; : &quot;Gas&quot;,
+    &quot;ProdFamily&quot; : &quot;Gas&quot;,
+    &quot;ProdId&quot; : &quot;01tf20000088QOsAAM&quot;,
+    &quot;ProdName&quot; : &quot;Gas Price Protection Tariff - 1 Year&quot;
+  }, {
+    &quot;ProdCategory&quot; : &quot;Gas&quot;,
+    &quot;ProdFamily&quot; : &quot;Gas&quot;,
+    &quot;ProdId&quot; : &quot;01tf2000007u2g3AAA&quot;,
+    &quot;ProdName&quot; : &quot;Gas Price Protection Tariff - 1 Year&quot;
+  } ],
+  &quot;SelectService&quot; : [ {
+    &quot;Meter&quot; : &quot;a25f2000004DtBsAAK&quot;,
+    &quot;PremiseAddress&quot; : &quot;13 Harper Ave, Detroit, MI, 48202&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012753&quot;,
+    &quot;Premises&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+    &quot;PremisesId&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG133734E&quot;,
+    &quot;ServicePointId&quot; : &quot;a26f200000KhBbWAAV&quot;,
+    &quot;ServicePointName&quot; : &quot;13 Harper Ave, Detroit - Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012986&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;Meter&quot; : &quot;a25f2000004DtDKAA0&quot;,
+    &quot;PremiseAddress&quot; : &quot;13 Harper Ave, Detroit, MI, 48202&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012753&quot;,
+    &quot;Premises&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+    &quot;PremisesId&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG133736G&quot;,
+    &quot;ServicePointId&quot; : &quot;a26f200000KhBcoAAF&quot;,
+    &quot;ServicePointName&quot; : &quot;13 Harper Ave, Detroit - Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012987&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  } ],
+  &quot;SelectService1&quot; : {
+    &quot;MeterId&quot; : &quot;a25f2000004DtDKAA0&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG133736G&quot;,
+    &quot;ServicePointName&quot; : &quot;13 Harper Ave, Detroit - Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012987&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;
+  },
+  &quot;SelectService3&quot; : {
+    &quot;MeterId&quot; : &quot;a25f2000004DtBsAAK&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG133734E&quot;,
+    &quot;ServicePointName&quot; : &quot;13 Harper Ave, Detroit - Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012986&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;
+  },
+  &quot;SelectTypeofService&quot; : {
+    &quot;SelectServicePoint&quot; : false,
+    &quot;SelectServicePoints&quot; : [ {
+      &quot;Meter&quot; : &quot;a25f2000004DtBsAAK&quot;,
+      &quot;PremiseAddress&quot; : &quot;13 Harper Ave, Detroit, MI, 48202&quot;,
+      &quot;PremiseNumber&quot; : &quot;700012753&quot;,
+      &quot;Premises&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+      &quot;PremisesId&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+      &quot;SerialNumber&quot; : &quot;ISUMDG133734E&quot;,
+      &quot;ServicePointId&quot; : &quot;a26f200000KhBbWAAV&quot;,
+      &quot;ServicePointName&quot; : &quot;13 Harper Ave, Detroit - Electricity&quot;,
+      &quot;ServicePointNumber&quot; : &quot;800012986&quot;,
+      &quot;ServiceType&quot; : &quot;Electricity&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;,
+      &quot;vlcSelected&quot; : true
+    }, {
+      &quot;Meter&quot; : &quot;a25f2000004DtDKAA0&quot;,
+      &quot;PremiseAddress&quot; : &quot;13 Harper Ave, Detroit, MI, 48202&quot;,
+      &quot;PremiseNumber&quot; : &quot;700012753&quot;,
+      &quot;Premises&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+      &quot;PremisesId&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+      &quot;SerialNumber&quot; : &quot;ISUMDG133736G&quot;,
+      &quot;ServicePointId&quot; : &quot;a26f200000KhBcoAAF&quot;,
+      &quot;ServicePointName&quot; : &quot;13 Harper Ave, Detroit - Gas&quot;,
+      &quot;ServicePointNumber&quot; : &quot;800012987&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;,
+      &quot;vlcSelected&quot; : true
+    } ],
+    &quot;ServicePointsFormula&quot; : 2
+  },
+  &quot;SelectedServices1&quot; : [ {
+    &quot;Meter&quot; : &quot;a25f2000004DtBsAAK&quot;,
+    &quot;PremiseAddress&quot; : &quot;13 Harper Ave, Detroit, MI, 48202&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012753&quot;,
+    &quot;Premises&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+    &quot;PremisesId&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG133734E&quot;,
+    &quot;ServicePointId&quot; : &quot;a26f200000KhBbWAAV&quot;,
+    &quot;ServicePointName&quot; : &quot;13 Harper Ave, Detroit - Electricity&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012986&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;,
+    &quot;vlcSelected&quot; : true
+  }, {
+    &quot;Meter&quot; : &quot;a25f2000004DtDKAA0&quot;,
+    &quot;PremiseAddress&quot; : &quot;13 Harper Ave, Detroit, MI, 48202&quot;,
+    &quot;PremiseNumber&quot; : &quot;700012753&quot;,
+    &quot;Premises&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+    &quot;PremisesId&quot; : &quot;a0lf2000007hSuWAAU&quot;,
+    &quot;SerialNumber&quot; : &quot;ISUMDG133736G&quot;,
+    &quot;ServicePointId&quot; : &quot;a26f200000KhBcoAAF&quot;,
+    &quot;ServicePointName&quot; : &quot;13 Harper Ave, Detroit - Gas&quot;,
+    &quot;ServicePointNumber&quot; : &quot;800012987&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;,
+    &quot;vlcSelected&quot; : true
+  } ],
+  &quot;ServicePoint1&quot; : &quot;a26f200000KhBbWAAV&quot;,
+  &quot;ServicePoint2&quot; : &quot;a26f200000KhBcoAAF&quot;,
+  &quot;ServicePoint3&quot; : &quot;&quot;,
+  &quot;ServicePointIds&quot; : [ &quot;a26f200000KhBbWAAV&quot;, &quot;a26f200000KhBcoAAF&quot; ],
+  &quot;ServicesChosen&quot; : [ &quot;Electricity&quot;, &quot;Gas&quot; ],
+  &quot;WaterService&quot; : &quot;&quot;,
+  &quot;createResidentialAccount_Msg&quot; : &quot;Partner Created in SAP Successfully..!!!&quot;,
+  &quot;error&quot; : &quot;OK&quot;,
+  &quot;id&quot; : &quot;a0Zf200000PTUclEAH&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;timeStamp&quot; : &quot;2019-05-03T09:23:04.430Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;CAD&quot;,
+  &quot;userId&quot; : &quot;005f2000008YzmAAAS&quot;,
+  &quot;userName&quot; : &quot;akash.naik@accenture.com.vlocity&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -240,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;BillingPreferences&quot; : 16069,
+    &quot;Contracts&quot; : 19949,
+    &quot;CustomerSelection&quot; : 458174,
+    &quot;ExtractIntegrationSettings&quot; : 627,
+    &quot;ExtractMeterSerialNumber&quot; : 707,
+    &quot;ExtractProductList&quot; : 815,
+    &quot;GetPremServicePoints&quot; : 1348,
+    &quot;InsertAccount&quot; : 1121,
+    &quot;InsertContact&quot; : 942,
+    &quot;MoveInPostUnrelated&quot; : 962,
+    &quot;OmniScriptSessionToken&quot; : &quot;bbe01716-959b-4ad2-932d-299b789d3b1e&quot;,
+    &quot;PreConfirm&quot; : 6105,
+    &quot;SelectTypeofService&quot; : 4716,
+    &quot;ServiceSetValues&quot; : 67,
+    &quot;SetExistingAccountsVal&quot; : 46,
+    &quot;SetExistingCustomerDetails&quot; : 98,
+    &quot;SetProductValues&quot; : 14,
+    &quot;SetServicePointVal&quot; : 46,
+    &quot;VIPCreateContractImpl&quot; : 1553,
+    &quot;VIPCreateResidentialAccount&quot; : 3230
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformCreateJSONAgreement_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

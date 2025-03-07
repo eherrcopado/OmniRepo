@@ -1,0 +1,60 @@
+<apex:page docType="html-5.0"
+   controller="vlocity_cmt.XOMAdminPageController"
+    applyHtmlTag="true"
+    cache="false"
+>
+
+ <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+        <script type="text/javascript" src="{!URLFOR($Resource.JSZip)}" />
+            <meta charset="utf-8" />
+            <meta name="generator" content="Xom Page layout assignment" />
+            <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes" />
+            <meta name="description" content="Xom Manage Encryption keys iframe" />
+            <!-- Common scripts -->
+
+            <script>
+            window.addEventListener("message", receiveMessage, false);
+            const namespacePrefix = '{!JSENCODE(namespacePrefix)}';
+
+            function receiveMessage(event) {
+                const eventData = JSON.parse(event.data);
+                if(eventData.zipContent) {
+                    let zipfile = eventData.zipContent;
+                    let accesskeys = eventData.accessKeys;
+                    let zip = new JSZip(zipfile, {base64: true});
+                    let params = new URLSearchParams(document.location.search);
+                    let channelId = params.get("channelId");
+                    let namedCredentials = zip.file(/^namedCredentials\//);
+                    for (i = 0; i < namedCredentials.length; i++) {
+                        let xml = namedCredentials[i].asText();
+                        let xmlDoc = new DOMParser().parseFromString(xml, "text/xml");
+                        let protcolNode = xmlDoc.getElementsByTagName("protocol");
+                        if (protcolNode && protcolNode.length && "AwsSv4" === protcolNode[0].childNodes[0].nodeValue) {
+                            let rootNode = xmlDoc.getElementsByTagName("NamedCredential");
+                            let accessKeyNode = xmlDoc.getElementsByTagName("awsAccessKey");
+                            accessKeyNode[0].childNodes[0].nodeValue = accesskeys.accessKeyId;
+                            let newEle = xmlDoc.createElement("awsAccessSecret");
+                            let newText = xmlDoc.createTextNode(accesskeys.secretAccessKey);
+                            newEle.appendChild(newText);
+                            rootNode[0].appendChild(newEle);
+                            let s = new XMLSerializer();
+                            let xml = s.serializeToString(xmlDoc);
+                            zip.file(namedCredentials[i].name, xml);
+                        }  
+                    }
+                    
+                    window.parent.postMessage(JSON.stringify({
+                        name: 'updatedZipFile',
+                        success: true,
+                        channelId: channelId,
+                        zip: zip.generate()
+                    }), document.referrer);
+                }
+            }
+
+		</script>
+	</head>
+	<body> </body>
+	</html>
+</apex:page>

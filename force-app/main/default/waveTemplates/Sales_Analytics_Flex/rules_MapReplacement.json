@@ -1,0 +1,81 @@
+{
+  "rules": [
+    {
+      "name": "UpdateMapChartsOnDashboards",      
+      "appliesTo": [
+        
+        {
+          "type": "dashboard",
+          "name": "Manager_Opportunity_Discovery"
+        },
+        {
+          "type": "dashboard",
+          "name": "Opportunity_Discovery"
+        },        
+        {
+          "type": "dashboard",
+          "name": "Sales_Ops_Manager_Overview"
+        },
+        {
+          "type": "dashboard",
+          "name": "Sales_Performance"
+        },
+        {
+          "type": "dashboard",
+          "name": "Exec_Overview_Service_Performance"
+        }
+        
+      ],
+      "actions": [
+         {
+           "action": "set",
+           "description": "Use Appropriate Map Type for Geo1",
+           "path": "$..values[?(@.display=='${Variables.Geography.fieldLabel}')].visual",
+           "value": "${Constants.ChartTypeGeo1}"
+         },
+         {
+           "action": "set",
+           "description": "Use Appropriate Map Type for Geo1",
+           "path": "$..values[?(@.display=='${Variables.Geography_L2.fieldLabel}')].visual",
+           "value": "${Constants.ChartTypeGeo2}"
+         },
+         {
+           "action": "set",
+           "description": "Use Appropriate Map Type for Geo1",
+           "path": "$..values[?(@.display=='${Variables.Geography.fieldLabel}')].map",
+           "value": "${Constants.MapTypeGeo1}"
+         },
+          {
+            "action": "set",
+            "description": "Use Appropriate Map Type for Geo1",
+            "path": "$..values[?(@.display=='Geography')].visual",
+            "value": "${Constants.ChartTypeGeo1}"
+          },
+          {
+            "action": "set",
+            "description": "Use Appropriate Map Type for Geo1",
+            "path": "$..values[?(@.display=='Geography')].map",
+            "value": "${Constants.MapTypeGeo1}"
+          },
+         {
+           "action": "set",
+           "description": "Use Appropriate Map Type for Geo1",
+           "path": "$..values[?(@.display=='${Variables.Geography_L2.fieldLabel}')].map",
+           "value": "${Constants.MapTypeGeo2}"
+         },
+         {
+           "action": "set",
+           "description": "Use Appropriate Map Type for Geo1",
+           "path": "$..parameters[?(@.map=='World Countries')].visualizationType",
+           "value": "${Constants.ChartTypeGeo1}"
+         },
+         {
+           "action": "set",
+           "description": "Use Appropriate Map Type for Geo1",
+           "path": "$..parameters[?(@.map=='World Countries')].map",
+           "value": "${Constants.MapTypeGeo1}"
+         }
+      ]
+    }
+  ]
+}

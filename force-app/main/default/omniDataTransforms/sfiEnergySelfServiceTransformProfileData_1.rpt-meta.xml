@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>DataRaptor which transforms Raw User data into correct formate.</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>[ {
+  &quot;Contact&quot; : {
+    &quot;Email&quot; : &quot;e@e.com&quot;,
+    &quot;FirstName&quot; : &quot;Test&quot;,
+    &quot;Id&quot; : &quot;0034x00000zE1v2AAC&quot;,
+    &quot;LastName&quot; : &quot;Contact1&quot;,
+    &quot;MailingAddress&quot; : {
+      &quot;city&quot; : &quot;Chittoor&quot;,
+      &quot;country&quot; : &quot;India&quot;,
+      &quot;geocodeAccuracy&quot; : null,
+      &quot;latitude&quot; : null,
+      &quot;longitude&quot; : null,
+      &quot;postalCode&quot; : &quot;517586&quot;,
+      &quot;state&quot; : &quot;Andhra Pradesh&quot;,
+      &quot;street&quot; : &quot;2/19, Illathur, Vijayapuram&quot;
+    },
+    &quot;MailingCity&quot; : &quot;Chittoor&quot;,
+    &quot;MailingCountry&quot; : &quot;India&quot;,
+    &quot;MailingPostalCode&quot; : &quot;517586&quot;,
+    &quot;MailingState&quot; : &quot;Andhra Pradesh&quot;,
+    &quot;MailingStreet&quot; : &quot;2/19, Illathur, Vijayapuram&quot;,
+    &quot;MobilePhone&quot; : &quot;8892314907&quot;,
+    &quot;attributes&quot; : {
+      &quot;type&quot; : &quot;Contact&quot;,
+      &quot;url&quot; : &quot;/services/data/v59.0/sobjects/Contact/0034x00000zE1v2AAC&quot;
+    }
+  },
+  &quot;ContactId&quot; : &quot;0034x00000zE1v2AAC&quot;,
+  &quot;Id&quot; : &quot;0054x000005BxqQAAS&quot;,
+  &quot;Username&quot; : &quot;testcontact1@salesforcekenton.com&quot;
+} ]</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;Email&quot; : &quot;e@e.com&quot;,
+  &quot;FirstName&quot; : &quot;text&quot;,
+  &quot;LastName&quot; : &quot;Contact1&quot;,
+  &quot;MailingCity&quot; : &quot;Chittoor&quot;,
+  &quot;MailingCountry&quot; : &quot;India&quot;,
+  &quot;MailingPostalCode&quot; : &quot;517586&quot;,
+  &quot;MailingState&quot; : &quot;Andhra Pradesh&quot;,
+  &quot;MailingStreet&quot; : &quot;2/19, Illathur&quot;,
+  &quot;MobilePhone&quot; : &quot;8892314907&quot;,
+  &quot;Username&quot; : &quot;text&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>sfiEnergySelfServiceTransformProfileData</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom2578</globalKey>
+        <inputFieldName>Contact:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom9368</globalKey>
+        <inputFieldName>UsernameWithOutSuffix</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Username</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom7818</globalKey>
+        <inputFieldName>Contact:MobilePhone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MobilePhone</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom1632</globalKey>
+        <inputFieldName>Contact:MailingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingStreet</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom3414</globalKey>
+        <inputFieldName>Contact:MailingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingCity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom1921</globalKey>
+        <inputFieldName>Contact:LastName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LastName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom6289</globalKey>
+        <inputFieldName>Contact:FirstName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FirstName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom9101</globalKey>
+        <inputFieldName>Contact:Email</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Email</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Username 0 | var:Username &quot;@&quot; STRINGINDEXOF SUBSTRING</formulaConverted>
+        <formulaExpression>SUBSTRING(Username, 0, STRINGINDEXOF(Username, &quot;@&quot;))</formulaExpression>
+        <formulaResultPath>UsernameWithOutSuffix</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom8972</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom9411</globalKey>
+        <inputFieldName>Contact:MailingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingPostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom7305</globalKey>
+        <inputFieldName>Contact:MailingCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingCountry</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergySelfServiceTransformProfileDataCustom5903</globalKey>
+        <inputFieldName>Contact:MailingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergySelfServiceTransformProfileData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>MailingState</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>[ {
+  &quot;Contact&quot; : {
+    &quot;Email&quot; : &quot;e@e.com&quot;,
+    &quot;FirstName&quot; : &quot;Test&quot;,
+    &quot;Id&quot; : &quot;0034x00000zE1v2AAC&quot;,
+    &quot;LastName&quot; : &quot;Contact1&quot;,
+    &quot;MailingAddress&quot; : {
+      &quot;city&quot; : &quot;Chittoor&quot;,
+      &quot;country&quot; : &quot;India&quot;,
+      &quot;geocodeAccuracy&quot; : null,
+      &quot;latitude&quot; : null,
+      &quot;longitude&quot; : null,
+      &quot;postalCode&quot; : &quot;517586&quot;,
+      &quot;state&quot; : &quot;Andhra Pradesh&quot;,
+      &quot;street&quot; : &quot;2/19, Illathur, Vijayapuram&quot;
+    },
+    &quot;MailingCity&quot; : &quot;Chittoor&quot;,
+    &quot;MailingCountry&quot; : &quot;India&quot;,
+    &quot;MailingPostalCode&quot; : &quot;517586&quot;,
+    &quot;MailingState&quot; : &quot;Andhra Pradesh&quot;,
+    &quot;MailingStreet&quot; : &quot;2/19, Illathur, Vijayapuram&quot;,
+    &quot;MobilePhone&quot; : &quot;8892314907&quot;,
+    &quot;attributes&quot; : {
+      &quot;type&quot; : &quot;Contact&quot;,
+      &quot;url&quot; : &quot;/services/data/v59.0/sobjects/Contact/0034x00000zE1v2AAC&quot;
+    }
+  },
+  &quot;ContactId&quot; : &quot;0034x00000zE1v2AAC&quot;,
+  &quot;Id&quot; : &quot;0054x000005BxqQAAS&quot;,
+  &quot;Username&quot; : &quot;testcontact1@salesforcekenton.com&quot;
+} ]</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>sfiEnergySelfServiceTransformProfileData_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

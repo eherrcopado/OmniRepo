@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>This updates / inserts account profile attributes in vlocity attribute &amp; vlocity attribute preferences</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;ManageNotificationPreferences&quot; : {
+    &quot;BillNotifications&quot; : null,
+    &quot;DNCFrom&quot; : null,
+    &quot;DNCTo&quot; : null,
+    &quot;OffersPromotions&quot; : null,
+    &quot;OutageNotifications&quot; : null,
+    &quot;PaymentRemindersNotifications&quot; : null,
+    &quot;WorkOrderNotifications&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;ManageNotificationPreferences&quot; : null,
+    &quot;PostAccountAttrAssignment&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLPostAccountProfileAttrAssignment</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>77939908-db5c-3e6a-b843-a4ea50a4f4fb</globalKey>
+        <inputFieldName>UpdatedAccountPref:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AttributeCategoryId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__AttributeAssignment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>cf6144af-bde4-fafd-a0d6-7eee7ad83069</globalKey>
+        <inputFieldName>UpdatedAccountPref:AttrValue</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>vlocity_cmt__Attribute__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c753744a-6771-b2e0-e12e-911451a87ff7</globalKey>
+        <inputFieldName>UpdatedAccountPref:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ObjectId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__AttributeAssignment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>3030acfe-1dcb-7f48-254c-3fa80926f457</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AttributeId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__AttributeAssignment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d8463011-ba21-8187-376c-ff4c898c548b</globalKey>
+        <inputFieldName>UpdatedAccountPref:AttrValue</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Value__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__AttributeAssignment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Account</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2e8a708a-c63b-9276-55ce-6f9ac8a659ce</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ObjectType__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__AttributeAssignment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>true</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a223bd03-c0b7-0acd-8230-1e8738f6af35</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ActiveFlg__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__Attribute__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7959f48b-ccd6-7de4-7924-1f0c03549beb</globalKey>
+        <inputFieldName>UpdatedAccountPref:AccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>vlocity_cmt__AttributeAssignment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>cfa74539-5de9-8708-1f94-362473a2b808</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__Attribute__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>c88e3c13-dc5f-7faf-327e-e00989e20208</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__AttributeAssignment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8c783273-f7dd-6a1b-fdc6-8ca3d9c0b5a8</globalKey>
+        <inputFieldName>UpdatedAccountPref:AttrAssignId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__AttributeAssignment__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>false</defaultValue>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>78f7103a-ee55-a6f0-7a82-d1ab010478eb</globalKey>
+        <inputFieldName>UpdatedAccountPref:IsDeleted</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>IsDeleted</outputFieldName>
+        <outputObjectName>vlocity_cmt__Attribute__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>82e001e3-f7a9-5d47-9518-870cfc83f9f9</globalKey>
+        <inputFieldName>UpdatedAccountPref:AttributeId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__Attribute__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3361d060-1287-b3c8-c4c1-6c95dd6cf92e</globalKey>
+        <inputFieldName>UpdatedAccountPref:CategoryId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPLPostAccountProfileAttrAssignment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__AttributeCategoryId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__Attribute__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;TFDRresp&quot; : {
+    &quot;UpdatedAccountPref&quot; : [ {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;a0M3h000002ivl7EAA&quot;,
+      &quot;AttrValue&quot; : &quot;1&quot;,
+      &quot;AttributeId&quot; : &quot;a0P3h0000012egGEAQ&quot;,
+      &quot;CategoryCode&quot; : &quot;PURCHASE_CRITERIA_COST&quot;,
+      &quot;CategoryId&quot; : &quot;a0O3h000000iF7FEAU&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;2&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;3&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;4&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;5&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;1&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;2&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;3&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;1&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;2&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;1&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;2&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    }, {
+      &quot;AccountId&quot; : &quot;0013h00000BpB7JAAV&quot;,
+      &quot;AccountName&quot; : &quot;ACCOUNT-27683&quot;,
+      &quot;AttrAssignId&quot; : &quot;&quot;,
+      &quot;AttrValue&quot; : &quot;3&quot;,
+      &quot;AttributeId&quot; : &quot;&quot;,
+      &quot;CategoryCode&quot; : &quot;&quot;,
+      &quot;CategoryId&quot; : &quot;&quot;
+    } ]
+  },
+  &quot;error&quot; : &quot;OK&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLPostAccountProfileAttrAssignment_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

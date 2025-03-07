@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;response&quot; : { },
+  &quot;ResponseAction1Status&quot; : true,
+  &quot;CreateOpportunity&quot; : {
+    &quot;ActualTime&quot; : 290,
+    &quot;CpuTime&quot; : 229,
+    &quot;Opportunity_1&quot; : [ {
+      &quot;UpsertSuccess&quot; : true,
+      &quot;Id&quot; : &quot;0061U000004p5VrQAI&quot;,
+      &quot;StageName&quot; : &quot;Qualification&quot;,
+      &quot;AccountId&quot; : &quot;0011U00000D5xzLQAR&quot;,
+      &quot;CloseDate&quot; : &quot;2019-03-21&quot;,
+      &quot;Name&quot; : &quot;Test HQ12&quot;
+    } ],
+    &quot;error&quot; : &quot;OK&quot;,
+    &quot;responseType&quot; : &quot;SObject&quot;
+  },
+  &quot;CreateOpportunityStatus&quot; : true,
+  &quot;SetValues1&quot; : {
+    &quot;ContextId&quot; : &quot;0011U00000D5xzLQAR&quot;,
+    &quot;OpptyName&quot; : &quot;Test HQ12&quot;,
+    &quot;CloseDate&quot; : &quot;2019-03-22T04:00:00.000Z&quot;,
+    &quot;StageNameIP&quot; : &quot;Qualification&quot;
+  },
+  &quot;SetValues1Status&quot; : true,
+  &quot;options&quot; : {
+    &quot;chainable&quot; : false
+  },
+  &quot;TaskTypeOut&quot; : [ {
+    &quot;DueDate&quot; : &quot;2019-02-21&quot;,
+    &quot;Subject&quot; : &quot;Organiser une réunion&quot;,
+    &quot;Description&quot; : &quot;Réunion pour obtenir plus de details&quot;
+  }, {
+    &quot;DueDate&quot; : &quot;2019-02-22&quot;,
+    &quot;Subject&quot; : &quot;Obtenir des informations techniques&quot;,
+    &quot;Description&quot; : &quot;Obtenir des informations techniques&quot;
+  }, {
+    &quot;DueDate&quot; : &quot;2019-02-23&quot;,
+    &quot;Subject&quot; : &quot;Confirmer le budget et les critères de decision&quot;,
+    &quot;Description&quot; : &quot;Confirmer le budget et les critères de decision&quot;
+  } ],
+  &quot;error&quot; : &quot;OK&quot;,
+  &quot;TaskPicklistValue&quot; : [ {
+    &quot;TaskType&quot; : &quot;Meeting&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Technical Information&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Criteria&quot;
+  }, {
+    &quot;TaskType&quot; : &quot;Risk Evaluation&quot;
+  } ],
+  &quot;StageName&quot; : &quot;Qualification&quot;,
+  &quot;RiskCheck&quot; : &quot;No&quot;,
+  &quot;OpptyCloseDate&quot; : &quot;2019-03-22T04:00:00.000Z&quot;,
+  &quot;OpptyType&quot; : {
+    &quot;SiteRadio&quot; : null,
+    &quot;EnergySubTypeRadio&quot; : null,
+    &quot;OpptyTypeRadio&quot; : null
+  },
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;id&quot; : &quot;a1I1U000001VB3kUAG&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://mjhcq0219--vlocity-cmt.visualforce.com&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userTimeZone&quot; : -480,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userName&quot; : &quot;mjelaca@hqc.demo&quot;,
+  &quot;userId&quot; : &quot;0051U0000036yEPQAY&quot;,
+  &quot;timeStamp&quot; : &quot;2019-02-20T20:14:07.595Z&quot;,
+  &quot;ContextId&quot; : &quot;&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>HQVDO113CreateAdditionalTasks</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4a56cbfe-c787-1177-14c7-c95dd2f0b270</globalKey>
+        <inputFieldName>TaskTypeOut:DueDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-1-1-3-CreateAdditionalTasks</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ActivityDate</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b0ec0a58-4b7b-87bd-fe30-5b4f109197a0</globalKey>
+        <inputFieldName>TaskTypeOut:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-1-1-3-CreateAdditionalTasks</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>21960e78-01dd-1a0f-d738-6bd03a8e39e9</globalKey>
+        <inputFieldName>ContextId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-1-1-3-CreateAdditionalTasks</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>WhatId</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>eeb5459d-16b6-e9bf-2eaf-3edfe6fc4e3e</globalKey>
+        <inputFieldName>ContextId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-1-1-3-CreateAdditionalTasks</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5b6e8d9d-060f-94d0-edb8-167213c21d33</globalKey>
+        <inputFieldName>TaskTypeOut:Subject</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-1-1-3-CreateAdditionalTasks</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>true</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2966fe45-dc27-4608-a9da-2ac48649d31c</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-1-1-3-CreateAdditionalTasks</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>IsReminderSet</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>8dbef7b2-df58-8f3f-0d10-64c7616c2ff5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>HQ-VDO-1-1-3-CreateAdditionalTasks</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Task</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | TODAY 2 ADDDAY</formulaConverted>
+        <formulaExpression>ADDDAY(TODAY(),2)</formulaExpression>
+        <formulaResultPath>DUEDATE</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>3ac55299-eddf-1400-917b-46e7e9db92bd</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HQ-VDO-1-1-3-CreateAdditionalTasks</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ResponseAction1Debug&quot; : {
+    &quot;Status&quot; : true,
+    &quot;Type&quot; : &quot;Response Action&quot;,
+    &quot;ElapsedTime&quot; : 1
+  },
+  &quot;ResponseAction1&quot; : { },
+  &quot;DataRaptorPostAction1&quot; : {
+    &quot;ActualTime&quot; : 364,
+    &quot;CpuTime&quot; : 288,
+    &quot;Opportunity_1&quot; : [ {
+      &quot;UpsertSuccess&quot; : true,
+      &quot;Id&quot; : &quot;0061U000004p3AZQAY&quot;,
+      &quot;StageName&quot; : &quot;Qualification&quot;,
+      &quot;AccountId&quot; : &quot;0011U00000D5xzLQAR&quot;,
+      &quot;CloseDate&quot; : &quot;2019-02-19&quot;,
+      &quot;Name&quot; : &quot;Test HQ1&quot;
+    } ],
+    &quot;error&quot; : &quot;OK&quot;,
+    &quot;responseType&quot; : &quot;SObject&quot;
+  },
+  &quot;DataRaptorPostAction1Debug&quot; : {
+    &quot;Status&quot; : true,
+    &quot;Type&quot; : &quot;DataRaptor Post Action&quot;,
+    &quot;ElapsedTime&quot; : 369,
+    &quot;Input&quot; : {
+      &quot;SetValues1&quot; : {
+        &quot;ContextId&quot; : &quot;0011U00000D5xzLQAR&quot;,
+        &quot;OpptyName&quot; : &quot;Test HQ1&quot;,
+        &quot;CloseDate&quot; : &quot;2019-02-19&quot;
+      },
+      &quot;SetValues1Status&quot; : true,
+      &quot;options&quot; : {
+        &quot;chainable&quot; : false
+      }
+    }
+  },
+  &quot;SetValues1&quot; : {
+    &quot;ContextId&quot; : &quot;0011U00000D5xzLQAR&quot;,
+    &quot;OpptyName&quot; : &quot;Test HQ1&quot;,
+    &quot;CloseDate&quot; : &quot;2019-02-19&quot;
+  },
+  &quot;SetValues1Debug&quot; : {
+    &quot;Status&quot; : true,
+    &quot;Type&quot; : &quot;Set Values&quot;,
+    &quot;ElapsedTime&quot; : 9,
+    &quot;Input&quot; : &quot;Running Set Values&quot;
+  },
+  &quot;elapsedTimeCPU&quot; : 291,
+  &quot;elapsedTimeActual&quot; : 394,
+  &quot;executionSequence&quot; : [ &quot;SetValues1&quot;, &quot;DataRaptorPostAction1&quot;, &quot;ResponseAction1&quot; ],
+  &quot;response&quot; : {
+    &quot;response&quot; : { },
+    &quot;ResponseAction1Status&quot; : true,
+    &quot;DataRaptorPostAction1&quot; : {
+      &quot;ActualTime&quot; : 364,
+      &quot;CpuTime&quot; : 288,
+      &quot;Opportunity_1&quot; : [ {
+        &quot;UpsertSuccess&quot; : true,
+        &quot;Id&quot; : &quot;0061U000004p3AZQAY&quot;,
+        &quot;StageName&quot; : &quot;Qualification&quot;,
+        &quot;AccountId&quot; : &quot;0011U00000D5xzLQAR&quot;,
+        &quot;CloseDate&quot; : &quot;2019-02-19&quot;,
+        &quot;Name&quot; : &quot;Test HQ1&quot;
+      } ],
+      &quot;error&quot; : &quot;OK&quot;,
+      &quot;responseType&quot; : &quot;SObject&quot;
+    },
+    &quot;DataRaptorPostAction1Status&quot; : true,
+    &quot;SetValues1&quot; : {
+      &quot;ContextId&quot; : &quot;0011U00000D5xzLQAR&quot;,
+      &quot;OpptyName&quot; : &quot;Test HQ1&quot;,
+      &quot;CloseDate&quot; : &quot;2019-02-19&quot;
+    },
+    &quot;SetValues1Status&quot; : true,
+    &quot;options&quot; : {
+      &quot;chainable&quot; : false
+    }
+  },
+  &quot;originalInput&quot; : { },
+  &quot;debugLog&quot; : [ ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>HQVDO113CreateAdditionalTasks_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

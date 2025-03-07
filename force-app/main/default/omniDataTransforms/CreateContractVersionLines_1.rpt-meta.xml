@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;VersionNumber&quot; : 1,
+  &quot;ContractType&quot; : &quot;Amendment&quot;,
+  &quot;TrackingAgreement&quot; : true,
+  &quot;ContextId&quot; : &quot;80015000000VZtO&quot;,
+  &quot;timeStamp&quot; : &quot;2016-04-28T21:53:30.085Z&quot;,
+  &quot;userName&quot; : &quot;contract_daily3@vlocity.com&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;id&quot; : &quot;a1A15000002bw6oEAA&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;Lines&quot; : 3857,
+    &quot;GetContract&quot; : 223,
+    &quot;GetProducts&quot; : 423,
+    &quot;SelectProduct&quot; : 3775,
+    &quot;CarryProductNames&quot; : 2
+  },
+  &quot;Lines&quot; : {
+    &quot;CreateNewLine&quot; : &quot;CreateNewLine&quot;
+  },
+  &quot;Contract&quot; : {
+    &quot;StartDate&quot; : &quot;2016-04-28&quot;,
+    &quot;ContractTerm&quot; : 12,
+    &quot;AccountId&quot; : &quot;0011500001K74woAAB&quot;,
+    &quot;Name&quot; : &quot;QLUTestOptyTestTest&quot;,
+    &quot;Id&quot; : &quot;80015000000VZtOAAW&quot;
+  },
+  &quot;SelectProduct&quot; : {
+    &quot;Product&quot; : [ {
+      &quot;Name&quot; : &quot;Business Internet&quot;,
+      &quot;ProductId&quot; : &quot;01t15000005Mb5RAAS&quot;,
+      &quot;vlcSelected&quot; : true,
+      &quot;Status&quot; : &quot;Inactive&quot;
+    } ]
+  },
+  &quot;EnterPrice&quot; : {
+    &quot;SpecifyPrice&quot; : {
+      &quot;Name&quot; : &quot;Business Internet&quot;,
+      &quot;ProductId&quot; : &quot;01t15000005Mb5RAAS&quot;,
+      &quot;Quantity&quot; : 2,
+      &quot;OneTimeCharge&quot; : 0.33,
+      &quot;MonthlyCharge&quot; : null,
+      &quot;OneTimeTotal&quot; : 0.66,
+      &quot;RecurringTotal&quot; : 0
+    }
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <name>CreateContractVersionLines</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom2651</globalKey>
+        <inputFieldName>Contract:Name</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom635</globalKey>
+        <inputFieldName>ContextId</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__OriginalContractId__c</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom7538</globalKey>
+        <inputFieldName>EnterPrice:SpecifyPrice:OneTimeCharge</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__OneTimeCharge__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom4551</globalKey>
+        <inputFieldName>EnterPrice:SpecifyPrice:MonthlyCharge</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__RecurringCharge__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom7473</globalKey>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__ContractId__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom7236</globalKey>
+        <inputFieldName>Contract:AccountId</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom9729</globalKey>
+        <inputFieldName>EnterPrice:SpecifyPrice:Name</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom2975</globalKey>
+        <inputFieldName>EnterPrice:SpecifyPrice:RecurringTotal</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__RecurringTotal__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom117</globalKey>
+        <inputFieldName>EnterPrice:SpecifyPrice:OneTimeTotal</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__OneTimeTotal__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom5413</globalKey>
+        <inputFieldName>EnterPrice:SpecifyPrice:Quantity</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Quantity__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom4744</globalKey>
+        <inputFieldName>Contract:StartDate</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StartDate</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom9171</globalKey>
+        <inputFieldName>Contract:ContractTerm</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContractTerm</outputFieldName>
+        <outputObjectName>Contract</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateContractVersionLinesCustom220</globalKey>
+        <inputFieldName>EnterPrice:SpecifyPrice:ProductId</inputFieldName>
+        <inputObjectName>json</inputObjectName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateContractVersionLines</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Product2Id__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__ContractLineItem__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateContractVersionLines_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

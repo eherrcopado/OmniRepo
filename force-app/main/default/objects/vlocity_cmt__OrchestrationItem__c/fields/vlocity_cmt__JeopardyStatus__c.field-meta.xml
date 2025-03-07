@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__JeopardyStatus__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF( ISBLANK(vlocity_cmt__ExpectedCompletionDate__c) || ISNULL(vlocity_cmt__ExpectedCompletionDate__c) || ISBLANK(vlocity_cmt__DueDate__c) || ISNULL(vlocity_cmt__DueDate__c) || vlocity_cmt__ItemLength__c &lt;= 0,
+                    &apos;Green&apos;, IF( TEXT(vlocity_cmt__State__c) == &apos;READY&apos; || TEXT(vlocity_cmt__State__c) == &apos;RUNNING&apos; || TEXT(vlocity_cmt__State__c) == &apos;FAILED&apos; || TEXT(vlocity_cmt__State__c) == &apos;FATALLY FAILED&apos;
+                        || TEXT(vlocity_cmt__State__c) == &apos;FROZEN - RUNNING&apos; || TEXT(vlocity_cmt__State__c) == &apos;FROZEN - FAILED&apos; || TEXT(vlocity_cmt__State__c) == &apos;FROZEN - FATALLY FAILED&apos; || TEXT(vlocity_cmt__State__c) == &apos;FROZEN&apos;,
+                        IF(NOW() &gt;= vlocity_cmt__ExpectedCompletionDate__c, &apos;Red&apos;,IF(vlocity_cmt__JeopardySafetyInterval__c &lt;= 0,&apos;Green&apos;,
+                                    CASE(vlocity_cmt__JeopardySafetyIntervalUnit__c,
+                                        &apos;Seconds&apos;, IF(NOW() &lt;= vlocity_cmt__ExpectedCompletionDate__c - (vlocity_cmt__JeopardySafetyInterval__c/(24*60*60)), &apos;Green&apos;, &apos;Yellow&apos;),
+                                        &apos;Calendar Hours&apos;, IF(NOW() &lt;= vlocity_cmt__ExpectedCompletionDate__c - (vlocity_cmt__JeopardySafetyInterval__c/24), &apos;Green&apos;, &apos;Yellow&apos;),
+                                        &apos;Calendar Days&apos;, IF(NOW() &lt;= vlocity_cmt__ExpectedCompletionDate__c - vlocity_cmt__JeopardySafetyInterval__c, &apos;Green&apos;, &apos;Yellow&apos;),
+                                        &apos;Business Hours&apos;, IF(NOW() &lt;= vlocity_cmt__ExpectedCompletionDate__c - (vlocity_cmt__JeopardySafetyInterval__c/24), &apos;Green&apos;, &apos;Yellow&apos;),
+                                        &apos;Business Days&apos;, IF(NOW() &lt;= vlocity_cmt__ExpectedCompletionDate__c - vlocity_cmt__JeopardySafetyInterval__c, &apos;Green&apos;, &apos;Yellow&apos;),
+                                    &apos;Green&apos;)
+                                )
+                        ),
+                        IF(vlocity_cmt__DueDate__c &gt;= vlocity_cmt__ExpectedCompletionDate__c, &apos;Red&apos;, IF( vlocity_cmt__JeopardySafetyInterval__c &lt;= 0, &apos;Green&apos;,
+                                    CASE(vlocity_cmt__JeopardySafetyIntervalUnit__c,
+                                        &apos;Seconds&apos;, IF(vlocity_cmt__DueDate__c &lt;= vlocity_cmt__ExpectedCompletionDate__c - (vlocity_cmt__JeopardySafetyInterval__c/(24*60*60)), &apos;Green&apos;, &apos;Yellow&apos;),
+                                        &apos;Calendar Hours&apos;, IF(vlocity_cmt__DueDate__c &lt;= vlocity_cmt__ExpectedCompletionDate__c - (vlocity_cmt__JeopardySafetyInterval__c/24), &apos;Green&apos;, &apos;Yellow&apos;),
+                                        &apos;Calendar Days&apos;, IF(vlocity_cmt__DueDate__c &lt;= vlocity_cmt__ExpectedCompletionDate__c - vlocity_cmt__JeopardySafetyInterval__c, &apos;Green&apos;, &apos;Yellow&apos;),
+                                        &apos;Business Hours&apos;, IF(vlocity_cmt__DueDate__c &lt;= vlocity_cmt__ExpectedCompletionDate__c - (vlocity_cmt__JeopardySafetyInterval__c/24), &apos;Green&apos;, &apos;Yellow&apos;),
+                                        &apos;Business Days&apos;, IF(vlocity_cmt__DueDate__c &lt;= vlocity_cmt__ExpectedCompletionDate__c - vlocity_cmt__JeopardySafetyInterval__c, &apos;Green&apos;, &apos;Yellow&apos;),
+                                    &apos;Green&apos;)
+                                )
+                        )
+                )
+            )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Jeopardy Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

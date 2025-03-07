@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>This dataraptor will transform the service point data</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountNumber&quot; : &quot;3840-2873&quot;,
+  &quot;AssetId&quot; : &quot;02i3h000002NvrsAAC&quot;,
+  &quot;ContractedUsage&quot; : 3,
+  &quot;PremiseCity&quot; : &quot;Kolkata&quot;,
+  &quot;PremisePostalCode&quot; : &quot;70091&quot;,
+  &quot;PremiseState&quot; : &quot;West Bengal&quot;,
+  &quot;PremiseStreet&quot; : &quot;3 Mahisbathan&quot;,
+  &quot;ProductDescription&quot; : &quot;Good Pipe&quot;,
+  &quot;ProductFamily&quot; : &quot;Gas&quot;,
+  &quot;ProductName&quot; : &quot;Gas Tarrif&quot;,
+  &quot;ServicePointName&quot; : &quot;WBSDCL&quot;,
+  &quot;ServicePointNumber&quot; : &quot;10382388&quot;,
+  &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+  &quot;ServiceType&quot; : &quot;Electricity&quot;,
+  &quot;UnitOfMeasure&quot; : &quot;Kwh&quot;
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;AccountNumber&quot; : &quot;3840-2873&quot;,
+  &quot;AssetId&quot; : &quot;02i3h000002NvrsAAC&quot;,
+  &quot;ContractedUsage&quot; : 3,
+  &quot;PremiseCity&quot; : &quot;Kolkata&quot;,
+  &quot;PremisePostalCode&quot; : &quot;70091&quot;,
+  &quot;PremiseState&quot; : &quot;West Bengal&quot;,
+  &quot;PremiseStreet&quot; : &quot;3 Mahisbathan&quot;,
+  &quot;ProductDescription&quot; : &quot;Good Pipe&quot;,
+  &quot;ProductFamily&quot; : &quot;Gas&quot;,
+  &quot;ProductName&quot; : &quot;Gas Tarrif&quot;,
+  &quot;ServicePointName&quot; : &quot;WBSDCL&quot;,
+  &quot;ServicePointNumber&quot; : &quot;10382388&quot;,
+  &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+  &quot;ServiceType&quot; : &quot;Electricity&quot;,
+  &quot;UnitOfMeasure&quot; : &quot;Kwh&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>sfiEnergyConsoleTransformServicePointsInfo</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleTransformServicePointsInfoCustom7368</globalKey>
+        <inputFieldName>PremiseId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleTransformServicePointsInfo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PremiseId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleTransformServicePointsInfoCustom3727</globalKey>
+        <inputFieldName>PremiseAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleTransformServicePointsInfo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PremiseAddress</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Green Energy</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleTransformServicePointsInfoCustom8145</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleTransformServicePointsInfo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Plan</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:TotalSVPoint SUM</formulaConverted>
+        <formulaExpression>SUM(%TotalSVPoint%)</formulaExpression>
+        <formulaResultPath>TotalServicePoint</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>sfiEnergyConsoleTransformServicePointsInfoCustoma1V4x00000BqltuEABItem2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleTransformServicePointsInfo</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleTransformServicePointsInfoCustoma1V4x00000BqltuEABItem28</globalKey>
+        <inputFieldName>TotalServicePoint</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleTransformServicePointsInfo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Integer</outputFieldFormat>
+        <outputFieldName>TotalServicePoint</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleTransformServicePointsInfoCustom641</globalKey>
+        <inputFieldName>PremiseIdentifier</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleTransformServicePointsInfo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PremiseIdentifier</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:PremiseStreet var:null != var:PremiseState var:null != &amp;&amp; var:PremiseCity var:null != &amp;&amp; var:PremisePostalCode var:null != &amp;&amp; | var:PremiseStreet &quot;,/\/\/&quot; var:PremiseCity &quot;,/\/\/&quot; var:PremiseState &quot;,/\/\/&quot; var:PremisePostalCode CONCAT var:null IF</formulaConverted>
+        <formulaExpression>IF(%PremiseStreet%!=null &amp;&amp; %PremiseState%!=null &amp;&amp; %PremiseCity%!=null &amp;&amp; %PremisePostalCode%!=null,CONCAT(%PremiseStreet%,&quot;, &quot; %PremiseCity%,&quot;, &quot; %PremiseState%,&quot;, &quot;,  %PremisePostalCode%),null)</formulaExpression>
+        <formulaResultPath>PremiseAddress</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>sfiEnergyConsoleTransformServicePointsInfoCustom3632</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleTransformServicePointsInfo</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountNumber&quot; : &quot;3840-2873&quot;,
+  &quot;AssetId&quot; : &quot;02i3h000002NvrsAAC&quot;,
+  &quot;ContractedUsage&quot; : 3,
+  &quot;PremiseCity&quot; : &quot;Kolkata&quot;,
+  &quot;PremisePostalCode&quot; : &quot;70091&quot;,
+  &quot;PremiseState&quot; : &quot;West Bengal&quot;,
+  &quot;PremiseStreet&quot; : &quot;3 Mahisbathan&quot;,
+  &quot;ProductDescription&quot; : &quot;Good Pipe&quot;,
+  &quot;ProductFamily&quot; : &quot;Gas&quot;,
+  &quot;ProductName&quot; : &quot;Gas Tarrif&quot;,
+  &quot;ServicePointName&quot; : &quot;WBSDCL&quot;,
+  &quot;ServicePointNumber&quot; : &quot;10382388&quot;,
+  &quot;ServicePointStatus&quot; : &quot;Vacant&quot;,
+  &quot;ServiceType&quot; : &quot;Electricity&quot;,
+  &quot;UnitOfMeasure&quot; : &quot;Kwh&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>sfiEnergyConsoleTransformServicePointsInfo_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

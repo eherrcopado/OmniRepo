@@ -1,0 +1,256 @@
+{
+  "templateType" : "app",
+  "label" : "Revenue Insights",
+  "name" : "RevenueInsights",
+  "description" : "Demo template based off of v1.1 #070 of the standard Revenue Insights template. Configured to use both the default out-of-the-box SDO/IDO data and data loaded by the Analytics Demo Tools to give you richer visualization in the dashboards.",
+  "assetVersion" : 56,
+  "customAttributes" : [
+    {
+      "label" : "Features",
+      "values" : [
+        "Prebuilt Dashboards",
+        "Recipes"
+      ]
+    },
+    {
+      "label" : "Demo Version",
+      "values" : [
+        "v2022.43"
+      ]
+    },
+    {
+      "label" : "Publisher",
+      "values" : [
+        "CRMA PMM Tech"
+      ]
+    },
+    {
+      "label" : "Salesforce Objects",
+      "values" : [
+        "Account",
+        "Event",
+        "ForecastingQuota",
+        "ForecastingType",
+        "ForecastingItem",
+        "Opportunity",
+        "OpportunityHistory",
+        "OpportunityHistory__c",
+        "OpportunityLineItem",
+        "Product",
+        "Task",
+        "User",
+        "UserRole"
+      ]
+    }
+  ],
+  "releaseInfo" : {
+    "templateVersion" : "1.1",
+    "notesFile" : "releaseNotes.html"
+  },
+  "folderDefinition" : "folder.json",
+  "apexCallback" : {
+    "name" : "RevInsightsConfigurationModifier"
+  },
+  "variableDefinition" : "variables.json",
+  "uiDefinition" : "ui.json",
+  "icons" : {
+    "appBadge" : {
+      "name" : "21.png"
+    },
+    "templateBadge" : {
+      "name" : "sales.png"
+    },
+    "templatePreviews" : [
+      {
+        "name" : "einstein_scene",
+        "label" : "",
+        "description" : "Demo template based off of v1.1 #070 of the standard Revenue Insights template. Configured to use both the default out-of-the-box SDO/IDO data and data loaded by the Analytics Demo Tools to give you richer visualization in the dashboards."
+      }
+    ]
+  },
+  "extendedTypes" : { },
+  "rules" : [
+    {
+      "type" : "templateToApp",
+      "file" : "rules_recipe.json"
+    },
+    {
+      "type" : "templateToApp",
+      "file" : "rules_dashboard.json"
+    },
+    {
+      "type" : "appToTemplate",
+      "file" : "app-to-template-rules.json"
+    }
+  ],
+  "externalFiles" : [
+    {
+      "condition" : "${Variables.Has_RoleHierarchy == 'No'}",
+      "file" : "dataset_files/no_userrole_hierarchy.csv",
+      "name" : "no_userrole_hierarchy_revinsights",
+      "schema" : "dataset_files/no_userrole_hierarchy.json",
+      "type" : "CSV",
+      "userXmd" : "dataset_files/no_userrole_hierarchy_XMD.json"
+    }
+  ],
+  "lenses" : [ ],
+  "dashboards" : [
+    {
+      "condition" : "${(Variables.Forecasting_Override == 'Yes' && Variables.Has_CollaborativeForecasting == 'Yes' && Variables.Has_CollaborativeForecastingQuota == 'Yes') && Variables.Has_OpportunitySplits == 'No' || Variables.Overrides.createAllDashboards}",
+      "label" : "Revenue Insights",
+      "name" : "Revenue_Insights_tp",
+      "file" : "dashboards/Revenue_Insights.json"
+    },
+    {
+      "condition" : "${(Variables.Forecasting_Override == 'No' || Variables.Has_CollaborativeForecasting == 'No' || Variables.Has_CollaborativeForecastingQuota == 'No') && Variables.Has_OpportunitySplits == 'No' || Variables.Overrides.createAllDashboards}",
+      "label" : "Demo | Revenue  Insights",
+      "name" : "Revenue_Insights_2tp",
+      "file" : "dashboards/Revenue_Insights_Non_Collab.json"
+    },
+    {
+      "condition" : "${(Variables.Forecasting_Override == 'Yes' && Variables.Has_CollaborativeForecasting == 'Yes' && Variables.Has_CollaborativeForecastingQuota == 'Yes') && Variables.Has_OpportunitySplits == 'Yes' || Variables.Overrides.createAllDashboards}",
+      "label" : "Demo | Revenue   Insights",
+      "name" : "Revenue_Insights_splits_w_collab",
+      "file" : "dashboards/Revenue_Insights_splits_w_collab.json"
+    },
+    {
+      "condition" : "${(Variables.Forecasting_Override == 'No' || Variables.Has_CollaborativeForecasting == 'No' || Variables.Has_CollaborativeForecastingQuota == 'No') && Variables.Has_OpportunitySplits == 'Yes' || Variables.Overrides.createAllDashboards}",
+      "label" : "Demo | Revenue    Insights",
+      "name" : "Revenue_Insights_Non_Collab_w_splits",
+      "file" : "dashboards/Revenue_Insights_Non_Collab_w_splits.json"
+    }
+  ],
+  "components" : [
+    {
+      "label" : "Opportunities Needing My Attention",
+      "name" : "Opportunities_Needing_My_Attention_tp",
+      "file" : "components/Opportunities_Needing_My_Attention.json"
+    },
+    {
+      "label" : "Opportunity Changes",
+      "name" : "Opportunity_Changes_tp",
+      "file" : "components/Opportunity_Changes.json"
+    },
+    {
+      "label" : "Top Accounts",
+      "name" : "Top_Accounts_tp",
+      "file" : "components/Top_Accounts.json"
+    },
+    {
+      "label" : "Top Open Opportunities",
+      "name" : "Top_Open_Opportunities_tp",
+      "file" : "components/Top_Open_Opportunities.json"
+    },
+    {
+      "label" : "Top Opportunities",
+      "name" : "Top_Opportunities_tp",
+      "file" : "components/Top_Opportunities.json"
+    },
+    {
+      "condition" : "${Variables.Has_Products == 'Yes'}",
+      "label" : "Top Products",
+      "name" : "Top_Products_tp",
+      "file" : "components/Top_Products.json"
+    }
+  ],
+  "recipes" : [
+    {
+      "condition" : "${Variables.Has_RoleHierarchy == 'Yes' || Variables.Has_RoleHierarchy == 'No'}",
+      "label" : "User Recipe",
+      "name" : "revinsights_user_recipe",
+      "file" : "recipes/revinsights_user_w_userrole_recipe.json"
+    },
+    {
+      "label" : "Opportunity Recipe",
+      "name" : "revinsights_opportunity_recipe",
+      "file" : "recipes/revinsights_opportunity_recipe.json"
+    },
+    {
+      "condition" : "${Variables.Has_Activities == 'Yes'}",
+      "label" : "Activity Recipe",
+      "name" : "revinsights_activity_recipe",
+      "file" : "recipes/revinsights_activity_recipe.json"
+    },
+    {
+      "label" : "Main Recipe",
+      "name" : "RevInsightsMainRecipe",
+      "file" : "recipes/RevInsightsMainRecipe.json"
+    }
+  ],
+  "eltDataflows" : [ ],
+  "datasetFiles" : [
+    {
+      "label" : "Opportunity",
+      "name" : "Opportunity",
+      "userXmd" : "dataset_files/opportunity_XMD.json"
+    },
+    {
+      "label" : "Opportunity RevInsights",
+      "name" : "opportunity_revinsights",
+      "userXmd" : "dataset_files/opportunity_revinsights_XMD.json"
+    },
+    {
+      "label" : "Account",
+      "name" : "Account",
+      "userXmd" : "dataset_files/account_XMD.json"
+    },
+    {
+      "condition" : "${Variables.Has_CollaborativeForecasting == 'Yes'}",
+      "label" : "Forecast",
+      "name" : "forecast_revinsights",
+      "userXmd" : "dataset_files/forecast_XMD.json"
+    },
+    {
+      "condition" : "${Variables.Has_OpportunitySplits == 'Yes'}",
+      "label" : "Opportunity Splits",
+      "name" : "opportunitysplits_revinsights",
+      "userXmd" : "dataset_files/opportunitysplits_XMD.json"
+    },
+    {
+      "condition" : "${Variables.Has_Products == 'Yes'}",
+      "label" : "Oppty Products",
+      "name" : "OpptyProduct",
+      "userXmd" : "dataset_files/opportunity_product_XMD.json"
+    },
+    {
+      "condition" : "${Variables.Has_Products == 'Yes'}",
+      "label" : "Products",
+      "name" : "Product",
+      "userXmd" : "dataset_files/product_XMD.json"
+    },
+    {
+      "condition" : "${Variables.Has_CollaborativeForecastingQuota == 'Yes'}",
+      "label" : "Forecasting Quota",
+      "name" : "forecastingquota_revinsights",
+      "userXmd" : "dataset_files/forecastingquota_XMD.json"
+    },
+    {
+      "condition" : "${Variables.Has_Activities == 'Yes'}",
+      "label" : "Activities",
+      "name" : "Activity",
+      "userXmd" : "dataset_files/activities_XMD.json"
+    },
+    {
+      "label" : "Users",
+      "name" : "User",
+      "userXmd" : "dataset_files/user_XMD.json"
+    },
+    {
+      "condition" : "${Variables.Has_RoleHierarchy == 'No' || Variables.Has_RoleHierarchy == 'Yes'}",
+      "label" : "User Roles",
+      "name" : "userrole_revinsights",
+      "userXmd" : "dataset_files/userroles_XMD.json"
+    },
+    {
+      "label" : "OpportunityHistory",
+      "name" : "OpportunityHistory",
+      "userXmd" : "dataset_files/opphistory_XMD.json"
+    }
+  ],
+  "imageFiles" : [ ],
+  "tags" : [
+    "Manufacturing",
+    "Financial Services",
+    "Energy & Utilities Cloud"
+  ]
+}

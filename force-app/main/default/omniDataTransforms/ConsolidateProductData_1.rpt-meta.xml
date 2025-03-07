@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>ConsolidateProductData</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:timestamp var:null != | var:products:Name &quot;/\/\/&quot; var:timestamp CONCAT var:products:Name IF</formulaConverted>
+        <formulaExpression>IF(timestamp != null, CONCAT(products:Name,&quot; &quot;,timestamp), products:Name)</formulaExpression>
+        <formulaResultPath>products:Name</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>ConsolidateProductDataCustom5373</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ConsolidateProductData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;Name&quot; | var:CustomizedGroupDetails:result LIST | var:products LIST | var:groupsToCreate LIST LISTMERGE</formulaConverted>
+        <formulaExpression>LISTMERGE(&quot;Name&quot;, LIST(CustomizedGroupDetails:result), LIST(products), LIST(groupsToCreate))</formulaExpression>
+        <formulaResultPath>ProductBundles</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>ConsolidateProductDataCustom5870</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ConsolidateProductData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ConsolidateProductDataCustom9755</globalKey>
+        <inputFieldName>totalAssets</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ConsolidateProductData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Integer</outputFieldFormat>
+        <outputFieldName>totalAssets</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:filteredBundles:Quantity SUM</formulaConverted>
+        <formulaExpression>SUM(filteredBundles:Quantity)</formulaExpression>
+        <formulaResultPath>totalAssets</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>ConsolidateProductDataCustom6857</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ConsolidateProductData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ProductBundles LIST &apos;groupId/\/\/!=/\/\/$Vlocity.NULL/\/\/&amp;&amp;/\/\/groupCartId/\/\/!=/\/\/$Vlocity.NULL/\/\/&amp;&amp;/\/\/ISNOTBLANK(assetIds)&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(ProductBundles), &apos;groupId != $Vlocity.NULL &amp;&amp; groupCartId != $Vlocity.NULL &amp;&amp; ISNOTBLANK(assetIds)&apos;)</formulaExpression>
+        <formulaResultPath>filteredBundles</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>ConsolidateProductDataCustom1158</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ConsolidateProductData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ConsolidateProductDataCustom2893</globalKey>
+        <inputFieldName>filteredBundles</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>ConsolidateProductData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>List&lt;Map&gt;</outputFieldFormat>
+        <outputFieldName>productBundles</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;CustomizedGroupDetails&quot; : {
+    &quot;result&quot; : [ {
+      &quot;Name&quot; : &quot;IphoneLevelNProduct2_039 MON 2&quot;,
+      &quot;groupCartId&quot; : &quot;8014x000000lapJAAQ&quot;,
+      &quot;groupId&quot; : &quot;a324x000000nDraAAE&quot;,
+      &quot;memberType&quot; : &quot;ServicePoint&quot;
+    }, {
+      &quot;Name&quot; : &quot;COMMSBundleProduct_23LineItem_01 MON 2&quot;,
+      &quot;groupCartId&quot; : &quot;8014x000000lapKAAQ&quot;,
+      &quot;groupId&quot; : &quot;a324x000000nDrbAAE&quot;,
+      &quot;memberType&quot; : &quot;ServicePoint&quot;
+    }, {
+      &quot;Name&quot; : &quot;COMMSBundleProduct_130LineItem_01 MON 2&quot;,
+      &quot;groupCartId&quot; : &quot;8014x000000lapLAAQ&quot;,
+      &quot;groupId&quot; : &quot;a324x000000nDrcAAE&quot;,
+      &quot;memberType&quot; : &quot;ServicePoint&quot;
+    }, {
+      &quot;Name&quot; : &quot;Airbus MON 2&quot;,
+      &quot;groupCartId&quot; : &quot;8014x000000lapbAAA&quot;,
+      &quot;groupId&quot; : &quot;a324x000000nDriAAE&quot;,
+      &quot;memberType&quot; : &quot;ServicePoint&quot;
+    } ]
+  },
+  &quot;products&quot; : [ {
+    &quot;Name&quot; : &quot;Honda Civic w/ Assist&quot;,
+    &quot;PriceBookId&quot; : &quot;01s4x000007Et7CAAS&quot;,
+    &quot;PricebookEntryId&quot; : &quot;01u4x000008wvpiAAA&quot;,
+    &quot;ProductId&quot; : &quot;01t4x000003CCXsAAO&quot;,
+    &quot;Quantity&quot; : 4,
+    &quot;assetIds&quot; : [ &quot;02i4x000001xXPwAAM&quot;, &quot;02i4x000001xXQ1AAM&quot;, &quot;02i4x000001xXQ6AAM&quot;, &quot;02i4x000001xXY8AAM&quot; ]
+  }, {
+    &quot;Name&quot; : &quot;COMMSBundleProduct_23LineItem_01&quot;,
+    &quot;PriceBookId&quot; : &quot;01s4x000007Et7CAAS&quot;,
+    &quot;PricebookEntryId&quot; : &quot;01u4x000008wxYOAAY&quot;,
+    &quot;ProductId&quot; : &quot;01t4x000003CE9lAAG&quot;,
+    &quot;Quantity&quot; : 2,
+    &quot;assetIds&quot; : [ &quot;02i4x000001xXgpAAE&quot;, &quot;02i4x000001xXjIAAU&quot; ]
+  }, {
+    &quot;Name&quot; : &quot;COMMSBundleProduct_130LineItem_01&quot;,
+    &quot;PriceBookId&quot; : &quot;01s4x000007Et7CAAS&quot;,
+    &quot;PricebookEntryId&quot; : &quot;01u4x000008wxZJAAY&quot;,
+    &quot;ProductId&quot; : &quot;01t4x000003CEAHAA4&quot;,
+    &quot;Quantity&quot; : 1,
+    &quot;assetIds&quot; : [ &quot;02i4x000001xXhCAAU&quot; ]
+  }, {
+    &quot;Name&quot; : &quot;Airbus&quot;,
+    &quot;PriceBookId&quot; : &quot;01s4x000007Et7CAAS&quot;,
+    &quot;PricebookEntryId&quot; : &quot;01u4x000008wvuaAAA&quot;,
+    &quot;ProductId&quot; : &quot;01t4x000003CDKvAAO&quot;,
+    &quot;Quantity&quot; : 1,
+    &quot;assetIds&quot; : [ &quot;02i4x000001xXjFAAU&quot; ]
+  } ],
+  &quot;timestamp&quot; : &quot;MON 2&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>ConsolidateProductData_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,1808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customHtmlTemplates>&lt;style&gt;
+.vlocity .panel.panel-default {
+  border: 0;
+}
+
+.vlocity .panel&gt;.panel-heading {
+  background-color: #FFF;
+}
+
+.vlocity .table tr.vlc-selectableitem-selected {
+  background: rgba(5,166,223,0.1) !important;
+}
+
+.vlocity .table&gt;thead&gt;tr&gt;th{
+  background-color: #FFFFFF;
+  color: rgba(0,0,0,0.9);
+}
+&lt;/style&gt;
+
+&lt;script type=&quot;text/ng-template&quot; id=&quot;inslist_InvoiceMulti.html&quot;&gt;     
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;label&gt;Invoices List&lt;/label&gt;                   
+            &lt;/div&gt;                                          
+            &lt;table class=&quot;table&quot;&gt;
+               &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th/&gt;
+                        &lt;th&gt;Name&lt;/th&gt;
+                        &lt;th&gt;Start Period&lt;/th&gt;       
+                        &lt;th&gt;End Period&lt;/th&gt;
+                        &lt;th&gt;Original Amount&lt;/th&gt;
+                        &lt;th&gt;Due Date&lt;/th&gt;
+                        &lt;th&gt;Paid Amount&lt;/th&gt;
+                        &lt;th&gt;Amount Due&lt;/th&gt;     
+                        &lt;th&gt;Invoice Status&lt;/th&gt; 
+                        &lt;th&gt;Reason&lt;/th&gt; 
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody class=&apos;ins&apos;&gt;
+                    &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot; &gt;
+                        &lt;td&gt;&lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this)&apos; checked/&gt;&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;https://na31.salesforce.com/{{p.InvoiceID}}&quot; target=&quot;_black&quot;&gt;{{p[&apos;Invoice Number&apos;]}}&lt;/a&gt;&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Invoice Start Period&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Invoice End Period&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Invoice Original Amount&apos;]}} $&lt;/td&gt;    
+                         &lt;td&gt;{{p[&apos;Invoice Due Date&apos;]}} $&lt;/td&gt;                                      
+                        &lt;td&gt;{{p[&apos;Invoice Paid Amount&apos;]}} $&lt;/td&gt; 
+                         &lt;td&gt;{{p[&apos;Invoice Amount Due&apos;]}} $&lt;/td&gt;        
+                        &lt;td&gt;{{p[&apos;Invoice Status&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Invoice Reason&apos;]}}&lt;/td&gt;                    
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;!--script type=&quot;text/ng-template&quot; id=&quot;inslist.html&quot;&gt;     
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;label&gt;Assets List&lt;/label&gt;                   
+            &lt;/div&gt;                                          
+            &lt;table class=&quot;table&quot;&gt;
+               &lt;thead&gt;
+                    &lt;tr&gt;
+			&lt;th/&gt;
+                        &lt;th&gt;Name&lt;/th&gt;
+                        &lt;th&gt;Status&lt;/th&gt;       
+                        &lt;th&gt;Suspended Reason&lt;/th&gt;                                                 
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody class=&apos;ins&apos;&gt;
+                    &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot; &gt;
+						&lt;td&gt;&lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this)&apos; checked/&gt;&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Asset Name&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Asset Status&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Asset Suspension Reason&apos;]}}&lt;/td&gt; 
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+&lt;/script--&gt;
+
+&lt;script type=&quot;text/ng-template&quot; id=&quot;inslist.html&quot;&gt;     
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;label&gt;Asset List&lt;/label&gt;                   
+            &lt;/div&gt;                                          
+            &lt;table class=&quot;table&quot;&gt;
+               &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th width=&quot;20px&quot;/&gt;
+                        &lt;th&gt;Msisdn&lt;/th&gt;
+                        &lt;!--&lt;th&gt;(Product) Family&lt;/th&gt;--&gt;
+                        &lt;th&gt;Status&lt;/th&gt;                                                 
+                        &lt;th&gt;Install Dates&lt;/th&gt;                                                 
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody class=&apos;ins&apos;&gt;
+                    &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot; &gt;
+                        &lt;td&gt;&lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this)&apos; checked/&gt;&lt;/td&gt;
+                        &lt;td&gt;{{p.msisdn}}&lt;/td&gt;
+                        &lt;!--&lt;td&gt;{{p.product_fam}}&lt;/td&gt;--&gt;
+                        &lt;td&gt;{{p.status}}&lt;/td&gt; 
+                        &lt;td&gt;{{p.installdate}}&lt;/td&gt; 
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+&lt;/script&gt;
+&lt;script type=&quot;text/ng-template&quot; id=&quot;billinglist.html&quot;&gt;     
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;div class=&quot;panel-heading&quot;&gt;
+                &lt;label&gt;Billing List&lt;/label&gt;                   
+            &lt;/div&gt;                                          
+            &lt;table class=&quot;table&quot;&gt;
+               &lt;thead&gt;
+                    &lt;tr&gt;
+			&lt;th/&gt;
+                        &lt;th&gt;Billing Name&lt;/th&gt;
+                        &lt;th&gt;Bill Frequency&lt;/th&gt;     
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody class=&apos;ins&apos;&gt;
+                    &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot; &gt;
+						&lt;td&gt;&lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this)&apos; checked/&gt;&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;BillingName&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;BillingName{{p.BillingName}}&lt;/td&gt;
+                    &lt;/tr&gt;
+		     &lt;tr&gt;
+			&lt;td/&gt;
+                        &lt;td&gt;Billing Name&lt;/td&gt;
+                        &lt;td&gt;Bill Frequency&lt;/td&gt;       
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+		&lt;/BR&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script type=&quot;text/ng-template&quot; id=&quot;inslist_InvoiceLineItemMulti.html&quot;&gt;     
+	&lt;div class=&quot;panel panel-default&quot;&gt;
+		&lt;div class=&quot;panel-heading&quot;&gt;
+			&lt;label&gt;Invoice Items List&lt;/label&gt;                   
+		&lt;/div&gt;                                          
+		&lt;table class=&quot;table&quot;&gt;
+		   &lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th/&gt;
+					&lt;th&gt;Name&lt;/th&gt;						
+					&lt;th&gt;Amount&lt;/th&gt;
+					&lt;th&gt;Start Date&lt;/th&gt;
+					&lt;th&gt;End Date&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody class=&apos;ins&apos;&gt;
+				&lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot; &gt;
+					&lt;td&gt;&lt;input type=&apos;checkbox&apos; ng-model=&apos;p.vlcSelected&apos; ng-change=&apos;onSelectItem(control, p, $index, this)&apos; checked/&gt;&lt;/td&gt;
+					&lt;td&gt;{{p[&apos;ServiceName&apos;]}}&lt;/td&gt;                     
+					&lt;td&gt;{{p[&apos;Amount&apos;]}} $&lt;/td&gt;
+					&lt;td&gt;{{p[&apos;ServiceStartDate&apos;]}}&lt;/td&gt;
+					&lt;td&gt;{{p[&apos;ServiceEndDate&apos;]}}&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/script&gt;
+
+&lt;script type=&quot;text/ng-template&quot; id=&quot;trafficDetails.html&quot;&gt;     
+        &lt;div class=&quot;panel panel-default&quot;&gt;
+            &lt;table class=&quot;table&quot;&gt;
+               &lt;thead&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;Traffic Type&lt;/th&gt;
+                        &lt;th&gt;Destination&lt;/th&gt;
+                        &lt;th&gt;Date&lt;/th&gt;
+                        &lt;th&gt;Duration&lt;/th&gt;     
+                        &lt;th&gt;UOM&lt;/th&gt; 
+                        &lt;th&gt;Charge&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody class=&apos;ins&apos;&gt;
+                    &lt;tr ng-repeat=&apos;p in control.vlcSI[control.itemsKey]&apos; ng-class=&quot;{ &apos;vlc-selectableitem-selected&apos; : p.vlcSelected }&quot; &gt;
+                        &lt;td&gt;{{p[&apos;Type&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Destination&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Time&apos;] | date:&apos;yyyy-MM-dd &apos;}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Duration&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;UOM&apos;]}}&lt;/td&gt;
+                        &lt;td&gt;{{p[&apos;Charge&apos;]}}&lt;/td&gt; 
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+&lt;/script&gt;</customHtmlTemplates>
+    <description>VPL Manage Billing Dispute 13-4 Lightning Ready</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>English</language>
+    <name>VPL Manage Billing Dispute 13-4 Lightning Ready</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CreateAdjustmentAndDispute</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;bundle&quot; : &quot;VPLCreatePaymentAdjustmentAndDisputeCase132&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Create Adjustment and Dispute&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Required adjustment&quot;,
+        &quot;field&quot; : &quot;FurtherActionRequired&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>40.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CreateDispute</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;bundle&quot; : &quot;VPLCreateBillingDisputeCase131&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Create Dispute&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Required further actions&quot;,
+        &quot;field&quot; : &quot;FurtherActionRequired&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>39.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>BillingDisputeTxt</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;label&quot; : null,
+  &quot;show&quot; : null,
+  &quot;text&quot; : &quot;&lt;p&gt;A billing dispute will be filed for the following Statement Line Item:&lt;/p&gt;\n&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;%StatementDetails:LineItem|1:LineItemName% - %StatementDetails:LineItem|1:AssetName%&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;\n&lt;p&gt;&lt;/p&gt;&quot;
+}</propertySetConfig>
+            <sequenceNumber>32.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CaseDescription</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;debounceValue&quot; : 0,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Case Description&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>36.0</sequenceNumber>
+            <type>Text Area</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CaseOrigin</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 3,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Original Channel&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;Case.Origin&quot;,
+    &quot;type&quot; : &quot;SObject&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>34.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CaseReason</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Case Reason&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;Case.Reason&quot;,
+    &quot;type&quot; : &quot;SObject&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>38.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CaseStatus</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Case Status&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;Case.Status&quot;,
+    &quot;type&quot; : &quot;SObject&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>37.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CaseSubject</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;debounceValue&quot; : 0,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Subject&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>35.0</sequenceNumber>
+            <type>Text</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>CaseType</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 3,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Case Type&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;Case.Type&quot;,
+    &quot;type&quot; : &quot;SObject&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>33.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DisputeStep</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : &quot;Billing Dispute&quot;,
+  &quot;message&quot; : { },
+  &quot;nextLabel&quot; : &quot;File Dispute&quot;,
+  &quot;nextWidth&quot; : 5,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;pubsub&quot; : false,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>31.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Done Action 1</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;label&quot; : &quot;Done Action 1&quot;,
+  &quot;redirectPageName&quot; : &quot;mobileDone&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcMobileConfirmation.html&quot;,
+  &quot;show&quot; : null,
+  &quot;source&quot; : &quot;%ContextId%&quot;,
+  &quot;type&quot; : &quot;SObject&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;
+}</propertySetConfig>
+        <sequenceNumber>41.0</sequenceNumber>
+        <type>Done Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetLineItems</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;bundle&quot; : &quot;VPLReadStatementLineItems131&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;GetStatement:Statement|1:StatementID&quot;,
+    &quot;inputParam&quot; : &quot;Id&quot;
+  } ],
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;ignoreCache&quot; : false,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;label&quot; : &quot;Retrieve Statement Items&quot;,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;message&quot; : { },
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>IsStatementSelected</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF(%Statement%=null,0,COUNT(%Statement%))&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Formula 2&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>7.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Statement</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;VPL PaymentStatements-slds 13-4&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;autoSaveOnStepNext&quot; : false,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;cancelRedirectPageName&quot; : &quot;OmniScriptCancelled&quot;,
+  &quot;cancelRedirectTemplateUrl&quot; : &quot;vlcCancelled.html&quot;,
+  &quot;cancelSource&quot; : &quot;%ContextId%&quot;,
+  &quot;cancelType&quot; : &quot;SObject&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : true,
+  &quot;elementTypeToHTMLTemplateMapping&quot; : { },
+  &quot;enableKnowledge&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;knowledgeArticleTypeQueryFieldsMap&quot; : { },
+  &quot;label&quot; : null,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;persistentComponent&quot; : [ {
+    &quot;id&quot; : &quot;vlcCart&quot;,
+    &quot;itemsKey&quot; : &quot;cartItems&quot;,
+    &quot;label&quot; : &quot;&quot;,
+    &quot;modalConfigurationSetting&quot; : {
+      &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+      &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+      &quot;modalSize&quot; : &quot;lg&quot;
+    },
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;remoteClass&quot; : &quot;&quot;,
+    &quot;remoteMethod&quot; : &quot;&quot;,
+    &quot;remoteOptions&quot; : {
+      &quot;postTransformBundle&quot; : &quot;&quot;,
+      &quot;preTransformBundle&quot; : &quot;&quot;
+    },
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;render&quot; : false,
+    &quot;responseJSONNode&quot; : &quot;&quot;,
+    &quot;responseJSONPath&quot; : &quot;&quot;,
+    &quot;sendJSONNode&quot; : &quot;&quot;,
+    &quot;sendJSONPath&quot; : &quot;&quot;
+  }, {
+    &quot;id&quot; : &quot;vlcKnowledge&quot;,
+    &quot;itemsKey&quot; : &quot;knowledgeItems&quot;,
+    &quot;label&quot; : &quot;&quot;,
+    &quot;modalConfigurationSetting&quot; : {
+      &quot;modalController&quot; : &quot;&quot;,
+      &quot;modalHTMLTemplateId&quot; : &quot;&quot;,
+      &quot;modalSize&quot; : &quot;lg&quot;
+    },
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;remoteClass&quot; : &quot;&quot;,
+    &quot;remoteMethod&quot; : &quot;&quot;,
+    &quot;remoteOptions&quot; : {
+      &quot;postTransformBundle&quot; : &quot;&quot;,
+      &quot;preTransformBundle&quot; : &quot;&quot;
+    },
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;render&quot; : false
+  } ],
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;repeat&quot; : false,
+  &quot;required&quot; : false,
+  &quot;saveContentEncoded&quot; : false,
+  &quot;saveForLaterRedirectPageName&quot; : &quot;sflRedirect&quot;,
+  &quot;saveForLaterRedirectTemplateUrl&quot; : &quot;vlcSaveForLaterAcknowledge.html&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;seedDataJSON&quot; : { },
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;timeTracking&quot; : true,
+  &quot;trackingCustomData&quot; : { },
+  &quot;validationRequired&quot; : true,
+  &quot;visualforcePagesAvailableInPreview&quot; : { }
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>StatementPageDesc</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;bundle&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : null,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;text&quot; : &quot;&lt;p&gt;Please select the Statement&amp;nbsp;for which the customer has encountered an error.&lt;/p&gt;&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetStatement</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;allowSaveForLater&quot; : true,
+  &quot;bundle&quot; : &quot;&quot;,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;instruction&quot; : &quot;&lt;p&gt;Select the Statement&amp;nbsp;to&amp;nbsp;review&lt;/p&gt;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Select Statement&quot;,
+  &quot;message&quot; : { },
+  &quot;nextLabel&quot; : &quot;Retrieve Statement Details&quot;,
+  &quot;nextWidth&quot; : 6,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetStatements</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;bundle&quot; : &quot;VPLReadAllStatements132&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;ContextId&quot;,
+    &quot;inputParam&quot; : &quot;Id&quot;
+  } ],
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;ignoreCache&quot; : false,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Retrieve Statement List&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>AdjustmentDate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;dataType&quot; : &quot;Date&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;expression&quot; : &quot;TODAY()&quot;,
+  &quot;hide&quot; : false,
+  &quot;hideGroupSep&quot; : false,
+  &quot;label&quot; : &quot;Adjustment Date&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>26.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>AdjustmentType</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;debounceValue&quot; : 0,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Adjustment Type&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : true,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>25.0</sequenceNumber>
+            <type>Text</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Amount</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;allowNegative&quot; : true,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;debounceValue&quot; : 0,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;label&quot; : &quot;Amount&quot;,
+  &quot;mask&quot; : 2,
+  &quot;max&quot; : null,
+  &quot;min&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>27.0</sequenceNumber>
+            <type>Currency</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>AmountType</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Adjustment Method&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Adjustment Credit&quot;,
+    &quot;value&quot; : &quot;Credit&quot;
+  }, {
+    &quot;name&quot; : &quot;Adjustment Debit&quot;,
+    &quot;value&quot; : &quot;Debit&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : true,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>28.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Notes</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;debounceValue&quot; : 0,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Notes&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>29.0</sequenceNumber>
+            <type>Text Area</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>PaymentAdjustment</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;accessibleInFutureSteps&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000
+  },
+  &quot;label&quot; : &quot;Adjustment&quot;,
+  &quot;nextLabel&quot; : &quot;Submit Adjustment&quot;,
+  &quot;nextWidth&quot; : 5,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Required adjustment&quot;,
+        &quot;field&quot; : &quot;FurtherActionRequired&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>24.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>If FurtherActionRequired=Required adjustment, this sets payment adjustment/billing dispute case are created.</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetBillingDisputeCase</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;DisputeStep&quot; : {
+      &quot;CaseDescription&quot; : &quot;CSR Payment Adjustment for Line Item: %StatementDetails:LineItem|1:LineItemName%:  %StatementDetails:LineItem|1:AssetName%.  Billing Dispute Reason: %DisputeReason%&quot;,
+      &quot;CaseOrigin&quot; : &quot;Web&quot;,
+      &quot;CaseStatus&quot; : &quot;New&quot;,
+      &quot;CaseSubject&quot; : &quot;Payment Adjustment&quot;,
+      &quot;CaseType&quot; : &quot;Service Request&quot;
+    }
+  },
+  &quot;label&quot; : &quot;Set Values 1&quot;,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Required adjustment&quot;,
+        &quot;field&quot; : &quot;FurtherActionRequired&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>23.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>If FurtherActionRequired=Required further actions, this fires and sets the Case information. No adjustment is created Otherwise a payment adjustment and billing dispute case are created.</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetBillingDisputeCaseValues</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;CaseDescription&quot; : &quot;Billing Dispute for Line Item: %StatementDetails:LineItem|1:LineItemName% : %StatementDetails:LineItem|1:AssetName%. Dispute Reason: %DisputeReason%&quot;,
+    &quot;CaseOrigin&quot; : &quot;Web&quot;,
+    &quot;CaseStatus&quot; : &quot;New&quot;,
+    &quot;CaseSubject&quot; : &quot;Billing Dispute&quot;,
+    &quot;CaseType&quot; : &quot;Problem&quot;
+  },
+  &quot;label&quot; : &quot;Set Values 1&quot;,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Required further actions&quot;,
+        &quot;field&quot; : &quot;FurtherActionRequired&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>30.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Disallows user to continue if no line item is selected</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetLineItemError</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;elementErrorMap&quot; : {
+    &quot;LineItem&quot; : &quot;Please select a Line Item&quot;
+  },
+  &quot;label&quot; : &quot;Set Errors 1&quot;,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&lt;&quot;,
+        &quot;data&quot; : &quot;1&quot;,
+        &quot;field&quot; : &quot;IsLineItemSelected&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>14.0</sequenceNumber>
+        <type>Set Errors</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Set Values for Element: StatementDetailsTxt</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetLineItems</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;AssetName&quot; : &quot;%StatementDetails:LineItem|1:AssetName%&quot;,
+    &quot;Category&quot; : &quot;%StatementDetails:LineItem|1:Category%&quot;,
+    &quot;LineItemAmount&quot; : &quot;%StatementDetails:LineItem|1:Amount%&quot;,
+    &quot;OneTime&quot; : &quot;%StatementDetails:LineItem|1:OneTime%&quot;,
+    &quot;Recurring&quot; : &quot;%StatementDetails:LineItem|1:Recurring%&quot;,
+    &quot;ServiceEndDate&quot; : &quot;%StatementDetails:LineItem|1:ServiceEndDate%&quot;,
+    &quot;ServiceName&quot; : &quot;%StatementDetails:LineItem|1:ServiceName%&quot;,
+    &quot;ServiceStartDate&quot; : &quot;%StatementDetails:LineItem|1:ServiceStartDate%&quot;
+  },
+  &quot;label&quot; : &quot;Set Values 2&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false ],
+  &quot;validationRequired&quot; : &quot;None&quot;
+}</propertySetConfig>
+        <sequenceNumber>15.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Disallows user to continue if no Statement is selected.</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetStatementError</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;elementErrorMap&quot; : {
+    &quot;Statement&quot; : &quot;Please select a Statement&quot;
+  },
+  &quot;label&quot; : &quot;Set Errors 1&quot;,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&lt;&quot;,
+        &quot;data&quot; : &quot;1&quot;,
+        &quot;field&quot; : &quot;IsStatementSelected&quot;
+      } ]
+    }
+  },
+  &quot;showPersistentComponent&quot; : [ false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>Set Errors</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <description>Use this ContextID for TESTING PURPOSES ONLY in the OmniScript Designer. Deactivate in production.</description>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetTestContextId</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;elementValueMap&quot; : {
+    &quot;ContextId&quot; : &quot;00141000002zCnC&quot;
+  },
+  &quot;label&quot; : &quot;SetTestContextId&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false ],
+  &quot;validationRequired&quot; : &quot;None&quot;
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>IsLineItemSelected</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF(%LineItem%=null,0,COUNT(%LineItem%))&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Formula 2&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>13.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineItem</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;VPL StatementLineItems-slds 13-2&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;dataJSON&quot; : true,
+  &quot;element&quot; : &quot;&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;label&quot; : null,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;repeat&quot; : false,
+  &quot;required&quot; : false,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;source&quot; : &quot;&quot;,
+  &quot;type&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;
+}</propertySetConfig>
+            <sequenceNumber>12.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>StatementDetailPageDesc</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;label&quot; : null,
+  &quot;show&quot; : null,
+  &quot;text&quot; : &quot;&lt;p&gt;Please select the item in dispute:&amp;nbsp;&lt;strong&gt;%GetStatement:Statement|1:Name%&lt;/strong&gt;&lt;/p&gt;&quot;
+}</propertySetConfig>
+            <sequenceNumber>11.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>StatementDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Select Statement Item&quot;,
+  &quot;message&quot; : { },
+  &quot;nextLabel&quot; : &quot;Retrieve Item Details&quot;,
+  &quot;nextWidth&quot; : 6,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;pubsub&quot; : false,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;ssm&quot; : false,
+  &quot;text&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : true,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DisputeReason</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 4,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;elementTypeToHTMLTemplateMapping&quot; : { },
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Dispute Reason&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Overcharged&quot;,
+    &quot;value&quot; : &quot;Overcharged&quot;
+  }, {
+    &quot;name&quot; : &quot;Usage Incorrect&quot;,
+    &quot;value&quot; : &quot;Usage Incorrect&quot;
+  }, {
+    &quot;name&quot; : &quot;Asset no longer active&quot;,
+    &quot;value&quot; : &quot;Asset no longer active&quot;
+  }, {
+    &quot;name&quot; : &quot;Other&quot;,
+    &quot;value&quot; : &quot;Other&quot;
+  } ],
+  &quot;persistentComponent&quot; : {
+    &quot;id&quot; : &quot;vlcCart&quot;,
+    &quot;itemsKey&quot; : &quot;cartItems&quot;,
+    &quot;label&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;remoteClass&quot; : &quot;&quot;,
+    &quot;remoteMethod&quot; : &quot;&quot;,
+    &quot;remoteOptions&quot; : {
+      &quot;postTransformBundle&quot; : &quot;&quot;,
+      &quot;preTransformBundle&quot; : &quot;&quot;
+    },
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;render&quot; : false
+  },
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : true,
+  &quot;saveContentEncoded&quot; : false,
+  &quot;saveExpireInDays&quot; : null,
+  &quot;saveForLaterRedirectPageName&quot; : &quot;sflRedirect&quot;,
+  &quot;saveForLaterRedirectTemplateUrl&quot; : &quot;vlcSaveForLaterAcknowledge.html&quot;,
+  &quot;saveNameTemplate&quot; : null,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>21.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>EndDate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;dataType&quot; : &quot;Date&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;expression&quot; : &quot;%ServiceEndDate%&quot;,
+  &quot;hide&quot; : false,
+  &quot;hideGroupSep&quot; : false,
+  &quot;label&quot; : &quot;Service End Date&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>19.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>FurtherActionRequired</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 4,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;elementTypeToHTMLTemplateMapping&quot; : { },
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Further Actions Required?&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Required adjustment&quot;,
+    &quot;value&quot; : &quot;Required adjustment&quot;
+  }, {
+    &quot;name&quot; : &quot;Required further actions&quot;,
+    &quot;value&quot; : &quot;Required further actions&quot;
+  } ],
+  &quot;persistentComponent&quot; : {
+    &quot;id&quot; : &quot;vlcCart&quot;,
+    &quot;itemsKey&quot; : &quot;cartItems&quot;,
+    &quot;label&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;remoteClass&quot; : &quot;&quot;,
+    &quot;remoteMethod&quot; : &quot;&quot;,
+    &quot;remoteOptions&quot; : {
+      &quot;postTransformBundle&quot; : &quot;&quot;,
+      &quot;preTransformBundle&quot; : &quot;&quot;
+    },
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;render&quot; : false
+  },
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : true,
+  &quot;saveContentEncoded&quot; : false,
+  &quot;saveExpireInDays&quot; : null,
+  &quot;saveForLaterRedirectPageName&quot; : &quot;sflRedirect&quot;,
+  &quot;saveForLaterRedirectTemplateUrl&quot; : &quot;vlcSaveForLaterAcknowledge.html&quot;,
+  &quot;saveNameTemplate&quot; : null,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>22.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>StartDate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;dataType&quot; : &quot;Date&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;expression&quot; : &quot;%ServiceStartDate%&quot;,
+  &quot;hide&quot; : false,
+  &quot;hideGroupSep&quot; : false,
+  &quot;label&quot; : &quot;Service Start Date&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>18.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>StatementDetailsTxt</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;dataJSON&quot; : false,
+  &quot;help&quot; : false,
+  &quot;label&quot; : null,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;text&quot; : &quot;&lt;p&gt;Statement Details:&lt;/p&gt;\n&lt;table&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;&amp;nbsp;&lt;/td&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;&amp;nbsp;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&lt;strong&gt;ASSET:&amp;nbsp;&lt;/strong&gt;&lt;/h4&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;%AssetName%&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&lt;strong&gt;CATEGORY:&amp;nbsp;&lt;/strong&gt;&lt;/h4&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;%Category%&amp;nbsp;&amp;nbsp;&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&lt;strong&gt;SERVICE&amp;nbsp;NAME:&amp;nbsp;&lt;/strong&gt;&lt;/h4&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;%ServiceName%&amp;nbsp;&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&lt;strong&gt;LINE ITEM AMOUNT:&amp;nbsp;&lt;/strong&gt;&lt;/h4&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;$%LineItemAmount%&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&lt;strong&gt;RECURRING:&lt;/strong&gt;&lt;/h4&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;%Recurring%&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&lt;strong&gt;ONE TIME:&amp;nbsp;&lt;/strong&gt;&lt;/h4&gt;\n&lt;/td&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;\n&lt;h4&gt;&amp;nbsp;%OneTime%&amp;nbsp;&lt;/h4&gt;\n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;&amp;nbsp;&lt;/td&gt;\n&lt;td style=\&quot;width: 399px; text-align: left; padding-left: 30px;\&quot;&gt;&amp;nbsp;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&lt;p&gt;&lt;/p&gt;&quot;
+}</propertySetConfig>
+            <sequenceNumber>20.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>StatementLIDescr</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;label&quot; : null,
+  &quot;show&quot; : null,
+  &quot;text&quot; : &quot;&lt;p&gt;This page allows you to analyze the line item details, and to determine if a payment adjustment is required.&lt;/p&gt;&quot;
+}</propertySetConfig>
+            <sequenceNumber>17.0</sequenceNumber>
+            <type>Text Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>StatementLineItem</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Statement Details&quot;,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ true ],
+  &quot;validationRequired&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>16.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <embeddedOmniScriptKey>VPL|ReusableAccount|English</embeddedOmniScriptKey>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>VPL ReadAccount 13-2 2</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;Language&quot; : &quot;English&quot;,
+  &quot;Sub Type&quot; : &quot;ReusableAccount&quot;,
+  &quot;Type&quot; : &quot;VPL&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>OmniScript</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;}],&quot;allowSaveForLater&quot;:false,&quot;saveNameTemplate&quot;:null,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveContentEncoded&quot;:false,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;autoSaveOnStepNext&quot;:true,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;seedDataJSON&quot;:{&quot;AdjustmentType&quot;:&quot;CSR Adjustment&quot;},&quot;trackingCustomData&quot;:{},&quot;enableKnowledge&quot;:false,&quot;bLK&quot;:false,&quot;lkObjName&quot;:null,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;timeTracking&quot;:false,&quot;hideStepChart&quot;:false,&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;cancelType&quot;:&quot;SObject&quot;,&quot;allowCancel&quot;:true,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;wpm&quot;:false,&quot;ssm&quot;:false,&quot;message&quot;:{},&quot;pubsub&quot;:false,&quot;autoFocus&quot;:false,&quot;currencyCode&quot;:&quot;&quot;,&quot;showInputWidth&quot;:false,&quot;rtpSeed&quot;:false,&quot;consoleTabTitle&quot;:null,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;disableUnloadWarn&quot;:true,&quot;stylesheet&quot;:{&quot;lightning&quot;:&quot;&quot;,&quot;lightningRtl&quot;:&quot;&quot;,&quot;newport&quot;:&quot;&quot;,&quot;newportRtl&quot;:&quot;&quot;},&quot;Language&quot;:&quot;&quot;,&quot;Sub Type&quot;:&quot;&quot;,&quot;Type&quot;:&quot;&quot;,&quot;cancelLabel&quot;:&quot;Cancel&quot;,&quot;cancelMessage&quot;:&quot;Are you sure?&quot;,&quot;completeLabel&quot;:&quot;Complete&quot;,&quot;completeMessage&quot;:&quot;Are you sure you want to complete the script?&quot;,&quot;controlWidth&quot;:12,&quot;help&quot;:false,&quot;helpText&quot;:&quot;&quot;,&quot;instruction&quot;:&quot;&quot;,&quot;label&quot;:null,&quot;maxLength&quot;:255,&quot;minLength&quot;:0,&quot;nextLabel&quot;:&quot;Next&quot;,&quot;nextWidth&quot;:3,&quot;pattern&quot;:&quot;&quot;,&quot;previousLabel&quot;:&quot;Previous&quot;,&quot;previousWidth&quot;:3,&quot;ptrnErrText&quot;:&quot;&quot;,&quot;readOnly&quot;:false,&quot;repeat&quot;:false,&quot;required&quot;:false,&quot;saveLabel&quot;:&quot;Save for later&quot;,&quot;saveMessage&quot;:&quot;Are you sure you want to save it for later?&quot;,&quot;show&quot;:null,&quot;showPersistentComponent&quot;:true,&quot;validationRequired&quot;:true}</propertySetConfig>
+    <subType>BillingDispute</subType>
+    <type>Service</type>
+    <uniqueName>Service_BillingDispute_English_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>5af9f1ff-9445-c4bc-f55e-e9bedf5996c4</webComponentKey>
+</OmniScript>

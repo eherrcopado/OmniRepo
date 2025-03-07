@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>10/13: Debarshi: Angular to LWC</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>true</isWebCompEnabled>
+    <language>English</language>
+    <name>Multi Meter Premise Service Account Import</name>
+    <omniProcessElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AccountName</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0,
+  &quot;maxLength&quot; : 255,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>3.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AccountSearch</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;bundle&quot; : &quot;AccountSearch&quot;,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;AccountSearchTypeAhead&quot;,
+    &quot;inputParam&quot; : &quot;Name&quot;
+  } ],
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>DataRaptor Extract Action</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Id</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0,
+  &quot;maxLength&quot; : 255,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>AccountSearchTypeAhead</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Search by Account Name&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;googleTransformation&quot; : {
+    &quot;street&quot; : &quot;&quot;,
+    &quot;locality&quot; : &quot;&quot;,
+    &quot;administrative_area_level_1&quot; : &quot;&quot;,
+    &quot;country&quot; : &quot;&quot;,
+    &quot;postal_code&quot; : &quot;&quot;
+  },
+  &quot;required&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0,
+  &quot;maxLength&quot; : 255,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;typeAheadKey&quot; : &quot;AccountName&quot;,
+  &quot;dataProcessorFunction&quot; : &quot;&quot;,
+  &quot;callFrequency&quot; : 300,
+  &quot;editMode&quot; : false,
+  &quot;newItemLabel&quot; : &quot;&quot;,
+  &quot;hideEditButton&quot; : false,
+  &quot;enableGoogleMapsAutocomplete&quot; : false,
+  &quot;enableLookup&quot; : false,
+  &quot;googleMapsAPIKey&quot; : &quot;&quot;,
+  &quot;hideMap&quot; : true,
+  &quot;googleAddressCountry&quot; : &quot;all&quot;,
+  &quot;useDataJson&quot; : false,
+  &quot;dataJsonPath&quot; : &quot;&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Type Ahead Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>AccountSelection</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Select Account to Import Service Locations For&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>File</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Import&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 4,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;Browse and select a spreadsheet to upload&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>File</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>FileCount</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;File Count&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;expression&quot; : &quot;COUNT(%File%)&quot;,
+  &quot;hide&quot; : true,
+  &quot;mask&quot; : null,
+  &quot;dataType&quot; : &quot;Number&quot;,
+  &quot;hideGroupSep&quot; : false,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>FileBlock</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;InputMode&quot;,
+        &quot;data&quot; : &quot;File&quot;
+      } ]
+    }
+  },
+  &quot;label&quot; : &quot;Upload a Spreadsheet&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;collapse&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Headline1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;&lt;p&gt;&lt;strong&gt;&lt;span style=\&quot;color: #ff0000;\&quot;&gt;STEP 1&lt;/span&gt;&lt;/strong&gt; - Choose how you want to set up service accounts.&amp;nbsp; Manually enter address, meter,&amp;nbsp;etc. or upload a file.&lt;/p&gt;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Headline</type>
+        </childElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>InputMode</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Please select how you would like to setup your C&amp;I customer&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 6,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Manual&quot;,
+    &quot;value&quot; : &quot;Manually Enter&quot;
+  }, {
+    &quot;name&quot; : &quot;File&quot;,
+    &quot;value&quot; : &quot;Spreadsheet&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Select</type>
+        </childElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineBreak2</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;LineBreak2&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;padding&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>Line Break</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>PhoneFilter</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Phone Type&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 4,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;iPhone X&quot;,
+    &quot;value&quot; : &quot;iPhone X&quot;
+  }, {
+    &quot;name&quot; : &quot;iPhone 8 Plus&quot;,
+    &quot;value&quot; : &quot;iPhone 8 Plus&quot;
+  }, {
+    &quot;name&quot; : &quot;iPhone 8&quot;,
+    &quot;value&quot; : &quot;iPhone 8&quot;
+  }, {
+    &quot;name&quot; : &quot;Samsung S9&quot;,
+    &quot;value&quot; : &quot;Samsung S9&quot;
+  }, {
+    &quot;name&quot; : &quot;Samsung S9 Note&quot;,
+    &quot;value&quot; : &quot;Samsung S9 Note&quot;
+  }, {
+    &quot;name&quot; : &quot;Samsung S8&quot;,
+    &quot;value&quot; : &quot;Samsung S8&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                    <sequenceNumber>1.0</sequenceNumber>
+                    <type>Select</type>
+                </childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>PlanFilter</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Plan&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 8,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Global Plan MGR&quot;,
+    &quot;value&quot; : &quot;Global Plan (Manager)&quot;
+  }, {
+    &quot;name&quot; : &quot;National Plan MGR&quot;,
+    &quot;value&quot; : &quot;National Plan (Manager)&quot;
+  }, {
+    &quot;name&quot; : &quot;National Plan Other&quot;,
+    &quot;value&quot; : &quot;National Plan (Other)&quot;
+  }, {
+    &quot;name&quot; : &quot;National Plan Sales&quot;,
+    &quot;value&quot; : &quot;National Plan (Sales)&quot;
+  } ],
+  &quot;optionSource&quot; : {
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                    <sequenceNumber>2.0</sequenceNumber>
+                    <type>Select</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AdvancedSearch</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Advanced Search&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;collapse&quot; : true,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>5.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BillingAccount</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Billing Account&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : true,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;dataSource&quot; : {
+    &quot;type&quot; : &quot;SObject&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;mapItems&quot; : {
+      &quot;phase1MapItems&quot; : [ {
+        &quot;InterfaceObjectLookupOrder__c&quot; : 1,
+        &quot;InterfaceObjectName__c&quot; : &quot;Account&quot;,
+        &quot;DomainObjectFieldAPIName__c&quot; : &quot;BillingAccounts&quot;,
+        &quot;FilterValue__c&quot; : &quot;&apos;true&apos;&quot;,
+        &quot;InterfaceFieldAPIName__c&quot; : &quot;isBAN__c&quot;,
+        &quot;FilterOperator__c&quot; : &quot;=&quot;
+      } ],
+      &quot;phase2MapItems&quot; : [ {
+        &quot;DomainObjectFieldAPIName__c&quot; : &quot;name&quot;,
+        &quot;InterfaceFieldAPIName__c&quot; : &quot;BillingAccounts:Id&quot;,
+        &quot;DomainObjectAPIName__c&quot; : &quot;JSON&quot;,
+        &quot;DomainObjectCreationOrder__c&quot; : 1
+      }, {
+        &quot;DomainObjectFieldAPIName__c&quot; : &quot;value&quot;,
+        &quot;InterfaceFieldAPIName__c&quot; : &quot;BillingAccounts:Name&quot;,
+        &quot;DomainObjectAPIName__c&quot; : &quot;JSON&quot;,
+        &quot;DomainObjectCreationOrder__c&quot; : 1
+      } ],
+      &quot;inputParameters&quot; : [ ]
+    }
+  },
+  &quot;placeholder&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;clearValue&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Lookup</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EmployeeEmail</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;E-Mail&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 6,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>4.0</sequenceNumber>
+                <type>Email</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EmployeeName</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Employee Name&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0,
+  &quot;maxLength&quot; : 255,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>2.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EmployeePhoneNumber</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Phone Number&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 6,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;readOnly&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;mask&quot; : &quot;(999) 999-9999&quot;,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;minLength&quot; : 0,
+  &quot;maxLength&quot; : 255,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;debounceValue&quot; : 0,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>3.0</sequenceNumber>
+                <type>Telephone</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>QueryBlock</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;InputMode&quot;,
+        &quot;data&quot; : &quot;Query&quot;
+      } ]
+    }
+  },
+  &quot;label&quot; : &quot;Set Search Criteria&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;collapse&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>7.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ChooseInput</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Import Service Locations&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CleanUpPostTransform</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;spreadsheet&quot; : &quot;=null&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>7.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Create_Premises_ServicePoints_ServiceAccounts_Meters</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;bundle&quot; : &quot;CreatePremisesAndServicePoints&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;postTransformBundle&quot; : &quot;CreatePremisesResultTransform&quot;,
+  &quot;sendJSONPath&quot; : &quot;AccountHierarchy&quot;,
+  &quot;sendJSONNode&quot; : &quot;AccountHierarchy&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>10.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ImportResultsHeadline</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;&lt;p&gt;&lt;strong&gt;&lt;span style=\&quot;color: #ff0000;\&quot;&gt;Step 2&lt;/span&gt;&lt;/strong&gt;&amp;nbsp;-&amp;nbsp;Select the service locations below that should be imported&lt;/p&gt;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+            <sequenceNumber>1.0</sequenceNumber>
+            <type>Headline</type>
+        </childElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ServiceLocations</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;service-accounts&quot;,
+  &quot;itemsKey&quot; : &quot;recSet&quot;,
+  &quot;selectMode&quot; : &quot;Multi&quot;,
+  &quot;dataJSON&quot; : true,
+  &quot;modalHTMLTemplateId&quot; : &quot;vlcModalContent.html&quot;,
+  &quot;modalController&quot; : &quot;ModalInstanceCtrl&quot;,
+  &quot;modalSize&quot; : &quot;&quot;,
+  &quot;maxCompareSize&quot; : 4,
+  &quot;modalConfigurationSetting&quot; : {
+    &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+    &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+    &quot;modalSize&quot; : &quot;lg&quot;
+  },
+  &quot;accessibleInFutureSteps&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Selectable Items</type>
+        </childElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DisplayServiceAccounts</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;Select Locations to Create Service Accounts, Premises, Meters, ...&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;remoteOptions&quot; : { },
+  &quot;knowledgeOptions&quot; : {
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>8.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Done</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;type&quot; : &quot;URL&quot;,
+  &quot;source&quot; : &quot;/apex/vlocity_cmt__AccountHierarchy?Id=%ParentAccountId%&quot;,
+  &quot;consoleTabLabel&quot; : &quot;New&quot;,
+  &quot;validationRequired&quot; : null,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;Outcome&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>11.0</sequenceNumber>
+        <type>Done Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DoneAction2</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : &quot;DoneAction2&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;type&quot; : &quot;SObject&quot;,
+  &quot;source&quot; : &quot;%ParentAccountId%&quot;,
+  &quot;consoleTabLabel&quot; : &quot;New&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;redirectPageName&quot; : &quot;mobileDone&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcMobileConfirmation.html&quot;,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;Outcome&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>12.0</sequenceNumber>
+        <type>Done Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>LoadSpreadsheet</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;InputMode&quot;,
+        &quot;data&quot; : &quot;File&quot;
+      } ]
+    }
+  },
+  &quot;label&quot; : &quot;Load Spreadsheet&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;remoteClass&quot; : &quot;CSVUtils&quot;,
+  &quot;remoteMethod&quot; : &quot;load&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;data&quot;,
+  &quot;responseJSONNode&quot; : &quot;spreadsheet&quot;,
+  &quot;extraPayload&quot; : { },
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { },
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetParentAccountVariables</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;elementValueMap&quot; : {
+    &quot;ParentAccountId&quot; : &quot;%AccountSelection:Id%&quot;,
+    &quot;ParentAccountName&quot; : &quot;%AccountSelection:AccountName%&quot;,
+    &quot;InputMode&quot; : &quot;File&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>TransformCSV</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;bundle&quot; : &quot;ERCOTServiceAccountTransform&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;sendJSONPath&quot; : &quot;spreadsheet&quot;,
+  &quot;sendJSONNode&quot; : &quot;spreadsheet&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>TransformIntoAccountHierarchy</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : null,
+  &quot;label&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 12,
+  &quot;bundle&quot; : &quot;ServiceLocationImportToAccountHierarchyTransform&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>9.0</sequenceNumber>
+        <type>DataRaptor Transform Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ValidateFile</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;field&quot; : &quot;InputMode&quot;,
+        &quot;data&quot; : &quot;File&quot;
+      }, {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;field&quot; : &quot;FileCount&quot;,
+        &quot;data&quot; : &quot;1&quot;
+      } ]
+    }
+  },
+  &quot;label&quot; : &quot;ValidateFile&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;controlWidth&quot; : 6,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;elementErrorMap&quot; : {
+    &quot;InputMode&quot; : &quot;You must upload a single file&quot;
+  },
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;wpm&quot; : false,
+  &quot;ssm&quot; : false,
+  &quot;message&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Set Errors</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;persistentComponent&quot;:[{&quot;render&quot;:false,&quot;label&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteTimeout&quot;:30000,&quot;remoteOptions&quot;:{&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;},&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalSize&quot;:&quot;lg&quot;}},{&quot;render&quot;:false,&quot;label&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteTimeout&quot;:30000,&quot;remoteOptions&quot;:{&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;},&quot;preTransformBundle&quot;:&quot;&quot;,&quot;postTransformBundle&quot;:&quot;&quot;,&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalController&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;}}],&quot;allowSaveForLater&quot;:true,&quot;saveNameTemplate&quot;:null,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveContentEncoded&quot;:false,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;autoSaveOnStepNext&quot;:false,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;seedDataJSON&quot;:{},&quot;trackingCustomData&quot;:{},&quot;enableKnowledge&quot;:false,&quot;bLK&quot;:false,&quot;lkObjName&quot;:null,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;timeTracking&quot;:true,&quot;hideStepChart&quot;:false,&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;cancelType&quot;:&quot;SObject&quot;,&quot;allowCancel&quot;:true,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;wpm&quot;:false,&quot;ssm&quot;:false,&quot;message&quot;:{},&quot;pubsub&quot;:false,&quot;autoFocus&quot;:false,&quot;currencyCode&quot;:&quot;&quot;,&quot;showInputWidth&quot;:false,&quot;rtpSeed&quot;:false,&quot;consoleTabTitle&quot;:&quot;Import Accounts&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;disableUnloadWarn&quot;:true,&quot;stylesheet&quot;:{&quot;newport&quot;:&quot;&quot;,&quot;newportRtl&quot;:&quot;&quot;,&quot;lightning&quot;:&quot;&quot;,&quot;lightningRtl&quot;:&quot;&quot;},&quot;stepChartPlacement&quot;:&quot;right&quot;,&quot;currentLanguage&quot;:&quot;en_US&quot;}</propertySetConfig>
+    <subType>MultiSiteImport</subType>
+    <type>Customer</type>
+    <uniqueName>Customer_MultiSiteImport_English_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>5a0df06e-bba3-5e24-d071-8e41c7948543</webComponentKey>
+</OmniScript>

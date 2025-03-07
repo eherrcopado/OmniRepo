@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>sfiEnergyConsoleFSOutageRequestTransform</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>var:premiseDetails:premiseInfo:premisePostalCode</formulaConverted>
+        <formulaExpression>premiseDetails:premiseInfo:premisePostalCode</formulaExpression>
+        <formulaResultPath>zipCode</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>sfiEnergyConsoleFSOutageRequestTransformCustom155</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>var:premiseDetails:premiseInfo:geoLocation</formulaConverted>
+        <formulaExpression>premiseDetails:premiseInfo:geoLocation</formulaExpression>
+        <formulaResultPath>geoLocation</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>sfiEnergyConsoleFSOutageRequestTransformCustom883</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestTransformCustom6592</globalKey>
+        <inputFieldName>premiseDetails:premiseInfo:premisePostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>outageReq:zipCodes:zipCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>sfiEnergyConsoleFSOutageRequestTransformCustom5864</globalKey>
+        <inputFieldName>geoLocation</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>sfiEnergyConsoleFSOutageRequestTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>outageReq:geoLocations</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;premiseDetails&quot; : {
+    &quot;premiseInfo&quot; : [ {
+      &quot;geoLocation&quot; : {
+        &quot;latitude&quot; : 26,
+        &quot;longitude&quot; : 60
+      },
+      &quot;premiseCity&quot; : &quot;Coventry&quot;,
+      &quot;premiseCountry&quot; : &quot;United Kingdom&quot;,
+      &quot;premiseName&quot; : &quot;Abbey Road, Whitley, Coventry, Warwickshire CV3 4LF, United Kingdom&quot;,
+      &quot;premisePostalCode&quot; : &quot;CV3 4LF&quot;,
+      &quot;premiseState&quot; : &quot;Warwickshire&quot;,
+      &quot;premiseStreet&quot; : &quot;Abbey Road, Whitley&quot;,
+      &quot;premisesId&quot; : &quot;a3X4x000000kkHIEAY&quot;
+    }, {
+      &quot;geoLocation&quot; : {
+        &quot;latitude&quot; : 25,
+        &quot;longitude&quot; : 75
+      },
+      &quot;premiseCity&quot; : &quot;Denver&quot;,
+      &quot;premiseCountry&quot; : &quot;United Kingdom&quot;,
+      &quot;premiseName&quot; : &quot;15 Elm Street, Denver, CO, United Kingdom, 80220&quot;,
+      &quot;premisePostalCode&quot; : &quot;80220&quot;,
+      &quot;premiseState&quot; : &quot;CO&quot;,
+      &quot;premiseStreet&quot; : &quot;15 Elm Street&quot;,
+      &quot;premisesId&quot; : &quot;a3X4x000000kkHHEAY&quot;
+    }, {
+      &quot;geoLocation&quot; : {
+        &quot;latitude&quot; : 67,
+        &quot;longitude&quot; : 123
+      },
+      &quot;premiseCity&quot; : &quot;Coventry&quot;,
+      &quot;premiseCountry&quot; : &quot;United Kingdom&quot;,
+      &quot;premiseName&quot; : &quot;23 Abbey Road, Whitley, Coventry, Warwickshire CV3 4LF, United Kingdom&quot;,
+      &quot;premisePostalCode&quot; : &quot;CV3 4LF&quot;,
+      &quot;premiseState&quot; : &quot;Warwickshire&quot;,
+      &quot;premiseStreet&quot; : &quot;23 Abbey Road, Whitley&quot;,
+      &quot;premisesId&quot; : &quot;a3X4x000000lZOpEAM&quot;
+    }, {
+      &quot;geoLocation&quot; : {
+        &quot;latitude&quot; : 26,
+        &quot;longitude&quot; : 60
+      },
+      &quot;premiseCity&quot; : &quot;Coventry&quot;,
+      &quot;premiseCountry&quot; : &quot;United Kingdom&quot;,
+      &quot;premiseName&quot; : &quot;Abbey Road, Whitley, Coventry, Warwickshire CV3 4LF, United Kingdom&quot;,
+      &quot;premisePostalCode&quot; : &quot;CV3 4LF&quot;,
+      &quot;premiseState&quot; : &quot;Warwickshire&quot;,
+      &quot;premiseStreet&quot; : &quot;Abbey Road, Whitley&quot;,
+      &quot;premisesId&quot; : &quot;a3X4x000000kkHIEAY&quot;
+    }, {
+      &quot;geoLocation&quot; : {
+        &quot;latitude&quot; : -40,
+        &quot;longitude&quot; : -100
+      },
+      &quot;premiseCity&quot; : &quot;Edinburgh&quot;,
+      &quot;premiseCountry&quot; : &quot;United Kindom&quot;,
+      &quot;premiseName&quot; : &quot;5 Whitehill Rd, Newcraighall, Edinburgh, Scotland, EH15 3HR, United Kingdom&quot;,
+      &quot;premisePostalCode&quot; : &quot;EH15 3HR&quot;,
+      &quot;premiseState&quot; : &quot;Scotland&quot;,
+      &quot;premiseStreet&quot; : &quot;5 Whitehall Rd, Newcraighall&quot;,
+      &quot;premisesId&quot; : &quot;a3X4x000000kkHNEAY&quot;
+    }, {
+      &quot;geoLocation&quot; : {
+        &quot;latitude&quot; : -50,
+        &quot;longitude&quot; : 99
+      },
+      &quot;premiseCity&quot; : &quot;Edinburgh&quot;,
+      &quot;premiseCountry&quot; : &quot;United Kingdom&quot;,
+      &quot;premiseName&quot; : &quot;8 Whitehill Rd, Fort Kinnaird, Edinburgh, Scotland, EH15 3HR, United Kingdom&quot;,
+      &quot;premisePostalCode&quot; : &quot;EH15 3HR&quot;,
+      &quot;premiseState&quot; : &quot;Scotland&quot;,
+      &quot;premiseStreet&quot; : &quot;8 Whitehill Rd, Fort Kinnaird&quot;,
+      &quot;premisesId&quot; : &quot;a3X4x000000kkHKEAY&quot;
+    } ]
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>sfiEnergyConsoleFSOutageRequestTransform_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

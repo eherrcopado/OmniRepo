@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__PicklistType</fullName>
+    <active>true</active>
+    <errorConditionFormula>(( TEXT( vlocity_cmt__ValueType__c )  = &apos;Picklist&apos;)|| ( TEXT( vlocity_cmt__ValueType__c )  = &apos;Multi Picklist&apos;))  &amp;&amp;  ( ISBLANK(  vlocity_cmt__PicklistId__c ))</errorConditionFormula>
+    <errorMessage>Picklist must be selected for Picklist and Multi Picklist type attributes.</errorMessage>
+</ValidationRule>

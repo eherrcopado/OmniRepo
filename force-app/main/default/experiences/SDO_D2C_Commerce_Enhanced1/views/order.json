@@ -1,0 +1,69 @@
+{
+  "appPageId" : "38bcf566-44b0-467f-b5f7-ef790aada3e9",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "dataProviders" : [ {
+    "componentName" : "commerce_data_provider:orderDataProvider",
+    "componentAttributes" : {
+      "recordId" : "{!Route.orderNumber}",
+      "sfdcExpressionKey" : "Order"
+    }
+  } ],
+  "label" : "Order",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "dxpStyle" : { },
+        "sectionConfig" : "{\"UUID\":\"23717737-92bd-41a5-b92b-8f664cdfcdcf\",\"columns\":[{\"UUID\":\"1c85bb53-62c7-4e27-a8b2-7c75192c379a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "23717737-92bd-41a5-b92b-8f664cdfcdcf",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "bodyText" : "We will send an email with your confirmation number and receipt shortly.",
+            "buttonText" : "Continue Shopping",
+            "confirmationNumberText" : "Confirmation Number",
+            "dxpStyle" : { },
+            "headerText" : "Thank you for your order!"
+          },
+          "componentName" : "commerce_unified_checkout:orderConfirmation",
+          "id" : "386e4b77-0617-4b9f-ae27-3bb3f86fc901",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "1c85bb53-62c7-4e27-a8b2-7c75192c379a",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "763e29cf-c29b-4ff0-b82b-2c1efabcd02d",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "dxpStyle" : { },
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "ff65eb56-2161-4950-b6cc-994d40ad205c",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "8550ac94-fb1b-4089-98c8-f53fbb0625f3",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "viewType" : "order"
+}

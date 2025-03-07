@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__ExpirationYearIsValid</fullName>
+    <active>true</active>
+    <description>Check that ExpirationYear is a valid year and in the future</description>
+    <errorConditionFormula>AND( (ISPICKVAL(vlocity_cmt__MethodType__c,&apos;Credit Card&apos;)),(OR(!ISNUMBER(vlocity_cmt__ExpirationYear__c), VALUE(vlocity_cmt__ExpirationYear__c)&lt; YEAR( TODAY() ))))</errorConditionFormula>
+    <errorDisplayField>vlocity_cmt__ExpirationYear__c</errorDisplayField>
+    <errorMessage>Expiration Year is not valid</errorMessage>
+</ValidationRule>

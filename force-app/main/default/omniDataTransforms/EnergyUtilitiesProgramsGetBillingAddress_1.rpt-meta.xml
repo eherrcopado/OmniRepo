@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountId&quot; : &quot;001RO000004KaoQYAS&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>true</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>EnergyUtilitiesProgramsGetBillingAddress</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>AccountId</filterValue>
+        <globalKey>EnergyUtilitiesProgramsGetBillingAddressCustom4856</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>Account</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>EnergyUtilitiesProgramsGetBillingAddress</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Account</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>EnergyUtilitiesProgramsGetBillingAddressCustom4590</globalKey>
+        <inputFieldName>Account:Address</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>EnergyUtilitiesProgramsGetBillingAddress</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>String</outputFieldFormat>
+        <outputFieldName>AccountBillingAddress:Address</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Account:BillingStreet ISBLANK &apos;&apos; | var:Account:BillingStreet &quot;/\/\/&quot; CONCAT IF | | var:Account:BillingCity ISBLANK &apos;&apos; | var:Account:BillingCity &quot;/\/\/&quot; CONCAT IF + | | var:Account:BillingState ISBLANK &apos;&apos; | var:Account:BillingState &quot;/\/\/&quot; CONCAT IF + | | var:Account:BillingCountry ISBLANK &apos;&apos; | var:Account:BillingCountry &quot;/\/\/&quot; CONCAT IF + | | var:Account:BillingPostalCode ISBLANK &apos;&apos; var:Account:BillingPostalCode IF +</formulaConverted>
+        <formulaExpression>(IF(ISBLANK(Account:BillingStreet), &apos;&apos;, CONCAT(Account:BillingStreet, &quot; &quot;))) +
+(IF(ISBLANK(Account:BillingCity), &apos;&apos;, CONCAT(Account:BillingCity, &quot; &quot;))) +
+(IF(ISBLANK(Account:BillingState), &apos;&apos;, CONCAT(Account:BillingState, &quot; &quot;))) +
+(IF(ISBLANK(Account:BillingCountry), &apos;&apos;, CONCAT(Account:BillingCountry, &quot; &quot;))) +
+(IF(ISBLANK(Account:BillingPostalCode), &apos;&apos;, Account:BillingPostalCode)))</formulaExpression>
+        <formulaResultPath>Account:Address</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>EnergyUtilitiesProgramsGetBillingAddressCustom3179</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>EnergyUtilitiesProgramsGetBillingAddress</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;001RO000004N3GBYA0&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>EnergyUtilitiesProgramsGetBillingAddress_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

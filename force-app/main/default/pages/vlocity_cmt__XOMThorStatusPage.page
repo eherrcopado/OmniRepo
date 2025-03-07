@@ -1,0 +1,16 @@
+<apex:page showHeader="true" sidebar="true" controller="vlocity_cmt.XOMThorStatusControllerExtension" docType="html-5.0" >
+    <apex:includeLightning />
+    <div id="lwcXomOmplStatusMainId" />
+    <script>
+        const nsp = "{!JSENCODE(nameSpace)}";
+        $Lightning.use(nsp+":ltngOutVF", function() {
+            $Lightning.createComponent(
+                nsp+":xomOmplStatusMain",
+                { },
+                "lwcXomOmplStatusMainId",
+                function(cmp) {
+                    console.log('Xom OMPL Status Page component added to the page.');
+                });
+        });
+    </script>
+</apex:page>

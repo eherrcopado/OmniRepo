@@ -1,0 +1,120 @@
+<apex:page standardcontroller="vlocity_cmt__ProductConfigurationProcedure__c" tabStyle="vlocity_cmt__ProductConfigurationProcedure__c"  extensions="vlocity_cmt.ProductConfProcedureController" title="{!JSENCODE($Label.vlocity_cmt__TitleProdConfProce)}" docType="html-5.0">
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ng="http://angularjs.org" ng-app="prodconfigprocedure">
+		<head>
+			<base href="/"/>
+			<link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.slds, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+			<link rel="stylesheet" type="text/css" href="{!URLFOR($Resource.ProdConfigProcedureCss)}" />
+			<script type="text/javascript" src="/support/console/56.0/integration.js"></script>
+			<script type="text/javascript" src="/soap/ajax/56.0/connection.js"></script>
+			<script src="{!URLFOR($Resource.vlocity_core_assets, '/latest/vlocity_core_assets.js')}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.SldsAngular)}"></script>
+            <script type="text/javascript" src="{!URLFOR($Resource.ProdConfigProcedure)}"></script>
+            <script type="text/javascript" src="{!$Resource.FieldLookupAngDirective}"></script>
+            <script type="text/javascript" src="{!$Resource.AttributeLookupAngDirective}"></script>
+		</head>
+		<body  ng-controller="ProcedureController" ng-init="initApp()">
+			<div class="via-slds">
+				<div class="slds-page-header slds-theme_shade" role="banner">
+                    <div class="slds-media slds-media_center">
+                        <div class="slds-media__figure">
+                            <svg aria-hidden="true" class="slds-icon">
+                                <use xlink:href="{{SLDSICON.SETTINGS}}"></use>
+                            </svg>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-page-header__title slds-truncate slds-align-middle" title="{{labels.titleProdConfProce}}">{{labels.titleProdConfProce}}</p>
+                            <p class="slds-text-body_small page-header__info">{{labels.titleDescription}}</p>
+                        </div>
+                    </div>
+                </div>
+				<ng-include src="'Config.tpl.html'"></ng-include>
+				<div class="slds-spinner_container" ng-show="spinner.getSpinner()">
+	                <div class="slds-spinner_brand slds-spinner slds-spinner_large" aria-hidden="false" role="alert">
+	                    <div class="slds-spinner__dot-a"></div>
+	                    <div class="slds-spinner__dot-b"></div>
+	                </div>
+	            </div>
+			</div>
+
+
+			<script type="text/javascript">
+				'use strict';
+                var cloneValue = '{!JSENCODE($CurrentPage.parameters.Clone)}';
+				//Define remote actions.
+				var remoteActions = {
+                    adminInvokeMethod: {
+                        action: "{!$RemoteAction.ProductConfProcedureController.invokeMethod}",
+                        config: {escape: false}
+                    },
+					getProductList: {
+						action: '{!$RemoteAction.ProductConfProcedureController.getProductList}',
+						config: {escape: false}
+					},
+					getAttributeByProduct: {
+						action: '{!$RemoteAction.ProductConfProcedureController.getAttributeByProduct}',
+						config: {escape: false}
+					},
+					getPickAction: {
+						action: '{!$RemoteAction.ProductConfProcedureController.getPickAction}',
+						config: {escape: false}
+					},
+					saveConfig:{
+						action: '{!$RemoteAction.ProductConfProcedureController.saveConfig}',
+						config: {escape: false}
+					},
+					getProductConfigProcedure:{
+						action: '{!$RemoteAction.ProductConfProcedureController.getProductConfigProcedure}',
+						config: {escape: false}
+					},
+					getManualSerachProductList: {
+						action: '{!$RemoteAction.ProductConfProcedureController.getManualSerachProductList}',
+						config: {escape: false}
+					}
+                };
+                //Config data from APEX
+                var configData = {
+                	adminClassType: "{!JSENCODE(classType)}",
+                	nsPrefix: "{!JSENCODE(nsPrefix)}",
+                	waitingImage: "{!$Resource.WAITGIF}",
+                    adminInvokeMethod: "{!$RemoteAction.ProductConfProcedureController.invokeMethod}",
+                    cancelBackURL: "{!JSENCODE(cancelBackURL)}",
+                    prodConfigId: "{!confObject}"
+                };
+                //labels
+                var labels = {
+                    titleProdConfProce: "{!JSENCODE($Label.vlocity_cmt__TitleProdConfProce)}",
+                    titleDescription: "{!JSENCODE($Label.TitleProdConfProceDesc)}",
+                    save: "{!JSENCODE($Label.Save)}",
+                    cancel: "{!JSENCODE($Label.Cancel)}",
+                    prodConfName: "{!JSENCODE($Label.ProdConfName)}",
+                    selectProduct: "{!JSENCODE($Label.SelectProduct)}",
+                    addAttribute: "{!JSENCODE($Label.AddAttribute)}",
+                    noAttrMessage: "{!JSENCODE($Label.NoAttributeMessage)}",
+                    selectAttrError: "{!JSENCODE($Label.SelectAttrError)}",
+                    selectAttr: "{!JSENCODE($Label.SelectAttr)}",
+                    attrSelectedError: "{!JSENCODE($Label.AttrSelectedError)}",
+                    readOnlyAttrMessage: "{!JSENCODE($Label.ReadOnlyAttrMessage)}",
+                    readOnlyAttr: "{!JSENCODE($Label.ReadOnlyAttr)}",
+                    addAction: "{!JSENCODE($Label.AddAction)}",
+                    value: "{!JSENCODE($Label.Value)}",
+                    values: "{!JSENCODE($Label.Values)}",
+                    attributeSelection: "{!JSENCODE($Label.AttributeSelection)}",
+                    close: "{!JSENCODE($Label.Close)}",
+                    OKLabel: "{!JSENCODE($Label.CPQOk)}"
+                };
+                //Define ICONs
+                var SLDSICON = {
+                    SETTINGS: '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#settings")}',
+                    RIGHT_ARROW: '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#right")}',
+                    SEARCH: '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#search")}',
+                    EDIT: '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#edit")}',
+                    ADD: '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#add")}',
+                    DELETE: '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#delete")}',
+                    CLOSE: '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#close")}',
+                    CLEAR: '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#clear")}',
+                    PREVIEW: '{!URLFOR($Resource.slds, "/assets/icons/utility-sprite/svg/symbols.svg#preview")}'
+                };
+			</script>
+		</body>
+	</html>
+</apex:page>

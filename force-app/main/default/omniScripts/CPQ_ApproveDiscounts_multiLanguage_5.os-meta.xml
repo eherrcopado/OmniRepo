@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Submits the discounts for approval</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Multi-Language</language>
+    <name>ApproveDiscounts</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>CallSubmitDiscountsVIP</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;&quot;,
+  &quot;failureAbortMessage&quot; : &quot;&quot;,
+  &quot;failureNextLabel&quot; : &quot;&quot;,
+  &quot;inProgressMessage&quot; : &quot;&quot;,
+  &quot;integrationProcedureKey&quot; : &quot;CPQ_SubmitDiscountsForApproval&quot;,
+  &quot;label&quot; : &quot;&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;chainable&quot; : false,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;useFuture&quot; : false
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;useContinuation&quot; : false,
+  &quot;validationRequired&quot; : null,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Return to Hybrid CPQ</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;Outcome&quot; : &quot;&quot;,
+  &quot;Type__c&quot; : {
+    &quot;label&quot; : &quot;Done Action&quot;,
+    &quot;type&quot; : &quot;action&quot;
+  },
+  &quot;allowSaveForLater&quot; : true,
+  &quot;autoFocus&quot; : false,
+  &quot;autoSaveOnStepNext&quot; : false,
+  &quot;bLK&quot; : false,
+  &quot;cancelRedirectPageName&quot; : &quot;OmniScriptCancelled&quot;,
+  &quot;cancelRedirectTemplateUrl&quot; : &quot;vlcCancelled.html&quot;,
+  &quot;cancelSource&quot; : &quot;%ContextId%&quot;,
+  &quot;cancelType&quot; : &quot;SObject&quot;,
+  &quot;consoleTabIcon&quot; : &quot;custom:custom18&quot;,
+  &quot;consoleTabLabel&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementTypeToHTMLTemplateMapping&quot; : { },
+  &quot;enableKnowledge&quot; : false,
+  &quot;hideStepChart&quot; : false,
+  &quot;knowledgeArticleTypeQueryFieldsMap&quot; : { },
+  &quot;label&quot; : null,
+  &quot;message&quot; : { },
+  &quot;persistentComponent&quot; : [ {
+    &quot;id&quot; : &quot;vlcCart&quot;,
+    &quot;itemsKey&quot; : &quot;cartItems&quot;,
+    &quot;label&quot; : &quot;&quot;,
+    &quot;modalConfigurationSetting&quot; : {
+      &quot;modalController&quot; : &quot;ModalProductCtrl&quot;,
+      &quot;modalHTMLTemplateId&quot; : &quot;vlcProductConfig.html&quot;,
+      &quot;modalSize&quot; : &quot;lg&quot;
+    },
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;remoteClass&quot; : &quot;&quot;,
+    &quot;remoteMethod&quot; : &quot;&quot;,
+    &quot;remoteOptions&quot; : {
+      &quot;postTransformBundle&quot; : &quot;&quot;,
+      &quot;preTransformBundle&quot; : &quot;&quot;
+    },
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;render&quot; : false,
+    &quot;responseJSONNode&quot; : &quot;&quot;,
+    &quot;responseJSONPath&quot; : &quot;&quot;,
+    &quot;sendJSONNode&quot; : &quot;&quot;,
+    &quot;sendJSONPath&quot; : &quot;&quot;
+  }, {
+    &quot;id&quot; : &quot;vlcKnowledge&quot;,
+    &quot;itemsKey&quot; : &quot;knowledgeItems&quot;,
+    &quot;label&quot; : &quot;&quot;,
+    &quot;modalConfigurationSetting&quot; : {
+      &quot;modalController&quot; : &quot;&quot;,
+      &quot;modalHTMLTemplateId&quot; : &quot;&quot;,
+      &quot;modalSize&quot; : &quot;lg&quot;
+    },
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;remoteClass&quot; : &quot;&quot;,
+    &quot;remoteMethod&quot; : &quot;&quot;,
+    &quot;remoteOptions&quot; : {
+      &quot;postTransformBundle&quot; : &quot;&quot;,
+      &quot;preTransformBundle&quot; : &quot;&quot;
+    },
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;render&quot; : false
+  } ],
+  &quot;redirectPageName&quot; : &quot;mobileDone&quot;,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcMobileConfirmation.html&quot;,
+  &quot;rtpSeed&quot; : false,
+  &quot;saveContentEncoded&quot; : false,
+  &quot;saveForLaterRedirectPageName&quot; : &quot;sflRedirect&quot;,
+  &quot;saveForLaterRedirectTemplateUrl&quot; : &quot;vlcSaveForLaterAcknowledge.html&quot;,
+  &quot;saveObjectId&quot; : &quot;%ContextId%&quot;,
+  &quot;saveURLPatterns&quot; : { },
+  &quot;seedDataJSON&quot; : { },
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false,
+  &quot;source&quot; : &quot;/apex/vlocity_cmt__HybridCPQ?id=%ContextId%&quot;,
+  &quot;ssm&quot; : false,
+  &quot;timeTracking&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;type&quot; : &quot;URL&quot;,
+  &quot;validationRequired&quot; : null,
+  &quot;visualforcePagesAvailableInPreview&quot; : { },
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Done Action</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;allowSaveForLater&quot;:true,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;bLK&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;consoleTabTitle&quot;:null,&quot;currencyCode&quot;:&quot;&quot;,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;enableKnowledge&quot;:false,&quot;hideStepChart&quot;:false,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;lkObjName&quot;:null,&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;},{&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;&quot;,&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false}],&quot;rtpSeed&quot;:false,&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;seedDataJSON&quot;:{},&quot;showInputWidth&quot;:false,&quot;ssm&quot;:false,&quot;timeTracking&quot;:false,&quot;trackingCustomData&quot;:{},&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
+    <subType>ApproveDiscounts</subType>
+    <type>CPQ</type>
+    <uniqueName>CPQ_ApproveDiscounts_multiLanguage_5</uniqueName>
+    <versionNumber>5.0</versionNumber>
+    <webComponentKey>e4d1f2e2-2e69-0407-ef9d-8adf69d4f49f</webComponentKey>
+</OmniScript>

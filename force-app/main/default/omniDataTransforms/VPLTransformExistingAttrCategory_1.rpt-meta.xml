@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;ManageNotificationPreferences&quot; : {
+    &quot;BillNotifications&quot; : null,
+    &quot;DNCFrom&quot; : null,
+    &quot;DNCTo&quot; : null,
+    &quot;OffersPromotions&quot; : null,
+    &quot;OutageNotifications&quot; : null,
+    &quot;PaymentRemindersNotifications&quot; : null,
+    &quot;WorkOrderNotifications&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRExtractAccountPreferences&quot; : null,
+    &quot;DataRaptorTransformAction1&quot; : null,
+    &quot;ManageNotificationPreferences&quot; : null,
+    &quot;PostAccountAttrAssignment&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformExistingAttrCategory</name>
+    <nullInputsIncludedInOutput>true</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformExistingAttrCategory31630138761695425</globalKey>
+        <inputFieldName>OffersPromotions</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountPref:OffersPromotions</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformExistingAttrCategory04278468891006182</globalKey>
+        <inputFieldName>DNCTo</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountPref:DNCTo</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Preferences LIST &apos;Category/\/\/==/\/\/&quot;BILL_NOTIFICATIONS&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Preferences), &apos;Category == &quot;BILL_NOTIFICATIONS&quot;&apos;)</formulaExpression>
+        <formulaResultPath>BillNotifications</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>VPL-TransformExistingAttrCategory8616879670476321</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformExistingAttrCategory360187637018728</globalKey>
+        <inputFieldName>WorkorderNotifications</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountPref:WorkorderNotifications</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformExistingAttrCategory9912814984447178</globalKey>
+        <inputFieldName>PaymentReminders</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountPref:PaymentReminders</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformExistingAttrCategory27057088879292057</globalKey>
+        <inputFieldName>OutageNotifications</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountPref:OutageNotifications</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Preferences LIST &apos;Category/\/\/==/\/\/&quot;OUTAGE_NOTIFICATIONS&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Preferences), &apos;Category == &quot;OUTAGE_NOTIFICATIONS&quot;&apos;)</formulaExpression>
+        <formulaResultPath>OutageNotifications</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>VPL-TransformExistingAttrCategory8363827797835663</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Preferences LIST &apos;Category/\/\/==/\/\/&quot;OFFERS_PROMOTIONS&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Preferences), &apos;Category == &quot;OFFERS_PROMOTIONS&quot;&apos;)</formulaExpression>
+        <formulaResultPath>OffersPromotions</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>VPL-TransformExistingAttrCategory6025923357670087</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Preferences LIST &apos;Category/\/\/==/\/\/&quot;DNC_TO&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Preferences), &apos;Category == &quot;DNC_TO&quot;&apos;)</formulaExpression>
+        <formulaResultPath>DNCTo</formulaResultPath>
+        <formulaSequence>7.0</formulaSequence>
+        <globalKey>VPL-TransformExistingAttrCategory8771498401522584</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Preferences LIST &apos;Category/\/\/==/\/\/&quot;DNC_FROM&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Preferences), &apos;Category == &quot;DNC_FROM&quot;&apos;)</formulaExpression>
+        <formulaResultPath>DNCFrom</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>VPL-TransformExistingAttrCategory7246565292930902</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformExistingAttrCategory014488747054975049</globalKey>
+        <inputFieldName>DNCFrom</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountPref:DNCFrom</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>VPL-TransformExistingAttrCategory9476269248268108</globalKey>
+        <inputFieldName>BillNotifications</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountPref:BillNotifications</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Preferences LIST &apos;Category/\/\/==/\/\/&quot;WORKORDER_NOTIFICATIONS&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Preferences), &apos;Category == &quot;WORKORDER_NOTIFICATIONS&quot;&apos;)</formulaExpression>
+        <formulaResultPath>WorkorderNotifications</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>VPL-TransformExistingAttrCategory6471647689003737</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Preferences LIST &apos;Category/\/\/==/\/\/&quot;PAYMENT_REMINDERS&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Preferences), &apos;Category == &quot;PAYMENT_REMINDERS&quot;&apos;)</formulaExpression>
+        <formulaResultPath>PaymentReminders</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>VPL-TransformExistingAttrCategory9687100271453255</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformExistingAttrCategory</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;Preferences&quot; : [ {
+    &quot;AttrValue&quot; : &quot;7:00 AM&quot;,
+    &quot;Category&quot; : &quot;DNC_FROM&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MfvmEAC&quot;
+  }, {
+    &quot;AttrValue&quot; : &quot;Phone&quot;,
+    &quot;Category&quot; : &quot;OUTAGE_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mfw4EAC&quot;
+  }, {
+    &quot;AttrValue&quot; : &quot;Phone&quot;,
+    &quot;Category&quot; : &quot;WORKORDER_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mfw6EAC&quot;
+  }, {
+    &quot;AttrValue&quot; : &quot;Email&quot;,
+    &quot;Category&quot; : &quot;OFFERS_PROMOTIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mfw5EAC&quot;
+  }, {
+    &quot;AttrValue&quot; : &quot;9:00 AM&quot;,
+    &quot;Category&quot; : &quot;DNC_TO&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001Mg0HEAS&quot;
+  }, {
+    &quot;AttrValue&quot; : &quot;Email&quot;,
+    &quot;Category&quot; : &quot;BILL_NOTIFICATIONS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MfvkEAC&quot;
+  }, {
+    &quot;AttrValue&quot; : &quot;Email&quot;,
+    &quot;Category&quot; : &quot;PAYMENT_REMINDERS&quot;,
+    &quot;CategoryId&quot; : &quot;a0O3h000001MfvlEAC&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformExistingAttrCategory_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

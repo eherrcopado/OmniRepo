@@ -1,0 +1,254 @@
+{
+	"rules": [
+		{
+      		"name": "HandleOpportunityExtraction",
+      		"condition": "${Variables.isDemoApplication == 'Yes'}",
+      		"actions": [
+      			{
+      				"action": "add",
+      				"description": "Add DateTimeCreated__c field in Opportunity extraction.",
+      				"path": "$.workflowDefinition.Extract_Opportunity.parameters.fields",
+      				"index": 19,
+      				"value": {
+      					"name": "DateTimeCreated__c"
+      				}
+      			},
+                        {
+                              "action": "add",
+                              "description": "Add LastActivityDate__c field in Opportunity extraction.",
+                              "path": "$.workflowDefinition.Extract_Opportunity.parameters.fields",
+                              "index": 20,
+                              "value": {
+                                    "name": "LastActivityDate__c"
+                              }
+                        },
+                        {
+                              "action": "add",
+                              "description": "Add LastModifiedDate__c field in Opportunity extraction.",
+                              "path": "$.workflowDefinition.Extract_Opportunity.parameters.fields",
+                              "index": 21,
+                              "value": {
+                                    "name": "LastModifiedDate__c"
+                              }
+                        },
+      			{
+      				"action": "add",
+      				"description": "Add Put External ID field in Opportunity extraction.",
+      				"path": "$.workflowDefinition.Extract_Opportunity.parameters.fields",
+      				"index": 22,
+      				"value": {
+      					"name": "External_ID__c"
+      				}
+      			},
+      			{
+      				"action": "put",
+      				"description": "Filter to get the user's generated data.",
+      				"key": "Extract_Opportunity_get_Users_Data",
+      				"path": "$.workflowDefinition",
+      				"value": {
+      					"action": "filter",      
+						"parameters": {            
+							"filter": "External_ID__c:EQ:''",
+							"source": "Extract_Opportunity"
+						}
+      				}
+      			},
+      			{
+      				"action": "put",
+      				"description": "Filter to get the data generated for demo.",
+      				"path": "$.workflowDefinition",
+      				"key": "Extract_Opportunity_get_Demo_Data",
+      				"value": {
+      					"action": "filter",      
+						"parameters": {            
+							"filter": "External_ID__c:N:''",
+							"source": "Extract_Opportunity"
+						}
+      				}
+      			},
+                        {
+                              "action": "put",
+                              "description": "Generate auxiliar date fields after Extract_Opportunity_get_Demo_Data",
+                              "key": "Extract_Opportunity_get_Demo_Data_rename_fields",
+                              "path": "$.workflowDefinition",
+                              "value": {
+                                    "action": "computeExpression",
+                                    "parameters": {
+                                          "source": "Extract_Opportunity_get_Demo_Data",
+                                          "mergeWithSource": true,
+                                          "computedFields": [
+                                                {
+                                                      "name": "CreatedDateAux",
+                                                      "type": "Date",
+                                                      "label": "CreatedDateAux",
+                                                      "saqlExpression": "case when 'DateTimeCreated__c' != \"\" then toDate('DateTimeCreated__c_sec_epoch') else toDate('CreatedDate_sec_epoch') end",
+                                                      "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                                },
+                                                {
+                                                      "name": "LastModifiedDateAux",
+                                                      "type": "Date",
+                                                      "label": "LastModifiedDateAux",
+                                                      "saqlExpression": "case when 'LastModifiedDate__c' != \"\" then toDate('LastModifiedDate__c_sec_epoch') else toDate('LastModifiedDate_sec_epoch') end",
+                                                      "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                                },
+                                                {
+                                                      "name": "LastActivityDateAux",
+                                                      "type": "Date",
+                                                      "label": "LastActivityDateAux",
+                                                      "saqlExpression": "case when 'LastActivityDate__c' != \"\" then toDate('LastActivityDate__c_sec_epoch') else toDate('LastActivityDate_sec_epoch') end",
+                                                      "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                                }
+                                          ]
+                                    }
+                              }
+                        },
+      			{
+      				"action": "put",
+      				"description": "Drop date fields from Extract_Opportunity_get_Demo_Data_rename_fields.",
+      				"key": "Extract_Opportunity_get_Demo_Data_drop_Dates",
+      				"path": "$.workflowDefinition",
+      				"value": {
+      					"action": "sliceDataset",
+						"parameters": {            
+							"source": "Extract_Opportunity_get_Demo_Data_rename_fields",
+							"mode": "drop",
+							"fields": [
+								{
+									"name": "CreatedDate"
+								},
+                                                {
+                                                      "name": "LastModifiedDate"
+                                                },
+                                                {
+                                                      "name": "LastActivityDate"
+                                                }
+							]
+						}
+      				}
+      			},
+                        {
+                              "action": "put",
+                              "description": "Rename fields in Extract_Opportunity_get_Demo_Data_drop_Dates",
+                              "key": "Extract_Opportunity_get_Demo_Data_rename_fieldsAux",
+                              "path": "$.workflowDefinition",
+                              "value": {
+                                    "action": "computeExpression",
+                                    "parameters": {
+                                          "source": "Extract_Opportunity_get_Demo_Data_drop_Dates",
+                                          "mergeWithSource": true,
+                                          "computedFields": [
+                                                {
+                                                      "name": "CreatedDate",
+                                                      "type": "Date",
+                                                      "label": "CreatedDate",
+                                                      "saqlExpression": "toDate(CreatedDateAux, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                                      "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                                },
+                                                {
+                                                      "name": "LastActivityDate",
+                                                      "type": "Date",
+                                                      "label": "LastActivityDate",
+                                                      "saqlExpression": "toDate(LastActivityDateAux, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                                      "default":"",
+                                                      "format":"yyyy-MM-dd"
+                                                },
+                                                {
+                                                      "name": "LastModifiedDate",
+                                                      "type": "Date",
+                                                      "label": "LastModifiedDate",
+                                                      "saqlExpression": "toDate(LastModifiedDateAux, \"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'\")",
+                                                      "default":"",
+                                                      "format":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+                                                }
+                                          ]
+                                    }
+                              }
+                        },
+                        {
+                              "action": "put",
+                              "description": "Drop CreatedDateAux field from Extract_Opportunity_get_Demo_Data_rename_fieldsAux.",
+                              "key": "Extract_Opportunity_get_Demo_Data_drop_fields",
+                              "path": "$.workflowDefinition",
+                              "value": {
+                                    "action": "sliceDataset",
+                                    "parameters": {
+                                          "source": "Extract_Opportunity_get_Demo_Data_rename_fieldsAux",
+                                          "mode": "drop",
+                                          "fields": [
+                                                {
+                                                      "name": "CreatedDateAux"
+                                                },
+                                                {
+                                                      "name": "LastModifiedDateAux"
+                                                },
+                                                {
+                                                      "name": "LastActivityDateAux"
+                                                }
+                                          ]
+                                    }
+                              }
+                        },
+      			{
+      				"action": "put",
+      				"description": "Final merge of user and demo data for Opportunity.",
+      				"key": "Extract_Opportunity_merge",
+      				"path": "$.workflowDefinition",
+      				"value": {
+      					"action": "append",
+						"parameters": {            
+							"sources": [
+								"Extract_Opportunity_get_Demo_Data_drop_fields",
+								"Extract_Opportunity_get_Users_Data"
+							]
+						}
+      				}
+      			},
+                        {
+                              "action": "put",
+                              "description": "Final cleaning of user and demo data for Opportunity.",
+                              "key": "Extract_Opportunity_cleaned",
+                              "path": "$.workflowDefinition",
+                              "value": {
+                                    "action": "sliceDataset",
+                                    "parameters": {            
+                                          "source": "Extract_Opportunity_merge",
+                                          "mode": "drop",
+                                          "fields": [
+                                                {
+                                                      "name": "DateTimeCreated__c"
+                                                },
+                                                {
+                                                      "name": "LastActivityDate__c"
+                                                },
+                                                {
+                                                      "name": "LastModifiedDate__c"
+                                                },
+                                                {
+                                                      "name": "External_ID__c"
+                                                }
+                                          ]
+                                    }
+                              }
+                        },
+      			{
+      				"action": "set",
+      				"description": "Set the right property of User_with_Roles_with_Opportunities.parameters based on Demo App or not.",
+      				"path": "$.workflowDefinition.User_with_Roles_with_Opportunities.parameters['right']",
+      				"value": "Extract_Opportunity_cleaned"
+      			},
+                        {
+                              "action": "set",
+                              "description": "Set the source property of Add_Fields_To_Opportunity.parameters based on Demo App or not.",
+                              "path": "$.workflowDefinition.Add_Fields_To_Opportunity.parameters['source']",
+                              "value": "Extract_Opportunity_cleaned"
+                        }
+			],						
+			"appliesTo": [
+                        {
+                              "type": "workflow",
+                              "name": "*"
+                        }
+      		]
+		}
+	]
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__StatementLineItemId__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <label>Statement Line Item</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>(1 AND 2) OR (3 AND 4)</booleanFilter>
+        <filterItems>
+            <field>$Source.AccountId</field>
+            <operation>equals</operation>
+            <valueField>vlocity_cmt__StatementLineItem__c.vlocity_cmt__StatementId__r.vlocity_cmt__AccountId__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.vlocity_cmt__StatementId__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </filterItems>
+        <filterItems>
+            <field>$Source.vlocity_cmt__StatementId__c</field>
+            <operation>equals</operation>
+            <valueField>vlocity_cmt__StatementLineItem__c.vlocity_cmt__StatementId__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.vlocity_cmt__StatementId__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>vlocity_cmt__StatementLineItem__c</referenceTo>
+    <relationshipLabel>Disputes</relationshipLabel>
+    <relationshipName>Cases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,499 @@
+{
+  "macros": [
+    {
+      "namespace": "salesWaveMacros",
+      "definitions": [
+        {
+          "name": "deleteWidget",
+          "description": "Deletes a widget and any references to the widget.",
+          "parameters": [
+            "widgetName"
+          ],
+          "actions": [
+            {
+              "action": "delete",
+              "path": "$.state.widgets['${p.widgetName}']"
+            },
+            {
+              "action": "delete",
+              "path": "$.state.gridLayouts..pages..widgets[?(@.name=='${p.widgetName}')]"
+            }
+          ]
+        },
+        {
+          "name": "moveWidgetRow",
+          "description": "Moves widget to row position",
+          "parameters": [
+            "widgetName",
+            "layout",
+            "row"
+          ],
+          "actions": [
+            {
+              "action": "set",
+              "path": "$.state.gridLayouts[?(@.name=='${p.layout}')].pages..widgets[?(@.name=='${p.widgetName}')].row",
+              "value": "${p.row}"
+            }
+          ]
+        },
+        {
+          "name": "moveWidget",
+          "description": "Moves widget to column position",
+          "parameters": [
+            "widgetName",
+            "layout",
+            "column"
+          ],
+          "actions": [
+            {
+              "action": "set",
+              "path": "$.state.gridLayouts[?(@.name=='${p.layout}')].pages..widgets[?(@.name=='${p.widgetName}')].column",
+              "value": "${p.column}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "namespace": "name_util",
+      "definitions": [
+        {
+          "name": "nameFromPath",
+          "description": "Given a normalized json path, return the node name.",
+          "parameters": [
+            "jsonPath"
+          ],
+          "returns": "${array:last(string:match(p.jsonPath,'\\\\[\\'(.*?)\\'\\\\]'))}"
+        }
+      ]
+    },
+    {
+      "namespace": "widget_util",
+      "definitions": [
+        {
+          "name": "findWidget",
+          "description": "Finds a widget by name and returns it with additional information.",
+          "parameters": [
+            "widgetName",
+            "widgetType"
+          ],
+          "actions": [
+            {
+              "action": "eval",
+              "key": "widgetSearch",
+              "value": "$.state.widgets['${p.widgetName}'][?(@.type=='${p.widgetType}')]"
+            },
+            {
+              "action": "eval",
+              "key": "widgetResults",
+              "value": "${json:searchPaths(Rules.Eval.widgetSearch)}"
+            },
+            {
+              "action": "eval",
+              "key": "widgetPath",
+              "value": "${empty Rules.Eval.widgetResults ? null : array:last(Rules.Eval.widgetResults)}"
+            }
+          ],
+          "returns": {
+            "name": "${p.widgetName}",
+            "path": "${Rules.Eval.widgetPath}",
+            "displayAttributes": "${widget_util:getDisplayProperties(p.widgetName)}"
+          }
+        },
+        {
+          "name": "deleteWidget",
+          "description": "Deletes a widget by name and any references to it.",
+          "parameters": [
+            "widgetName"
+          ],
+          "actions": [
+            {
+              "action": "delete",
+              "path": "$.state.widgets['${p.widgetName}']"
+            },
+            {
+              "action": "delete",
+              "path": "$.state.gridLayouts..pages..widgets[?(@.name in [\"${p.widgetName}\"])]]"
+            }
+          ]
+        },
+        {
+          "name": "getDisplayProperties",
+          "description": "Finds all references of a widget name.",
+          "parameters": [
+            "widgetName"
+          ],
+          "actions": [
+            {
+              "action": "eval",
+              "key": "refSearch",
+              "value": "$.state.gridLayouts..pages..widgets[?(@.name in [\"${p.widgetName}\"] && @.column)]"
+            },
+            {
+              "action": "eval",
+              "key": "refResults",
+              "value": "${json:searchValues(Rules.Eval.refSearch)}"
+            }
+          ],
+          "returns": "${array:last(Rules.Eval.refResults)}"
+        },
+        {
+          "name": "getWidgetNamesOfType",
+          "description": "Returns all the widget names of the specified type.",
+          "parameters": [
+            "widgetType"
+          ],
+          "actions": [
+            {
+              "action": "eval",
+              "key": "widgetSearch",
+              "value": "$.state.widgets..[?(@.type=='${p.widgetType}')]"
+            },
+            {
+              "action": "eval",
+              "key": "widgetResults",
+              "value": "${json:searchPaths(Rules.Eval.widgetSearch)}"
+            },
+            {
+              "action": "eval",
+              "key": "results",
+              "value": "${array:forEach(Rules.Eval.widgetResults, '${name_util:nameFromPath(var)}')}"
+            }
+          ],
+          "returns": "${Rules.Eval.results}"
+        }
+      ]
+    },
+    {
+      "namespace": "link_macros",
+      "definitions": [
+        {
+          "name": "removeHorizontalLink",
+          "description": "Removes a link from a dashboard. If autoShift is true, this macro will also shift any links before the said link to the right.",
+          "parameters": [
+            "linkWidgetName"
+          ],
+          "actions": [
+            {
+              "action": "eval",
+              "key": "theWidget",
+              "value": "${widget_util:findWidget(p.linkWidgetName, 'link')}"
+            },
+            {
+              "action": "eval",
+              "value": "${widget_util:deleteWidget(p.linkWidgetName)}"
+            },
+            {
+              "action": "eval",
+              "key": "allLinkNames",
+              "value": "${widget_util:getWidgetNamesOfType('link')}"
+            },
+            {
+              "action": "eval",
+              "key": "inClause",
+              "value": "@.name in [\"${string:join(Rules.Eval.allLinkNames,'\",\"')}\"]"
+            },
+            {
+              "action": "eval",
+              "key": "columnRowSelector",
+              "value": "@.row == ${Rules.Eval.theWidget.displayAttributes.row} && @.column < ${Rules.Eval.theWidget.displayAttributes.column}"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMoveSearch",
+              "value": "$.state.gridLayouts..pages..widgets[?(${Rules.Eval.inClause} && ${Rules.Eval.columnRowSelector})]"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMove",
+              "value": "${json:searchPaths(Rules.Eval.linksToMoveSearch)}"
+            },
+            {
+              "action": "eval",
+              "value": "${array:forEach(Rules.Eval.linksToMove, '${link_macros:shiftLinksToRight(var, Rules.Eval.theWidget.displayAttributes.colspan)}')}"
+            }
+          ]
+        },
+        {
+          "name": "removeHorizontalLinkLeft",
+          "description": "Removes a link from a dashboard. If autoShift is true, this macro will also shift any links below the said link to the left.",
+          "parameters": [
+            "linkWidgetName2"
+          ],
+          "actions": [
+            {
+              "action": "eval",
+              "key": "theWidget2",
+              "value": "${widget_util:findWidget(p.linkWidgetName2, 'link')}"
+            },
+            {
+              "action": "eval",
+              "value": "${widget_util:deleteWidget(p.linkWidgetName2)}"
+            },
+            {
+              "action": "eval",
+              "key": "allLinkNames2",
+              "value": "${widget_util:getWidgetNamesOfType('link')}"
+            },
+            {
+              "action": "eval",
+              "key": "inClause2",
+              "value": "@.name in [\"${string:join(Rules.Eval.allLinkNames2,'\",\"')}\"]"
+            },
+            {
+              "action": "eval",
+              "key": "columnRowSelector2",
+              "value": "@.row == ${Rules.Eval.theWidget2.displayAttributes.row} && @.rowspan == ${Rules.Eval.theWidget2.displayAttributes.rowspan} && @.column > ${Rules.Eval.theWidget2.displayAttributes.column}"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMoveSearch2",
+              "value": "$.state.gridLayouts..pages..widgets[?(${Rules.Eval.inClause2} && ${Rules.Eval.columnRowSelector2})]"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMove2",
+              "value": "${json:searchPaths(Rules.Eval.linksToMoveSearch2)}"
+            },
+            {
+              "action": "eval",
+              "value": "${array:forEach(Rules.Eval.linksToMove2, '${link_macros:shiftLinksToLeft(var, Rules.Eval.theWidget2.displayAttributes.colspan)}')}"
+            }
+          ]
+        },
+        {
+          "name": "moveHorizontalTextLeft",
+          "description": "Move text widgets left if they are on the same row as a soon-to-be deleted link.  Once we can use a self-referencing link on a dashboard this rule can be removed.",
+          "parameters": [
+            "linkWidgetName"
+          ],
+          "actions": [
+            {
+              "action": "eval",
+              "key": "theWidget",
+              "value": "${widget_util:findWidget(p.linkWidgetName, 'link')}"
+            },
+            {
+              "action": "eval",
+              "key": "allLinkNames",
+              "value": "${widget_util:getWidgetNamesOfType('text')}"
+            },
+            {
+              "action": "eval",
+              "key": "inClause",
+              "value": "@.name in [\"${string:join(Rules.Eval.allLinkNames,'\",\"')}\"]"
+            },
+            {
+              "action": "eval",
+              "key": "columnRowSelector",
+              "value": "@.row == ${Rules.Eval.theWidget.displayAttributes.row} && @.rowspan == ${Rules.Eval.theWidget.displayAttributes.rowspan} && @.column > ${Rules.Eval.theWidget.displayAttributes.column}"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMoveSearch",
+              "value": "$.state.gridLayouts..pages..widgets[?(${Rules.Eval.inClause} && ${Rules.Eval.columnRowSelector})]"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMove",
+              "value": "${json:searchPaths(Rules.Eval.linksToMoveSearch)}"
+            },
+            {
+              "action": "eval",
+              "value": "${array:forEach(Rules.Eval.linksToMove, '${link_macros:shiftLinksToLeft(var, Rules.Eval.theWidget.displayAttributes.colspan)}')}"
+            }
+          ]
+        },
+        {
+          "name": "removeVerticalLink",
+          "description": "Removes a link from a dashboard. If autoShift is true, this macro will also shift any links below the said link to the top.",
+          "parameters": [
+            "linkWidgetName1"
+          ],
+          "actions": [
+            {
+              "action": "eval",
+              "key": "theWidget1",
+              "value": "${widget_util:findWidget(p.linkWidgetName1, 'link')}"
+            },
+            {
+              "action": "eval",
+              "value": "${widget_util:deleteWidget(p.linkWidgetName1)}"
+            },
+            {
+              "action": "eval",
+              "key": "allLinkNames1",
+              "value": "${widget_util:getWidgetNamesOfType('link')}"
+            },
+            {
+              "action": "eval",
+              "key": "inClause1",
+              "value": "@.name in [\"${string:join(Rules.Eval.allLinkNames1,'\",\"')}\"]"
+            },
+            {
+              "action": "eval",
+              "key": "columnRowSelector1",
+              "value": "@.column == ${Rules.Eval.theWidget1.displayAttributes.column} && @.row > ${Rules.Eval.theWidget1.displayAttributes.row}"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMoveSearch1",
+              "value": "$.state.gridLayouts..pages..widgets[?(${Rules.Eval.inClause1} && ${Rules.Eval.columnRowSelector1})]"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMove1",
+              "value": "${json:searchPaths(Rules.Eval.linksToMoveSearch1)}"
+            },
+            {
+              "action": "eval",
+              "value": "${array:forEach(Rules.Eval.linksToMove1, '${link_macros:shiftLinksToTop(var, 7)}')}"
+            }
+          ]
+        },
+        {
+          "name": "removeVerticalText",
+          "description": "Removes a link from a dashboard. If autoShift is true, this macro will also shift any links below the said link to the top.",
+          "parameters": [
+            "linkWidgetName1"
+          ],
+          "actions": [
+            {
+              "action": "eval",
+              "key": "theWidget1",
+              "value": "${widget_util:findWidget(p.linkWidgetName1, 'text')}"
+            },
+            {
+              "action": "eval",
+              "value": "${widget_util:deleteWidget(p.linkWidgetName1)}"
+            },
+            {
+              "action": "eval",
+              "key": "allLinkNames1",
+              "value": "${widget_util:getWidgetNamesOfType('text')}"
+            },
+            {
+              "action": "eval",
+              "key": "inClause1",
+              "value": "@.name in [\"${string:join(Rules.Eval.allLinkNames1,'\",\"')}\"]"
+            },
+            {
+              "action": "eval",
+              "key": "columnRowSelector1",
+              "value": "@.column == ${Rules.Eval.theWidget1.displayAttributes.column} && @.row > ${Rules.Eval.theWidget1.displayAttributes.row}"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMoveSearch1",
+              "value": "$.state.gridLayouts..pages..widgets[?(${Rules.Eval.inClause1} && ${Rules.Eval.columnRowSelector1})]"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMove1",
+              "value": "${json:searchPaths(Rules.Eval.linksToMoveSearch1)}"
+            },
+            {
+              "action": "eval",
+              "value": "${array:forEach(Rules.Eval.linksToMove1, '${link_macros:shiftLinksToTop(var, 7)}')}"
+            }
+          ]
+        },
+        {
+          "name": "shiftFiltertoLeft",
+          "description": "Removes a filter from a dashboard. If autoShift is true, this macro will also shift any filters next to the said  filter to the left.",
+          "parameters": [
+            "listWidgetName"
+          ],
+          "actions": [
+            {
+              "action": "eval",
+              "key": "theWidget2",
+              "value": "${widget_util:findWidget(p.listWidgetName, 'listselector')}"
+            },
+            {
+              "action": "eval",
+              "value": "${widget_util:deleteWidget(p.listWidgetName)}"
+            },
+            {
+              "action": "eval",
+              "key": "allLinkNames2",
+              "value": "${widget_util:getWidgetNamesOfType('listselector')}"
+            },
+            {
+              "action": "eval",
+              "key": "inClause2",
+              "value": "@.name in [\"${string:join(Rules.Eval.allLinkNames2,'\",\"')}\"]"
+            },
+            {
+              "action": "eval",
+              "key": "columnRowSelector2",
+              "value": "@.row == ${Rules.Eval.theWidget2.displayAttributes.row} && @.column > ${Rules.Eval.theWidget2.displayAttributes.column}"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMoveSearch2",
+              "value": "$.state.gridLayouts..pages..widgets[?(${Rules.Eval.inClause2} && ${Rules.Eval.columnRowSelector2})]"
+            },
+            {
+              "action": "eval",
+              "key": "linksToMove2",
+              "value": "${json:searchPaths(Rules.Eval.linksToMoveSearch2)}"
+            },
+            {
+              "action": "eval",
+              "value": "${array:forEach(Rules.Eval.linksToMove2, '${link_macros:shiftLinksToLeft(var, Rules.Eval.theWidget2.displayAttributes.colspan)}')}"
+            }
+          ]
+        },
+        {
+          "name": "shiftLinksToRight",
+          "description": "Removes a link from a dashboard. If autoShift is true, this macro will also shift any links before the said link to the right.",
+          "parameters": [
+            "linkJsonPath",
+            "numberOfColumnsToShift"
+          ],
+          "actions": [
+            {
+              "action": "set",
+              "condition": "${!empty p.linkJsonPath}",
+              "path": "${p.linkJsonPath}.column",
+              "value": "${Rules.CurrentNode + p.numberOfColumnsToShift}"
+            }
+          ]
+        },
+        {
+          "name": "shiftLinksToLeft",
+          "description": "Removes a link from a dashboard. If autoShift is true, this macro will also shift any links before the said link to the left.",
+          "parameters": [
+            "linkJsonPath",
+            "numberOfColumnsToShift"
+          ],
+          "actions": [
+            {
+              "action": "set",
+              "condition": "${!empty p.linkJsonPath}",
+              "path": "${p.linkJsonPath}.column",
+              "value": "${Rules.CurrentNode - p.numberOfColumnsToShift}"
+            }
+          ]
+        },
+        {
+          "name": "shiftLinksToTop",
+          "description": "Removes a link from a dashboard. If autoShift is true, this macro will also shift any links below the said link to the top.",
+          "parameters": [
+            "linkJsonPath",
+            "numberOfRowsToShift"
+          ],
+          "actions": [
+            {
+              "action": "set",
+              "condition": "${!empty p.linkJsonPath}",
+              "path": "${p.linkJsonPath}.row",
+              "value": "${Rules.CurrentNode - p.numberOfRowsToShift}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

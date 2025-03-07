@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <description>If the application is modified in last 1 minute</description>
+        <name>If_modified_in_last_minute</name>
+        <label>If modified in last minute</label>
+        <locationX>182</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LastModifiedDate</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>ONE_MINUTE_BEFORE</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Launch_Application_Approval</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>ONE_MINUTE_BEFORE</name>
+        <dataType>DateTime</dataType>
+        <expression>{!$Flow.CurrentDateTime} - ( 1/1440)</expression>
+    </formulas>
+    <interviewLabel>Scheduled Application Approval {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Scheduled Application Approval</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>If_modified_in_last_minute</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Submitted</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Category</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Program</stringValue>
+            </value>
+        </filters>
+        <object>IndividualApplication</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-07-21</startDate>
+            <startTime>23:55:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <subflows>
+        <description>Trigger the AutoLaunched Application Approval Flow.</description>
+        <name>Launch_Application_Approval</name>
+        <label>Launch Application Approval</label>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
+        <flowName>Trigger_Application_Approval</flowName>
+        <inputAssignments>
+            <name>ApplicationId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

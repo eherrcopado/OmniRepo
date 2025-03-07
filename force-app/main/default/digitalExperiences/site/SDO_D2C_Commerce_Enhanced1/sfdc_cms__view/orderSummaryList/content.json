@@ -1,0 +1,105 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Order Summary List",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "dxpStyle" : { },
+            "sectionConfig" : "{\"UUID\":\"74a8a771-befc-4609-8c7a-39a7c8c12242\",\"columns\":[{\"UUID\":\"ff3a3d52-024c-4ef8-a594-8bc038ba7e89\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "dxpStyle" : { },
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "small",
+                "text" : "Order History",
+                "textAlign" : "left",
+                "textDecoration" : "{\"bold\": true}",
+                "textDisplayInfo" : "{\"textStyle\": \"heading-medium\", \"headingTag\": \"h2\"}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "b54f6cf3-cf71-4c72-9499-86e19dcfa20f",
+              "type" : "component"
+            } ],
+            "id" : "ff3a3d52-024c-4ef8-a594-8bc038ba7e89",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "74a8a771-befc-4609-8c7a-39a7c8c12242",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "dxpStyle" : { },
+            "sectionConfig" : "{\"UUID\":\"25ea1a17-8393-4684-8fc9-d417a01ff7de\",\"columns\":[{\"UUID\":\"fdf00b5f-7610-4c9b-8627-5c29e1b70cbd\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "accountId" : "",
+                "dxpStyle" : { },
+                "noOrderMessageText" : "After you place an order, it appears here.",
+                "noResultsText" : "To view orders, adjust your filters.",
+                "numberOfMonthsForFilter" : 12,
+                "orderSummaryFieldMapping" : "[{\"entity\": \"OrderSummary\",\"name\": \"Id\",\"label\": \"Order Number\",\"type\": \"Lookup()\"},{\"entity\": \"OrderSummary\",\"name\": \"OrderedDate\",\"label\": \"Ordered Date\",\"type\": \"Date/Time\"},{\"entity\": \"OrderSummary\",\"name\": \"Status\",\"label\": \"Status\",\"type\": \"Picklist\"},{\"entity\": \"OrderSummary\",\"name\": \"GrandTotalAmount\",\"label\": \"Total\",\"type\": \"Formula (Currency)\"}]",
+                "ordersListCount" : 25,
+                "reorderLabel" : "Start Reorder",
+                "showMoreLabel" : "Show More",
+                "showOrdersListFilter" : true,
+                "showOrdersListSortBy" : true,
+                "showReorder" : true,
+                "showViewDetailsLink" : true,
+                "viewDetailsLinkLabel" : "View Details",
+                "viewMoreOrderBehaviour" : "SHOW_MORE"
+              },
+              "definition" : "commerce_builder:orders",
+              "id" : "e832929e-bd51-464e-83ae-6450c10d4942",
+              "type" : "component"
+            } ],
+            "id" : "fdf00b5f-7610-4c9b-8627-5c29e1b70cbd",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "25ea1a17-8393-4684-8fc9-d417a01ff7de",
+          "type" : "component"
+        } ],
+        "id" : "65fbf47b-8c24-499b-a10a-7866491aab35",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "dxpStyle" : { },
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "2d0a2286-d3fa-451b-bc99-211cc2d95f9d",
+          "type" : "component"
+        } ],
+        "id" : "9d958558-24c9-4ade-bf9c-30b3db3eedf3",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "9f4c0f0c-0395-4fe1-99a4-af8457cd0c66",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "MyAccount",
+    "viewType" : "list-1Os"
+  },
+  "urlName" : "order-summary-list"
+}

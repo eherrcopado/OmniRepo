@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Updates Payment plan of the Account</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountBalanceDetails&quot; : {
+    &quot;DisplayError&quot; : null,
+    &quot;Select&quot; : null,
+    &quot;VerifyBalanceAmount&quot; : null
+  },
+  &quot;Confirmation&quot; : { },
+  &quot;ContextId&quot; : null,
+  &quot;PaymentAdjustment&quot; : {
+    &quot;DownPayment&quot; : null,
+    &quot;InstallmentAmount&quot; : null,
+    &quot;NumberOfInstallments&quot; : null,
+    &quot;PaymentPlanReason&quot; : null,
+    &quot;PaymentPlanTotal&quot; : null,
+    &quot;ServiceTerms&quot; : null
+  },
+  &quot;SelectPaymentMethods&quot; : {
+    &quot;ErrorMessaging&quot; : null,
+    &quot;Messaging2&quot; : null,
+    &quot;Payments&quot; : null,
+    &quot;VerifyPaymentMethod&quot; : null
+  },
+  &quot;Step5&quot; : {
+    &quot;CountPaymentAdjustments&quot; : null,
+    &quot;Messaging4&quot; : null,
+    &quot;Radio1&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;AccountBalanceDetails&quot; : null,
+    &quot;Confirmation&quot; : null,
+    &quot;CreatePaymentAdjustment&quot; : null,
+    &quot;DataRaptorExtractAction3&quot; : null,
+    &quot;DataRaptorPostAction2&quot; : null,
+    &quot;FetchAccountBalanceDetails&quot; : null,
+    &quot;FetchPaymentDetails&quot; : null,
+    &quot;PaymentAdjustment&quot; : null,
+    &quot;SelectPaymentMethods&quot; : null,
+    &quot;SetErrors1&quot; : null,
+    &quot;SetPaymentId&quot; : null,
+    &quot;SetPlanTotal&quot; : null,
+    &quot;Step5&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLUpdatePaymentPlan</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d25c5a33-f775-29bf-5549-a739521a5124</globalKey>
+        <inputFieldName>PaymentEndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-Update-PaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__DeactivationDate__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>90693dbd-35e2-395c-2242-9b972c24f9d3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-Update-PaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:PaymentPlans:EndDate &quot;&quot; = | TODAY var:PaymentPlans:EndDate IF</formulaConverted>
+        <formulaExpression>IF(PaymentPlans:EndDate=&quot;&quot;,TODAY(),PaymentPlans:EndDate)</formulaExpression>
+        <formulaResultPath>PaymentEndDate</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>5f41d551-2fb3-6325-a692-d324898889c0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-Update-PaymentPlan</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7e10c75e-ae24-4787-0e51-5116c585df58</globalKey>
+        <inputFieldName>PaymentPlans:PaymentPlanId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-Update-PaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Inactive</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7c6cd491-d936-fb24-1224-77e7860bc6b1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-Update-PaymentPlan</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__Status__c</outputFieldName>
+        <outputObjectName>vlocity_cmt__PaymentPlan__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AccountBalanceDetails&quot; : {
+    &quot;AccountBalance&quot; : null,
+    &quot;AccountBalanceMessaging&quot; : null,
+    &quot;BalanceAmount&quot; : 4.3,
+    &quot;CountPaymentMethod&quot; : 2,
+    &quot;DetectChange&quot; : 1,
+    &quot;DownPayment&quot; : 3.13,
+    &quot;InstallmentAmount&quot; : 1.17,
+    &quot;InstallmentAmountFormula&quot; : false,
+    &quot;InstallmentAmountMessaging&quot; : true,
+    &quot;InsufficentBalanceMsg&quot; : null,
+    &quot;NumberOfInstallments&quot; : 1,
+    &quot;PaymentDate&quot; : &quot;2019-05-03&quot;,
+    &quot;PaymentDateFormula&quot; : false,
+    &quot;PaymentDateMessaging&quot; : true,
+    &quot;PaymentPlan&quot; : &quot;Other&quot;,
+    &quot;PaymentPlanReason&quot; : &quot;Customer cannot pay&quot;,
+    &quot;ServiceTerms&quot; : &quot;Weekly&quot;,
+    &quot;StartDate&quot; : &quot;2019-05-02T16:00:00.000Z&quot;
+  },
+  &quot;AccountBalances&quot; : &quot;&quot;,
+  &quot;AccountRelatedDetails&quot; : {
+    &quot;PaymentMethod&quot; : [ {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a0if200000AOnkgAAD&quot;,
+      &quot;Name&quot; : &quot;PM-0048&quot;
+    }, {
+      &quot;Active&quot; : true,
+      &quot;Id&quot; : &quot;a0if200000AOnlAAAT&quot;,
+      &quot;Name&quot; : &quot;PM-0050&quot;
+    } ]
+  },
+  &quot;BankAccountDetails&quot; : [ {
+    &quot;Active&quot; : true,
+    &quot;Id&quot; : &quot;a0if200000AOnkgAAD&quot;,
+    &quot;Name&quot; : &quot;PM-0048&quot;
+  }, {
+    &quot;Active&quot; : true,
+    &quot;Id&quot; : &quot;a0if200000AOnlAAAT&quot;,
+    &quot;Name&quot; : &quot;PM-0050&quot;
+  } ],
+  &quot;ConfirmationMessage&quot; : &quot;&lt;h2 style=\&quot;text-align: center;\&quot;&gt;&lt;span style=\&quot;color: #3366ff;\&quot;&gt;&lt;strong&gt;Thank You!&lt;/strong&gt;&lt;/span&gt;&lt;/h2&gt;\n&lt;h2 style=\&quot;text-align: center;\&quot;&gt;&lt;span style=\&quot;color: #3366ff;\&quot;&gt;&lt;strong&gt;Payment Details updated in SAP Successfully.&lt;/strong&gt;&lt;/span&gt;&lt;/h2&gt;\n&lt;h5 style=\&quot;text-align: center;\&quot;&gt;&lt;span style=\&quot;color: #3366ff;\&quot;&gt;&lt;strong&gt;Your Payment Plan Details can be found &lt;span style=\&quot;color: #051a59;\&quot;&gt;&lt;em&gt;&lt;a href=\&quot;../a4jf2000000xXMIAA2\&quot; target=\&quot;_blank\&quot; style=\&quot;color: #051a59;\&quot;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/h5&gt;\n&lt;h3 style=\&quot;text-align: center;\&quot;&gt;&lt;span style=\&quot;color: #3366ff;\&quot;&gt;&lt;strong&gt;&amp;nbsp;&lt;/strong&gt;&lt;/span&gt;&lt;/h3&gt;&quot;,
+  &quot;ContextId&quot; : &quot;001f200001uNCKLAA4&quot;,
+  &quot;CountPaymentPlan&quot; : 1,
+  &quot;CreatePayment&quot; : {
+    &quot;Id&quot; : &quot;500O000000FawxYIAR&quot;,
+    &quot;Status&quot; : &quot;closed&quot;,
+    &quot;msg&quot; : &quot;Payment Details updated in SAP Successfully.&quot;
+  },
+  &quot;CreatePaymentInfo&quot; : {
+    &quot;Content-Length&quot; : &quot;119&quot;,
+    &quot;Content-Type&quot; : &quot;application/json; charset=UTF-8&quot;,
+    &quot;Date&quot; : &quot;Fri, 03 May 2019 01:56:45 GMT&quot;,
+    &quot;Server&quot; : &quot;Google Frontend&quot;,
+    &quot;X-Cloud-Trace-Context&quot; : &quot;b6e901821279fabc39c2b284adbced20&quot;,
+    &quot;access-control-allow-origin&quot; : &quot;*&quot;,
+    &quot;status&quot; : &quot;OK&quot;,
+    &quot;statusCode&quot; : 200
+  },
+  &quot;CreatePaymentStatus&quot; : true,
+  &quot;DRId_PaymentPlan__c&quot; : &quot;a4jf2000000xXMIAA2&quot;,
+  &quot;FetchAcc&quot; : &quot;yes&quot;,
+  &quot;OverridePaymentAdjustment&quot; : {
+    &quot;OverwritePaymentPlan&quot; : &quot;Yes&quot;
+  },
+  &quot;PaymentId&quot; : &quot;a0if200000AOnlAAAT&quot;,
+  &quot;PaymentPlans&quot; : {
+    &quot;AccountId&quot; : &quot;001f200001uNCKLAA4&quot;,
+    &quot;BalanceAmount&quot; : 1.23,
+    &quot;DownPaymentAmount&quot; : 0.23,
+    &quot;InstallmentAmount&quot; : 1,
+    &quot;NumberOfInstallments&quot; : 1,
+    &quot;PaymentFrequency&quot; : &quot;Monthly&quot;,
+    &quot;PaymentPlanId&quot; : &quot;a4jf2000000xXMDAA2&quot;,
+    &quot;PaymentPlanName&quot; : &quot;PPN-0073&quot;,
+    &quot;PaymentPlanReason&quot; : &quot;Customer cannot pay&quot;,
+    &quot;ServiceTerms&quot; : &quot;Monthly&quot;,
+    &quot;StartDate&quot; : &quot;2019-05-02&quot;,
+    &quot;Status&quot; : &quot;Active&quot;
+  },
+  &quot;PaymentResponseStatus&quot; : true,
+  &quot;SelectPaymentMethods&quot; : {
+    &quot;CreateNewPaymentQuestion&quot; : null,
+    &quot;PaymentMethodMessaging&quot; : true,
+    &quot;Payments&quot; : null,
+    &quot;VerifyPaymentMethod&quot; : 1
+  },
+  &quot;id&quot; : &quot;a0Zf200000PT1ndEAD&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;options&quot; : {
+    &quot;chainable&quot; : false,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;,
+    &quot;useContinuation&quot; : false,
+    &quot;useFuture&quot; : false,
+    &quot;vlcClass&quot; : &quot;vlocity_cmt.IntegrationProcedureService&quot;
+  },
+  &quot;response&quot; : { },
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://vlocity-accenture-energy--vlocity-cmt.na53.visual.force.com&quot;,
+  &quot;testContextId&quot; : &quot;001f200001uNCKLAA4&quot;,
+  &quot;timeStamp&quot; : &quot;2019-05-03T01:54:36.040Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;CAD&quot;,
+  &quot;userId&quot; : &quot;005f2000008uk1EAAQ&quot;,
+  &quot;userName&quot; : &quot;sarahmae.a.navales@accenture.com.vlocity&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -240,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;AccountBalanceDetails&quot; : 29219,
+    &quot;CreatePaymentAdjustment&quot; : 569,
+    &quot;DeactivatePaymentAdjustment&quot; : 966,
+    &quot;FetchAccountBalanceDetails&quot; : 808,
+    &quot;FetchActivePaymentPlans&quot; : 472,
+    &quot;FetchPaymentDetails&quot; : 637,
+    &quot;OmniScriptSessionToken&quot; : &quot;fa85ac03-2276-4582-8aa6-f64354a4172a&quot;,
+    &quot;OverridePaymentAdjustment&quot; : 29537,
+    &quot;SelectPaymentMethods&quot; : 64589,
+    &quot;SetAccountDetails&quot; : 20,
+    &quot;SetPaymentIds&quot; : 14,
+    &quot;VIPCreatePaymentPlan&quot; : 848
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLUpdatePaymentPlan_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

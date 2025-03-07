@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Create Case of billing complaint type</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountDetail&quot; : {
+    &quot;AccountNumber&quot; : &quot;1123&quot;,
+    &quot;ContactId&quot; : &quot;0033h000009kZilAAE&quot;,
+    &quot;Id&quot; : &quot;0013h00000C1b8cAAB&quot;,
+    &quot;Name&quot; : &quot;Glasgow Dealer&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OvxEAE&quot;,
+    &quot;PremisesName&quot; : &quot;Southampton Premise&quot;
+  },
+  &quot;AccountId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+  &quot;AccountRecordType&quot; : &quot;Business&quot;,
+  &quot;BillingAccountId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+  &quot;BillingProfileDetails&quot; : {
+    &quot;BillingAccountProfile&quot; : {
+      &quot;AccountId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+      &quot;AccountName&quot; : &quot;Glasgow Dealer&quot;,
+      &quot;AccountNumber&quot; : &quot;1123&quot;,
+      &quot;BillCycle&quot; : &quot;&quot;,
+      &quot;BillDeliveryMethod&quot; : &quot;&quot;,
+      &quot;BillFormat&quot; : &quot;&quot;,
+      &quot;BillFrequency&quot; : &quot;&quot;,
+      &quot;BillNumberCopies&quot; : &quot;&quot;,
+      &quot;BillingAddressCity&quot; : &quot;&quot;,
+      &quot;BillingAddressCountry&quot; : &quot;&quot;,
+      &quot;BillingAddressPostalCode&quot; : &quot;&quot;,
+      &quot;BillingAddressState&quot; : &quot;&quot;,
+      &quot;BillingAddressStreet&quot; : &quot;&quot;,
+      &quot;BillingEmailAddress&quot; : &quot;&quot;
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;TaxExcemptionEndDate&quot; : &quot;&quot;,
+      &quot;TaxExcemptionPercentage&quot; : &quot;&quot;,
+      &quot;TaxExcemptionStartDate&quot; : &quot;&quot;,
+      &quot;TaxExcemptionType&quot; : &quot;&quot;,
+      &quot;TaxId&quot; : &quot;&quot;
+    }
+  },
+  &quot;Case&quot; : {
+    &quot;CaseDetails&quot; : {
+      &quot;ConsumerPremises&quot; : null,
+      &quot;Description&quot; : &quot;Test description&quot;,
+      &quot;Premises-Block&quot; : {
+        &quot;Id&quot; : &quot;0013h00000GFhZ7AAL&quot;,
+        &quot;Premises&quot; : &quot;Solihull Premise&quot;,
+        &quot;PremisesName&quot; : &quot;Solihull Premise&quot;,
+        &quot;SrevicePremisesId&quot; : &quot;a3X3h0000006OvlEAE&quot;
+      },
+      &quot;Priority&quot; : &quot;Medium&quot;,
+      &quot;Statement-Block&quot; : {
+        &quot;Name&quot; : &quot;Test Glassgow Statement 1&quot;,
+        &quot;Statement&quot; : &quot;Test Glassgow Statement 1&quot;,
+        &quot;StatementId&quot; : &quot;a4V3h000000FDPYEA4&quot;
+      },
+      &quot;StatementLineItem&quot; : &quot;a4U3h000001LG62EAG&quot;,
+      &quot;Status&quot; : &quot;Lodged&quot;,
+      &quot;Subject&quot; : &quot;Test Case Glasgow &quot;
+    }
+  },
+  &quot;ContactId&quot; : &quot;0033h000009kZilAAE&quot;,
+  &quot;ContactInfo&quot; : &quot;0033h000009kZilAAE&quot;,
+  &quot;ContextId&quot; : &quot;0013h00000C1b8cAAB&quot;,
+  &quot;OmniscriptType&quot; : &quot;MakeComplaint&quot;,
+  &quot;PremisesIdValue&quot; : &quot;a3X3h0000006OvlEAE&quot;,
+  &quot;ServicePremises&quot; : [ {
+    &quot;Id&quot; : &quot;0013h00000GFhZ7AAL&quot;,
+    &quot;PremisesName&quot; : &quot;Solihull Premise&quot;,
+    &quot;SrevicePremisesId&quot; : &quot;a3X3h0000006OvlEAE&quot;
+  }, {
+    &quot;Id&quot; : &quot;0013h00000C1iawAAB&quot;,
+    &quot;PremisesName&quot; : &quot;Exeter premise&quot;,
+    &quot;SrevicePremisesId&quot; : &quot;a3X3h0000006OvnEAE&quot;
+  } ],
+  &quot;Statements&quot; : [ {
+    &quot;Name&quot; : &quot;Test Glassgow  statement 2&quot;,
+    &quot;StatementId&quot; : &quot;a4V3h000000FDdfEAG&quot;
+  }, {
+    &quot;Name&quot; : &quot;Test Glassgow Statement 1&quot;,
+    &quot;StatementId&quot; : &quot;a4V3h000000FDPYEA4&quot;
+  } ],
+  &quot;timeStamp&quot; : &quot;2020-07-22T05:06:52.598Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLCreateEnegryComplaint</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>33404b51-2149-c0d4-03b4-052dd271b749</globalKey>
+        <inputFieldName>Case:CaseDetails:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a757ad5f-956c-d40b-ba9f-14cb757d6957</globalKey>
+        <inputFieldName>ContactInfo</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>001Hr00002BHDKzIAP</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>49d3cc1a-2e18-3539-fac2-2520f2c8949e</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>45dc23ed-3332-b8fb-3c4e-951ad8406de9</globalKey>
+        <inputFieldName>Case:CaseDetails:StatementLineItem</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__StatementLineItemId__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3b9a0f26-f856-ad4a-30d6-87d5cad25194</globalKey>
+        <inputFieldName>RecordTypeName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>DeveloperName</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>45e9a474-5143-fe93-c43d-e1023a39ee46</globalKey>
+        <inputFieldName>Case:CaseDetails:Priority</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Priority</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>1f273ee8-280b-f551-a71d-03dc10afa28e</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3d16029d-9be4-f8d2-44e3-f2e0c8e5d5dd</globalKey>
+        <inputFieldName>Case:CaseDetails:Statement-Block:StatementId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__StatementId__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>87ddb08c-dfb4-0b96-e05b-70f0b24e3a5c</globalKey>
+        <inputFieldName>Case:CaseDetails:Subject</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8b4f941d-cd73-b0df-661d-373d88c00a47</globalKey>
+        <inputFieldName>Case:CaseDetails:Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c2edb3b9-157a-63b2-b453-9eda25fc1106</globalKey>
+        <inputFieldName>PremisesIdValue</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-CreateEnegryComplaint</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>vlocity_cmt__PremisesId__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AccountDetail&quot; : {
+    &quot;AccContactRelId&quot; : &quot;07k3h000001EzwTAAS&quot;,
+    &quot;AccountNumber&quot; : &quot;676767&quot;,
+    &quot;ContactId&quot; : &quot;0033h000007XTWqAAO&quot;,
+    &quot;ContactRoles&quot; : &quot;Primary Contact;Technical Buyerr&quot;,
+    &quot;Id&quot; : &quot;0013h00000CVS5qAAH&quot;,
+    &quot;Name&quot; : &quot;Midlands Region&quot;,
+    &quot;OwnerName&quot; : &quot;Customer Service Agent&quot;,
+    &quot;Phone&quot; : &quot;8888888876&quot;,
+    &quot;PrimaryContactName&quot; : &quot;Julia Rawlings&quot;
+  },
+  &quot;AccountId&quot; : &quot;0013h00000CVS5qAAH&quot;,
+  &quot;AccountRecordType&quot; : &quot;Business&quot;,
+  &quot;BillingAccountId&quot; : &quot;0013h00000CVS7SAAX&quot;,
+  &quot;BillingProfileDetails&quot; : {
+    &quot;BillingAccountProfile&quot; : {
+      &quot;AccountId&quot; : &quot;0013h00000CVS7SAAX&quot;,
+      &quot;AccountName&quot; : &quot;Primary Billing&quot;,
+      &quot;AccountNumber&quot; : &quot;&quot;,
+      &quot;BillCycle&quot; : &quot;3&quot;,
+      &quot;BillDeliveryMethod&quot; : &quot;Electronic Statements Online&quot;,
+      &quot;BillFormat&quot; : &quot;Detail&quot;,
+      &quot;BillFrequency&quot; : &quot;Weekly&quot;,
+      &quot;BillNumberCopies&quot; : 8,
+      &quot;BillingAddressCity&quot; : &quot;Chester&quot;,
+      &quot;BillingAddressCountry&quot; : &quot;United Kingdom&quot;,
+      &quot;BillingAddressPostalCode&quot; : &quot;CH4 8RH&quot;,
+      &quot;BillingAddressState&quot; : &quot;Telangana&quot;,
+      &quot;BillingAddressStreet&quot; : &quot;Street1&quot;,
+      &quot;BillingEmailAddress&quot; : &quot;test1@gmail.com&quot;
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;TaxExcemptionEndDate&quot; : &quot;&quot;,
+      &quot;TaxExcemptionPercentage&quot; : &quot;&quot;,
+      &quot;TaxExcemptionStartDate&quot; : &quot;&quot;,
+      &quot;TaxExcemptionType&quot; : &quot;&quot;,
+      &quot;TaxId&quot; : &quot;&quot;
+    }
+  },
+  &quot;Case&quot; : {
+    &quot;CaseDetails&quot; : {
+      &quot;ConsumerPremises&quot; : null,
+      &quot;Description&quot; : &quot;test demo1&quot;,
+      &quot;Premises-Block&quot; : null,
+      &quot;Priority&quot; : &quot;High&quot;,
+      &quot;Statement-Block&quot; : {
+        &quot;Name&quot; : &quot;Billing Statement 1&quot;,
+        &quot;Statement&quot; : &quot;Billing Statement 1&quot;,
+        &quot;StatementDate&quot; : &quot;2019-09-01&quot;,
+        &quot;StatementId&quot; : &quot;a4V3h00000059BHEAY&quot;
+      },
+      &quot;StatementLineItem&quot; : &quot;a4U3h000000w1rcEAA&quot;,
+      &quot;Status&quot; : &quot;Lodged&quot;,
+      &quot;Subject&quot; : &quot;teest demo&quot;
+    }
+  },
+  &quot;CaseId&quot; : &quot;5003h000006cxnCAAQ&quot;,
+  &quot;ContactId&quot; : null,
+  &quot;ContactInfo&quot; : &quot;0033h000007XTWqAAO&quot;,
+  &quot;ContextId&quot; : &quot;0013h00000CVS5qAAH&quot;,
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;BillingDispute&quot;,
+  &quot;PremisesIdValue&quot; : &quot;&quot;,
+  &quot;RecordList&quot; : [ {
+    &quot;CaseId&quot; : &quot;5003h000006boILAAY&quot;,
+    &quot;CaseNumber&quot; : &quot;00001010&quot;,
+    &quot;CasePriority&quot; : &quot;High&quot;,
+    &quot;CaseStatus&quot; : &quot;Resolution Proposed&quot;,
+    &quot;CaseSubject&quot; : &quot;s&quot;,
+    &quot;CreatedDate&quot; : &quot;08/10/2020&quot;,
+    &quot;RecordTypeName&quot; : &quot;Energy Complaint&quot;
+  } ],
+  &quot;ResponseMessage&quot; : &quot;Account 676767 on hold due to billing dispute.&quot;,
+  &quot;Statements&quot; : [ {
+    &quot;Name&quot; : &quot;Billing Statement 1&quot;,
+    &quot;StatementDate&quot; : &quot;2019-09-01&quot;,
+    &quot;StatementId&quot; : &quot;a4V3h00000059BHEAY&quot;
+  }, {
+    &quot;Name&quot; : &quot;BL Stat4&quot;,
+    &quot;StatementDate&quot; : &quot;2019-11-30&quot;,
+    &quot;StatementId&quot; : &quot;a4V3h0000005Dv8EAE&quot;
+  }, {
+    &quot;Name&quot; : &quot;Billing statement 3&quot;,
+    &quot;StatementDate&quot; : &quot;2020-09-09&quot;,
+    &quot;StatementId&quot; : &quot;a4V3h0000005Dv3EAE&quot;
+  }, {
+    &quot;Name&quot; : &quot;Billing statement 2&quot;,
+    &quot;StatementDate&quot; : &quot;2020-06-29&quot;,
+    &quot;StatementId&quot; : &quot;a4V3h0000005DuyEAE&quot;
+  } ],
+  &quot;timeStamp&quot; : &quot;2020-08-24T13:50:15.135Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002vubKAAQ&quot;,
+  &quot;userName&quot; : &quot;energy_express@qe.org&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;330&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VPLCreateEnegryComplaint_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

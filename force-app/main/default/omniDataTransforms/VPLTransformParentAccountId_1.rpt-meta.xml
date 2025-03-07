@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountDetails&quot; : {
+    &quot;AccountType&quot; : null,
+    &quot;BillingAccountDetails&quot; : {
+      &quot;BillCycle&quot; : null,
+      &quot;BillDeliveryMethod&quot; : null,
+      &quot;BillFormat&quot; : null,
+      &quot;BillFrequency&quot; : null,
+      &quot;BillingCity&quot; : null,
+      &quot;BillingCountry&quot; : null,
+      &quot;BillingEmailAddress&quot; : null,
+      &quot;BillingPostalCode&quot; : null,
+      &quot;BillingState&quot; : null,
+      &quot;BillingStreet&quot; : null,
+      &quot;MsgConsumerAccountBillWarning&quot; : null,
+      &quot;NumberOfBills&quot; : null
+    },
+    &quot;BusinessAccountDetails&quot; : {
+      &quot;PrimaryContact-Block&quot; : {
+        &quot;ContactId&quot; : null,
+        &quot;ContactName&quot; : null,
+        &quot;PrimaryContact&quot; : null
+      },
+      &quot;ShippingCity&quot; : null,
+      &quot;ShippingCountry&quot; : null,
+      &quot;ShippingPostalCode&quot; : null,
+      &quot;ShippingState&quot; : null,
+      &quot;ShippingStreet&quot; : null
+    },
+    &quot;CustomerClass&quot; : null,
+    &quot;Description&quot; : null,
+    &quot;Industry&quot; : null,
+    &quot;MsgConsumerAccountPremisesWarning&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;MsgInvalidPremises&quot; : null,
+    &quot;MsgParentAccountMandatory&quot; : null,
+    &quot;Name&quot; : null,
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : null,
+      &quot;ParentAccountId&quot; : null,
+      &quot;ParentAccountName&quot; : null
+    },
+    &quot;Phone&quot; : null,
+    &quot;Premises-Block&quot; : {
+      &quot;Premises&quot; : null,
+      &quot;PremisesId&quot; : null,
+      &quot;PremisesName&quot; : null
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : null,
+      &quot;ExemptionPercentage&quot; : null,
+      &quot;ExemptionStartDate&quot; : null,
+      &quot;TaxExemption&quot; : null,
+      &quot;TaxId&quot; : null
+    },
+    &quot;Website&quot; : null
+  },
+  &quot;ContextId&quot; : null,
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;AddAccount&quot;,
+  &quot;Success&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;AccountDetails&quot; : null,
+    &quot;DR-ExtractBussinessAccountRecId&quot; : null,
+    &quot;DRCreateAccountRelaion&quot; : null,
+    &quot;DRCreateConsumerAccount&quot; : null,
+    &quot;DRFetchDesiredRecordType&quot; : null,
+    &quot;DRTransfromAccountContactRelationship&quot; : null,
+    &quot;DataRaptorTransformAction2&quot; : null,
+    &quot;NavigateAction&quot; : null,
+    &quot;SVSetDefaultValues&quot; : null,
+    &quot;Success&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLTransformParentAccountId</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d851a39a-4365-cff2-d9e9-b87d5a79deb0</globalKey>
+        <inputFieldName>ContextAccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformParentAccountId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ParentAccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b1c067a4-1c1b-416f-6964-71eba477f444</globalKey>
+        <inputFieldName>DefaultParentAccount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformParentAccountId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ParentAccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3f185ebb-38a9-e5a3-3dca-3fc39ecdd205</globalKey>
+        <inputFieldName>ContextAccountName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-TransformParentAccountId</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountDetails:ParentAccount-Block:ParentAccount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>VPLTransformParentAccountId_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

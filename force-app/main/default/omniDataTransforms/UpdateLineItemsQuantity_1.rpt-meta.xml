@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>UpdateLineItemsQuantity</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:PreviousMemberCount var:null = var:CartItems:Quantity var:MemberCount * var:CartItems:Quantity var:PreviousMemberCount / var:MemberCount * IF</formulaConverted>
+        <formulaExpression>IF(PreviousMemberCount = null, CartItems:Quantity * MemberCount, (CartItems:Quantity / PreviousMemberCount) * MemberCount)</formulaExpression>
+        <formulaResultPath>CartItems:FinalQuantity</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>UpdateLineItemsQuantityCustom2644</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>UpdateLineItemsQuantity</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>UpdateLineItemsQuantityCustoma00RO0000011ROwYAMItem0</globalKey>
+        <inputFieldName>CartItems:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>UpdateLineItemsQuantity</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>QuoteLineItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>UpdateLineItemsQuantityCustoma00RO0000011ROwYAMItem1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>UpdateLineItemsQuantity</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>QuoteLineItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>UpdateLineItemsQuantityCustoma00RO0000011ROwYAMItem2</globalKey>
+        <inputFieldName>CartItems:FinalQuantity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>UpdateLineItemsQuantity</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Quantity</outputFieldName>
+        <outputObjectName>QuoteLineItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;Count&quot; : 5,
+  &quot;LineItems&quot; : [ {
+    &quot;Id&quot; : &quot;0QL4W000002ppvMWAQ&quot;,
+    &quot;LineNumber&quot; : &quot;0002&quot;
+  }, {
+    &quot;Id&quot; : &quot;0QL4W000002ppmgWAA&quot;,
+    &quot;LineNumber&quot; : &quot;0001&quot;
+  } ]
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>UpdateLineItemsQuantity_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

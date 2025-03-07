@@ -1,0 +1,1743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>High Bill Recommendation with JK edits</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>true</isWebCompEnabled>
+    <language>English</language>
+    <lastPreviewPage>Newport</lastPreviewPage>
+    <name>VPL High Bill Recommendation 102-1</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetHighBillRecommendationDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;GetHighBillRecommendationDetails&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;VPLHighBillRecommendations&quot;,
+  &quot;remoteMethod&quot; : &quot;GetHighBillRecommendations&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;AccountId&quot; : &quot;%AccountId%&quot;,
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>BillPlanEndDateInBetweenMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;BillPlanEndDateInBetween&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;Billing Plan was deactivated on %options:billPlanEndDate%, changes to the billing plan may have caused a difference in the customer’s typical bill amount.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;BillPlanEndDateInBetweenformula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>38.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BillPlanEndDateInBetween</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;BillPlanEndDateInBetweenformula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>37.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BillPlanEndDateInBetweenformula</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF(((%options:billingPlanStatus% = &apos;Inactive&apos;)&amp;&amp;((%options:currentStatementDate%)&gt;(%options:billPlanEndDate%))&amp;&amp;((%options:billPlanEndDate%)&gt;(%options:PreviousTwoMonthStatementDate%))),true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Formula17&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>36.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>BillPlanStartDateInBetweenMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;BillPlanStartDateInBetweenMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;Billing Plan was activated on %options:billPlanStartDate%, changes to the billing plan may have caused a difference in the customer’s typical bill amount.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;N/a&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;BillPlanStartDateInBetweenFormula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>41.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BillPlanStartDateInBetween</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;BillPlanStartDateInBetweenFormula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>40.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BillPlanStartDateInBetweenFormula</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF(((%options:billingPlanStatus% = &apos;Active&apos;)&amp;&amp;((%options:currentStatementDate%)&gt;(%options:billPlanStartDate%))&amp;&amp;((%options:billPlanStartDate%)&gt;(%options:PreviousTwoMonthStatementDate%))),true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;BillPlanStartDateInBetween&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>39.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>BillingPlan</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Billing Plan&quot;,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>35.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>kwhCurrentGreaterPreviousMonthMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;kwhCurrentGreaterPreviousMonthMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;The customer used %kwhDiffWithLastMonth% kWh more than last month, this may have caused an increase in the customer’s typical bill. Provide recommendations to monitor and lower energy consumption.&quot;,
+    &quot;type&quot; : &quot;Warning&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;N/A&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;kwhCurrentGreaterPreviousMonthFormula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>34.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>kwhCurrentGreaterPreviousMonthBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;kwhCurrentGreaterPreviousMonthFormula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>33.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>kwhCurrentGreaterPreviousMonthFormula</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:currentKwh% &gt; %options:previousKwh%), true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;kwhCurrentGreaterPreviousMonthFormula&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>32.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>kwhCurrentGreaterPreviousYearMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;kwhCurrentGreaterPreviousYearMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;The customer used %kwhDiffWithLastYear% kWh more than the same month last year, this may have caused an increase in the customer’s typical bill. Provide recommendations to monitor and lower energy consumption.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;N/A&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;kwhCurrentGreaterPreviousYearFormula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>31.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>kwhCurrentGreaterPreviousYearBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;kwhCurrentGreaterPreviousYearFormula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>30.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>kwhCurrentGreaterPreviousYearFormula</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:currentKwh% &gt; %options:previousYearKwh%), true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;kwhCurrentGreaterPreviousYearFormula&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>29.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>kwhDiffWithLastMonth</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Text&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;ABS((%options:currentKwh% - %options:previousKwh%))&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;kwhDiffWithLastMonth&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>28.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>kwhDiffWithLastYear</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Text&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;ABS((%options:currentKwh% - %options:previousYearKwh%))&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;kwhDiffWithLastYear&quot;,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>27.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Consumption</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Consumption&quot;,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>26.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>LatePaymentFeeGreater</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF(%options:accountBalanceLatePaymentFee%  &gt; 0, true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;LatePaymentFeeGreater&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : null,
+        &quot;field&quot; : &quot;&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>50.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>LatePaymentMessage</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;LatePaymentMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;A Late Payment Fee of $%options:accountBalanceLatePaymentFee% was applied to the current statement.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;There are no late payment fees for this account.&quot;,
+    &quot;type&quot; : &quot;Comment&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;LatePaymentFeeGreater&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>51.0</sequenceNumber>
+                <type>Validation</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LatePaymentFee</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Late Payment Fee&quot;,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>49.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>GreaterMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;GreaterMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;%options:activePaymentPlanName% was activated on %options:activePaymentPlanStartDate% and is increasing the monthly bill by $%options:activePaymentPlanAmount%.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;N/A&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;PaymentStartDateGreaterThanCurrentStatement&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>48.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>ActiveBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;PaymentStartDateGreaterThanCurrentStatement&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>47.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EndDateInBetween</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:isInactive% == true), true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;EndDateInBetween&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>43.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>EndDateInBetweenMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;EndDateInBetweenMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;%options:inactivePaymentPlanName% was deactivated on %options:inactivePaymentEndDate%  making the remaining balance of $%options:inactivePaymentPlanAmount% due on the current statement.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;N/A&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;EndDateInBetween&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>45.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>InActiveBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;EndDateInBetween&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>44.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>PaymentStartDateGreaterThanCurrentStatement</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:activePaymentPlanStartDate% &gt; %options:currentStatementDate%),true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;PaymentStartDateGreaterThanCurrentStatement&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>46.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>PaymentPlan</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Payment Plan&quot;,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>42.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EndDateInBetweenFormula</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : null,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;%endCount% &gt; 0&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;EndDateInBetweenFormula&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>55.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EndDateInBetweenMessageText</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;EndDateInBetweenMessageText&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;%endCount% products was/were de-activated between %options:PreviousTwoMonthStatementDate% and %options:currentStatementDate%, the product change may have caused a change in the customer’s typical bill amount.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;EndDateInBetweenFormula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>56.0</sequenceNumber>
+                <type>Validation</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EnrollDateInBetweenFormula</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;%enrollCount% &gt; 0&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;EnrollDateInBetweenFormula&quot;,
+  &quot;mask&quot; : null,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>53.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>EnrollDateInBetweenMessage</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;EnrollDateInBetweenMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;The customer has enrolled in %enrollCount% products between %options:PreviousTwoMonthStatementDate% and %options:currentStatementDate% the new product(s) enrollment may have caused a change in the customer’s typical bill amount.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;EnrollDateInBetweenFormula&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>54.0</sequenceNumber>
+                <type>Validation</type>
+            </childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Products</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Products&quot;,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>52.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AverageTemperatureCurrentEqual</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:currentAvgTemp% = ((%options:previousYearAvgTemp%+4) ||(%options:previousYearAvgTemp%-4))), true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Average Temperature Current Equal&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>14.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>AverageTemperatureCurrentEqualMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;AverageTemperatureCurrentEqualMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;NA&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AverageTemperatureCurrentEqual&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>16.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AverageTemperatureCurrentEqualBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AverageTemperatureCurrentEqual&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>15.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AverageTemperatureCurrentGreater</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:currentAvgTemp% &gt; (%options:previousYearAvgTemp%+5)), true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Average Temperature Current Greater&quot;,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>8.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>AverageTemperatureCurrentGreaterMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;Average Temperature Current Greater Message&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;The average temperature is %tempDiff%* degrees higher than the same time last year, this may have caused an increase in the customer’s consumption.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AverageTemperatureCurrentGreater&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>10.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AverageTemperatureCurrentGreaterBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : null,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AverageTemperatureCurrentGreater&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>9.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AverageTemperatureCurrentLesser</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:currentAvgTemp% &lt; (%options:previousYearAvgTemp%-5)), true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;AverageTemperatureCurrentLesser&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>20.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>AverageTemperatureCurrentLesserMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;AverageTemperatureCurrentLesserMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;The average temperature is %tempDiff%* degrees lower than the same time last year, this may have caused an increase in the customer’s consumption.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AverageTemperatureCurrentLesser&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>22.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AverageTemperatureCurrentLesserBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AverageTemperatureCurrentLesser&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>21.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AvgTempEqualLastMonth</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:currentAvgTemp% = ((%options:previousAvgTemp%+4) ||(%options:previousAvgTemp%-4))), true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;AvgTempEqualLastMonth&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AvgTempEqualLastMonth&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>17.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>AvgTempEqualLastMonthMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;AvgTempEqualLastMonthMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;N/A&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AvgTempEqualLastMonth&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>19.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AvgTempEqualLastMonthBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AvgTempEqualLastMonth&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>18.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AvgTempGreaterLastMonth</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:currentAvgTemp% &gt; (%options:previousAvgTemp%+5)), true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;AvgTempGreaterLastMonth&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>11.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>AvgTempGreaterLastMonthMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;AvgTempGreaterLastMonth&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;The average temperature is %tempDiffWithLastMonth%* degrees higher than the previous month, this may have caused an increase in the customer’s consumption.&quot;,
+    &quot;type&quot; : &quot;Success&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AvgTempGreaterLastMonth&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>13.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AvgTempGreaterLastMonthBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AvgTempGreaterLastMonth&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>12.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AvgTempLesserLastMonth</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Boolean&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:currentAvgTemp% &lt; (%options:previousAvgTemp%-5)), true,false)&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;AvgTempLesserLastMonth&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>23.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <childElements>
+                    <isActive>true</isActive>
+                    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                    <level>3.0</level>
+                    <name>AvgTempLesserLastMonthMessage</name>
+                    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                    <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hideLabel&quot; : true,
+  &quot;label&quot; : &quot;AvgTempLesserLastMonthMessage&quot;,
+  &quot;messages&quot; : [ {
+    &quot;active&quot; : true,
+    &quot;text&quot; : &quot;The average temperature is %tempDiffWithLastMonth%* degrees lower than the previous month, this may have caused an increase in the customer’s consumption.&quot;,
+    &quot;type&quot; : &quot;Warning&quot;,
+    &quot;value&quot; : true
+  }, {
+    &quot;active&quot; : false,
+    &quot;text&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;Requirement&quot;,
+    &quot;value&quot; : false
+  } ],
+  &quot;show&quot; : null,
+  &quot;validateExpression&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AvgTempLesserLastMonth&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                    <sequenceNumber>25.0</sequenceNumber>
+                    <type>Validation</type>
+                </childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AvgTempLesserLastMonthBlock</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : null,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;true&quot;,
+        &quot;field&quot; : &quot;AvgTempLesserLastMonth&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+                <sequenceNumber>24.0</sequenceNumber>
+                <type>Block</type>
+            </childElements>
+            <childElements>
+                <isActive>false</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>isBlank</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : null,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;IF((%options:currentAvgTemp% == &apos;null&apos; || (%options:previousYearAvgTemp%  == &apos;null&apos; )), true,false)&quot;,
+  &quot;hide&quot; : false,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Formula19&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>6.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>tempDiff</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Text&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;ABS((%options:currentAvgTemp% - %options:previousYearAvgTemp%))&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;tempDiff&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>7.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>tempDiffWithLastMonth</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : &quot;Text&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;ABS((%options:currentAvgTemp% - %options:previousAvgTemp%))&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;tempDiffWithLastMonth&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>5.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>Weather</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Weather Recommendation&quot;,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Recommendations</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Recommendations&quot;,
+  &quot;message&quot; : { },
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;pubsub&quot; : false,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetAccountId</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;AccountId&quot; : &quot;=STRING(%ContextId%)&quot;
+  },
+  &quot;label&quot; : &quot;SetAccountId&quot;,
+  &quot;message&quot; : { },
+  &quot;pubsub&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;allowCancel&quot;:true,&quot;allowSaveForLater&quot;:false,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;bLK&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;consoleTabTitle&quot;:null,&quot;controlWidth&quot;:12,&quot;currencyCode&quot;:&quot;&quot;,&quot;disableUnloadWarn&quot;:true,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;elementValueMap&quot;:{},&quot;enableKnowledge&quot;:false,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;hideStepChart&quot;:true,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;label&quot;:null,&quot;lkObjName&quot;:null,&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;},{&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;&quot;,&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false}],&quot;pubsub&quot;:false,&quot;rtpSeed&quot;:false,&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;seedDataJSON&quot;:{},&quot;showInputWidth&quot;:false,&quot;ssm&quot;:false,&quot;stepChartPlacement&quot;:&quot;right&quot;,&quot;stylesheet&quot;:{&quot;lightning&quot;:&quot;&quot;,&quot;lightningRtl&quot;:&quot;&quot;,&quot;newport&quot;:&quot;&quot;,&quot;newportRtl&quot;:&quot;&quot;},&quot;timeTracking&quot;:true,&quot;trackingCustomData&quot;:{},&quot;validationRequired&quot;:&quot;Step&quot;,&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
+    <subType>HighBillRecommendation</subType>
+    <type>VPL1021</type>
+    <uniqueName>VPL1021_HighBillRecommendation_English_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>2651eb83-ee4f-d84d-01c2-decdf5e93381</webComponentKey>
+</OmniScript>

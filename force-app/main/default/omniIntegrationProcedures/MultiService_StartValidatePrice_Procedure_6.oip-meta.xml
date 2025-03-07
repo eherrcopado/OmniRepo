@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{}</customJavaScript>
+    <description>This starts validate and price operation on a group.</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>StartValidateAndPriceJob</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValues</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;BatchSize&quot; : 1,
+    &quot;GroupRollupIPName&quot; : &quot;MultiService_GroupRollups&quot;,
+    &quot;ValidateAndPriceIPName&quot; : &quot;MultiService_ValidateAndPrice&quot;,
+    &quot;ValidateAndUpdateExternalPricingStatusIPName&quot; : &quot;MultiService_ValidateAndUpdateExternalPricingStatus&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>StartValidateAndPriceJob</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;BatchSize&quot; : &quot;%SetValues:BatchSize%&quot;,
+    &quot;GroupRollupIPName&quot; : &quot;%SetValues:GroupRollupIPName%&quot;,
+    &quot;ValidateAndPriceIPName&quot; : &quot;%SetValues:ValidateAndPriceIPName%&quot;,
+    &quot;ValidateAndUpdateExternalPricingStatusIPName&quot; : &quot;%SetValues:ValidateAndUpdateExternalPricingStatusIPName%&quot;,
+    &quot;cartType&quot; : &quot;%cartType%&quot;,
+    &quot;contextId&quot; : &quot;%contextId%&quot;,
+    &quot;groupCartId&quot; : &quot;%groupCartId%&quot;,
+    &quot;groupId&quot; : &quot;%groupId%&quot;,
+    &quot;groupIds&quot; : &quot;%groupIds%&quot;,
+    &quot;parentId&quot; : &quot;%parentId%&quot;,
+    &quot;startJobVIPName&quot; : &quot;%startJobVIPName%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction1&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.MultiServiceAppHandler&quot;,
+  &quot;remoteMethod&quot; : &quot;priceAndValidate&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;response&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>StartValidateAndPriceSerialyJob</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;batchInput&quot; : [ {
+      &quot;batchOperationType&quot; : &quot;Validate&quot;,
+      &quot;batchSize&quot; : 5,
+      &quot;className&quot; : &quot;vlocity_cmt.MSInvokeCartValidationBatch&quot;,
+      &quot;classParams&quot; : {
+        &quot;executeVIP&quot; : {
+          &quot;vipName&quot; : &quot;MultiService_RunCartValidation&quot;,
+          &quot;vipParams&quot; : {
+            &quot;&quot; : &quot;&quot;
+          }
+        },
+        &quot;finishVIP&quot; : {
+          &quot;vipName&quot; : &quot;MultiService_FinishCartValidation&quot;,
+          &quot;vipParams&quot; : {
+            &quot;&quot; : &quot;&quot;
+          }
+        },
+        &quot;startVIP&quot; : {
+          &quot;vipName&quot; : &quot;&quot;,
+          &quot;vipParams&quot; : {
+            &quot;&quot; : &quot;&quot;
+          }
+        }
+      }
+    }, {
+      &quot;batchOperationType&quot; : &quot;Price&quot;,
+      &quot;batchSize&quot; : 10,
+      &quot;className&quot; : &quot;vlocity_cmt.MSInvokeCartPricingBatch&quot;,
+      &quot;classParams&quot; : {
+        &quot;executeVIP&quot; : {
+          &quot;vipName&quot; : &quot;MultiService_RunCartPricing&quot;,
+          &quot;vipParams&quot; : {
+            &quot;&quot; : &quot;&quot;
+          }
+        },
+        &quot;finishVIP&quot; : {
+          &quot;vipName&quot; : &quot;MultiService_FinishCartPricing&quot;,
+          &quot;vipParams&quot; : {
+            &quot;&quot; : &quot;&quot;
+          }
+        },
+        &quot;postFinishVIP&quot; : {
+          &quot;vipName&quot; : &quot;MultiService_ValidateAndUpdateExternalPricingStatus&quot;,
+          &quot;vipParams&quot; : {
+            &quot;&quot; : &quot;&quot;
+          }
+        },
+        &quot;startVIP&quot; : {
+          &quot;vipName&quot; : &quot;&quot;,
+          &quot;vipParams&quot; : {
+            &quot;&quot; : &quot;&quot;
+          }
+        }
+      }
+    } ],
+    &quot;cartType&quot; : &quot;%cartType%&quot;,
+    &quot;contextId&quot; : &quot;%contextId%&quot;,
+    &quot;filterSubCarts&quot; : &quot;isPriced__c = false OR isValidated__c = false&quot;,
+    &quot;groupCartId&quot; : &quot;%groupCartId%&quot;,
+    &quot;groupId&quot; : &quot;%groupId%&quot;,
+    &quot;groupIds&quot; : &quot;%groupIds%&quot;,
+    &quot;parentId&quot; : &quot;%parentId%&quot;,
+    &quot;startJobVIPName&quot; : &quot;%startJobVIPName%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction2&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.MultiServiceAppHandler&quot;,
+  &quot;remoteMethod&quot; : &quot;invokeBatchSerially&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;response&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessKey>MultiService_StartValidatePrice</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>StartValidatePrice</subType>
+    <type>MultiService</type>
+    <uniqueName>MultiService_StartValidatePrice_Procedure_6</uniqueName>
+    <versionNumber>6.0</versionNumber>
+    <webComponentKey>8910ff4b-6c25-0f38-853b-4ddbeda9aee0</webComponentKey>
+</OmniIntegrationProcedure>

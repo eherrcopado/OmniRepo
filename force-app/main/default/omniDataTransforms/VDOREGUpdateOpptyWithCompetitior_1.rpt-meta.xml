@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;timeStamp&quot; : &quot;2019-09-18T17:27:59.577Z&quot;,
+  &quot;userId&quot; : &quot;00541000002N7gsAAC&quot;,
+  &quot;userName&quot; : &quot;admin@vdo.energy.master&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -420,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://vdo-energy--vlocity-cmt.na75.visual.force.com&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;id&quot; : &quot;a1I1K00000WE3bwUAD&quot;,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;Competitors&quot; : {
+    &quot;CompetitorBlock&quot; : [ {
+      &quot;CompetitorName&quot; : &quot;Competitor1&quot;,
+      &quot;CompetitorType&quot; : &quot;Electrical Utility&quot;,
+      &quot;CompetitorWinRatio&quot; : &quot;Low&quot;
+    }, {
+      &quot;CompetitorName&quot; : &quot;Competitor2&quot;,
+      &quot;CompetitorType&quot; : &quot;Alternative generator&quot;,
+      &quot;CompetitorWinRatio&quot; : &quot;High&quot;
+    } ]
+  },
+  &quot;CompetitorOpportunityId&quot; : &quot;0061K00000cb7t7QAA&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VDOREGUpdateOpptyWithCompetitior</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>bd812346-d2e9-4794-be1a-96d4a587b438</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>VDOREGUpdateOpptyWithCompetitior</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a9ef2df3-e7d7-494d-96d9-b242f56657f9</globalKey>
+        <inputFieldName>Competitors:CompetitorBlock</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VDOREGUpdateOpptyWithCompetitior</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>Object</outputFieldFormat>
+        <outputFieldName>VDO_Competitors__c</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>082bd23e-a594-47b5-8af0-0216ee14255e</globalKey>
+        <inputFieldName>CompetitorOpportunityId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VDOREGUpdateOpptyWithCompetitior</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Opportunity</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;objectList&quot; : {
+    &quot;ContextId&quot; : &quot;0011K000027PvKVQA0&quot;,
+    &quot;timeStamp&quot; : &quot;2019-09-18T19:55:53.500Z&quot;,
+    &quot;userId&quot; : &quot;00541000002N7gsAAC&quot;,
+    &quot;userName&quot; : &quot;admin@vdo.energy.master&quot;,
+    &quot;userProfile&quot; : &quot;System Administrator&quot;,
+    &quot;userTimeZone&quot; : -420,
+    &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+    &quot;layout&quot; : &quot;lightning&quot;,
+    &quot;id&quot; : &quot;a1I1K00000WE3UFUA1&quot;,
+    &quot;vlcPersistentComponent&quot; : { },
+    &quot;OpptyType&quot; : {
+      &quot;Formula7&quot; : &quot;0011K000027PvKVQA0&quot;,
+      &quot;RecordTypeName&quot; : &quot;Regulated&quot;,
+      &quot;OpptyName&quot; : &quot;New Opportunity 67&quot;,
+      &quot;OpptyCloseDate&quot; : &quot;2019-10-18&quot;,
+      &quot;CampaignTypeAhead-Block&quot; : {
+        &quot;CampaignTypeAhead&quot; : null,
+        &quot;CampaignId&quot; : null,
+        &quot;CampaignName&quot; : null
+      }
+    },
+    &quot;Competitors&quot; : {
+      &quot;Skip&quot; : null,
+      &quot;CompetitorBlock&quot; : {
+        &quot;CompetitorName&quot; : &quot;Some copetitior&quot;,
+        &quot;CompetitorType&quot; : &quot;Electric&quot;,
+        &quot;CompetitorWinRatio&quot; : &quot;Low&quot;
+      }
+    },
+    &quot;ProjectInfo&quot; : {
+      &quot;ProjectDescription&quot; : null,
+      &quot;ProjectStartDate&quot; : null,
+      &quot;ProjectEndDate&quot; : null,
+      &quot;ProjectStage&quot; : null,
+      &quot;ProbabilityOfInfluence&quot; : null,
+      &quot;ProjectGoals&quot; : null
+    },
+    &quot;GeneratedTasks&quot; : {
+      &quot;TaskToDisplay&quot; : null,
+      &quot;CreateTasks&quot; : &quot;No&quot;,
+      &quot;TaskBlock&quot; : null
+    },
+    &quot;RiskCheck&quot; : &quot;No&quot;,
+    &quot;StageName&quot; : &quot;Qualification&quot;,
+    &quot;TaskPicklistValue&quot; : [ {
+      &quot;TaskType&quot; : &quot;Meeting&quot;
+    }, {
+      &quot;TaskType&quot; : &quot;Technical Information&quot;
+    }, {
+      &quot;TaskType&quot; : &quot;Criteria&quot;
+    }, {
+      &quot;TaskType&quot; : &quot;Risk Evaluation&quot;
+    }, {
+      &quot;TaskType&quot; : &quot;Quote&quot;
+    } ],
+    &quot;error&quot; : &quot;OK&quot;,
+    &quot;TaskTypeOut&quot; : [ {
+      &quot;DueDate&quot; : &quot;2019-09-19&quot;,
+      &quot;Subject&quot; : &quot;Set up a meeting&quot;,
+      &quot;Description&quot; : &quot;Set up a meeting to get more details on what customer wants to do&quot;
+    }, {
+      &quot;DueDate&quot; : &quot;2019-09-20&quot;,
+      &quot;Subject&quot; : &quot;Get technical information&quot;,
+      &quot;Description&quot; : &quot;Get all required technical information&quot;
+    }, {
+      &quot;DueDate&quot; : &quot;2019-09-21&quot;,
+      &quot;Subject&quot; : &quot;Confirm the budget and the decision criteria&quot;,
+      &quot;Description&quot; : &quot;Ensure that we know the budget and decision criteria&quot;
+    } ],
+    &quot;PickServiceAccount&quot; : {
+      &quot;ServiceAccount&quot; : null
+    },
+    &quot;OpenCases&quot; : { },
+    &quot;Result&quot; : {
+      &quot;UOM&quot; : &quot;kWh&quot;,
+      &quot;Meters&quot; : {
+        &quot;MeterType&quot; : &quot;Digital&quot;,
+        &quot;MeterId&quot; : &quot;13004&quot;,
+        &quot;UOM&quot; : &quot;therm&quot;,
+        &quot;TotalUsage&quot; : 1831.9415,
+        &quot;OnPeakUsage&quot; : 0,
+        &quot;OffPeakUsage&quot; : 0,
+        &quot;MidPeakUsage&quot; : 0,
+        &quot;MaxDemand&quot; : 351.2588
+      },
+      &quot;SumTotalMeterUsage&quot; : 1831.9415,
+      &quot;SumOnPeakUsage&quot; : 0,
+      &quot;SumOffPeakUsage&quot; : 0,
+      &quot;SumMidPeakUsage&quot; : 0,
+      &quot;AverageMaxDemand&quot; : 351.2588
+    },
+    &quot;MaxDemand&quot; : 351.2588,
+    &quot;TotalUsage&quot; : 1831.9415,
+    &quot;RecordTypeId&quot; : &quot;0121K0000013JOPQA2&quot;,
+    &quot;response&quot; : { },
+    &quot;ResponseAction1Status&quot; : true,
+    &quot;Create Task1&quot; : {
+      &quot;Task_1&quot; : [ {
+        &quot;UpsertSuccess&quot; : true,
+        &quot;Id&quot; : &quot;00T1K00003NUv5lUAD&quot;,
+        &quot;IsReminderSet&quot; : true,
+        &quot;WhatId&quot; : &quot;0061K00000eSScLQAW&quot;,
+        &quot;ActivityDate&quot; : &quot;2019-09-19&quot;,
+        &quot;Subject&quot; : &quot;Set up a meeting&quot;,
+        &quot;Description&quot; : &quot;Set up a meeting to get more details on what customer wants to do&quot;
+      }, {
+        &quot;UpsertSuccess&quot; : true,
+        &quot;Id&quot; : &quot;00T1K00003NUv5mUAD&quot;,
+        &quot;IsReminderSet&quot; : true,
+        &quot;WhatId&quot; : &quot;0061K00000eSScLQAW&quot;,
+        &quot;ActivityDate&quot; : &quot;2019-09-20&quot;,
+        &quot;Subject&quot; : &quot;Get technical information&quot;,
+        &quot;Description&quot; : &quot;Get all required technical information&quot;
+      }, {
+        &quot;UpsertSuccess&quot; : true,
+        &quot;Id&quot; : &quot;00T1K00003NUv5nUAD&quot;,
+        &quot;IsReminderSet&quot; : true,
+        &quot;WhatId&quot; : &quot;0061K00000eSScLQAW&quot;,
+        &quot;ActivityDate&quot; : &quot;2019-09-21&quot;,
+        &quot;Subject&quot; : &quot;Confirm the budget and the decision criteria&quot;,
+        &quot;Description&quot; : &quot;Ensure that we know the budget and decision criteria&quot;
+      } ],
+      &quot;error&quot; : &quot;OK&quot;,
+      &quot;responseType&quot; : &quot;SObject&quot;
+    },
+    &quot;Create Task1Status&quot; : true,
+    &quot;CreateOpportunity&quot; : {
+      &quot;Opportunity_1&quot; : [ {
+        &quot;UpsertSuccess&quot; : true,
+        &quot;Id&quot; : &quot;0061K00000eSScLQAW&quot;,
+        &quot;LeadSource&quot; : &quot;Other&quot;,
+        &quot;vlocity_cmt__PriceListId__c&quot; : &quot;a3O410000016MuMEAU&quot;,
+        &quot;VDO_Included_Regions__c&quot; : {
+          &quot;ServiceAccount&quot; : [ {
+            &quot;Premise&quot; : {
+              &quot;PremiseId&quot; : &quot;a1Y1K000003Om90UAC&quot;,
+              &quot;ServicePoint&quot; : {
+                &quot;Meter&quot; : {
+                  &quot;Usage&quot; : {
+                    &quot;Monthly&quot; : [ {
+                      &quot;MonthlyUsage&quot; : 165.055,
+                      &quot;Month&quot; : 1
+                    }, {
+                      &quot;MonthlyUsage&quot; : 139.5949,
+                      &quot;Month&quot; : 2
+                    }, {
+                      &quot;MonthlyUsage&quot; : 125.8341,
+                      &quot;Month&quot; : 3
+                    }, {
+                      &quot;MonthlyUsage&quot; : 109.7371,
+                      &quot;Month&quot; : 4
+                    }, {
+                      &quot;MonthlyUsage&quot; : 80.0039,
+                      &quot;Month&quot; : 5
+                    }, {
+                      &quot;MonthlyUsage&quot; : 77.091,
+                      &quot;Month&quot; : 6
+                    }, {
+                      &quot;MonthlyUsage&quot; : 204.9033,
+                      &quot;Month&quot; : 7
+                    }, {
+                      &quot;MonthlyUsage&quot; : 200.2796,
+                      &quot;Month&quot; : 8
+                    }, {
+                      &quot;MonthlyUsage&quot; : 76.3488,
+                      &quot;Month&quot; : 9
+                    }, {
+                      &quot;MonthlyUsage&quot; : 143.0869,
+                      &quot;Month&quot; : 10
+                    }, {
+                      &quot;MonthlyUsage&quot; : 145.7512,
+                      &quot;Month&quot; : 11
+                    }, {
+                      &quot;MonthlyUsage&quot; : 364.2557,
+                      &quot;Month&quot; : 12
+                    } ],
+                    &quot;UOM&quot; : &quot;therm&quot;,
+                    &quot;TotalUsage&quot; : 1831.9415,
+                    &quot;MidPeak&quot; : 0,
+                    &quot;MeterId&quot; : &quot;13004&quot;,
+                    &quot;MaxDemand&quot; : 351.2588,
+                    &quot;OnPeak&quot; : 0,
+                    &quot;OffPeak&quot; : 0
+                  },
+                  &quot;MeterType&quot; : &quot;Digital&quot;,
+                  &quot;MeterNumber&quot; : &quot;13004&quot;
+                },
+                &quot;SPStatus&quot; : &quot;Connected&quot;,
+                &quot;ServiceType&quot; : &quot;Gas&quot;,
+                &quot;ActivationDate&quot; : &quot;2016-03-16&quot;,
+                &quot;VoltageInd&quot; : &quot;High 0&quot;,
+                &quot;SPName&quot; : &quot;SP-13004&quot;
+              },
+              &quot;PremiseType&quot; : &quot;Duplex&quot;,
+              &quot;PremiseName&quot; : &quot;PR-13004&quot;
+            },
+            &quot;AccountStatus&quot; : &quot;Active&quot;,
+            &quot;ShippingStreet&quot; : &quot;100 Main Street&quot;,
+            &quot;ShippingState&quot; : &quot;NJ&quot;,
+            &quot;ShippingPostalCode&quot; : &quot;07105&quot;,
+            &quot;ShippingCity&quot; : &quot;Newark&quot;,
+            &quot;Name&quot; : &quot;Regulated C&amp;I Customer SA2 Gas&quot;,
+            &quot;ServiceAccountId&quot; : &quot;0011K000027Q1eiQAC&quot;,
+            &quot;BillingStreet&quot; : &quot;100 Main Street&quot;,
+            &quot;PostalCode&quot; : &quot;07105&quot;,
+            &quot;City&quot; : &quot;Newark&quot;,
+            &quot;vlcSelected&quot; : true
+          } ]
+        },
+        &quot;Vdo_Included_meters__c&quot; : {
+          &quot;UOM&quot; : &quot;kWh&quot;,
+          &quot;Meters&quot; : {
+            &quot;MeterType&quot; : &quot;Digital&quot;,
+            &quot;MeterId&quot; : &quot;13004&quot;,
+            &quot;UOM&quot; : &quot;therm&quot;,
+            &quot;TotalUsage&quot; : 1831.9415,
+            &quot;OnPeakUsage&quot; : 0,
+            &quot;OffPeakUsage&quot; : 0,
+            &quot;MidPeakUsage&quot; : 0,
+            &quot;MaxDemand&quot; : 351.2588
+          },
+          &quot;SumTotalMeterUsage&quot; : 1831.9415,
+          &quot;SumOnPeakUsage&quot; : 0,
+          &quot;SumOffPeakUsage&quot; : 0,
+          &quot;SumMidPeakUsage&quot; : 0,
+          &quot;AverageMaxDemand&quot; : 351.2588
+        },
+        &quot;StageName&quot; : &quot;Qualification&quot;,
+        &quot;RecordTypeId&quot; : &quot;0121K0000013JOPQA2&quot;,
+        &quot;Name&quot; : &quot;New Opportunity 67&quot;,
+        &quot;AccountId&quot; : &quot;0011K000027PvKVQA0&quot;,
+        &quot;CloseDate&quot; : &quot;2019-10-18&quot;
+      } ],
+      &quot;error&quot; : &quot;OK&quot;,
+      &quot;responseType&quot; : &quot;SObject&quot;
+    },
+    &quot;CreateOpportunityStatus&quot; : true,
+    &quot;GetPriceList&quot; : {
+      &quot;PriceListId&quot; : &quot;a3O410000016MuMEAU&quot;
+    },
+    &quot;GetPriceListStatus&quot; : true,
+    &quot;SetValues1&quot; : {
+      &quot;OpptyName&quot; : &quot;New Opportunity 67&quot;,
+      &quot;CloseDate&quot; : &quot;2019-10-18&quot;,
+      &quot;ContextId&quot; : &quot;0011K000027PvKVQA0&quot;,
+      &quot;StageNameIP&quot; : &quot;Qualification&quot;,
+      &quot;Site&quot; : {
+        &quot;ServiceAccount&quot; : [ {
+          &quot;Premise&quot; : {
+            &quot;PremiseId&quot; : &quot;a1Y1K000003Om90UAC&quot;,
+            &quot;ServicePoint&quot; : {
+              &quot;Meter&quot; : {
+                &quot;Usage&quot; : {
+                  &quot;Monthly&quot; : [ {
+                    &quot;MonthlyUsage&quot; : 165.055,
+                    &quot;Month&quot; : 1
+                  }, {
+                    &quot;MonthlyUsage&quot; : 139.5949,
+                    &quot;Month&quot; : 2
+                  }, {
+                    &quot;MonthlyUsage&quot; : 125.8341,
+                    &quot;Month&quot; : 3
+                  }, {
+                    &quot;MonthlyUsage&quot; : 109.7371,
+                    &quot;Month&quot; : 4
+                  }, {
+                    &quot;MonthlyUsage&quot; : 80.0039,
+                    &quot;Month&quot; : 5
+                  }, {
+                    &quot;MonthlyUsage&quot; : 77.091,
+                    &quot;Month&quot; : 6
+                  }, {
+                    &quot;MonthlyUsage&quot; : 204.9033,
+                    &quot;Month&quot; : 7
+                  }, {
+                    &quot;MonthlyUsage&quot; : 200.2796,
+                    &quot;Month&quot; : 8
+                  }, {
+                    &quot;MonthlyUsage&quot; : 76.3488,
+                    &quot;Month&quot; : 9
+                  }, {
+                    &quot;MonthlyUsage&quot; : 143.0869,
+                    &quot;Month&quot; : 10
+                  }, {
+                    &quot;MonthlyUsage&quot; : 145.7512,
+                    &quot;Month&quot; : 11
+                  }, {
+                    &quot;MonthlyUsage&quot; : 364.2557,
+                    &quot;Month&quot; : 12
+                  } ],
+                  &quot;UOM&quot; : &quot;therm&quot;,
+                  &quot;TotalUsage&quot; : 1831.9415,
+                  &quot;MidPeak&quot; : 0,
+                  &quot;MeterId&quot; : &quot;13004&quot;,
+                  &quot;MaxDemand&quot; : 351.2588,
+                  &quot;OnPeak&quot; : 0,
+                  &quot;OffPeak&quot; : 0
+                },
+                &quot;MeterType&quot; : &quot;Digital&quot;,
+                &quot;MeterNumber&quot; : &quot;13004&quot;
+              },
+              &quot;SPStatus&quot; : &quot;Connected&quot;,
+              &quot;ServiceType&quot; : &quot;Gas&quot;,
+              &quot;ActivationDate&quot; : &quot;2016-03-16&quot;,
+              &quot;VoltageInd&quot; : &quot;High 0&quot;,
+              &quot;SPName&quot; : &quot;SP-13004&quot;
+            },
+            &quot;PremiseType&quot; : &quot;Duplex&quot;,
+            &quot;PremiseName&quot; : &quot;PR-13004&quot;
+          },
+          &quot;AccountStatus&quot; : &quot;Active&quot;,
+          &quot;ShippingStreet&quot; : &quot;100 Main Street&quot;,
+          &quot;ShippingState&quot; : &quot;NJ&quot;,
+          &quot;ShippingPostalCode&quot; : &quot;07105&quot;,
+          &quot;ShippingCity&quot; : &quot;Newark&quot;,
+          &quot;Name&quot; : &quot;Regulated C&amp;I Customer SA2 Gas&quot;,
+          &quot;ServiceAccountId&quot; : &quot;0011K000027Q1eiQAC&quot;,
+          &quot;BillingStreet&quot; : &quot;100 Main Street&quot;,
+          &quot;PostalCode&quot; : &quot;07105&quot;,
+          &quot;City&quot; : &quot;Newark&quot;,
+          &quot;vlcSelected&quot; : true
+        } ]
+      },
+      &quot;RecordTypeName&quot; : null,
+      &quot;RecordTypeId&quot; : &quot;0121K0000013JOPQA2&quot;,
+      &quot;CampaignId&quot; : null,
+      &quot;SelectedMeters&quot; : {
+        &quot;UOM&quot; : &quot;kWh&quot;,
+        &quot;Meters&quot; : {
+          &quot;MeterType&quot; : &quot;Digital&quot;,
+          &quot;MeterId&quot; : &quot;13004&quot;,
+          &quot;UOM&quot; : &quot;therm&quot;,
+          &quot;TotalUsage&quot; : 1831.9415,
+          &quot;OnPeakUsage&quot; : 0,
+          &quot;OffPeakUsage&quot; : 0,
+          &quot;MidPeakUsage&quot; : 0,
+          &quot;MaxDemand&quot; : 351.2588
+        },
+        &quot;SumTotalMeterUsage&quot; : 1831.9415,
+        &quot;SumOnPeakUsage&quot; : 0,
+        &quot;SumOffPeakUsage&quot; : 0,
+        &quot;SumMidPeakUsage&quot; : 0,
+        &quot;AverageMaxDemand&quot; : 351.2588
+      }
+    },
+    &quot;SetValues1Status&quot; : true,
+    &quot;options&quot; : {
+      &quot;vlcClass&quot; : &quot;vlocity_cmt.IntegrationProcedureService&quot;,
+      &quot;useContinuation&quot; : false,
+      &quot;preTransformBundle&quot; : &quot;&quot;,
+      &quot;postTransformBundle&quot; : &quot;&quot;,
+      &quot;useFuture&quot; : false,
+      &quot;chainable&quot; : false
+    },
+    &quot;opptyId&quot; : [ &quot;0061K00000eSScLQAW&quot; ],
+    &quot;ProjectOpportunity&quot; : [ &quot;0061K00000eSScLQAW&quot; ],
+    &quot;CompetitorOpportunity&quot; : [ &quot;0061K00000eSScLQAW&quot; ],
+    &quot;CompetitorOpportunityId&quot; : [ &quot;0061K00000eSScLQAW&quot; ],
+    &quot;contextId&quot; : &quot;0011K000027PvKVQA0&quot;
+  },
+  &quot;bundleName&quot; : &quot;VDOREGUpdateOpptyWithCompetitior&quot;,
+  &quot;filesMap&quot; : { }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>VDOREGUpdateOpptyWithCompetitior_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>DataRaptor to extract inventory item</description>
+    <errorIgnored>false</errorIgnored>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>VPLExtractMeterProducts</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>071bb64d-dafe-dc2e-13a1-9447dff28b68</globalKey>
+        <inputFieldName>Meter:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-ExtractMeterProducts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Meter:MeterId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bddfaa5b-3ebe-bc28-0b3e-c964c69928a9</globalKey>
+        <inputFieldName>Meter:vlocity_cmt__ServicePointId__r.vlocity_cmt__ServicePointNumber__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-ExtractMeterProducts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Meter:IntsallationNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>InventoryId</filterValue>
+        <globalKey>c452ca1c-6028-c49c-0505-35e86ac2e9da</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>vlocity_cmt__InventoryItem__c</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-ExtractMeterProducts</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Meter</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>44639bdf-9caf-7320-cb44-cde32802c36a</globalKey>
+        <inputFieldName>Meter:vlocity_cmt__SerialNumber__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-ExtractMeterProducts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Meter:SerialNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a120fb1c-0f3d-7451-f0e7-33abf0bf567d</globalKey>
+        <inputFieldName>Meter:vlocity_cmt__ProductId__r.Family</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-ExtractMeterProducts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Meter:ProductFamily</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c7c68807-1c03-e2f4-b0a9-83371a4d40f4</globalKey>
+        <inputFieldName>Meter:vlocity_cmt__ProductId__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>VPL-ExtractMeterProducts</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Meter:ProdId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;AvailableProductMaxRowSelection&quot; : &quot;Multiple&quot;,
+  &quot;AvialbleProductsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ProdName&quot;,
+    &quot;label&quot; : &quot;Product Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdFamily&quot;,
+    &quot;label&quot; : &quot;Product Family&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdCategory&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ProdDescription&quot;,
+    &quot;label&quot; : &quot;Description&quot;
+  } ],
+  &quot;BankPaymentDetails&quot; : {
+    &quot;BankDetails&quot; : {
+      &quot;BankAccountName&quot; : &quot;Aksh&quot;,
+      &quot;BankAccountNumber&quot; : &quot;221212122323&quot;,
+      &quot;BankAccountType&quot; : &quot;Checking&quot;,
+      &quot;BankName&quot; : &quot;test&quot;,
+      &quot;BankRoutingTransitNumber&quot; : &quot;655768779&quot;
+    }
+  },
+  &quot;BillingAccountId&quot; : &quot;0013h00000JOTEIAA5&quot;,
+  &quot;BillingAccountRecTypeId&quot; : &quot;0123h000000jV4IAAU&quot;,
+  &quot;BillingAccountRecordType&quot; : &quot;Billing&quot;,
+  &quot;BillingPreferences&quot; : {
+    &quot;APaymentType&quot; : &quot;Postpaid&quot;,
+    &quot;AutoPay&quot; : &quot;Yes&quot;,
+    &quot;BillNotification&quot; : &quot;No&quot;,
+    &quot;MailingAddres&quot; : null,
+    &quot;MailingAddresss&quot; : null,
+    &quot;MailingCity&quot; : null,
+    &quot;MailingCountry&quot; : null,
+    &quot;MailingState&quot; : null,
+    &quot;MailingStreet&quot; : null,
+    &quot;MailingZipCode&quot; : null,
+    &quot;OffersPromotions&quot; : &quot;No&quot;,
+    &quot;OutageNotification&quot; : &quot;No&quot;,
+    &quot;PaymentNotification&quot; : &quot;No&quot;,
+    &quot;WorkOrderNotification&quot; : &quot;No&quot;
+  },
+  &quot;BusinessAccountId&quot; : &quot;0013h00000JOTEHAA5&quot;,
+  &quot;BusinessAccountRecTypeId&quot; : &quot;0123h000000jV4HAAU&quot;,
+  &quot;BusinessAccountRecordType&quot; : &quot;Business&quot;,
+  &quot;ChoosePaymentMethod&quot; : {
+    &quot;PaymentMethod&quot; : &quot;Bank Account&quot;
+  },
+  &quot;Confirmation&quot; : { },
+  &quot;CustomerSelection&quot; : {
+    &quot;AccountType&quot; : &quot;Business&quot;,
+    &quot;BillingDetails&quot; : { },
+    &quot;ConNameError&quot; : null,
+    &quot;ExistingAccount-Block&quot; : null,
+    &quot;GetCustomer-Block&quot; : null,
+    &quot;MoveInDate&quot; : &quot;2020-09-15T18:30:00.000Z&quot;,
+    &quot;MoveInDateFormula&quot; : true,
+    &quot;MoveInMessage&quot; : true,
+    &quot;MsgInvalidExistingAccount&quot; : null,
+    &quot;MsgInvalidParentAccount&quot; : null,
+    &quot;NewAccountNeeded&quot; : null,
+    &quot;NewCustomer&quot; : &quot;Yes&quot;,
+    &quot;NewCustomerDetails&quot; : {
+      &quot;BusinessAccountName&quot; : &quot;rolly rames&quot;,
+      &quot;CustomerDOB&quot; : &quot;08/05/2020&quot;,
+      &quot;CustomerEmail&quot; : &quot;test@tt.co&quot;,
+      &quot;CustomerFirstName&quot; : &quot;rolly&quot;,
+      &quot;CustomerLastName&quot; : &quot;rames&quot;,
+      &quot;CustomerPhone&quot; : &quot;0767887878&quot;,
+      &quot;DOBFormula&quot; : true,
+      &quot;DOBMsg&quot; : true,
+      &quot;DriverLicense&quot; : null,
+      &quot;IdentificationType&quot; : &quot;TaxID&quot;,
+      &quot;SSN&quot; : null,
+      &quot;TaxId&quot; : &quot;212132123&quot;
+    },
+    &quot;ParentAccount-Block&quot; : {
+      &quot;ParentAccount&quot; : null
+    },
+    &quot;TaxDetails&quot; : {
+      &quot;ExemptionEndDate&quot; : null,
+      &quot;ExemptionPercentage&quot; : null,
+      &quot;ExemptionStartDate&quot; : null
+    }
+  },
+  &quot;DRId_Account&quot; : &quot;0013h00000JOTEMAA5&quot;,
+  &quot;DRId_Contact&quot; : &quot;0033h00000DWvMAAA1&quot;,
+  &quot;ERPAccountID__c&quot; : 6011110,
+  &quot;ERP_Contract_ID__c&quot; : 2334455,
+  &quot;Error&quot; : { },
+  &quot;IntegrationType&quot; : &quot;JSON&quot;,
+  &quot;OmniscriptType&quot; : &quot;Move_In&quot;,
+  &quot;PaymentDetails&quot; : null,
+  &quot;PreConfirm&quot; : {
+    &quot;Confirm&quot; : &quot;Yes&quot;
+  },
+  &quot;Products&quot; : {
+    &quot;ElectricityProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7WAAS&quot;,
+      &quot;Name&quot; : &quot;Day/Night Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;001&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7gAAC&quot;,
+      &quot;Name&quot; : &quot;Night Display Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;003&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7bAAC&quot;,
+      &quot;Name&quot; : &quot;High Voltage Tariff&quot;,
+      &quot;ProductCode&quot; : &quot;002&quot;
+    } ],
+    &quot;GasProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7lAAC&quot;,
+      &quot;Name&quot; : &quot;Turn Off Order&quot;,
+      &quot;ProductCode&quot; : &quot;004&quot;
+    }, {
+      &quot;Id&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;Name&quot; : &quot;Regulated Gas Rate&quot;,
+      &quot;ProductCode&quot; : &quot;REG-GAS-1&quot;
+    } ],
+    &quot;WaterProduct&quot; : [ {
+      &quot;Id&quot; : &quot;01t3h000001Ck7vAAC&quot;,
+      &quot;Name&quot; : &quot;Water&quot;,
+      &quot;ProductCode&quot; : &quot;water&quot;
+    } ]
+  },
+  &quot;RecordType&quot; : [ {
+    &quot;Id&quot; : &quot;0123h000000jV4JAAU&quot;,
+    &quot;Name&quot; : &quot;Service&quot;
+  } ],
+  &quot;SObjectName&quot; : &quot;Account&quot;,
+  &quot;SelectPremises&quot; : {
+    &quot;NewAccountPremises&quot; : null,
+    &quot;PremiseError&quot; : null,
+    &quot;ServiceLocation-Block&quot; : {
+      &quot;PremCity&quot; : &quot;Kolkata&quot;,
+      &quot;PremCountry&quot; : &quot;India&quot;,
+      &quot;PremId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;PremPostalCode&quot; : &quot;700059&quot;,
+      &quot;PremState&quot; : &quot;West Bengal&quot;,
+      &quot;PremiseName&quot; : &quot;Coventry premise&quot;,
+      &quot;PremiseStreetAddress&quot; : &quot;Akshara Lotus Garden Coevtry&quot;,
+      &quot;ServiceLocation&quot; : &quot;Coventry premise&quot;
+    }
+  },
+  &quot;SelectService&quot; : [ {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDVEAY&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wGEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Electricity&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDQEAY&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wHEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Water&quot;,
+    &quot;ServiceType&quot; : &quot;Water&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  } ],
+  &quot;SelectServicePoints&quot; : [ {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDVEAY&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wGEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Electricity&quot;,
+    &quot;ServiceType&quot; : &quot;Electricity&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  }, {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDQEAY&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059wHEAQ&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Water&quot;,
+    &quot;ServiceType&quot; : &quot;Water&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;
+  } ],
+  &quot;SelectTypeofService&quot; : {
+    &quot;SelectServicePoint&quot; : null,
+    &quot;SelectServicePoints&quot; : [ {
+      &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+      &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+      &quot;ProductId&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+      &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+      &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+      &quot;ServiceType&quot; : &quot;Gas&quot;,
+      &quot;Status&quot; : &quot;Connected&quot;,
+      &quot;originalIndex&quot; : &quot;0&quot;
+    } ],
+    &quot;ServicePointsFormula&quot; : 1
+  },
+  &quot;SelectedPremises&quot; : &quot;a3X3h0000006OviEAE&quot;,
+  &quot;SelectedServiceData&quot; : [ {
+    &quot;InventoryItemId&quot; : &quot;a2O3h000000hrDaEAI&quot;,
+    &quot;PremisesId&quot; : &quot;a3X3h0000006OviEAE&quot;,
+    &quot;ProductId&quot; : &quot;01t3h000001Ck7qAAC&quot;,
+    &quot;ServicePointId&quot; : &quot;a4P3h00000059waEAA&quot;,
+    &quot;ServicePointName&quot; : &quot;Coventry Gas&quot;,
+    &quot;ServiceType&quot; : &quot;Gas&quot;,
+    &quot;Status&quot; : &quot;Connected&quot;,
+    &quot;originalIndex&quot; : &quot;0&quot;
+  } ],
+  &quot;SelectedServiceMaxRow&quot; : &quot;&quot;,
+  &quot;ServiceAccountId&quot; : &quot;0013h00000JOTEMAA5&quot;,
+  &quot;ServiceAccountPremisesColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;SrevicePremisesId&quot;,
+    &quot;label&quot; : &quot;SrevicePremisesId&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;AccountName&quot;,
+    &quot;label&quot; : &quot;Account Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;PremisesName&quot;,
+    &quot;label&quot; : &quot;Premise Address&quot;
+  } ],
+  &quot;ServiceAccountPremisesMaxRowSelection&quot; : &quot;Single&quot;,
+  &quot;ServiceAccountRecTypeId&quot; : &quot;0123h000000jV4JAAU&quot;,
+  &quot;ServiceAccountRecordType&quot; : &quot;Service&quot;,
+  &quot;ServicePointsColumns&quot; : [ {
+    &quot;fieldName&quot; : &quot;ServicePointName&quot;,
+    &quot;label&quot; : &quot;Service Point Name&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;ServiceType&quot;,
+    &quot;label&quot; : &quot;Service Type&quot;
+  }, {
+    &quot;fieldName&quot; : &quot;SelectProduct&quot;,
+    &quot;label&quot; : &quot;Select Product&quot;
+  } ],
+  &quot;ServicePointsError&quot; : null,
+  &quot;ServicePremises&quot; : null,
+  &quot;createResidentialAccount_Msg&quot; : &quot;Contract created in SAP successfully..!&quot;,
+  &quot;timeStamp&quot; : &quot;2020-09-02T06:49:23.409Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0053h000002WfuuAAC&quot;,
+  &quot;userName&quot; : &quot;express_org_sebanti@org.dev&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;BankPaymentDetails&quot; : 18958,
+    &quot;BillingPreferences&quot; : 28991,
+    &quot;ChoosePaymentMethod&quot; : 7625,
+    &quot;ConfirmUserActionError&quot; : 5100,
+    &quot;CreateBankAccountPaymentMethod&quot; : 0,
+    &quot;CreateCreditCardPaymentMethod&quot; : 0,
+    &quot;CustomerSelection&quot; : 48953,
+    &quot;DR-GetProducts&quot; : 647,
+    &quot;DRCreatServiceAccount&quot; : 2911,
+    &quot;DRCreateBillingAccount&quot; : 2723,
+    &quot;DRCreateBusinessAccount&quot; : 2431,
+    &quot;DRExtractBussinessAccountRecId&quot; : 695,
+    &quot;DRFetchBillingAccountRecTypeId&quot; : 663,
+    &quot;DRFetchDesiredRecordType&quot; : 1206,
+    &quot;DRFetchServiceAccountRecTypeId&quot; : 613,
+    &quot;DRInsertContact&quot; : 2172,
+    &quot;ExtractMeterSerialNumber&quot; : 1529,
+    &quot;ExtractServiceAccountPremises&quot; : 0,
+    &quot;GetPremServicePoints&quot; : 806,
+    &quot;OmniScriptSessionToken&quot; : &quot;1c071850-998a-4a83-b429-f0e54a4c8939&quot;,
+    &quot;PaymentDetails&quot; : 4063,
+    &quot;PreConfirm&quot; : 398718,
+    &quot;SVBusinessAccountRecTypeId&quot; : 80,
+    &quot;SVSelectedServicesData&quot; : 128,
+    &quot;SVServiceAccountRecTypeId&quot; : 42,
+    &quot;SelectPremises&quot; : 13021,
+    &quot;SelectTypeofService&quot; : 4418,
+    &quot;ServicePointsError&quot; : 0,
+    &quot;SetBillingAccountId&quot; : 129,
+    &quot;SetBusinessAccountId&quot; : 139,
+    &quot;SetCustomLWCValues&quot; : 63,
+    &quot;SetDefaultValues&quot; : 47,
+    &quot;SetPremisesBusinessAccountRecTypeId&quot; : 109,
+    &quot;SetServiceAccountId&quot; : 128,
+    &quot;SetServicePointVal&quot; : 48,
+    &quot;VIPCreateBusinessPartner&quot; : 6610,
+    &quot;VIPCreateContractAccount&quot; : 2813,
+    &quot;VIPMoveInPost&quot; : 1060095
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>VPLExtractMeterProducts_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>build_identify_verification</name>
+        <label>build identify verification</label>
+        <locationX>660</locationX>
+        <locationY>195</locationY>
+        <actionName>buildIdentityVerification</actionName>
+        <actionType>buildIdentityVerification</actionType>
+        <connector>
+            <targetReference>WasCallerIdentified</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>processDefinitionName</name>
+            <value>
+                <elementReference>IdVerfProcessDefinition</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>selectedRecordId</name>
+            <value>
+                <elementReference>CallerRecordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>objectName</name>
+            <value>
+                <elementReference>CallerObjectName</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>buildIdentityVerification</nameSegment>
+        <outputParameters>
+            <assignToReference>VerificationContext</assignToReference>
+            <name>verificationContext</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Get_Verification_Data</name>
+        <label>Get Verification Data</label>
+        <locationX>889</locationX>
+        <locationY>425</locationY>
+        <actionName>getVerificationData</actionName>
+        <actionType>getVerificationData</actionType>
+        <connector>
+            <targetReference>WhoIsTheCallAbout</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>verificationContext</name>
+            <value>
+                <elementReference>VerificationContext</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>getVerificationData</nameSegment>
+        <outputParameters>
+            <assignToReference>VerificationContext</assignToReference>
+            <name>verificationContext</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>49.0</apiVersion>
+    <assignments>
+        <name>Assign_CallerRecordId_Value</name>
+        <label>Assign CallerRecordId Value</label>
+        <locationX>906</locationX>
+        <locationY>240</locationY>
+        <assignmentItems>
+            <assignToReference>CallerRecordId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Jenny_Smith.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>CallerObjectName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Account</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>build_identify_verification</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <description>The choice for calls with a medical reason.</description>
+        <name>MedicalReasonChoice</name>
+        <choiceText>{!MedicalReason}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>MedicalReason</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <description>The choice for calls with a miscellaneous  reason.</description>
+        <name>MiscellaneousReasonChoice</name>
+        <choiceText>{!MiscellaneousReason}</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>MiscellaneousReason</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <description>Stores the label to use for caller in the WhoIsTheCallAboutOptions radio button group.</description>
+        <name>SelfChoice</name>
+        <choiceText>Caller</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Caller</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <description>Stores the label to use for someone else in the WhoIsTheCallAboutOptions radio button group.</description>
+        <name>SomeoneElseChoice</name>
+        <choiceText>Someone Else</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>SomeoneElse</stringValue>
+        </value>
+    </choices>
+    <constants>
+        <description>Stores the name of the Identity Verification Process Definition record. Customize the SampleVerifiationFlow definition, create your own definition and enter its name in place of SampleVerificationFlow.</description>
+        <name>IdVerfProcessDefinition</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>SampleVerificationFlow</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the label for a call about a medical reason.</description>
+        <name>MedicalReason</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Medical</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the label for a call about a miscellaneous reason.</description>
+        <name>MiscellaneousReason</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Miscellaneous</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the heading outlining the minimum number of questions to be answered for this section.</description>
+        <name>OptionalVerifiersHeading</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Optional Verification Information</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the user instruction about the minimum number of questions to be answered for this section.</description>
+        <name>OptionalVerifiersUserInstruction</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Verify at least {0} field{1}.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>The reason for the call.</description>
+        <name>ReasonForCall</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>What’s this call about?</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the heading for the required verifiers section.</description>
+        <name>RequiredVerifiersHeading</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Required Verification Information</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the user instruction for the required verifiers section.</description>
+        <name>RequiredVerifiersUserInstruction</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Verify all the fields.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the message indicating that the caller’s identity wasn’t verified.</description>
+        <name>VerificationFailedMessage</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>The caller’s identity wasn’t verified. Do not process this caller’s request.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the text shown on the VerificationNotRequired screen when a caller doesn’t need to be verified.</description>
+        <name>VerificationNotRequiredText</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>You don’t need to verify this caller’s identity for the selected purpose, so you can now continue processing this request.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the message indicating that the caller’s identity was verified.</description>
+        <name>VerificationSucceededMessage</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>The caller’s identity was verified. Continue processing the caller’s request.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the value for the WhoIsTheCallAboutOptions radio button group screen component.</description>
+        <name>WhoIsTheCallAboutLabel</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Who Is the Call About?</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>Determines whether verification is required for the selected call reason.</description>
+        <name>RequiresVerification</name>
+        <label>Requires Verification?</label>
+        <locationX>692</locationX>
+        <locationY>782</locationY>
+        <defaultConnector>
+            <targetReference>WhoIsTheCallAbout</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Required</defaultConnectorLabel>
+        <rules>
+            <name>IsNotRequired</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Reasons</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>MiscellaneousReason</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VerificationNotRequired</targetReference>
+            </connector>
+            <label>Not Required</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines whether the caller was identified based on the information passed into the flow.</description>
+        <name>WasCallerIdentified</name>
+        <label>Caller Identified?</label>
+        <locationX>692</locationX>
+        <locationY>326</locationY>
+        <defaultConnector>
+            <targetReference>Get_Verification_Data</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>IsNotIdentified</name>
+            <conditionLogic>(1 OR 2) AND (3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>CallerRecordId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CallerRecordId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CallerObjectName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>CallerObjectName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SearchForCustomers</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Indicates whether the caller’s identity was verified.</description>
+        <name>WasVerificationSuccessful</name>
+        <label>Was Verification Successful?</label>
+        <locationX>890</locationX>
+        <locationY>1142</locationY>
+        <defaultConnector>
+            <targetReference>VerificationFailed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Failed</defaultConnectorLabel>
+        <rules>
+            <name>WasSuccessful</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VerificationStatus</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VerificationSucceeded</targetReference>
+            </connector>
+            <label>Succeeded</label>
+        </rules>
+    </decisions>
+    <description>03/27: Debarshi</description>
+    <environments>Default</environments>
+    <interviewLabel>Verify Caller Identity - DS IDOplus {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Verify Caller Identity - DS IDOplus</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Jenny_Smith</name>
+        <label>Get Jenny Smith</label>
+        <locationX>908</locationX>
+        <locationY>116</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_CallerRecordId_Value</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Jenny Smith</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <description>Tells the CCA what information must be verified for this caller.</description>
+        <name>CallerVerification</name>
+        <label>Caller Verification</label>
+        <locationX>890</locationX>
+        <locationY>1022</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>WasVerificationSuccessful</targetReference>
+        </connector>
+        <fields>
+            <name>CallerIdentityVerification</name>
+            <extensionName>industries_common:identityVerification</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>disableAction</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>optionalVerifiersSubtitleLabel</name>
+                <value>
+                    <elementReference>OptionalVerifiersUserInstruction</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>optionalVerifiersTitleLabel</name>
+                <value>
+                    <elementReference>OptionalVerifiersHeading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>subtitleLabel</name>
+                <value>
+                    <elementReference>RequiredVerifiersUserInstruction</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>titleLabel</name>
+                <value>
+                    <elementReference>RequiredVerifiersHeading</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>verificationStatus</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>verificationContext</name>
+                <value>
+                    <elementReference>VerificationContext</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>VerificationStatus</assignToReference>
+                <name>verificationStatus</name>
+            </outputParameters>
+            <outputParameters>
+                <assignToReference>VerificationContext</assignToReference>
+                <name>verificationContext</name>
+            </outputParameters>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>The reason why the customer is calling.</description>
+        <name>CallReason</name>
+        <label>Reason for Call</label>
+        <locationX>693</locationX>
+        <locationY>662</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>RequiresVerification</targetReference>
+        </connector>
+        <fields>
+            <name>Reasons</name>
+            <choiceReferences>MiscellaneousReasonChoice</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>{!ReasonForCall}</fieldText>
+            <fieldType>MultiSelectCheckboxes</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Displays the Search for Caller flow screen component that allows a CCA to search for a user in the system.</description>
+        <name>SearchForCustomers</name>
+        <label>Search Customers</label>
+        <locationX>560</locationX>
+        <locationY>446</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>CallReason</targetReference>
+        </connector>
+        <fields>
+            <name>SearchCustomers</name>
+            <extensionName>industries_common:identitySearchPanel</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>verificationContext</name>
+                <value>
+                    <elementReference>VerificationContext</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>VerificationContext</assignToReference>
+                <name>verificationContext</name>
+            </outputParameters>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Displays a message to the user indicating that the caller’s identity wasn’t verified.</description>
+        <name>VerificationFailed</name>
+        <label>Verification Failed</label>
+        <locationX>1022</locationX>
+        <locationY>1262</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>VerificationFailedDisplayText</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 20px;&quot;&gt;{!VerificationFailedMessage}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Skips the verification process.</description>
+        <name>VerificationNotRequired</name>
+        <label>Verification Not Required</label>
+        <locationX>494</locationX>
+        <locationY>902</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>VerificationNotRequiredDisplayText</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;{!VerificationNotRequiredText}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Displays a message to the user indicating that the caller’s identity was verified.</description>
+        <name>VerificationSucceeded</name>
+        <label>Verification Succeeded</label>
+        <locationX>758</locationX>
+        <locationY>1262</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>VerificationSucceededDisplayText</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 20px;&quot;&gt;﻿{!VerificationSucceededMessage}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <description>Allows the user to select the person the call is about.</description>
+        <name>WhoIsTheCallAbout</name>
+        <label>Who’s the Call About?</label>
+        <locationX>890</locationX>
+        <locationY>902</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>CallerVerification</targetReference>
+        </connector>
+        <fields>
+            <name>WhoIsTheCallAboutOptions</name>
+            <choiceReferences>SelfChoice</choiceReferences>
+            <choiceReferences>SomeoneElseChoice</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>{!WhoIsTheCallAboutLabel}</fieldText>
+            <fieldType>RadioButtons</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>566</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Get_Jenny_Smith</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Stores the API name of the caller&apos;s object.</description>
+        <name>CallerObjectName</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the record ID of the caller.</description>
+        <name>CallerRecordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the identity verification context for the caller using the specified identity verification process definition.</description>
+        <name>VerificationContext</name>
+        <apexClass>id_verification__VerificationContext</apexClass>
+        <dataType>Apex</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the status of the verification.</description>
+        <name>VerificationStatus</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+</Flow>

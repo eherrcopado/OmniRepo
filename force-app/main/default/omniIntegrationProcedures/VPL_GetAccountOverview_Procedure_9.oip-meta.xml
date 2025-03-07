@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;Id&quot;:&quot;0015i00000jXPF2AAO&quot;,&quot;OverViewSummary&quot;:&quot;true&quot;}</customJavaScript>
+    <description>Account overview VIP used in CustomerInteraction and Account record page using vplEnergyOverviewSummary layout</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>VPL/GetAccountOverview</name>
+    <omniProcessElements>
+        <description>Fetch Account &amp; Contact Id</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FetchAccount_ContactId</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;disableChainable&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;integrationProcedureKey&quot; : &quot;VPL_GetCustomerAccountContact&quot;,
+  &quot;label&quot; : &quot;IntegrationProcedureAction1&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Integration Procedure Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetAccountOverviewResponse</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;additionalOutput&quot; : { },
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;ResponseAction1&quot;,
+  &quot;responseDefaultData&quot; : { },
+  &quot;responseFormat&quot; : &quot;JSON&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnFullDataJSON&quot; : true,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true,
+  &quot;vlcResponseHeaders&quot; : { }
+}</propertySetConfig>
+        <sequenceNumber>15.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <description>Get the account details of a business account and its child billing account.</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DRGetAccountDetails</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;VPLGetAccountOverviewDetails&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;FetchAccount_ContactId:AccountId&quot;,
+    &quot;inputParam&quot; : &quot;Id&quot;
+  } ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction2&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>DataRaptor Extract Action</type>
+        </childElements>
+        <childElements>
+            <description>Get the account statement of a billing account related to business account. The billing account can be of current business account or parent business account.</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DRGetAccountLastStatement</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;BillingAccountId&quot; : &quot;=IF(%SVAccountDetails:BillingAccountId%!=null,%SVAccountDetails:BillingAccountId%,null)&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;VPLGetAccountOverviewLastStatement&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction3&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>10.0</sequenceNumber>
+            <type>DataRaptor Extract Action</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DRGetContract</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;VPLGetContractList&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;FetchAccount_ContactId:AccountId&quot;,
+    &quot;inputParam&quot; : &quot;Id&quot;
+  } ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction6&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>5.0</sequenceNumber>
+            <type>DataRaptor Extract Action</type>
+        </childElements>
+        <childElements>
+            <description>Get the premise detail of a particular service account related to business account.</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DRGetPremiseDetails</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;RecordTypeName&quot; : &quot;%FetchAccount_ContactId:AccountRecordType%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;VPLGetServiceAccountDetails&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;FetchAccount_ContactId:AccountId&quot;,
+    &quot;inputParam&quot; : &quot;Id&quot;
+  } ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>DataRaptor Extract Action</type>
+        </childElements>
+        <childElements>
+            <description>This Remote Action will call apex class only if current business account will not have any billing account.</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>GetBillingAccount</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;CurrentBusinessAccountId&quot; : &quot;%DRGetAccountDetails:BusinessAccountId%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%DRGetAccountDetails:BillingAccountId%=null &amp;&amp; %FetchAccount_ContactId:AccountRecordType%=\&quot;Business\&quot;&quot;,
+  &quot;failOnStepError&quot; : false,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction1&quot;,
+  &quot;remoteClass&quot; : &quot;vlocity_cmt.VEEAppHandler&quot;,
+  &quot;remoteMethod&quot; : &quot;getBillingAccountDetails&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>8.0</sequenceNumber>
+            <type>Remote Action</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>DRGetServicePoint</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;PremiseCity&quot; : &quot;%DRGetPremiseDetails:ServiceAccount:PremiseCity%&quot;,
+    &quot;PremiseId&quot; : &quot;%DRGetPremiseDetails:ServiceAccount:PremiseId%&quot;,
+    &quot;PremisePostalCode&quot; : &quot;%DRGetPremiseDetails:ServiceAccount:PremisePostalCode%&quot;,
+    &quot;PremiseState&quot; : &quot;%DRGetPremiseDetails:ServiceAccount:PremiseState%&quot;,
+    &quot;PremiseStreet&quot; : &quot;%DRGetPremiseDetails:ServiceAccount:PremiseAddress%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;VPLGetServicePoints&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%DRGetPremiseDetails:ServiceAccount:PremiseId%!=null&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction5&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>7.0</sequenceNumber>
+                <type>DataRaptor Extract Action</type>
+            </childElements>
+            <description>This loop block will get the service point count and premise details for console 360 degree.</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>GetServiceAccountPremiseDetails</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;LoopBlock2&quot;,
+  &quot;loopList&quot; : &quot;DRGetPremiseDetails:ServiceAccount&quot;,
+  &quot;loopOutput&quot; : {
+    &quot;PremiseAddress&quot; : &quot;%DRGetServicePoint:PremiseAddress%&quot;,
+    &quot;PremiseId&quot; : &quot;%DRGetPremiseDetails:ServiceAccount:PremiseId%&quot;,
+    &quot;ServicePointCount&quot; : &quot;%DRGetServicePoint:ServicePointCount%&quot;,
+    &quot;ServicePointStatus&quot; : &quot;%DRGetServicePoint:ServicePointStatus%&quot;
+  },
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Loop Block</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>SVAccountDetails</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;AccountCreatedDate&quot; : &quot;=CONCAT(%DRGetAccountDetails:AccountCreatedDate%,\&quot; - \&quot;,\&quot;Present\&quot;)&quot;,
+    &quot;BillingAccountId&quot; : &quot;=IF(%DRGetAccountDetails:BillingAccountId%!=null,%DRGetAccountDetails:BillingAccountId%,%GetBillingAccount:getBillingAccountDetails:BillingId%)&quot;,
+    &quot;BillingAccountName&quot; : &quot;=IF(%DRGetAccountDetails:BillingAccountName%!=null,%DRGetAccountDetails:BillingAccountName%,%GetBillingAccount:getBillingAccountDetails:BillingAccountName%)&quot;,
+    &quot;BusinessAccountId&quot; : &quot;=%DRGetAccountDetails:BusinessAccountId%&quot;,
+    &quot;ContractExpiringIn90Days&quot; : &quot;=IF(%DRGetContract:CountOfContractEndIn90Days%==1,true,false)&quot;,
+    &quot;CustomerId&quot; : &quot;=%DRGetAccountDetails:CustomerId%&quot;,
+    &quot;OpportunityCount&quot; : &quot;=%DRGetAccountDetails:OpportunityCount%&quot;,
+    &quot;PremisesCount&quot; : &quot;=LISTSIZE(%DRGetPremiseDetails:ServiceAccount%)&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>9.0</sequenceNumber>
+            <type>Set Values</type>
+        </childElements>
+        <description>This block will execute for first 3 card(Customer card, Premise, Payment) present in the overview tab</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>OverViewBlock</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%OverViewSummary%==true&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock1&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Conditional Block</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <description>Get the asset details of a particular business account.</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>DRGetAccountAsset</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;BusinessAccountId&quot; : &quot;=%FetchAccount_ContactId:AccountId%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;VPLGetAccountOverviewAssets&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%FetchAccount_ContactId:AccountId%!=null&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction3&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>12.0</sequenceNumber>
+            <type>DataRaptor Extract Action</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>DRTransformServices</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : {
+    &quot;AccountId&quot; : &quot;=%FetchAccount_ContactId:AccountId%&quot;,
+    &quot;Active&quot; : &quot;%DRGetAccountAsset:AssetDetail:Active%&quot;,
+    &quot;AssetId&quot; : &quot;%DRGetAccountAsset:AssetDetail:AssetId%&quot;,
+    &quot;BillingAccountName&quot; : &quot;%DRGetAccountAsset:AssetDetail:BillingAccountName%&quot;,
+    &quot;BillingHold&quot; : &quot;%DRGetAccountAsset:AssetDetail:BillingHold%&quot;,
+    &quot;ContactName&quot; : &quot;%DRGetAccountAsset:AssetDetail:ContactName%&quot;,
+    &quot;ContractName&quot; : &quot;%DRGetAccountAsset:AssetDetail:ContractName%&quot;,
+    &quot;ContractNumber&quot; : &quot;%DRGetAccountAsset:AssetDetail:ContractNumber%&quot;,
+    &quot;CurrentUsage&quot; : &quot;%DRGetAccountAsset:AssetDetail:CurrentUsage%&quot;,
+    &quot;DeRegulationStatus&quot; : &quot;%DRGetAccountAsset:AssetDetail:DeRegulationStatus%&quot;,
+    &quot;Description&quot; : &quot;%DRGetAccountAsset:AssetDetail:Description%&quot;,
+    &quot;DisconnectDate&quot; : &quot;%DRGetAccountAsset:AssetDetail:DisconnectDate%&quot;,
+    &quot;InstalledDate&quot; : &quot;%DRGetAccountAsset:AssetDetail:InstalledDate%&quot;,
+    &quot;InventoryItem&quot; : &quot;%DRGetAccountAsset:AssetDetail:InventoryItem%&quot;,
+    &quot;Market Identifier&quot; : &quot;%DRGetAccountAsset:AssetDetail:Market Identifier%&quot;,
+    &quot;Name&quot; : &quot;%DRGetAccountAsset:AssetDetail:Name%&quot;,
+    &quot;OrderNumber&quot; : &quot;%DRGetAccountAsset:AssetDetail:OrderNumber%&quot;,
+    &quot;PremiseName&quot; : &quot;%DRGetAccountAsset:AssetDetail:PremiseName%&quot;,
+    &quot;ProductFamily&quot; : &quot;%DRGetAccountAsset:AssetDetail:ProductFamily%&quot;,
+    &quot;ProductName&quot; : &quot;%DRGetAccountAsset:AssetDetail:ProductName%&quot;,
+    &quot;ProvisioningStatus&quot; : &quot;%DRGetAccountAsset:AssetDetail:ProvisioningStatus%&quot;,
+    &quot;RootItemId&quot; : &quot;%DRGetAccountAsset:AssetDetail:RootItemId%&quot;,
+    &quot;SerialNumber&quot; : &quot;%DRGetAccountAsset:AssetDetail:SerialNumber%&quot;,
+    &quot;ServiceAccountName&quot; : &quot;%DRGetAccountAsset:AssetDetail:ServiceAccountName%&quot;,
+    &quot;ServicePoint&quot; : &quot;%DRGetAccountAsset:AssetDetail:ServicePoint%&quot;,
+    &quot;Status&quot; : &quot;%DRGetAccountAsset:AssetDetail:Status%&quot;,
+    &quot;UsageUnit&quot; : &quot;%DRGetAccountAsset:AssetDetail:UsageUnit%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;VPLTransformServices&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorTransformAction3&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+                <sequenceNumber>14.0</sequenceNumber>
+                <type>DataRaptor Transform Action</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>GetServices</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;LoopBlock2&quot;,
+  &quot;loopList&quot; : &quot;DRGetAccountAsset:AssetDetail&quot;,
+  &quot;loopOutput&quot; : {
+    &quot;Active&quot; : &quot;%DRTransformServices:Active%&quot;,
+    &quot;BillingAccountName&quot; : &quot;%DRTransformServices:BillingAccountName%&quot;,
+    &quot;BillingHold&quot; : &quot;%DRTransformServices:BillingHold%&quot;,
+    &quot;ChangeToOrderUrl&quot; : &quot;%DRTransformServices:ChangeToOrderUrl%&quot;,
+    &quot;ChangeToQuoteUrl&quot; : &quot;%DRTransformServices:ChangeToQuoteUrl%&quot;,
+    &quot;ContactName&quot; : &quot;%DRTransformServices:ContactName%&quot;,
+    &quot;ContractName&quot; : &quot;%DRTransformServices:ContractName%&quot;,
+    &quot;ContractNumber&quot; : &quot;%DRTransformServices:ContractNumber%&quot;,
+    &quot;CurrentUsage&quot; : &quot;%DRTransformServices:CurrentUsage%&quot;,
+    &quot;DeRegulationStatus&quot; : &quot;%DRTransformServices:DeRegulationStatus%&quot;,
+    &quot;Description&quot; : &quot;%DRTransformServices:Description%&quot;,
+    &quot;DisconnectDate&quot; : &quot;%DRTransformServices:DisconnectDate%&quot;,
+    &quot;InstalledDate&quot; : &quot;%DRTransformServices:InstalledDate%&quot;,
+    &quot;InventoryItem&quot; : &quot;%DRTransformServices:InventoryItem%&quot;,
+    &quot;Market Identifier&quot; : &quot;%DRTransformServices:Market Identifier%&quot;,
+    &quot;MoveUrl&quot; : &quot;%DRTransformServices:MoveUrl%&quot;,
+    &quot;Name&quot; : &quot;%DRTransformServices:Name%&quot;,
+    &quot;OrderNumber&quot; : &quot;%DRTransformServices:OrderNumber%&quot;,
+    &quot;PremiseName&quot; : &quot;%DRTransformServices:PremiseName%&quot;,
+    &quot;ProductFamily&quot; : &quot;%DRTransformServices:ProductFamily%&quot;,
+    &quot;ProductName&quot; : &quot;%DRTransformServices:ProductName%&quot;,
+    &quot;ProvisioningStatus&quot; : &quot;%DRTransformServices:ProvisioningStatus%&quot;,
+    &quot;RootItemId&quot; : &quot;%DRTransformServices:RootItemId%&quot;,
+    &quot;SerialNumber&quot; : &quot;%DRTransformServices:SerialNumber%&quot;,
+    &quot;ServiceAccountName&quot; : &quot;%DRTransformServices:ServiceAccountName%&quot;,
+    &quot;ServicePoint&quot; : &quot;%DRTransformServices:ServicePoint%&quot;,
+    &quot;Status&quot; : &quot;%DRTransformServices:Status%&quot;
+  },
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>13.0</sequenceNumber>
+            <type>Loop Block</type>
+        </childElements>
+        <description>This block will execute for services card present in the overview tab</description>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>ServicesBlock</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%OverviewServices%==true&quot;,
+  &quot;isIfElseBlock&quot; : false,
+  &quot;label&quot; : &quot;ConditionalBlock2&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>11.0</sequenceNumber>
+        <type>Conditional Block</type>
+    </omniProcessElements>
+    <omniProcessKey>VPL_GetAccountOverview</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 5000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>GetAccountOverview</subType>
+    <type>VPL</type>
+    <uniqueName>VPL_GetAccountOverview_Procedure_9</uniqueName>
+    <versionNumber>9.0</versionNumber>
+    <webComponentKey>b25b7a03-1807-23b1-054e-c89494ede414</webComponentKey>
+</OmniIntegrationProcedure>

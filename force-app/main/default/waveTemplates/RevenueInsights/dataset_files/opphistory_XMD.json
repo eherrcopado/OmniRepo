@@ -1,0 +1,87 @@
+{
+    "dates": [],
+    "derivedDimensions": [],
+    "derivedMeasures": [
+        {
+            "conditionalFormatting": {},
+            "field": "change",
+            "format": {
+                "customFormat": "[\"$#,###\",1]",
+                "delimiters": {}
+            },
+            "showInExplorer": true
+        },
+        {
+            "conditionalFormatting": {},
+            "field": "percent_change",
+            "format": {
+                "customFormat": "[\"#,###%\",100]",
+                "delimiters": {}
+            },
+            "showInExplorer": true
+        },
+        {
+            "conditionalFormatting": {},
+            "field": "gap_to_quota_change",
+            "format": {
+                "customFormat": "[\"#,###%\",100]",
+                "delimiters": {}
+            },
+            "showInExplorer": true
+        },
+        {
+            "conditionalFormatting": {},
+            "field": "pipe_coverage_change",
+            "format": {
+                "customFormat": "[\"#,###%\",100]",
+                "delimiters": {}
+            },
+            "showInExplorer": true
+        }
+    ],
+    "dimensions": [
+        {
+            "conditionalFormatting": {},
+            "customActions": [],
+            "field": "OpportunityId",
+            "linkTemplateEnabled": false,
+            "members": [],
+            "recordDisplayFields": [],
+            "recordIdField": "OpportunityId",
+            "salesforceActions": [],
+            "salesforceActionsEnabled": false
+        },
+        {
+            "conditionalFormatting": {},
+            "customActions": [],
+            "field": "Opp.Name",
+            "label": "Opportunity Name",
+            "linkTemplate": "/{{row.OpportunityId}}",
+            "linkTemplateEnabled": true,
+            "members": [],
+            "recordDisplayFields": [],
+            "recordIdField": "OpportunityId",
+            "salesforceActions": [],
+            "salesforceActionsEnabled": true
+        }
+    ],
+    "measures": [
+        {
+            "field": "${Constants.HistoricalAmount}",
+            "format": {
+                "customFormat": "[\"$#,###\",1]",
+                "delimiters": {}
+            }
+        },
+        {
+            "field": "Opp.${Variables.Opportunity_Amount.fieldName}",
+            "format": {
+                "customFormat": "[\"$#,###\",1]",
+                "delimiters": {}
+            },
+            "label": "Current Opportunity Amount"
+        }
+    ],
+    "organizations": [],
+    "showDetailsDefaultFields": []
+}

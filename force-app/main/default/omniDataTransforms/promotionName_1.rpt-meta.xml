@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;messages&quot; : [ ],
+  &quot;records&quot; : [ {
+    &quot;vlocity_cmt__AppliesToAllItems__c&quot; : false,
+    &quot;vlocity_cmt__Code__c&quot; : &quot;I001&quot;,
+    &quot;vlocity_cmt__Description__c&quot; : &quot;Promotion for iphone&quot;,
+    &quot;vlocity_cmt__DurationUnitOfMeasure__c&quot; : &quot;Month&quot;,
+    &quot;Id&quot; : &quot;a3S4W000000cTkvUAE&quot;,
+    &quot;Name&quot; : &quot;iphone Promotion&quot;,
+    &quot;RecordTypeId&quot; : &quot;0124W000000lXKRQA2&quot;,
+    &quot;actions&quot; : {
+      &quot;addtocart&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;8014W000000hfF3QAI&quot;,
+            &quot;items&quot; : [ {
+              &quot;itemId&quot; : &quot;a3S4W000000cTkvUAE&quot;
+            } ],
+            &quot;methodName&quot; : &quot;postCartsPromoItems&quot;,
+            &quot;promotionId&quot; : &quot;a3S4W000000cTkvUAE&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : null,
+          &quot;method&quot; : null,
+          &quot;params&quot; : { }
+        }
+      },
+      &quot;validatecart&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;8014W000000hfF3QAI&quot;,
+            &quot;methodName&quot; : &quot;runCartValidation&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : &quot;/services/apexrest/vlocity_cmt/v2/cpq/carts/8014W000000hfF3QAI/validate&quot;,
+          &quot;method&quot; : &quot;POST&quot;,
+          &quot;params&quot; : { }
+        }
+      }
+    },
+    &quot;category&quot; : &quot;Qualified&quot;,
+    &quot;code&quot; : &quot;I001&quot;,
+    &quot;description&quot; : &quot;Promotion for iphone&quot;,
+    &quot;displaySequence&quot; : 0,
+    &quot;id&quot; : &quot;a3S4W000000cTkvUAE&quot;,
+    &quot;messages&quot; : [ ],
+    &quot;name&quot; : &quot;iphone Promotion&quot;
+  } ],
+  &quot;totalSize&quot; : 1
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;messages&quot; : [ ],
+  &quot;records&quot; : [ {
+    &quot;vlocity_cmt__AppliesToAllItems__c&quot; : false,
+    &quot;vlocity_cmt__Code__c&quot; : &quot;I001&quot;,
+    &quot;vlocity_cmt__Description__c&quot; : &quot;Promotion for iphone&quot;,
+    &quot;vlocity_cmt__DurationUnitOfMeasure__c&quot; : &quot;Month&quot;,
+    &quot;Id&quot; : &quot;a3S4W000000cTkvUAE&quot;,
+    &quot;Name&quot; : &quot;iphone Promotion&quot;,
+    &quot;RecordTypeId&quot; : &quot;0124W000000lXKRQA2&quot;,
+    &quot;actions&quot; : {
+      &quot;addtocart&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;8014W000000hfF3QAI&quot;,
+            &quot;items&quot; : [ {
+              &quot;itemId&quot; : &quot;a3S4W000000cTkvUAE&quot;
+            } ],
+            &quot;methodName&quot; : &quot;postCartsPromoItems&quot;,
+            &quot;promotionId&quot; : &quot;a3S4W000000cTkvUAE&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : null,
+          &quot;method&quot; : null,
+          &quot;params&quot; : { }
+        }
+      },
+      &quot;validatecart&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;8014W000000hfF3QAI&quot;,
+            &quot;methodName&quot; : &quot;runCartValidation&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : &quot;/services/apexrest/vlocity_cmt/v2/cpq/carts/8014W000000hfF3QAI/validate&quot;,
+          &quot;method&quot; : &quot;POST&quot;,
+          &quot;params&quot; : { }
+        }
+      }
+    },
+    &quot;category&quot; : &quot;Qualified&quot;,
+    &quot;code&quot; : &quot;I001&quot;,
+    &quot;description&quot; : &quot;Promotion for iphone&quot;,
+    &quot;displaySequence&quot; : 0,
+    &quot;id&quot; : &quot;a3S4W000000cTkvUAE&quot;,
+    &quot;messages&quot; : [ ],
+    &quot;name&quot; : &quot;iphone Promotion&quot;
+  } ],
+  &quot;totalSize&quot; : 1
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>promotionName</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:records:name ISBLANK &quot;&quot; &quot;In/\/\/Promotions/\/\/-/\/\/&quot; var:records:name + IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(records:name),&quot;&quot;,&quot;In Promotions - &quot;+records:name)</formulaExpression>
+        <formulaResultPath>records:name</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>promotionName6854082055805621</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName5581966916647614</globalKey>
+        <inputFieldName>records:vlocity_cmt__AppliesToAllItems__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:vlocity_cmt__AppliesToAllItems__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName37372364289673166</globalKey>
+        <inputFieldName>records:code</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:vlocity_cmt__Code__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName6161294636855787</globalKey>
+        <inputFieldName>records:vlocity_cmt__Description__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:vlocity_cmt__Description__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName39289564880111283</globalKey>
+        <inputFieldName>records:vlocity_cmt__DurationUnitOfMeasure__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:vlocity_cmt__DurationUnitOfMeasure__c</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName25154718445979696</globalKey>
+        <inputFieldName>records:id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName10348187182828927</globalKey>
+        <inputFieldName>records:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:Name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName12160351687509197</globalKey>
+        <inputFieldName>records:actions:addtocart:client:params</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:addtocart:client:params</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName12609982840522638</globalKey>
+        <inputFieldName>records:actions:addtocart:remote:params:cartId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:addtocart:remote:params:cartId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName7153640341926966</globalKey>
+        <inputFieldName>records:actions:addtocart:remote:params:items:itemId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:addtocart:remote:params:items:itemId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName33498057443360985</globalKey>
+        <inputFieldName>totalSize</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>totalSize</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName3991134371435012</globalKey>
+        <inputFieldName>records:actions:addtocart:rest:method</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:addtocart:rest:method</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName8396203079122879</globalKey>
+        <inputFieldName>records:actions:addtocart:remote:params:methodName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:addtocart:remote:params:methodName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName44018988402165604</globalKey>
+        <inputFieldName>records:actions:addtocart:remote:params:promotionId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:addtocart:remote:params:promotionId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName07637007109057126</globalKey>
+        <inputFieldName>records:RecordTypeId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:RecordTypeId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName49637617049072835</globalKey>
+        <inputFieldName>records:actions:validatecart:client:params</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:validatecart:client:params</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName8332838371437847</globalKey>
+        <inputFieldName>records:actions:validatecart:remote:params:cartId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:validatecart:remote:params:cartId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName34173979315990954</globalKey>
+        <inputFieldName>records:actions:validatecart:remote:params:methodName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:validatecart:remote:params:methodName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName9144041837837833</globalKey>
+        <inputFieldName>records:actions:addtocart:rest:link</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:addtocart:rest:link</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName7738001370084553</globalKey>
+        <inputFieldName>records:name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName9179423671156735</globalKey>
+        <inputFieldName>records:vlocity_cmt__Code__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:code</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName07850538316752331</globalKey>
+        <inputFieldName>records:actions:addtocart:rest:params</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:addtocart:rest:params</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName05619425185658988</globalKey>
+        <inputFieldName>records:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName7445774018399265</globalKey>
+        <inputFieldName>records:actions:validatecart:rest:params</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:validatecart:rest:params</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName8147107427837377</globalKey>
+        <inputFieldName>records:category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:category</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName49748183565945103</globalKey>
+        <inputFieldName>records:description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:description</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName5338685006820594</globalKey>
+        <inputFieldName>records:displaySequence</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:displaySequence</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName6554637191744943</globalKey>
+        <inputFieldName>records:actions:validatecart:rest:link</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:validatecart:rest:link</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>promotionName24660037957505687</globalKey>
+        <inputFieldName>records:actions:validatecart:rest:method</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>promotionName</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>records:actions:validatecart:rest:method</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;messages&quot; : [ ],
+  &quot;records&quot; : [ {
+    &quot;vlocity_cmt__AppliesToAllItems__c&quot; : false,
+    &quot;vlocity_cmt__Code__c&quot; : &quot;I001&quot;,
+    &quot;vlocity_cmt__Description__c&quot; : &quot;Promotion for iphone&quot;,
+    &quot;vlocity_cmt__DurationUnitOfMeasure__c&quot; : &quot;Month&quot;,
+    &quot;Id&quot; : &quot;a3S4W000000cTkvUAE&quot;,
+    &quot;Name&quot; : &quot;iphone Promotion&quot;,
+    &quot;RecordTypeId&quot; : &quot;0124W000000lXKRQA2&quot;,
+    &quot;actions&quot; : {
+      &quot;addtocart&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;8014W000000hfF3QAI&quot;,
+            &quot;items&quot; : [ {
+              &quot;itemId&quot; : &quot;a3S4W000000cTkvUAE&quot;
+            } ],
+            &quot;methodName&quot; : &quot;postCartsPromoItems&quot;,
+            &quot;promotionId&quot; : &quot;a3S4W000000cTkvUAE&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : null,
+          &quot;method&quot; : null,
+          &quot;params&quot; : { }
+        }
+      },
+      &quot;validatecart&quot; : {
+        &quot;client&quot; : {
+          &quot;params&quot; : { }
+        },
+        &quot;remote&quot; : {
+          &quot;params&quot; : {
+            &quot;cartId&quot; : &quot;8014W000000hfF3QAI&quot;,
+            &quot;methodName&quot; : &quot;runCartValidation&quot;
+          }
+        },
+        &quot;rest&quot; : {
+          &quot;link&quot; : &quot;/services/apexrest/vlocity_cmt/v2/cpq/carts/8014W000000hfF3QAI/validate&quot;,
+          &quot;method&quot; : &quot;POST&quot;,
+          &quot;params&quot; : { }
+        }
+      }
+    },
+    &quot;category&quot; : &quot;Qualified&quot;,
+    &quot;code&quot; : &quot;I001&quot;,
+    &quot;description&quot; : &quot;Promotion for iphone&quot;,
+    &quot;displaySequence&quot; : 0,
+    &quot;id&quot; : &quot;a3S4W000000cTkvUAE&quot;,
+    &quot;messages&quot; : [ ],
+    &quot;name&quot; : &quot;iphone Promotion&quot;
+  } ],
+  &quot;totalSize&quot; : 1
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>promotionName_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

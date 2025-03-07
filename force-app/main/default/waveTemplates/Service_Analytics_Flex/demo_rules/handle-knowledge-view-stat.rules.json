@@ -1,0 +1,128 @@
+{
+	"rules": [
+		{
+      		"name": "HandleKnowledgeViewStatExtraction",
+      		"condition": "${Variables.isDemoApplication == 'Yes'}",
+      		"actions": [
+      			{
+      				"action": "put",
+      				"description": "Extract data from KCSArticle_ViewStat__c custom object.",
+      				"key": "Extract_Demo_KnowledgeViewStat",
+      				"path": "$.workflowDefinition",
+      				"value": {
+                    "action": "sfdcDigest",
+                        "parameters": {
+                            "fields": [
+                                {
+                                    "name": "Channel__c"
+                                },
+                                {
+                                    "name": "ParentId__c"
+                                },
+                                {
+                                    "name": "ViewCount__c"
+                                },
+                                {
+                                    "name": "NormalizedScore__c"
+                                }
+                            ],
+                            "object": "KCSArticle_ViewStat__c"
+                        }   
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Rename custom fields after Extract_Demo_KnowledgeViewStat",
+                    "key": "Extract_Demo_KnowledgeViewStat_rename_fields",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "computeExpression",
+                        "parameters": {            
+                            "source": "Extract_Demo_KnowledgeViewStat",
+                            "mergeWithSource": true,
+                            "computedFields": [
+                                {
+                                    "name":"Channel",
+                                    "type":"Text",
+                                    "saqlExpression":"Channel__c"
+                                },
+                                {
+                                    "name":"ViewCount",
+                                    "type":"Numeric",
+                                    "precision": 9,
+                                    "scale": 0,
+                                    "saqlExpression":"ViewCount__c"
+                                },
+                                {
+                                    "name":"ParentId",
+                                    "type":"Text",
+                                    "saqlExpression":"ParentId__c"
+                                },
+                                {
+                                    "name":"NormalizedScore",
+                                    "type":"Numeric",
+                                    "precision": 18,
+                                    "scale": 4,
+                                    "saqlExpression":"NormalizedScore__c"
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "key": "Extract_Demo_KnowledgeViewStat_drop_custom",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "sliceDataset",
+                        "parameters": {
+                            "mode": "drop",
+                            "fields": [
+                                {
+                                    "name": "Channel__c"
+                                },
+                                {
+                                    "name": "ParentId__c"
+                                },
+                                {
+                                    "name": "ViewCount__c"
+                                },
+                                {
+                                    "name": "NormalizedScore__c"
+                                }
+                            ],
+                            "source": "Extract_Demo_KnowledgeViewStat_rename_fields"
+                        }
+                    }
+                },
+                {
+                    "action": "put",
+                    "description": "Final merge of user and demo data for KnowledgeViewStat.",
+                    "key": "Extract_KnowledgeViewStat_merge",
+                    "path": "$.workflowDefinition",
+                    "value": {
+                        "action": "append",
+                        "parameters": {            
+                            "sources": [
+                                "Extract_Demo_KnowledgeViewStat_drop_custom",
+                                "Extract_Knowledge_ViewStat"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "action": "set",
+                    "description": "Set the left property of Join_Append_Knowledge__ka_kav_dataCategory_ViewStat parameters based on Demo App or not.",
+                    "path": "$.workflowDefinition.Join_Append_Knowledge__ka_kav_dataCategory_ViewStat.parameters['right']",
+                    "value": "Extract_KnowledgeViewStat_merge"
+                }
+			],						
+			"appliesTo": [
+                {
+                    "type": "workflow",
+                    "name": "*"
+                }
+      		]
+		}
+	]
+}

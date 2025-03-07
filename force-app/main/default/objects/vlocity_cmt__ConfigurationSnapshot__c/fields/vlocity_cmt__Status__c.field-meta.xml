@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>vlocity_cmt__Status__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Status of the configuration snapshot which helps us to track the status of cached/caching dataset with following states Processing(cache generation is in progress), Ready(cache generation is complete and available for activation), Active(generated cached dataset is active and available for APIs/Services to use them for run time computation), Expired(cache dataset linked to configuration is no longer effective) and Aborted(cache generation is aborted halfway either due to manual intervention/application error).</description>
+    <label>Status</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ready</fullName>
+                <default>false</default>
+                <label>Ready</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Processing</fullName>
+                <default>false</default>
+                <label>Processing</label>
+            </value>
+            <value>
+                <fullName>Expired</fullName>
+                <default>false</default>
+                <label>Expired</label>
+            </value>
+            <value>
+                <fullName>Aborted</fullName>
+                <default>false</default>
+                <label>Aborted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

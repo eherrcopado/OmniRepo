@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customHtmlTemplates>&lt;style&gt;
+.via-slds section.slds-page-header.vlc-slds-page--header::after{
+background: #FF6E0D;
+width: 60px;
+height: 3px;
+}
+.via-slds span.slds-icon_container{
+background: #FF6E0D;
+}
+.slds-backdrop.slds-backdrop--open{
+    display: none !important;
+}
+.via-slds .vlc-slds-wizard::before{
+display:none;
+}
+.via-slds .vlc-slds-right--panel::after{
+background: #FF6E0D;
+width: 60px;
+height: 3px;
+align: center;
+}
+
+.via-slds .list-group.vertical-steps .list-group-item.active:before {
+   background-color: #0070D2;
+   color: #fff;
+}
+.via-slds .list-group.vertical-steps .list-group-item.completed.active:before {
+   background-color: #0070D2;
+}
+.via-slds .list-group.vertical-steps .list-group-item.completed:before {
+   background-color: #0070D2;
+   color: #fff;
+}
+.via-slds .list-group.vertical-steps .list-group-item.completed {
+   border-left: 3px solid #0070D2;
+}
+.via-slds .vlc-slds-remote-action--button .vlc-control-wrapper .slds-box {
+   background: #0070D2;
+}
+
+@media(min-width: 62.5em){
+.via-slds .slds-page-header__title.vlc-slds-page-header__title[prev=false], .via-slds .slds-page-header__title.vlc-slds-page-header__title[prev=true] {
+
+   padding-top: 25px;
+}
+}
+.via-slds form[stepForm] { border-right: 1px solid #e7ecf3; } 
+sidebar{ border-bottom: 1px solid #e7ecf3; } 
+
+.via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-edit-block--cards_images {
+    display: inline-block;
+    width: 5rem;
+    height: 2.7rem;
+    position: relative;
+}
+.via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-edit-block--cards_images svg.vlc-slds-edit-block--payments-icon {
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    top: 0.1px;
+    fill: #05A6DF;
+    cursor: pointer;
+    display: inline;
+}
+@media only screen and (max-width: 62em) {
+    .via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-edit-block--cards_images svg.vlc-slds-edit-block--payments-icon {
+        top: -8px;
+    }
+}
+.via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-edit-block--cards_images svg.vlc-slds-edit-block--payments-icon_credit {
+    top: 1px;
+}
+@media only screen and (max-width: 62em) {
+    .via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-edit-block--cards_images svg.vlc-slds-edit-block--payments-icon_credit {
+        top: -8px;
+    }
+}
+.via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-icon-payment-close {
+    position: relative;
+    float: right;
+    cursor: pointer;
+    top: 1.76rem;
+    left: -2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+@media only screen and (max-width: 62em) {
+    .via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-icon-payment-close {
+        top: 1.38rem;
+    }
+}
+.via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-item--added {
+    position: relative;
+    top: -.75rem;
+    left: 2.2rem;
+    float: right;
+}
+@media only screen and (max-width: 62em) {
+    .via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-item--added {
+        left: 2.1rem;
+    }
+}
+@media only screen and (max-width: 62em) {
+    .via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container .vlc-slds-edit-block--cards_display-flex .vlc-slds-item--added .slds-icon_container--circle {
+        padding: .4rem;
+    }
+}
+
+.via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards .vlc-slds-edit-block--payments-cards_container {
+    cursor: pointer;
+}
+
+.via-slds .vlc-slds-edit-block--main-container .vlc-slds-edit-block--payments-cards {
+    height: 80px;
+    margin-bottom: 1.2rem;
+}
+&lt;/style&gt;</customHtmlTemplates>
+    <description>Collect payment details from an existing customer.</description>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegrationProcedure>false</isIntegrationProcedure>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>true</isWebCompEnabled>
+    <language>English</language>
+    <name>Enroll Auto Pay</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DR_UpdateAutoPay</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;bundle&quot; : &quot;AccountUpdateAutopayAmount&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : null,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;Submit&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>31.0</sequenceNumber>
+        <type>DataRaptor Post Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Get Account</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Get Account&quot;,
+  &quot;message&quot; : { },
+  &quot;namedCredential&quot; : &quot;&quot;,
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;GET&quot;,
+  &quot;restOptions&quot; : {
+    &quot;URIEncode&quot; : false,
+    &quot;cache&quot; : false,
+    &quot;headers&quot; : { },
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : null,
+    &quot;withCredentials&quot; : false
+  },
+  &quot;restPath&quot; : &quot;/services/apexrest/vlocity_cmt/v2/DataRaptor/VDOGetDemoAccount/?accountkey=demoaccount2&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;svgIcon&quot; : &quot;&quot;,
+  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;type&quot; : &quot;Apex&quot;,
+  &quot;validationRequired&quot; : null,
+  &quot;wpm&quot; : false,
+  &quot;xmlPostTransformBundle&quot; : &quot;&quot;,
+  &quot;xmlPreTransformBundle&quot; : &quot;&quot;
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Rest Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Get Payment Methods</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;bundle&quot; : &quot;VPLReadPaymentMethods100&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;ContextId&quot;,
+    &quot;inputParam&quot; : &quot;Id&quot;
+  } ],
+  &quot;enableActionMessage&quot; : false,
+  &quot;enableDefaultAbort&quot; : false,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;ignoreCache&quot; : false,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;readPaymentMethods&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;pubsub&quot; : false,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>autopayType</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;defaultValue&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;enableCaption&quot; : true,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;horizontalMode&quot; : false,
+  &quot;imageCountInRow&quot; : 3,
+  &quot;label&quot; : &quot;How much do you want to auto pay?&quot;,
+  &quot;optionHeight&quot; : 100,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;optionWidth&quot; : 100,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;Full Balance&quot;,
+    &quot;value&quot; : &quot;Full Balance&quot;
+  }, {
+    &quot;name&quot; : &quot;Minimum Balance&quot;,
+    &quot;value&quot; : &quot;Minimum Balance&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>6.0</sequenceNumber>
+            <type>Radio</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>ExtractDayFromNextPaymentDate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataType&quot; : null,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;DAYOFMONTH(%NextPaymentDate%)+1&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : null,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+            <sequenceNumber>8.0</sequenceNumber>
+            <type>Formula</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>LineBreak1</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;LineBreak1&quot;,
+  &quot;padding&quot; : 20,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>10.0</sequenceNumber>
+            <type>Line Break</type>
+        </childElements>
+        <childElements>
+            <isActive>false</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>NextAutoPaymentDate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;label&quot; : &quot;&lt;p&gt;Your auto payment is scheduled to occur on every &lt;strong&gt;%ExtractDayFromNextPaymentDate%&lt;/strong&gt; of the month.&lt;/p&gt;&quot;,
+  &quot;labelKey&quot; : &quot;&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;&lt;&gt;&quot;,
+        &quot;data&quot; : null,
+        &quot;field&quot; : &quot;NextPaymentDate&quot;
+      } ]
+    }
+  }
+}</propertySetConfig>
+            <sequenceNumber>9.0</sequenceNumber>
+            <type>Headline</type>
+        </childElements>
+        <childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>NextPaymentDate</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 4,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;dateType&quot; : &quot;string&quot;,
+  &quot;defaultValue&quot; : null,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Select Next Payment Date&quot;,
+  &quot;maxDate&quot; : &quot;today + 30 days&quot;,
+  &quot;minDate&quot; : &quot;today&quot;,
+  &quot;modelDateFormat&quot; : &quot;yyyy-MM-dd&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : true
+}</propertySetConfig>
+            <sequenceNumber>7.0</sequenceNumber>
+            <type>Date</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>AccountId__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;debounceValue&quot; : 0,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : true,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Text 8&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>26.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BankAccountNumber__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 3,
+  &quot;debounceValue&quot; : 0,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Bank Account Number&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Bank Account&quot;,
+        &quot;field&quot; : &quot;MethodType__c|n&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>16.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BankAccountType__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 3,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Bank Account Type&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;vlocity_cmt__PaymentMethod__c.vlocity_cmt__BankAccountType__c&quot;,
+    &quot;type&quot; : &quot;SObject&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Bank Account&quot;,
+        &quot;field&quot; : &quot;MethodType__c|n&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>15.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>BankRoutingNumber__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 3,
+  &quot;debounceValue&quot; : 0,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Bank Routing Number&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Bank Account&quot;,
+        &quot;field&quot; : &quot;MethodType__c|n&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>17.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CardHolderName__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;debounceValue&quot; : 0,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Card Holder Name&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>14.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CardNumber__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 4,
+  &quot;debounceValue&quot; : 0,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Card Number&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Credit Card&quot;,
+        &quot;field&quot; : &quot;MethodType__c|n&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>19.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>CardType__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 2,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Card Type&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;vlocity_cmt__PaymentMethod__c.vlocity_cmt__CardType__c&quot;,
+    &quot;type&quot; : &quot;SObject&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Credit Card&quot;,
+        &quot;field&quot; : &quot;MethodType__c|n&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>18.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>ExpirationMonth__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 2,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Expiration Month&quot;,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;vlocity_cmt__PaymentMethod__c.vlocity_cmt__ExpirationMonth__c&quot;,
+    &quot;type&quot; : &quot;SObject&quot;
+  },
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Credit Card&quot;,
+        &quot;field&quot; : &quot;MethodType__c|n&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>20.0</sequenceNumber>
+                <type>Select</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>ExpirationYear__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 2,
+  &quot;debounceValue&quot; : 0,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Expiration Year&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Credit Card&quot;,
+        &quot;field&quot; : &quot;MethodType__c|n&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>21.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>FormulaAccountId</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;currencySymbol&quot; : &quot;$&quot;,
+  &quot;dataType&quot; : null,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;disOnTplt&quot; : false,
+  &quot;expression&quot; : &quot;%ContextId%&quot;,
+  &quot;hide&quot; : true,
+  &quot;hideGroupSep&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Formula 1&quot;,
+  &quot;mask&quot; : null,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>23.0</sequenceNumber>
+                <type>Formula</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>IsPrimary__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;checkLabel&quot; : &quot;Primary&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Primary&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+                <sequenceNumber>24.0</sequenceNumber>
+                <type>Checkbox</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>MethodType__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;controllingField&quot; : {
+    &quot;element&quot; : &quot;&quot;,
+    &quot;source&quot; : &quot;&quot;,
+    &quot;type&quot; : &quot;&quot;
+  },
+  &quot;disOnTplt&quot; : true,
+  &quot;enableCaption&quot; : true,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;horizontalMode&quot; : true,
+  &quot;label&quot; : &quot;Select Payment Type&quot;,
+  &quot;optionHeight&quot; : 100,
+  &quot;optionSource&quot; : {
+    &quot;source&quot; : &quot;vlocity_cmt__PaymentMethod__c.vlocity_cmt__MethodType__c&quot;,
+    &quot;type&quot; : &quot;SObject&quot;
+  },
+  &quot;optionWidth&quot; : 100,
+  &quot;options&quot; : [ {
+    &quot;name&quot; : &quot;&quot;,
+    &quot;value&quot; : &quot;&quot;
+  } ],
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+                <sequenceNumber>12.0</sequenceNumber>
+                <type>Radio</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Name</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 6,
+  &quot;debounceValue&quot; : 0,
+  &quot;disOnTplt&quot; : true,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Name&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>13.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Payment Methods Delete</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Delete&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;DefaultOmniScriptEditBlock&quot;,
+  &quot;remoteMethod&quot; : &quot;delete&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>30.0</sequenceNumber>
+                <type>Remote Action</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Payment Methods Edit</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;Edit&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;DefaultOmniScriptEditBlock&quot;,
+  &quot;remoteMethod&quot; : &quot;edit&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>29.0</sequenceNumber>
+                <type>Remote Action</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Payment Methods New</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;extraPayload&quot; : { },
+  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
+  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
+  &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
+  &quot;label&quot; : &quot;New&quot;,
+  &quot;message&quot; : { },
+  &quot;postMessage&quot; : &quot;Done&quot;,
+  &quot;postTransformBundle&quot; : &quot;&quot;,
+  &quot;preTransformBundle&quot; : &quot;&quot;,
+  &quot;redirectNextLabel&quot; : &quot;Next&quot;,
+  &quot;redirectNextWidth&quot; : 3,
+  &quot;redirectPageName&quot; : &quot;&quot;,
+  &quot;redirectPreviousLabel&quot; : &quot;Previous&quot;,
+  &quot;redirectPreviousWidth&quot; : 3,
+  &quot;redirectTemplateUrl&quot; : &quot;vlcAcknowledge.html&quot;,
+  &quot;remoteClass&quot; : &quot;DefaultOmniScriptEditBlock&quot;,
+  &quot;remoteMethod&quot; : &quot;new&quot;,
+  &quot;remoteOptions&quot; : {
+    &quot;postTransformBundle&quot; : &quot;&quot;,
+    &quot;preTransformBundle&quot; : &quot;&quot;
+  },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;Step&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>28.0</sequenceNumber>
+                <type>Remote Action</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>PaymentId</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;debounceValue&quot; : 0,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : true,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Id&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null,
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>27.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>PaymentMethodToken__c</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 2,
+  &quot;debounceValue&quot; : 0,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;label&quot; : &quot;Security Code (CCV)&quot;,
+  &quot;mask&quot; : &quot;&quot;,
+  &quot;maxLength&quot; : 255,
+  &quot;minLength&quot; : 0,
+  &quot;pattern&quot; : &quot;&quot;,
+  &quot;ptrnErrText&quot; : &quot;&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : {
+    &quot;group&quot; : {
+      &quot;operator&quot; : &quot;AND&quot;,
+      &quot;rules&quot; : [ {
+        &quot;condition&quot; : &quot;=&quot;,
+        &quot;data&quot; : &quot;Credit Card&quot;,
+        &quot;field&quot; : &quot;MethodType__c|n&quot;
+      } ]
+    }
+  },
+  &quot;showInputWidth&quot; : false
+}</propertySetConfig>
+                <sequenceNumber>22.0</sequenceNumber>
+                <type>Text</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Selected</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;checkLabel&quot; : &quot;Checkbox 2&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;hide&quot; : true,
+  &quot;label&quot; : &quot;Checkbox 2&quot;,
+  &quot;readOnly&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;required&quot; : false,
+  &quot;show&quot; : null
+}</propertySetConfig>
+                <sequenceNumber>25.0</sequenceNumber>
+                <type>Checkbox</type>
+            </childElements>
+            <description>vlcEditBlockLongCards.html</description>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>PaymentMethods</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;vlcEditBlockLongCards.html&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;addLabel&quot; : &quot;&quot;,
+  &quot;allowDelete&quot; : true,
+  &quot;allowEdit&quot; : true,
+  &quot;allowNew&quot; : true,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;deleteLabel&quot; : &quot;Delete&quot;,
+  &quot;editLabel&quot; : &quot;Edit&quot;,
+  &quot;elementName&quot; : &quot;MethodType__c&quot;,
+  &quot;hide&quot; : false,
+  &quot;image&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;Payment Methods&quot;,
+  &quot;maxDisplay&quot; : 3,
+  &quot;mode&quot; : &quot;Inline&quot;,
+  &quot;newLabel&quot; : &quot;New&quot;,
+  &quot;selectCheckBox&quot; : &quot;Selected&quot;,
+  &quot;selectMode&quot; : &quot;Single&quot;,
+  &quot;selectSobject&quot; : &quot;vlocity_cmt__PaymentMethod__c&quot;,
+  &quot;show&quot; : null,
+  &quot;sobjectMapping&quot; : [ {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;Name&quot;,
+    &quot;sObjectField&quot; : &quot;Name&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;BankAccountNumber__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__BankAccountNumber__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;BankAccountType__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__BankAccountType__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;BankRoutingNumber__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__BankRoutingNumber__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;CardHolderName__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__CardHolderName__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;CardNumber__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__CardNumber__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;CardType__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__CardType__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;ExpirationMonth__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__ExpirationMonth__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;ExpirationYear__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__ExpirationYear__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;IsPrimary__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__IsPrimary__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;MethodType__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__MethodType__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;PaymentMethodToken__c&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__PaymentMethodToken__c&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;PaymentId&quot;,
+    &quot;sObjectField&quot; : &quot;Id&quot;
+  }, {
+    &quot;duplicateKey&quot; : false,
+    &quot;osElement&quot; : &quot;FormulaAccountId&quot;,
+    &quot;sObjectField&quot; : &quot;vlocity_cmt__AccountId__c&quot;
+  } ],
+  &quot;svgIcon&quot; : &quot;user&quot;,
+  &quot;svgSprite&quot; : &quot;utility&quot;,
+  &quot;valueSvgMap&quot; : [ {
+    &quot;svgIcon&quot; : &quot;custom41&quot;,
+    &quot;svgSprite&quot; : &quot;custom&quot;,
+    &quot;value&quot; : &quot;Bank Account&quot;
+  }, {
+    &quot;svgIcon&quot; : &quot;custom40&quot;,
+    &quot;svgSprite&quot; : &quot;custom&quot;,
+    &quot;value&quot; : &quot;Credit Card&quot;
+  } ]
+}</propertySetConfig>
+            <sequenceNumber>11.0</sequenceNumber>
+            <type>Edit Block</type>
+        </childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>PaymentMethod</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;allowSaveForLater&quot; : true,
+  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
+  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
+  &quot;chartLabel&quot; : &quot;Setup Auto Pay&quot;,
+  &quot;completeLabel&quot; : &quot;Complete&quot;,
+  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;errorMessage&quot; : {
+    &quot;custom&quot; : [ ],
+    &quot;default&quot; : null
+  },
+  &quot;instruction&quot; : &quot;&quot;,
+  &quot;knowledgeOptions&quot; : {
+    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
+    &quot;keyword&quot; : &quot;&quot;,
+    &quot;language&quot; : &quot;English&quot;,
+    &quot;publishStatus&quot; : &quot;Online&quot;,
+    &quot;remoteTimeout&quot; : 30000,
+    &quot;typeFilter&quot; : &quot;&quot;
+  },
+  &quot;label&quot; : &quot;Select Payment&quot;,
+  &quot;message&quot; : { },
+  &quot;nextLabel&quot; : &quot;Next&quot;,
+  &quot;nextWidth&quot; : 3,
+  &quot;previousLabel&quot; : &quot;Previous&quot;,
+  &quot;previousWidth&quot; : 3,
+  &quot;pubsub&quot; : false,
+  &quot;remoteClass&quot; : &quot;&quot;,
+  &quot;remoteMethod&quot; : &quot;&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;remoteTimeout&quot; : 30000,
+  &quot;saveLabel&quot; : &quot;Save for later&quot;,
+  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : true,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Step</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetAccountValues</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;AccountId&quot; : &quot;=%AccId%&quot;
+  },
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;message&quot; : { },
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetValues2</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;AccountId&quot; : &quot;0014P000028K0n1QAC&quot;
+  },
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;message&quot; : { },
+  &quot;show&quot; : null,
+  &quot;showPersistentComponent&quot; : [ false, false ],
+  &quot;ssm&quot; : false,
+  &quot;validationRequired&quot; : &quot;None&quot;,
+  &quot;wpm&quot; : false
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessType>OmniScript</omniProcessType>
+    <propertySetConfig>{&quot;allowCancel&quot;:true,&quot;allowSaveForLater&quot;:true,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;bLK&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;consoleTabTitle&quot;:null,&quot;currencyCode&quot;:&quot;&quot;,&quot;disableUnloadWarn&quot;:true,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;enableKnowledge&quot;:false,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;hideStepChart&quot;:true,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;lkObjName&quot;:null,&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;},{&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;&quot;,&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false}],&quot;pubsub&quot;:false,&quot;rtpSeed&quot;:false,&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;seedDataJSON&quot;:{},&quot;showInputWidth&quot;:false,&quot;ssm&quot;:false,&quot;stepChartPlacement&quot;:&quot;right&quot;,&quot;stylesheet&quot;:{&quot;lightning&quot;:&quot;&quot;,&quot;lightningRtl&quot;:&quot;&quot;,&quot;newport&quot;:&quot;&quot;,&quot;newportRtl&quot;:&quot;&quot;},&quot;timeTracking&quot;:false,&quot;trackingCustomData&quot;:{},&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
+    <subType>EnrollAutoPayDCT</subType>
+    <type>Service</type>
+    <uniqueName>Service_EnrollAutoPayDCT_English_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>49cc33c9-2a7b-641d-4c2b-04ffda6bedc9</webComponentKey>
+</OmniScript>

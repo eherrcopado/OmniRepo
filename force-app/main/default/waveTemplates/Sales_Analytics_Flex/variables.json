@@ -1,0 +1,1525 @@
+{
+  "isDemoApplication": {
+    "label": "Is this a Demo Application?",
+    "description": "",
+    "variableType": {
+      "enums": [
+        "Yes",
+        "No"
+      ],
+      "type": "StringType"
+    },
+    "defaultValue": "Yes"
+  },
+  "autoconfig": {
+    "label": "Auto Configure",
+    "description": "Automatically configures app for launch",
+    "defaultValue": "true",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "true",
+        "false"
+      ]
+    }
+  },
+  "Can_Continue": {
+    "required": true,
+    "variableType": {
+      "type": "BooleanType"
+    }
+  },
+  "DefaultsVisible": {
+    "variableType": {
+      "type": "BooleanType"
+    },
+    "defaultValue": true
+  },
+  "DefaultsVisibleMessages": {
+    "label": "",
+    "description": "",
+    "variableType": {
+      "type": "StringType"
+    },
+    "required": false
+  },
+  "Backdoor": {
+    "variableType": {
+      "type": "BooleanType"
+    },
+    "defaultValue": false
+  },
+  "SObjectChoices": {
+    "label": "Choose additional objects to include in your app",
+    "description": "You can analyze data and build out additional dashboard from these datasets.",
+    "defaultValue": [],
+    "required": false,
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "enums": [
+          "Products",
+          "Opportunity Splits",
+          "Collaborative Forecasting",
+          "Product Schedules",
+          "Leads",
+          "Cases",          
+          "Campaigns"      
+          
+        ],
+        "type": "StringType"
+      }
+    }
+  },
+  "Has_Campaigns_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "SObjectDescriptions": {
+    "label": "Descriptions for use in the UI",
+    "description": "This isn't to be used directly.'",
+    "defaultValue": [],
+    "required": false,
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "enums": [
+          "Analyze opportunities by attached products.",
+          "Discover trends that result in better lead conversion rates.",
+          "Get a more complete view of your accounts by including customer service data along side sales data.",
+          "Visualize your sales forecast more powerfully than ever with collaborative forecasting.",
+          "Enhance opportunity data by connecting primary campaign details.",
+          "Explore Opportunities by Split Amount.",
+          "Explore Opportunities by Schedule Date and Schedule Amount"
+        ],
+        "type": "StringType"
+      }
+    }
+  },
+  "SObjectDisabledDescriptions": {
+    "label": "Descriptions for use in the UI",
+    "description": "This isn't to be used directly.'",
+    "defaultValue": [],
+    "required": false,
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "enums": [
+          "Sales Analytics has detected that you are not currently using this feature.",
+          "Sales Analytics has detected that you are not currently using this feature.",
+          "Sales Analytics has detected that you are not currently using this feature.",
+          "Sales Analytics has detected that you are not currently using this feature.",
+          "Sales Analytics has detected that you are not currently using this feature.",
+          "Sales Analytics has detected that you are not currently using this feature.",
+          "This Feature Cannot Be Used with Collaborative Forecasting or Opportunity Splits"
+        ],
+        "type": "StringType"
+      }
+    }
+  },
+  "Direct_Reports": {
+    "label": "Should we use role hierarchy to identify a person's manager?",
+    "description": "Identifies who the person reports to. If not role hierarchy, we will use Manager ID field on user profile",
+    "defaultValue": "Yes",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "Show_First_Page": {
+    "label": "This varible determines if we show the first page or not.",
+    "description": "This Page Remains hidden",
+    "defaultValue": "No",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "One_Click_Install": {
+    "label": "Do you want to create Sales Analytics using reccommeded default values?",
+    "description": "Sales Analytics has determined a set of default values for this application. Answer Yes if you would like to create the app using the reccomended defaults, or answer no if you would like to use the advanced wizard to customize the app.",
+    "defaultValue": "No",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "OpptyRecordType": {
+    "label": "Choose the opportunity Record Types to include in Sales Analytics.",
+    "description": "Sales Analytics has detected that you segment opportunities by Record Types. Choose one or more Record Types and Sales Analytics excludes UNSELECTED Record Types from datasets. Leave this question blank to include ALL Record Types.",
+    "required": false,
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "StringType",
+        "enums": []
+      }
+    }
+  },
+  "DontOverwriteQuota": {
+    "defaultValue": true,
+    "variableType": {
+      "type": "BooleanType"
+    },
+    "required": false
+  },
+  "Fiscal_Month": {
+    "label": "What month starts your fiscal period?",
+    "description": "Select the start date of your fiscal period. If it is different than January, you also need to update the Quotas dataset JSON file.",
+    "defaultValue": "01 - January",
+    "required": true,
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "01 - January",
+        "02 - February",
+        "03 - March",
+        "04 - April",
+        "05 - May",
+        "06 - June",
+        "07 - July",
+        "08 - August",
+        "09 - September",
+        "10 - October",
+        "11 - November",
+        "12 - December"
+      ]
+    }
+  },
+  "Geo_Maps": {
+    "label": "How do you want Sales Analytics to display geographic data?",
+    "description": "Choose between a map or bar chart. If you choose a map, indicate which kind -- world (default) or country.",
+    "defaultValue": "World Map",
+    "required": false,
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "World Map",
+        "US Map",
+        "Bar Chart"
+      ]
+    }
+  },
+  "MapType_Geo1": {
+    "label": "This Question Remains Hidden",
+    "description": "This Question Remains Hidden",
+    "defaultValue": "World",
+    "required": false,
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "World",
+        "US",
+        "Bar"
+      ]
+    }
+  },
+  "MapType_Geo2": {
+    "label": "This Question Remains Hidden",
+    "description": "This Question Remains Hidden",
+    "defaultValue": "US",
+    "required": false,
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "World",
+        "US",
+        "Bar"
+      ]
+    }
+  },
+  "FY_Month_Offset_Map": {
+    "required": true,
+    "description": "Internal mapping between fiscal year start months and offset, not to be displayed in UI.",
+    "defaultValue": {
+      "01 - January": 0,
+      "02 - February": 1,
+      "03 - March": 2,
+      "04 - April": 3,
+      "05 - May": 4,
+      "06 - June": 5,
+      "07 - July": 6,
+      "08 - August": 7,
+      "09 - September": 8,
+      "10 - October": 9,
+      "11 - November": 10,
+      "12 - December": 11
+    },
+    "variableType": {
+      "type": "ObjectType"
+    }
+  },
+  "First_Day_Of_Week": {
+    "required": true,
+    "description": "Internal mapping for first day of week",
+    "defaultValue": 0,
+    "variableType": {
+      "type": "NumberType"
+    }
+  },
+  "Has_OpportunityRecordType": {
+    "label": "Do you want to include opportunity Record Type filter on your dashboards?",
+    "description": "Select Yes if you want Record Types to be included in Sales Analytics datasets.",
+    "defaultValue": "No",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "CustomHistoricalCheck": {
+    "label": "Analytics has detected that your org has not enabled Historical Trending for Opportunities. If you have selected a field other than the standard Amount above and want to include historical trend data based on that custom field, go to Setup, search for Historical Trending, select opportunity fields, and restart app creation.",
+    "required": false,
+    "defaultValue": true,
+    "variableType": {
+      "type": "BooleanType"
+    }
+  },
+  "CustomHistoricalAmount": {
+    "label": "* Custom Amount field selected above may not be supported in historical pipeline charts",
+    "description": "Sales Analytics has detected that this org has not yet enabled Opportunity Historical Trending in Salesforce Setup. If you wish to see custom Amount fields in your historical pipeline trending dashboards, please first enable Opportunity Historical Trending, select your custom amount fields, and return to the Sales Analytics wizard to continue.",
+    "required": false,
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "StringType",
+        "enums": []
+      }
+    }
+  },
+  "CustomHistoricalAmount_Map": {
+    "required": true,
+    "defaultValue": {
+      "Amount": "Yes",
+      "DB_Amount__c": "Yes"
+    },
+    "variableType": {
+      "type": "ObjectType"
+    }
+  },
+  "Has_OpportunityRecordType_Dataflow": {
+    "label": "Hidden Question to capture whether or not we augment with RecordType in Datalow",
+    "description": "Select Yes if you want Record Types to be included in Sales Analytics datasets.",
+    "defaultValue": "Yes",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "Has_Products_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Has_Exception": {
+    "label": "Do you want Sales Analytics to verify that your orgs data meets minimum requirements to successfully create an app?",
+    "description": "Select Yes to have Sales Analytics validate that your org meets minimum data requirements. For larger orgs, this process may take a few minutes. Answer No if you have already created a Sales Analytics app and you know your org meets miniumum requirements.",
+    "defaultValue": "Yes",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "Has_Activities": {
+    "label": "Do you track activities with tasks and events?",
+    "description": "Determines if tasks and events are used in sales process",
+    "defaultValue": "No",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "Has_Cases_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Amount_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "TotalPrice_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Has_Quota": {
+    "label": "Do you want to see data about team quotas in Sales Analytics?",
+    "description": "Select CSV Quota if you track quotas for your salespeople outside Salesforce. You will need to import a CSV file containing quota data.",
+    "defaultValue": "CSV Quota",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "CSV Quota",
+        "Collaborative Forecasting Quota"
+      ]
+    },
+    "required": true
+  },
+  "Has_ForecastCategory": {
+    "label": "Do you use Forecast Category field to predict likelihood of closing?",
+    "description": "Determines if you use Forecast Category for pipeline management",
+    "defaultValue": "Yes",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "RoleSecurity": {
+    "label": "What is the best way to identify a person's manager?",
+    "description": "Identifies who the person reports to",
+    "defaultValue": "Role Hierarchy",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Role Hierarchy",
+        "Manager ID"
+      ]
+    },
+    "required": true
+  },
+  "Opportunity_Amount": {
+    "label": "What field contains the total amount of the opportunity?",
+    "description": "Choose the field you use to track the total amount of the opportunity. Sales Analytics checks to see if your org supports Historical Trending and displays results here. This gives you the option of including historical trend data in your app.",
+    "defaultValue": {
+      "sobjectName": "Opportunity",
+      "fieldName": "Amount"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:double"
+    }
+  },
+  "Bookings": {
+    "label": "What field indicates that an opportunity is new business?",
+    "description": "Select the field you use to identify that an opportunity in Salesforce is new business.",
+    "defaultValue": {
+      "sobjectName": "Opportunity",
+      "fieldName": "Type"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name",
+      "StageName",
+      "ForecastCategory",
+      "ForecastCategoryName",
+      "Description",
+      "NextStep",
+      "Fiscal"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Account_All": {
+    "label": "What additional fields from the Accounts object would you like to add to Sales Analytics datasets?",
+    "description": "Choose the fields from Accounts that you would like Sales Analytics to include in Sales Analytics datasets.",
+    "defaultValue": [
+      {
+        "sobjectName": "Account",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "AnnualRevenue",
+      "NumberOfEmployees",
+      "Name",
+      "Id",
+      "OwnerId",
+      "CreatedDate",
+      "LastModifiedDate",
+      "ParentId"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType"
+      }
+    }
+  },
+  "Account_Measure": {
+    "label": "What additional measures from the Accounts object would you like to add to Sales Analytics datasets?",
+    "description": "Choose the numerical fields from Accounts that you would like Sales Analytics to include in Sales Analytics datasets.",
+    "defaultValue": [
+      {
+        "sobjectName": "Account",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "AnnualRevenue",
+      "NumberOfEmployees"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType",
+        "dataType": "xsd:double"
+      }
+    }
+  },
+  "Account_Dimension": {
+    "label": "What additional dimensions from the Accounts object would you like to add to Sales Analytics datasets?",
+    "description": "Choose the text fields from Accounts that you would like to include in Sales Analytics datasets.",
+    "defaultValue": [
+      {
+        "sobjectName": "Account",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Name"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType",
+        "dataType": "xsd:string"
+      }
+    }
+  },
+  "Opportunity_Dimension": {
+    "label": "What additional dimensions from the Opportunities object would you like to add to Sales Analytics datasets?",
+    "description": "Choose the text fields from Opportunities that you would like to include in Sales Analytics datasets.",
+    "defaultValue": [
+      {
+        "sobjectName": "Opportunity",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Name",
+      "StageName",
+      "ForecastCategory",
+      "ForecastCategoryName"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType"
+      }
+    }
+  },
+  "Opportunity_All": {
+    "label": "What additional fields from the Opportunities object would you like to add to Sales Analytics datasets?",
+    "description": "Choose the fields from Opportunities that you would like to include in Sales Analytics datasets.",
+    "defaultValue": [
+      {
+        "sobjectName": "Opportunity",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Id",
+      "AccountId",
+      "OwnerId",
+      "Name",
+      "StageName",
+      "IsWon",
+      "IsClosed",
+      "ForecastCategory",
+      "ForecastCategoryName",
+      "Amount",
+      "CreatedDate",
+      "CloseDate",
+      "CreatedById",
+      "LastModifiedDate",
+      "LastActivityDate",
+      "HasOpportunityLineItem",
+      "RecordTypeId",
+      "CampaignId"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType"
+      }
+    }
+  },
+  "Opportunity_Measure": {
+    "label": "What additional measures from the Opportunities object would you like to add to Sales Analytics datasets?",
+    "description": "Choose the numerical fields from Opportunities that you would like to include in Sales Analytics datasets.",
+    "defaultValue": [
+      {
+        "sobjectName": "Opportunity",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Amount"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType",
+        "dataType": "xsd:double"
+      }
+    }
+  },
+  "Geography": {
+    "label": "What is the first field you want to use to segment your geographies?",
+    "description": "Choose the primary way Sales Analytics filters geographic data.",
+    "defaultValue": {
+      "sobjectName": "Account",
+      "fieldName": "BillingCountry"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Geography_L2": {
+    "label": "What is the second field you want to use to segment your geographies?",
+    "description": "Choose the second way Sales Analytics filters geographic data.",
+    "defaultValue": {
+      "sobjectName": "Account",
+      "fieldName": "BillingState"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Source": {
+    "label": "What Accounts field do you want to use to segment your sources for new business?",
+    "description": "Your choice determines the first way Sales Analytics filters data about sources for new business. The second comes from Opportunities (next page).",
+    "defaultValue": {
+      "sobjectName": "Account",
+      "fieldName": "AccountSource"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Source_L2": {
+    "label": "What Opportunities field do you want to use to segment your sources for new business?",
+    "description": "Your choice determines the second way Sales Analytics filters data about new business sources. The first comes from Accounts (previous page).",
+    "defaultValue": {
+      "sobjectName": "Opportunity",
+      "fieldName": "LeadSource"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name",
+      "StageName",
+      "ForecastCategory",
+      "ForecastCategoryName"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Product_Amount": {
+    "label": "What field contains the total amount of a product on the opportunity?",
+    "description": "Select the field you use to track the total amount of the product on the opportunity in Salesforce.",
+    "defaultValue": {
+      "sobjectName": "OpportunityLineItem",
+      "fieldName": "TotalPrice"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Quantity",
+      "ListPrice"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:double"
+    }
+  },
+  "Customer": {
+    "label": "What is the first field you want to use to segment your customers?",
+    "description": "Your choice determines the primary way Sales Analytics dashboards filter customer data.",
+    "defaultValue": {
+      "sobjectName": "Account",
+      "fieldName": "Type"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Customer_L2": {
+    "label": "What is the second field you want to use to segment your customers?",
+    "description": "Your choice determines the second way Sales Analytics dashboards filter customer data.",
+    "defaultValue": {
+      "sobjectName": "Account",
+      "fieldName": "Industry"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Campaign_All": {
+    "label": "What Additional fields would you like Sales Analytics to add to the Campaigns dataset?",
+    "description": "Choose the fields from Campaigns that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "Campaign",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludes": [
+      "AmountAllOpportunities",
+      "AmountWonOpportunities",
+      "ActualCost",
+      "NumberOfContacts",
+      "NumberOfLeads",
+      "NumberOfOpportunities",
+      "NumberOfWonOpportunities",
+      "NumberOfResponses",
+      "NumberSent",
+      "Name",
+      "OwnerId",
+      "StartDate",
+      "EndDate",
+      "Type",
+      "IsActive",
+      "CreatedDate",
+      "LastModifiedDate",
+      "LastActivityDate",
+      "LastReferencedDate",
+      "LastViewedDate",
+      "Status",
+      "Id"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType"
+      }
+    }
+  },
+  "Campaign_Measure": {
+    "label": "What measures would you like Sales Analytics to add to the Campaigns dataset?",
+    "description": "Choose the numerical fields from Campaigns that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "Campaign",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludes": [
+      "AmountAllOpportunities",
+      "AmountWonOpportunities",
+      "ActualCost",
+      "NumberOfContacts",
+      "NumberOfLeads",
+      "NumberOfOpportunities",
+      "NumberOfWonOpportunities",
+      "NumberOfResponses",
+      "NumberSent"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType",
+        "dataType": "xsd:double"
+      }
+    }
+  },
+  "Campaign_Dimension": {
+    "label": "What dimensions would you like Sales Analytics to add to the Campaigns dataset?",
+    "description": "Choose the text fields from Campaigns that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "Campaign",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludes": [
+      "Name",
+      "OwnerId",
+      "StartDate",
+      "EndDate",
+      "Type",
+      "IsActive",
+      "CreatedDate",
+      "LastModifiedDate",
+      "LastActivityDate",
+      "LastReferencedDate",
+      "LastViewedDate",
+      "Status"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType",
+        "dataType": "xsd:string"
+      }
+    }
+  },
+  "User_All": {
+    "label": "What additional fields would you like Sales Analytics to add to the Users dataset?",
+    "description": "Choose the fields from User that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "User",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Id",
+      "Username",
+      "Name",
+      "FirstName",
+      "LastName",
+      "UserRoleId",
+      "UserType",
+      "IsActive",
+      "FullPhotoUrl",
+      "SmallPhotoUrl",
+      "ForecastEnabled",
+      "ManagerId"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType"
+      }
+    }
+  },
+  "Case_All": {
+    "label": "What additional fields would you like Sales Analytics to add to the Cases dataset?",
+    "description": "Choose the fields from Case that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "Case",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "AccountId",
+      "ContactId",
+      "OwnerId",
+      "Id",
+      "IsClosed",
+      "Origin",
+      "Type",
+      "Subject",
+      "LastModifiedDate",
+      "CreatedDate",
+      "ClosedDate",
+      "IsEscalated",
+      "Status",
+      "CaseNumber"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType"
+      }
+    }
+  },
+  "Product_All": {
+    "label": "What additional fields would you like Sales Analytics to add to the Oppty Products dataset?",
+    "description": "Choose the fields from Product that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "Product2",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Id",
+      "ProductCode"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType"
+      }
+    }
+  },
+  "Activities_All": {
+    "label": "What additional custom fields would you like Sales Analytics to add to the Activities dataset?",
+    "description": "Choose the fields from Event that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "Event",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "/^(?:(?!__c).)*$/"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType"
+      }
+    }
+  },
+  "Lead_All": {
+    "label": "What additional fields would you like Sales Analytics to add to the Leads dataset?",
+    "description": "Choose the fields from Leads that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "Lead",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Id",
+      "Name",
+      "OwnerId",
+      "Company",
+      "IsConverted",
+      "IsUnreadByOwner",
+      "Status",
+      "IsUnreadByOwner",
+      "LastModifiedDate",
+      "CreatedDate",
+      "ConvertedOpportunityId",
+      "ConvertedDate",
+      "ConvertedContactId",
+      "ConvertedAccountId"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType"
+      }
+    }
+  },
+  "Lead_Measure": {
+    "label": "What measures would you like Sales Analytics to add to the Leads dataset?",
+    "description": "Choose the numerical fields from Leads that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "Lead",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Rating"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType",
+        "dataType": "xsd:double"
+      }
+    }
+  },
+  "Lead_Dimension": {
+    "label": "What dimensions would you like Sales Analytics to add to the Leads dataset?",
+    "description": "Choose the text fields from Leads that you would like to include in Sales Analytics datasets. Some standard fields have already been included.",
+    "defaultValue": [
+      {
+        "sobjectName": "Lead",
+        "fieldName": ""
+      }
+    ],
+    "required": false,
+    "excludeSelected": true,
+    "excludes": [
+      "Id",
+      "Name",
+      "OwnerId",
+      "Company",
+      "IsConverted",
+      "IsUnreadByOwner",
+      "Status"
+    ],
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "SobjectFieldType",
+        "dataType": "xsd:string"
+      }
+    }
+  },
+  "Product": {
+    "label": "What is the first field you want Sales Analytics to use to segment products?",
+    "description": "Your choice determines the primary way Sales Analytics dashboards filter product data.",
+    "defaultValue": {
+      "sobjectName": "Product2",
+      "fieldName": "Family"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "ProductCode"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Product_L2": {
+    "label": "What is the second field you want Sales Analytics to use to segment products?",
+    "description": "Your choice determines the second way Sales Analytics dashboards filter product data.",
+    "defaultValue": {
+      "sobjectName": "Product2",
+      "fieldName": "Name"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "ProductCode"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Has_SecurityPredicate_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Has_SecurityPredicate": {
+    "label": "How would you like to control data visibility in Sales Analytics?",
+    "description": "Option 1 applies standard Salesforce role hierarchy and users see data owned by them and their subordinates. Option 2 lets users see data owned by everyone at their level in the hierarchy and their subordinates. Option 3: lets all users see all data.",
+    "defaultValue": "Option 1: Users view data owned by them and subordinates",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Option 1: Users view data owned by them and subordinates",
+        "Option 2: Users view data owned by them and others in their role and subordinates",
+        "Option 3: Users view all data"
+      ]
+    },
+    "required": true
+  },
+  "Overrides": {
+    "required": true,
+    "description": "Internal configuration to allow asset creation overrides, not to be displayed in UI.",
+    "defaultValue": {
+      "createAllDashboards": false
+    },
+    "variableType": {
+      "type": "ObjectType",
+      "properties": {
+        "createAllDashboards": {
+          "type": "BooleanType"
+        }
+      },
+      "strictValidation": true
+    }
+  },
+  "Has_Opps_With_No_LineItems": {
+    "label": "Are there any Errors in Sales Analytics?",
+    "description": "This Question remains hidden.",
+    "defaultValue": "Yes",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "Has_LineItems_with_No_Schedule": {
+    "label": "Are there any Errors in Sales Analytics?",
+    "description": "This Question remains hidden.",
+    "defaultValue": "Yes",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "UsingRoleHierarchy": {
+    "label": "Is the Customer Using Role Hierarchy?",
+    "description": "This Question remains hidden.",
+    "defaultValue": "Yes",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "User Manager",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "UsingAccountHierarchy": {
+    "label": "Are you using standard Account Hierarchy?",
+    "description": "Choose Yes if you would like to include account hierarchy data in the Sales Analytics dashboards.",
+    "defaultValue": "No",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "Has_Managers": {
+    "label": "Is the Customer Using Manager Hierarchy?",
+    "description": "This Question remains hidden.",
+    "defaultValue": "No",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "Has_AccountHierarchy_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Has_AccountTeams_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Has_AccountTeams": {
+    "label": "How would you like Sales Analytics to handle Account Team information?",
+    "description": "Option 1 adds Account Team member data to datasets. Option 2 adds Account Team member data to datasets and grants record visibility to members of the Account Team. Option 3 (default) excludes Account Team member data from datasets.",
+    "defaultValue": "Option 3: Exclude account team members data",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Option 1: Include account teams, but do not change data visibility settings",
+        "Option 2: Include account teams and grant Opportunity visibility to members of the account team",
+        "Option 3: Exclude account team members data"
+      ]
+    },
+    "required": true
+  },
+  "Has_OpportunityTeams_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Has_OpportunityTeams": {
+    "label": "How would you like Sales Analytics to handle Opportunity Team information?",
+    "description": "Option 1 adds Opportunity Team member data to datasets. Option 2 adds Opportunity Team member data to datasets and grants record visibilty to members of the Opportunity Team. Option 3 (default) excludes Opportunity Team member data from datasets.",
+    "defaultValue": "Option 3: Exclude opportunity team members data",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Option 1: Include opportunity teams, but do not change data visibility settings",
+        "Option 2: Include opportunity teams and grant Opportunity visibility to members of the opportunity team",
+        "Option 3: Exclude opportunity team members data"
+      ]
+    },
+    "required": true
+  },
+  "OpportunityTeam_SecurityPredicate": {
+    "required": true,
+    "description": "Internal mapping not to be displayed in UI.",
+    "defaultValue": {
+      "Option 1: Include opportunity teams, but do not change data visibility settings": "No",
+      "Option 2: Include opportunity teams and grant Opportunity visibility to members of the opportunity team": "Yes",
+      "Option 3: Exclude opportunity team members data": "No"
+    },
+    "variableType": {
+      "type": "ObjectType"
+    }
+  },
+  "AccountTeam_SecurityPredicate": {
+    "required": true,
+    "description": "Internal mapping not to be displayed in UI.",
+    "defaultValue": {
+      "Option 1: Include account teams, but do not change data visibility settings": "No",
+      "Option 2: Include account teams and grant Opportunity visibility to members of the account team": "Yes",
+      "Option 3: Exclude account team members data": "No"
+    },
+    "variableType": {
+      "type": "ObjectType"
+    }
+  },
+  "Has_Leads_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Lead_Source": {
+    "label": "What field do you use to segment the sources of leads?",
+    "description": "Your choice determines the way Sales Analytics groups leads by source. ",
+    "defaultValue": {
+      "sobjectName": "Lead",
+      "fieldName": "LeadSource"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name",
+      "Status",
+      "Company"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Lead_Rating": {
+    "label": "What field do you use to determine the quality of a lead?",
+    "description": "Your choice determines the primary way Sales Analytics groups leads.",
+    "defaultValue": {
+      "sobjectName": "Lead",
+      "fieldName": "Rating"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name",
+      "Status",
+      "Company"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Has_LeadScore": {
+    "variableType": {
+      "type": "BooleanType"
+    },
+    "defaultValue": false
+  },
+  "Lead_Rating_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Lead_Geography": {
+    "label": "What field do you use to segment leads by geography?",
+    "description": "Your choice determines how Sales Analytics groups leads by geography.",
+    "defaultValue": {
+      "sobjectName": "Lead",
+      "fieldName": "Country"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name",
+      "Status",
+      "Company"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Lead_Industry": {
+    "label": "What field do you use to segment leads by customer type?",
+    "description": "Your choice determines how Sales Analytics groups leads by customer type.",
+    "defaultValue": {
+      "sobjectName": "Lead",
+      "fieldName": "Industry"
+    },
+    "required": true,
+    "excludeSelected": true,
+    "excludes": [
+      "Name",
+      "Status",
+      "Company"
+    ],
+    "variableType": {
+      "type": "SobjectFieldType",
+      "dataType": "xsd:string"
+    }
+  },
+  "Has_CollaborativeForecasting_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Has_OpportunitySplits_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "Has_ProductSchedules_Visible": {
+    "label": "",
+    "description": "",
+    "defaultValue": "Visible",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Visible",
+        "Hidden",
+        "Disabled"
+      ]
+    },
+    "required": true
+  },
+  "OpportunitySplitTypeId": {
+    "label": "Foo",
+    "description": "Foo again",
+    "variableType": {
+      "type": "StringType",
+      "enums": []
+    },
+    "required": false
+  },
+  "Has_CollaborativeForecasting": {
+    "label": "Do you use Collaborative Forecasting?",
+    "description": "Select Yes if you use Collaborative Forecasting and would like to include this data in Sales Analytics.",
+    "defaultValue": "No",
+    "variableType": {
+      "type": "StringType",
+      "enums": [
+        "Yes",
+        "No"
+      ]
+    },
+    "required": true
+  },
+  "OpportunitySplitType": {
+    "label": "What Opportunity Split Type do you use?",
+    "description": "Choose the split type you want to see in Sales Analytics.",
+    "variableType": {
+      "type": "StringType",
+      "enums": []
+    },
+    "required": true
+  },
+  "ForecastingType": {
+    "label": "What Forecasting Type do you use?",
+    "description": "Choose the forecasting type you want to see in Sales Analytics.",
+    "defaultValue": "OpportunityRevenue",
+    "variableType": {
+      "type": "StringType",
+      "enums": []
+    },
+    "required": false
+  },
+  "OpportunityFieldMap": {
+    "required": false,
+    "description": "Internal mapping between Field Ids and developer names, not to be displayed in UI.",
+    "variableType": {
+      "type": "ArrayType",
+      "itemsType": {
+        "type": "StringType"
+      }
+    }
+  },
+  "isCumulativeEnabled" : {
+    "label": "Is Cumulative Forecasting Enabled?",
+    "description": "Cumulative Enabled",
+    "defaultValue": false,
+    "variableType": {
+      "type": "BooleanType",
+      "enums": [
+        true,
+        false
+      ]
+    },
+    "required": true
+  } 
+}
